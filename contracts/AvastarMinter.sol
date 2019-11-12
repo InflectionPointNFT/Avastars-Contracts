@@ -1,0 +1,253 @@
+pragma solidity ^0.5.12;
+
+import "./AvastarTypes.sol";
+import "./IAvastarTransporter.sol";
+import "./AccessControl.sol";
+
+/**
+ * @title Avastar Minter
+ * @author Cliff Hall
+ * @notice Mints Avastars using the AvastarTransporter contract on behalf of depositors
+ * @dev Manages accounting of depositor and franchise balances
+ * @dev Manages current generation and series
+ */
+contract AvastarMinter is AvastarTypes, AccessControl {
+
+    /**
+     * @notice Event emitted when the current Generation is changed
+     * @param currentGeneration the new value of currentGeneration
+     */
+    event CurrentGenerationSet(Generation currentGeneration);
+
+    /**
+     * @notice Event emitted when the current Series is changed
+     * @param currentSeries the new value of currentSeries
+     */
+    event CurrentSeriesSet(Series currentSeries);
+
+    /**
+     * @notice Event emitted when ETH is deposited or withdrawn by a depositor
+     * @param depositor the address who deposited or withdrew ETH
+     * @param balance the depositor's resulting ETH balance in the contract
+     */
+    event DepositorBalance(address indexed depositor, uint256 balance);
+
+    /**
+     * @notice Event emitted upon the withdrawal of the franchise's balance
+     * @param owner the contract owner
+     * @param amount total ETH withdrawn
+     */
+    event FranchiseBalanceWithdrawn(address indexed owner, uint256 amount);
+
+    /**
+     * @notice Event emitted when AvastarTransporter contract is set
+     * @param contractAddress the address of the AvastarTransporter contract
+     */
+    event TransporterContractSet(address contractAddress);
+
+    /**
+     * @notice Address of the AvastarTransporter contract
+     */
+    IAvastarTransporter private transporterContract ;
+
+    /**
+     * @notice Track the deposits made by address
+     */
+    mapping (address => uint256) depositsByAddress;
+
+    /**
+     * @notice Current total of unspent deposits by all depositors
+     */
+    uint256 private unspentDeposits;
+
+    /**
+     * @notice The current Generation of Avastars being minted
+     */
+    Generation private currentGeneration;
+
+    /**
+     * @notice The current Series of Avastars being minted
+     */
+    Series private currentSeries;
+
+    /**
+     * @notice Set the address of the AvastarTransporter contract
+     * @dev Only invokable by sysAdmin role, when contract is paused and not upgraded
+     * @param _address address of AvastarTransporter contract
+     */
+    function setTransporterContract(address _address) external onlySysAdmin whenPaused whenNotUpgraded {
+
+        // Cast the candidate contract to the IAvastarTransporter interface
+        IAvastarTransporter candidateContract = IAvastarTransporter(_address);
+
+        // Verify that we have the appropriate address
+        require(candidateContract.isAvastarTransporter());
+
+        // Set the contract address
+        transporterContract = IAvastarTransporter(_address);
+
+        // Emit the event
+        emit TransporterContractSet(_address);
+    }
+
+    /**
+     * @notice Set the Generation to be minted
+     * @dev Resets currentSeries to Series.ONE
+     * @dev Only invokable by sysAdmin role, when contract is paused and not upgraded
+     * @dev Emits GenerationSet event with new value of currentGeneration
+     * @param _generation the new value for currentGeneration
+     */
+    function setCurrentGeneration(Generation _generation) external onlySysAdmin whenPaused whenNotUpgraded {
+        currentGeneration = _generation;
+        emit CurrentGenerationSet(currentGeneration);
+        setCurrentSeries(Series.ONE);
+    }
+
+    /**
+     * @notice Set the Series to be minted
+     * @dev Only invokable by sysAdmin role, when contract is paused and not upgraded
+     * @dev Emits CurrentSeriesSet event with new value of currentSeries
+     * @param _series the new value for currentSeries
+     */
+    function setCurrentSeries(Series _series) public onlySysAdmin whenPaused whenNotUpgraded {
+        currentSeries = _series;
+        emit CurrentSeriesSet(currentSeries);
+    }
+
+    /**
+     * @notice Allow anyone to deposit ETH
+     * @dev Before contract will mint on behalf of a user, they must have sufficient ETH on deposit
+     * @dev Invokable by any address (other than 0) when contract is not paused
+     * @dev Must have a non-zero ETH value
+     * @dev Emits DepositorBalance event with depositor's resulting balance
+     */
+    function deposit() external payable whenNotPaused {
+        require(msg.value > 0);
+        require(msg.sender != address(0));
+        depositsByAddress[msg.sender] = depositsByAddress[msg.sender].add(msg.value);
+        unspentDeposits = unspentDeposits.add(msg.value);
+        emit DepositorBalance(msg.sender, depositsByAddress[msg.sender]);
+    }
+
+    /**
+     * @notice Allow anyone to check their deposit balance
+     * @dev Invokable by any address (other than 0)
+     * @return the depositor's current ETH balance in the contract
+     */
+    function checkDepositorBalance() external view returns (uint256){
+        require(msg.sender != address(0));
+        return depositsByAddress[msg.sender];
+    }
+
+    /**
+     * @notice Allow a depositor with a balance to withdraw it
+     * @dev Invokable by any address (other than 0) with an ETH balance on deposit
+     * @dev Entire depositor balance is transferred to their address
+     * @dev Emits DepositorBalance event of 0 amount once transfer is complete
+     * @return amount withdrawn
+     */
+    function withdrawDepositorBalance() external returns (uint256) {
+        require(msg.sender != address(0));
+        uint256 depositorBalance = depositsByAddress[msg.sender];
+        require(depositorBalance > 0 && address(this).balance >= depositorBalance);
+        depositsByAddress[msg.sender] = 0;
+        unspentDeposits = unspentDeposits.sub(depositorBalance);
+        msg.sender.transfer(depositorBalance);
+        emit DepositorBalance(msg.sender, depositsByAddress[msg.sender]);
+        return depositorBalance;
+    }
+
+    /**
+     * @notice Allow owner to check the withdrawable franchise balance
+     * @dev Remaining balance must be enough for all unspent deposits to be withdrawn by depositors
+     * @dev Invokable only by owner address
+     * @return the available franchise balance
+     */
+    function checkFranchiseBalance() external view onlyOwner returns (uint256) {
+        return uint256(address(this).balance).sub(unspentDeposits);
+    }
+
+    /**
+     * @notice Allow an owner to withdraw the franchise balance
+     * @dev Invokable only by owner address
+     * @dev Emits FranchiseBalanceWithdrawn event with amount withdrawn
+     * @return amount withdrawn
+     */
+    function withdrawFranchiseBalance() external onlyOwner returns (uint256) {
+        uint256 franchiseBalance = uint256(address(this).balance).sub(unspentDeposits);
+        require(franchiseBalance > 0);
+        msg.sender.transfer(franchiseBalance);
+        emit FranchiseBalanceWithdrawn(msg.sender, franchiseBalance);
+        return franchiseBalance;
+    }
+
+    /**
+     * @notice Mint an Avastar Prime for a purchaser who has previously deposited funds
+     * @dev Invokable only by minter address, when contract is not paused
+     * @param _purchaser address that will own the token
+     * @param _price price in ETH of token, removed from purchaser's deposit balance
+     * @param _traits the Avastar's Trait hash
+     * @param _gender the Avastar's Gender
+     * @param _ranking the Avastar's Ranking
+     */
+    function purchasePrime(
+        address _purchaser,
+        uint256 _price,
+        uint256 _traits,
+        Gender _gender,
+        uint8 _ranking
+    )
+    external
+    onlyMinter
+    whenNotPaused
+    returns (uint256, uint256)
+    {
+        require(_purchaser != address(0));
+        require (depositsByAddress[_purchaser] >= _price);
+        require(_gender > Gender.ANY);
+        depositsByAddress[_purchaser] = depositsByAddress[_purchaser].sub(_price);
+        unspentDeposits = unspentDeposits.sub(_price);
+        uint256 tokenId;
+        uint256 serial;
+        (tokenId, serial) = transporterContract.mintPrime(_purchaser, _traits, currentGeneration, currentSeries, _gender, _ranking);
+        emit DepositorBalance(_purchaser, depositsByAddress[_purchaser]);
+        return (tokenId, serial);
+    }
+
+
+    /**
+     * @notice Mint an Avastar Replicant for a purchaser who has previously deposited funds
+     * @dev Invokable only by minter address, when contract is not paused
+     * @param _purchaser address that will own the token
+     * @param _price price in ETH of token, removed from purchaser's deposit balance
+     * @param _traits the Avastar's Trait hash
+     * @param _generation the Avastar's Generation
+     * @param _gender the Avastar's Gender
+     * @param _ranking the Avastar's Ranking
+     */
+    function purchaseReplicant(
+        address _purchaser,
+        uint256 _price,
+        uint256 _traits,
+        Generation _generation,
+        Gender _gender,
+        uint8 _ranking
+    )
+    external
+    onlyMinter
+    whenNotPaused
+    returns (uint256, uint256)
+    {
+        require(_purchaser != address(0));
+        require (depositsByAddress[_purchaser] >= _price);
+        require(_gender > Gender.ANY);
+        depositsByAddress[_purchaser] = depositsByAddress[_purchaser].sub(_price);
+        unspentDeposits = unspentDeposits.sub(_price);
+        uint256 tokenId;
+        uint256 serial;
+        (tokenId, serial) = transporterContract.mintReplicant(_purchaser, _traits, _generation, _gender, _ranking);
+        emit DepositorBalance(_purchaser, depositsByAddress[_purchaser]);
+        return (tokenId, serial);
+    }
+
+}

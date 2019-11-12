@@ -1,0 +1,62 @@
+<svg width="500" height="500"
+     xmlns="http://www.w3.org/2000/svg">
+
+    <!-- EYE COLOR GRADIENT -->
+    <radialGradient id="eye_color">
+        <stop offset="0.025" stop-color="#000000"/>
+        <stop offset="1" stop-color="#56aaff"/>
+    </radialGradient>
+
+    <!-- SKIN COLOR GRADIENT -->
+    <linearGradient id="skin_color" x2="1" y2="1">
+        <stop offset="0" stop-color="#FFEEEE"/>
+        <stop offset="0.99927" stop-color="#bf5f00" stop-opacity="0.99609"/>
+        <stop offset="1" stop-color="#001111"/>
+    </linearGradient>
+
+    <!-- HAIR COLOR GRADIENT -->
+    <radialGradient id="hair_color">
+        <stop offset="0" stop-color="#none"/>
+        <stop offset="1" stop-color="#7f0000" stop-opacity="0.99609"/>
+    </radialGradient>
+
+    <!-- SIDEWAYS FACIAL EXPRESSION -->
+    <g id="facial_expression">
+
+        <!-- SKIN -->
+        <ellipse cx="250.99999" cy="254.00001"
+                 rx="166.5" ry="190.5"
+                 fill="url(#skin_color)"/>
+
+        <!-- EYE WHITES -->
+        <ellipse cx="175.5" cy="212"
+                 rx="55" ry="19.5"
+                 fill="#ffffff" />
+
+        <ellipse id="right_eye_white"
+                 cx="328.5" cy="211.5"
+                 rx="55" ry="19.5"
+                 fill="#ffffff"/>
+
+        <!-- EYE IRISES -->
+        <circle cx="146.5" cy="213.5"
+                r="12.72792"
+                fill="url(#eye_color)"/>
+
+        <circle cx="299.5" cy="213"
+                r="12.72792"
+                fill="url(#eye_color)"/>
+
+        <!-- MOUTH SMIRK -->
+        <path d="m164.5,349.5c-30,-12 102,-2 113.5,-10.5c11.5,-8.5 35.5,-17.5 47,-23c11.5,-5.5 -14.5,42.5 -33,41c-18.5,-1.5 -97.5,4.5 -127.5,-7.5z"
+              fill="#ffffff"/>
+
+    </g>
+
+    <!-- HAIR -->
+    <g id="hair">
+        <path d="m121.5,134.5l62.5,-79.5l98,-12l97,26l32,56l39,58l22,64l-27,-47l24,113l-35,-58l1,114l-9,-51l-13,-85l-18,-48l-57,-62l-72,-22l-70,13c-24.83333,6.83333 -49.66667,13.66667 -74.5,20.5z"
+              fill="url(#hair_color)"/>
+    </g>
+
+</svg>

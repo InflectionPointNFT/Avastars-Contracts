@@ -1,0 +1,5 @@
+    <!-- HAIR COLOR GRADIENT -->
+    <radialGradient id="hair_color">
+        <stop offset="0" stop-color="#none"/>
+        <stop offset="1" stop-color="#7f0000" stop-opacity="0.99609"/>
+    </radialGradient>

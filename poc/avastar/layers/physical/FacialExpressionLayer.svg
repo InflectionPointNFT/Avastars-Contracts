@@ -1,0 +1,32 @@
+    <!-- SIDEWAYS FACIAL EXPRESSION -->
+    <g id="facial_expression">
+
+        <!-- SKIN -->
+        <ellipse cx="250.99999" cy="254.00001"
+                 rx="166.5" ry="190.5"
+                 fill="url(#skin_color)"/>
+
+        <!-- EYE WHITES -->
+        <ellipse cx="175.5" cy="212"
+                 rx="55" ry="19.5"
+                 fill="#ffffff" />
+
+        <ellipse id="right_eye_white"
+                 cx="328.5" cy="211.5"
+                 rx="55" ry="19.5"
+                 fill="#ffffff"/>
+
+        <!-- EYE IRISES -->
+        <circle cx="146.5" cy="213.5"
+                r="12.72792"
+                fill="url(#eye_color)"/>
+
+        <circle cx="299.5" cy="213"
+                r="12.72792"
+                fill="url(#eye_color)"/>
+
+        <!-- MOUTH SMIRK -->
+        <path d="m164.5,349.5c-30,-12 102,-2 113.5,-10.5c11.5,-8.5 35.5,-17.5 47,-23c11.5,-5.5 -14.5,42.5 -33,41c-18.5,-1.5 -97.5,4.5 -127.5,-7.5z"
+              fill="#ffffff"/>
+
+    </g>

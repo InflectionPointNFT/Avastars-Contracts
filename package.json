@@ -1,0 +1,52 @@
+{
+  "name": "Avastars-Contracts",
+  "version": "1.0.0",
+  "description": "Ethereum-based collectible avatars with on-chain artwork",
+  "main": "index.js",
+  "scripts": {
+    "ganache:start": "node ./start-ganache.js",
+    "truffle:start": "npx truffle console",
+    "uml:generate": "sol2uml ./contracts -f png -o AvastarsUML.png"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Dapp-Wizards/Avastars-Contracts.git"
+  },
+  "author": "Cliff Hall",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/Dapp-Wizards/Avastars-Contracts/issues"
+  },
+  "homepage": "https://github.com/Dapp-Wizards/Avastars-Contracts",
+  "devDependencies": {
+    "@babel/core": "^7.0.0",
+    "abi-decoder": "^2.2.2",
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "bn.js": "^5.0.0",
+    "ganache-cli": "^6.7.0",
+    "sol2uml": "^1.1.11",
+    "solhint": "^2.3.0",
+    "solidity-docgen": "^0.3.12",
+    "truffle": "^5.0.39",
+    "truffle-assertions": "^0.9.1",
+    "truffle-contract": "^4.0.31",
+    "truffle-hdwallet-provider": "^1.0.14"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^2.4.0",
+    "babel-plugin-transform-jsbi-to-bigint": "^1.1.0",
+    "web3": "^1.2.1"
+  },
+  "jest": {
+    "testMatch": [
+      "<rootDir>/src/**/*Test.js"
+    ]
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}

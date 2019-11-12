@@ -1,0 +1,5 @@
+    <!-- EYE COLOR GRADIENT -->
+    <radialGradient id="eye_color">
+        <stop offset="0.025" stop-color="#000000"/>
+        <stop offset="1" stop-color="#56aaff"/>
+    </radialGradient>
