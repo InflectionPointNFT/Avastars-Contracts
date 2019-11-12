@@ -1,7 +1,7 @@
 {
   "name": "Avastars-Contracts",
   "version": "1.0.0",
-  "description": "Ethereum-based collectible avatars with on-chain artwork",
+  "description": "Ethereum smart contracts and unit tests for Avastars project",
   "main": "index.js",
   "scripts": {
     "ganache:start": "node ./start-ganache.js",
