@@ -6,9 +6,9 @@
   "scripts": {
     "ganache:start": "node ./start-ganache.js",
     "truffle:start": "npx truffle console",
-    "uml:generate": "sol2uml ./contracts -f png -o AvastarsUML.png",
+    "uml:generate": "sol2uml ./contracts -f png -o docs/AvastarsUML.png",
     "doc:docgen": "solidity-docgen --solc-settings \"{remappings: ['@openzeppelin=./node_modules/@openzeppelin']}\" -o ./docs --contract-pages",
-    "doc:soldoc": "soldoc --output html --ignore Migrations.sol docs/ contracts/"
+    "doc:soldoc": "soldoc --output docsify --ignore Migrations.sol docs/ contracts/"
   },
   "repository": {
     "type": "git",
