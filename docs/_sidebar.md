@@ -1,6 +1,6 @@
 * WELCOME
 	* [Home](/)
-	* [Contract UML](ContractUML.md)
+	* [Contract UML](ContractUML.md) 
 	* [Contract Unit Tests](UnitTestOutput.md)
 	* [Trait Hash Bitmasking](TraitHashBitmasking.md)
 * CONTRACTS
