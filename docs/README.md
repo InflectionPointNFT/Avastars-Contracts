@@ -9,7 +9,7 @@ Ethereum-based collectible avatars with on-chain artwork
  * Trait storage with SVG
  * Avastar NFT minting with serial that resets to 0 with generation
  * Separate minter contract
- * [Hashing algorithm](README_Trait_Hash.md) for storage of all traits (up to 32 'genes' with up to 256 'variations') in a single 256bit integer
+ * [Hashing algorithm](Trait_Hash_Bitmasking.md) for storage of all traits (up to 32 'genes' with up to 256 'variations') in a single 256bit integer
  * _And much more!_
  
  ![UML](AvastarsUML.png)
