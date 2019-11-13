@@ -1,0 +1,770 @@
+<html>
+
+<head>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/styles/github.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/twemoji-awesome-clone@1.0.0/twemoji-awesome.css">
+    <link href="data:image/x-icon;base64,AAABAAEAEBAQAAEABAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAJ6TrAFy+8QCC0vgA7+/vAC6n7ACE0/gAS2RuAKbU5QDAwMAAv+3+ACek6gApoeYAAAAAAAAAAAAAAAAARERERERERABEREREREREAEREREREREQAREREeIRERABJmZSohUREAERERKolVEQAREREozUVRABJmZRDNlFUAEREREQzZRUAREREREM2W1BJmZmZRDNlxUREREREQzZVREREREREMzVJmZmZmURDM0REREREREQzRERERERERAMAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAA" rel="icon" type="image/x-icon" />
+    <style>
+        aside {
+            width: 20%;
+            padding: 35px 55px;
+            float: left;
+        }
+
+        .content table td {
+            border: 0px;
+        }
+
+        tr {
+            line-height: 3em;
+        }
+
+        nav.navbar {
+            height: 80px;
+            padding: 0px 35px;
+        }
+
+        div.container {
+            float: left;
+            width: 60%;
+            margin: 35px 5%;
+        }
+
+        strong.method {
+            font-size: 2em;
+            padding-right: 10px;
+        }
+
+        a strong {
+            color: black;
+        }
+
+        small.generated {
+            font-size: .65em;
+            font-style: italic;
+        }
+
+        /*readme*/
+        .README li {
+            padding: 5px 40px;
+        }
+
+        .README h1,.README h2,.README h3,.README h4 {
+            margin-block-start: 0.83em;
+            margin-block-end: 0.83em;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+        }
+    </style>
+    <title>soldoc</title>
+</head>
+
+<body>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="https://github.com/HQ20/soldoc">
+                <h1 class="title is-1">soldoc</h1>
+            </a>
+        </div>
+
+        <div id="navbarBasicExample" class="navbar-menu">
+            <div class="navbar-start">
+                <a class="navbar-item" href="index.html">
+                    Home
+                </a>
+
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link">
+                    More soldoc
+                    </a>
+
+                    <div class="navbar-dropdown">
+                        <a class="navbar-item" href="https://github.com/HQ20/soldoc/wiki/About">
+                            About
+                        </a>
+                        <a class="navbar-item" href="#">
+                            Contact
+                        </a>
+                        <hr class="navbar-divider">
+                        <a class="navbar-item" href="https://github.com/HQ20/soldoc/issues">
+                            Report an issue
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </nav>
+    <aside class="menu">
+        <p class="menu-label">AccessControl</p>
+        <ul class="menu-list">
+            <li><a href="AccessControl.html#upgradeContract">upgradeContract</a></li>
+            <li><a href="AccessControl.html#addMinter">addMinter</a></li>
+            <li><a href="AccessControl.html#addOwner">addOwner</a></li>
+            <li><a href="AccessControl.html#pause">pause</a></li>
+            <li><a href="AccessControl.html#unpause">unpause</a></li>
+        </ul>
+        <p class="menu-label">AvastarMinter</p>
+        <ul class="menu-list">
+            <li><a href="AvastarMinter.html#setTeleporterContract">setTeleporterContract</a></li>
+            <li><a href="AvastarMinter.html#setCurrentGeneration">setCurrentGeneration</a></li>
+            <li><a href="AvastarMinter.html#setCurrentSeries">setCurrentSeries</a></li>
+            <li><a href="AvastarMinter.html#deposit">deposit</a></li>
+            <li><a href="AvastarMinter.html#checkDepositorBalance">checkDepositorBalance</a></li>
+            <li><a href="AvastarMinter.html#withdrawDepositorBalance">withdrawDepositorBalance</a></li>
+            <li><a href="AvastarMinter.html#checkFranchiseBalance">checkFranchiseBalance</a></li>
+            <li><a href="AvastarMinter.html#withdrawFranchiseBalance">withdrawFranchiseBalance</a></li>
+            <li><a href="AvastarMinter.html#purchasePrime">purchasePrime</a></li>
+            <li><a href="AvastarMinter.html#purchaseReplicant">purchaseReplicant</a></li>
+        </ul>
+        <p class="menu-label">AvastarState</p>
+        <ul class="menu-list">
+            <li><a href="AvastarState.html#trackAvastar">trackAvastar</a></li>
+        </ul>
+        <p class="menu-label">AvastarTeleporter</p>
+        <ul class="menu-list">
+            <li><a href="AvastarTeleporter.html#isAvastarTeleporter">isAvastarTeleporter</a></li>
+            <li><a href="AvastarTeleporter.html#approveTraitAccess">approveTraitAccess</a></li>
+            <li><a href="AvastarTeleporter.html#useTraits">useTraits</a></li>
+        </ul>
+        <p class="menu-label">AvastarTypes</p>
+        <ul class="menu-list">
+        </ul>
+        <p class="menu-label">IAvastarTeleporter</p>
+        <ul class="menu-list">
+            <li><a href="IAvastarTeleporter.html#isAvastarTeleporter">isAvastarTeleporter</a></li>
+            <li><a href="IAvastarTeleporter.html#mintPrime">mintPrime</a></li>
+            <li><a href="IAvastarTeleporter.html#mintReplicant">mintReplicant</a></li>
+            <li><a href="IAvastarTeleporter.html#ownerOf">ownerOf</a></li>
+        </ul>
+        <p class="menu-label">PrimeFactory</p>
+        <ul class="menu-list">
+            <li><a href="PrimeFactory.html#getPrimeByGenerationAndSerial">getPrimeByGenerationAndSerial</a></li>
+            <li><a href="PrimeFactory.html#getPrimeByTokenId">getPrimeByTokenId</a></li>
+            <li><a href="PrimeFactory.html#mintPrime">mintPrime</a></li>
+        </ul>
+        <p class="menu-label">ReplicantFactory</p>
+        <ul class="menu-list">
+            <li><a href="ReplicantFactory.html#getReplicantByGenerationAndSerial">getReplicantByGenerationAndSerial</a></li>
+            <li><a href="ReplicantFactory.html#getReplicantByTokenId">getReplicantByTokenId</a></li>
+            <li><a href="ReplicantFactory.html#mintReplicant">mintReplicant</a></li>
+        </ul>
+        <p class="menu-label">TraitFactory</p>
+        <ul class="menu-list">
+            <li><a href="TraitFactory.html#getTrait">getTrait</a></li>
+            <li><a href="TraitFactory.html#getTraitIdByGenerationGeneAndVariation">getTraitIdByGenerationGeneAndVariation</a></li>
+            <li><a href="TraitFactory.html#createTrait">createTrait</a></li>
+            <li><a href="TraitFactory.html#assembleArt">assembleArt</a></li>
+            <li><a href="TraitFactory.html#strConcat">strConcat</a></li>
+        </ul>
+    </aside>
+
+    <div class="container">
+
+        <div class="notification">
+            <h1 class="title is-1" id="contractName">AvastarMinter</h1>
+                <h2 class="subtitle">Avastar Minter
+                by <i id="author">@Cliff Hall</i>
+                </h2>
+            contracts&#x2F;AvastarMinter.sol
+                <p>Manages current generation and series</p>
+                <p>Mints Avastars using the AvastarTeleporter contract on behalf of depositors</p>
+            <small class="generated">Generated in Wed Nov 13 2019 17:10:35 GMT-0500 (Eastern Standard Time)</small>
+        </div>
+
+
+        <div class="box" style="border-top: blue 1px solid;">
+            <article class="media">
+                <div class="media-content">
+                    <div class="content">
+                        <p>
+                            <a name="CurrentGenerationSet">
+                                <strong class="method">CurrentGenerationSet</strong>
+                            </a>
+                            <br />
+                                <p>Event emitted when the current Generation is changed</p>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Input/Output</th>
+                                        <th>Data type</th>
+                                        <th>Variable name</th>
+                                        <th>Comment</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>input</td>
+                                        <td></td>
+                                        <td>currentGeneration</td>
+                                        <td>the new value of currentGeneration</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </p>
+                    </div>
+                </div>
+            </article>
+        </div>
+        <div class="box" style="border-top: blue 1px solid;">
+            <article class="media">
+                <div class="media-content">
+                    <div class="content">
+                        <p>
+                            <a name="CurrentSeriesSet">
+                                <strong class="method">CurrentSeriesSet</strong>
+                            </a>
+                            <br />
+                                <p>Event emitted when the current Series is changed</p>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Input/Output</th>
+                                        <th>Data type</th>
+                                        <th>Variable name</th>
+                                        <th>Comment</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>input</td>
+                                        <td></td>
+                                        <td>currentSeries</td>
+                                        <td>the new value of currentSeries</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </p>
+                    </div>
+                </div>
+            </article>
+        </div>
+        <div class="box" style="border-top: blue 1px solid;">
+            <article class="media">
+                <div class="media-content">
+                    <div class="content">
+                        <p>
+                            <a name="DepositorBalance">
+                                <strong class="method">DepositorBalance</strong>
+                            </a>
+                            <br />
+                                <p>Event emitted when ETH is deposited or withdrawn by a depositor</p>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Input/Output</th>
+                                        <th>Data type</th>
+                                        <th>Variable name</th>
+                                        <th>Comment</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>input</td>
+                                        <td>address</td>
+                                        <td>depositor</td>
+                                        <td>the address who deposited or withdrew ETH</td>
+                                    </tr>
+                                    <tr>
+                                        <td>input</td>
+                                        <td>uint256</td>
+                                        <td>balance</td>
+                                        <td>the depositor's resulting ETH balance in the contract</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </p>
+                    </div>
+                </div>
+            </article>
+        </div>
+        <div class="box" style="border-top: blue 1px solid;">
+            <article class="media">
+                <div class="media-content">
+                    <div class="content">
+                        <p>
+                            <a name="FranchiseBalanceWithdrawn">
+                                <strong class="method">FranchiseBalanceWithdrawn</strong>
+                            </a>
+                            <br />
+                                <p>Event emitted upon the withdrawal of the franchise&#39;s balance</p>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Input/Output</th>
+                                        <th>Data type</th>
+                                        <th>Variable name</th>
+                                        <th>Comment</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>input</td>
+                                        <td>address</td>
+                                        <td>owner</td>
+                                        <td>the contract owner</td>
+                                    </tr>
+                                    <tr>
+                                        <td>input</td>
+                                        <td>uint256</td>
+                                        <td>amount</td>
+                                        <td>total ETH withdrawn</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </p>
+                    </div>
+                </div>
+            </article>
+        </div>
+        <div class="box" style="border-top: blue 1px solid;">
+            <article class="media">
+                <div class="media-content">
+                    <div class="content">
+                        <p>
+                            <a name="TeleporterContractSet">
+                                <strong class="method">TeleporterContractSet</strong>
+                            </a>
+                            <br />
+                                <p>Event emitted when AvastarTeleporter contract is set</p>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Input/Output</th>
+                                        <th>Data type</th>
+                                        <th>Variable name</th>
+                                        <th>Comment</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>input</td>
+                                        <td>address</td>
+                                        <td>contractAddress</td>
+                                        <td>the address of the AvastarTeleporter contract</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </p>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <div class="box">
+            <article class="media">
+                <div class="media-content">
+                    <div class="content">
+                        <p>
+                            <a name="setTeleporterContract">
+                                <strong class="method">setTeleporterContract</strong>
+                            </a>
+                            <br />
+                                <p><i>Only invokable by sysAdmin role, when contract is paused and not upgraded</i></p>
+                                <p>Set the address of the AvastarTeleporter contract</p>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Input/Output</th>
+                                        <th>Data type</th>
+                                        <th>Variable name</th>
+                                        <th>Comment</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>input</td>
+                                        <td>address</td>
+                                        <td>_address</td>
+                                        <td>address of AvastarTeleporter contract</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </p>
+                    </div>
+                </div>
+            </article>
+        </div>
+        <div class="box">
+            <article class="media">
+                <div class="media-content">
+                    <div class="content">
+                        <p>
+                            <a name="setCurrentGeneration">
+                                <strong class="method">setCurrentGeneration</strong>
+                            </a>
+                            <br />
+                                <p><i>Emits GenerationSet event with new value of currentGeneration</i></p>
+                                <p>Set the Generation to be minted</p>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Input/Output</th>
+                                        <th>Data type</th>
+                                        <th>Variable name</th>
+                                        <th>Comment</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>input</td>
+                                        <td></td>
+                                        <td>_generation</td>
+                                        <td>the new value for currentGeneration</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </p>
+                    </div>
+                </div>
+            </article>
+        </div>
+        <div class="box">
+            <article class="media">
+                <div class="media-content">
+                    <div class="content">
+                        <p>
+                            <a name="setCurrentSeries">
+                                <strong class="method">setCurrentSeries</strong>
+                            </a>
+                            <br />
+                                <p><i>Emits CurrentSeriesSet event with new value of currentSeries</i></p>
+                                <p>Set the Series to be minted</p>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Input/Output</th>
+                                        <th>Data type</th>
+                                        <th>Variable name</th>
+                                        <th>Comment</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>input</td>
+                                        <td></td>
+                                        <td>_series</td>
+                                        <td>the new value for currentSeries</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </p>
+                    </div>
+                </div>
+            </article>
+        </div>
+        <div class="box">
+            <article class="media">
+                <div class="media-content">
+                    <div class="content">
+                        <p>
+                            <a name="deposit">
+                                <strong class="method">deposit</strong>
+                            </a>
+                            <br />
+                                <p><i>Emits DepositorBalance event with depositor&#39;s resulting balance</i></p>
+                                <p>Allow anyone to deposit ETH</p>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Input/Output</th>
+                                        <th>Data type</th>
+                                        <th>Variable name</th>
+                                        <th>Comment</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </p>
+                    </div>
+                </div>
+            </article>
+        </div>
+        <div class="box">
+            <article class="media">
+                <div class="media-content">
+                    <div class="content">
+                        <p>
+                            <a name="checkDepositorBalance">
+                                <strong class="method">checkDepositorBalance</strong>
+                            </a>
+                            <br />
+                                <p><i>Invokable by any address (other than 0)</i></p>
+                                <p>Allow anyone to check their deposit balance</p>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Input/Output</th>
+                                        <th>Data type</th>
+                                        <th>Variable name</th>
+                                        <th>Comment</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>output</td>
+                                        <td>uint256</td>
+                                        <td></td>
+                                        <td>the depositor&#39;s current ETH balance in the contract</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </p>
+                    </div>
+                </div>
+            </article>
+        </div>
+        <div class="box">
+            <article class="media">
+                <div class="media-content">
+                    <div class="content">
+                        <p>
+                            <a name="withdrawDepositorBalance">
+                                <strong class="method">withdrawDepositorBalance</strong>
+                            </a>
+                            <br />
+                                <p><i>Emits DepositorBalance event of 0 amount once transfer is complete</i></p>
+                                <p>Allow a depositor with a balance to withdraw it</p>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Input/Output</th>
+                                        <th>Data type</th>
+                                        <th>Variable name</th>
+                                        <th>Comment</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>output</td>
+                                        <td>uint256</td>
+                                        <td></td>
+                                        <td>amount withdrawn</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </p>
+                    </div>
+                </div>
+            </article>
+        </div>
+        <div class="box">
+            <article class="media">
+                <div class="media-content">
+                    <div class="content">
+                        <p>
+                            <a name="checkFranchiseBalance">
+                                <strong class="method">checkFranchiseBalance</strong>
+                            </a>
+                            <br />
+                                <p><i>Invokable only by owner address</i></p>
+                                <p>Allow owner to check the withdrawable franchise balance</p>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Input/Output</th>
+                                        <th>Data type</th>
+                                        <th>Variable name</th>
+                                        <th>Comment</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>output</td>
+                                        <td>uint256</td>
+                                        <td></td>
+                                        <td>the available franchise balance</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </p>
+                    </div>
+                </div>
+            </article>
+        </div>
+        <div class="box">
+            <article class="media">
+                <div class="media-content">
+                    <div class="content">
+                        <p>
+                            <a name="withdrawFranchiseBalance">
+                                <strong class="method">withdrawFranchiseBalance</strong>
+                            </a>
+                            <br />
+                                <p><i>Emits FranchiseBalanceWithdrawn event with amount withdrawn</i></p>
+                                <p>Allow an owner to withdraw the franchise balance</p>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Input/Output</th>
+                                        <th>Data type</th>
+                                        <th>Variable name</th>
+                                        <th>Comment</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>output</td>
+                                        <td>uint256</td>
+                                        <td></td>
+                                        <td>amount withdrawn</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </p>
+                    </div>
+                </div>
+            </article>
+        </div>
+        <div class="box">
+            <article class="media">
+                <div class="media-content">
+                    <div class="content">
+                        <p>
+                            <a name="purchasePrime">
+                                <strong class="method">purchasePrime</strong>
+                            </a>
+                            <br />
+                                <p><i>Invokable only by minter address, when contract is not paused</i></p>
+                                <p>Mint an Avastar Prime for a purchaser who has previously deposited funds</p>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Input/Output</th>
+                                        <th>Data type</th>
+                                        <th>Variable name</th>
+                                        <th>Comment</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>input</td>
+                                        <td>address</td>
+                                        <td>_purchaser</td>
+                                        <td>address that will own the token</td>
+                                    </tr>
+                                    <tr>
+                                        <td>input</td>
+                                        <td>uint256</td>
+                                        <td>_price</td>
+                                        <td>price in ETH of token, removed from purchaser's deposit balance</td>
+                                    </tr>
+                                    <tr>
+                                        <td>input</td>
+                                        <td>uint256</td>
+                                        <td>_traits</td>
+                                        <td>the Avastar's Trait hash</td>
+                                    </tr>
+                                    <tr>
+                                        <td>input</td>
+                                        <td></td>
+                                        <td>_gender</td>
+                                        <td>the Avastar's Gender</td>
+                                    </tr>
+                                    <tr>
+                                        <td>input</td>
+                                        <td>uint8</td>
+                                        <td>_ranking</td>
+                                        <td>the Avastar's Ranking</td>
+                                    </tr>
+                                    <tr>
+                                        <td>output</td>
+                                        <td>uint256</td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>output</td>
+                                        <td>uint256</td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </p>
+                    </div>
+                </div>
+            </article>
+        </div>
+        <div class="box">
+            <article class="media">
+                <div class="media-content">
+                    <div class="content">
+                        <p>
+                            <a name="purchaseReplicant">
+                                <strong class="method">purchaseReplicant</strong>
+                            </a>
+                            <br />
+                                <p><i>Invokable only by minter address, when contract is not paused</i></p>
+                                <p>Mint an Avastar Replicant for a purchaser who has previously deposited funds</p>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Input/Output</th>
+                                        <th>Data type</th>
+                                        <th>Variable name</th>
+                                        <th>Comment</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>input</td>
+                                        <td>address</td>
+                                        <td>_purchaser</td>
+                                        <td>address that will own the token</td>
+                                    </tr>
+                                    <tr>
+                                        <td>input</td>
+                                        <td>uint256</td>
+                                        <td>_price</td>
+                                        <td>price in ETH of token, removed from purchaser's deposit balance</td>
+                                    </tr>
+                                    <tr>
+                                        <td>input</td>
+                                        <td>uint256</td>
+                                        <td>_traits</td>
+                                        <td>the Avastar's Trait hash</td>
+                                    </tr>
+                                    <tr>
+                                        <td>input</td>
+                                        <td></td>
+                                        <td>_generation</td>
+                                        <td>the Avastar's Generation</td>
+                                    </tr>
+                                    <tr>
+                                        <td>input</td>
+                                        <td></td>
+                                        <td>_gender</td>
+                                        <td>the Avastar's Gender</td>
+                                    </tr>
+                                    <tr>
+                                        <td>input</td>
+                                        <td>uint8</td>
+                                        <td>_ranking</td>
+                                        <td>the Avastar's Ranking</td>
+                                    </tr>
+                                    <tr>
+                                        <td>output</td>
+                                        <td>uint256</td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>output</td>
+                                        <td>uint256</td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </p>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
+</body>
+
+</html>
