@@ -1,5 +1,7 @@
 * WELCOME
 	* [Home](/)
+	* [Contract Unit Tests](UnitTestOutput.md)
+	* [Trait Hash Bitmasking](TraitHashBitmasking.md)
 * CONTRACTS
 	* [AccessControl](AccessControl.md)
 	* [AvastarMinter](AvastarMinter.md)
