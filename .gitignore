@@ -58,3 +58,7 @@ node_modules
 # Keys #
 ########
 .project_keys
+
+# Docs #
+========
+docs/_sidebar.md
