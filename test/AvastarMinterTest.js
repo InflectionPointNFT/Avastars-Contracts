@@ -1,4 +1,4 @@
-const AvastarTransporter = artifacts.require("./AvastarTransporter.sol");
+const AvastarTeleporter = artifacts.require("./AvastarTeleporter.sol");
 const AvastarMinter = artifacts.require("./AvastarMinter.sol");
 const truffleAssert = require('truffle-assertions');
 const truffleEvent  = require('./util/truffle-events');
@@ -8,7 +8,7 @@ const BN = require('bn.js');
 
 contract('AvastarMinter', function(accounts) {
 
-    let transporterContract, minterContract;
+    let teleporterContract, minterContract;
     const sysAdmin = accounts[0];
     const purchaser = accounts[1];
     const minter = accounts[2]; // account invoking minter contract must also have minter role
@@ -71,18 +71,18 @@ contract('AvastarMinter', function(accounts) {
 
     before(async () => {
         // Create the factory contract and unpause
-        transporterContract = await AvastarTransporter.new();
+        teleporterContract = await AvastarTeleporter.new();
 
         // Create the minter contract and set the factory contract
         minterContract = await AvastarMinter.new();
-        await minterContract.setTransporterContract(transporterContract.address);
+        await minterContract.setTeleporterContract(teleporterContract.address);
         minterContract.addMinter(minter);
         minterContract.addOwner(owner);
         await minterContract.unpause();
 
         // Add the minter to the factory contract
-        await transporterContract.addMinter(minterContract.address);
-        await transporterContract.unpause();
+        await teleporterContract.addMinter(minterContract.address);
+        await teleporterContract.unpause();
 
     });
 
@@ -176,7 +176,7 @@ contract('AvastarMinter', function(accounts) {
         }, 'DepositorBalance event should be emitted with correct info');
 
         // Get events emitted from the factory
-        let factoryScope = truffleEvent.formTxObject('AvastarTransporter', 1, result);
+        let factoryScope = truffleEvent.formTxObject('AvastarTeleporter', 1, result);
 
         // Test that appropriate event was emitted
         // NOTE:
@@ -215,7 +215,7 @@ contract('AvastarMinter', function(accounts) {
         }, 'DepositorBalance event should be emitted with correct info');
 
         // Get events emitted from the factory
-        let factoryScope = truffleEvent.formTxObject('AvastarTransporter', 1, result);
+        let factoryScope = truffleEvent.formTxObject('AvastarTeleporter', 1, result);
 
         // Test that appropriate event was emitted
         // NOTE:
@@ -406,7 +406,7 @@ contract('AvastarMinter', function(accounts) {
         let result = await minterContract.purchasePrime(purchaser, price, traits, gender, ranking, {from: minter});
 
         // Get events emitted from the factory
-        let factoryScope = truffleEvent.formTxObject('AvastarTransporter', 1, result);
+        let factoryScope = truffleEvent.formTxObject('AvastarTeleporter', 1, result);
 
         // Test that appropriate event was emitted
         truffleAssert.eventEmitted(factoryScope, 'NewPrime', (ev) => {
@@ -476,7 +476,7 @@ contract('AvastarMinter', function(accounts) {
         let result = await minterContract.purchasePrime(purchaser, price, traits, gender, ranking, {from: minter});
 
         // Get events emitted from the factory
-        let factoryScope = truffleEvent.formTxObject('AvastarTransporter', 1, result);
+        let factoryScope = truffleEvent.formTxObject('AvastarTeleporter', 1, result);
 
         // Test that appropriate event was emitted
         truffleAssert.eventEmitted(factoryScope, 'NewPrime', (ev) => {
@@ -496,8 +496,8 @@ contract('AvastarMinter', function(accounts) {
         await minterContract.deposit({from: purchaser, value: depositAmount});
         let result = await minterContract.purchaseReplicant(purchaser, price, traits, generation, gender, ranking, {from: minter});
 
-        // Get events emitted from the AvastarTransporter
-        let replicantScope = truffleEvent.formTxObject('AvastarTransporter', 1, result);
+        // Get events emitted from the AvastarTeleporter
+        let replicantScope = truffleEvent.formTxObject('AvastarTeleporter', 1, result);
 
         // Test that appropriate event was emitted
         truffleAssert.eventEmitted(replicantScope, 'NewReplicant', (ev) => {

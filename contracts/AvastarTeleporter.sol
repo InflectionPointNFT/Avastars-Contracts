@@ -3,11 +3,11 @@ pragma solidity ^0.5.12;
 import "./ReplicantFactory.sol";
 
 /**
- * @title AvastarTransporter
+ * @title AvastarTeleporter
  * @author Cliff Hall
  * @notice Management of Avastar Primes, Replicants, and Traits
  */
-contract AvastarTransporter is ReplicantFactory {
+contract AvastarTeleporter is ReplicantFactory {
 
     /**
      * @notice Event emitted when a handler is approved for Trait replication
@@ -23,10 +23,10 @@ contract AvastarTransporter is ReplicantFactory {
     event TraitsUsed(address indexed handler, uint256 primeId, bool[] used);
 
     /**
-     * @notice Acknowledge contract is AvastarTransporter
+     * @notice Acknowledge contract is AvastarTeleporter
      * @return always true
      */
-    function isAvastarTransporter() external pure returns (bool) {return true;}
+    function isAvastarTeleporter() external pure returns (bool) {return true;}
 
     /**
      * @notice Approve a handler to manage trait access for a set of Avastar Primes

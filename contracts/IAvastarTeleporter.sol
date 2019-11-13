@@ -3,14 +3,14 @@ pragma solidity ^0.5.12;
 import "./AvastarTypes.sol";
 
 /**
- * @title Avastar Transporter Interface
+ * @title AvastarTeleporter Interface
  * @author Cliff Hall
  * @dev Declared with contract rather than interface as it must inherit for enum types
- * @dev Used by AvastarMinter contract to interact with subset of AvastarTransporter contract functions
+ * @dev Used by AvastarMinter contract to interact with subset of AvastarTeleporter contract functions
  */
-contract IAvastarTransporter is AvastarTypes {
+contract IAvastarTeleporter is AvastarTypes {
 
-    function isAvastarTransporter() external pure returns (bool);
+    function isAvastarTeleporter() external pure returns (bool);
 
     function mintPrime(
         address _owner,

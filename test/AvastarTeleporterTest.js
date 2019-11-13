@@ -1,12 +1,12 @@
-const AvastarTransporter = artifacts.require("./AvastarTransporter.sol");
+const AvastarTeleporter = artifacts.require("./AvastarTeleporter.sol");
 const truffleAssert = require('truffle-assertions');
 const exceptions = require ("./util/Exceptions");
 const constants = require("./util/Constants");
 const BN = require('bn.js');
 
-contract('AvastarTransporter', function(accounts) {
+contract('AvastarTeleporter', function(accounts) {
 
-    let transporter, result;
+    let teleporter, result;
     const sysAdmin = accounts[0];
     const tokenOwner = accounts[1];
     const minter = accounts[2];
@@ -45,16 +45,16 @@ contract('AvastarTransporter', function(accounts) {
     before(async () => {
 
         // Get the contract instance for this suite
-        transporter = await AvastarTransporter.new();
+        teleporter = await AvastarTeleporter.new();
 
         // Unpause the contract
-        await transporter.unpause();
+        await teleporter.unpause();
 
         // Add the minter
-        await transporter.addMinter(minter);
+        await teleporter.addMinter(minter);
 
         // Mint 3 primes
-        const mint = prime => transporter.mintPrime(tokenOwner, prime.traits, prime.generation, prime.series, prime.gender, prime.ranking, {from: minter});
+        const mint = prime => teleporter.mintPrime(tokenOwner, prime.traits, prime.generation, prime.series, prime.gender, prime.ranking, {from: minter});
         await mint(prime1);
         await mint(prime2);
         await mint(prime3);
@@ -65,7 +65,7 @@ contract('AvastarTransporter', function(accounts) {
 
         // Try to approve trait access
         await exceptions.catchRevert(
-            transporter.approveTraitAccess(sysAdmin, [id1, id2, id3], {from: sysAdmin})
+            teleporter.approveTraitAccess(sysAdmin, [id1, id2, id3], {from: sysAdmin})
         )
 
     });
@@ -74,7 +74,7 @@ contract('AvastarTransporter', function(accounts) {
 
         // Try to approve trait access
         await exceptions.catchRevert(
-            transporter.approveTraitAccess(minter, [id1, id2, id3], {from: minter})
+            teleporter.approveTraitAccess(minter, [id1, id2, id3], {from: minter})
         )
 
     });
@@ -82,7 +82,7 @@ contract('AvastarTransporter', function(accounts) {
     it("should allow owner to approve trait access for a specific set of their primes", async function() {
 
         // Try to approve trait access
-        let result = await transporter.approveTraitAccess(handler, [id1, id2, id3], {from: tokenOwner});
+        let result = await teleporter.approveTraitAccess(handler, [id1, id2, id3], {from: tokenOwner});
 
         // Test that appropriate event was emitted
         truffleAssert.eventEmitted(result, 'TraitAccessApproved', (ev) => {
@@ -108,7 +108,7 @@ contract('AvastarTransporter', function(accounts) {
         ]);
 
         // Try to use traits
-        let result = await transporter.useTraits(id1, requestFlags, {from: handler});
+        let result = await teleporter.useTraits(id1, requestFlags, {from: handler});
 
         // Test that appropriate event was emitted //TraitsUsed(address indexed handler, uint256 primeId, bool[] replicated);
         truffleAssert.eventEmitted(result, 'TraitsUsed', (ev) => {
@@ -127,7 +127,7 @@ contract('AvastarTransporter', function(accounts) {
 
         // Try to use traits
         await exceptions.catchRevert(
-            transporter.useTraits(id1, requestFlags, {from: handler})
+            teleporter.useTraits(id1, requestFlags, {from: handler})
         )
 
     });

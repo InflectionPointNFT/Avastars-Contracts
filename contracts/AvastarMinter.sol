@@ -1,13 +1,13 @@
 pragma solidity ^0.5.12;
 
 import "./AvastarTypes.sol";
-import "./IAvastarTransporter.sol";
+import "./IAvastarTeleporter.sol";
 import "./AccessControl.sol";
 
 /**
  * @title Avastar Minter
  * @author Cliff Hall
- * @notice Mints Avastars using the AvastarTransporter contract on behalf of depositors
+ * @notice Mints Avastars using the AvastarTeleporter contract on behalf of depositors
  * @dev Manages accounting of depositor and franchise balances
  * @dev Manages current generation and series
  */
@@ -40,15 +40,15 @@ contract AvastarMinter is AvastarTypes, AccessControl {
     event FranchiseBalanceWithdrawn(address indexed owner, uint256 amount);
 
     /**
-     * @notice Event emitted when AvastarTransporter contract is set
-     * @param contractAddress the address of the AvastarTransporter contract
+     * @notice Event emitted when AvastarTeleporter contract is set
+     * @param contractAddress the address of the AvastarTeleporter contract
      */
-    event TransporterContractSet(address contractAddress);
+    event TeleporterContractSet(address contractAddress);
 
     /**
-     * @notice Address of the AvastarTransporter contract
+     * @notice Address of the AvastarTeleporter contract
      */
-    IAvastarTransporter private transporterContract ;
+    IAvastarTeleporter private teleporterContract ;
 
     /**
      * @notice Track the deposits made by address
@@ -71,23 +71,23 @@ contract AvastarMinter is AvastarTypes, AccessControl {
     Series private currentSeries;
 
     /**
-     * @notice Set the address of the AvastarTransporter contract
+     * @notice Set the address of the AvastarTeleporter contract
      * @dev Only invokable by sysAdmin role, when contract is paused and not upgraded
-     * @param _address address of AvastarTransporter contract
+     * @param _address address of AvastarTeleporter contract
      */
-    function setTransporterContract(address _address) external onlySysAdmin whenPaused whenNotUpgraded {
+    function setTeleporterContract(address _address) external onlySysAdmin whenPaused whenNotUpgraded {
 
-        // Cast the candidate contract to the IAvastarTransporter interface
-        IAvastarTransporter candidateContract = IAvastarTransporter(_address);
+        // Cast the candidate contract to the IAvastarTeleporter interface
+        IAvastarTeleporter candidateContract = IAvastarTeleporter(_address);
 
         // Verify that we have the appropriate address
-        require(candidateContract.isAvastarTransporter());
+        require(candidateContract.isAvastarTeleporter());
 
         // Set the contract address
-        transporterContract = IAvastarTransporter(_address);
+        teleporterContract = IAvastarTeleporter(_address);
 
         // Emit the event
-        emit TransporterContractSet(_address);
+        emit TeleporterContractSet(_address);
     }
 
     /**
@@ -209,7 +209,7 @@ contract AvastarMinter is AvastarTypes, AccessControl {
         unspentDeposits = unspentDeposits.sub(_price);
         uint256 tokenId;
         uint256 serial;
-        (tokenId, serial) = transporterContract.mintPrime(_purchaser, _traits, currentGeneration, currentSeries, _gender, _ranking);
+        (tokenId, serial) = teleporterContract.mintPrime(_purchaser, _traits, currentGeneration, currentSeries, _gender, _ranking);
         emit DepositorBalance(_purchaser, depositsByAddress[_purchaser]);
         return (tokenId, serial);
     }
@@ -245,7 +245,7 @@ contract AvastarMinter is AvastarTypes, AccessControl {
         unspentDeposits = unspentDeposits.sub(_price);
         uint256 tokenId;
         uint256 serial;
-        (tokenId, serial) = transporterContract.mintReplicant(_purchaser, _traits, _generation, _gender, _ranking);
+        (tokenId, serial) = teleporterContract.mintReplicant(_purchaser, _traits, _generation, _gender, _ranking);
         emit DepositorBalance(_purchaser, depositsByAddress[_purchaser]);
         return (tokenId, serial);
     }
