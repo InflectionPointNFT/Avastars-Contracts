@@ -9,6 +9,7 @@
 - Slots are zero based, genes are one based, e.g. Gene 1 is stored in Slot 0.
 - A single uint256 value representing up to 32 combined Genes will be referred to hereinafter as a hash.
  
+
 ## Storing Values In Slots
 To store a value n (where n >= 0 and n < 256), into slot s (where s >= 0 and s < 32): n x (256 ^ s)
 ```
