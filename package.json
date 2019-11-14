@@ -7,7 +7,7 @@
     "ganache:start": "node ./start-ganache.js",
     "truffle:start": "npx truffle console",
     "uml:generate": "sol2uml ./contracts -f png -o docs/AvastarsUML.png",
-    "doc:docgen": "solidity-docgen --solc-settings \"{remappings: ['@openzeppelin=./node_modules/@openzeppelin']}\" -o ./docs --contract-pages",
+    "doc:docgen": "solidity-docgen --solc-settings \"{remappings: ['@openzeppelin=./node_modules/@openzeppelin']}\" -o ./docgen --contract-pages",
     "doc:soldoc": "soldoc --output docsify --ignore Migrations.sol docs/ contracts/"
   },
   "repository": {
@@ -31,6 +31,7 @@
     "soldoc": "^0.1.2-beta.0",
     "solhint": "^2.3.0",
     "solidity-docgen": "^0.3.12",
+    "solidoc": "^1.0.5",
     "truffle": "^5.0.39",
     "truffle-assertions": "^0.9.1",
     "truffle-contract": "^4.0.31",
