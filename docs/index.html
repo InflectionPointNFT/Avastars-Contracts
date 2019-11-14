@@ -19,6 +19,10 @@
             loadSidebar: true,
             notFoundPage: true,
             logo: '/_media/logo.svg',
+            requestHeaders: {
+                'Cache-Control': 'no-store',
+                'Cache-Control': 'max-age=0'
+            },
             alias: {
                 '/.*/_sidebar.md': '/_sidebar.md'
             },
