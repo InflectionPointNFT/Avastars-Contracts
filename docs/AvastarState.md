@@ -9,13 +9,18 @@ View Source: [contracts/AvastarState.sol](https://github.com/Dapp-Wizards/Avasta
 
 ## Constructor
 
-Constructor
+Calls ERC721Full constructor with token name and symbol.
 
 ```solidity
 constructor(string memory TOKEN_NAME, string memory TOKEN_SYMBOL) public
 ```
 
 **Arguments**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| TOKEN_NAME | string memory |  | 
+| TOKEN_SYMBOL | string memory |  | 
 
 ## Contract Members
 **Constants & Variables**
@@ -34,11 +39,6 @@ mapping(uint8 => mapping(uint8 => mapping(uint256 => uint256))) public tokenIdBy
 mapping(uint256 => address) public traitHandlerByPrimeTokenId;
 
 ```
-
-| Name        | Type           | Description  |
-| ------------- |------------- | -----|
-| TOKEN_NAME | string memory |  | 
-| TOKEN_SYMBOL | string memory |  | 
 
 ## **Functions**
 

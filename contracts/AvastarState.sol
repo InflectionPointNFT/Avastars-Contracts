@@ -11,8 +11,7 @@ import "@openzeppelin/contracts/token/ERC721/ERC721Full.sol";
 contract AvastarState is AvastarTypes, AccessControl, ERC721Full {
 
     /**
-     * @notice Constructor
-     * @dev calls ERC721Full constructor with token name and symbol
+     * @notice Calls ERC721Full constructor with token name and symbol.
      */
     constructor() public ERC721Full(TOKEN_NAME, TOKEN_SYMBOL) {}
 

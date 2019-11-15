@@ -1,4 +1,4 @@
-# AccessControl
+# Access Control
 
 View Source: [contracts/AccessControl.sol](https://github.com/Dapp-Wizards/Avastars-Contracts/blob/master/contracts/AccessControl.sol)
 

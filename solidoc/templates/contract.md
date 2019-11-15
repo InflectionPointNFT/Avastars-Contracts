@@ -7,20 +7,18 @@
 
 **{{ContractName}}**
 
-
 {{ContractDescription}}
-
 
 {{ConstructorHeading}}
 
-
 {{ConstructorDescription}}
-
 
 {{ConstructorCode}}
 
-
 {{ConstructorArgumentsHeading}}
+
+{{TableHeader}}
+{{ConstructorArguments}}
 
 {{Enumerators}}
 
@@ -29,9 +27,6 @@
 {{Members}}
 
 {{Events}}
-
-{{TableHeader}}
-{{ConstructorArguments}}
 
 {{ModifierTitle}}
 
