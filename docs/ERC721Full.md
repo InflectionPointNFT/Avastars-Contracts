@@ -21,7 +21,6 @@ constructor(string memory name, string memory symbol) public
 
 | Name        | Type           | Description  |
 | ------------- |------------- | -----|
-
 | name | string memory |  | 
 | symbol | string memory |  | 
 

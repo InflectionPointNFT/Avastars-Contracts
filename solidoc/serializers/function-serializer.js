@@ -45,7 +45,7 @@ module.exports = {
       // return `- [${x.name}(${parameterList.join(", ")})](#${x.name.toLowerCase()})`; // include parameters
     }).toArray();
 
-    template = template.replace("{{FunctionTitle}}", i18n.translate("Functions"));
+    template = template.replace("{{FunctionTitle}}", `## **${i18n.translate("Functions")}**`);
 
     for(let i in functionNodes) {
       const node = functionNodes[i];

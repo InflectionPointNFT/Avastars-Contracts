@@ -9,6 +9,8 @@ View Source: [@openzeppelin/contracts/token/ERC721/IERC721Metadata.sol](https://
 
 See https://eips.ethereum.org/EIPS/eip-721
 
+## **Functions**
+
 - [name](#name)
 - [symbol](#symbol)
 - [tokenURI](#tokenuri)

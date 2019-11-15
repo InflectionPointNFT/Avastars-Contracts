@@ -28,6 +28,8 @@ modifier restricted() internal
 | Name        | Type           | Description  |
 | ------------- |------------- | -----|
 
+## **Functions**
+
 - [setCompleted](#setcompleted)
 - [upgrade](#upgrade)
 

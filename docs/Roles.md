@@ -15,6 +15,8 @@ struct Role {
 }
 ```
 
+## **Functions**
+
 - [add](#add)
 - [remove](#remove)
 - [has](#has)

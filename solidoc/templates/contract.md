@@ -22,19 +22,15 @@
 
 {{ConstructorArgumentsHeading}}
 
-
 {{Enumerators}}
 
-
 {{Structs}}
-
 
 {{Members}}
 
 {{Events}}
 
 {{TableHeader}}
-
 {{ConstructorArguments}}
 
 {{ModifierTitle}}
@@ -42,6 +38,8 @@
 {{ModifierList}}
 
 {{AllModifiers}}
+
+{{FunctionTitle}}
 
 {{FunctionList}}
 

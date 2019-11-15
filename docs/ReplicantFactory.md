@@ -13,6 +13,8 @@ View Source: [contracts/ReplicantFactory.sol](https://github.com/Dapp-Wizards/Av
 event NewReplicant(uint256  id, uint256  serial, enum AvastarTypes.Generation  generation, enum AvastarTypes.Gender  gender, uint256  traits);
 ```
 
+## **Functions**
+
 - [getReplicantByGenerationAndSerial](#getreplicantbygenerationandserial)
 - [getReplicantByTokenId](#getreplicantbytokenid)
 - [mintReplicant](#mintreplicant)

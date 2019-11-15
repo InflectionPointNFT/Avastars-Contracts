@@ -7,6 +7,8 @@ View Source: [@openzeppelin/contracts/token/ERC721/IERC721Receiver.sol](https://
 Interface for any contract that wants to support safeTransfers
 from ERC721 asset contracts.
 
+## **Functions**
+
 - [onERC721Received](#onerc721received)
 
 ### onERC721Received

@@ -20,6 +20,8 @@ struct Counter {
 }
 ```
 
+## **Functions**
+
 - [current](#current)
 - [increment](#increment)
 - [decrement](#decrement)

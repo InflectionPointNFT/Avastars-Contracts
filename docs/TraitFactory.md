@@ -13,6 +13,8 @@ View Source: [contracts/TraitFactory.sol](https://github.com/Dapp-Wizards/Avasta
 event NewTrait(uint256  id, enum AvastarTypes.Gene  gene, uint8  variation, string  name);
 ```
 
+## **Functions**
+
 - [getTrait](#gettrait)
 - [getTraitIdByGenerationGeneAndVariation](#gettraitidbygenerationgeneandvariation)
 - [createTrait](#createtrait)

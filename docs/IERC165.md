@@ -12,6 +12,8 @@ https://eips.ethereum.org/EIPS/eip-165[EIP].
 queried by others ({ERC165Checker}).
  * For an implementation, see {ERC165}.
 
+## **Functions**
+
 - [supportsInterface](#supportsinterface)
 
 ### supportsInterface

@@ -21,6 +21,8 @@ bytes4 private constant _INTERFACE_ID_ERC721_ENUMERABLE;
 
 ```
 
+## **Functions**
+
 - [tokenOfOwnerByIndex](#tokenofownerbyindex)
 - [totalSupply](#totalsupply)
 - [tokenByIndex](#tokenbyindex)

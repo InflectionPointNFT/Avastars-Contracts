@@ -121,6 +121,8 @@ modifier whenNotUpgraded() internal
 | Name        | Type           | Description  |
 | ------------- |------------- | -----|
 
+## **Functions**
+
 - [upgradeContract](#upgradecontract)
 - [addMinter](#addminter)
 - [addOwner](#addowner)

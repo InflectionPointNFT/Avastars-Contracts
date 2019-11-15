@@ -37,9 +37,10 @@ mapping(uint256 => address) public traitHandlerByPrimeTokenId;
 
 | Name        | Type           | Description  |
 | ------------- |------------- | -----|
-
 | TOKEN_NAME | string memory |  | 
 | TOKEN_SYMBOL | string memory |  | 
+
+## **Functions**
 
 - [trackAvastar](#trackavastar)
 

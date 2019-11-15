@@ -13,6 +13,8 @@ View Source: [contracts/PrimeFactory.sol](https://github.com/Dapp-Wizards/Avasta
 event NewPrime(uint256  id, uint256  serial, enum AvastarTypes.Generation  generation, enum AvastarTypes.Series  series, enum AvastarTypes.Gender  gender, uint256  traits);
 ```
 
+## **Functions**
+
 - [getPrimeByGenerationAndSerial](#getprimebygenerationandserial)
 - [getPrimeByTokenId](#getprimebytokenid)
 - [mintPrime](#mintprime)
