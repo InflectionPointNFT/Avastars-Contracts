@@ -7,6 +7,16 @@ View Source: [contracts/AvastarState.sol](https://github.com/Dapp-Wizards/Avasta
 
 **AvastarState**
 
+## Constructor
+
+Constructor
+
+```solidity
+constructor(string memory TOKEN_NAME, string memory TOKEN_SYMBOL) public
+```
+
+**Arguments**
+
 ## Contract Members
 **Constants & Variables**
 
@@ -25,23 +35,13 @@ mapping(uint256 => address) public traitHandlerByPrimeTokenId;
 
 ```
 
-## Functions
-
-- [](#)
-- [trackAvastar](#trackavastar)
-
-### 
-
-Constructor
-
-```solidity
-function () public nonpayable ERC721Full 
-```
-
-**Arguments**
-
 | Name        | Type           | Description  |
 | ------------- |------------- | -----|
+
+| TOKEN_NAME | string memory |  | 
+| TOKEN_SYMBOL | string memory |  | 
+
+- [trackAvastar](#trackavastar)
 
 ### trackAvastar
 

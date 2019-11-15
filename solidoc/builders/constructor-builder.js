@@ -58,8 +58,10 @@ module.exports = {
     template = template.replace("{{ConstructorCode}}", code.join(""));
     template = template.replace("{{ConstructorArguments}}", argBuilder.join(""));
 
-    template = template.replace("{{ConstructorArgumentsHeading}}", `**${i18n.translate("Arguments")}**`);
-    template = template.replace("{{TableHeader}}", templateHelper.TableHeaderTemplate);
+    if (args && args.length) {
+      template = template.replace("{{ConstructorArgumentsHeading}}", `**${i18n.translate("Arguments")}**`);
+      template = template.replace("{{TableHeader}}", templateHelper.TableHeaderTemplate);
+    }
 
     return template;
   }

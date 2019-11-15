@@ -9,8 +9,6 @@ View Source: [@openzeppelin/contracts/token/ERC721/IERC721Enumerable.sol](https:
 
 See https://eips.ethereum.org/EIPS/eip-721
 
-## Functions
-
 - [totalSupply](#totalsupply)
 - [tokenOfOwnerByIndex](#tokenofownerbyindex)
 - [tokenByIndex](#tokenbyindex)

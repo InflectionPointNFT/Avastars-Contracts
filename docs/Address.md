@@ -6,8 +6,6 @@ View Source: [@openzeppelin/contracts/utils/Address.sol](https://github.com/Dapp
 
 Collection of functions related to the address type
 
-## Functions
-
 - [isContract](#iscontract)
 - [toPayable](#topayable)
 - [sendValue](#sendvalue)

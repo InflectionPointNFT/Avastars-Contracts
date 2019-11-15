@@ -15,8 +15,6 @@ event TraitAccessApproved(address indexed handler, uint256[]  primeIds);
 event TraitsUsed(address indexed handler, uint256  primeId, bool[]  used);
 ```
 
-## Functions
-
 - [isAvastarTeleporter](#isavastarteleporter)
 - [approveTraitAccess](#approvetraitaccess)
 - [useTraits](#usetraits)

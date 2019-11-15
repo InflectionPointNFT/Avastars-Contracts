@@ -22,7 +22,7 @@ module.exports = {
     const allFunctions = nodeHelper.getFunctions(contract);
 
     const functionNodes = enumerable.from(allFunctions).where(function(x) {
-      return !x.isConstructor;
+      return x.kind !== "constructor";
     }).toArray();
 
     if(!functionNodes || !functionNodes.length) {

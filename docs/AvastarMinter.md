@@ -33,8 +33,6 @@ event FranchiseBalanceWithdrawn(address indexed owner, uint256  amount);
 event TeleporterContractSet(address  contractAddress);
 ```
 
-## Functions
-
 - [setTeleporterContract](#setteleportercontract)
 - [setCurrentGeneration](#setcurrentgeneration)
 - [setCurrentSeries](#setcurrentseries)

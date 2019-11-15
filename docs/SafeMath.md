@@ -14,8 +14,6 @@ operation overflows.
  * Using this library instead of the unchecked operations eliminates an entire
 class of bugs, so it's recommended to use it always.
 
-## Functions
-
 - [add](#add)
 - [sub](#sub)
 - [sub](#sub)

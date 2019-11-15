@@ -24,10 +24,7 @@ module.exports = {
   },
 
   enumerate: function(sourceDirectory) {
-    logger.info("Enumerating %s", sourceDirectory);
-    const files = glob.sync(sourceDirectory + "/**/*.sol", {});
-    console.log(files);
-    return files;
+    return glob.sync(sourceDirectory + "/**/*.sol", {});
   }
 
 };

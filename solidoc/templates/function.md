@@ -4,11 +4,9 @@
 
 {{References}}
 
-
 {{FunctionDescription}}
 
 {{FunctionCode}}
-
 
 {{FunctionArgumentsHeading}}
 

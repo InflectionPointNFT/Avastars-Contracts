@@ -6,22 +6,8 @@ View Source: [@openzeppelin/contracts/GSN/Context.sol](https://github.com/Dapp-W
 
 **Context**
 
-## Functions
-
-- [](#)
 - [_msgSender](#_msgsender)
 - [_msgData](#_msgdata)
-
-### 
-
-```solidity
-function () internal nonpayable
-```
-
-**Arguments**
-
-| Name        | Type           | Description  |
-| ------------- |------------- | -----|
 
 ### _msgSender
 

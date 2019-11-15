@@ -4,7 +4,7 @@ import "@openzeppelin/contracts/access/Roles.sol";
 import "@openzeppelin/contracts/math/SafeMath.sol";
 
 /**
- * @title AccessControl
+ * @title Access Control
  * @author Cliff Hall
  * @notice Role-based access control and related functions, function modifiers, and events
  */
@@ -19,7 +19,7 @@ contract AccessControl {
 
     /**
      * @notice Constructor.
-     * @dev Sets msg.sender as owner and system admin by default
+     * @notice Sets msg.sender as owner and system admin by default
      */
     constructor() public {
         paused = true; // Start paused. un-paused after full migration

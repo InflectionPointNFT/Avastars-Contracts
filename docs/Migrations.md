@@ -28,22 +28,8 @@ modifier restricted() internal
 | Name        | Type           | Description  |
 | ------------- |------------- | -----|
 
-## Functions
-
-- [](#)
 - [setCompleted](#setcompleted)
 - [upgrade](#upgrade)
-
-### 
-
-```solidity
-function () public nonpayable
-```
-
-**Arguments**
-
-| Name        | Type           | Description  |
-| ------------- |------------- | -----|
 
 ### setCompleted
 

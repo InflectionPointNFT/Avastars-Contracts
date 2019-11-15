@@ -11,20 +11,17 @@ This implementation includes all the required and some optional functionality of
 Moreover, it includes approve all functionality using operator terminology.
  * See https://eips.ethereum.org/EIPS/eip-721
 
-## Functions
-
-- [](#)
-
-### 
+## Constructor
 
 ```solidity
-function (string name, string symbol) public nonpayable ERC721Metadata 
+constructor(string memory name, string memory symbol) public
 ```
 
 **Arguments**
 
 | Name        | Type           | Description  |
 | ------------- |------------- | -----|
-| name | string |  | 
-| symbol | string |  | 
+
+| name | string memory |  | 
+| symbol | string memory |  | 
 

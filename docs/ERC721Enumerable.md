@@ -21,9 +21,6 @@ bytes4 private constant _INTERFACE_ID_ERC721_ENUMERABLE;
 
 ```
 
-## Functions
-
-- [](#)
 - [tokenOfOwnerByIndex](#tokenofownerbyindex)
 - [totalSupply](#totalsupply)
 - [tokenByIndex](#tokenbyindex)
@@ -35,19 +32,6 @@ bytes4 private constant _INTERFACE_ID_ERC721_ENUMERABLE;
 - [_addTokenToAllTokensEnumeration](#_addtokentoalltokensenumeration)
 - [_removeTokenFromOwnerEnumeration](#_removetokenfromownerenumeration)
 - [_removeTokenFromAllTokensEnumeration](#_removetokenfromalltokensenumeration)
-
-### 
-
-Constructor function.
-
-```solidity
-function () public nonpayable
-```
-
-**Arguments**
-
-| Name        | Type           | Description  |
-| ------------- |------------- | -----|
 
 ### tokenOfOwnerByIndex
 

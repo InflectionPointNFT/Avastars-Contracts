@@ -121,27 +121,11 @@ modifier whenNotUpgraded() internal
 | Name        | Type           | Description  |
 | ------------- |------------- | -----|
 
-## Functions
-
-- [](#)
 - [upgradeContract](#upgradecontract)
 - [addMinter](#addminter)
 - [addOwner](#addowner)
 - [pause](#pause)
 - [unpause](#unpause)
-
-### 
-
-Constructor.
-
-```solidity
-function () public nonpayable
-```
-
-**Arguments**
-
-| Name        | Type           | Description  |
-| ------------- |------------- | -----|
 
 ### upgradeContract
 

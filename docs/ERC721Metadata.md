@@ -18,29 +18,11 @@ bytes4 private constant _INTERFACE_ID_ERC721_METADATA;
 
 ```
 
-## Functions
-
-- [](#)
 - [name](#name)
 - [symbol](#symbol)
 - [tokenURI](#tokenuri)
 - [_setTokenURI](#_settokenuri)
 - [_burn](#_burn)
-
-### 
-
-Constructor function
-
-```solidity
-function (string name, string symbol) public nonpayable
-```
-
-**Arguments**
-
-| Name        | Type           | Description  |
-| ------------- |------------- | -----|
-| name | string |  | 
-| symbol | string |  | 
 
 ### name
 

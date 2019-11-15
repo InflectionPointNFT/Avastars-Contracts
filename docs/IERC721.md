@@ -17,8 +17,6 @@ event Approval(address indexed owner, address indexed approved, uint256 indexed 
 event ApprovalForAll(address indexed owner, address indexed operator, bool  approved);
 ```
 
-## Functions
-
 - [balanceOf](#balanceof)
 - [ownerOf](#ownerof)
 - [safeTransferFrom](#safetransferfrom)

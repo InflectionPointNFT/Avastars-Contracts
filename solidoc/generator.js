@@ -67,7 +67,5 @@ module.exports = {
     const file = path.join(outputDirectory, `_sidebar.md`);
     logger.info("Writing %s.", file);
     fs.writeFileSync(file, sidebar);
-
-    // console.log(serializers.length);
   }
 };

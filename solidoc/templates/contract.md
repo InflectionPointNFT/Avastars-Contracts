@@ -5,8 +5,6 @@
 {{ContractInheritancePath}}
 {{ContractImplementations}}
 
-
-
 **{{ContractName}}**
 
 
@@ -36,23 +34,15 @@
 {{Events}}
 
 {{TableHeader}}
+
 {{ConstructorArguments}}
-
-
-
 
 {{ModifierTitle}}
 
-
 {{ModifierList}}
-
 
 {{AllModifiers}}
 
-
-## Functions
-
 {{FunctionList}}
-
 
 {{AllFunctions}}

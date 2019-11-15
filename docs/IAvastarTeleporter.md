@@ -8,8 +8,6 @@ View Source: [contracts/IAvastarTeleporter.sol](https://github.com/Dapp-Wizards/
 
 Declared with contract rather than interface as it must inherit for enum types
 
-## Functions
-
 - [isAvastarTeleporter](#isavastarteleporter)
 - [mintPrime](#mintprime)
 - [mintReplicant](#mintreplicant)
