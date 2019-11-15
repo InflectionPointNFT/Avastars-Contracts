@@ -1,6 +1,6 @@
 # SafeMath.sol
 
-View Source: [@openzeppelin/contracts/math/SafeMath.sol](https://github.com/Dapp-Wizards/@openzeppelin/contracts/math/SafeMath.sol)
+View Source: [@openzeppelin/contracts/math/SafeMath.sol](https://github.com/Dapp-Wizards/Avastars-Contracts/@openzeppelin/contracts/math/SafeMath.sol)
 
 **SafeMath**
 

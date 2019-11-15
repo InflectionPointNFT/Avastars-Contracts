@@ -1,6 +1,6 @@
 # IERC721.sol
 
-View Source: [@openzeppelin/contracts/token/ERC721/IERC721.sol](https://github.com/Dapp-Wizards/@openzeppelin/contracts/token/ERC721/IERC721.sol)
+View Source: [@openzeppelin/contracts/token/ERC721/IERC721.sol](https://github.com/Dapp-Wizards/Avastars-Contracts/@openzeppelin/contracts/token/ERC721/IERC721.sol)
 
 **↗ Extends: [IERC165](IERC165.md)**
 **↘ Derived Contracts: [ERC721](ERC721.md), [IERC721Enumerable](IERC721Enumerable.md), [IERC721Metadata](IERC721Metadata.md)**

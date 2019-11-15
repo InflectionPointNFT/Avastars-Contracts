@@ -1,6 +1,6 @@
 # ERC721 token receiver interface
 
-View Source: [@openzeppelin/contracts/token/ERC721/IERC721Receiver.sol](https://github.com/Dapp-Wizards/@openzeppelin/contracts/token/ERC721/IERC721Receiver.sol)
+View Source: [@openzeppelin/contracts/token/ERC721/IERC721Receiver.sol](https://github.com/Dapp-Wizards/Avastars-Contracts/@openzeppelin/contracts/token/ERC721/IERC721Receiver.sol)
 
 **IERC721Receiver**
 

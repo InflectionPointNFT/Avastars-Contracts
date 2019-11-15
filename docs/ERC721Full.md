@@ -1,6 +1,6 @@
 # Full ERC721 Token
 
-View Source: [@openzeppelin/contracts/token/ERC721/ERC721Full.sol](https://github.com/Dapp-Wizards/@openzeppelin/contracts/token/ERC721/ERC721Full.sol)
+View Source: [@openzeppelin/contracts/token/ERC721/ERC721Full.sol](https://github.com/Dapp-Wizards/Avastars-Contracts/@openzeppelin/contracts/token/ERC721/ERC721Full.sol)
 
 **↗ Extends: [ERC721](ERC721.md), [ERC721Enumerable](ERC721Enumerable.md), [ERC721Metadata](ERC721Metadata.md)**
 **↘ Derived Contracts: [AvastarState](AvastarState.md)**

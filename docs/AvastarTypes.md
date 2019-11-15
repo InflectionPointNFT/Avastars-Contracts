@@ -1,6 +1,6 @@
 # Avastar Data Types
 
-View Source: [contracts/AvastarTypes.sol](https://github.com/Dapp-Wizards/contracts/AvastarTypes.sol)
+View Source: [contracts/AvastarTypes.sol](https://github.com/Dapp-Wizards/Avastars-Contracts/contracts/AvastarTypes.sol)
 
 **↘ Derived Contracts: [AvastarMinter](AvastarMinter.md), [AvastarState](AvastarState.md), [IAvastarTeleporter](IAvastarTeleporter.md)**
 
