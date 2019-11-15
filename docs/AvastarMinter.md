@@ -96,11 +96,6 @@ Allow anyone to deposit ETH
 function deposit() external payable whenNotPaused 
 ```
 
-**Arguments**
-
-| Name        | Type           | Description  |
-| ------------- |------------- | -----|
-
 ### checkDepositorBalance
 
 Allow anyone to check their deposit balance
@@ -113,11 +108,6 @@ returns(uint256)
 **Returns**
 
 the depositor's current ETH balance in the contract
-
-**Arguments**
-
-| Name        | Type           | Description  |
-| ------------- |------------- | -----|
 
 ### withdrawDepositorBalance
 
@@ -132,11 +122,6 @@ returns(uint256)
 
 amount withdrawn
 
-**Arguments**
-
-| Name        | Type           | Description  |
-| ------------- |------------- | -----|
-
 ### checkFranchiseBalance
 
 Allow owner to check the withdrawable franchise balance
@@ -150,11 +135,6 @@ returns(uint256)
 
 the available franchise balance
 
-**Arguments**
-
-| Name        | Type           | Description  |
-| ------------- |------------- | -----|
-
 ### withdrawFranchiseBalance
 
 Allow an owner to withdraw the franchise balance
@@ -167,11 +147,6 @@ returns(uint256)
 **Returns**
 
 amount withdrawn
-
-**Arguments**
-
-| Name        | Type           | Description  |
-| ------------- |------------- | -----|
 
 ### purchasePrime
 

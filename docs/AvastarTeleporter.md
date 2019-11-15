@@ -34,11 +34,6 @@ returns(bool)
 
 always true
 
-**Arguments**
-
-| Name        | Type           | Description  |
-| ------------- |------------- | -----|
-
 ### approveTraitAccess
 
 Approve a handler to manage trait access for a set of Avastar Primes

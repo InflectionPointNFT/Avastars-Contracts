@@ -65,10 +65,10 @@ module.exports = {
       functionTemplate = functionTemplate.replace("{{References}}", references);
       functionTemplate = functionTemplate.replace("{{FunctionDescription}}", description);
       functionTemplate = functionTemplate.replace("{{FunctionCode}}", functionCode);
-      functionTemplate = functionTemplate.replace("{{FunctionArguments}}", args);
 
-      functionTemplate = functionTemplate.replace("{{TableHeader}}", parameters ? templateHelper.TableHeaderTemplate : "");
-      functionTemplate = functionTemplate.replace("{{FunctionArgumentsHeading}}", parameters ? `**${i18n.translate("Arguments")}**` : "");
+      functionTemplate = functionTemplate.replace("{{FunctionArgumentsHeading}}", args ? `**${i18n.translate("Arguments")}**` : "");
+      functionTemplate = functionTemplate.replace("{{TableHeader}}", args ? templateHelper.TableHeaderTemplate : "");
+      functionTemplate = functionTemplate.replace("{{FunctionArguments}}", args ? args : "");
 
       definitionList.push(functionTemplate);
     }

@@ -41,11 +41,6 @@ returns(string)
 
 string representing the token name
 
-**Arguments**
-
-| Name        | Type           | Description  |
-| ------------- |------------- | -----|
-
 ### symbol
 
 ⤾ overrides [IERC721Metadata.symbol](IERC721Metadata.md#symbol)
@@ -60,11 +55,6 @@ returns(string)
 **Returns**
 
 string representing the token symbol
-
-**Arguments**
-
-| Name        | Type           | Description  |
-| ------------- |------------- | -----|
 
 ### tokenURI
 

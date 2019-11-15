@@ -51,11 +51,6 @@ Modifier to scope access to system administrators
 modifier onlySysAdmin() internal
 ```
 
-**Arguments**
-
-| Name        | Type           | Description  |
-| ------------- |------------- | -----|
-
 ### onlyMinter
 
 Modifier to scope access to minters
@@ -63,11 +58,6 @@ Modifier to scope access to minters
 ```solidity
 modifier onlyMinter() internal
 ```
-
-**Arguments**
-
-| Name        | Type           | Description  |
-| ------------- |------------- | -----|
 
 ### onlyOwner
 
@@ -77,11 +67,6 @@ Modifier to scope access to owners
 modifier onlyOwner() internal
 ```
 
-**Arguments**
-
-| Name        | Type           | Description  |
-| ------------- |------------- | -----|
-
 ### whenNotPaused
 
 Modifier to make a function callable only when the contract is not paused.
@@ -89,11 +74,6 @@ Modifier to make a function callable only when the contract is not paused.
 ```solidity
 modifier whenNotPaused() internal
 ```
-
-**Arguments**
-
-| Name        | Type           | Description  |
-| ------------- |------------- | -----|
 
 ### whenPaused
 
@@ -103,11 +83,6 @@ Modifier to make a function callable only when the contract is paused.
 modifier whenPaused() internal
 ```
 
-**Arguments**
-
-| Name        | Type           | Description  |
-| ------------- |------------- | -----|
-
 ### whenNotUpgraded
 
 Modifier to make a function callable only when the contract not upgraded.
@@ -115,11 +90,6 @@ Modifier to make a function callable only when the contract not upgraded.
 ```solidity
 modifier whenNotUpgraded() internal
 ```
-
-**Arguments**
-
-| Name        | Type           | Description  |
-| ------------- |------------- | -----|
 
 ## **Functions**
 
@@ -177,11 +147,6 @@ Called by a system administrator to pause, triggers stopped state
 function pause() public nonpayable onlySysAdmin whenNotPaused 
 ```
 
-**Arguments**
-
-| Name        | Type           | Description  |
-| ------------- |------------- | -----|
-
 ### unpause
 
 Called by a system administrator to un-pause, returns to normal state
@@ -189,9 +154,4 @@ Called by a system administrator to un-pause, returns to normal state
 ```solidity
 function unpause() public nonpayable onlySysAdmin whenPaused whenNotUpgraded 
 ```
-
-**Arguments**
-
-| Name        | Type           | Description  |
-| ------------- |------------- | -----|
 

@@ -22,11 +22,6 @@ function isAvastarTeleporter() external pure
 returns(bool)
 ```
 
-**Arguments**
-
-| Name        | Type           | Description  |
-| ------------- |------------- | -----|
-
 ### mintPrime
 
 ```solidity

@@ -72,11 +72,6 @@ returns(uint256)
 
 uint256 representing the total amount of tokens
 
-**Arguments**
-
-| Name        | Type           | Description  |
-| ------------- |------------- | -----|
-
 ### tokenByIndex
 
 ⤾ overrides [IERC721Enumerable.tokenByIndex](IERC721Enumerable.md#tokenbyindex)

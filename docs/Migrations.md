@@ -23,11 +23,6 @@ uint256 public lastCompletedMigration;
 modifier restricted() internal
 ```
 
-**Arguments**
-
-| Name        | Type           | Description  |
-| ------------- |------------- | -----|
-
 ## **Functions**
 
 - [setCompleted](#setcompleted)

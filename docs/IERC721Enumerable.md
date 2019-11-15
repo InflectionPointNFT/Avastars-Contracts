@@ -24,11 +24,6 @@ function totalSupply() public view
 returns(uint256)
 ```
 
-**Arguments**
-
-| Name        | Type           | Description  |
-| ------------- |------------- | -----|
-
 ### tokenOfOwnerByIndex
 
 ⤿ Overridden Implementation(s): [ERC721Enumerable.tokenOfOwnerByIndex](ERC721Enumerable.md#tokenofownerbyindex)

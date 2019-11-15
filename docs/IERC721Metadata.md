@@ -24,11 +24,6 @@ function name() external view
 returns(string)
 ```
 
-**Arguments**
-
-| Name        | Type           | Description  |
-| ------------- |------------- | -----|
-
 ### symbol
 
 ⤿ Overridden Implementation(s): [ERC721Metadata.symbol](ERC721Metadata.md#symbol)
@@ -37,11 +32,6 @@ returns(string)
 function symbol() external view
 returns(string)
 ```
-
-**Arguments**
-
-| Name        | Type           | Description  |
-| ------------- |------------- | -----|
 
 ### tokenURI
 
