@@ -1,3 +1,3 @@
 # Avastars Contracts UML
 
- ![UML](../_media/AvastarsUML.png)
+ ![UML](../_media/AvastarsUML.svg)
