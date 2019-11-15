@@ -1,5 +1,5 @@
 * PROJECT
-	* [Home](project/)
+	* [Home](/)
 	* [Contract UML](project/ContractUML.md) 
 	* [Developer Setup](project/DeveloperSetup.md)
 	* [Trait Hash Bitmasking](project/TraitHashBitmasking.md)
