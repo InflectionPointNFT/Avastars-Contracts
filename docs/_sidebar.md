@@ -4,6 +4,7 @@
 	* [Developer Setup](DeveloperSetup.md)
 	* [Trait Hash Bitmasking](TraitHashBitmasking.md)
 	* [Unit Test Output](UnitTestOutput.md)
+
 * CONTRACTS
 	* [AccessControl](AccessControl.md)
 	* [AvastarMinter](AvastarMinter.md)
