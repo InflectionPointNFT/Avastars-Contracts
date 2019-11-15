@@ -1,4 +1,4 @@
-# Avastar Minter (AvastarMinter.sol)
+# Avastar Minter
 
 View Source: [contracts/AvastarMinter.sol](contracts/AvastarMinter.sol)
 

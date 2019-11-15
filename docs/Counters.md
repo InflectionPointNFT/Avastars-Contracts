@@ -1,4 +1,4 @@
-# Counters (Counters.sol)
+# Counters
 
 View Source: [@openzeppelin/contracts/drafts/Counters.sol](@openzeppelin/contracts/drafts/Counters.sol)
 

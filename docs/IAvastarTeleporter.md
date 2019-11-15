@@ -1,4 +1,4 @@
-# AvastarTeleporter Interface (IAvastarTeleporter.sol)
+# AvastarTeleporter Interface
 
 View Source: [contracts/IAvastarTeleporter.sol](contracts/IAvastarTeleporter.sol)
 

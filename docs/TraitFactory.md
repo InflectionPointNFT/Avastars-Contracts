@@ -1,4 +1,4 @@
-# Avastar Trait Factory (TraitFactory.sol)
+# Avastar Trait Factory
 
 View Source: [contracts/TraitFactory.sol](contracts/TraitFactory.sol)
 

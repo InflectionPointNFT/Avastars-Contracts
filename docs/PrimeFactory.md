@@ -1,4 +1,4 @@
-# Avastar Prime Factory (PrimeFactory.sol)
+# Avastar Prime Factory
 
 View Source: [contracts/PrimeFactory.sol](contracts/PrimeFactory.sol)
 

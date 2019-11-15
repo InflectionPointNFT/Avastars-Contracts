@@ -1,4 +1,4 @@
-# ERC721 token receiver interface (IERC721Receiver.sol)
+# ERC721 token receiver interface
 
 View Source: [@openzeppelin/contracts/token/ERC721/IERC721Receiver.sol](@openzeppelin/contracts/token/ERC721/IERC721Receiver.sol)
 

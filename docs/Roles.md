@@ -1,4 +1,4 @@
-# Roles (Roles.sol)
+# Roles
 
 View Source: [@openzeppelin/contracts/access/Roles.sol](@openzeppelin/contracts/access/Roles.sol)
 

@@ -1,4 +1,4 @@
-# Avastar Data Types (AvastarTypes.sol)
+# Avastar Data Types
 
 View Source: [contracts/AvastarTypes.sol](contracts/AvastarTypes.sol)
 

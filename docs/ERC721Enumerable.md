@@ -1,4 +1,4 @@
-# ERC-721 Non-Fungible Token with optional enumeration extension logic (ERC721Enumerable.sol)
+# ERC-721 Non-Fungible Token with optional enumeration extension logic
 
 View Source: [@openzeppelin/contracts/token/ERC721/ERC721Enumerable.sol](@openzeppelin/contracts/token/ERC721/ERC721Enumerable.sol)
 

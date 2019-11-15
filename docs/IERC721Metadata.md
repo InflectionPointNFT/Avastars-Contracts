@@ -1,4 +1,4 @@
-# ERC-721 Non-Fungible Token Standard, optional metadata extension (IERC721Metadata.sol)
+# ERC-721 Non-Fungible Token Standard, optional metadata extension
 
 View Source: [@openzeppelin/contracts/token/ERC721/IERC721Metadata.sol](@openzeppelin/contracts/token/ERC721/IERC721Metadata.sol)
 

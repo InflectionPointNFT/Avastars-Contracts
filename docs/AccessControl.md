@@ -1,4 +1,4 @@
-# AccessControl (AccessControl.sol)
+# AccessControl
 
 View Source: [contracts/AccessControl.sol](contracts/AccessControl.sol)
 

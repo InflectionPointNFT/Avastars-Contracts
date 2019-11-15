@@ -1,4 +1,4 @@
-# ERC-721 Non-Fungible Token Standard, optional enumeration extension (IERC721Enumerable.sol)
+# ERC-721 Non-Fungible Token Standard, optional enumeration extension
 
 View Source: [@openzeppelin/contracts/token/ERC721/IERC721Enumerable.sol](@openzeppelin/contracts/token/ERC721/IERC721Enumerable.sol)
 

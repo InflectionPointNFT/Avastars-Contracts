@@ -1,4 +1,4 @@
-# Avastar Replicant Factory (ReplicantFactory.sol)
+# Avastar Replicant Factory
 
 View Source: [contracts/ReplicantFactory.sol](contracts/ReplicantFactory.sol)
 

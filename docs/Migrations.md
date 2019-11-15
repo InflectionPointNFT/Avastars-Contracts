@@ -1,4 +1,4 @@
-# Standard migrations management contract (Migrations.sol)
+# Standard migrations management contract
 
 View Source: [contracts/Migrations.sol](contracts/Migrations.sol)
 

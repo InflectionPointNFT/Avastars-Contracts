@@ -1,4 +1,4 @@
-# Avastar State (AvastarState.sol)
+# Avastar State
 
 View Source: [contracts/AvastarState.sol](contracts/AvastarState.sol)
 

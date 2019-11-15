@@ -1,4 +1,4 @@
-# AvastarTeleporter (AvastarTeleporter.sol)
+# AvastarTeleporter
 
 View Source: [contracts/AvastarTeleporter.sol](contracts/AvastarTeleporter.sol)
 

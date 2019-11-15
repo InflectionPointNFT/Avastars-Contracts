@@ -1,4 +1,4 @@
-# Full ERC721 Token (ERC721Full.sol)
+# Full ERC721 Token
 
 View Source: [@openzeppelin/contracts/token/ERC721/ERC721Full.sol](@openzeppelin/contracts/token/ERC721/ERC721Full.sol)
 
