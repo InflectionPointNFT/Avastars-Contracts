@@ -1,33 +1,71 @@
-# AvastarTeleporter
+# AvastarTeleporter (AvastarTeleporter.sol)
+
+View Source: [contracts/AvastarTeleporter.sol](contracts/AvastarTeleporter.sol)
+
+**↗ Extends: [ReplicantFactory](ReplicantFactory.md)**
+
+**AvastarTeleporter**
+
 Management of Avastar Primes, Replicants, and Traits
-## isAvastarTeleporter
+
+## Events
+
+```solidity
+event TraitAccessApproved(address indexed handler, uint256[]  primeIds);
+event TraitsUsed(address indexed handler, uint256  primeId, bool[]  used);
+```
+
+## Functions
+
+- [isAvastarTeleporter](#isavastarteleporter)
+- [approveTraitAccess](#approvetraitaccess)
+- [useTraits](#usetraits)
+
+### isAvastarTeleporter
 
 Acknowledge contract is AvastarTeleporter
 
+```solidity
+function isAvastarTeleporter() external pure
+returns(bool)
+```
 
-|Input/Output|Data Type|Variable Name|Comment|
-|----------|----------|----------|----------|
-|output|bool|N/A|always true|
+**Returns**
 
-## approveTraitAccess
+always true
+
+**Arguments**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+
+### approveTraitAccess
 
 Approve a handler to manage trait access for a set of Avastar Primes
 
+```solidity
+function approveTraitAccess(address _handler, uint256[] _primeIds) external nonpayable
+```
 
-|Input/Output|Data Type|Variable Name|Comment|
-|----------|----------|----------|----------|
-|input|address|_handler|the address approved for Trait access|
-|input|undefined|_primeIds|the token ids for which to approve the handler|
+**Arguments**
 
-## useTraits
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _handler | address | the address approved for Trait access | 
+| _primeIds | uint256[] | the token ids for which to approve the handler | 
 
-*Caller must be token owner OR the approved handler*
+### useTraits
 
 Mark some or all of an Avastar Prime's traits used.
 
+```solidity
+function useTraits(uint256 _primeId, bool[] _traitFlags) external nonpayable
+```
 
-|Input/Output|Data Type|Variable Name|Comment|
-|----------|----------|----------|----------|
-|input|uint256|_primeId|the token id for the Prime whose Traits are to be used|
-|input|undefined|_traitFlags|an array of no more than 32 booleans representing the Traits to be used|
+**Arguments**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _primeId | uint256 | the token id for the Prime whose Traits are to be used | 
+| _traitFlags | bool[] | an array of no more than 32 booleans representing the Traits to be used | 
 

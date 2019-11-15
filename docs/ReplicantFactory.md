@@ -1,49 +1,71 @@
-# ReplicantFactory
-## getReplicantByGenerationAndSerial
+# Avastar Replicant Factory (ReplicantFactory.sol)
+
+View Source: [contracts/ReplicantFactory.sol](contracts/ReplicantFactory.sol)
+
+**↗ Extends: [PrimeFactory](PrimeFactory.md)**
+**↘ Derived Contracts: [AvastarTeleporter](AvastarTeleporter.md)**
+
+**ReplicantFactory**
+
+## Events
+
+```solidity
+event NewReplicant(uint256  id, uint256  serial, enum AvastarTypes.Generation  generation, enum AvastarTypes.Gender  gender, uint256  traits);
+```
+
+## Functions
+
+- [getReplicantByGenerationAndSerial](#getreplicantbygenerationandserial)
+- [getReplicantByTokenId](#getreplicantbytokenid)
+- [mintReplicant](#mintreplicant)
+
+### getReplicantByGenerationAndSerial
 
 Get the Avastar Replicant associated by Generation and Serial
 
+```solidity
+function getReplicantByGenerationAndSerial(enum AvastarTypes.Generation _generation, uint256 _serial) external view
+returns(uint256, uint256, uint256, enum AvastarTypes.Generation, enum AvastarTypes.Gender, uint8)
+```
 
-|Input/Output|Data Type|Variable Name|Comment|
-|----------|----------|----------|----------|
-|input|undefined|_generation|undefined|
-|input|uint256|_serial|undefined|
-|output|uint256|N/A|N/A|
-|output|uint256|N/A|N/A|
-|output|uint256|N/A|N/A|
-|output|undefined|N/A|N/A|
-|output|undefined|N/A|N/A|
-|output|uint8|N/A|N/A|
+**Arguments**
 
-## getReplicantByTokenId
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _generation | enum AvastarTypes.Generation |  | 
+| _serial | uint256 |  | 
+
+### getReplicantByTokenId
 
 Get the Avastar Replicant associated with a given Token ID
 
+```solidity
+function getReplicantByTokenId(uint256 _tokenId) external view
+returns(uint256, uint256, uint256, enum AvastarTypes.Generation, enum AvastarTypes.Gender, uint8)
+```
 
-|Input/Output|Data Type|Variable Name|Comment|
-|----------|----------|----------|----------|
-|input|uint256|_tokenId|undefined|
-|output|uint256|N/A|N/A|
-|output|uint256|N/A|N/A|
-|output|uint256|N/A|N/A|
-|output|undefined|N/A|N/A|
-|output|undefined|N/A|N/A|
-|output|uint8|N/A|N/A|
+**Arguments**
 
-## mintReplicant
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _tokenId | uint256 |  | 
 
-*Only invokable by minter role, when contract is not paused*
+### mintReplicant
 
 Mint an Avastar Replicant
 
+```solidity
+function mintReplicant(address _owner, uint256 _traits, enum AvastarTypes.Generation _generation, enum AvastarTypes.Gender _gender, uint8 _ranking) external nonpayable onlyMinter whenNotPaused 
+returns(uint256, uint256)
+```
 
-|Input/Output|Data Type|Variable Name|Comment|
-|----------|----------|----------|----------|
-|input|address|_owner|undefined|
-|input|uint256|_traits|undefined|
-|input|undefined|_generation|undefined|
-|input|undefined|_gender|undefined|
-|input|uint8|_ranking|undefined|
-|output|uint256|N/A|N/A|
-|output|uint256|N/A|N/A|
+**Arguments**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _owner | address |  | 
+| _traits | uint256 |  | 
+| _generation | enum AvastarTypes.Generation |  | 
+| _gender | enum AvastarTypes.Gender |  | 
+| _ranking | uint8 |  | 
 

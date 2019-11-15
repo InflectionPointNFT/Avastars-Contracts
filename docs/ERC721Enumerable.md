@@ -1,6 +1,6 @@
 # ERC-721 Non-Fungible Token with optional enumeration extension logic (ERC721Enumerable.sol)
 
-View Source: [@openzeppelin/contracts/token/ERC721/ERC721Enumerable.sol](../@openzeppelin/contracts/token/ERC721/ERC721Enumerable.sol)
+View Source: [@openzeppelin/contracts/token/ERC721/ERC721Enumerable.sol](@openzeppelin/contracts/token/ERC721/ERC721Enumerable.sol)
 
 **↗ Extends: [Context](Context.md), [ERC165](ERC165.md), [ERC721](ERC721.md), [IERC721Enumerable](IERC721Enumerable.md)**
 **↘ Derived Contracts: [ERC721Full](ERC721Full.md)**
@@ -12,7 +12,7 @@ See https://eips.ethereum.org/EIPS/eip-721
 ## Contract Members
 **Constants & Variables**
 
-```js
+```solidity
 mapping(address => uint256[]) private _ownedTokens;
 mapping(uint256 => uint256) private _ownedTokensIndex;
 uint256[] private _allTokens;
@@ -23,24 +23,24 @@ bytes4 private constant _INTERFACE_ID_ERC721_ENUMERABLE;
 
 ## Functions
 
-- [()](#)
-- [tokenOfOwnerByIndex(address owner, uint256 index)](#tokenofownerbyindex)
-- [totalSupply()](#totalsupply)
-- [tokenByIndex(uint256 index)](#tokenbyindex)
-- [_transferFrom(address from, address to, uint256 tokenId)](#_transferfrom)
-- [_mint(address to, uint256 tokenId)](#_mint)
-- [_burn(address owner, uint256 tokenId)](#_burn)
-- [_tokensOfOwner(address owner)](#_tokensofowner)
-- [_addTokenToOwnerEnumeration(address to, uint256 tokenId)](#_addtokentoownerenumeration)
-- [_addTokenToAllTokensEnumeration(uint256 tokenId)](#_addtokentoalltokensenumeration)
-- [_removeTokenFromOwnerEnumeration(address from, uint256 tokenId)](#_removetokenfromownerenumeration)
-- [_removeTokenFromAllTokensEnumeration(uint256 tokenId)](#_removetokenfromalltokensenumeration)
+- [](#)
+- [tokenOfOwnerByIndex](#tokenofownerbyindex)
+- [totalSupply](#totalsupply)
+- [tokenByIndex](#tokenbyindex)
+- [_transferFrom](#_transferfrom)
+- [_mint](#_mint)
+- [_burn](#_burn)
+- [_tokensOfOwner](#_tokensofowner)
+- [_addTokenToOwnerEnumeration](#_addtokentoownerenumeration)
+- [_addTokenToAllTokensEnumeration](#_addtokentoalltokensenumeration)
+- [_removeTokenFromOwnerEnumeration](#_removetokenfromownerenumeration)
+- [_removeTokenFromAllTokensEnumeration](#_removetokenfromalltokensenumeration)
 
 ### 
 
 Constructor function.
 
-```js
+```solidity
 function () public nonpayable
 ```
 
@@ -55,7 +55,7 @@ function () public nonpayable
 
 Gets the token ID at a given index of the tokens list of the requested owner.
 
-```js
+```solidity
 function tokenOfOwnerByIndex(address owner, uint256 index) public view
 returns(uint256)
 ```
@@ -77,7 +77,7 @@ uint256 token ID at the given index of the tokens list owned by the requested ad
 
 Gets the total amount of tokens stored by the contract.
 
-```js
+```solidity
 function totalSupply() public view
 returns(uint256)
 ```
@@ -98,7 +98,7 @@ uint256 representing the total amount of tokens
 Gets the token ID at a given index of all the tokens in this contract
 Reverts if the index is greater or equal to the total number of tokens.
 
-```js
+```solidity
 function tokenByIndex(uint256 index) public view
 returns(uint256)
 ```
@@ -120,7 +120,7 @@ uint256 token ID at the given index of the tokens list
 Internal function to transfer ownership of a given token ID to another address.
 As opposed to transferFrom, this imposes no restrictions on msg.sender.
 
-```js
+```solidity
 function _transferFrom(address from, address to, uint256 tokenId) internal nonpayable
 ```
 
@@ -139,7 +139,7 @@ function _transferFrom(address from, address to, uint256 tokenId) internal nonpa
 Internal function to mint a new token.
 Reverts if the given token ID already exists.
 
-```js
+```solidity
 function _mint(address to, uint256 tokenId) internal nonpayable
 ```
 
@@ -158,7 +158,7 @@ Internal function to burn a specific token.
 Reverts if the token does not exist.
 Deprecated, use {ERC721-_burn} instead.
 
-```js
+```solidity
 function _burn(address owner, uint256 tokenId) internal nonpayable
 ```
 
@@ -173,7 +173,7 @@ function _burn(address owner, uint256 tokenId) internal nonpayable
 
 Gets the list of token IDs of the requested owner.
 
-```js
+```solidity
 function _tokensOfOwner(address owner) internal view
 returns(uint256[])
 ```
@@ -192,7 +192,7 @@ uint256[] List of token IDs owned by the requested address
 
 Private function to add a token to this extension's ownership-tracking data structures.
 
-```js
+```solidity
 function _addTokenToOwnerEnumeration(address to, uint256 tokenId) private nonpayable
 ```
 
@@ -207,7 +207,7 @@ function _addTokenToOwnerEnumeration(address to, uint256 tokenId) private nonpay
 
 Private function to add a token to this extension's token tracking data structures.
 
-```js
+```solidity
 function _addTokenToAllTokensEnumeration(uint256 tokenId) private nonpayable
 ```
 
@@ -224,7 +224,7 @@ while the token is not assigned a new owner, the `_ownedTokensIndex` mapping is 
 gas optimizations e.g. when performing a transfer operation (avoiding double writes).
 This has O(1) time complexity, but alters the order of the _ownedTokens array.
 
-```js
+```solidity
 function _removeTokenFromOwnerEnumeration(address from, uint256 tokenId) private nonpayable
 ```
 
@@ -240,7 +240,7 @@ function _removeTokenFromOwnerEnumeration(address from, uint256 tokenId) private
 Private function to remove a token from this extension's token tracking data structures.
 This has O(1) time complexity, but alters the order of the _allTokens array.
 
-```js
+```solidity
 function _removeTokenFromAllTokensEnumeration(uint256 tokenId) private nonpayable
 ```
 
@@ -250,30 +250,3 @@ function _removeTokenFromAllTokensEnumeration(uint256 tokenId) private nonpayabl
 | ------------- |------------- | -----|
 | tokenId | uint256 | uint256 ID of the token to be removed from the tokens list | 
 
-## Contracts
-
-* [AccessControl](AccessControl.md)
-* [Address](Address.md)
-* [AvastarMinter](AvastarMinter.md)
-* [AvastarState](AvastarState.md)
-* [AvastarTeleporter](AvastarTeleporter.md)
-* [AvastarTypes](AvastarTypes.md)
-* [Context](Context.md)
-* [Counters](Counters.md)
-* [ERC165](ERC165.md)
-* [ERC721](ERC721.md)
-* [ERC721Enumerable](ERC721Enumerable.md)
-* [ERC721Full](ERC721Full.md)
-* [ERC721Metadata](ERC721Metadata.md)
-* [IAvastarTeleporter](IAvastarTeleporter.md)
-* [IERC165](IERC165.md)
-* [IERC721](IERC721.md)
-* [IERC721Enumerable](IERC721Enumerable.md)
-* [IERC721Metadata](IERC721Metadata.md)
-* [IERC721Receiver](IERC721Receiver.md)
-* [Migrations](Migrations.md)
-* [PrimeFactory](PrimeFactory.md)
-* [ReplicantFactory](ReplicantFactory.md)
-* [Roles](Roles.md)
-* [SafeMath](SafeMath.md)
-* [TraitFactory](TraitFactory.md)

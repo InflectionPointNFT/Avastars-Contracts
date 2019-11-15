@@ -1,6 +1,6 @@
 # IERC721.sol
 
-View Source: [@openzeppelin/contracts/token/ERC721/IERC721.sol](../@openzeppelin/contracts/token/ERC721/IERC721.sol)
+View Source: [@openzeppelin/contracts/token/ERC721/IERC721.sol](@openzeppelin/contracts/token/ERC721/IERC721.sol)
 
 **↗ Extends: [IERC165](IERC165.md)**
 **↘ Derived Contracts: [ERC721](ERC721.md), [IERC721Enumerable](IERC721Enumerable.md), [IERC721Metadata](IERC721Metadata.md)**
@@ -9,9 +9,9 @@ View Source: [@openzeppelin/contracts/token/ERC721/IERC721.sol](../@openzeppelin
 
 Required interface of an ERC721 compliant contract.
 
-**Events**
+## Events
 
-```js
+```solidity
 event Transfer(address indexed from, address indexed to, uint256 indexed tokenId);
 event Approval(address indexed owner, address indexed approved, uint256 indexed tokenId);
 event ApprovalForAll(address indexed owner, address indexed operator, bool  approved);
@@ -19,15 +19,15 @@ event ApprovalForAll(address indexed owner, address indexed operator, bool  appr
 
 ## Functions
 
-- [balanceOf(address owner)](#balanceof)
-- [ownerOf(uint256 tokenId)](#ownerof)
-- [safeTransferFrom(address from, address to, uint256 tokenId)](#safetransferfrom)
-- [transferFrom(address from, address to, uint256 tokenId)](#transferfrom)
-- [approve(address to, uint256 tokenId)](#approve)
-- [getApproved(uint256 tokenId)](#getapproved)
-- [setApprovalForAll(address operator, bool _approved)](#setapprovalforall)
-- [isApprovedForAll(address owner, address operator)](#isapprovedforall)
-- [safeTransferFrom(address from, address to, uint256 tokenId, bytes data)](#safetransferfrom)
+- [balanceOf](#balanceof)
+- [ownerOf](#ownerof)
+- [safeTransferFrom](#safetransferfrom)
+- [transferFrom](#transferfrom)
+- [approve](#approve)
+- [getApproved](#getapproved)
+- [setApprovalForAll](#setapprovalforall)
+- [isApprovedForAll](#isapprovedforall)
+- [safeTransferFrom](#safetransferfrom)
 
 ### balanceOf
 
@@ -35,7 +35,7 @@ event ApprovalForAll(address indexed owner, address indexed operator, bool  appr
 
 Returns the number of NFTs in `owner`'s account.
 
-```js
+```solidity
 function balanceOf(address owner) public view
 returns(balance uint256)
 ```
@@ -52,7 +52,7 @@ returns(balance uint256)
 
 Returns the owner of the NFT specified by `tokenId`.
 
-```js
+```solidity
 function ownerOf(uint256 tokenId) public view
 returns(owner address)
 ```
@@ -76,7 +76,7 @@ another (`to`).
 - If the caller is not `from`, it must be have been allowed to move this
 NFT by either {approve} or {setApprovalForAll}.
 
-```js
+```solidity
 function safeTransferFrom(address from, address to, uint256 tokenId) public nonpayable
 ```
 
@@ -98,7 +98,7 @@ another (`to`).
 - If the caller is not `from`, it must be approved to move this NFT by
 either {approve} or {setApprovalForAll}.
 
-```js
+```solidity
 function transferFrom(address from, address to, uint256 tokenId) public nonpayable
 ```
 
@@ -114,7 +114,7 @@ function transferFrom(address from, address to, uint256 tokenId) public nonpayab
 
 ⤿ Overridden Implementation(s): [ERC721.approve](ERC721.md#approve)
 
-```js
+```solidity
 function approve(address to, uint256 tokenId) public nonpayable
 ```
 
@@ -129,7 +129,7 @@ function approve(address to, uint256 tokenId) public nonpayable
 
 ⤿ Overridden Implementation(s): [ERC721.getApproved](ERC721.md#getapproved)
 
-```js
+```solidity
 function getApproved(uint256 tokenId) public view
 returns(operator address)
 ```
@@ -144,7 +144,7 @@ returns(operator address)
 
 ⤿ Overridden Implementation(s): [ERC721.setApprovalForAll](ERC721.md#setapprovalforall)
 
-```js
+```solidity
 function setApprovalForAll(address operator, bool _approved) public nonpayable
 ```
 
@@ -159,7 +159,7 @@ function setApprovalForAll(address operator, bool _approved) public nonpayable
 
 ⤿ Overridden Implementation(s): [ERC721.isApprovedForAll](ERC721.md#isapprovedforall)
 
-```js
+```solidity
 function isApprovedForAll(address owner, address operator) public view
 returns(bool)
 ```
@@ -175,7 +175,7 @@ returns(bool)
 
 ⤿ Overridden Implementation(s): [ERC721.safeTransferFrom](ERC721.md#safetransferfrom)
 
-```js
+```solidity
 function safeTransferFrom(address from, address to, uint256 tokenId, bytes data) public nonpayable
 ```
 
@@ -188,30 +188,3 @@ function safeTransferFrom(address from, address to, uint256 tokenId, bytes data)
 | tokenId | uint256 |  | 
 | data | bytes |  | 
 
-## Contracts
-
-* [AccessControl](AccessControl.md)
-* [Address](Address.md)
-* [AvastarMinter](AvastarMinter.md)
-* [AvastarState](AvastarState.md)
-* [AvastarTeleporter](AvastarTeleporter.md)
-* [AvastarTypes](AvastarTypes.md)
-* [Context](Context.md)
-* [Counters](Counters.md)
-* [ERC165](ERC165.md)
-* [ERC721](ERC721.md)
-* [ERC721Enumerable](ERC721Enumerable.md)
-* [ERC721Full](ERC721Full.md)
-* [ERC721Metadata](ERC721Metadata.md)
-* [IAvastarTeleporter](IAvastarTeleporter.md)
-* [IERC165](IERC165.md)
-* [IERC721](IERC721.md)
-* [IERC721Enumerable](IERC721Enumerable.md)
-* [IERC721Metadata](IERC721Metadata.md)
-* [IERC721Receiver](IERC721Receiver.md)
-* [Migrations](Migrations.md)
-* [PrimeFactory](PrimeFactory.md)
-* [ReplicantFactory](ReplicantFactory.md)
-* [Roles](Roles.md)
-* [SafeMath](SafeMath.md)
-* [TraitFactory](TraitFactory.md)

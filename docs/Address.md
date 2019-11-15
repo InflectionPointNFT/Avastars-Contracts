@@ -1,6 +1,6 @@
 # Address.sol
 
-View Source: [@openzeppelin/contracts/utils/Address.sol](../@openzeppelin/contracts/utils/Address.sol)
+View Source: [@openzeppelin/contracts/utils/Address.sol](@openzeppelin/contracts/utils/Address.sol)
 
 **Address**
 
@@ -8,9 +8,9 @@ Collection of functions related to the address type
 
 ## Functions
 
-- [isContract(address account)](#iscontract)
-- [toPayable(address account)](#topayable)
-- [sendValue(address payable recipient, uint256 amount)](#sendvalue)
+- [isContract](#iscontract)
+- [toPayable](#topayable)
+- [sendValue](#sendvalue)
 
 ### isContract
 
@@ -22,7 +22,7 @@ not containing a contract.
 function returns false is an externally-owned account (EOA) and not a
 contract.
 
-```js
+```solidity
 function isContract(address account) internal view
 returns(bool)
 ```
@@ -39,7 +39,7 @@ Converts an `address` into `address payable`. Note that this is
 simply a type cast: the actual underlying value is not changed.
      * _Available since v2.4.0._
 
-```js
+```solidity
 function toPayable(address account) internal pure
 returns(address payable)
 ```
@@ -65,7 +65,7 @@ taken to not create reentrancy vulnerabilities. Consider using
 https://solidity.readthedocs.io/en/v0.5.11/security-considerations.html#use-the-checks-effects-interactions-pattern[checks-effects-interactions pattern].
      * _Available since v2.4.0._
 
-```js
+```solidity
 function sendValue(address payable recipient, uint256 amount) internal nonpayable
 ```
 
@@ -76,30 +76,3 @@ function sendValue(address payable recipient, uint256 amount) internal nonpayabl
 | recipient | address payable |  | 
 | amount | uint256 |  | 
 
-## Contracts
-
-* [AccessControl](AccessControl.md)
-* [Address](Address.md)
-* [AvastarMinter](AvastarMinter.md)
-* [AvastarState](AvastarState.md)
-* [AvastarTeleporter](AvastarTeleporter.md)
-* [AvastarTypes](AvastarTypes.md)
-* [Context](Context.md)
-* [Counters](Counters.md)
-* [ERC165](ERC165.md)
-* [ERC721](ERC721.md)
-* [ERC721Enumerable](ERC721Enumerable.md)
-* [ERC721Full](ERC721Full.md)
-* [ERC721Metadata](ERC721Metadata.md)
-* [IAvastarTeleporter](IAvastarTeleporter.md)
-* [IERC165](IERC165.md)
-* [IERC721](IERC721.md)
-* [IERC721Enumerable](IERC721Enumerable.md)
-* [IERC721Metadata](IERC721Metadata.md)
-* [IERC721Receiver](IERC721Receiver.md)
-* [Migrations](Migrations.md)
-* [PrimeFactory](PrimeFactory.md)
-* [ReplicantFactory](ReplicantFactory.md)
-* [Roles](Roles.md)
-* [SafeMath](SafeMath.md)
-* [TraitFactory](TraitFactory.md)

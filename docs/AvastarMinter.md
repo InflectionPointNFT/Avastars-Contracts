@@ -1,122 +1,214 @@
-# AvastarMinter
-*Manages current generation and series*
-Mints Avastars using the AvastarTeleporter contract on behalf of depositors
-## setTeleporterContract
+# Avastar Minter (AvastarMinter.sol)
 
-*Only invokable by sysAdmin role, when contract is paused and not upgraded*
+View Source: [contracts/AvastarMinter.sol](contracts/AvastarMinter.sol)
+
+**↗ Extends: [AvastarTypes](AvastarTypes.md), [AccessControl](AccessControl.md)**
+
+**AvastarMinter**
+
+Mints Avastars using the AvastarTeleporter contract on behalf of depositors
+
+## Contract Members
+**Constants & Variables**
+
+```solidity
+//private members
+contract IAvastarTeleporter private teleporterContract;
+uint256 private unspentDeposits;
+enum AvastarTypes.Generation private currentGeneration;
+enum AvastarTypes.Series private currentSeries;
+
+//internal members
+mapping(address => uint256) internal depositsByAddress;
+
+```
+
+## Events
+
+```solidity
+event CurrentGenerationSet(enum AvastarTypes.Generation  currentGeneration);
+event CurrentSeriesSet(enum AvastarTypes.Series  currentSeries);
+event DepositorBalance(address indexed depositor, uint256  balance);
+event FranchiseBalanceWithdrawn(address indexed owner, uint256  amount);
+event TeleporterContractSet(address  contractAddress);
+```
+
+## Functions
+
+- [setTeleporterContract](#setteleportercontract)
+- [setCurrentGeneration](#setcurrentgeneration)
+- [setCurrentSeries](#setcurrentseries)
+- [deposit](#deposit)
+- [checkDepositorBalance](#checkdepositorbalance)
+- [withdrawDepositorBalance](#withdrawdepositorbalance)
+- [checkFranchiseBalance](#checkfranchisebalance)
+- [withdrawFranchiseBalance](#withdrawfranchisebalance)
+- [purchasePrime](#purchaseprime)
+- [purchaseReplicant](#purchasereplicant)
+
+### setTeleporterContract
 
 Set the address of the AvastarTeleporter contract
 
+```solidity
+function setTeleporterContract(address _address) external nonpayable onlySysAdmin whenPaused whenNotUpgraded 
+```
 
-|Input/Output|Data Type|Variable Name|Comment|
-|----------|----------|----------|----------|
-|input|address|_address|address of AvastarTeleporter contract|
+**Arguments**
 
-## setCurrentGeneration
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _address | address | address of AvastarTeleporter contract | 
 
-*Emits GenerationSet event with new value of currentGeneration*
+### setCurrentGeneration
 
 Set the Generation to be minted
 
+```solidity
+function setCurrentGeneration(enum AvastarTypes.Generation _generation) external nonpayable onlySysAdmin whenPaused whenNotUpgraded 
+```
 
-|Input/Output|Data Type|Variable Name|Comment|
-|----------|----------|----------|----------|
-|input|undefined|_generation|the new value for currentGeneration|
+**Arguments**
 
-## setCurrentSeries
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _generation | enum AvastarTypes.Generation | the new value for currentGeneration | 
 
-*Emits CurrentSeriesSet event with new value of currentSeries*
+### setCurrentSeries
 
 Set the Series to be minted
 
+```solidity
+function setCurrentSeries(enum AvastarTypes.Series _series) public nonpayable onlySysAdmin whenPaused whenNotUpgraded 
+```
 
-|Input/Output|Data Type|Variable Name|Comment|
-|----------|----------|----------|----------|
-|input|undefined|_series|the new value for currentSeries|
+**Arguments**
 
-## deposit
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _series | enum AvastarTypes.Series | the new value for currentSeries | 
 
-*Emits DepositorBalance event with depositor's resulting balance*
+### deposit
 
 Allow anyone to deposit ETH
 
+```solidity
+function deposit() external payable whenNotPaused 
+```
 
-## checkDepositorBalance
+**Arguments**
 
-*Invokable by any address (other than 0)*
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+
+### checkDepositorBalance
 
 Allow anyone to check their deposit balance
 
+```solidity
+function checkDepositorBalance() external view
+returns(uint256)
+```
 
-|Input/Output|Data Type|Variable Name|Comment|
-|----------|----------|----------|----------|
-|output|uint256|N/A|the depositor's current ETH balance in the contract|
+**Returns**
 
-## withdrawDepositorBalance
+the depositor's current ETH balance in the contract
 
-*Emits DepositorBalance event of 0 amount once transfer is complete*
+**Arguments**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+
+### withdrawDepositorBalance
 
 Allow a depositor with a balance to withdraw it
 
+```solidity
+function withdrawDepositorBalance() external nonpayable
+returns(uint256)
+```
 
-|Input/Output|Data Type|Variable Name|Comment|
-|----------|----------|----------|----------|
-|output|uint256|N/A|amount withdrawn|
+**Returns**
 
-## checkFranchiseBalance
+amount withdrawn
 
-*Invokable only by owner address*
+**Arguments**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+
+### checkFranchiseBalance
 
 Allow owner to check the withdrawable franchise balance
 
+```solidity
+function checkFranchiseBalance() external view onlyOwner 
+returns(uint256)
+```
 
-|Input/Output|Data Type|Variable Name|Comment|
-|----------|----------|----------|----------|
-|output|uint256|N/A|the available franchise balance|
+**Returns**
 
-## withdrawFranchiseBalance
+the available franchise balance
 
-*Emits FranchiseBalanceWithdrawn event with amount withdrawn*
+**Arguments**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+
+### withdrawFranchiseBalance
 
 Allow an owner to withdraw the franchise balance
 
+```solidity
+function withdrawFranchiseBalance() external nonpayable onlyOwner 
+returns(uint256)
+```
 
-|Input/Output|Data Type|Variable Name|Comment|
-|----------|----------|----------|----------|
-|output|uint256|N/A|amount withdrawn|
+**Returns**
 
-## purchasePrime
+amount withdrawn
 
-*Invokable only by minter address, when contract is not paused*
+**Arguments**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+
+### purchasePrime
 
 Mint an Avastar Prime for a purchaser who has previously deposited funds
 
+```solidity
+function purchasePrime(address _purchaser, uint256 _price, uint256 _traits, enum AvastarTypes.Gender _gender, uint8 _ranking) external nonpayable onlyMinter whenNotPaused 
+returns(uint256, uint256)
+```
 
-|Input/Output|Data Type|Variable Name|Comment|
-|----------|----------|----------|----------|
-|input|address|_purchaser|address that will own the token|
-|input|uint256|_price|price in ETH of token, removed from purchaser's deposit balance|
-|input|uint256|_traits|the Avastar's Trait hash|
-|input|undefined|_gender|the Avastar's Gender|
-|input|uint8|_ranking|the Avastar's Ranking|
-|output|uint256|N/A|N/A|
-|output|uint256|N/A|N/A|
+**Arguments**
 
-## purchaseReplicant
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _purchaser | address | address that will own the token | 
+| _price | uint256 | price in ETH of token, removed from purchaser's deposit balance | 
+| _traits | uint256 | the Avastar's Trait hash | 
+| _gender | enum AvastarTypes.Gender | the Avastar's Gender | 
+| _ranking | uint8 | the Avastar's Ranking | 
 
-*Invokable only by minter address, when contract is not paused*
+### purchaseReplicant
 
 Mint an Avastar Replicant for a purchaser who has previously deposited funds
 
+```solidity
+function purchaseReplicant(address _purchaser, uint256 _price, uint256 _traits, enum AvastarTypes.Generation _generation, enum AvastarTypes.Gender _gender, uint8 _ranking) external nonpayable onlyMinter whenNotPaused 
+returns(uint256, uint256)
+```
 
-|Input/Output|Data Type|Variable Name|Comment|
-|----------|----------|----------|----------|
-|input|address|_purchaser|address that will own the token|
-|input|uint256|_price|price in ETH of token, removed from purchaser's deposit balance|
-|input|uint256|_traits|the Avastar's Trait hash|
-|input|undefined|_generation|the Avastar's Generation|
-|input|undefined|_gender|the Avastar's Gender|
-|input|uint8|_ranking|the Avastar's Ranking|
-|output|uint256|N/A|N/A|
-|output|uint256|N/A|N/A|
+**Arguments**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _purchaser | address | address that will own the token | 
+| _price | uint256 | price in ETH of token, removed from purchaser's deposit balance | 
+| _traits | uint256 | the Avastar's Trait hash | 
+| _generation | enum AvastarTypes.Generation | the Avastar's Generation | 
+| _gender | enum AvastarTypes.Gender | the Avastar's Gender | 
+| _ranking | uint8 | the Avastar's Ranking | 
 

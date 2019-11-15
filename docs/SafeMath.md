@@ -1,6 +1,6 @@
 # SafeMath.sol
 
-View Source: [@openzeppelin/contracts/math/SafeMath.sol](../@openzeppelin/contracts/math/SafeMath.sol)
+View Source: [@openzeppelin/contracts/math/SafeMath.sol](@openzeppelin/contracts/math/SafeMath.sol)
 
 **SafeMath**
 
@@ -16,14 +16,14 @@ class of bugs, so it's recommended to use it always.
 
 ## Functions
 
-- [add(uint256 a, uint256 b)](#add)
-- [sub(uint256 a, uint256 b)](#sub)
-- [sub(uint256 a, uint256 b, string errorMessage)](#sub)
-- [mul(uint256 a, uint256 b)](#mul)
-- [div(uint256 a, uint256 b)](#div)
-- [div(uint256 a, uint256 b, string errorMessage)](#div)
-- [mod(uint256 a, uint256 b)](#mod)
-- [mod(uint256 a, uint256 b, string errorMessage)](#mod)
+- [add](#add)
+- [sub](#sub)
+- [sub](#sub)
+- [mul](#mul)
+- [div](#div)
+- [div](#div)
+- [mod](#mod)
+- [mod](#mod)
 
 ### add
 
@@ -33,7 +33,7 @@ overflow.
      * Requirements:
 - Addition cannot overflow.
 
-```js
+```solidity
 function add(uint256 a, uint256 b) internal pure
 returns(uint256)
 ```
@@ -53,7 +53,7 @@ overflow (when the result is negative).
      * Requirements:
 - Subtraction cannot overflow.
 
-```js
+```solidity
 function sub(uint256 a, uint256 b) internal pure
 returns(uint256)
 ```
@@ -74,7 +74,7 @@ overflow (when the result is negative).
 - Subtraction cannot overflow.
      * _Available since v2.4.0._
 
-```js
+```solidity
 function sub(uint256 a, uint256 b, string errorMessage) internal pure
 returns(uint256)
 ```
@@ -95,7 +95,7 @@ overflow.
      * Requirements:
 - Multiplication cannot overflow.
 
-```js
+```solidity
 function mul(uint256 a, uint256 b) internal pure
 returns(uint256)
 ```
@@ -117,7 +117,7 @@ uses an invalid opcode to revert (consuming all remaining gas).
      * Requirements:
 - The divisor cannot be zero.
 
-```js
+```solidity
 function div(uint256 a, uint256 b) internal pure
 returns(uint256)
 ```
@@ -140,7 +140,7 @@ uses an invalid opcode to revert (consuming all remaining gas).
 - The divisor cannot be zero.
      * _Available since v2.4.0._
 
-```js
+```solidity
 function div(uint256 a, uint256 b, string errorMessage) internal pure
 returns(uint256)
 ```
@@ -163,7 +163,7 @@ invalid opcode to revert (consuming all remaining gas).
      * Requirements:
 - The divisor cannot be zero.
 
-```js
+```solidity
 function mod(uint256 a, uint256 b) internal pure
 returns(uint256)
 ```
@@ -186,7 +186,7 @@ invalid opcode to revert (consuming all remaining gas).
 - The divisor cannot be zero.
      * _Available since v2.4.0._
 
-```js
+```solidity
 function mod(uint256 a, uint256 b, string errorMessage) internal pure
 returns(uint256)
 ```
@@ -199,30 +199,3 @@ returns(uint256)
 | b | uint256 |  | 
 | errorMessage | string |  | 
 
-## Contracts
-
-* [AccessControl](AccessControl.md)
-* [Address](Address.md)
-* [AvastarMinter](AvastarMinter.md)
-* [AvastarState](AvastarState.md)
-* [AvastarTeleporter](AvastarTeleporter.md)
-* [AvastarTypes](AvastarTypes.md)
-* [Context](Context.md)
-* [Counters](Counters.md)
-* [ERC165](ERC165.md)
-* [ERC721](ERC721.md)
-* [ERC721Enumerable](ERC721Enumerable.md)
-* [ERC721Full](ERC721Full.md)
-* [ERC721Metadata](ERC721Metadata.md)
-* [IAvastarTeleporter](IAvastarTeleporter.md)
-* [IERC165](IERC165.md)
-* [IERC721](IERC721.md)
-* [IERC721Enumerable](IERC721Enumerable.md)
-* [IERC721Metadata](IERC721Metadata.md)
-* [IERC721Receiver](IERC721Receiver.md)
-* [Migrations](Migrations.md)
-* [PrimeFactory](PrimeFactory.md)
-* [ReplicantFactory](ReplicantFactory.md)
-* [Roles](Roles.md)
-* [SafeMath](SafeMath.md)
-* [TraitFactory](TraitFactory.md)

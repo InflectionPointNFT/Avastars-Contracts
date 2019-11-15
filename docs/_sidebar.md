@@ -1,17 +1,35 @@
 * PROJECT
-	* [Home](/)
-	* [Contract UML](ContractUML.md) 
-	* [Developer Setup](DeveloperSetup.md)
-	* [Trait Hash Bitmasking](TraitHashBitmasking.md)
-	* [Unit Test Output](UnitTestOutput.md)
-
-* CONTRACTS
+	* [Home](project/)
+	* [Contract UML](project/ContractUML.md) 
+	* [Developer Setup](project/DeveloperSetup.md)
+	* [Trait Hash Bitmasking](project/TraitHashBitmasking.md)
+	* [Unit Test Output](project/UnitTestOutput.md)
+	
+* LOCAL CONTRACTS
 	* [AccessControl](AccessControl.md)
 	* [AvastarMinter](AvastarMinter.md)
 	* [AvastarState](AvastarState.md)
 	* [AvastarTeleporter](AvastarTeleporter.md)
 	* [AvastarTypes](AvastarTypes.md)
 	* [IAvastarTeleporter](IAvastarTeleporter.md)
+	* [Migrations](Migrations.md)
 	* [PrimeFactory](PrimeFactory.md)
 	* [ReplicantFactory](ReplicantFactory.md)
 	* [TraitFactory](TraitFactory.md)
+
+* FOREIGN CONTRACTS
+	* [Address](Address.md)
+	* [Context](Context.md)
+	* [Counters](Counters.md)
+	* [ERC165](ERC165.md)
+	* [ERC721](ERC721.md)
+	* [ERC721Enumerable](ERC721Enumerable.md)
+	* [ERC721Full](ERC721Full.md)
+	* [ERC721Metadata](ERC721Metadata.md)
+	* [IERC165](IERC165.md)
+	* [IERC721](IERC721.md)
+	* [IERC721Enumerable](IERC721Enumerable.md)
+	* [IERC721Metadata](IERC721Metadata.md)
+	* [IERC721Receiver](IERC721Receiver.md)
+	* [Roles](Roles.md)
+	* [SafeMath](SafeMath.md)

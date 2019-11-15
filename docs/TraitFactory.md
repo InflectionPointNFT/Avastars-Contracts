@@ -1,68 +1,108 @@
-# TraitFactory
-## getTrait
+# Avastar Trait Factory (TraitFactory.sol)
+
+View Source: [contracts/TraitFactory.sol](contracts/TraitFactory.sol)
+
+**↗ Extends: [AvastarState](AvastarState.md)**
+**↘ Derived Contracts: [PrimeFactory](PrimeFactory.md)**
+
+**TraitFactory**
+
+## Events
+
+```solidity
+event NewTrait(uint256  id, enum AvastarTypes.Gene  gene, uint8  variation, string  name);
+```
+
+## Functions
+
+- [getTrait](#gettrait)
+- [getTraitIdByGenerationGeneAndVariation](#gettraitidbygenerationgeneandvariation)
+- [createTrait](#createtrait)
+- [assembleArt](#assembleart)
+- [strConcat](#strconcat)
+
+### getTrait
 
 Get the Trait data associated with a given Trait ID
 
+```solidity
+function getTrait(uint256 _traitId) external view
+returns(uint256, enum AvastarTypes.Generation, enum AvastarTypes.Series[], enum AvastarTypes.Gender, enum AvastarTypes.Gene, uint8, string, string)
+```
 
-|Input/Output|Data Type|Variable Name|Comment|
-|----------|----------|----------|----------|
-|input|uint256|_traitId|undefined|
-|output|uint256|N/A|N/A|
-|output|undefined|N/A|N/A|
-|output|undefined|N/A|N/A|
-|output|undefined|N/A|N/A|
-|output|undefined|N/A|N/A|
-|output|uint8|N/A|N/A|
-|output|string|N/A|N/A|
-|output|string|N/A|N/A|
+**Arguments**
 
-## getTraitIdByGenerationGeneAndVariation
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _traitId | uint256 |  | 
+
+### getTraitIdByGenerationGeneAndVariation
 
 Get Trait ID by Generation and Variation
 
+```solidity
+function getTraitIdByGenerationGeneAndVariation(enum AvastarTypes.Generation _generation, enum AvastarTypes.Gene _gene, uint256 _variationSafe) external view
+returns(uint256)
+```
 
-|Input/Output|Data Type|Variable Name|Comment|
-|----------|----------|----------|----------|
-|input|undefined|_generation|undefined|
-|input|undefined|_gene|undefined|
-|input|uint256|_variationSafe|undefined|
-|output|uint256|N/A|N/A|
+**Arguments**
 
-## createTrait
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _generation | enum AvastarTypes.Generation |  | 
+| _gene | enum AvastarTypes.Gene |  | 
+| _variationSafe | uint256 |  | 
+
+### createTrait
 
 Create a Trait
 
+```solidity
+function createTrait(enum AvastarTypes.Generation _generation, enum AvastarTypes.Series[] _series, enum AvastarTypes.Gender _gender, enum AvastarTypes.Gene _gene, uint256 _variationSafe, string _name, string _svg) external nonpayable onlySysAdmin whenNotPaused 
+returns(uint256)
+```
 
-|Input/Output|Data Type|Variable Name|Comment|
-|----------|----------|----------|----------|
-|input|undefined|_generation|undefined|
-|input|undefined|_series|undefined|
-|input|undefined|_gender|undefined|
-|input|undefined|_gene|undefined|
-|input|uint256|_variationSafe|undefined|
-|input|string|_name|undefined|
-|input|string|_svg|undefined|
-|output|uint256|N/A|N/A|
+**Arguments**
 
-## assembleArt
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _generation | enum AvastarTypes.Generation |  | 
+| _series | enum AvastarTypes.Series[] |  | 
+| _gender | enum AvastarTypes.Gender |  | 
+| _gene | enum AvastarTypes.Gene |  | 
+| _variationSafe | uint256 |  | 
+| _name | string |  | 
+| _svg | string |  | 
+
+### assembleArt
 
 Assemble the artwork for a given Trait hash with art from the given Generation
 
+```solidity
+function assembleArt(enum AvastarTypes.Generation _generation, uint256 _traitHash) public view
+returns(string)
+```
 
-|Input/Output|Data Type|Variable Name|Comment|
-|----------|----------|----------|----------|
-|input|undefined|_generation|undefined|
-|input|uint256|_traitHash|undefined|
-|output|string|N/A|N/A|
+**Arguments**
 
-## strConcat
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _generation | enum AvastarTypes.Generation |  | 
+| _traitHash | uint256 |  | 
+
+### strConcat
 
 Concatenate two strings
 
+```solidity
+function strConcat(string _a, string _b) private pure
+returns(result string)
+```
 
-|Input/Output|Data Type|Variable Name|Comment|
-|----------|----------|----------|----------|
-|input|string|_a|undefined|
-|input|string|_b|undefined|
-|output|string|result|N/A|
+**Arguments**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _a | string |  | 
+| _b | string |  | 
 
