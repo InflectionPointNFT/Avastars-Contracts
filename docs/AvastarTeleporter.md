@@ -1,6 +1,6 @@
 # AvastarTeleporter
 
-View Source: [contracts/AvastarTeleporter.sol](https://github.com/Dapp-Wizards/Avastars-Contracts/contracts/AvastarTeleporter.sol)
+View Source: [contracts/AvastarTeleporter.sol](https://github.com/Dapp-Wizards/Avastars-Contracts/blob/master/contracts/AvastarTeleporter.sol)
 
 **↗ Extends: [ReplicantFactory](ReplicantFactory.md)**
 

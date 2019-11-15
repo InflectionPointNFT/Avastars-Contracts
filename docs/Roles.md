@@ -1,6 +1,6 @@
 # Roles
 
-View Source: [@openzeppelin/contracts/access/Roles.sol](https://github.com/Dapp-Wizards/Avastars-Contracts/@openzeppelin/contracts/access/Roles.sol)
+View Source: [@openzeppelin/contracts/access/Roles.sol](https://github.com/Dapp-Wizards/Avastars-Contracts/blob/master/@openzeppelin/contracts/access/Roles.sol)
 
 **Roles**
 

@@ -1,6 +1,6 @@
 # IERC165.sol
 
-View Source: [@openzeppelin/contracts/introspection/IERC165.sol](https://github.com/Dapp-Wizards/Avastars-Contracts/@openzeppelin/contracts/introspection/IERC165.sol)
+View Source: [@openzeppelin/contracts/introspection/IERC165.sol](https://github.com/Dapp-Wizards/Avastars-Contracts/blob/master/@openzeppelin/contracts/introspection/IERC165.sol)
 
 **↘ Derived Contracts: [ERC165](ERC165.md), [IERC721](IERC721.md)**
 

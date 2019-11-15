@@ -1,6 +1,6 @@
 # Standard migrations management contract
 
-View Source: [contracts/Migrations.sol](https://github.com/Dapp-Wizards/Avastars-Contracts/contracts/Migrations.sol)
+View Source: [contracts/Migrations.sol](https://github.com/Dapp-Wizards/Avastars-Contracts/blob/master/contracts/Migrations.sol)
 
 **Migrations**
 

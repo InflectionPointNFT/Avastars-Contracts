@@ -1,6 +1,6 @@
 # Counters
 
-View Source: [@openzeppelin/contracts/drafts/Counters.sol](https://github.com/Dapp-Wizards/Avastars-Contracts/@openzeppelin/contracts/drafts/Counters.sol)
+View Source: [@openzeppelin/contracts/drafts/Counters.sol](https://github.com/Dapp-Wizards/Avastars-Contracts/blob/master/@openzeppelin/contracts/drafts/Counters.sol)
 
 **Counters**
 

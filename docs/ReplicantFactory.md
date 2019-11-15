@@ -1,6 +1,6 @@
 # Avastar Replicant Factory
 
-View Source: [contracts/ReplicantFactory.sol](https://github.com/Dapp-Wizards/Avastars-Contracts/contracts/ReplicantFactory.sol)
+View Source: [contracts/ReplicantFactory.sol](https://github.com/Dapp-Wizards/Avastars-Contracts/blob/master/contracts/ReplicantFactory.sol)
 
 **↗ Extends: [PrimeFactory](PrimeFactory.md)**
 **↘ Derived Contracts: [AvastarTeleporter](AvastarTeleporter.md)**

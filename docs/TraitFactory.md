@@ -1,6 +1,6 @@
 # Avastar Trait Factory
 
-View Source: [contracts/TraitFactory.sol](https://github.com/Dapp-Wizards/Avastars-Contracts/contracts/TraitFactory.sol)
+View Source: [contracts/TraitFactory.sol](https://github.com/Dapp-Wizards/Avastars-Contracts/blob/master/contracts/TraitFactory.sol)
 
 **↗ Extends: [AvastarState](AvastarState.md)**
 **↘ Derived Contracts: [PrimeFactory](PrimeFactory.md)**

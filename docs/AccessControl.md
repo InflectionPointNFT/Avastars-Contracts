@@ -1,6 +1,6 @@
 # AccessControl
 
-View Source: [contracts/AccessControl.sol](https://github.com/Dapp-Wizards/Avastars-Contracts/contracts/AccessControl.sol)
+View Source: [contracts/AccessControl.sol](https://github.com/Dapp-Wizards/Avastars-Contracts/blob/master/contracts/AccessControl.sol)
 
 **↘ Derived Contracts: [AvastarMinter](AvastarMinter.md), [AvastarState](AvastarState.md)**
 

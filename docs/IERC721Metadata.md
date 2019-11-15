@@ -1,6 +1,6 @@
 # ERC-721 Non-Fungible Token Standard, optional metadata extension
 
-View Source: [@openzeppelin/contracts/token/ERC721/IERC721Metadata.sol](https://github.com/Dapp-Wizards/Avastars-Contracts/@openzeppelin/contracts/token/ERC721/IERC721Metadata.sol)
+View Source: [@openzeppelin/contracts/token/ERC721/IERC721Metadata.sol](https://github.com/Dapp-Wizards/Avastars-Contracts/blob/master/@openzeppelin/contracts/token/ERC721/IERC721Metadata.sol)
 
 **↗ Extends: [IERC721](IERC721.md)**
 **↘ Derived Contracts: [ERC721Metadata](ERC721Metadata.md)**
