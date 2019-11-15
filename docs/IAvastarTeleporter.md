@@ -1,6 +1,6 @@
 # AvastarTeleporter Interface
 
-View Source: [contracts/IAvastarTeleporter.sol](contracts/IAvastarTeleporter.sol)
+View Source: [contracts/IAvastarTeleporter.sol](https://github.com/Dapp-Wizards/contracts/IAvastarTeleporter.sol)
 
 **↗ Extends: [AvastarTypes](AvastarTypes.md)**
 

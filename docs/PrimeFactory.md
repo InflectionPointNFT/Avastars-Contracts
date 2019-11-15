@@ -1,6 +1,6 @@
 # Avastar Prime Factory
 
-View Source: [contracts/PrimeFactory.sol](contracts/PrimeFactory.sol)
+View Source: [contracts/PrimeFactory.sol](https://github.com/Dapp-Wizards/contracts/PrimeFactory.sol)
 
 **↗ Extends: [TraitFactory](TraitFactory.md)**
 **↘ Derived Contracts: [ReplicantFactory](ReplicantFactory.md)**

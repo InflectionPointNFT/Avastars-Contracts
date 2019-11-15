@@ -1,6 +1,6 @@
 # Avastar Minter
 
-View Source: [contracts/AvastarMinter.sol](contracts/AvastarMinter.sol)
+View Source: [contracts/AvastarMinter.sol](https://github.com/Dapp-Wizards/contracts/AvastarMinter.sol)
 
 **↗ Extends: [AvastarTypes](AvastarTypes.md), [AccessControl](AccessControl.md)**
 

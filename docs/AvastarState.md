@@ -1,6 +1,6 @@
 # Avastar State
 
-View Source: [contracts/AvastarState.sol](contracts/AvastarState.sol)
+View Source: [contracts/AvastarState.sol](https://github.com/Dapp-Wizards/contracts/AvastarState.sol)
 
 **↗ Extends: [AvastarTypes](AvastarTypes.md), [AccessControl](AccessControl.md), [ERC721Full](ERC721Full.md)**
 **↘ Derived Contracts: [TraitFactory](TraitFactory.md)**

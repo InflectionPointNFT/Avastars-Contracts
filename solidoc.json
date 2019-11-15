@@ -1,0 +1,8 @@
+{
+  "pathToRoot": "./",
+  "outputPath": "./docs",
+  "compile": false,
+  "compiler": "truffle compile",
+  "language": "en",
+  "repoUrl": "https://github.com/Dapp-Wizards/"
+}

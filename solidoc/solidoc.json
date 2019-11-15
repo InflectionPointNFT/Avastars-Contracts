@@ -1,0 +1,8 @@
+{
+  "pathToRoot": "../contracts",
+  "outputPath": "../solidocs",
+  "compile": true,
+  "compiler": "truffle compile",
+  "language": "en",
+  "repoUrl": ""
+}
