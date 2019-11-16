@@ -2,7 +2,7 @@
 
 View Source: [@openzeppelin/contracts/drafts/Counters.sol](https://github.com/Dapp-Wizards/Avastars-Contracts/blob/master/@openzeppelin/contracts/drafts/Counters.sol)
 
-**Counters**
+**Counters** 
 
 Provides counters that can only be incremented or decremented by one. This can be used e.g. to track the number
 of elements in a mapping, issuing ERC721 ids, or counting request ids.

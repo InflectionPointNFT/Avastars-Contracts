@@ -2,9 +2,8 @@
 
 View Source: [@openzeppelin/contracts/GSN/Context.sol](https://github.com/Dapp-Wizards/Avastars-Contracts/blob/master/@openzeppelin/contracts/GSN/Context.sol)
 
+**Context** 
 **↘ Derived Contracts: [ERC721](ERC721.md), [ERC721Enumerable](ERC721Enumerable.md), [ERC721Metadata](ERC721Metadata.md)**
-
-**Context**
 
 ## **Functions**
 

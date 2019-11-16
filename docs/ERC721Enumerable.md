@@ -2,10 +2,8 @@
 
 View Source: [@openzeppelin/contracts/token/ERC721/ERC721Enumerable.sol](https://github.com/Dapp-Wizards/Avastars-Contracts/blob/master/@openzeppelin/contracts/token/ERC721/ERC721Enumerable.sol)
 
-**↗ Extends: [Context](Context.md), [ERC165](ERC165.md), [ERC721](ERC721.md), [IERC721Enumerable](IERC721Enumerable.md)**
+**ERC721Enumerable** **↗ Extends: [Context](Context.md), [ERC165](ERC165.md), [ERC721](ERC721.md), [IERC721Enumerable](IERC721Enumerable.md)**
 **↘ Derived Contracts: [ERC721Full](ERC721Full.md)**
-
-**ERC721Enumerable**
 
 See https://eips.ethereum.org/EIPS/eip-721
 

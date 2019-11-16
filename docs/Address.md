@@ -2,7 +2,7 @@
 
 View Source: [@openzeppelin/contracts/utils/Address.sol](https://github.com/Dapp-Wizards/Avastars-Contracts/blob/master/@openzeppelin/contracts/utils/Address.sol)
 
-**Address**
+**Address** 
 
 Collection of functions related to the address type
 

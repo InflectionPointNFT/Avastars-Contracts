@@ -2,9 +2,7 @@
 
 View Source: [contracts/AvastarMinter.sol](https://github.com/Dapp-Wizards/Avastars-Contracts/blob/master/contracts/AvastarMinter.sol)
 
-**↗ Extends: [AvastarTypes](AvastarTypes.md), [AccessControl](AccessControl.md)**
-
-**AvastarMinter**
+**AvastarMinter** **↗ Extends: [AvastarTypes](AvastarTypes.md), [AccessControl](AccessControl.md)**
 
 Mints Avastars using the AvastarTeleporter contract on behalf of depositors
 

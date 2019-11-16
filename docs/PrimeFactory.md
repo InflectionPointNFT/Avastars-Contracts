@@ -2,10 +2,8 @@
 
 View Source: [contracts/PrimeFactory.sol](https://github.com/Dapp-Wizards/Avastars-Contracts/blob/master/contracts/PrimeFactory.sol)
 
-**↗ Extends: [TraitFactory](TraitFactory.md)**
+**PrimeFactory** **↗ Extends: [TraitFactory](TraitFactory.md)**
 **↘ Derived Contracts: [ReplicantFactory](ReplicantFactory.md)**
-
-**PrimeFactory**
 
 ## Events
 

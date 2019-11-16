@@ -2,9 +2,7 @@
 
 View Source: [contracts/AvastarTeleporter.sol](https://github.com/Dapp-Wizards/Avastars-Contracts/blob/master/contracts/AvastarTeleporter.sol)
 
-**↗ Extends: [ReplicantFactory](ReplicantFactory.md)**
-
-**AvastarTeleporter**
+**AvastarTeleporter** **↗ Extends: [ReplicantFactory](ReplicantFactory.md)**
 
 Management of Avastar Primes, Replicants, and Traits
 

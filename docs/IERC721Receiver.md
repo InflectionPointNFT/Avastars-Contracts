@@ -2,7 +2,7 @@
 
 View Source: [@openzeppelin/contracts/token/ERC721/IERC721Receiver.sol](https://github.com/Dapp-Wizards/Avastars-Contracts/blob/master/@openzeppelin/contracts/token/ERC721/IERC721Receiver.sol)
 
-**IERC721Receiver**
+**IERC721Receiver** 
 
 Interface for any contract that wants to support safeTransfers
 from ERC721 asset contracts.

@@ -2,7 +2,7 @@
 
 View Source: [@openzeppelin/contracts/math/SafeMath.sol](https://github.com/Dapp-Wizards/Avastars-Contracts/blob/master/@openzeppelin/contracts/math/SafeMath.sol)
 
-**SafeMath**
+**SafeMath** 
 
 Wrappers over Solidity's arithmetic operations with added overflow
 checks.

@@ -2,9 +2,8 @@
 
 View Source: [contracts/AccessControl.sol](https://github.com/Dapp-Wizards/Avastars-Contracts/blob/master/contracts/AccessControl.sol)
 
+**AccessControl** 
 **↘ Derived Contracts: [AvastarMinter](AvastarMinter.md), [AvastarState](AvastarState.md)**
-
-**AccessControl**
 
 Role-based access control and related functions, function modifiers, and events
 

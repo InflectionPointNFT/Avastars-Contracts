@@ -2,10 +2,8 @@
 
 {{ContractPath}}
 
-{{ContractInheritancePath}}
+**{{ContractName}}** {{ContractInheritancePath}}
 {{ContractImplementations}}
-
-**{{ContractName}}**
 
 {{ContractDescription}}
 

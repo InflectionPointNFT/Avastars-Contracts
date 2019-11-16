@@ -2,7 +2,7 @@
 
 View Source: [contracts/Migrations.sol](https://github.com/Dapp-Wizards/Avastars-Contracts/blob/master/contracts/Migrations.sol)
 
-**Migrations**
+**Migrations** 
 
 ## Contract Members
 **Constants & Variables**

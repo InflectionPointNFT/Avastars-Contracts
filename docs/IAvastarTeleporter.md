@@ -2,9 +2,7 @@
 
 View Source: [contracts/IAvastarTeleporter.sol](https://github.com/Dapp-Wizards/Avastars-Contracts/blob/master/contracts/IAvastarTeleporter.sol)
 
-**↗ Extends: [AvastarTypes](AvastarTypes.md)**
-
-**IAvastarTeleporter**
+**IAvastarTeleporter** **↗ Extends: [AvastarTypes](AvastarTypes.md)**
 
 Declared with contract rather than interface as it must inherit for enum types
 

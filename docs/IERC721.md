@@ -2,10 +2,8 @@
 
 View Source: [@openzeppelin/contracts/token/ERC721/IERC721.sol](https://github.com/Dapp-Wizards/Avastars-Contracts/blob/master/@openzeppelin/contracts/token/ERC721/IERC721.sol)
 
-**↗ Extends: [IERC165](IERC165.md)**
+**IERC721** **↗ Extends: [IERC165](IERC165.md)**
 **↘ Derived Contracts: [ERC721](ERC721.md), [IERC721Enumerable](IERC721Enumerable.md), [IERC721Metadata](IERC721Metadata.md)**
-
-**IERC721**
 
 Required interface of an ERC721 compliant contract.
 

@@ -2,9 +2,8 @@
 
 View Source: [@openzeppelin/contracts/introspection/IERC165.sol](https://github.com/Dapp-Wizards/Avastars-Contracts/blob/master/@openzeppelin/contracts/introspection/IERC165.sol)
 
+**IERC165** 
 **↘ Derived Contracts: [ERC165](ERC165.md), [IERC721](IERC721.md)**
-
-**IERC165**
 
 Interface of the ERC165 standard, as defined in the
 https://eips.ethereum.org/EIPS/eip-165[EIP].

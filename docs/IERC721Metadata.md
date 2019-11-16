@@ -2,10 +2,8 @@
 
 View Source: [@openzeppelin/contracts/token/ERC721/IERC721Metadata.sol](https://github.com/Dapp-Wizards/Avastars-Contracts/blob/master/@openzeppelin/contracts/token/ERC721/IERC721Metadata.sol)
 
-**↗ Extends: [IERC721](IERC721.md)**
+**IERC721Metadata** **↗ Extends: [IERC721](IERC721.md)**
 **↘ Derived Contracts: [ERC721Metadata](ERC721Metadata.md)**
-
-**IERC721Metadata**
 
 See https://eips.ethereum.org/EIPS/eip-721
 

@@ -2,10 +2,8 @@
 
 View Source: [@openzeppelin/contracts/token/ERC721/ERC721Metadata.sol](https://github.com/Dapp-Wizards/Avastars-Contracts/blob/master/@openzeppelin/contracts/token/ERC721/ERC721Metadata.sol)
 
-**↗ Extends: [Context](Context.md), [ERC165](ERC165.md), [ERC721](ERC721.md), [IERC721Metadata](IERC721Metadata.md)**
+**ERC721Metadata** **↗ Extends: [Context](Context.md), [ERC165](ERC165.md), [ERC721](ERC721.md), [IERC721Metadata](IERC721Metadata.md)**
 **↘ Derived Contracts: [ERC721Full](ERC721Full.md)**
-
-**ERC721Metadata**
 
 ## Contract Members
 **Constants & Variables**
