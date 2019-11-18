@@ -10,13 +10,13 @@ Mints Avastars using the AvastarTeleporter contract on behalf of depositors
 **Constants & Variables**
 
 ```solidity
-//private members
+// private members
 contract IAvastarTeleporter private teleporterContract;
 uint256 private unspentDeposits;
 enum AvastarTypes.Generation private currentGeneration;
 enum AvastarTypes.Series private currentSeries;
 
-//internal members
+// internal members
 mapping(address => uint256) internal depositsByAddress;
 
 ```

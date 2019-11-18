@@ -20,12 +20,12 @@ constructor() public
 **Constants & Variables**
 
 ```solidity
-//private members
+// private members
 struct Roles.Role private admins;
 struct Roles.Role private minters;
 struct Roles.Role private owners;
 
-//public members
+// public members
 bool public paused;
 bool public upgraded;
 address public newContractAddress;

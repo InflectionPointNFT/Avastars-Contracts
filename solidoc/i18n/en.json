@@ -20,6 +20,6 @@
   "Returns": "Returns",
   "Structs": "Structs",
   "ViewSource": "View Source: %s",
-  "VisibilityMembers": "//%s members",
+  "VisibilityMembers": "// %s members",
   "WritingPath": "Writing %s"
 }
