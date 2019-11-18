@@ -5,7 +5,7 @@ import "./IAvastarTeleporter.sol";
 import "./AccessControl.sol";
 
 /**
- * @title Avastar Minter
+ * @title Avastar Minter Proxy
  * @author Cliff Hall
  * @notice Mints Avastars using the `AvastarTeleporter` contract on behalf of depositors.
  * Allows system admin to set current generation and series.
@@ -72,7 +72,7 @@ contract AvastarMinter is AvastarTypes, AccessControl {
 
     /**
      * @notice Set the address of the AvastarTeleporter contract.
-     * Only invokable by system admin, when contract is paused and not upgraded.
+     * Only invokable by system admin role, when contract is paused and not upgraded.
      * @param _address address of AvastarTeleporter contract
      */
     function setTeleporterContract(address _address) external onlySysAdmin whenPaused whenNotUpgraded {
@@ -105,7 +105,7 @@ contract AvastarMinter is AvastarTypes, AccessControl {
 
     /**
      * @notice Set the Series to be minted.
-     * Only invokable by system admin, when contract is paused and not upgraded.
+     * Only invokable by system admin role, when contract is paused and not upgraded.
      * Emits `CurrentSeriesSet` event with new value of `currentSeries`.
      * @param _series the new value for currentSeries
      */
@@ -160,7 +160,7 @@ contract AvastarMinter is AvastarTypes, AccessControl {
     /**
      * @notice Allow owner to check the withdrawable franchise balance.
      * Remaining balance must be enough for all unspent deposits to be withdrawn by depositors.
-     * Invokable only by owner.
+     * Invokable only by owner role.
      * @return the available franchise balance
      */
     function checkFranchiseBalance() external view onlyOwner returns (uint256) {
@@ -169,7 +169,7 @@ contract AvastarMinter is AvastarTypes, AccessControl {
 
     /**
      * @notice Allow an owner to withdraw the franchise balance.
-     * Invokable only by owner.
+     * Invokable only by owner role.
      * Emits `FranchiseBalanceWithdrawn` event with amount withdrawn.
      * @return amount withdrawn
      */
@@ -183,7 +183,7 @@ contract AvastarMinter is AvastarTypes, AccessControl {
 
     /**
      * @notice Mint an Avastar Prime for a purchaser who has previously deposited funds.
-     * Invokable only by minter, when contract is not paused.
+     * Invokable only by minter role, when contract is not paused.
      * This function does not emit an event, but if successful, the `AvastarTeleporter` contract will emit a `NewPrime` event.
      * @param _purchaser address that will own the token
      * @param _price price in ETH of token, removed from purchaser's deposit balance
@@ -217,7 +217,7 @@ contract AvastarMinter is AvastarTypes, AccessControl {
 
     /**
      * @notice Mint an Avastar Replicant for a purchaser who has previously deposited funds.
-     * Invokable only by minter, when contract is not paused.
+     * Invokable only by minter role, when contract is not paused.
      * This function does not emit an event, but if successful, the `AvastarTeleporter` contract will emit a `NewReplicant` event.
      * @param _purchaser address that will own the token
      * @param _price price in ETH of token, removed from purchaser's deposit balance

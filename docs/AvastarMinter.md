@@ -1,4 +1,4 @@
-# Avastar Minter
+# Avastar Minter Proxy
 
 View Source: [contracts/AvastarMinter.sol](https://github.com/Dapp-Wizards/Avastars-Contracts/blob/master/contracts/AvastarMinter.sol)
 
@@ -47,7 +47,7 @@ event TeleporterContractSet(address contractAddress);
 ### setTeleporterContract
 
 Set the address of the AvastarTeleporter contract.
-Only invokable by system admin, when contract is paused and not upgraded.
+Only invokable by system admin role, when contract is paused and not upgraded.
 
 ```solidity
 function setTeleporterContract(address _address) external nonpayable onlySysAdmin whenPaused whenNotUpgraded 
@@ -79,7 +79,7 @@ function setCurrentGeneration(enum AvastarTypes.Generation _generation) external
 ### setCurrentSeries
 
 Set the Series to be minted.
-Only invokable by system admin, when contract is paused and not upgraded.
+Only invokable by system admin role, when contract is paused and not upgraded.
 Emits `CurrentSeriesSet` event with new value of `currentSeries`.
 
 ```solidity
@@ -138,7 +138,7 @@ amount withdrawn
 
 Allow owner to check the withdrawable franchise balance.
 Remaining balance must be enough for all unspent deposits to be withdrawn by depositors.
-Invokable only by owner.
+Invokable only by owner role.
 
 ```solidity
 function checkFranchiseBalance() external view onlyOwner 
@@ -152,7 +152,7 @@ the available franchise balance
 ### withdrawFranchiseBalance
 
 Allow an owner to withdraw the franchise balance.
-Invokable only by owner.
+Invokable only by owner role.
 Emits `FranchiseBalanceWithdrawn` event with amount withdrawn.
 
 ```solidity
@@ -167,7 +167,7 @@ amount withdrawn
 ### purchasePrime
 
 Mint an Avastar Prime for a purchaser who has previously deposited funds.
-Invokable only by minter, when contract is not paused.
+Invokable only by minter role, when contract is not paused.
 This function does not emit an event, but if successful, the `AvastarTeleporter` contract will emit a `NewPrime` event.
 
 ```solidity
@@ -188,7 +188,7 @@ returns(uint256, uint256)
 ### purchaseReplicant
 
 Mint an Avastar Replicant for a purchaser who has previously deposited funds.
-Invokable only by minter, when contract is not paused.
+Invokable only by minter role, when contract is not paused.
 This function does not emit an event, but if successful, the `AvastarTeleporter` contract will emit a `NewReplicant` event.
 
 ```solidity
