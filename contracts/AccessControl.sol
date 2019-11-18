@@ -25,44 +25,14 @@ contract AccessControl {
         admins.add(msg.sender);
     }
 
-    /**
-     * @notice Event emitted when contract is upgraded
-     */
-    event ContractUpgrade(address newContract);
-
-    /**
-     * @notice Event emitted when contract is paused
-     */
     event ContractPaused();
-
-    /**
-     * @notice Event emitted when contract is un-paused
-     */
     event ContractUnpaused();
-
-    /**
-     * @notice Event emitted whe a new minter is added
-     */
+    event ContractUpgrade(address newContract);
     event MinterAdded(address minterAddress);
-
-    /**
-     * @notice Event emitted whe a new owner is added
-     */
     event OwnerAdded(address ownerAddress);
 
-    /**
-     * @notice State variable indicating whether the contract is paused
-     */
     bool public paused = false;
-
-    /**
-     *  @notice State variable indicating whether the contract has been upgraded
-     */
     bool public upgraded = false;
-
-    /**
-     *  @notice Set in case the contract is broken and an upgrade is required
-     */
     address public newContractAddress;
 
     /**
@@ -129,6 +99,7 @@ contract AccessControl {
 
     /**
      * @notice Called by a system administrator to add a minter
+     * @param _minterAddress approved minter
      */
     function addMinter(address _minterAddress) external onlySysAdmin {
         minters.add(_minterAddress);
@@ -137,6 +108,7 @@ contract AccessControl {
 
     /**
      * @notice Called by a system administrator to add an owner
+     * @param _ownerAddress approved owner
      */
     function addOwner(address _ownerAddress) external onlySysAdmin {
         owners.add(_ownerAddress);

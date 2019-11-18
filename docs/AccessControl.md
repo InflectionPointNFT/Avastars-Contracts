@@ -34,9 +34,9 @@ address public newContractAddress;
 ## Events
 
 ```solidity
-event ContractUpgrade(address  newContract);
 event ContractPaused();
 event ContractUnpaused();
+event ContractUpgrade(address  newContract);
 event MinterAdded(address  minterAddress);
 event OwnerAdded(address  ownerAddress);
 ```
@@ -136,7 +136,7 @@ function addMinter(address _minterAddress) external nonpayable onlySysAdmin
 
 | Name        | Type           | Description  |
 | ------------- |------------- | -----|
-| _minterAddress | address |  | 
+| _minterAddress | address | approved minter | 
 
 ### addOwner
 
@@ -150,7 +150,7 @@ function addOwner(address _ownerAddress) external nonpayable onlySysAdmin
 
 | Name        | Type           | Description  |
 | ------------- |------------- | -----|
-| _ownerAddress | address |  | 
+| _ownerAddress | address | approved owner | 
 
 ### pause
 
