@@ -1,4 +1,4 @@
-# Contract Unit Test Output
+# Unit Test Output
 ## Tests by Contract
 ```
   Contract: AccessControl
