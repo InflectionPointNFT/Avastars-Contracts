@@ -40,24 +40,17 @@ event ContractUnpaused();
 event ContractUpgrade(address newContract);
 event MinterAdded(address minterAddress);
 event OwnerAdded(address ownerAddress);
+event SysAdminAdded(address sysAdminAddress);
 ```
 
 ## Modifiers
 
-- [onlySysAdmin](#onlysysadmin)
 - [onlyMinter](#onlyminter)
 - [onlyOwner](#onlyowner)
+- [onlySysAdmin](#onlysysadmin)
 - [whenNotPaused](#whennotpaused)
 - [whenPaused](#whenpaused)
 - [whenNotUpgraded](#whennotupgraded)
-
-### onlySysAdmin
-
-Modifier to scope access to system administrators
-
-```solidity
-modifier onlySysAdmin() internal
-```
 
 ### onlyMinter
 
@@ -73,6 +66,14 @@ Modifier to scope access to owners
 
 ```solidity
 modifier onlyOwner() internal
+```
+
+### onlySysAdmin
+
+Modifier to scope access to system administrators
+
+```solidity
+modifier onlySysAdmin() internal
 ```
 
 ### whenNotPaused
@@ -104,6 +105,7 @@ modifier whenNotUpgraded() internal
 - [upgradeContract](#upgradecontract)
 - [addMinter](#addminter)
 - [addOwner](#addowner)
+- [addSysAdmin](#addsysadmin)
 - [pause](#pause)
 - [unpause](#unpause)
 
@@ -152,6 +154,20 @@ function addOwner(address _ownerAddress) external nonpayable onlySysAdmin
 | Name        | Type           | Description  |
 | ------------- |------------- | -----|
 | _ownerAddress | address | approved owner | 
+
+### addSysAdmin
+
+Called by a system administrator to add another system admin
+
+```solidity
+function addSysAdmin(address _sysAdminAddress) external nonpayable onlySysAdmin 
+```
+
+**Arguments**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _sysAdminAddress | address | approved owner | 
 
 ### pause
 

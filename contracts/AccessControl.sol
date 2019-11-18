@@ -31,18 +31,11 @@ contract AccessControl {
     event ContractUpgrade(address newContract);
     event MinterAdded(address minterAddress);
     event OwnerAdded(address ownerAddress);
+    event SysAdminAdded(address sysAdminAddress);
 
     bool public paused = false;
     bool public upgraded = false;
     address public newContractAddress;
-
-    /**
-     * @notice Modifier to scope access to system administrators
-     */
-    modifier onlySysAdmin() {
-        require(admins.has(msg.sender));
-        _;
-    }
 
     /**
      * @notice Modifier to scope access to minters
@@ -57,6 +50,14 @@ contract AccessControl {
      */
     modifier onlyOwner() {
         require(owners.has(msg.sender));
+        _;
+    }
+
+    /**
+     * @notice Modifier to scope access to system administrators
+     */
+    modifier onlySysAdmin() {
+        require(admins.has(msg.sender));
         _;
     }
 
@@ -114,6 +115,15 @@ contract AccessControl {
     function addOwner(address _ownerAddress) external onlySysAdmin {
         owners.add(_ownerAddress);
         emit OwnerAdded(_ownerAddress);
+    }
+
+    /**
+     * @notice Called by a system administrator to add another system admin
+     * @param _sysAdminAddress approved owner
+     */
+    function addSysAdmin(address _sysAdminAddress) external onlySysAdmin {
+        admins.add(_sysAdminAddress);
+        emit SysAdminAdded(_sysAdminAddress);
     }
 
     /**
