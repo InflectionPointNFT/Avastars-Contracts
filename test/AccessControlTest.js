@@ -9,6 +9,7 @@ contract('AccessControl', function(accounts) {
     const nonSysAdmin = accounts[1];
     const minter = accounts[2];
     const owner = accounts[3];
+    const newSysAdmin = accounts[4];
     const newContractAddress = accounts[3]; // just for these tests, treat this as a contract address
 
     before(async () => {
@@ -104,6 +105,25 @@ contract('AccessControl', function(accounts) {
         );
 
     });
+
+    it("should allow sysadmin to add a sysadmin", async function() {
+
+        // Pause the contract
+        result = await contract.addSysAdmin(newSysAdmin, {from: sysAdmin});
+
+        // Test that appropriate event was emitted
+        truffleAssert.eventEmitted(
+            result,
+            'SysAdminAdded',
+            (ev) => {
+                return (
+                    ev.sysAdminAddress === newSysAdmin
+                )},
+            'SysAdminAdded event should be emitted'
+        );
+
+    });
+
 
     it("should not allow non-sysadmins to set upgrade the contract when unpaused", async function() {
 
