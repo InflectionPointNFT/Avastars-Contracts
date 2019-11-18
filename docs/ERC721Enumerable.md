@@ -19,6 +19,7 @@ constructor() public
 **Constants & Variables**
 
 ```solidity
+// private members
 mapping(address => uint256[]) private _ownedTokens;
 mapping(uint256 => uint256) private _ownedTokensIndex;
 uint256[] private _allTokens;

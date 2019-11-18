@@ -24,6 +24,7 @@ constructor(string memory TOKEN_NAME, string memory TOKEN_SYMBOL) public
 **Constants & Variables**
 
 ```solidity
+// public members
 string public constant TOKEN_NAME;
 string public constant TOKEN_SYMBOL;
 struct AvastarTypes.Avastar[] public avastars;

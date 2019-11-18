@@ -8,6 +8,7 @@ View Source: [contracts/Migrations.sol](https://github.com/Dapp-Wizards/Avastars
 **Constants & Variables**
 
 ```solidity
+// public members
 address public owner;
 uint256 public lastCompletedMigration;
 

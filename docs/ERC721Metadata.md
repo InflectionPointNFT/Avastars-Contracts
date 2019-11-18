@@ -17,6 +17,7 @@ constructor() public
 **Constants & Variables**
 
 ```solidity
+// private members
 string private _name;
 string private _symbol;
 mapping(uint256 => string) private _tokenURIs;

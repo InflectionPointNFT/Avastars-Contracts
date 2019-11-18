@@ -12,6 +12,7 @@ Manages accounting of depositor and franchise balances.
 **Constants & Variables**
 
 ```solidity
+// private members
 contract IAvastarTeleporter private teleporterContract;
 enum AvastarTypes.Generation private currentGeneration;
 enum AvastarTypes.Series private currentSeries;

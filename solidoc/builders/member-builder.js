@@ -31,10 +31,8 @@ module.exports = {
         return x.visibility.toLowerCase() === key;
       }).toArray();
 
-      if(groups.length > 1) {
-        builder.push(util.format(i18n.translate("VisibilityMembers"), key));
-        builder.push("\n");
-      }
+      builder.push(util.format(i18n.translate("VisibilityMembers"), key));
+      builder.push("\n");
 
       for(var j in candidates) {
         const node = candidates[j];
