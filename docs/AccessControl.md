@@ -100,6 +100,13 @@ modifier whenNotUpgraded() internal
 
 ### upgradeContract
 
+Called by a system administrator to  mark the smart contract as upgraded,
+in case there is a serious breaking bug. This method stores the new contract
+address and emits an event to that effect. Clients of the contract should
+update to the new contract address upon receiving this event.
+     * This contract will remain paused indefinitely after such an upgrade.
+     *
+
 ```solidity
 function upgradeContract(address _newAddress) external nonpayable onlySysAdmin whenPaused whenNotUpgraded 
 ```

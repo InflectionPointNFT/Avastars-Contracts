@@ -18,7 +18,6 @@ contract AccessControl {
     Roles.Role private owners;
 
     /**
-     * @notice Constructor.
      * @notice Sets msg.sender as owner and system admin by default
      */
     constructor() public {

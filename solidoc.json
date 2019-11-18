@@ -1,8 +1,8 @@
 {
   "pathToRoot": "./",
   "outputPath": "./docs",
-  "compile": false,
-  "compiler": "truffle compile",
+  "compile": true,
+  "compiler": "npx truffle compile",
   "language": "en",
   "repoUrl": "https://github.com/Dapp-Wizards/Avastars-Contracts/blob/master/"
 }

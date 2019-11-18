@@ -35,7 +35,7 @@ function getConfig() {
     return config;
   }
 
-  var config = readConfig();
+  let config = readConfig();
   const args = process.argv;
 
   if(args.length > 6) {
@@ -46,7 +46,7 @@ function getConfig() {
   if(args.length > 2) {
     config.pathToRoot = args[2];
     config.outputPath = args[3];
-    config.compile = (args[4] || "").toLowerCase() === "true";
+    if (args[4]) config.compile = ((args[4]).toLowerCase() === "true");
     config.language = args[5] || "en";
   }
 
@@ -88,7 +88,7 @@ function begin() {
   generator.serialize(contracts, sources, config.outputPath);
 }
 
-if(config.compilation) {
+if(config.compile) {
   fs.removeSync(buildDirectory);
 
   logger.info("Removed %s.", buildDirectory);
