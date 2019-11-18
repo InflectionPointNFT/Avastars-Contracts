@@ -19,7 +19,7 @@ contract AccessControl {
 
     /**
      * @notice Sets msg.sender as owner and system admin by default.
-     * Starts paused. SysAdmin must unpause after full migration.
+     * Starts paused. System admin must unpause after full migration.
      */
     constructor() public {
         paused = true;

@@ -10,7 +10,7 @@ Role-based access control and contract upgrade functionality.
 ## Constructor
 
 Sets msg.sender as owner and system admin by default.
-Starts paused. SysAdmin must unpause after full migration.
+Starts paused. System admin must unpause after full migration.
 
 ```solidity
 constructor() public
