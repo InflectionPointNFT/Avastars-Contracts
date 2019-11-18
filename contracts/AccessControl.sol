@@ -18,10 +18,11 @@ contract AccessControl {
     Roles.Role private owners;
 
     /**
-     * @notice Sets msg.sender as owner and system admin by default
+     * @notice Sets msg.sender as owner and system admin by default.
+     * Starts paused. SysAdmin must unpause after full migration.
      */
     constructor() public {
-        paused = true; // Start paused. un-paused after full migration
+        paused = true;
         admins.add(msg.sender);
     }
 
