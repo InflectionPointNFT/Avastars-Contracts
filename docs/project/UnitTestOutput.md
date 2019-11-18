@@ -85,6 +85,8 @@
     ✓ should allow anyone to retrieve a trait id by generation, gene, and variation
     ✓ should allow anyone to assemble artwork by generation and trait hash
 
+```
+```
 ·--------------------------------------------------|---------------------------|-------------|----------------------------·
 |       Solc version: 0.5.12+commit.7709ece9       ·  Optimizer enabled: true  ·  Runs: 200  ·  Block limit: 9950000 gas  │
 ···················································|···························|·············|·····························
