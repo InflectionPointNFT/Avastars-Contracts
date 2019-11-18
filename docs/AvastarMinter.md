@@ -94,7 +94,7 @@ function setCurrentSeries(enum AvastarTypes.Series _series) public nonpayable on
 
 ### deposit
 
-Allow anyone to deposit ETH
+Allow anyone to deposit ETH.
 Before contract will mint on behalf of a user, they must have sufficient ETH on deposit.
 Invokable by any address (other than 0) when contract is not paused.
 Must have a non-zero ETH value.
@@ -168,6 +168,7 @@ amount withdrawn
 
 Mint an Avastar Prime for a purchaser who has previously deposited funds.
 Invokable only by minter, when contract is not paused.
+This function does not emit an event, but the `AvastarTeleporter` contract will emit a `NewPrime` event.
 
 ```solidity
 function purchasePrime(address _purchaser, uint256 _price, uint256 _traits, enum AvastarTypes.Gender _gender, uint8 _ranking) external nonpayable onlyMinter whenNotPaused 
@@ -188,6 +189,7 @@ returns(uint256, uint256)
 
 Mint an Avastar Replicant for a purchaser who has previously deposited funds.
 Invokable only by minter, when contract is not paused.
+This function does not emit an event, but the `AvastarTeleporter` contract will emit a `NewReplicant` event.
 
 ```solidity
 function purchaseReplicant(address _purchaser, uint256 _price, uint256 _traits, enum AvastarTypes.Generation _generation, enum AvastarTypes.Gender _gender, uint8 _ranking) external nonpayable onlyMinter whenNotPaused 

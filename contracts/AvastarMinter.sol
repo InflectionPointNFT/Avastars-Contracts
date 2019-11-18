@@ -115,7 +115,7 @@ contract AvastarMinter is AvastarTypes, AccessControl {
     }
 
     /**
-     * @notice Allow anyone to deposit ETH
+     * @notice Allow anyone to deposit ETH.
      * Before contract will mint on behalf of a user, they must have sufficient ETH on deposit.
      * Invokable by any address (other than 0) when contract is not paused.
      * Must have a non-zero ETH value.
@@ -184,6 +184,7 @@ contract AvastarMinter is AvastarTypes, AccessControl {
     /**
      * @notice Mint an Avastar Prime for a purchaser who has previously deposited funds.
      * Invokable only by minter, when contract is not paused.
+     * This function does not emit an event, but the `AvastarTeleporter` contract will emit a `NewPrime` event.
      * @param _purchaser address that will own the token
      * @param _price price in ETH of token, removed from purchaser's deposit balance
      * @param _traits the Avastar's Trait hash
@@ -218,6 +219,7 @@ contract AvastarMinter is AvastarTypes, AccessControl {
     /**
      * @notice Mint an Avastar Replicant for a purchaser who has previously deposited funds.
      * Invokable only by minter, when contract is not paused.
+     * This function does not emit an event, but the `AvastarTeleporter` contract will emit a `NewReplicant` event.
      * @param _purchaser address that will own the token
      * @param _price price in ETH of token, removed from purchaser's deposit balance
      * @param _traits the Avastar's Trait hash
