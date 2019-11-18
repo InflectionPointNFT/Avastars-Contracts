@@ -18,7 +18,7 @@ contract AccessControl {
     Roles.Role private owners;
 
     /**
-     * @notice Sets msg.sender as owner and system admin by default.
+     * @notice Sets `msg.sender` as owner and system admin by default.
      * Starts paused. System admin must unpause after full migration.
      */
     constructor() public {
