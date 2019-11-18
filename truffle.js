@@ -31,6 +31,9 @@ module.exports = {
     },
     mocha: {
         reporter: 'eth-gas-reporter',
-        reporterOptions : { excludeContracts: ['Migrations'] }
+        reporterOptions : {
+            excludeContracts: ['Migrations'],
+            currency: "USD"
+        }
     },
 };
