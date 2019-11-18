@@ -25,7 +25,7 @@ module.exports = {
         const dataType = parameter.typeDescriptions.typeString.replace("contract ", "");
         const indexed = parameter.indexed || false;
 
-        parameterList.push(`${dataType} ${indexed ? "indexed" : ""} ${argumentName}`.trim());
+        parameterList.push(`${dataType} ${indexed ? "indexed " : ""}${argumentName}`.trim());
       }
 
       builder.push(`event ${node.name}(${parameterList.join(", ")});`);

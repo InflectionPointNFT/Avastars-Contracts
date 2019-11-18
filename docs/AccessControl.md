@@ -37,9 +37,9 @@ address public newContractAddress;
 ```solidity
 event ContractPaused();
 event ContractUnpaused();
-event ContractUpgrade(address  newContract);
-event MinterAdded(address  minterAddress);
-event OwnerAdded(address  ownerAddress);
+event ContractUpgrade(address newContract);
+event MinterAdded(address minterAddress);
+event OwnerAdded(address ownerAddress);
 ```
 
 ## Modifiers

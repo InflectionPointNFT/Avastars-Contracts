@@ -8,7 +8,7 @@ View Source: [contracts/ReplicantFactory.sol](https://github.com/Dapp-Wizards/Av
 ## Events
 
 ```solidity
-event NewReplicant(uint256  id, uint256  serial, enum AvastarTypes.Generation  generation, enum AvastarTypes.Gender  gender, uint256  traits);
+event NewReplicant(uint256 id, uint256 serial, enum AvastarTypes.Generation generation, enum AvastarTypes.Gender gender, uint256 traits);
 ```
 
 ## **Functions**

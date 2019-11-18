@@ -8,7 +8,7 @@ View Source: [contracts/PrimeFactory.sol](https://github.com/Dapp-Wizards/Avasta
 ## Events
 
 ```solidity
-event NewPrime(uint256  id, uint256  serial, enum AvastarTypes.Generation  generation, enum AvastarTypes.Series  series, enum AvastarTypes.Gender  gender, uint256  traits);
+event NewPrime(uint256 id, uint256 serial, enum AvastarTypes.Generation generation, enum AvastarTypes.Series series, enum AvastarTypes.Gender gender, uint256 traits);
 ```
 
 ## **Functions**
