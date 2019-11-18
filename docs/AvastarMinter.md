@@ -5,21 +5,18 @@ View Source: [contracts/AvastarMinter.sol](https://github.com/Dapp-Wizards/Avast
 **AvastarMinter** **↗ Extends: [AvastarTypes](AvastarTypes.md), [AccessControl](AccessControl.md)**
 
 Mints Avastars using the AvastarTeleporter contract on behalf of depositors.
+Allows system admin to set current generation and series.
 Manages accounting of depositor and franchise balances.
-Manages current generation and series.
 
 ## Contract Members
 **Constants & Variables**
 
 ```solidity
-// private members
 contract IAvastarTeleporter private teleporterContract;
-uint256 private unspentDeposits;
 enum AvastarTypes.Generation private currentGeneration;
 enum AvastarTypes.Series private currentSeries;
-
-// internal members
-mapping(address => uint256) internal depositsByAddress;
+mapping(address => uint256) private depositsByAddress;
+uint256 private unspentDeposits;
 
 ```
 
@@ -48,7 +45,8 @@ event TeleporterContractSet(address contractAddress);
 
 ### setTeleporterContract
 
-Set the address of the AvastarTeleporter contract
+Set the address of the AvastarTeleporter contract.
+Only invokable by system admin, when contract is paused and not upgraded.
 
 ```solidity
 function setTeleporterContract(address _address) external nonpayable onlySysAdmin whenPaused whenNotUpgraded 
@@ -62,7 +60,10 @@ function setTeleporterContract(address _address) external nonpayable onlySysAdmi
 
 ### setCurrentGeneration
 
-Set the Generation to be minted
+Set the Generation to be minted.
+Resets `currentSeries` to `Series.ONE`.
+Only invokable by system admin role, when contract is paused and not upgraded.
+Emits `GenerationSet` event with new value of `currentGeneration`.
 
 ```solidity
 function setCurrentGeneration(enum AvastarTypes.Generation _generation) external nonpayable onlySysAdmin whenPaused whenNotUpgraded 
@@ -76,7 +77,9 @@ function setCurrentGeneration(enum AvastarTypes.Generation _generation) external
 
 ### setCurrentSeries
 
-Set the Series to be minted
+Set the Series to be minted.
+Only invokable by system admin, when contract is paused and not upgraded.
+Emits `CurrentSeriesSet` event with new value of `currentSeries`.
 
 ```solidity
 function setCurrentSeries(enum AvastarTypes.Series _series) public nonpayable onlySysAdmin whenPaused whenNotUpgraded 
@@ -91,6 +94,10 @@ function setCurrentSeries(enum AvastarTypes.Series _series) public nonpayable on
 ### deposit
 
 Allow anyone to deposit ETH
+Before contract will mint on behalf of a user, they must have sufficient ETH on deposit.
+Invokable by any address (other than 0) when contract is not paused.
+Must have a non-zero ETH value.
+Emits DepositorBalance event with depositor's resulting balance.
 
 ```solidity
 function deposit() external payable whenNotPaused 
@@ -98,7 +105,8 @@ function deposit() external payable whenNotPaused
 
 ### checkDepositorBalance
 
-Allow anyone to check their deposit balance
+Allow anyone to check their deposit balance.
+Invokable by any address (other than 0).
 
 ```solidity
 function checkDepositorBalance() external view
@@ -111,7 +119,10 @@ the depositor's current ETH balance in the contract
 
 ### withdrawDepositorBalance
 
-Allow a depositor with a balance to withdraw it
+Allow a depositor with a balance to withdraw it.
+Invokable by any address (other than 0) with an ETH balance on deposit.
+Entire depositor balance is transferred to their address.
+Emits `DepositorBalance` event of 0 amount once transfer is complete.
 
 ```solidity
 function withdrawDepositorBalance() external nonpayable
@@ -124,7 +135,9 @@ amount withdrawn
 
 ### checkFranchiseBalance
 
-Allow owner to check the withdrawable franchise balance
+Allow owner to check the withdrawable franchise balance.
+Remaining balance must be enough for all unspent deposits to be withdrawn by depositors.
+Invokable only by owner.
 
 ```solidity
 function checkFranchiseBalance() external view onlyOwner 
@@ -137,7 +150,9 @@ the available franchise balance
 
 ### withdrawFranchiseBalance
 
-Allow an owner to withdraw the franchise balance
+Allow an owner to withdraw the franchise balance.
+Invokable only by owner address.
+Emits `FranchiseBalanceWithdrawn` event with amount withdrawn.
 
 ```solidity
 function withdrawFranchiseBalance() external nonpayable onlyOwner 
@@ -150,7 +165,8 @@ amount withdrawn
 
 ### purchasePrime
 
-Mint an Avastar Prime for a purchaser who has previously deposited funds
+Mint an Avastar Prime for a purchaser who has previously deposited funds.
+Invokable only by minter, when contract is not paused.
 
 ```solidity
 function purchasePrime(address _purchaser, uint256 _price, uint256 _traits, enum AvastarTypes.Gender _gender, uint8 _ranking) external nonpayable onlyMinter whenNotPaused 
@@ -169,7 +185,8 @@ returns(uint256, uint256)
 
 ### purchaseReplicant
 
-Mint an Avastar Replicant for a purchaser who has previously deposited funds
+Mint an Avastar Replicant for a purchaser who has previously deposited funds.
+Invokable only by minter , when contract is not paused.
 
 ```solidity
 function purchaseReplicant(address _purchaser, uint256 _price, uint256 _traits, enum AvastarTypes.Generation _generation, enum AvastarTypes.Gender _gender, uint8 _ranking) external nonpayable onlyMinter whenNotPaused 

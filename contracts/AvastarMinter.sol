@@ -8,8 +8,8 @@ import "./AccessControl.sol";
  * @title Avastar Minter
  * @author Cliff Hall
  * @notice Mints Avastars using the AvastarTeleporter contract on behalf of depositors.
+ * Allows system admin to set current generation and series.
  * Manages accounting of depositor and franchise balances.
- * Manages current generation and series.
  */
 contract AvastarMinter is AvastarTypes, AccessControl {
 
@@ -51,16 +51,6 @@ contract AvastarMinter is AvastarTypes, AccessControl {
     IAvastarTeleporter private teleporterContract ;
 
     /**
-     * @notice Track the deposits made by address
-     */
-    mapping (address => uint256) depositsByAddress;
-
-    /**
-     * @notice Current total of unspent deposits by all depositors
-     */
-    uint256 private unspentDeposits;
-
-    /**
      * @notice The current Generation of Avastars being minted
      */
     Generation private currentGeneration;
@@ -71,8 +61,18 @@ contract AvastarMinter is AvastarTypes, AccessControl {
     Series private currentSeries;
 
     /**
-     * @notice Set the address of the AvastarTeleporter contract
-     * @dev Only invokable by sysAdmin role, when contract is paused and not upgraded
+     * @notice Track the deposits made by address
+     */
+    mapping (address => uint256) private depositsByAddress;
+
+    /**
+     * @notice Current total of unspent deposits by all depositors
+     */
+    uint256 private unspentDeposits;
+
+    /**
+     * @notice Set the address of the AvastarTeleporter contract.
+     * Only invokable by system admin, when contract is paused and not upgraded.
      * @param _address address of AvastarTeleporter contract
      */
     function setTeleporterContract(address _address) external onlySysAdmin whenPaused whenNotUpgraded {
@@ -91,10 +91,10 @@ contract AvastarMinter is AvastarTypes, AccessControl {
     }
 
     /**
-     * @notice Set the Generation to be minted
-     * @dev Resets currentSeries to Series.ONE
-     * @dev Only invokable by sysAdmin role, when contract is paused and not upgraded
-     * @dev Emits GenerationSet event with new value of currentGeneration
+     * @notice Set the Generation to be minted.
+     * Resets `currentSeries` to `Series.ONE`.
+     * Only invokable by system admin role, when contract is paused and not upgraded.
+     * Emits `GenerationSet` event with new value of `currentGeneration`.
      * @param _generation the new value for currentGeneration
      */
     function setCurrentGeneration(Generation _generation) external onlySysAdmin whenPaused whenNotUpgraded {
@@ -104,9 +104,9 @@ contract AvastarMinter is AvastarTypes, AccessControl {
     }
 
     /**
-     * @notice Set the Series to be minted
-     * @dev Only invokable by sysAdmin role, when contract is paused and not upgraded
-     * @dev Emits CurrentSeriesSet event with new value of currentSeries
+     * @notice Set the Series to be minted.
+     * Only invokable by system admin, when contract is paused and not upgraded.
+     * Emits `CurrentSeriesSet` event with new value of `currentSeries`.
      * @param _series the new value for currentSeries
      */
     function setCurrentSeries(Series _series) public onlySysAdmin whenPaused whenNotUpgraded {
@@ -116,10 +116,10 @@ contract AvastarMinter is AvastarTypes, AccessControl {
 
     /**
      * @notice Allow anyone to deposit ETH
-     * @dev Before contract will mint on behalf of a user, they must have sufficient ETH on deposit
-     * @dev Invokable by any address (other than 0) when contract is not paused
-     * @dev Must have a non-zero ETH value
-     * @dev Emits DepositorBalance event with depositor's resulting balance
+     * Before contract will mint on behalf of a user, they must have sufficient ETH on deposit.
+     * Invokable by any address (other than 0) when contract is not paused.
+     * Must have a non-zero ETH value.
+     * Emits DepositorBalance event with depositor's resulting balance.
      */
     function deposit() external payable whenNotPaused {
         require(msg.value > 0);
@@ -130,8 +130,8 @@ contract AvastarMinter is AvastarTypes, AccessControl {
     }
 
     /**
-     * @notice Allow anyone to check their deposit balance
-     * @dev Invokable by any address (other than 0)
+     * @notice Allow anyone to check their deposit balance.
+     * Invokable by any address (other than 0).
      * @return the depositor's current ETH balance in the contract
      */
     function checkDepositorBalance() external view returns (uint256){
@@ -140,10 +140,10 @@ contract AvastarMinter is AvastarTypes, AccessControl {
     }
 
     /**
-     * @notice Allow a depositor with a balance to withdraw it
-     * @dev Invokable by any address (other than 0) with an ETH balance on deposit
-     * @dev Entire depositor balance is transferred to their address
-     * @dev Emits DepositorBalance event of 0 amount once transfer is complete
+     * @notice Allow a depositor with a balance to withdraw it.
+     * Invokable by any address (other than 0) with an ETH balance on deposit.
+     * Entire depositor balance is transferred to their address.
+     * Emits `DepositorBalance` event of 0 amount once transfer is complete.
      * @return amount withdrawn
      */
     function withdrawDepositorBalance() external returns (uint256) {
@@ -158,9 +158,9 @@ contract AvastarMinter is AvastarTypes, AccessControl {
     }
 
     /**
-     * @notice Allow owner to check the withdrawable franchise balance
-     * @dev Remaining balance must be enough for all unspent deposits to be withdrawn by depositors
-     * @dev Invokable only by owner address
+     * @notice Allow owner to check the withdrawable franchise balance.
+     * Remaining balance must be enough for all unspent deposits to be withdrawn by depositors.
+     * Invokable only by owner.
      * @return the available franchise balance
      */
     function checkFranchiseBalance() external view onlyOwner returns (uint256) {
@@ -168,9 +168,9 @@ contract AvastarMinter is AvastarTypes, AccessControl {
     }
 
     /**
-     * @notice Allow an owner to withdraw the franchise balance
-     * @dev Invokable only by owner address
-     * @dev Emits FranchiseBalanceWithdrawn event with amount withdrawn
+     * @notice Allow an owner to withdraw the franchise balance.
+     * Invokable only by owner address.
+     * Emits `FranchiseBalanceWithdrawn` event with amount withdrawn.
      * @return amount withdrawn
      */
     function withdrawFranchiseBalance() external onlyOwner returns (uint256) {
@@ -182,8 +182,8 @@ contract AvastarMinter is AvastarTypes, AccessControl {
     }
 
     /**
-     * @notice Mint an Avastar Prime for a purchaser who has previously deposited funds
-     * @dev Invokable only by minter address, when contract is not paused
+     * @notice Mint an Avastar Prime for a purchaser who has previously deposited funds.
+     * Invokable only by minter, when contract is not paused.
      * @param _purchaser address that will own the token
      * @param _price price in ETH of token, removed from purchaser's deposit balance
      * @param _traits the Avastar's Trait hash
@@ -216,8 +216,8 @@ contract AvastarMinter is AvastarTypes, AccessControl {
 
 
     /**
-     * @notice Mint an Avastar Replicant for a purchaser who has previously deposited funds
-     * @dev Invokable only by minter address, when contract is not paused
+     * @notice Mint an Avastar Replicant for a purchaser who has previously deposited funds.
+     * Invokable only by minter , when contract is not paused.
      * @param _purchaser address that will own the token
      * @param _price price in ETH of token, removed from purchaser's deposit balance
      * @param _traits the Avastar's Trait hash
