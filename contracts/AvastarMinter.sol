@@ -115,6 +115,30 @@ contract AvastarMinter is AvastarTypes, AccessControl {
     }
 
     /**
+ * @notice Allow owner to check the withdrawable franchise balance.
+ * Remaining balance must be enough for all unspent deposits to be withdrawn by depositors.
+ * Invokable only by owner role.
+ * @return the available franchise balance
+ */
+    function checkFranchiseBalance() external view onlyOwner returns (uint256) {
+        return uint256(address(this).balance).sub(unspentDeposits);
+    }
+
+    /**
+     * @notice Allow an owner to withdraw the franchise balance.
+     * Invokable only by owner role.
+     * Emits `FranchiseBalanceWithdrawn` event with amount withdrawn.
+     * @return amount withdrawn
+     */
+    function withdrawFranchiseBalance() external onlyOwner returns (uint256) {
+        uint256 franchiseBalance = uint256(address(this).balance).sub(unspentDeposits);
+        require(franchiseBalance > 0);
+        msg.sender.transfer(franchiseBalance);
+        emit FranchiseBalanceWithdrawn(msg.sender, franchiseBalance);
+        return franchiseBalance;
+    }
+
+    /**
      * @notice Allow anyone to deposit ETH.
      * Before contract will mint on behalf of a user, they must have sufficient ETH on deposit.
      * Invokable by any address (other than 0) when contract is not paused.
@@ -155,30 +179,6 @@ contract AvastarMinter is AvastarTypes, AccessControl {
         msg.sender.transfer(depositorBalance);
         emit DepositorBalance(msg.sender, depositsByAddress[msg.sender]);
         return depositorBalance;
-    }
-
-    /**
-     * @notice Allow owner to check the withdrawable franchise balance.
-     * Remaining balance must be enough for all unspent deposits to be withdrawn by depositors.
-     * Invokable only by owner role.
-     * @return the available franchise balance
-     */
-    function checkFranchiseBalance() external view onlyOwner returns (uint256) {
-        return uint256(address(this).balance).sub(unspentDeposits);
-    }
-
-    /**
-     * @notice Allow an owner to withdraw the franchise balance.
-     * Invokable only by owner role.
-     * Emits `FranchiseBalanceWithdrawn` event with amount withdrawn.
-     * @return amount withdrawn
-     */
-    function withdrawFranchiseBalance() external onlyOwner returns (uint256) {
-        uint256 franchiseBalance = uint256(address(this).balance).sub(unspentDeposits);
-        require(franchiseBalance > 0);
-        msg.sender.transfer(franchiseBalance);
-        emit FranchiseBalanceWithdrawn(msg.sender, franchiseBalance);
-        return franchiseBalance;
     }
 
     /**

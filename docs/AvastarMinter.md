@@ -36,11 +36,11 @@ event TeleporterContractSet(address contractAddress);
 - [setTeleporterContract](#setteleportercontract)
 - [setCurrentGeneration](#setcurrentgeneration)
 - [setCurrentSeries](#setcurrentseries)
+- [checkFranchiseBalance](#checkfranchisebalance)
+- [withdrawFranchiseBalance](#withdrawfranchisebalance)
 - [deposit](#deposit)
 - [checkDepositorBalance](#checkdepositorbalance)
 - [withdrawDepositorBalance](#withdrawdepositorbalance)
-- [checkFranchiseBalance](#checkfranchisebalance)
-- [withdrawFranchiseBalance](#withdrawfranchisebalance)
 - [purchasePrime](#purchaseprime)
 - [purchaseReplicant](#purchasereplicant)
 
@@ -92,6 +92,36 @@ function setCurrentSeries(enum AvastarTypes.Series _series) public nonpayable on
 | ------------- |------------- | -----|
 | _series | enum AvastarTypes.Series | the new value for currentSeries | 
 
+### checkFranchiseBalance
+
+Allow owner to check the withdrawable franchise balance.
+Remaining balance must be enough for all unspent deposits to be withdrawn by depositors.
+Invokable only by owner role.
+
+```solidity
+function checkFranchiseBalance() external view onlyOwner 
+returns(uint256)
+```
+
+**Returns**
+
+the available franchise balance
+
+### withdrawFranchiseBalance
+
+Allow an owner to withdraw the franchise balance.
+Invokable only by owner role.
+Emits `FranchiseBalanceWithdrawn` event with amount withdrawn.
+
+```solidity
+function withdrawFranchiseBalance() external nonpayable onlyOwner 
+returns(uint256)
+```
+
+**Returns**
+
+amount withdrawn
+
 ### deposit
 
 Allow anyone to deposit ETH.
@@ -127,36 +157,6 @@ Emits `DepositorBalance` event of 0 amount once transfer is complete.
 
 ```solidity
 function withdrawDepositorBalance() external nonpayable
-returns(uint256)
-```
-
-**Returns**
-
-amount withdrawn
-
-### checkFranchiseBalance
-
-Allow owner to check the withdrawable franchise balance.
-Remaining balance must be enough for all unspent deposits to be withdrawn by depositors.
-Invokable only by owner role.
-
-```solidity
-function checkFranchiseBalance() external view onlyOwner 
-returns(uint256)
-```
-
-**Returns**
-
-the available franchise balance
-
-### withdrawFranchiseBalance
-
-Allow an owner to withdraw the franchise balance.
-Invokable only by owner role.
-Emits `FranchiseBalanceWithdrawn` event with amount withdrawn.
-
-```solidity
-function withdrawFranchiseBalance() external nonpayable onlyOwner 
 returns(uint256)
 ```
 
