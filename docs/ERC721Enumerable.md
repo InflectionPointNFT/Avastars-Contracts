@@ -7,6 +7,14 @@ View Source: [@openzeppelin/contracts/token/ERC721/ERC721Enumerable.sol](https:/
 
 See https://eips.ethereum.org/EIPS/eip-721
 
+## Constructor
+
+Constructor function.
+
+```solidity
+constructor() public
+```
+
 ## Contract Members
 **Constants & Variables**
 

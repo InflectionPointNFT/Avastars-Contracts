@@ -7,6 +7,14 @@ View Source: [contracts/AccessControl.sol](https://github.com/Dapp-Wizards/Avast
 
 Role-based access control and related functions, function modifiers, and events
 
+## Constructor
+
+Sets msg.sender as owner and system admin by default
+
+```solidity
+constructor() public
+```
+
 ## Contract Members
 **Constants & Variables**
 
@@ -103,9 +111,8 @@ modifier whenNotUpgraded() internal
 Called by a system administrator to  mark the smart contract as upgraded,
 in case there is a serious breaking bug. This method stores the new contract
 address and emits an event to that effect. Clients of the contract should
-update to the new contract address upon receiving this event.
-     * This contract will remain paused indefinitely after such an upgrade.
-     *
+update to the new contract address upon receiving this event. This contract will
+remain paused indefinitely after such an upgrade.
 
 ```solidity
 function upgradeContract(address _newAddress) external nonpayable onlySysAdmin whenPaused whenNotUpgraded 

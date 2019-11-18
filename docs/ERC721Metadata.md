@@ -5,6 +5,14 @@ View Source: [@openzeppelin/contracts/token/ERC721/ERC721Metadata.sol](https://g
 **ERC721Metadata** **↗ Extends: [Context](Context.md), [ERC165](ERC165.md), [ERC721](ERC721.md), [IERC721Metadata](IERC721Metadata.md)**
 **↘ Derived Contracts: [ERC721Full](ERC721Full.md)**
 
+## Constructor
+
+Constructor function
+
+```solidity
+constructor() public
+```
+
 ## Contract Members
 **Constants & Variables**
 

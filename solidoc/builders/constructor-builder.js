@@ -28,26 +28,33 @@ module.exports = {
     const description = documentationHelper.getNotice(node.documentation);
     const args = ((node.modifiers || [])[0] || {}).arguments;
 
-    if(!args || !args.length) {
-      return clean();
-    }
+    if (!description && (!args || !args.length)) return clean();
 
     code.push("```solidity");
     code.push("\n");
     code.push("constructor(");
 
-    for(let i in args) {
-      const argument = args[i];
+    if(args && args.length) {
 
-      const dataType = argument.typeDescriptions.typeString.replace("contract ", "");
-      const argumentDocumentation = documentationHelper.get(node.documentation, "param " + argument.name);
+      for (let i in args) {
+        const argument = args[i];
 
-      parameters.push(dataType + " " + argument.name);
+        const dataType = argument.typeDescriptions.typeString.replace("contract ", "");
+        const argumentDocumentation = documentationHelper.get(node.documentation, "param " + argument.name);
 
-      argBuilder.push(`| ${argument.name} | ${dataType} | ${argumentDocumentation.replace("\r\n?|\n", " ")} | \n`);
+        parameters.push(dataType + " " + argument.name);
+
+        argBuilder.push(`| ${argument.name} | ${dataType} | ${argumentDocumentation.replace("\r\n?|\n", " ")} | \n`);
+      }
+
+      code.push(parameters.join(", "));
+
+      template = template.replace("{{ConstructorArgumentsHeading}}", `**${i18n.translate("Arguments")}**`);
+      template = template.replace("{{TableHeader}}", templateHelper.TableHeaderTemplate);
+      template = template.replace("{{ConstructorArguments}}", argBuilder.join(""));
+
     }
 
-    code.push(parameters.join(", "));
     code.push(") ");
     code.push(node.visibility.toLowerCase());
     code.push("\n");
@@ -56,12 +63,8 @@ module.exports = {
     template = template.replace("{{ConstructorHeading}}", `## ${i18n.translate("Constructor")}`);
     template = template.replace("{{ConstructorDescription}}", description);
     template = template.replace("{{ConstructorCode}}", code.join(""));
-    template = template.replace("{{ConstructorArguments}}", argBuilder.join(""));
 
-    if (args && args.length) {
-      template = template.replace("{{ConstructorArgumentsHeading}}", `**${i18n.translate("Arguments")}**`);
-      template = template.replace("{{TableHeader}}", templateHelper.TableHeaderTemplate);
-    }
+    template = clean();
 
     return template;
   }
