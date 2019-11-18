@@ -28,5 +28,9 @@ module.exports = {
             provider: () => new HDWalletProvider(keys.mnemonic, url, 1),
             network_id: "3"
         }
-    }
+    },
+    mocha: {
+        reporter: 'eth-gas-reporter',
+        reporterOptions : { excludeContracts: ['Migrations'] }
+    },
 };

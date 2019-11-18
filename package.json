@@ -25,6 +25,7 @@
     "babel-core": "^6.26.3",
     "babel-preset-env": "^1.7.0",
     "bn.js": "^5.0.0",
+    "eth-gas-reporter": "^0.2.12",
     "ganache-cli": "^6.7.0",
     "sol2uml": "^1.1.11",
     "solhint": "^2.3.0",
