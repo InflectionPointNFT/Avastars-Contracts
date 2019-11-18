@@ -184,7 +184,7 @@ contract AvastarMinter is AvastarTypes, AccessControl {
     /**
      * @notice Mint an Avastar Prime for a purchaser who has previously deposited funds.
      * Invokable only by minter, when contract is not paused.
-     * This function does not emit an event, but the `AvastarTeleporter` contract will emit a `NewPrime` event.
+     * This function does not emit an event, but if successful, the `AvastarTeleporter` contract will emit a `NewPrime` event.
      * @param _purchaser address that will own the token
      * @param _price price in ETH of token, removed from purchaser's deposit balance
      * @param _traits the Avastar's Trait hash
@@ -215,11 +215,10 @@ contract AvastarMinter is AvastarTypes, AccessControl {
         return (tokenId, serial);
     }
 
-
     /**
      * @notice Mint an Avastar Replicant for a purchaser who has previously deposited funds.
      * Invokable only by minter, when contract is not paused.
-     * This function does not emit an event, but the `AvastarTeleporter` contract will emit a `NewReplicant` event.
+     * This function does not emit an event, but if successful, the `AvastarTeleporter` contract will emit a `NewReplicant` event.
      * @param _purchaser address that will own the token
      * @param _price price in ETH of token, removed from purchaser's deposit balance
      * @param _traits the Avastar's Trait hash
