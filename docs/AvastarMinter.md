@@ -4,7 +4,7 @@ View Source: [contracts/AvastarMinter.sol](https://github.com/Dapp-Wizards/Avast
 
 **AvastarMinter** **↗ Extends: [AvastarTypes](AvastarTypes.md), [AccessControl](AccessControl.md)**
 
-Mints Avastars using the AvastarTeleporter contract on behalf of depositors.
+Mints Avastars using the `AvastarTeleporter` contract on behalf of depositors.
 Allows system admin to set current generation and series.
 Manages accounting of depositor and franchise balances.
 
@@ -151,7 +151,7 @@ the available franchise balance
 ### withdrawFranchiseBalance
 
 Allow an owner to withdraw the franchise balance.
-Invokable only by owner address.
+Invokable only by owner.
 Emits `FranchiseBalanceWithdrawn` event with amount withdrawn.
 
 ```solidity
@@ -186,7 +186,7 @@ returns(uint256, uint256)
 ### purchaseReplicant
 
 Mint an Avastar Replicant for a purchaser who has previously deposited funds.
-Invokable only by minter , when contract is not paused.
+Invokable only by minter, when contract is not paused.
 
 ```solidity
 function purchaseReplicant(address _purchaser, uint256 _price, uint256 _traits, enum AvastarTypes.Generation _generation, enum AvastarTypes.Gender _gender, uint8 _ranking) external nonpayable onlyMinter whenNotPaused 

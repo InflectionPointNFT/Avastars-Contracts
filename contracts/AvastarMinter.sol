@@ -7,7 +7,7 @@ import "./AccessControl.sol";
 /**
  * @title Avastar Minter
  * @author Cliff Hall
- * @notice Mints Avastars using the AvastarTeleporter contract on behalf of depositors.
+ * @notice Mints Avastars using the `AvastarTeleporter` contract on behalf of depositors.
  * Allows system admin to set current generation and series.
  * Manages accounting of depositor and franchise balances.
  */
@@ -169,7 +169,7 @@ contract AvastarMinter is AvastarTypes, AccessControl {
 
     /**
      * @notice Allow an owner to withdraw the franchise balance.
-     * Invokable only by owner address.
+     * Invokable only by owner.
      * Emits `FranchiseBalanceWithdrawn` event with amount withdrawn.
      * @return amount withdrawn
      */
@@ -217,7 +217,7 @@ contract AvastarMinter is AvastarTypes, AccessControl {
 
     /**
      * @notice Mint an Avastar Replicant for a purchaser who has previously deposited funds.
-     * Invokable only by minter , when contract is not paused.
+     * Invokable only by minter, when contract is not paused.
      * @param _purchaser address that will own the token
      * @param _price price in ETH of token, removed from purchaser's deposit balance
      * @param _traits the Avastar's Trait hash
