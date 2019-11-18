@@ -6,7 +6,7 @@ import "@openzeppelin/contracts/math/SafeMath.sol";
 /**
  * @title Access Control
  * @author Cliff Hall
- * @notice Role-based access control and related functions, function modifiers, and events
+ * @notice Role-based access control and contract upgrade functionality.
  */
 contract AccessControl {
 
