@@ -7,9 +7,9 @@ import "./AccessControl.sol";
 /**
  * @title Avastar Minter
  * @author Cliff Hall
- * @notice Mints Avastars using the AvastarTeleporter contract on behalf of depositors
- * @dev Manages accounting of depositor and franchise balances
- * @dev Manages current generation and series
+ * @notice Mints Avastars using the AvastarTeleporter contract on behalf of depositors.
+ * Manages accounting of depositor and franchise balances.
+ * Manages current generation and series.
  */
 contract AvastarMinter is AvastarTypes, AccessControl {
 

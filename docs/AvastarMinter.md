@@ -4,7 +4,9 @@ View Source: [contracts/AvastarMinter.sol](https://github.com/Dapp-Wizards/Avast
 
 **AvastarMinter** **↗ Extends: [AvastarTypes](AvastarTypes.md), [AccessControl](AccessControl.md)**
 
-Mints Avastars using the AvastarTeleporter contract on behalf of depositors
+Mints Avastars using the AvastarTeleporter contract on behalf of depositors.
+Manages accounting of depositor and franchise balances.
+Manages current generation and series.
 
 ## Contract Members
 **Constants & Variables**
