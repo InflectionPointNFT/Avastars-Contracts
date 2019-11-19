@@ -25,7 +25,7 @@ Retrieve a Trait by ID
 
 ```solidity
 function getTrait(uint256 _traitId) external view
-returns(id uint256, generation enum AvastarTypes.Generation, series enum AvastarTypes.Series[], gender enum AvastarTypes.Gender, gene enum AvastarTypes.Gene, variation uint8, name string, svg string)
+returns(uint256 id, enum AvastarTypes.Generation generation, enum AvastarTypes.Series[] series, enum AvastarTypes.Gender gender, enum AvastarTypes.Gene gene, uint8 variation, string name, string svg)
 ```
 
 **Arguments**
@@ -125,7 +125,7 @@ Concatenate two strings
 
 ```solidity
 function strConcat(string _a, string _b) private pure
-returns(result string)
+returns(string result)
 ```
 
 **Arguments**

@@ -34,7 +34,7 @@ returns(uint256)
 
 ```solidity
 function tokenOfOwnerByIndex(address owner, uint256 index) public view
-returns(tokenId uint256)
+returns(uint256 tokenId)
 ```
 
 **Arguments**

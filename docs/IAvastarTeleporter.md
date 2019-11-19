@@ -79,7 +79,7 @@ returns(uint256, uint256)
 
 ```solidity
 function ownerOf(uint256 tokenId) external view
-returns(owner address)
+returns(address owner)
 ```
 
 **Arguments**

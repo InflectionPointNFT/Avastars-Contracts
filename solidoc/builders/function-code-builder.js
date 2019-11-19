@@ -21,7 +21,7 @@ module.exports = {
 
       for(let i in returnParameters) {
         const parameter = returnParameters[i];
-        returnList.push(`${parameter.name} ${parameter.typeDescriptions.typeString}`.trim());
+        returnList.push(`${parameter.typeDescriptions.typeString} ${parameter.name}`.trim());
       }
 
       builder.push(returnList.join(", "));
@@ -79,20 +79,7 @@ module.exports = {
 
     builder.push("\n");
     builder.push("```");
-/*
-    if(!returnDocumentation) {
-      return builder.join("");
-    }
 
-    builder.push("\n");
-    builder.push("\n");
-
-    builder.push(`**${i18n.translate("Returns")}**`);
-    builder.push("\n");
-    builder.push("\n");
-    builder.push(returnDocumentation);
-    builder.push("\n");
-*/
     return builder.join("");
   }
 };

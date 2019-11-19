@@ -100,7 +100,7 @@ Invokable only by owner role.
 
 ```solidity
 function checkFranchiseBalance() external view onlyOwner 
-returns(franchiseBalance uint256)
+returns(uint256 franchiseBalance)
 ```
 
 **Returns**
@@ -118,7 +118,7 @@ Emits `FranchiseBalanceWithdrawn` event with amount withdrawn.
 
 ```solidity
 function withdrawFranchiseBalance() external nonpayable onlyOwner 
-returns(amountWithdrawn uint256)
+returns(uint256 amountWithdrawn)
 ```
 
 **Returns**
@@ -164,7 +164,7 @@ Emits `DepositorBalance` event of 0 amount once transfer is complete.
 
 ```solidity
 function withdrawDepositorBalance() external nonpayable
-returns(amountWithdrawn uint256)
+returns(uint256 amountWithdrawn)
 ```
 
 **Returns**
@@ -182,7 +182,7 @@ This function does not emit an event, but if successful, the `AvastarTeleporter`
 
 ```solidity
 function purchasePrime(address _purchaser, uint256 _price, uint256 _traits, enum AvastarTypes.Gender _gender, uint8 _ranking) external nonpayable onlyMinter whenNotPaused 
-returns(tokenId uint256, serial uint256)
+returns(uint256 tokenId, uint256 serial)
 ```
 
 **Arguments**
@@ -211,7 +211,7 @@ This function does not emit an event, but if successful, the `AvastarTeleporter`
 
 ```solidity
 function purchaseReplicant(address _purchaser, uint256 _price, uint256 _traits, enum AvastarTypes.Generation _generation, enum AvastarTypes.Gender _gender, uint8 _ranking) external nonpayable onlyMinter whenNotPaused 
-returns(tokenId uint256, serial uint256)
+returns(uint256 tokenId, uint256 serial)
 ```
 
 **Arguments**

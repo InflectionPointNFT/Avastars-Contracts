@@ -35,7 +35,7 @@ Returns the number of NFTs in `owner`'s account.
 
 ```solidity
 function balanceOf(address owner) public view
-returns(balance uint256)
+returns(uint256 balance)
 ```
 
 **Arguments**
@@ -58,7 +58,7 @@ Returns the owner of the NFT specified by `tokenId`.
 
 ```solidity
 function ownerOf(uint256 tokenId) public view
-returns(owner address)
+returns(address owner)
 ```
 
 **Arguments**
@@ -141,7 +141,7 @@ function approve(address to, uint256 tokenId) public nonpayable
 
 ```solidity
 function getApproved(uint256 tokenId) public view
-returns(operator address)
+returns(address operator)
 ```
 
 **Arguments**
