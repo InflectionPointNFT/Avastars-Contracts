@@ -52,7 +52,7 @@ returns (
 | traits | uint256 | the Prime's trait hash | 
 | replicated | bool[] | the Prime's trait replication indicators | 
 | generation | enum AvastarTypes.Generation | the Prime's generation | 
-| series | enum AvastarTypes.Series |  | 
+| series | enum AvastarTypes.Series | the Prime's series | 
 | gender | enum AvastarTypes.Gender | the Prime's gender | 
 | ranking | uint8 | the Prime's ranking | 
 
@@ -90,7 +90,7 @@ returns (
 | traits | uint256 | the Prime's trait hash | 
 | replicated | bool[] | the Prime's trait replication indicators | 
 | generation | enum AvastarTypes.Generation | the Prime's generation | 
-| series | enum AvastarTypes.Series |  | 
+| series | enum AvastarTypes.Series | the Prime's series | 
 | gender | enum AvastarTypes.Gender | the Prime's gender | 
 | ranking | uint8 | the Prime's ranking | 
 

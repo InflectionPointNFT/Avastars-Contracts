@@ -22,6 +22,7 @@ contract PrimeFactory is TraitFactory {
      * @return traits the Prime's trait hash
      * @return replicated the Prime's trait replication indicators
      * @return generation the Prime's generation
+     * @return series the Prime's series
      * @return gender the Prime's gender
      * @return ranking the Prime's ranking
      */
@@ -59,6 +60,7 @@ contract PrimeFactory is TraitFactory {
      * @return traits the Prime's trait hash
      * @return replicated the Prime's trait replication indicators
      * @return generation the Prime's generation
+     * @return series the Prime's series
      * @return gender the Prime's gender
      * @return ranking the Prime's ranking
      */
@@ -96,6 +98,7 @@ contract PrimeFactory is TraitFactory {
      * @param _owner the address of the new Avastar's owner
      * @param _traits the new Prime's trait hash
      * @param _generation the new Prime's generation
+     * @return _series the new Prime's series
      * @param _gender the new Prime's gender
      * @param _ranking the new Prime's rarity ranking
      * @return tokenId the newly minted Prime's token ID
