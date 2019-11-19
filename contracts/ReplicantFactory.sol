@@ -14,31 +14,50 @@ contract ReplicantFactory is PrimeFactory {
     event NewReplicant(uint256 id, uint256 serial, Generation generation, Gender gender, uint256 traits);
 
     /**
-     * @notice Get the Avastar Replicant associated by Generation and Serial
+     * @notice Get the Avastar Replicant metadata associated with a given Generation and Serial
+     * @param _generation the generation of the specified Replicant
+     * @param _serial the serial of the specified Replicant
+     * @return id the Replicant's token ID
+     * @return serial the Replicant's serial
+     * @return traits the Replicant's trait hash
+     * @return generation the Replicant's generation
+     * @return gender the Replicant's gender
+     * @return ranking the Replicant's ranking
      */
     function getReplicantByGenerationAndSerial(Generation _generation, uint256 _serial)
-    external
-    view
+    external view
     returns (
-        uint256,
-        uint256,
-        uint256,
-        Generation,
-        Gender,
-        uint8
-    )
-    {
+        uint256 id,
+        uint256 serial,
+        uint256 traits,
+        Generation generation,
+        Gender gender,
+        uint8 ranking
+    ) {
         require(_serial < replicantsByGeneration[uint8(_generation)].length);
         Replicant memory replicant = replicantsByGeneration[uint8(_generation)][uint256(_serial)];
-        return ( replicant.id, replicant.serial, replicant.traits, replicant.generation, replicant.gender, replicant.ranking );
+        return (
+            replicant.id,
+            replicant.serial,
+            replicant.traits,
+            replicant.generation,
+            replicant.gender,
+            replicant.ranking
+        );
     }
 
     /**
-     * @notice Get the Avastar Replicant associated with a given Token ID
+     * @notice Get the Avastar Replicant metadata associated with a given Token ID
+     * @param _tokenId the token ID of the specified Replicant
+     * @return id the Replicant's token ID
+     * @return serial the Replicant's serial
+     * @return traits the Replicant's trait hash
+     * @return generation the Replicant's generation
+     * @return gender the Replicant's gender
+     * @return ranking the Replicant's ranking
      */
     function getReplicantByTokenId(uint256 _tokenId)
-    external
-    view
+    external view
     returns (
         uint256,
         uint256,
@@ -46,17 +65,31 @@ contract ReplicantFactory is PrimeFactory {
         Generation,
         Gender,
         uint8
-    )
-    {
+    ) {
         require(_tokenId < avastars.length);
         Avastar memory avastar = avastars[_tokenId];
         Replicant memory replicant = replicantsByGeneration[uint8(avastar.generation)][uint256(avastar.serial)];
-        return ( replicant.id, replicant.serial, replicant.traits, replicant.generation, replicant.gender, replicant.ranking );
+        return (
+            replicant.id,
+            replicant.serial,
+            replicant.traits,
+            replicant.generation,
+            replicant.gender,
+            replicant.ranking
+        );
     }
 
     /**
-     * @notice Mint an Avastar Replicant
-     * @dev Only invokable by minter role, when contract is not paused
+     * @notice Mint an Avastar Replicant.
+     * Only invokable by minter role, when contract is not paused.
+     * If successful, emits a `NewReplicant` event.
+     * @param _owner the address of the new Avastar's owner
+     * @param _traits the new Replicant's trait hash
+     * @param _generation the new Replicant's generation
+     * @param _gender the new Replicant's gender
+     * @param _ranking the new Replicant's rarity ranking
+     * @return id the newly minted Replicant's token ID
+     * @return serial the newly minted Replicant's serial
      */
     function mintReplicant(
         address _owner,
@@ -65,10 +98,8 @@ contract ReplicantFactory is PrimeFactory {
         Gender _gender,
         uint8 _ranking
     )
-    external
-    onlyMinter
-    whenNotPaused
-    returns (uint256, uint256)
+    external onlyMinter whenNotPaused
+    returns (uint256 tokenId, uint256 serial)
     {
         require(_owner != address(0));
         require(_traits != 0);
@@ -77,8 +108,8 @@ contract ReplicantFactory is PrimeFactory {
         require(_ranking >= 0 && _ranking <= 100);
 
         // Get Prime Serial and Token ID
-        uint256 serial = replicantsByGeneration[uint8(_generation)].length;
-        uint256 tokenId = avastars.length;
+        serial = replicantsByGeneration[uint8(_generation)].length;
+        tokenId = avastars.length;
 
         // Create and store Replicant struct
         replicantsByGeneration[uint8(_generation)].push(

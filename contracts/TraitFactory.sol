@@ -101,7 +101,7 @@ contract TraitFactory is AvastarState {
         uint8 variation = uint8(_variationSafe);
 
         // Get Trait ID
-        uint256 traitId = traits.length;
+        traitId = traits.length;
 
         // Create and store trait
         traits.push(
@@ -169,9 +169,8 @@ contract TraitFactory is AvastarState {
         string memory _a,
         string memory _b
     )
-        private
-        pure
-        returns (string memory result)
+    private pure
+    returns (string memory result)
     {
         bytes memory bA = bytes(_a);
         bytes memory bB = bytes(_b);

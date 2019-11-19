@@ -14,56 +14,92 @@ contract PrimeFactory is TraitFactory {
     event NewPrime(uint256 id, uint256 serial, Generation generation, Series series, Gender gender, uint256 traits);
 
     /**
-     * @notice Get the Avastar Prime metadata associated with a given Generation and Serial
+     * @notice Get the Avastar Prime metadata associated with a given Generation and Serial.
      * @param _generation the Generation of the Prime
      * @param _serial the Serial of the Prime
+     * @return id the Prime's token ID
+     * @return serial the Prime's serial
+     * @return traits the Prime's trait hash
+     * @return replicated the Prime's trait replication indicators
+     * @return generation the Prime's generation
+     * @return gender the Prime's gender
+     * @return ranking the Prime's ranking
      */
     function getPrimeByGenerationAndSerial(Generation _generation, uint256 _serial)
-    external
-    view
+    external view
     returns (
-        uint256,
-        uint256,
-        uint256,
-        bool[] memory,
-        Generation,
-        Series,
-        Gender,
-        uint8
-    )
-    {
+        uint256 id,
+        uint256 serial,
+        uint256 traits,
+        bool[] memory replicated,
+        Generation generation,
+        Series series,
+        Gender gender,
+        uint8 ranking
+    ) {
         require(_serial < primesByGeneration[uint8(_generation)].length);
         Prime memory prime = primesByGeneration[uint8(_generation)][uint256(_serial)];
-        return ( prime.id, prime.serial, prime.traits, prime.replicated, prime.generation, prime.series, prime.gender, prime.ranking );
+        return (
+            prime.id,
+            prime.serial,
+            prime.traits,
+            prime.replicated,
+            prime.generation,
+            prime.series,
+            prime.gender,
+            prime.ranking
+        );
     }
 
     /**
-     * @notice Get the Avastar Prime metadata associated with a given Token ID
-     * @param _tokenId the Token ID of the Prime
+     * @notice Get the Avastar Prime metadata associated with a given Token ID.
+     * @param _tokenId the Token ID of the specified Prime
+     * @return id the Prime's token ID
+     * @return serial the Prime's serial
+     * @return traits the Prime's trait hash
+     * @return replicated the Prime's trait replication indicators
+     * @return generation the Prime's generation
+     * @return gender the Prime's gender
+     * @return ranking the Prime's ranking
      */
     function getPrimeByTokenId(uint256 _tokenId)
-    external
-    view
+    external view
     returns (
-        uint256,
-        uint256,
-        uint256,
-        bool[] memory,
-        Generation,
-        Series,
-        Gender,
-        uint8
-    )
-    {
+        uint256 id,
+        uint256 serial,
+        uint256 traits,
+        bool[] memory replicated,
+        Generation generation,
+        Series series,
+        Gender gender,
+        uint8 ranking
+    ) {
         require(_tokenId < avastars.length);
         Avastar memory avastar = avastars[_tokenId];
         Prime memory prime = primesByGeneration[uint8(avastar.generation)][uint256(avastar.serial)];
-        return ( prime.id, prime.serial, prime.traits, prime.replicated, prime.generation, prime.series, prime.gender, prime.ranking );
+        return (
+            prime.id,
+            prime.serial,
+            prime.traits,
+            prime.replicated,
+            prime.generation,
+            prime.series,
+            prime.gender,
+            prime.ranking
+        );
     }
 
     /**
      * @notice Mint an Avastar Prime
-     * @dev Only invokable by minter role, when contract is not paused
+     * Only invokable by minter role, when contract is not paused.
+     * If successful, emits a `NewPrime` event.
+     * @param _owner the address of the new Avastar's owner
+     * @param _traits the new Prime's trait hash
+     * @param _generation the new Prime's generation
+     * @param _gender the new Prime's gender
+     * @param _ranking the new Prime's rarity ranking
+     * @return id the newly minted Prime's token ID
+     * @return serial the newly minted Prime's serial
      */
     function mintPrime(
         address _owner,
@@ -73,10 +109,8 @@ contract PrimeFactory is TraitFactory {
         Gender _gender,
         uint8 _ranking
     )
-    external
-    onlyMinter
-    whenNotPaused
-    returns (uint256, uint256)
+    external onlyMinter whenNotPaused
+    returns (uint256 tokenId, uint256 serial)
     {
         require(_owner != address(0));
         require(_traits != 0);
@@ -85,8 +119,8 @@ contract PrimeFactory is TraitFactory {
         require(_ranking >= 0 && _ranking <= 100);
 
         // Get Prime Serial and Token ID
-        uint256 serial = primesByGeneration[uint8(_generation)].length;
-        uint256 tokenId = avastars.length;
+        serial = primesByGeneration[uint8(_generation)].length;
+        tokenId = avastars.length;
 
         // Create and store Prime struct
         primesByGeneration[uint8(_generation)].push(

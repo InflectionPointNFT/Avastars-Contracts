@@ -19,18 +19,18 @@ event NewReplicant(uint256 id, uint256 serial, enum AvastarTypes.Generation gene
 
 ### getReplicantByGenerationAndSerial
 
-Get the Avastar Replicant associated by Generation and Serial
+Get the Avastar Replicant metadata associated with a given Generation and Serial
 
 ```solidity
 function getReplicantByGenerationAndSerial(enum AvastarTypes.Generation _generation, uint256 _serial)
 external view
 returns (
-	uint256,
-	uint256,
-	uint256,
-	enum AvastarTypes.Generation,
-	enum AvastarTypes.Gender,
-	uint8
+	uint256 id,
+	uint256 serial,
+	uint256 traits,
+	enum AvastarTypes.Generation generation,
+	enum AvastarTypes.Gender gender,
+	uint8 ranking
 )
 ```
 
@@ -38,23 +38,23 @@ returns (
 
 | Name        | Type           | Description  |
 | ------------- |------------- | -----|
-| _generation | enum AvastarTypes.Generation |  | 
-| _serial | uint256 |  | 
+| _generation | enum AvastarTypes.Generation | the generation of the specified Replicant | 
+| _serial | uint256 | the serial of the specified Replicant | 
 
 **Returns**
 
 | Name        | Type           | Description  |
 | ------------- |------------- | -----|
-|  | uint256 |  | 
-|  | uint256 |  | 
-|  | uint256 |  | 
-|  | enum AvastarTypes.Generation |  | 
-|  | enum AvastarTypes.Gender |  | 
-|  | uint8 |  | 
+| id | uint256 | the Replicant's token ID | 
+| serial | uint256 | the Replicant's serial | 
+| traits | uint256 | the Replicant's trait hash | 
+| generation | enum AvastarTypes.Generation | the Replicant's generation | 
+| gender | enum AvastarTypes.Gender | the Replicant's gender | 
+| ranking | uint8 | the Replicant's ranking | 
 
 ### getReplicantByTokenId
 
-Get the Avastar Replicant associated with a given Token ID
+Get the Avastar Replicant metadata associated with a given Token ID
 
 ```solidity
 function getReplicantByTokenId(uint256 _tokenId)
@@ -73,22 +73,24 @@ returns (
 
 | Name        | Type           | Description  |
 | ------------- |------------- | -----|
-| _tokenId | uint256 |  | 
+| _tokenId | uint256 | the token ID of the specified Replicant | 
 
 **Returns**
 
 | Name        | Type           | Description  |
 | ------------- |------------- | -----|
-|  | uint256 |  | 
-|  | uint256 |  | 
-|  | uint256 |  | 
-|  | enum AvastarTypes.Generation |  | 
-|  | enum AvastarTypes.Gender |  | 
-|  | uint8 |  | 
+|  | uint256 | id the Replicant's token ID | 
+|  | uint256 | id the Replicant's token ID | 
+|  | uint256 | id the Replicant's token ID | 
+|  | enum AvastarTypes.Generation | id the Replicant's token ID | 
+|  | enum AvastarTypes.Gender | id the Replicant's token ID | 
+|  | uint8 | id the Replicant's token ID | 
 
 ### mintReplicant
 
-Mint an Avastar Replicant
+Mint an Avastar Replicant.
+Only invokable by minter role, when contract is not paused.
+If successful, emits a `NewReplicant` event.
 
 ```solidity
 function mintReplicant(
@@ -99,23 +101,23 @@ function mintReplicant(
 	uint8 _ranking
 )
 external nonpayable onlyMinter whenNotPaused 
-returns (uint256, uint256)
+returns (uint256 tokenId, uint256 serial)
 ```
 
 **Arguments**
 
 | Name        | Type           | Description  |
 | ------------- |------------- | -----|
-| _owner | address |  | 
-| _traits | uint256 |  | 
-| _generation | enum AvastarTypes.Generation |  | 
-| _gender | enum AvastarTypes.Gender |  | 
-| _ranking | uint8 |  | 
+| _owner | address | the address of the new Avastar's owner | 
+| _traits | uint256 | the new Replicant's trait hash | 
+| _generation | enum AvastarTypes.Generation | the new Replicant's generation | 
+| _gender | enum AvastarTypes.Gender | the new Replicant's gender | 
+| _ranking | uint8 | the new Replicant's rarity ranking | 
 
 **Returns**
 
 | Name        | Type           | Description  |
 | ------------- |------------- | -----|
-|  | uint256 |  | 
-|  | uint256 |  | 
+| tokenId | uint256 |  | 
+| serial | uint256 | the newly minted Replicant's serial | 
 
