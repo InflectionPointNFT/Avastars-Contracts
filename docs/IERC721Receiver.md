@@ -21,7 +21,7 @@ function onERC721Received(
 	address from,
 	uint256 tokenId,
 	bytes data
-) 
+)
 public nonpayable
 returns(bytes4)
 ```

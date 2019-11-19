@@ -29,7 +29,7 @@ struct Counter {
 ### current
 
 ```solidity
-function current(struct Counters.Counter counter) 
+function current(struct Counters.Counter counter)
 internal view
 returns(uint256)
 ```
@@ -49,7 +49,7 @@ returns(uint256)
 ### increment
 
 ```solidity
-function increment(struct Counters.Counter counter) 
+function increment(struct Counters.Counter counter)
 internal nonpayable
 ```
 
@@ -62,7 +62,7 @@ internal nonpayable
 ### decrement
 
 ```solidity
-function decrement(struct Counters.Counter counter) 
+function decrement(struct Counters.Counter counter)
 internal nonpayable
 ```
 

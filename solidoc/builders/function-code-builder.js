@@ -65,11 +65,9 @@ module.exports = {
       builder.push("\n");
     } else {
       builder.push(parameterList.join(", "));
-
     }
 
-    builder.push(") ");
-    builder.push("\n");
+    builder.push(")\n");
 
     builder.push(node.visibility.toLowerCase());
 

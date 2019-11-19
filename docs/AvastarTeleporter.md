@@ -24,7 +24,7 @@ event TraitsUsed(address indexed handler, uint256 primeId, bool[] used);
 Acknowledge contract is AvastarTeleporter
 
 ```solidity
-function isAvastarTeleporter() 
+function isAvastarTeleporter()
 external pure
 returns(bool)
 ```
@@ -40,7 +40,7 @@ returns(bool)
 Approve a handler to manage trait access for a set of Avastar Primes
 
 ```solidity
-function approveTraitAccess(address _handler, uint256[] _primeIds) 
+function approveTraitAccess(address _handler, uint256[] _primeIds)
 external nonpayable
 ```
 
@@ -56,7 +56,7 @@ external nonpayable
 Mark some or all of an Avastar Prime's traits used.
 
 ```solidity
-function useTraits(uint256 _primeId, bool[] _traitFlags) 
+function useTraits(uint256 _primeId, bool[] _traitFlags)
 external nonpayable
 ```
 

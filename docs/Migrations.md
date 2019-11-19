@@ -32,7 +32,7 @@ modifier restricted() internal
 ### setCompleted
 
 ```solidity
-function setCompleted(uint256 completed) 
+function setCompleted(uint256 completed)
 public nonpayable restricted 
 ```
 
@@ -45,7 +45,7 @@ public nonpayable restricted
 ### upgrade
 
 ```solidity
-function upgrade(address newAddress) 
+function upgrade(address newAddress)
 public nonpayable restricted 
 ```
 

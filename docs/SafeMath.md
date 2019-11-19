@@ -34,7 +34,7 @@ overflow.
 - Addition cannot overflow.
 
 ```solidity
-function add(uint256 a, uint256 b) 
+function add(uint256 a, uint256 b)
 internal pure
 returns(uint256)
 ```
@@ -61,7 +61,7 @@ overflow (when the result is negative).
 - Subtraction cannot overflow.
 
 ```solidity
-function sub(uint256 a, uint256 b) 
+function sub(uint256 a, uint256 b)
 internal pure
 returns(uint256)
 ```
@@ -93,7 +93,7 @@ function sub(
 	uint256 a,
 	uint256 b,
 	string errorMessage
-) 
+)
 internal pure
 returns(uint256)
 ```
@@ -121,7 +121,7 @@ overflow.
 - Multiplication cannot overflow.
 
 ```solidity
-function mul(uint256 a, uint256 b) 
+function mul(uint256 a, uint256 b)
 internal pure
 returns(uint256)
 ```
@@ -150,7 +150,7 @@ uses an invalid opcode to revert (consuming all remaining gas).
 - The divisor cannot be zero.
 
 ```solidity
-function div(uint256 a, uint256 b) 
+function div(uint256 a, uint256 b)
 internal pure
 returns(uint256)
 ```
@@ -184,7 +184,7 @@ function div(
 	uint256 a,
 	uint256 b,
 	string errorMessage
-) 
+)
 internal pure
 returns(uint256)
 ```
@@ -214,7 +214,7 @@ invalid opcode to revert (consuming all remaining gas).
 - The divisor cannot be zero.
 
 ```solidity
-function mod(uint256 a, uint256 b) 
+function mod(uint256 a, uint256 b)
 internal pure
 returns(uint256)
 ```
@@ -248,7 +248,7 @@ function mod(
 	uint256 a,
 	uint256 b,
 	string errorMessage
-) 
+)
 internal pure
 returns(uint256)
 ```

@@ -118,7 +118,7 @@ update to the new contract address upon receiving this event. This contract will
 remain paused indefinitely after such an upgrade.
 
 ```solidity
-function upgradeContract(address _newAddress) 
+function upgradeContract(address _newAddress)
 external nonpayable onlySysAdmin whenPaused whenNotUpgraded 
 ```
 
@@ -133,7 +133,7 @@ external nonpayable onlySysAdmin whenPaused whenNotUpgraded
 Called by a system administrator to add a minter
 
 ```solidity
-function addMinter(address _minterAddress) 
+function addMinter(address _minterAddress)
 external nonpayable onlySysAdmin 
 ```
 
@@ -148,7 +148,7 @@ external nonpayable onlySysAdmin
 Called by a system administrator to add an owner
 
 ```solidity
-function addOwner(address _ownerAddress) 
+function addOwner(address _ownerAddress)
 external nonpayable onlySysAdmin 
 ```
 
@@ -163,7 +163,7 @@ external nonpayable onlySysAdmin
 Called by a system administrator to add another system admin
 
 ```solidity
-function addSysAdmin(address _sysAdminAddress) 
+function addSysAdmin(address _sysAdminAddress)
 external nonpayable onlySysAdmin 
 ```
 
@@ -178,7 +178,7 @@ external nonpayable onlySysAdmin
 Called by a system administrator to pause, triggers stopped state
 
 ```solidity
-function pause() 
+function pause()
 public nonpayable onlySysAdmin whenNotPaused 
 ```
 
@@ -187,7 +187,7 @@ public nonpayable onlySysAdmin whenNotPaused
 Called by a system administrator to un-pause, returns to normal state
 
 ```solidity
-function unpause() 
+function unpause()
 public nonpayable onlySysAdmin whenPaused whenNotUpgraded 
 ```
 

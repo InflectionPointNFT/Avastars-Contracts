@@ -50,7 +50,7 @@ Set the address of the AvastarTeleporter contract.
 Only invokable by system admin role, when contract is paused and not upgraded.
 
 ```solidity
-function setTeleporterContract(address _address) 
+function setTeleporterContract(address _address)
 external nonpayable onlySysAdmin whenPaused whenNotUpgraded 
 ```
 
@@ -68,7 +68,7 @@ Only invokable by system admin role, when contract is paused and not upgraded.
 Emits `GenerationSet` event with new value of `currentGeneration`.
 
 ```solidity
-function setCurrentGeneration(enum AvastarTypes.Generation _generation) 
+function setCurrentGeneration(enum AvastarTypes.Generation _generation)
 external nonpayable onlySysAdmin whenPaused whenNotUpgraded 
 ```
 
@@ -85,7 +85,7 @@ Only invokable by system admin role, when contract is paused and not upgraded.
 Emits `CurrentSeriesSet` event with new value of `currentSeries`.
 
 ```solidity
-function setCurrentSeries(enum AvastarTypes.Series _series) 
+function setCurrentSeries(enum AvastarTypes.Series _series)
 public nonpayable onlySysAdmin whenPaused whenNotUpgraded 
 ```
 
@@ -102,7 +102,7 @@ Remaining balance must be enough for all unspent deposits to be withdrawn by dep
 Invokable only by owner role.
 
 ```solidity
-function checkFranchiseBalance() 
+function checkFranchiseBalance()
 external view onlyOwner 
 returns(uint256 franchiseBalance)
 ```
@@ -121,7 +121,7 @@ Entire franchise balance is transferred to `msg.sender`.
 Emits `FranchiseBalanceWithdrawn` event with amount withdrawn.
 
 ```solidity
-function withdrawFranchiseBalance() 
+function withdrawFranchiseBalance()
 external nonpayable onlyOwner 
 returns(uint256 amountWithdrawn)
 ```
@@ -141,7 +141,7 @@ Must have a non-zero ETH value.
 Emits DepositorBalance event with depositor's resulting balance.
 
 ```solidity
-function deposit() 
+function deposit()
 external payable whenNotPaused 
 ```
 
@@ -151,7 +151,7 @@ Allow anyone to check their deposit balance.
 Invokable by any address (other than 0).
 
 ```solidity
-function checkDepositorBalance() 
+function checkDepositorBalance()
 external view
 returns(uint256)
 ```
@@ -170,7 +170,7 @@ Entire depositor balance is transferred to `msg.sender`.
 Emits `DepositorBalance` event of 0 amount once transfer is complete.
 
 ```solidity
-function withdrawDepositorBalance() 
+function withdrawDepositorBalance()
 external nonpayable
 returns(uint256 amountWithdrawn)
 ```
@@ -195,7 +195,7 @@ function purchasePrime(
 	uint256 _traits,
 	enum AvastarTypes.Gender _gender,
 	uint8 _ranking
-) 
+)
 external nonpayable onlyMinter whenNotPaused 
 returns(uint256 tokenId, uint256 serial)
 ```
@@ -232,7 +232,7 @@ function purchaseReplicant(
 	enum AvastarTypes.Generation _generation,
 	enum AvastarTypes.Gender _gender,
 	uint8 _ranking
-) 
+)
 external nonpayable onlyMinter whenNotPaused 
 returns(uint256 tokenId, uint256 serial)
 ```

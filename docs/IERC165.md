@@ -26,7 +26,7 @@ to learn more about how these ids are created.
      * This function call must use less than 30 000 gas.
 
 ```solidity
-function supportsInterface(bytes4 interfaceId) 
+function supportsInterface(bytes4 interfaceId)
 external view
 returns(bool)
 ```
