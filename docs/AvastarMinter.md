@@ -111,6 +111,7 @@ the available franchise balance
 
 Allow an owner to withdraw the franchise balance.
 Invokable only by owner role.
+Entire franchise balance is transferred to `msg.sender`.
 Emits `FranchiseBalanceWithdrawn` event with amount withdrawn.
 
 ```solidity
@@ -152,7 +153,7 @@ the depositor's current ETH balance in the contract
 
 Allow a depositor with a balance to withdraw it.
 Invokable by any address (other than 0) with an ETH balance on deposit.
-Entire depositor balance is transferred to their address.
+Entire depositor balance is transferred to `msg.sender`.
 Emits `DepositorBalance` event of 0 amount once transfer is complete.
 
 ```solidity
@@ -168,6 +169,7 @@ amount withdrawn
 
 Mint an Avastar Prime for a purchaser who has previously deposited funds.
 Invokable only by minter role, when contract is not paused.
+Minted token will be owned by `_purchaser` address.
 This function does not emit an event, but if successful, the `AvastarTeleporter` contract will emit a `NewPrime` event.
 
 ```solidity
@@ -189,6 +191,7 @@ returns(uint256, uint256)
 
 Mint an Avastar Replicant for a purchaser who has previously deposited funds.
 Invokable only by minter role, when contract is not paused.
+Minted token will be owned by `_purchaser` address.
 This function does not emit an event, but if successful, the `AvastarTeleporter` contract will emit a `NewReplicant` event.
 
 ```solidity
