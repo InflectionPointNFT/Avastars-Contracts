@@ -17,7 +17,7 @@ contract ReplicantFactory is PrimeFactory {
      * @notice Get the Avastar Replicant metadata associated with a given Generation and Serial
      * @param _generation the generation of the specified Replicant
      * @param _serial the serial of the specified Replicant
-     * @return id the Replicant's token ID
+     * @return tokenId the Replicant's token ID
      * @return serial the Replicant's serial
      * @return traits the Replicant's trait hash
      * @return generation the Replicant's generation
@@ -27,7 +27,7 @@ contract ReplicantFactory is PrimeFactory {
     function getReplicantByGenerationAndSerial(Generation _generation, uint256 _serial)
     external view
     returns (
-        uint256 id,
+        uint256 tokenId,
         uint256 serial,
         uint256 traits,
         Generation generation,
@@ -49,7 +49,7 @@ contract ReplicantFactory is PrimeFactory {
     /**
      * @notice Get the Avastar Replicant metadata associated with a given Token ID
      * @param _tokenId the token ID of the specified Replicant
-     * @return id the Replicant's token ID
+     * @return tokenId the Replicant's token ID
      * @return serial the Replicant's serial
      * @return traits the Replicant's trait hash
      * @return generation the Replicant's generation
@@ -59,12 +59,12 @@ contract ReplicantFactory is PrimeFactory {
     function getReplicantByTokenId(uint256 _tokenId)
     external view
     returns (
-        uint256,
-        uint256,
-        uint256,
-        Generation,
-        Gender,
-        uint8
+        uint256 tokenId,
+        uint256 serial,
+        uint256 traits,
+        Generation generation,
+        Gender gender,
+        uint8 ranking
     ) {
         require(_tokenId < avastars.length);
         Avastar memory avastar = avastars[_tokenId];
@@ -88,7 +88,7 @@ contract ReplicantFactory is PrimeFactory {
      * @param _generation the new Replicant's generation
      * @param _gender the new Replicant's gender
      * @param _ranking the new Replicant's rarity ranking
-     * @return id the newly minted Replicant's token ID
+     * @return tokenId the newly minted Replicant's token ID
      * @return serial the newly minted Replicant's serial
      */
     function mintReplicant(

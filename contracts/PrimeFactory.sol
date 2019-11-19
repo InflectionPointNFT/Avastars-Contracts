@@ -17,7 +17,7 @@ contract PrimeFactory is TraitFactory {
      * @notice Get the Avastar Prime metadata associated with a given Generation and Serial.
      * @param _generation the Generation of the Prime
      * @param _serial the Serial of the Prime
-     * @return id the Prime's token ID
+     * @return tokenId the Prime's token ID
      * @return serial the Prime's serial
      * @return traits the Prime's trait hash
      * @return replicated the Prime's trait replication indicators
@@ -28,7 +28,7 @@ contract PrimeFactory is TraitFactory {
     function getPrimeByGenerationAndSerial(Generation _generation, uint256 _serial)
     external view
     returns (
-        uint256 id,
+        uint256 tokenId,
         uint256 serial,
         uint256 traits,
         bool[] memory replicated,
@@ -54,7 +54,7 @@ contract PrimeFactory is TraitFactory {
     /**
      * @notice Get the Avastar Prime metadata associated with a given Token ID.
      * @param _tokenId the Token ID of the specified Prime
-     * @return id the Prime's token ID
+     * @return tokenId the Prime's token ID
      * @return serial the Prime's serial
      * @return traits the Prime's trait hash
      * @return replicated the Prime's trait replication indicators
@@ -65,7 +65,7 @@ contract PrimeFactory is TraitFactory {
     function getPrimeByTokenId(uint256 _tokenId)
     external view
     returns (
-        uint256 id,
+        uint256 tokenId,
         uint256 serial,
         uint256 traits,
         bool[] memory replicated,
@@ -98,7 +98,7 @@ contract PrimeFactory is TraitFactory {
      * @param _generation the new Prime's generation
      * @param _gender the new Prime's gender
      * @param _ranking the new Prime's rarity ranking
-     * @return id the newly minted Prime's token ID
+     * @return tokenId the newly minted Prime's token ID
      * @return serial the newly minted Prime's serial
      */
     function mintPrime(

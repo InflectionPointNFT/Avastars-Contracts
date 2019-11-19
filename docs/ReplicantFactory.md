@@ -25,7 +25,7 @@ Get the Avastar Replicant metadata associated with a given Generation and Serial
 function getReplicantByGenerationAndSerial(enum AvastarTypes.Generation _generation, uint256 _serial)
 external view
 returns (
-	uint256 id,
+	uint256 tokenId,
 	uint256 serial,
 	uint256 traits,
 	enum AvastarTypes.Generation generation,
@@ -45,7 +45,7 @@ returns (
 
 | Name        | Type           | Description  |
 | ------------- |------------- | -----|
-| id | uint256 | the Replicant's token ID | 
+| tokenId | uint256 | the Replicant's token ID | 
 | serial | uint256 | the Replicant's serial | 
 | traits | uint256 | the Replicant's trait hash | 
 | generation | enum AvastarTypes.Generation | the Replicant's generation | 
@@ -60,12 +60,12 @@ Get the Avastar Replicant metadata associated with a given Token ID
 function getReplicantByTokenId(uint256 _tokenId)
 external view
 returns (
-	uint256,
-	uint256,
-	uint256,
-	enum AvastarTypes.Generation,
-	enum AvastarTypes.Gender,
-	uint8
+	uint256 tokenId,
+	uint256 serial,
+	uint256 traits,
+	enum AvastarTypes.Generation generation,
+	enum AvastarTypes.Gender gender,
+	uint8 ranking
 )
 ```
 
@@ -79,12 +79,12 @@ returns (
 
 | Name        | Type           | Description  |
 | ------------- |------------- | -----|
-|  | uint256 | id the Replicant's token ID | 
-|  | uint256 | id the Replicant's token ID | 
-|  | uint256 | id the Replicant's token ID | 
-|  | enum AvastarTypes.Generation | id the Replicant's token ID | 
-|  | enum AvastarTypes.Gender | id the Replicant's token ID | 
-|  | uint8 | id the Replicant's token ID | 
+| tokenId | uint256 | the Replicant's token ID | 
+| serial | uint256 | the Replicant's serial | 
+| traits | uint256 | the Replicant's trait hash | 
+| generation | enum AvastarTypes.Generation | the Replicant's generation | 
+| gender | enum AvastarTypes.Gender | the Replicant's gender | 
+| ranking | uint8 | the Replicant's ranking | 
 
 ### mintReplicant
 
@@ -118,6 +118,6 @@ returns (uint256 tokenId, uint256 serial)
 
 | Name        | Type           | Description  |
 | ------------- |------------- | -----|
-| tokenId | uint256 |  | 
+| tokenId | uint256 | the newly minted Replicant's token ID | 
 | serial | uint256 | the newly minted Replicant's serial | 
 

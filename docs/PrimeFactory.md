@@ -25,7 +25,7 @@ Get the Avastar Prime metadata associated with a given Generation and Serial.
 function getPrimeByGenerationAndSerial(enum AvastarTypes.Generation _generation, uint256 _serial)
 external view
 returns (
-	uint256 id,
+	uint256 tokenId,
 	uint256 serial,
 	uint256 traits,
 	bool[] replicated,
@@ -47,7 +47,7 @@ returns (
 
 | Name        | Type           | Description  |
 | ------------- |------------- | -----|
-| id | uint256 | the Prime's token ID | 
+| tokenId | uint256 | the Prime's token ID | 
 | serial | uint256 | the Prime's serial | 
 | traits | uint256 | the Prime's trait hash | 
 | replicated | bool[] | the Prime's trait replication indicators | 
@@ -64,7 +64,7 @@ Get the Avastar Prime metadata associated with a given Token ID.
 function getPrimeByTokenId(uint256 _tokenId)
 external view
 returns (
-	uint256 id,
+	uint256 tokenId,
 	uint256 serial,
 	uint256 traits,
 	bool[] replicated,
@@ -85,7 +85,7 @@ returns (
 
 | Name        | Type           | Description  |
 | ------------- |------------- | -----|
-| id | uint256 | the Prime's token ID | 
+| tokenId | uint256 | the Prime's token ID | 
 | serial | uint256 | the Prime's serial | 
 | traits | uint256 | the Prime's trait hash | 
 | replicated | bool[] | the Prime's trait replication indicators | 
@@ -128,6 +128,6 @@ returns (uint256 tokenId, uint256 serial)
 
 | Name        | Type           | Description  |
 | ------------- |------------- | -----|
-| tokenId | uint256 |  | 
+| tokenId | uint256 | the newly minted Prime's token ID | 
 | serial | uint256 | the newly minted Prime's serial | 
 
