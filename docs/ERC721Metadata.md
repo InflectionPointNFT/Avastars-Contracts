@@ -46,7 +46,9 @@ returns(string)
 
 **Returns**
 
-string representing the token name
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+|  | string | representing the token name | 
 
 ### symbol
 
@@ -61,7 +63,9 @@ returns(string)
 
 **Returns**
 
-string representing the token symbol
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+|  | string | representing the token symbol | 
 
 ### tokenURI
 
@@ -80,6 +84,12 @@ returns(string)
 | Name        | Type           | Description  |
 | ------------- |------------- | -----|
 | tokenId | uint256 | uint256 ID of the token to query | 
+
+**Returns**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+|  | string |  | 
 
 ### _setTokenURI
 

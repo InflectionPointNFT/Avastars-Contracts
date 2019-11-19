@@ -100,12 +100,14 @@ Invokable only by owner role.
 
 ```solidity
 function checkFranchiseBalance() external view onlyOwner 
-returns(uint256)
+returns(franchiseBalance uint256)
 ```
 
 **Returns**
 
-the available franchise balance
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| franchiseBalance | uint256 | the available franchise balance | 
 
 ### withdrawFranchiseBalance
 
@@ -116,12 +118,14 @@ Emits `FranchiseBalanceWithdrawn` event with amount withdrawn.
 
 ```solidity
 function withdrawFranchiseBalance() external nonpayable onlyOwner 
-returns(uint256)
+returns(amountWithdrawn uint256)
 ```
 
 **Returns**
 
-amount withdrawn
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| amountWithdrawn | uint256 | amount withdrawn | 
 
 ### deposit
 
@@ -147,7 +151,9 @@ returns(uint256)
 
 **Returns**
 
-the depositor's current ETH balance in the contract
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+|  | uint256 | the depositor's current ETH balance in the contract | 
 
 ### withdrawDepositorBalance
 
@@ -158,12 +164,14 @@ Emits `DepositorBalance` event of 0 amount once transfer is complete.
 
 ```solidity
 function withdrawDepositorBalance() external nonpayable
-returns(uint256)
+returns(amountWithdrawn uint256)
 ```
 
 **Returns**
 
-amount withdrawn
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| amountWithdrawn | uint256 | amount withdrawn | 
 
 ### purchasePrime
 
@@ -174,7 +182,7 @@ This function does not emit an event, but if successful, the `AvastarTeleporter`
 
 ```solidity
 function purchasePrime(address _purchaser, uint256 _price, uint256 _traits, enum AvastarTypes.Gender _gender, uint8 _ranking) external nonpayable onlyMinter whenNotPaused 
-returns(uint256, uint256)
+returns(tokenId uint256, serial uint256)
 ```
 
 **Arguments**
@@ -187,6 +195,13 @@ returns(uint256, uint256)
 | _gender | enum AvastarTypes.Gender | the Avastar's Gender | 
 | _ranking | uint8 | the Avastar's Ranking | 
 
+**Returns**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| tokenId | uint256 | the Avastar's tokenId | 
+| serial | uint256 | the Prime's serial | 
+
 ### purchaseReplicant
 
 Mint an Avastar Replicant for a purchaser who has previously deposited funds.
@@ -196,7 +211,7 @@ This function does not emit an event, but if successful, the `AvastarTeleporter`
 
 ```solidity
 function purchaseReplicant(address _purchaser, uint256 _price, uint256 _traits, enum AvastarTypes.Generation _generation, enum AvastarTypes.Gender _gender, uint8 _ranking) external nonpayable onlyMinter whenNotPaused 
-returns(uint256, uint256)
+returns(tokenId uint256, serial uint256)
 ```
 
 **Arguments**
@@ -209,4 +224,11 @@ returns(uint256, uint256)
 | _generation | enum AvastarTypes.Generation | the Avastar's Generation | 
 | _gender | enum AvastarTypes.Gender | the Avastar's Gender | 
 | _ranking | uint8 | the Avastar's Ranking | 
+
+**Returns**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| tokenId | uint256 | the Avastar's tokenId | 
+| serial | uint256 | the Replicant's serial | 
 

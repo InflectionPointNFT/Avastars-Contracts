@@ -39,6 +39,12 @@ returns(uint256)
 | ------------- |------------- | -----|
 | counter | struct Counters.Counter |  | 
 
+**Returns**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+|  | uint256 |  | 
+
 ### increment
 
 ```solidity

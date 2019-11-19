@@ -79,7 +79,7 @@ module.exports = {
 
     builder.push("\n");
     builder.push("```");
-
+/*
     if(!returnDocumentation) {
       return builder.join("");
     }
@@ -92,7 +92,7 @@ module.exports = {
     builder.push("\n");
     builder.push(returnDocumentation);
     builder.push("\n");
-
+*/
     return builder.join("");
   }
 };

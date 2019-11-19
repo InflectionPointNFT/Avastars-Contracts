@@ -20,10 +20,6 @@ function onERC721Received(address operator, address from, uint256 tokenId, bytes
 returns(bytes4)
 ```
 
-**Returns**
-
-bytes4 `bytes4(keccak256("onERC721Received(address,address,uint256,bytes)"))`
-
 **Arguments**
 
 | Name        | Type           | Description  |
@@ -32,4 +28,10 @@ bytes4 `bytes4(keccak256("onERC721Received(address,address,uint256,bytes)"))`
 | from | address | The address which previously owned the token | 
 | tokenId | uint256 | The NFT identifier which is being transferred | 
 | data | bytes | Additional data with no specified format | 
+
+**Returns**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+|  | bytes4 | ` | 
 

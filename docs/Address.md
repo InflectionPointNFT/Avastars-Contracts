@@ -33,6 +33,12 @@ returns(bool)
 | ------------- |------------- | -----|
 | account | address |  | 
 
+**Returns**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+|  | bool |  | 
+
 ### toPayable
 
 Converts an `address` into `address payable`. Note that this is
@@ -49,6 +55,12 @@ returns(address payable)
 | Name        | Type           | Description  |
 | ------------- |------------- | -----|
 | account | address |  | 
+
+**Returns**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+|  | address payable |  | 
 
 ### sendValue
 

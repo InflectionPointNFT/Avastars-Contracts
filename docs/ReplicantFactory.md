@@ -33,6 +33,17 @@ returns(uint256, uint256, uint256, enum AvastarTypes.Generation, enum AvastarTyp
 | _generation | enum AvastarTypes.Generation |  | 
 | _serial | uint256 |  | 
 
+**Returns**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+|  | uint256 |  | 
+|  | uint256 |  | 
+|  | uint256 |  | 
+|  | enum AvastarTypes.Generation |  | 
+|  | enum AvastarTypes.Gender |  | 
+|  | uint8 |  | 
+
 ### getReplicantByTokenId
 
 Get the Avastar Replicant associated with a given Token ID
@@ -47,6 +58,17 @@ returns(uint256, uint256, uint256, enum AvastarTypes.Generation, enum AvastarTyp
 | Name        | Type           | Description  |
 | ------------- |------------- | -----|
 | _tokenId | uint256 |  | 
+
+**Returns**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+|  | uint256 |  | 
+|  | uint256 |  | 
+|  | uint256 |  | 
+|  | enum AvastarTypes.Generation |  | 
+|  | enum AvastarTypes.Gender |  | 
+|  | uint8 |  | 
 
 ### mintReplicant
 
@@ -66,4 +88,11 @@ returns(uint256, uint256)
 | _generation | enum AvastarTypes.Generation |  | 
 | _gender | enum AvastarTypes.Gender |  | 
 | _ranking | uint8 |  | 
+
+**Returns**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+|  | uint256 |  | 
+|  | uint256 |  | 
 

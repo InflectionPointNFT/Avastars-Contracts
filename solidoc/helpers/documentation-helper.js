@@ -4,7 +4,6 @@ module.exports = {
   get: function(contents, key) {
     contents = contents || "";
     const members = contents.split("@");
-
     for(let i in members) {
       const entry = members[i];
 

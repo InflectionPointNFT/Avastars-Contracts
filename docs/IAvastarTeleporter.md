@@ -20,6 +20,12 @@ function isAvastarTeleporter() external pure
 returns(bool)
 ```
 
+**Returns**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+|  | bool |  | 
+
 ### mintPrime
 
 ```solidity
@@ -38,6 +44,13 @@ returns(uint256, uint256)
 | _gender | enum AvastarTypes.Gender |  | 
 | _ranking | uint8 |  | 
 
+**Returns**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+|  | uint256 |  | 
+|  | uint256 |  | 
+
 ### mintReplicant
 
 ```solidity
@@ -55,6 +68,13 @@ returns(uint256, uint256)
 | _gender | enum AvastarTypes.Gender |  | 
 | _ranking | uint8 |  | 
 
+**Returns**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+|  | uint256 |  | 
+|  | uint256 |  | 
+
 ### ownerOf
 
 ```solidity
@@ -67,4 +87,10 @@ returns(owner address)
 | Name        | Type           | Description  |
 | ------------- |------------- | -----|
 | tokenId | uint256 |  | 
+
+**Returns**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| owner | address |  | 
 

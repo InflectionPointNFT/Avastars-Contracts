@@ -33,6 +33,19 @@ returns(uint256, uint256, uint256, bool[], enum AvastarTypes.Generation, enum Av
 | _generation | enum AvastarTypes.Generation | the Generation of the Prime | 
 | _serial | uint256 | the Serial of the Prime | 
 
+**Returns**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+|  | uint256 |  | 
+|  | uint256 |  | 
+|  | uint256 |  | 
+|  | bool[] |  | 
+|  | enum AvastarTypes.Generation |  | 
+|  | enum AvastarTypes.Series |  | 
+|  | enum AvastarTypes.Gender |  | 
+|  | uint8 |  | 
+
 ### getPrimeByTokenId
 
 Get the Avastar Prime metadata associated with a given Token ID
@@ -47,6 +60,19 @@ returns(uint256, uint256, uint256, bool[], enum AvastarTypes.Generation, enum Av
 | Name        | Type           | Description  |
 | ------------- |------------- | -----|
 | _tokenId | uint256 | the Token ID of the Prime | 
+
+**Returns**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+|  | uint256 |  | 
+|  | uint256 |  | 
+|  | uint256 |  | 
+|  | bool[] |  | 
+|  | enum AvastarTypes.Generation |  | 
+|  | enum AvastarTypes.Series |  | 
+|  | enum AvastarTypes.Gender |  | 
+|  | uint8 |  | 
 
 ### mintPrime
 
@@ -67,4 +93,11 @@ returns(uint256, uint256)
 | _series | enum AvastarTypes.Series |  | 
 | _gender | enum AvastarTypes.Gender |  | 
 | _ranking | uint8 |  | 
+
+**Returns**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+|  | uint256 |  | 
+|  | uint256 |  | 
 

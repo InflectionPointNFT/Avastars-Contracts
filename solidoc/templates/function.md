@@ -10,5 +10,10 @@
 
 {{FunctionArgumentsHeading}}
 
-{{TableHeader}}
+{{ArgumentTableHeader}}
 {{FunctionArguments}}
+
+{{FunctionReturnsHeading}}
+
+{{ReturnsTableHeader}}
+{{FunctionReturns}}

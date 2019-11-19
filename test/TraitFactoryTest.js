@@ -290,7 +290,7 @@ contract('TraitFactory', function(accounts) {
         let id = new BN(1,10);
 
         // Get the trait id via generation, gene, and variation
-        let traitId = await contract.traitIdByGenerationGeneAndVariation(generation, gene, variation, {from: sysAdmin});
+        let traitId = await contract.getTraitIdByGenerationGeneAndVariation(generation, gene, variation, {from: nonSysAdmin});
 
         // Make sure the retrieved trait id is correct
         assert.ok(traitId.eq(id),  "Trait ID wasn't correct");
@@ -308,7 +308,7 @@ contract('TraitFactory', function(accounts) {
         const expected = traitMath.computeArt(traits);
 
         // Get the assembled artwork
-        const art = await contract.assembleArt(constants.GENERATION.ONE, traitHash);
+        const art = await contract.assembleArt(constants.GENERATION.ONE, traitHash, {from: nonSysAdmin});
 
         assert.equal(art, expected, "Assembled art wasn't correct");
 

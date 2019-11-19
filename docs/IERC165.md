@@ -36,3 +36,9 @@ returns(bool)
 | ------------- |------------- | -----|
 | interfaceId | bytes4 |  | 
 
+**Returns**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+|  | bool |  | 
+

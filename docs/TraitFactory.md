@@ -21,18 +21,31 @@ event NewTrait(uint256 id, enum AvastarTypes.Gene gene, uint8 variation, string 
 
 ### getTrait
 
-Get the Trait data associated with a given Trait ID
+Retrieve a Trait by ID
 
 ```solidity
 function getTrait(uint256 _traitId) external view
-returns(uint256, enum AvastarTypes.Generation, enum AvastarTypes.Series[], enum AvastarTypes.Gender, enum AvastarTypes.Gene, uint8, string, string)
+returns(id uint256, generation enum AvastarTypes.Generation, series enum AvastarTypes.Series[], gender enum AvastarTypes.Gender, gene enum AvastarTypes.Gene, variation uint8, name string, svg string)
 ```
 
 **Arguments**
 
 | Name        | Type           | Description  |
 | ------------- |------------- | -----|
-| _traitId | uint256 |  | 
+| _traitId | uint256 | the ID of the Trait to retrieve | 
+
+**Returns**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| id | uint256 | the ID of the trait | 
+| generation | enum AvastarTypes.Generation |  | 
+| series | enum AvastarTypes.Series[] |  | 
+| gender | enum AvastarTypes.Gender |  | 
+| gene | enum AvastarTypes.Gene | ration | 
+| variation | uint8 |  | 
+| name | string |  | 
+| svg | string |  | 
 
 ### getTraitIdByGenerationGeneAndVariation
 
@@ -50,6 +63,12 @@ returns(uint256)
 | _generation | enum AvastarTypes.Generation |  | 
 | _gene | enum AvastarTypes.Gene |  | 
 | _variationSafe | uint256 |  | 
+
+**Returns**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+|  | uint256 |  | 
 
 ### createTrait
 
@@ -72,6 +91,12 @@ returns(uint256)
 | _name | string |  | 
 | _svg | string |  | 
 
+**Returns**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+|  | uint256 |  | 
+
 ### assembleArt
 
 Assemble the artwork for a given Trait hash with art from the given Generation
@@ -88,6 +113,12 @@ returns(string)
 | _generation | enum AvastarTypes.Generation |  | 
 | _traitHash | uint256 |  | 
 
+**Returns**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+|  | string |  | 
+
 ### strConcat
 
 Concatenate two strings
@@ -103,4 +134,10 @@ returns(result string)
 | ------------- |------------- | -----|
 | _a | string |  | 
 | _b | string |  | 
+
+**Returns**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| result | string |  | 
 

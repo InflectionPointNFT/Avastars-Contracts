@@ -30,7 +30,9 @@ returns(bool)
 
 **Returns**
 
-always true
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+|  | bool | always true | 
 
 ### approveTraitAccess
 

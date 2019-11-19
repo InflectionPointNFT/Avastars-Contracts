@@ -45,6 +45,12 @@ returns(uint256)
 | a | uint256 |  | 
 | b | uint256 |  | 
 
+**Returns**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+|  | uint256 |  | 
+
 ### sub
 
 Returns the subtraction of two unsigned integers, reverting on
@@ -64,6 +70,12 @@ returns(uint256)
 | ------------- |------------- | -----|
 | a | uint256 |  | 
 | b | uint256 |  | 
+
+**Returns**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+|  | uint256 |  | 
 
 ### sub
 
@@ -87,6 +99,12 @@ returns(uint256)
 | b | uint256 |  | 
 | errorMessage | string |  | 
 
+**Returns**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+|  | uint256 |  | 
+
 ### mul
 
 Returns the multiplication of two unsigned integers, reverting on
@@ -106,6 +124,12 @@ returns(uint256)
 | ------------- |------------- | -----|
 | a | uint256 |  | 
 | b | uint256 |  | 
+
+**Returns**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+|  | uint256 |  | 
 
 ### div
 
@@ -128,6 +152,12 @@ returns(uint256)
 | ------------- |------------- | -----|
 | a | uint256 |  | 
 | b | uint256 |  | 
+
+**Returns**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+|  | uint256 |  | 
 
 ### div
 
@@ -153,6 +183,12 @@ returns(uint256)
 | b | uint256 |  | 
 | errorMessage | string |  | 
 
+**Returns**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+|  | uint256 |  | 
+
 ### mod
 
 Returns the remainder of dividing two unsigned integers. (unsigned integer modulo),
@@ -174,6 +210,12 @@ returns(uint256)
 | ------------- |------------- | -----|
 | a | uint256 |  | 
 | b | uint256 |  | 
+
+**Returns**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+|  | uint256 |  | 
 
 ### mod
 
@@ -198,4 +240,10 @@ returns(uint256)
 | a | uint256 |  | 
 | b | uint256 |  | 
 | errorMessage | string |  | 
+
+**Returns**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+|  | uint256 |  | 
 

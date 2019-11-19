@@ -118,9 +118,9 @@ contract AvastarMinter is AvastarTypes, AccessControl {
      * @notice Allow owner to check the withdrawable franchise balance.
      * Remaining balance must be enough for all unspent deposits to be withdrawn by depositors.
      * Invokable only by owner role.
-     * @return the available franchise balance
+     * @return franchiseBalance the available franchise balance
      */
-    function checkFranchiseBalance() external view onlyOwner returns (uint256) {
+    function checkFranchiseBalance() external view onlyOwner returns (uint256 franchiseBalance) {
         return uint256(address(this).balance).sub(unspentDeposits);
     }
 
@@ -129,9 +129,9 @@ contract AvastarMinter is AvastarTypes, AccessControl {
      * Invokable only by owner role.
      * Entire franchise balance is transferred to `msg.sender`.
      * Emits `FranchiseBalanceWithdrawn` event with amount withdrawn.
-     * @return amount withdrawn
+     * @return amountWithdrawn amount withdrawn
      */
-    function withdrawFranchiseBalance() external onlyOwner returns (uint256) {
+    function withdrawFranchiseBalance() external onlyOwner returns (uint256 amountWithdrawn) {
         uint256 franchiseBalance = uint256(address(this).balance).sub(unspentDeposits);
         require(franchiseBalance > 0);
         msg.sender.transfer(franchiseBalance);
@@ -169,9 +169,9 @@ contract AvastarMinter is AvastarTypes, AccessControl {
      * Invokable by any address (other than 0) with an ETH balance on deposit.
      * Entire depositor balance is transferred to `msg.sender`.
      * Emits `DepositorBalance` event of 0 amount once transfer is complete.
-     * @return amount withdrawn
+     * @return amountWithdrawn amount withdrawn
      */
-    function withdrawDepositorBalance() external returns (uint256) {
+    function withdrawDepositorBalance() external returns (uint256 amountWithdrawn) {
         require(msg.sender != address(0));
         uint256 depositorBalance = depositsByAddress[msg.sender];
         require(depositorBalance > 0 && address(this).balance >= depositorBalance);
@@ -192,6 +192,8 @@ contract AvastarMinter is AvastarTypes, AccessControl {
      * @param _traits the Avastar's Trait hash
      * @param _gender the Avastar's Gender
      * @param _ranking the Avastar's Ranking
+     * @return tokenId the Avastar's tokenId
+     * @return serial the Prime's serial
      */
     function purchasePrime(
         address _purchaser,
@@ -203,15 +205,13 @@ contract AvastarMinter is AvastarTypes, AccessControl {
     external
     onlyMinter
     whenNotPaused
-    returns (uint256, uint256)
+    returns (uint256 tokenId, uint256 serial)
     {
         require(_purchaser != address(0));
         require (depositsByAddress[_purchaser] >= _price);
         require(_gender > Gender.ANY);
         depositsByAddress[_purchaser] = depositsByAddress[_purchaser].sub(_price);
         unspentDeposits = unspentDeposits.sub(_price);
-        uint256 tokenId;
-        uint256 serial;
         (tokenId, serial) = teleporterContract.mintPrime(_purchaser, _traits, currentGeneration, currentSeries, _gender, _ranking);
         emit DepositorBalance(_purchaser, depositsByAddress[_purchaser]);
         return (tokenId, serial);
@@ -228,6 +228,8 @@ contract AvastarMinter is AvastarTypes, AccessControl {
      * @param _generation the Avastar's Generation
      * @param _gender the Avastar's Gender
      * @param _ranking the Avastar's Ranking
+     * @return tokenId the Avastar's tokenId
+     * @return serial the Replicant's serial
      */
     function purchaseReplicant(
         address _purchaser,
@@ -240,15 +242,13 @@ contract AvastarMinter is AvastarTypes, AccessControl {
     external
     onlyMinter
     whenNotPaused
-    returns (uint256, uint256)
+    returns (uint256 tokenId, uint256 serial)
     {
         require(_purchaser != address(0));
         require (depositsByAddress[_purchaser] >= _price);
         require(_gender > Gender.ANY);
         depositsByAddress[_purchaser] = depositsByAddress[_purchaser].sub(_price);
         unspentDeposits = unspentDeposits.sub(_price);
-        uint256 tokenId;
-        uint256 serial;
         (tokenId, serial) = teleporterContract.mintReplicant(_purchaser, _traits, _generation, _gender, _ranking);
         emit DepositorBalance(_purchaser, depositsByAddress[_purchaser]);
         return (tokenId, serial);

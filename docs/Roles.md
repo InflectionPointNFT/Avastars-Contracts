@@ -60,14 +60,16 @@ function has(struct Roles.Role role, address account) internal view
 returns(bool)
 ```
 
-**Returns**
-
-bool
-
 **Arguments**
 
 | Name        | Type           | Description  |
 | ------------- |------------- | -----|
 | role | struct Roles.Role |  | 
 | account | address |  | 
+
+**Returns**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+|  | bool |  | 
 

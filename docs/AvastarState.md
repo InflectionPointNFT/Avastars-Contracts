@@ -27,15 +27,17 @@ constructor(string memory TOKEN_NAME, string memory TOKEN_SYMBOL) public
 // public members
 string public constant TOKEN_NAME;
 string public constant TOKEN_SYMBOL;
-struct AvastarTypes.Avastar[] public avastars;
-struct AvastarTypes.Trait[] public traits;
-mapping(uint8 => mapping(uint256 => bool)) public isHashUsedByGeneration;
-mapping(uint8 => mapping(uint256 => uint256)) public tokenIdByGenerationAndHash;
-mapping(uint8 => struct AvastarTypes.Prime[]) public primesByGeneration;
-mapping(uint8 => struct AvastarTypes.Replicant[]) public replicantsByGeneration;
 mapping(uint8 => mapping(uint8 => mapping(uint8 => uint256))) public traitIdByGenerationGeneAndVariation;
-mapping(uint8 => mapping(uint8 => mapping(uint256 => uint256))) public tokenIdByGenerationWaveAndSerial;
-mapping(uint256 => address) public traitHandlerByPrimeTokenId;
+
+// internal members
+struct AvastarTypes.Avastar[] internal avastars;
+struct AvastarTypes.Trait[] internal traits;
+mapping(uint8 => struct AvastarTypes.Prime[]) internal primesByGeneration;
+mapping(uint8 => struct AvastarTypes.Replicant[]) internal replicantsByGeneration;
+mapping(uint256 => address) internal traitHandlerByPrimeTokenId;
+mapping(uint8 => mapping(uint256 => bool)) internal isHashUsedByGeneration;
+mapping(uint8 => mapping(uint256 => uint256)) internal tokenIdByGenerationAndHash;
+mapping(uint8 => mapping(uint8 => mapping(uint256 => uint256))) internal tokenIdByGenerationWaveAndSerial;
 
 ```
 
@@ -53,5 +55,5 @@ function trackAvastar(struct AvastarTypes.Avastar _avastar) internal nonpayable
 
 | Name        | Type           | Description  |
 | ------------- |------------- | -----|
-| _avastar | struct AvastarTypes.Avastar |  | 
+| _avastar | struct AvastarTypes.Avastar | the new Avastar to store and track | 
 

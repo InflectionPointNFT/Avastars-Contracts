@@ -7,6 +7,7 @@ const codeBuilder = require("../builders/function-code-builder");
 const superBuilder = require("../builders/super-builder");
 const referenceBuilder = require("../builders/function-reference-builder");
 const argumentBuilder = require("../builders/argument-builder");
+const returnBuilder = require("../builders/return-builder");
 const i18n = require("../i18n");
 
 module.exports = {
@@ -55,8 +56,11 @@ module.exports = {
       const functionCode = codeBuilder.build(node);
       const base = superBuilder.build(node, contracts);
       const references = referenceBuilder.build(node, contracts);
-      var parameters = (node.parameters || {}).parameters;
+      let parameters = (node.parameters || {}).parameters;
+      let returnParameters = (node.returnParameters || {}).parameters;
+
       const args = argumentBuilder.build(node.documentation, parameters);
+      const returns = returnBuilder.build(node.documentation, returnParameters);
 
       functionTemplate = functionTemplate.replace("{{FunctionName}}", node.name);
       functionTemplate = functionTemplate.replace("{{FQFunctionName}}", `${contract.contractName}.${node.name}`);
@@ -67,8 +71,12 @@ module.exports = {
       functionTemplate = functionTemplate.replace("{{FunctionCode}}", functionCode);
 
       functionTemplate = functionTemplate.replace("{{FunctionArgumentsHeading}}", args ? `**${i18n.translate("Arguments")}**` : "");
-      functionTemplate = functionTemplate.replace("{{TableHeader}}", args ? templateHelper.TableHeaderTemplate : "");
+      functionTemplate = functionTemplate.replace("{{ArgumentTableHeader}}", args ? templateHelper.TableHeaderTemplate : "");
       functionTemplate = functionTemplate.replace("{{FunctionArguments}}", args ? args : "");
+
+      functionTemplate = functionTemplate.replace("{{FunctionReturnsHeading}}", returns ? `**${i18n.translate("Returns")}**` : "");
+      functionTemplate = functionTemplate.replace("{{ReturnsTableHeader}}", returns ? templateHelper.TableHeaderTemplate : "");
+      functionTemplate = functionTemplate.replace("{{FunctionReturns}}", returns ? returns : "");
 
       definitionList.push(functionTemplate);
     }

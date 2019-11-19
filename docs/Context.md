@@ -17,10 +17,22 @@ function _msgSender() internal view
 returns(address payable)
 ```
 
+**Returns**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+|  | address payable |  | 
+
 ### _msgData
 
 ```solidity
 function _msgData() internal view
 returns(bytes)
 ```
+
+**Returns**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+|  | bytes |  | 
 

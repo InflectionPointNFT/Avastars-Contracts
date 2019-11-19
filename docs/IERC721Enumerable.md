@@ -22,6 +22,12 @@ function totalSupply() public view
 returns(uint256)
 ```
 
+**Returns**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+|  | uint256 |  | 
+
 ### tokenOfOwnerByIndex
 
 ⤿ Overridden Implementation(s): [ERC721Enumerable.tokenOfOwnerByIndex](ERC721Enumerable.md#tokenofownerbyindex)
@@ -38,6 +44,12 @@ returns(tokenId uint256)
 | owner | address |  | 
 | index | uint256 |  | 
 
+**Returns**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| tokenId | uint256 |  | 
+
 ### tokenByIndex
 
 ⤿ Overridden Implementation(s): [ERC721Enumerable.tokenByIndex](ERC721Enumerable.md#tokenbyindex)
@@ -52,4 +64,10 @@ returns(uint256)
 | Name        | Type           | Description  |
 | ------------- |------------- | -----|
 | index | uint256 |  | 
+
+**Returns**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+|  | uint256 |  | 
 

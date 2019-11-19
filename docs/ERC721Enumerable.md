@@ -53,16 +53,18 @@ function tokenOfOwnerByIndex(address owner, uint256 index) public view
 returns(uint256)
 ```
 
-**Returns**
-
-uint256 token ID at the given index of the tokens list owned by the requested address
-
 **Arguments**
 
 | Name        | Type           | Description  |
 | ------------- |------------- | -----|
 | owner | address | address owning the tokens list to be accessed | 
 | index | uint256 | uint256 representing the index to be accessed of the requested tokens list | 
+
+**Returns**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+|  | uint256 | token ID at the given index of the tokens list owned by the requested address | 
 
 ### totalSupply
 
@@ -77,7 +79,9 @@ returns(uint256)
 
 **Returns**
 
-uint256 representing the total amount of tokens
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+|  | uint256 | representing the total amount of tokens | 
 
 ### tokenByIndex
 
@@ -91,15 +95,17 @@ function tokenByIndex(uint256 index) public view
 returns(uint256)
 ```
 
-**Returns**
-
-uint256 token ID at the given index of the tokens list
-
 **Arguments**
 
 | Name        | Type           | Description  |
 | ------------- |------------- | -----|
 | index | uint256 | uint256 representing the index to be accessed of the tokens list | 
+
+**Returns**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+|  | uint256 | token ID at the given index of the tokens list | 
 
 ### _transferFrom
 
@@ -166,15 +172,17 @@ function _tokensOfOwner(address owner) internal view
 returns(uint256[])
 ```
 
-**Returns**
-
-uint256[] List of token IDs owned by the requested address
-
 **Arguments**
 
 | Name        | Type           | Description  |
 | ------------- |------------- | -----|
 | owner | address | address owning the tokens | 
+
+**Returns**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+|  | uint256[] | List of token IDs owned by the requested address | 
 
 ### _addTokenToOwnerEnumeration
 

@@ -44,6 +44,12 @@ returns(balance uint256)
 | ------------- |------------- | -----|
 | owner | address |  | 
 
+**Returns**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| balance | uint256 |  | 
+
 ### ownerOf
 
 ⤿ Overridden Implementation(s): [ERC721.ownerOf](ERC721.md#ownerof)
@@ -60,6 +66,12 @@ returns(owner address)
 | Name        | Type           | Description  |
 | ------------- |------------- | -----|
 | tokenId | uint256 |  | 
+
+**Returns**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| owner | address |  | 
 
 ### safeTransferFrom
 
@@ -138,6 +150,12 @@ returns(operator address)
 | ------------- |------------- | -----|
 | tokenId | uint256 |  | 
 
+**Returns**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| operator | address |  | 
+
 ### setApprovalForAll
 
 ⤿ Overridden Implementation(s): [ERC721.setApprovalForAll](ERC721.md#setapprovalforall)
@@ -168,6 +186,12 @@ returns(bool)
 | ------------- |------------- | -----|
 | owner | address |  | 
 | operator | address |  | 
+
+**Returns**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+|  | bool |  | 
 
 ### safeTransferFrom
 

@@ -8,31 +8,45 @@ import "./AvastarState.sol";
  */
 contract TraitFactory is AvastarState {
 
-    /**
-     * @notice Event emitted upon the creation of a Trait
-     */
     event NewTrait(uint256 id, Gene gene, uint8 variation, string name);
 
     /**
-     * @notice Get the Trait data associated with a given Trait ID
+     * @notice Retrieve a Trait by ID
+     * @param _traitId the ID of the Trait to retrieve
+     * @return id the ID of the trait
+     * @return generation
+     * @return series
+     * @return gender
+     * @return gene
+     * @return variation
+     * @return name
+     * @return svg
      */
     function getTrait(uint256 _traitId)
         external
         view
         returns (
-            uint256,
-            Generation,
-            Series[] memory,
-            Gender,
-            Gene,
-            uint8,
-            string memory,
-            string memory
+            uint256 id,
+            Generation generation,
+            Series[] memory series,
+            Gender gender,
+            Gene gene,
+            uint8 variation,
+            string memory name,
+            string memory svg
         )
     {
         require(_traitId < traits.length);
         Trait memory trait = traits[_traitId];
-        return ( trait.id, trait.generation, trait.series, trait.gender, trait.gene, trait.variation, trait.name, trait.svg );
+        return (
+            trait.id,
+            trait.generation,
+            trait.series,
+            trait.gender,
+            trait.gene,
+            trait.variation,
+            trait.name,
+            trait.svg);
     }
 
     /**
