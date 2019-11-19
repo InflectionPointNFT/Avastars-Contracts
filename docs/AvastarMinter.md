@@ -24,11 +24,11 @@ uint256 private unspentDeposits;
 ## Events
 
 ```solidity
-event CurrentGenerationSet(enum AvastarTypes.Generation currentGeneration);
-event CurrentSeriesSet(enum AvastarTypes.Series currentSeries);
-event DepositorBalance(address indexed depositor, uint256 balance);
-event FranchiseBalanceWithdrawn(address indexed owner, uint256 amount);
-event TeleporterContractSet(address contractAddress);
+event CurrentGenerationSet(enum AvastarTypes.Generation currentGeneration)
+event CurrentSeriesSet(enum AvastarTypes.Series currentSeries)
+event DepositorBalance(address indexed depositor, uint256 balance)
+event FranchiseBalanceWithdrawn(address indexed owner, uint256 amount)
+event TeleporterContractSet(address contractAddress)
 ```
 
 ## **Functions**

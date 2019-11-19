@@ -35,12 +35,12 @@ address public newContractAddress;
 ## Events
 
 ```solidity
-event ContractPaused();
-event ContractUnpaused();
-event ContractUpgrade(address newContract);
-event MinterAdded(address minterAddress);
-event OwnerAdded(address ownerAddress);
-event SysAdminAdded(address sysAdminAddress);
+event ContractPaused()
+event ContractUnpaused()
+event ContractUpgrade(address newContract)
+event MinterAdded(address minterAddress)
+event OwnerAdded(address ownerAddress)
+event SysAdminAdded(address sysAdminAddress)
 ```
 
 ## Modifiers

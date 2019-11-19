@@ -28,7 +28,7 @@ module.exports = {
         parameterList.push(`${dataType} ${indexed ? "indexed " : ""}${argumentName}`.trim());
       }
 
-      builder.push(`event ${node.name}(${parameterList.join(", ")});`);
+      builder.push(`event ${node.name}(${parameterList.join(", ")})`);
       builder.push("\n");
     }
 
