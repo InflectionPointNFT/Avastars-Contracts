@@ -60,7 +60,7 @@ Check if an account has this role.
 ```solidity
 function has(struct Roles.Role role, address account)
 internal view
-returns(bool)
+returns (bool)
 ```
 
 **Arguments**

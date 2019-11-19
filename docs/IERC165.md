@@ -28,7 +28,7 @@ to learn more about how these ids are created.
 ```solidity
 function supportsInterface(bytes4 interfaceId)
 external view
-returns(bool)
+returns (bool)
 ```
 
 **Arguments**

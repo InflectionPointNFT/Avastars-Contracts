@@ -42,7 +42,7 @@ Gets the token name.
 ```solidity
 function name()
 external view
-returns(string)
+returns (string)
 ```
 
 **Returns**
@@ -60,7 +60,7 @@ Gets the token symbol.
 ```solidity
 function symbol()
 external view
-returns(string)
+returns (string)
 ```
 
 **Returns**
@@ -79,7 +79,7 @@ Throws if the token ID does not exist. May return an empty string.
 ```solidity
 function tokenURI(uint256 tokenId)
 external view
-returns(string)
+returns (string)
 ```
 
 **Arguments**

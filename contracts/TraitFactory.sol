@@ -14,28 +14,26 @@ contract TraitFactory is AvastarState {
      * @notice Retrieve a Trait by ID
      * @param _traitId the ID of the Trait to retrieve
      * @return id the ID of the trait
-     * @return generation
-     * @return series
-     * @return gender
-     * @return gene
-     * @return variation
-     * @return name
-     * @return svg
+     * @return generation generation of the trait
+     * @return series list of series the trait may appear in
+     * @return gender gender(s) the trait is valid for
+     * @return gene gene the trait belongs to
+     * @return variation variation of the gene the trait represents
+     * @return name name of the trait
+     * @return svg svg layer representation of the trait
      */
     function getTrait(uint256 _traitId)
-        external
-        view
-        returns (
-            uint256 id,
-            Generation generation,
-            Series[] memory series,
-            Gender gender,
-            Gene gene,
-            uint8 variation,
-            string memory name,
-            string memory svg
-        )
-    {
+    external view
+    returns (
+        uint256 id,
+        Generation generation,
+        Series[] memory series,
+        Gender gender,
+        Gene gene,
+        uint8 variation,
+        string memory name,
+        string memory svg
+    ) {
         require(_traitId < traits.length);
         Trait memory trait = traits[_traitId];
         return (
@@ -46,21 +44,24 @@ contract TraitFactory is AvastarState {
             trait.gene,
             trait.variation,
             trait.name,
-            trait.svg);
+            trait.svg
+        );
     }
 
     /**
-     * @notice Get Trait ID by Generation and Variation
+     * @notice Get Trait ID by Generation, Gene, and Variation
+     * @param _generation the generation the trait belongs to
+     * @param _gene gene the trait belongs to
+     * @param _variationSafe the variation of the gene
+     * @return traitId the ID of the specified trait
      */
     function getTraitIdByGenerationGeneAndVariation(
         Generation _generation,
         Gene _gene,
-        uint256 _variationSafe)
-            external
-            view
-            returns (
-            uint256
-        )
+        uint256 _variationSafe
+    )
+    external view
+    returns (uint256 traitId)
     {
         require(_variationSafe >=0 && _variationSafe <=255);
         uint8 variation = uint8(_variationSafe);
@@ -69,6 +70,14 @@ contract TraitFactory is AvastarState {
 
     /**
      * @notice Create a Trait
+     * @param _generation the generation the trait belongs to
+     * @param _series list of series the trait may appear in
+     * @param _gender gender the trait is valid for
+     * @param _gene gene the trait belongs to
+     * @param _variationSafe the variation of the gene the trait belongs to
+     * @param _name the name of the trait
+     * @param _svg svg layer representation of the trait
+     * @return traitId the token ID of the newly created trait
      */
     function createTrait(
         Generation _generation,
@@ -79,10 +88,8 @@ contract TraitFactory is AvastarState {
         string calldata _name,
         string calldata _svg
     )
-        external
-        onlySysAdmin()
-        whenNotPaused
-        returns (uint256)
+    external onlySysAdmin whenNotPaused
+    returns (uint256 traitId)
     {
         require(_series.length > 0);
         require(bytes(_name).length > 0);
@@ -113,8 +120,14 @@ contract TraitFactory is AvastarState {
 
     /**
      * @notice Assemble the artwork for a given Trait hash with art from the given Generation
+     * @param _generation the generation the Avastar belongs to
+     * @param _traitHash the Avastar's trait hash
+     * @return svg the fully rendered SVG for the Avastar
      */
-    function assembleArt(Generation _generation, uint256 _traitHash) public view returns (string memory) {
+    function renderAvastar(Generation _generation, uint256 _traitHash)
+    public view
+    returns (string memory svg)
+    {
         require(_traitHash > 0);
         string memory accumulator = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" height="1000px" width="1000px" viewBox="0 0 1000 1000">';
         uint256 slotConst = 256;
@@ -148,6 +161,9 @@ contract TraitFactory is AvastarState {
 
     /**
      * @notice Concatenate two strings
+     * @param _a the first string
+     * @param _b the second string
+     * @return result the concatenation of `_a` and `_b`
      */
     function strConcat(
         string memory _a,

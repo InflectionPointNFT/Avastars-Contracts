@@ -104,7 +104,7 @@ Invokable only by owner role.
 ```solidity
 function checkFranchiseBalance()
 external view onlyOwner 
-returns(uint256 franchiseBalance)
+returns (uint256 franchiseBalance)
 ```
 
 **Returns**
@@ -123,7 +123,7 @@ Emits `FranchiseBalanceWithdrawn` event with amount withdrawn.
 ```solidity
 function withdrawFranchiseBalance()
 external nonpayable onlyOwner 
-returns(uint256 amountWithdrawn)
+returns (uint256 amountWithdrawn)
 ```
 
 **Returns**
@@ -153,7 +153,7 @@ Invokable by any address (other than 0).
 ```solidity
 function checkDepositorBalance()
 external view
-returns(uint256)
+returns (uint256)
 ```
 
 **Returns**
@@ -172,7 +172,7 @@ Emits `DepositorBalance` event of 0 amount once transfer is complete.
 ```solidity
 function withdrawDepositorBalance()
 external nonpayable
-returns(uint256 amountWithdrawn)
+returns (uint256 amountWithdrawn)
 ```
 
 **Returns**
@@ -197,7 +197,7 @@ function purchasePrime(
 	uint8 _ranking
 )
 external nonpayable onlyMinter whenNotPaused 
-returns(uint256 tokenId, uint256 serial)
+returns (uint256 tokenId, uint256 serial)
 ```
 
 **Arguments**
@@ -234,7 +234,7 @@ function purchaseReplicant(
 	uint8 _ranking
 )
 external nonpayable onlyMinter whenNotPaused 
-returns(uint256 tokenId, uint256 serial)
+returns (uint256 tokenId, uint256 serial)
 ```
 
 **Arguments**

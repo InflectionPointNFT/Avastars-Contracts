@@ -23,7 +23,7 @@ function onERC721Received(
 	bytes data
 )
 public nonpayable
-returns(bytes4)
+returns (bytes4)
 ```
 
 **Arguments**

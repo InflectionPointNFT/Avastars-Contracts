@@ -15,8 +15,6 @@ module.exports = {
         return "";
       }
 
-      builder.push("returns(");
-
       const returnList = [];
 
       for(let i in returnParameters) {
@@ -24,9 +22,15 @@ module.exports = {
         returnList.push(`${parameter.typeDescriptions.typeString} ${parameter.name}`.trim());
       }
 
-      builder.push(returnList.join(", "));
-
-      builder.push(")");
+      if (returnList.length > 2) {
+        builder.push("returns (\n\t");
+        builder.push(returnList.join(",\n\t"));
+        builder.push("\n)");
+      } else {
+        builder.push("returns (");
+        builder.push(returnList.join(", "));
+        builder.push(")");
+      }
 
       return builder.join("");
     }
@@ -40,7 +44,6 @@ module.exports = {
     const parameters = node.parameters.parameters || [];
     const documentation = node.documentation;
 
-    const returnDocumentation = documentationHelper.get(documentation, "return");
     const parameterList = [];
 
     const modifierList = enumerable.from(node.modifiers).select(function(x) {

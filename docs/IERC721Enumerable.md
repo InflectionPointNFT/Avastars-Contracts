@@ -20,7 +20,7 @@ See https://eips.ethereum.org/EIPS/eip-721
 ```solidity
 function totalSupply()
 public view
-returns(uint256)
+returns (uint256)
 ```
 
 **Returns**
@@ -36,7 +36,7 @@ returns(uint256)
 ```solidity
 function tokenOfOwnerByIndex(address owner, uint256 index)
 public view
-returns(uint256 tokenId)
+returns (uint256 tokenId)
 ```
 
 **Arguments**
@@ -59,7 +59,7 @@ returns(uint256 tokenId)
 ```solidity
 function tokenByIndex(uint256 index)
 public view
-returns(uint256)
+returns (uint256)
 ```
 
 **Arguments**

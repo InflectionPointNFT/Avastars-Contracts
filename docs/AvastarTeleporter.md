@@ -26,7 +26,7 @@ Acknowledge contract is AvastarTeleporter
 ```solidity
 function isAvastarTeleporter()
 external pure
-returns(bool)
+returns (bool)
 ```
 
 **Returns**

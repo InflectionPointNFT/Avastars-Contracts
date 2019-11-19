@@ -31,7 +31,7 @@ struct Counter {
 ```solidity
 function current(struct Counters.Counter counter)
 internal view
-returns(uint256)
+returns (uint256)
 ```
 
 **Arguments**

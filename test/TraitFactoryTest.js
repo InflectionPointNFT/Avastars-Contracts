@@ -307,8 +307,8 @@ contract('TraitFactory', function(accounts) {
         // Compute the
         const expected = traitMath.computeArt(traits);
 
-        // Get the assembled artwork
-        const art = await contract.assembleArt(constants.GENERATION.ONE, traitHash, {from: nonSysAdmin});
+        // Get the rendered artwork
+        const art = await contract.renderAvastar(constants.GENERATION.ONE, traitHash, {from: nonSysAdmin});
 
         assert.equal(art, expected, "Assembled art wasn't correct");
 

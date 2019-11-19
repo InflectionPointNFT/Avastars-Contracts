@@ -24,7 +24,14 @@ Get the Avastar Replicant associated by Generation and Serial
 ```solidity
 function getReplicantByGenerationAndSerial(enum AvastarTypes.Generation _generation, uint256 _serial)
 external view
-returns(uint256, uint256, uint256, enum AvastarTypes.Generation, enum AvastarTypes.Gender, uint8)
+returns (
+	uint256,
+	uint256,
+	uint256,
+	enum AvastarTypes.Generation,
+	enum AvastarTypes.Gender,
+	uint8
+)
 ```
 
 **Arguments**
@@ -52,7 +59,14 @@ Get the Avastar Replicant associated with a given Token ID
 ```solidity
 function getReplicantByTokenId(uint256 _tokenId)
 external view
-returns(uint256, uint256, uint256, enum AvastarTypes.Generation, enum AvastarTypes.Gender, uint8)
+returns (
+	uint256,
+	uint256,
+	uint256,
+	enum AvastarTypes.Generation,
+	enum AvastarTypes.Gender,
+	uint8
+)
 ```
 
 **Arguments**
@@ -85,7 +99,7 @@ function mintReplicant(
 	uint8 _ranking
 )
 external nonpayable onlyMinter whenNotPaused 
-returns(uint256, uint256)
+returns (uint256, uint256)
 ```
 
 **Arguments**

@@ -25,7 +25,7 @@ contract.
 ```solidity
 function isContract(address account)
 internal view
-returns(bool)
+returns (bool)
 ```
 
 **Arguments**
@@ -49,7 +49,7 @@ simply a type cast: the actual underlying value is not changed.
 ```solidity
 function toPayable(address account)
 internal pure
-returns(address payable)
+returns (address payable)
 ```
 
 **Arguments**

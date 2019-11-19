@@ -15,7 +15,7 @@ View Source: [@openzeppelin/contracts/GSN/Context.sol](https://github.com/Dapp-W
 ```solidity
 function _msgSender()
 internal view
-returns(address payable)
+returns (address payable)
 ```
 
 **Returns**
@@ -29,7 +29,7 @@ returns(address payable)
 ```solidity
 function _msgData()
 internal view
-returns(bytes)
+returns (bytes)
 ```
 
 **Returns**

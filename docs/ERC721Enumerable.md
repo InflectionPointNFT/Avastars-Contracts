@@ -51,7 +51,7 @@ Gets the token ID at a given index of the tokens list of the requested owner.
 ```solidity
 function tokenOfOwnerByIndex(address owner, uint256 index)
 public view
-returns(uint256)
+returns (uint256)
 ```
 
 **Arguments**
@@ -76,7 +76,7 @@ Gets the total amount of tokens stored by the contract.
 ```solidity
 function totalSupply()
 public view
-returns(uint256)
+returns (uint256)
 ```
 
 **Returns**
@@ -95,7 +95,7 @@ Reverts if the index is greater or equal to the total number of tokens.
 ```solidity
 function tokenByIndex(uint256 index)
 public view
-returns(uint256)
+returns (uint256)
 ```
 
 **Arguments**
@@ -180,7 +180,7 @@ Gets the list of token IDs of the requested owner.
 ```solidity
 function _tokensOfOwner(address owner)
 internal view
-returns(uint256[])
+returns (uint256[])
 ```
 
 **Arguments**

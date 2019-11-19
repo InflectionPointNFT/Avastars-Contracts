@@ -24,7 +24,16 @@ Get the Avastar Prime metadata associated with a given Generation and Serial
 ```solidity
 function getPrimeByGenerationAndSerial(enum AvastarTypes.Generation _generation, uint256 _serial)
 external view
-returns(uint256, uint256, uint256, bool[], enum AvastarTypes.Generation, enum AvastarTypes.Series, enum AvastarTypes.Gender, uint8)
+returns (
+	uint256,
+	uint256,
+	uint256,
+	bool[],
+	enum AvastarTypes.Generation,
+	enum AvastarTypes.Series,
+	enum AvastarTypes.Gender,
+	uint8
+)
 ```
 
 **Arguments**
@@ -54,7 +63,16 @@ Get the Avastar Prime metadata associated with a given Token ID
 ```solidity
 function getPrimeByTokenId(uint256 _tokenId)
 external view
-returns(uint256, uint256, uint256, bool[], enum AvastarTypes.Generation, enum AvastarTypes.Series, enum AvastarTypes.Gender, uint8)
+returns (
+	uint256,
+	uint256,
+	uint256,
+	bool[],
+	enum AvastarTypes.Generation,
+	enum AvastarTypes.Series,
+	enum AvastarTypes.Gender,
+	uint8
+)
 ```
 
 **Arguments**
@@ -90,7 +108,7 @@ function mintPrime(
 	uint8 _ranking
 )
 external nonpayable onlyMinter whenNotPaused 
-returns(uint256, uint256)
+returns (uint256, uint256)
 ```
 
 **Arguments**

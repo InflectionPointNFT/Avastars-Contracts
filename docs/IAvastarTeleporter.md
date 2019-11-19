@@ -18,7 +18,7 @@ Declared with contract rather than interface as it must inherit for enum types
 ```solidity
 function isAvastarTeleporter()
 external pure
-returns(bool)
+returns (bool)
 ```
 
 **Returns**
@@ -39,7 +39,7 @@ function mintPrime(
 	uint8 _ranking
 )
 external nonpayable
-returns(uint256, uint256)
+returns (uint256, uint256)
 ```
 
 **Arguments**
@@ -71,7 +71,7 @@ function mintReplicant(
 	uint8 _ranking
 )
 external nonpayable
-returns(uint256, uint256)
+returns (uint256, uint256)
 ```
 
 **Arguments**
@@ -96,7 +96,7 @@ returns(uint256, uint256)
 ```solidity
 function ownerOf(uint256 tokenId)
 external view
-returns(address owner)
+returns (address owner)
 ```
 
 **Arguments**

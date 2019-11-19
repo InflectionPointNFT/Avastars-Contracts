@@ -20,7 +20,7 @@ See https://eips.ethereum.org/EIPS/eip-721
 ```solidity
 function name()
 external view
-returns(string)
+returns (string)
 ```
 
 **Returns**
@@ -36,7 +36,7 @@ returns(string)
 ```solidity
 function symbol()
 external view
-returns(string)
+returns (string)
 ```
 
 **Returns**
@@ -52,7 +52,7 @@ returns(string)
 ```solidity
 function tokenURI(uint256 tokenId)
 external view
-returns(string)
+returns (string)
 ```
 
 **Arguments**

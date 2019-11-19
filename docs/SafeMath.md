@@ -36,7 +36,7 @@ overflow.
 ```solidity
 function add(uint256 a, uint256 b)
 internal pure
-returns(uint256)
+returns (uint256)
 ```
 
 **Arguments**
@@ -63,7 +63,7 @@ overflow (when the result is negative).
 ```solidity
 function sub(uint256 a, uint256 b)
 internal pure
-returns(uint256)
+returns (uint256)
 ```
 
 **Arguments**
@@ -95,7 +95,7 @@ function sub(
 	string errorMessage
 )
 internal pure
-returns(uint256)
+returns (uint256)
 ```
 
 **Arguments**
@@ -123,7 +123,7 @@ overflow.
 ```solidity
 function mul(uint256 a, uint256 b)
 internal pure
-returns(uint256)
+returns (uint256)
 ```
 
 **Arguments**
@@ -152,7 +152,7 @@ uses an invalid opcode to revert (consuming all remaining gas).
 ```solidity
 function div(uint256 a, uint256 b)
 internal pure
-returns(uint256)
+returns (uint256)
 ```
 
 **Arguments**
@@ -186,7 +186,7 @@ function div(
 	string errorMessage
 )
 internal pure
-returns(uint256)
+returns (uint256)
 ```
 
 **Arguments**
@@ -216,7 +216,7 @@ invalid opcode to revert (consuming all remaining gas).
 ```solidity
 function mod(uint256 a, uint256 b)
 internal pure
-returns(uint256)
+returns (uint256)
 ```
 
 **Arguments**
@@ -250,7 +250,7 @@ function mod(
 	string errorMessage
 )
 internal pure
-returns(uint256)
+returns (uint256)
 ```
 
 **Arguments**
