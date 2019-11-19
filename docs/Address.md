@@ -23,7 +23,8 @@ function returns false is an externally-owned account (EOA) and not a
 contract.
 
 ```solidity
-function isContract(address account) internal view
+function isContract(address account) 
+internal view
 returns(bool)
 ```
 
@@ -46,7 +47,8 @@ simply a type cast: the actual underlying value is not changed.
      * _Available since v2.4.0._
 
 ```solidity
-function toPayable(address account) internal pure
+function toPayable(address account) 
+internal pure
 returns(address payable)
 ```
 
@@ -78,7 +80,8 @@ https://solidity.readthedocs.io/en/v0.5.11/security-considerations.html#use-the-
      * _Available since v2.4.0._
 
 ```solidity
-function sendValue(address payable recipient, uint256 amount) internal nonpayable
+function sendValue(address payable recipient, uint256 amount) 
+internal nonpayable
 ```
 
 **Arguments**

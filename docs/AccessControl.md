@@ -118,7 +118,8 @@ update to the new contract address upon receiving this event. This contract will
 remain paused indefinitely after such an upgrade.
 
 ```solidity
-function upgradeContract(address _newAddress) external nonpayable onlySysAdmin whenPaused whenNotUpgraded 
+function upgradeContract(address _newAddress) 
+external nonpayable onlySysAdmin whenPaused whenNotUpgraded 
 ```
 
 **Arguments**
@@ -132,7 +133,8 @@ function upgradeContract(address _newAddress) external nonpayable onlySysAdmin w
 Called by a system administrator to add a minter
 
 ```solidity
-function addMinter(address _minterAddress) external nonpayable onlySysAdmin 
+function addMinter(address _minterAddress) 
+external nonpayable onlySysAdmin 
 ```
 
 **Arguments**
@@ -146,7 +148,8 @@ function addMinter(address _minterAddress) external nonpayable onlySysAdmin
 Called by a system administrator to add an owner
 
 ```solidity
-function addOwner(address _ownerAddress) external nonpayable onlySysAdmin 
+function addOwner(address _ownerAddress) 
+external nonpayable onlySysAdmin 
 ```
 
 **Arguments**
@@ -160,7 +163,8 @@ function addOwner(address _ownerAddress) external nonpayable onlySysAdmin
 Called by a system administrator to add another system admin
 
 ```solidity
-function addSysAdmin(address _sysAdminAddress) external nonpayable onlySysAdmin 
+function addSysAdmin(address _sysAdminAddress) 
+external nonpayable onlySysAdmin 
 ```
 
 **Arguments**
@@ -174,7 +178,8 @@ function addSysAdmin(address _sysAdminAddress) external nonpayable onlySysAdmin
 Called by a system administrator to pause, triggers stopped state
 
 ```solidity
-function pause() public nonpayable onlySysAdmin whenNotPaused 
+function pause() 
+public nonpayable onlySysAdmin whenNotPaused 
 ```
 
 ### unpause
@@ -182,6 +187,7 @@ function pause() public nonpayable onlySysAdmin whenNotPaused
 Called by a system administrator to un-pause, returns to normal state
 
 ```solidity
-function unpause() public nonpayable onlySysAdmin whenPaused whenNotUpgraded 
+function unpause() 
+public nonpayable onlySysAdmin whenPaused whenNotUpgraded 
 ```
 

@@ -18,7 +18,8 @@ See https://eips.ethereum.org/EIPS/eip-721
 ⤿ Overridden Implementation(s): [ERC721Metadata.name](ERC721Metadata.md#name)
 
 ```solidity
-function name() external view
+function name() 
+external view
 returns(string)
 ```
 
@@ -33,7 +34,8 @@ returns(string)
 ⤿ Overridden Implementation(s): [ERC721Metadata.symbol](ERC721Metadata.md#symbol)
 
 ```solidity
-function symbol() external view
+function symbol() 
+external view
 returns(string)
 ```
 
@@ -48,7 +50,8 @@ returns(string)
 ⤿ Overridden Implementation(s): [ERC721Metadata.tokenURI](ERC721Metadata.md#tokenuri)
 
 ```solidity
-function tokenURI(uint256 tokenId) external view
+function tokenURI(uint256 tokenId) 
+external view
 returns(string)
 ```
 

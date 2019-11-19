@@ -26,7 +26,8 @@ struct Role {
 Give an account access to this role.
 
 ```solidity
-function add(struct Roles.Role role, address account) internal nonpayable
+function add(struct Roles.Role role, address account) 
+internal nonpayable
 ```
 
 **Arguments**
@@ -41,7 +42,8 @@ function add(struct Roles.Role role, address account) internal nonpayable
 Remove an account's access to this role.
 
 ```solidity
-function remove(struct Roles.Role role, address account) internal nonpayable
+function remove(struct Roles.Role role, address account) 
+internal nonpayable
 ```
 
 **Arguments**
@@ -56,7 +58,8 @@ function remove(struct Roles.Role role, address account) internal nonpayable
 Check if an account has this role.
 
 ```solidity
-function has(struct Roles.Role role, address account) internal view
+function has(struct Roles.Role role, address account) 
+internal view
 returns(bool)
 ```
 

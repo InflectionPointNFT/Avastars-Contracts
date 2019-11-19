@@ -56,11 +56,20 @@ module.exports = {
 
     builder.push("```solidity");
     builder.push("\n");
+
     builder.push(`function ${node.name}(`);
 
-    builder.push(parameterList.join(", "));
+    if (parameterList.length > 2) {
+      builder.push("\n\t");
+      builder.push(parameterList.join(",\n\t"));
+      builder.push("\n");
+    } else {
+      builder.push(parameterList.join(", "));
+
+    }
 
     builder.push(") ");
+    builder.push("\n");
 
     builder.push(node.visibility.toLowerCase());
 

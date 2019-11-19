@@ -40,7 +40,8 @@ bytes4 private constant _INTERFACE_ID_ERC721_METADATA;
 Gets the token name.
 
 ```solidity
-function name() external view
+function name() 
+external view
 returns(string)
 ```
 
@@ -57,7 +58,8 @@ returns(string)
 Gets the token symbol.
 
 ```solidity
-function symbol() external view
+function symbol() 
+external view
 returns(string)
 ```
 
@@ -75,7 +77,8 @@ Returns an URI for a given token ID.
 Throws if the token ID does not exist. May return an empty string.
 
 ```solidity
-function tokenURI(uint256 tokenId) external view
+function tokenURI(uint256 tokenId) 
+external view
 returns(string)
 ```
 
@@ -97,7 +100,8 @@ Internal function to set the token URI for a given token.
 Reverts if the token ID does not exist.
 
 ```solidity
-function _setTokenURI(uint256 tokenId, string uri) internal nonpayable
+function _setTokenURI(uint256 tokenId, string uri) 
+internal nonpayable
 ```
 
 **Arguments**
@@ -116,7 +120,8 @@ Reverts if the token does not exist.
 Deprecated, use _burn(uint256) instead.
 
 ```solidity
-function _burn(address owner, uint256 tokenId) internal nonpayable
+function _burn(address owner, uint256 tokenId) 
+internal nonpayable
 ```
 
 **Arguments**

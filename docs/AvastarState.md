@@ -48,7 +48,8 @@ mapping(uint8 => mapping(uint8 => mapping(uint256 => uint256))) internal tokenId
 ### trackAvastar
 
 ```solidity
-function trackAvastar(struct AvastarTypes.Avastar _avastar) internal nonpayable
+function trackAvastar(struct AvastarTypes.Avastar _avastar) 
+internal nonpayable
 ```
 
 **Arguments**

@@ -24,7 +24,8 @@ event NewTrait(uint256 id, enum AvastarTypes.Gene gene, uint8 variation, string 
 Retrieve a Trait by ID
 
 ```solidity
-function getTrait(uint256 _traitId) external view
+function getTrait(uint256 _traitId) 
+external view
 returns(uint256 id, enum AvastarTypes.Generation generation, enum AvastarTypes.Series[] series, enum AvastarTypes.Gender gender, enum AvastarTypes.Gene gene, uint8 variation, string name, string svg)
 ```
 
@@ -52,7 +53,12 @@ returns(uint256 id, enum AvastarTypes.Generation generation, enum AvastarTypes.S
 Get Trait ID by Generation and Variation
 
 ```solidity
-function getTraitIdByGenerationGeneAndVariation(enum AvastarTypes.Generation _generation, enum AvastarTypes.Gene _gene, uint256 _variationSafe) external view
+function getTraitIdByGenerationGeneAndVariation(
+	enum AvastarTypes.Generation _generation,
+	enum AvastarTypes.Gene _gene,
+	uint256 _variationSafe
+) 
+external view
 returns(uint256)
 ```
 
@@ -75,7 +81,16 @@ returns(uint256)
 Create a Trait
 
 ```solidity
-function createTrait(enum AvastarTypes.Generation _generation, enum AvastarTypes.Series[] _series, enum AvastarTypes.Gender _gender, enum AvastarTypes.Gene _gene, uint256 _variationSafe, string _name, string _svg) external nonpayable onlySysAdmin whenNotPaused 
+function createTrait(
+	enum AvastarTypes.Generation _generation,
+	enum AvastarTypes.Series[] _series,
+	enum AvastarTypes.Gender _gender,
+	enum AvastarTypes.Gene _gene,
+	uint256 _variationSafe,
+	string _name,
+	string _svg
+) 
+external nonpayable onlySysAdmin whenNotPaused 
 returns(uint256)
 ```
 
@@ -102,7 +117,8 @@ returns(uint256)
 Assemble the artwork for a given Trait hash with art from the given Generation
 
 ```solidity
-function assembleArt(enum AvastarTypes.Generation _generation, uint256 _traitHash) public view
+function assembleArt(enum AvastarTypes.Generation _generation, uint256 _traitHash) 
+public view
 returns(string)
 ```
 
@@ -124,7 +140,8 @@ returns(string)
 Concatenate two strings
 
 ```solidity
-function strConcat(string _a, string _b) private pure
+function strConcat(string _a, string _b) 
+private pure
 returns(string result)
 ```
 

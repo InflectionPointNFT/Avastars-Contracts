@@ -49,7 +49,8 @@ bytes4 private constant _INTERFACE_ID_ERC721_ENUMERABLE;
 Gets the token ID at a given index of the tokens list of the requested owner.
 
 ```solidity
-function tokenOfOwnerByIndex(address owner, uint256 index) public view
+function tokenOfOwnerByIndex(address owner, uint256 index) 
+public view
 returns(uint256)
 ```
 
@@ -73,7 +74,8 @@ returns(uint256)
 Gets the total amount of tokens stored by the contract.
 
 ```solidity
-function totalSupply() public view
+function totalSupply() 
+public view
 returns(uint256)
 ```
 
@@ -91,7 +93,8 @@ Gets the token ID at a given index of all the tokens in this contract
 Reverts if the index is greater or equal to the total number of tokens.
 
 ```solidity
-function tokenByIndex(uint256 index) public view
+function tokenByIndex(uint256 index) 
+public view
 returns(uint256)
 ```
 
@@ -115,7 +118,12 @@ Internal function to transfer ownership of a given token ID to another address.
 As opposed to transferFrom, this imposes no restrictions on msg.sender.
 
 ```solidity
-function _transferFrom(address from, address to, uint256 tokenId) internal nonpayable
+function _transferFrom(
+	address from,
+	address to,
+	uint256 tokenId
+) 
+internal nonpayable
 ```
 
 **Arguments**
@@ -134,7 +142,8 @@ Internal function to mint a new token.
 Reverts if the given token ID already exists.
 
 ```solidity
-function _mint(address to, uint256 tokenId) internal nonpayable
+function _mint(address to, uint256 tokenId) 
+internal nonpayable
 ```
 
 **Arguments**
@@ -153,7 +162,8 @@ Reverts if the token does not exist.
 Deprecated, use {ERC721-_burn} instead.
 
 ```solidity
-function _burn(address owner, uint256 tokenId) internal nonpayable
+function _burn(address owner, uint256 tokenId) 
+internal nonpayable
 ```
 
 **Arguments**
@@ -168,7 +178,8 @@ function _burn(address owner, uint256 tokenId) internal nonpayable
 Gets the list of token IDs of the requested owner.
 
 ```solidity
-function _tokensOfOwner(address owner) internal view
+function _tokensOfOwner(address owner) 
+internal view
 returns(uint256[])
 ```
 
@@ -189,7 +200,8 @@ returns(uint256[])
 Private function to add a token to this extension's ownership-tracking data structures.
 
 ```solidity
-function _addTokenToOwnerEnumeration(address to, uint256 tokenId) private nonpayable
+function _addTokenToOwnerEnumeration(address to, uint256 tokenId) 
+private nonpayable
 ```
 
 **Arguments**
@@ -204,7 +216,8 @@ function _addTokenToOwnerEnumeration(address to, uint256 tokenId) private nonpay
 Private function to add a token to this extension's token tracking data structures.
 
 ```solidity
-function _addTokenToAllTokensEnumeration(uint256 tokenId) private nonpayable
+function _addTokenToAllTokensEnumeration(uint256 tokenId) 
+private nonpayable
 ```
 
 **Arguments**
@@ -221,7 +234,8 @@ gas optimizations e.g. when performing a transfer operation (avoiding double wri
 This has O(1) time complexity, but alters the order of the _ownedTokens array.
 
 ```solidity
-function _removeTokenFromOwnerEnumeration(address from, uint256 tokenId) private nonpayable
+function _removeTokenFromOwnerEnumeration(address from, uint256 tokenId) 
+private nonpayable
 ```
 
 **Arguments**
@@ -237,7 +251,8 @@ Private function to remove a token from this extension's token tracking data str
 This has O(1) time complexity, but alters the order of the _allTokens array.
 
 ```solidity
-function _removeTokenFromAllTokensEnumeration(uint256 tokenId) private nonpayable
+function _removeTokenFromAllTokensEnumeration(uint256 tokenId) 
+private nonpayable
 ```
 
 **Arguments**

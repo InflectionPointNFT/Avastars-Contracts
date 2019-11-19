@@ -16,7 +16,8 @@ Declared with contract rather than interface as it must inherit for enum types
 ### isAvastarTeleporter
 
 ```solidity
-function isAvastarTeleporter() external pure
+function isAvastarTeleporter() 
+external pure
 returns(bool)
 ```
 
@@ -29,7 +30,15 @@ returns(bool)
 ### mintPrime
 
 ```solidity
-function mintPrime(address _owner, uint256 _traits, enum AvastarTypes.Generation _generation, enum AvastarTypes.Series _series, enum AvastarTypes.Gender _gender, uint8 _ranking) external nonpayable
+function mintPrime(
+	address _owner,
+	uint256 _traits,
+	enum AvastarTypes.Generation _generation,
+	enum AvastarTypes.Series _series,
+	enum AvastarTypes.Gender _gender,
+	uint8 _ranking
+) 
+external nonpayable
 returns(uint256, uint256)
 ```
 
@@ -54,7 +63,14 @@ returns(uint256, uint256)
 ### mintReplicant
 
 ```solidity
-function mintReplicant(address _owner, uint256 _traits, enum AvastarTypes.Generation _generation, enum AvastarTypes.Gender _gender, uint8 _ranking) external nonpayable
+function mintReplicant(
+	address _owner,
+	uint256 _traits,
+	enum AvastarTypes.Generation _generation,
+	enum AvastarTypes.Gender _gender,
+	uint8 _ranking
+) 
+external nonpayable
 returns(uint256, uint256)
 ```
 
@@ -78,7 +94,8 @@ returns(uint256, uint256)
 ### ownerOf
 
 ```solidity
-function ownerOf(uint256 tokenId) external view
+function ownerOf(uint256 tokenId) 
+external view
 returns(address owner)
 ```
 

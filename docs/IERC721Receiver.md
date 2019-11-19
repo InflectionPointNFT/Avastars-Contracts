@@ -16,7 +16,13 @@ from ERC721 asset contracts.
 Handle the receipt of an NFT
 
 ```solidity
-function onERC721Received(address operator, address from, uint256 tokenId, bytes data) public nonpayable
+function onERC721Received(
+	address operator,
+	address from,
+	uint256 tokenId,
+	bytes data
+) 
+public nonpayable
 returns(bytes4)
 ```
 

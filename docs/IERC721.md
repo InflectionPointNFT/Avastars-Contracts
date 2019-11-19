@@ -34,7 +34,8 @@ event ApprovalForAll(address indexed owner, address indexed operator, bool appro
 Returns the number of NFTs in `owner`'s account.
 
 ```solidity
-function balanceOf(address owner) public view
+function balanceOf(address owner) 
+public view
 returns(uint256 balance)
 ```
 
@@ -57,7 +58,8 @@ returns(uint256 balance)
 Returns the owner of the NFT specified by `tokenId`.
 
 ```solidity
-function ownerOf(uint256 tokenId) public view
+function ownerOf(uint256 tokenId) 
+public view
 returns(address owner)
 ```
 
@@ -87,7 +89,12 @@ another (`to`).
 NFT by either {approve} or {setApprovalForAll}.
 
 ```solidity
-function safeTransferFrom(address from, address to, uint256 tokenId) public nonpayable
+function safeTransferFrom(
+	address from,
+	address to,
+	uint256 tokenId
+) 
+public nonpayable
 ```
 
 **Arguments**
@@ -109,7 +116,12 @@ another (`to`).
 either {approve} or {setApprovalForAll}.
 
 ```solidity
-function transferFrom(address from, address to, uint256 tokenId) public nonpayable
+function transferFrom(
+	address from,
+	address to,
+	uint256 tokenId
+) 
+public nonpayable
 ```
 
 **Arguments**
@@ -125,7 +137,8 @@ function transferFrom(address from, address to, uint256 tokenId) public nonpayab
 ⤿ Overridden Implementation(s): [ERC721.approve](ERC721.md#approve)
 
 ```solidity
-function approve(address to, uint256 tokenId) public nonpayable
+function approve(address to, uint256 tokenId) 
+public nonpayable
 ```
 
 **Arguments**
@@ -140,7 +153,8 @@ function approve(address to, uint256 tokenId) public nonpayable
 ⤿ Overridden Implementation(s): [ERC721.getApproved](ERC721.md#getapproved)
 
 ```solidity
-function getApproved(uint256 tokenId) public view
+function getApproved(uint256 tokenId) 
+public view
 returns(address operator)
 ```
 
@@ -161,7 +175,8 @@ returns(address operator)
 ⤿ Overridden Implementation(s): [ERC721.setApprovalForAll](ERC721.md#setapprovalforall)
 
 ```solidity
-function setApprovalForAll(address operator, bool _approved) public nonpayable
+function setApprovalForAll(address operator, bool _approved) 
+public nonpayable
 ```
 
 **Arguments**
@@ -176,7 +191,8 @@ function setApprovalForAll(address operator, bool _approved) public nonpayable
 ⤿ Overridden Implementation(s): [ERC721.isApprovedForAll](ERC721.md#isapprovedforall)
 
 ```solidity
-function isApprovedForAll(address owner, address operator) public view
+function isApprovedForAll(address owner, address operator) 
+public view
 returns(bool)
 ```
 
@@ -198,7 +214,13 @@ returns(bool)
 ⤿ Overridden Implementation(s): [ERC721.safeTransferFrom](ERC721.md#safetransferfrom)
 
 ```solidity
-function safeTransferFrom(address from, address to, uint256 tokenId, bytes data) public nonpayable
+function safeTransferFrom(
+	address from,
+	address to,
+	uint256 tokenId,
+	bytes data
+) 
+public nonpayable
 ```
 
 **Arguments**

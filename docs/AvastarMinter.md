@@ -50,7 +50,8 @@ Set the address of the AvastarTeleporter contract.
 Only invokable by system admin role, when contract is paused and not upgraded.
 
 ```solidity
-function setTeleporterContract(address _address) external nonpayable onlySysAdmin whenPaused whenNotUpgraded 
+function setTeleporterContract(address _address) 
+external nonpayable onlySysAdmin whenPaused whenNotUpgraded 
 ```
 
 **Arguments**
@@ -67,7 +68,8 @@ Only invokable by system admin role, when contract is paused and not upgraded.
 Emits `GenerationSet` event with new value of `currentGeneration`.
 
 ```solidity
-function setCurrentGeneration(enum AvastarTypes.Generation _generation) external nonpayable onlySysAdmin whenPaused whenNotUpgraded 
+function setCurrentGeneration(enum AvastarTypes.Generation _generation) 
+external nonpayable onlySysAdmin whenPaused whenNotUpgraded 
 ```
 
 **Arguments**
@@ -83,7 +85,8 @@ Only invokable by system admin role, when contract is paused and not upgraded.
 Emits `CurrentSeriesSet` event with new value of `currentSeries`.
 
 ```solidity
-function setCurrentSeries(enum AvastarTypes.Series _series) public nonpayable onlySysAdmin whenPaused whenNotUpgraded 
+function setCurrentSeries(enum AvastarTypes.Series _series) 
+public nonpayable onlySysAdmin whenPaused whenNotUpgraded 
 ```
 
 **Arguments**
@@ -99,7 +102,8 @@ Remaining balance must be enough for all unspent deposits to be withdrawn by dep
 Invokable only by owner role.
 
 ```solidity
-function checkFranchiseBalance() external view onlyOwner 
+function checkFranchiseBalance() 
+external view onlyOwner 
 returns(uint256 franchiseBalance)
 ```
 
@@ -117,7 +121,8 @@ Entire franchise balance is transferred to `msg.sender`.
 Emits `FranchiseBalanceWithdrawn` event with amount withdrawn.
 
 ```solidity
-function withdrawFranchiseBalance() external nonpayable onlyOwner 
+function withdrawFranchiseBalance() 
+external nonpayable onlyOwner 
 returns(uint256 amountWithdrawn)
 ```
 
@@ -136,7 +141,8 @@ Must have a non-zero ETH value.
 Emits DepositorBalance event with depositor's resulting balance.
 
 ```solidity
-function deposit() external payable whenNotPaused 
+function deposit() 
+external payable whenNotPaused 
 ```
 
 ### checkDepositorBalance
@@ -145,7 +151,8 @@ Allow anyone to check their deposit balance.
 Invokable by any address (other than 0).
 
 ```solidity
-function checkDepositorBalance() external view
+function checkDepositorBalance() 
+external view
 returns(uint256)
 ```
 
@@ -163,7 +170,8 @@ Entire depositor balance is transferred to `msg.sender`.
 Emits `DepositorBalance` event of 0 amount once transfer is complete.
 
 ```solidity
-function withdrawDepositorBalance() external nonpayable
+function withdrawDepositorBalance() 
+external nonpayable
 returns(uint256 amountWithdrawn)
 ```
 
@@ -181,7 +189,14 @@ Minted token will be owned by `_purchaser` address.
 This function does not emit an event, but if successful, the `AvastarTeleporter` contract will emit a `NewPrime` event.
 
 ```solidity
-function purchasePrime(address _purchaser, uint256 _price, uint256 _traits, enum AvastarTypes.Gender _gender, uint8 _ranking) external nonpayable onlyMinter whenNotPaused 
+function purchasePrime(
+	address _purchaser,
+	uint256 _price,
+	uint256 _traits,
+	enum AvastarTypes.Gender _gender,
+	uint8 _ranking
+) 
+external nonpayable onlyMinter whenNotPaused 
 returns(uint256 tokenId, uint256 serial)
 ```
 
@@ -210,7 +225,15 @@ Minted token will be owned by `_purchaser` address.
 This function does not emit an event, but if successful, the `AvastarTeleporter` contract will emit a `NewReplicant` event.
 
 ```solidity
-function purchaseReplicant(address _purchaser, uint256 _price, uint256 _traits, enum AvastarTypes.Generation _generation, enum AvastarTypes.Gender _gender, uint8 _ranking) external nonpayable onlyMinter whenNotPaused 
+function purchaseReplicant(
+	address _purchaser,
+	uint256 _price,
+	uint256 _traits,
+	enum AvastarTypes.Generation _generation,
+	enum AvastarTypes.Gender _gender,
+	uint8 _ranking
+) 
+external nonpayable onlyMinter whenNotPaused 
 returns(uint256 tokenId, uint256 serial)
 ```
 
