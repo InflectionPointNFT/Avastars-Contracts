@@ -187,7 +187,7 @@ contract AvastarMinter is AvastarTypes, AccessControl {
      * @notice Mint an Avastar Prime for a purchaser who has previously deposited funds.
      * Invokable only by minter role, when contract is not paused.
      * Minted token will be owned by `_purchaser` address.
-     * If successful, emits a 'DepositorBalance' even with the depositor's remaining balance,
+     * If successful, emits a `DepositorBalance` event with the depositor's remaining balance,
      * and the `AvastarTeleporter` contract will emit a `NewPrime` event.
      * @param _purchaser address that will own the token
      * @param _price price in ETH of token, removed from purchaser's deposit balance
@@ -223,7 +223,7 @@ contract AvastarMinter is AvastarTypes, AccessControl {
      * @notice Mint an Avastar Replicant for a purchaser who has previously deposited funds.
      * Invokable only by minter role, when contract is not paused.
      * Minted token will be owned by `_purchaser` address.
-     * If successful, emits a 'DepositorBalance' even with the depositor's remaining balance,
+     * If successful, emits a `DepositorBalance` event with the depositor's remaining balance,
      * and the `AvastarTeleporter` contract will emit a `NewReplicant` event.
      * @param _purchaser address that will own the token
      * @param _price price in ETH of token, removed from purchaser's deposit balance

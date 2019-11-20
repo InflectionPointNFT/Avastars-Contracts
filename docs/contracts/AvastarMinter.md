@@ -257,7 +257,7 @@ returns (uint256 amountWithdrawn)
 Mint an Avastar Prime for a purchaser who has previously deposited funds.
 Invokable only by minter role, when contract is not paused.
 Minted token will be owned by `_purchaser` address.
-If successful, emits a 'DepositorBalance' even with the depositor's remaining balance,
+If successful, emits a `DepositorBalance` event with the depositor's remaining balance,
 and the `AvastarTeleporter` contract will emit a `NewPrime` event.
 
 ```solidity
@@ -294,7 +294,7 @@ returns (uint256 tokenId, uint256 serial)
 Mint an Avastar Replicant for a purchaser who has previously deposited funds.
 Invokable only by minter role, when contract is not paused.
 Minted token will be owned by `_purchaser` address.
-If successful, emits a 'DepositorBalance' even with the depositor's remaining balance,
+If successful, emits a `DepositorBalance` event with the depositor's remaining balance,
 and the `AvastarTeleporter` contract will emit a `NewReplicant` event.
 
 ```solidity

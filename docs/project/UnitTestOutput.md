@@ -1,5 +1,7 @@
 # Unit Test Output
-## Tests by Contract
+<!-- tabs:start -->
+
+#### ** Tests by Contract **
 ```
   Contract: AccessControl
     ✓ should not allow non-sysadmins to pause the contract (21803 gas)
@@ -88,7 +90,7 @@
     ✓ should allow anyone to assemble artwork by generation and trait hash
 ```
 
-## Gas by Contract Method
+#### ** Gas by Contract Method **
 ```
 ·--------------------------------------------------|---------------------------|-------------|----------------------------·
 |       Solc version: 0.5.12+commit.7709ece9       ·  Optimizer enabled: true  ·  Runs: 200  ·  Block limit: 9950000 gas  │
@@ -158,4 +160,6 @@
 
   74 passing (43s)
 ```
+
+<!-- tabs:end -->
 
