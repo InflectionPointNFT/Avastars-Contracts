@@ -42,7 +42,6 @@ module.exports = {
     const builder = [];
 
     const parameters = node.parameters.parameters || [];
-    const documentation = node.documentation;
 
     const parameterList = [];
 

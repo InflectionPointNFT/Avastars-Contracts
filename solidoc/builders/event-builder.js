@@ -28,8 +28,18 @@ module.exports = {
         parameterList.push(`${dataType} ${indexed ? "indexed " : ""}${argumentName}`.trim());
       }
 
-      builder.push(`event ${node.name}(${parameterList.join(", ")})`);
-      builder.push("\n");
+      builder.push(`event ${node.name}(`);
+
+      if (parameterList.length > 2) {
+        builder.push("\n\t");
+        builder.push(parameterList.join(",\n\t"));
+        builder.push("\n");
+      } else {
+        builder.push(parameterList.join(", "));
+      }
+
+      builder.push(")\n");
+
     }
 
     builder.push("```");
