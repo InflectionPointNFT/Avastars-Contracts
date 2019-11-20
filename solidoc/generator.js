@@ -36,7 +36,7 @@ function getForeignAnchors(contracts, sources) {
 }
 
 function getAnchors(list) {
-  return list.map(contract => `\t* [${contract.contractName}](${contract.contractName}.md)`);
+  return list.map(contract => `\t* [${contract.contractName}](contracts/${contract.contractName}.md)`);
 }
 
 function createSidebar(contracts, sources) {
@@ -51,12 +51,13 @@ function createSidebar(contracts, sources) {
 module.exports = {
   serialize: function(contracts, sources, outputDirectory) {
     logger.info("Total contracts: %s.", contracts.length);
+    const contractDirectory = [outputDirectory,'contracts'].join('/');
 
     // Contracts
     for(let i = 0; i < contracts.length; i++) {
       const contract = contracts[i];
       const result = serializeContract(contract, contracts, sources).replace(/[\r\n]\s*[\r\n]/g, "\n\n");
-      const file = path.join(outputDirectory, `${contract.contractName}.md`);
+      const file = path.join(contractDirectory, `${contract.contractName}.md`);
 
       logger.info("Writing %s.", file);
       fs.writeFileSync(file, result);
@@ -64,7 +65,7 @@ module.exports = {
 
     // Sidebar
     const sidebar = createSidebar(contracts, sources);
-    const file = path.join(outputDirectory, `_sidebar.md`);
+    const file = path.join(outputDirectory, `sidebar.md`);
     logger.info("Writing %s.", file);
     fs.writeFileSync(file, sidebar);
   }
