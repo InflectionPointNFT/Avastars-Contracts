@@ -26,5 +26,5 @@ module.exports = {
   FunctionTemplate: read("function.md"),
   ModifierTemplate: read("modifier.md"),
   TableHeaderTemplate: read("table-header.md"),
-  SidebarTemplate: read("_sidebar.md")
+  SidebarTemplate: read("sidebar.md")
 };
