@@ -9,7 +9,12 @@ import "./PrimeFactory.sol";
 contract ReplicantFactory is PrimeFactory {
 
     /**
-     * @notice emitted upon the creation of an Avastar Replicant
+     * @notice Event emitted upon the creation of an Avastar Replicant
+     * @param id the token ID of the newly minted Replicant
+     * @param serial the serial of the Replicant
+     * @param generation the generation of the Replicant
+     * @param gender the gender of the Replicant
+     * @param traits the trait hash of the Replicant
      */
     event NewReplicant(uint256 id, uint256 serial, Generation generation, Gender gender, uint256 traits);
 

@@ -7,7 +7,13 @@ View Source: [@openzeppelin/contracts/token/ERC721/IERC721.sol](https://github.c
 
 Required interface of an ERC721 compliant contract.
 
-## Events
+## **Events**
+
+- [Transfer](#transfer)
+- [Approval](#approval)
+- [ApprovalForAll](#approvalforall)
+
+### Transfer
 
 ```solidity
 event Transfer(
@@ -15,17 +21,51 @@ event Transfer(
 	address indexed to,
 	uint256 indexed tokenId
 )
+```
+
+**Arguments**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| from | address |  | 
+| to | address |  | 
+| tokenId | uint256 |  | 
+
+### Approval
+
+```solidity
 event Approval(
 	address indexed owner,
 	address indexed approved,
 	uint256 indexed tokenId
 )
+```
+
+**Arguments**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| owner | address |  | 
+| approved | address |  | 
+| tokenId | uint256 |  | 
+
+### ApprovalForAll
+
+```solidity
 event ApprovalForAll(
 	address indexed owner,
 	address indexed operator,
 	bool approved
 )
 ```
+
+**Arguments**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| owner | address |  | 
+| operator | address |  | 
+| approved | bool |  | 
 
 ## **Functions**
 

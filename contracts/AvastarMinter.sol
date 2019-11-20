@@ -73,6 +73,7 @@ contract AvastarMinter is AvastarTypes, AccessControl {
     /**
      * @notice Set the address of the AvastarTeleporter contract.
      * Only invokable by system admin role, when contract is paused and not upgraded.
+     * If successful, emits an `TeleporterContractSet` event.
      * @param _address address of AvastarTeleporter contract
      */
     function setTeleporterContract(address _address) external onlySysAdmin whenPaused whenNotUpgraded {
@@ -128,7 +129,7 @@ contract AvastarMinter is AvastarTypes, AccessControl {
      * @notice Allow an owner to withdraw the franchise balance.
      * Invokable only by owner role.
      * Entire franchise balance is transferred to `msg.sender`.
-     * Emits `FranchiseBalanceWithdrawn` event with amount withdrawn.
+     * If successful, emits `FranchiseBalanceWithdrawn` event with amount withdrawn.
      * @return amountWithdrawn amount withdrawn
      */
     function withdrawFranchiseBalance() external onlyOwner returns (uint256 amountWithdrawn) {
@@ -144,7 +145,7 @@ contract AvastarMinter is AvastarTypes, AccessControl {
      * Before contract will mint on behalf of a user, they must have sufficient ETH on deposit.
      * Invokable by any address (other than 0) when contract is not paused.
      * Must have a non-zero ETH value.
-     * Emits DepositorBalance event with depositor's resulting balance.
+     * If successful, emits a `DepositorBalance` event with depositor's resulting balance.
      */
     function deposit() external payable whenNotPaused {
         require(msg.value > 0);
@@ -186,7 +187,8 @@ contract AvastarMinter is AvastarTypes, AccessControl {
      * @notice Mint an Avastar Prime for a purchaser who has previously deposited funds.
      * Invokable only by minter role, when contract is not paused.
      * Minted token will be owned by `_purchaser` address.
-     * This function does not emit an event, but if successful, the `AvastarTeleporter` contract will emit a `NewPrime` event.
+     * If successful, emits a 'DepositorBalance' even with the depositor's remaining balance,
+     * and the `AvastarTeleporter` contract will emit a `NewPrime` event.
      * @param _purchaser address that will own the token
      * @param _price price in ETH of token, removed from purchaser's deposit balance
      * @param _traits the Avastar's Trait hash
@@ -221,7 +223,8 @@ contract AvastarMinter is AvastarTypes, AccessControl {
      * @notice Mint an Avastar Replicant for a purchaser who has previously deposited funds.
      * Invokable only by minter role, when contract is not paused.
      * Minted token will be owned by `_purchaser` address.
-     * This function does not emit an event, but if successful, the `AvastarTeleporter` contract will emit a `NewReplicant` event.
+     * If successful, emits a 'DepositorBalance' even with the depositor's remaining balance,
+     * and the `AvastarTeleporter` contract will emit a `NewReplicant` event.
      * @param _purchaser address that will own the token
      * @param _price price in ETH of token, removed from purchaser's deposit balance
      * @param _traits the Avastar's Trait hash

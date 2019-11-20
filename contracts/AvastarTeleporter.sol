@@ -10,12 +10,14 @@ import "./ReplicantFactory.sol";
 contract AvastarTeleporter is ReplicantFactory {
 
     /**
-     * @notice Event emitted when a handler is approved for Trait replication
+     * @notice Event emitted when a handler is approved to manage Trait replication.
+     * @param handler the address being approved to Trait replication
+     * @param primeIds the array of Avastar Prime tokenIds the handler can use
      */
     event TraitAccessApproved(address indexed handler, uint256[] primeIds);
 
     /**
-     * @notice Event emitted when a handler replicates Traits
+     * @notice Event emitted when a handler replicates Traits.
      * @param handler the address marking the Traits as used
      * @param primeId the token id of the Prime supplying the Traits
      * @param used the array of flags representing the Primes resulting Trait usage
@@ -23,13 +25,14 @@ contract AvastarTeleporter is ReplicantFactory {
     event TraitsUsed(address indexed handler, uint256 primeId, bool[] used);
 
     /**
-     * @notice Acknowledge contract is AvastarTeleporter
+     * @notice Acknowledge contract is `AvastarTeleporter`
      * @return always true
      */
     function isAvastarTeleporter() external pure returns (bool) {return true;}
 
     /**
-     * @notice Approve a handler to manage trait access for a set of Avastar Primes
+     * @notice Approve a handler to manage Trait replication for a set of Avastar Primes.
+     * If successful, emits a `TraitAccessApproved` event.
      * @param _handler the address approved for Trait access
      * @param _primeIds the token ids for which to approve the handler
      */
@@ -50,7 +53,8 @@ contract AvastarTeleporter is ReplicantFactory {
 
     /**
      * @notice Mark some or all of an Avastar Prime's traits used.
-     * @dev Caller must be token owner OR the approved handler
+     * Caller must be the token owner OR the approved handler.
+     * If successful, emits a `TraitsUsed` event.
      * @param _primeId the token id for the Prime whose Traits are to be used
      * @param _traitFlags an array of no more than 32 booleans representing the Traits to be used
      */

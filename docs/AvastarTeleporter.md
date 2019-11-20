@@ -6,16 +6,45 @@ View Source: [contracts/AvastarTeleporter.sol](https://github.com/Dapp-Wizards/A
 
 Management of Avastar Primes, Replicants, and Traits
 
-## Events
+## **Events**
+
+- [TraitAccessApproved](#traitaccessapproved)
+- [TraitsUsed](#traitsused)
+
+### TraitAccessApproved
+
+Event emitted when a handler is approved to manage Trait replication.
 
 ```solidity
 event TraitAccessApproved(address indexed handler, uint256[] primeIds)
+```
+
+**Arguments**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| handler | address | the address being approved to Trait replication | 
+| primeIds | uint256[] | the array of Avastar Prime tokenIds the handler can use | 
+
+### TraitsUsed
+
+Event emitted when a handler replicates Traits.
+
+```solidity
 event TraitsUsed(
 	address indexed handler,
 	uint256 primeId,
 	bool[] used
 )
 ```
+
+**Arguments**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| handler | address | the address marking the Traits as used | 
+| primeId | uint256 | the token id of the Prime supplying the Traits | 
+| used | bool[] | the array of flags representing the Primes resulting Trait usage | 
 
 ## **Functions**
 
@@ -25,7 +54,7 @@ event TraitsUsed(
 
 ### isAvastarTeleporter
 
-Acknowledge contract is AvastarTeleporter
+Acknowledge contract is `AvastarTeleporter`
 
 ```solidity
 function isAvastarTeleporter()
@@ -41,7 +70,8 @@ returns (bool)
 
 ### approveTraitAccess
 
-Approve a handler to manage trait access for a set of Avastar Primes
+Approve a handler to manage Trait replication for a set of Avastar Primes.
+If successful, emits a `TraitAccessApproved` event.
 
 ```solidity
 function approveTraitAccess(address _handler, uint256[] _primeIds)
@@ -58,6 +88,8 @@ external nonpayable
 ### useTraits
 
 Mark some or all of an Avastar Prime's traits used.
+Caller must be the token owner OR the approved handler.
+If successful, emits a `TraitsUsed` event.
 
 ```solidity
 function useTraits(uint256 _primeId, bool[] _traitFlags)

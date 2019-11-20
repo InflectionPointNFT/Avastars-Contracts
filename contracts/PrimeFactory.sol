@@ -10,6 +10,12 @@ contract PrimeFactory is TraitFactory {
 
     /**
      * @notice Event emitted upon the creation of an Avastar Prime
+     * @param id the token ID of the newly minted Prime
+     * @param serial the serial of the Prime
+     * @param generation the generation of the Prime
+     * @param series the series of the Prime
+     * @param gender the gender of the Prime
+     * @param traits the trait hash of the Prime
      */
     event NewPrime(uint256 id, uint256 serial, Generation generation, Series series, Gender gender, uint256 traits);
 

@@ -22,6 +22,7 @@ function read(fileName) {
 
 module.exports = {
   ContractTemplate: read("contract.md"),
+  EventTemplate: read("event.md"),
   FunctionTemplate: read("function.md"),
   ModifierTemplate: read("modifier.md"),
   TableHeaderTemplate: read("table-header.md"),

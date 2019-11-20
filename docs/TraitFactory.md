@@ -5,7 +5,11 @@ View Source: [contracts/TraitFactory.sol](https://github.com/Dapp-Wizards/Avasta
 **TraitFactory** **↗ Extends: [AvastarState](AvastarState.md)**
 **↘ Derived Contracts: [PrimeFactory](PrimeFactory.md)**
 
-## Events
+## **Events**
+
+- [NewTrait](#newtrait)
+
+### NewTrait
 
 ```solidity
 event NewTrait(
@@ -15,6 +19,15 @@ event NewTrait(
 	string name
 )
 ```
+
+**Arguments**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| id | uint256 |  | 
+| gene | enum AvastarTypes.Gene |  | 
+| variation | uint8 |  | 
+| name | string |  | 
 
 ## **Functions**
 

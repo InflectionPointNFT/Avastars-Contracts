@@ -32,16 +32,86 @@ address public newContractAddress;
 
 ```
 
-## Events
+## **Events**
+
+- [ContractPaused](#contractpaused)
+- [ContractUnpaused](#contractunpaused)
+- [ContractUpgrade](#contractupgrade)
+- [MinterAdded](#minteradded)
+- [OwnerAdded](#owneradded)
+- [SysAdminAdded](#sysadminadded)
+
+### ContractPaused
+
+Emitted when contract is paused by system administrator.
 
 ```solidity
 event ContractPaused()
+```
+
+### ContractUnpaused
+
+Emitted when contract is unpaused by system administrator.
+
+```solidity
 event ContractUnpaused()
+```
+
+### ContractUpgrade
+
+Emitted when contract is upgraded by system administrator.
+
+```solidity
 event ContractUpgrade(address newContract)
+```
+
+**Arguments**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| newContract | address | address of the new version of the contract. | 
+
+### MinterAdded
+
+Emitted when system administrator grants the minter role for an address.
+
+```solidity
 event MinterAdded(address minterAddress)
+```
+
+**Arguments**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| minterAddress | address | the address of the new minter (can be a contract or an individual) | 
+
+### OwnerAdded
+
+Emitted when system administrator grants the owner role for an address.
+
+```solidity
 event OwnerAdded(address ownerAddress)
+```
+
+**Arguments**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| ownerAddress | address | the address of the new owner (can be a contract or an individual) | 
+
+### SysAdminAdded
+
+Emitted when system administrator grants the sysAdmin role for an address.
+
+```solidity
 event SysAdminAdded(address sysAdminAddress)
 ```
+
+**Arguments**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| sysAdminAddress | address | the address of the new sysAdmin (can be a contract or an individual) | 
 
 ## Modifiers
 

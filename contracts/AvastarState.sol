@@ -72,7 +72,7 @@ contract AvastarState is AvastarTypes, AccessControl, ERC721Full {
     mapping(uint8 => mapping(uint8 => mapping(uint8 => uint256))) public traitIdByGenerationGeneAndVariation;
 
     /**
-     * Store an Avastar and track its Token ID by various dimensions
+     * Store an Avastar and track its Token ID by various dimensions.
      * Adds `_avastar` to `avastars` array.
      * Sets `isHashUsedByGeneration` mapping to true for `_avastar.generation` and `_avastar.traits`.
      * Sets `tokenIdByGenerationAndHash` mapping to `_avastar.id` for `_avastar.generation` and `_avastar.traits`.

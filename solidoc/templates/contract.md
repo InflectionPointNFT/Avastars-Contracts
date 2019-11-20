@@ -24,7 +24,11 @@
 
 {{Members}}
 
-{{Events}}
+{{EventTitle}}
+
+{{EventList}}
+
+{{AllEvents}}
 
 {{ModifierTitle}}
 

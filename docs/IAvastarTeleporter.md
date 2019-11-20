@@ -4,7 +4,8 @@ View Source: [contracts/IAvastarTeleporter.sol](https://github.com/Dapp-Wizards/
 
 **IAvastarTeleporter** **↗ Extends: [AvastarTypes](AvastarTypes.md)**
 
-Declared with contract rather than interface as it must inherit for enum types
+Declared with contract rather than interface as it must inherit for enum types.
+Used by AvastarMinter contract to interact with subset of AvastarTeleporter contract functions.
 
 ## **Functions**
 
@@ -14,6 +15,8 @@ Declared with contract rather than interface as it must inherit for enum types
 - [ownerOf](#ownerof)
 
 ### isAvastarTeleporter
+
+Acknowledge contract is `AvastarTeleporter`
 
 ```solidity
 function isAvastarTeleporter()
@@ -25,9 +28,13 @@ returns (bool)
 
 | Name        | Type           | Description  |
 | ------------- |------------- | -----|
-|  | bool |  | 
+|  | bool | always true if the contract is in fact `AvastarTeleporter` | 
 
 ### mintPrime
+
+Mint an Avastar Prime
+Only invokable by minter role, when contract is not paused.
+If successful, emits a `NewPrime` event.
 
 ```solidity
 function mintPrime(
@@ -46,21 +53,25 @@ returns (uint256, uint256)
 
 | Name        | Type           | Description  |
 | ------------- |------------- | -----|
-| _owner | address |  | 
-| _traits | uint256 |  | 
-| _generation | enum AvastarTypes.Generation |  | 
+| _owner | address | the address of the new Avastar's owner | 
+| _traits | uint256 | the new Prime's trait hash | 
+| _generation | enum AvastarTypes.Generation | the new Prime's generation | 
 | _series | enum AvastarTypes.Series |  | 
-| _gender | enum AvastarTypes.Gender |  | 
-| _ranking | uint8 |  | 
+| _gender | enum AvastarTypes.Gender | the new Prime's gender | 
+| _ranking | uint8 | the new Prime's rarity ranking | 
 
 **Returns**
 
 | Name        | Type           | Description  |
 | ------------- |------------- | -----|
-|  | uint256 |  | 
-|  | uint256 |  | 
+|  | uint256 | _series the new Prime's series | 
+|  | uint256 | _series the new Prime's series | 
 
 ### mintReplicant
+
+Mint an Avastar Replicant.
+Only invokable by minter role, when contract is not paused.
+If successful, emits a `NewReplicant` event.
 
 ```solidity
 function mintReplicant(
@@ -78,18 +89,18 @@ returns (uint256, uint256)
 
 | Name        | Type           | Description  |
 | ------------- |------------- | -----|
-| _owner | address |  | 
-| _traits | uint256 |  | 
-| _generation | enum AvastarTypes.Generation |  | 
-| _gender | enum AvastarTypes.Gender |  | 
-| _ranking | uint8 |  | 
+| _owner | address | the address of the new Avastar's owner | 
+| _traits | uint256 | the new Replicant's trait hash | 
+| _generation | enum AvastarTypes.Generation | the new Replicant's generation | 
+| _gender | enum AvastarTypes.Gender | the new Replicant's gender | 
+| _ranking | uint8 | the new Replicant's rarity ranking | 
 
 **Returns**
 
 | Name        | Type           | Description  |
 | ------------- |------------- | -----|
-|  | uint256 |  | 
-|  | uint256 |  | 
+|  | uint256 | tokenId the newly minted Replicant's token ID | 
+|  | uint256 | tokenId the newly minted Replicant's token ID | 
 
 ### ownerOf
 
@@ -103,11 +114,11 @@ returns (address owner)
 
 | Name        | Type           | Description  |
 | ------------- |------------- | -----|
-| tokenId | uint256 |  | 
+| tokenId | uint256 | the token ID to search for the owner of | 
 
 **Returns**
 
 | Name        | Type           | Description  |
 | ------------- |------------- | -----|
-| owner | address |  | 
+| owner | address | the owner of the given token ID | 
 

@@ -5,7 +5,13 @@ View Source: [contracts/PrimeFactory.sol](https://github.com/Dapp-Wizards/Avasta
 **PrimeFactory** **↗ Extends: [TraitFactory](TraitFactory.md)**
 **↘ Derived Contracts: [ReplicantFactory](ReplicantFactory.md)**
 
-## Events
+## **Events**
+
+- [NewPrime](#newprime)
+
+### NewPrime
+
+Event emitted upon the creation of an Avastar Prime
 
 ```solidity
 event NewPrime(
@@ -17,6 +23,17 @@ event NewPrime(
 	uint256 traits
 )
 ```
+
+**Arguments**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| id | uint256 | the token ID of the newly minted Prime | 
+| serial | uint256 | the serial of the Prime | 
+| generation | enum AvastarTypes.Generation | the generation of the Prime | 
+| series | enum AvastarTypes.Series | the series of the Prime | 
+| gender | enum AvastarTypes.Gender | the gender of the Prime | 
+| traits | uint256 | the trait hash of the Prime | 
 
 ## **Functions**
 

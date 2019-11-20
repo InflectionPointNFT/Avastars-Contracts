@@ -21,15 +21,85 @@ uint256 private unspentDeposits;
 
 ```
 
-## Events
+## **Events**
+
+- [CurrentGenerationSet](#currentgenerationset)
+- [CurrentSeriesSet](#currentseriesset)
+- [DepositorBalance](#depositorbalance)
+- [FranchiseBalanceWithdrawn](#franchisebalancewithdrawn)
+- [TeleporterContractSet](#teleportercontractset)
+
+### CurrentGenerationSet
+
+Event emitted when the current Generation is changed
 
 ```solidity
 event CurrentGenerationSet(enum AvastarTypes.Generation currentGeneration)
+```
+
+**Arguments**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| currentGeneration | enum AvastarTypes.Generation | the new value of currentGeneration | 
+
+### CurrentSeriesSet
+
+Event emitted when the current Series is changed
+
+```solidity
 event CurrentSeriesSet(enum AvastarTypes.Series currentSeries)
+```
+
+**Arguments**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| currentSeries | enum AvastarTypes.Series | the new value of currentSeries | 
+
+### DepositorBalance
+
+Event emitted when ETH is deposited or withdrawn by a depositor
+
+```solidity
 event DepositorBalance(address indexed depositor, uint256 balance)
+```
+
+**Arguments**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| depositor | address | the address who deposited or withdrew ETH | 
+| balance | uint256 | the depositor's resulting ETH balance in the contract | 
+
+### FranchiseBalanceWithdrawn
+
+Event emitted upon the withdrawal of the franchise's balance
+
+```solidity
 event FranchiseBalanceWithdrawn(address indexed owner, uint256 amount)
+```
+
+**Arguments**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| owner | address | the contract owner | 
+| amount | uint256 | total ETH withdrawn | 
+
+### TeleporterContractSet
+
+Event emitted when AvastarTeleporter contract is set
+
+```solidity
 event TeleporterContractSet(address contractAddress)
 ```
+
+**Arguments**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| contractAddress | address | the address of the AvastarTeleporter contract | 
 
 ## **Functions**
 
@@ -48,6 +118,7 @@ event TeleporterContractSet(address contractAddress)
 
 Set the address of the AvastarTeleporter contract.
 Only invokable by system admin role, when contract is paused and not upgraded.
+If successful, emits an `TeleporterContractSet` event.
 
 ```solidity
 function setTeleporterContract(address _address)
@@ -118,7 +189,7 @@ returns (uint256 franchiseBalance)
 Allow an owner to withdraw the franchise balance.
 Invokable only by owner role.
 Entire franchise balance is transferred to `msg.sender`.
-Emits `FranchiseBalanceWithdrawn` event with amount withdrawn.
+If successful, emits `FranchiseBalanceWithdrawn` event with amount withdrawn.
 
 ```solidity
 function withdrawFranchiseBalance()
@@ -138,7 +209,7 @@ Allow anyone to deposit ETH.
 Before contract will mint on behalf of a user, they must have sufficient ETH on deposit.
 Invokable by any address (other than 0) when contract is not paused.
 Must have a non-zero ETH value.
-Emits DepositorBalance event with depositor's resulting balance.
+If successful, emits a `DepositorBalance` event with depositor's resulting balance.
 
 ```solidity
 function deposit()
@@ -186,7 +257,8 @@ returns (uint256 amountWithdrawn)
 Mint an Avastar Prime for a purchaser who has previously deposited funds.
 Invokable only by minter role, when contract is not paused.
 Minted token will be owned by `_purchaser` address.
-This function does not emit an event, but if successful, the `AvastarTeleporter` contract will emit a `NewPrime` event.
+If successful, emits a 'DepositorBalance' even with the depositor's remaining balance,
+and the `AvastarTeleporter` contract will emit a `NewPrime` event.
 
 ```solidity
 function purchasePrime(
@@ -222,7 +294,8 @@ returns (uint256 tokenId, uint256 serial)
 Mint an Avastar Replicant for a purchaser who has previously deposited funds.
 Invokable only by minter role, when contract is not paused.
 Minted token will be owned by `_purchaser` address.
-This function does not emit an event, but if successful, the `AvastarTeleporter` contract will emit a `NewReplicant` event.
+If successful, emits a 'DepositorBalance' even with the depositor's remaining balance,
+and the `AvastarTeleporter` contract will emit a `NewReplicant` event.
 
 ```solidity
 function purchaseReplicant(

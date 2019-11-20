@@ -5,7 +5,13 @@ View Source: [contracts/ReplicantFactory.sol](https://github.com/Dapp-Wizards/Av
 **ReplicantFactory** **↗ Extends: [PrimeFactory](PrimeFactory.md)**
 **↘ Derived Contracts: [AvastarTeleporter](AvastarTeleporter.md)**
 
-## Events
+## **Events**
+
+- [NewReplicant](#newreplicant)
+
+### NewReplicant
+
+Event emitted upon the creation of an Avastar Replicant
 
 ```solidity
 event NewReplicant(
@@ -16,6 +22,16 @@ event NewReplicant(
 	uint256 traits
 )
 ```
+
+**Arguments**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| id | uint256 | the token ID of the newly minted Replicant | 
+| serial | uint256 | the serial of the Replicant | 
+| generation | enum AvastarTypes.Generation | the generation of the Replicant | 
+| gender | enum AvastarTypes.Gender | the gender of the Replicant | 
+| traits | uint256 | the trait hash of the Replicant | 
 
 ## **Functions**
 

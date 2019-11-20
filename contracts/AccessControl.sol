@@ -26,11 +26,38 @@ contract AccessControl {
         admins.add(msg.sender);
     }
 
+    /**
+     * @notice Emitted when contract is paused by system administrator.
+     */
     event ContractPaused();
+
+    /**
+     * @notice Emitted when contract is unpaused by system administrator.
+     */
     event ContractUnpaused();
+
+    /**
+     * @notice Emitted when contract is upgraded by system administrator.
+     * @param newContract address of the new version of the contract.
+     */
     event ContractUpgrade(address newContract);
+
+    /**
+     * @notice Emitted when system administrator grants the minter role for an address.
+     * @param minterAddress the address of the new minter (can be a contract or an individual)
+     */
     event MinterAdded(address minterAddress);
+
+    /**
+     * @notice Emitted when system administrator grants the owner role for an address.
+     * @param ownerAddress the address of the new owner (can be a contract or an individual)
+     */
     event OwnerAdded(address ownerAddress);
+
+    /**
+     * @notice Emitted when system administrator grants the sysAdmin role for an address.
+     * @param sysAdminAddress the address of the new sysAdmin (can be a contract or an individual)
+     */
     event SysAdminAdded(address sysAdminAddress);
 
     bool public paused = false;
