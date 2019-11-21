@@ -41,17 +41,8 @@ module.exports = {
       return util.format(i18n.translate("ViewSource"), link);
     }
 
-    function getAnchors() {
-      const anchors = [];
-
-      for(let i in contracts) {
-        const contract = contracts[i];
-
-        const anchor = `* [${contract.contractName}](${contract.contractName}.md)`;
-        anchors.push(anchor);
-      }
-
-      return anchors;
+    function getAnchors(list) {
+      return list.map(contract => `\t* [${contract.contractName}](contracts/${contract.contractName}.md)`);
     }
 
     function getLocalAnchors() {
@@ -59,9 +50,7 @@ module.exports = {
           contract => sources.some(source => source === contract.sourcePath)
       );
 
-      let anchors = list.map(contract => `* [${contract.contractName}](${contract.contractName}.md)`);
-
-      return anchors;
+      return getAnchors(list);
     }
 
     function getForeignAnchors() {
@@ -69,9 +58,7 @@ module.exports = {
           contract => !sources.some(source => source === contract.sourcePath)
       );
 
-      let anchors = list.map(contract => `* [${contract.contractName}](${contract.contractName}.md)`);
-
-      return anchors;
+      return getAnchors(list);
     }
 
     function getInheritancePath() {
@@ -80,7 +67,7 @@ module.exports = {
 
       for(let i in dependencies) {
         const dependency = dependencies[i];
-        dependencyList.push(`[${dependency.baseName.name}](${dependency.baseName.name}.md)`);
+        dependencyList.push(`[${dependency.baseName.name}](contracts/${dependency.baseName.name}.md)`);
       }
 
       if(dependencyList && dependencyList.length) {
@@ -97,7 +84,7 @@ module.exports = {
       for(let i in implementations) {
         const implementation = implementations[i];
 
-        implementationList.push(`[${implementation.contractName}](${implementation.contractName}.md)`);
+        implementationList.push(`[${implementation.contractName}](contracts/${implementation.contractName}.md)`);
       }
 
       if(implementationList && implementationList.length) {

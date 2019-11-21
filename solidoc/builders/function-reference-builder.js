@@ -24,7 +24,7 @@ module.exports = {
     for(let i in implementations) {
       const implementation = implementations[i];
 
-      references.push(`[${implementation.contract.contractName}.${implementation.node.name}](${implementation.contract.contractName}.md#${implementation.node.name.toLowerCase()})`);
+      references.push(`[${implementation.contract.contractName}.${implementation.node.name}](contracts/${implementation.contract.contractName}.md#${implementation.node.name.toLowerCase()})`);
     }
 
     if(!references.length) {

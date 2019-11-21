@@ -2,8 +2,8 @@
 
 View Source: [contracts/AvastarState.sol](https://github.com/Dapp-Wizards/Avastars-Contracts/blob/master/contracts/AvastarState.sol)
 
-**AvastarState** **↗ Extends: [AvastarTypes](AvastarTypes.md), [AccessControl](AccessControl.md), [ERC721Full](ERC721Full.md)**
-**↘ Derived Contracts: [TraitFactory](TraitFactory.md)**
+**AvastarState** **↗ Extends: [AvastarTypes](contracts/AvastarTypes.md), [AccessControl](contracts/AccessControl.md), [ERC721Full](contracts/ERC721Full.md)**
+**↘ Derived Contracts: [TraitFactory](contracts/TraitFactory.md)**
 
 ## Constructor
 

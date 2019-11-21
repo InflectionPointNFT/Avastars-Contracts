@@ -2,7 +2,7 @@
 
 View Source: [contracts/AvastarMinter.sol](https://github.com/Dapp-Wizards/Avastars-Contracts/blob/master/contracts/AvastarMinter.sol)
 
-**AvastarMinter** **↗ Extends: [AvastarTypes](AvastarTypes.md), [AccessControl](AccessControl.md)**
+**AvastarMinter** **↗ Extends: [AvastarTypes](contracts/AvastarTypes.md), [AccessControl](contracts/AccessControl.md)**
 
 Mints Avastars using the `AvastarTeleporter` contract on behalf of depositors.
 Allows system admin to set current generation and series.

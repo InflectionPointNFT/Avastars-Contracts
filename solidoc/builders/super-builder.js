@@ -29,7 +29,7 @@ module.exports = {
     }
 
     var baseContract = getBaseContract(superId);
-    builder.push(`[${baseContract.contractName}.${node.name}](${baseContract.contractName}.md#${node.name.toLowerCase()})`);
+    builder.push(`[${baseContract.contractName}.${node.name}](contracts/${baseContract.contractName}.md#${node.name.toLowerCase()})`);
 
     return builder.join("");
   }

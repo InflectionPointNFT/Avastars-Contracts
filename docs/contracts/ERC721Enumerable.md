@@ -2,8 +2,8 @@
 
 View Source: [@openzeppelin/contracts/token/ERC721/ERC721Enumerable.sol](https://github.com/Dapp-Wizards/Avastars-Contracts/blob/master/@openzeppelin/contracts/token/ERC721/ERC721Enumerable.sol)
 
-**ERC721Enumerable** **↗ Extends: [Context](Context.md), [ERC165](ERC165.md), [ERC721](ERC721.md), [IERC721Enumerable](IERC721Enumerable.md)**
-**↘ Derived Contracts: [ERC721Full](ERC721Full.md)**
+**ERC721Enumerable** **↗ Extends: [Context](contracts/Context.md), [ERC165](contracts/ERC165.md), [ERC721](contracts/ERC721.md), [IERC721Enumerable](contracts/IERC721Enumerable.md)**
+**↘ Derived Contracts: [ERC721Full](contracts/ERC721Full.md)**
 
 See https://eips.ethereum.org/EIPS/eip-721
 
@@ -44,7 +44,7 @@ bytes4 private constant _INTERFACE_ID_ERC721_ENUMERABLE;
 
 ### tokenOfOwnerByIndex
 
-⤾ overrides [IERC721Enumerable.tokenOfOwnerByIndex](IERC721Enumerable.md#tokenofownerbyindex)
+⤾ overrides [IERC721Enumerable.tokenOfOwnerByIndex](contracts/IERC721Enumerable.md#tokenofownerbyindex)
 
 Gets the token ID at a given index of the tokens list of the requested owner.
 
@@ -69,7 +69,7 @@ returns (uint256)
 
 ### totalSupply
 
-⤾ overrides [IERC721Enumerable.totalSupply](IERC721Enumerable.md#totalsupply)
+⤾ overrides [IERC721Enumerable.totalSupply](contracts/IERC721Enumerable.md#totalsupply)
 
 Gets the total amount of tokens stored by the contract.
 
@@ -87,7 +87,7 @@ returns (uint256)
 
 ### tokenByIndex
 
-⤾ overrides [IERC721Enumerable.tokenByIndex](IERC721Enumerable.md#tokenbyindex)
+⤾ overrides [IERC721Enumerable.tokenByIndex](contracts/IERC721Enumerable.md#tokenbyindex)
 
 Gets the token ID at a given index of all the tokens in this contract
 Reverts if the index is greater or equal to the total number of tokens.
@@ -112,7 +112,7 @@ returns (uint256)
 
 ### _transferFrom
 
-⤾ overrides [ERC721._transferFrom](ERC721.md#_transferfrom)
+⤾ overrides [ERC721._transferFrom](contracts/ERC721.md#_transferfrom)
 
 Internal function to transfer ownership of a given token ID to another address.
 As opposed to transferFrom, this imposes no restrictions on msg.sender.
@@ -136,7 +136,7 @@ internal nonpayable
 
 ### _mint
 
-⤾ overrides [ERC721._mint](ERC721.md#_mint)
+⤾ overrides [ERC721._mint](contracts/ERC721.md#_mint)
 
 Internal function to mint a new token.
 Reverts if the given token ID already exists.
@@ -155,7 +155,7 @@ internal nonpayable
 
 ### _burn
 
-⤾ overrides [ERC721._burn](ERC721.md#_burn)
+⤾ overrides [ERC721._burn](contracts/ERC721.md#_burn)
 
 Internal function to burn a specific token.
 Reverts if the token does not exist.

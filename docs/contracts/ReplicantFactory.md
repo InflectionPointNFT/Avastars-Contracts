@@ -2,8 +2,8 @@
 
 View Source: [contracts/ReplicantFactory.sol](https://github.com/Dapp-Wizards/Avastars-Contracts/blob/master/contracts/ReplicantFactory.sol)
 
-**ReplicantFactory** **↗ Extends: [PrimeFactory](PrimeFactory.md)**
-**↘ Derived Contracts: [AvastarTeleporter](AvastarTeleporter.md)**
+**ReplicantFactory** **↗ Extends: [PrimeFactory](contracts/PrimeFactory.md)**
+**↘ Derived Contracts: [AvastarTeleporter](contracts/AvastarTeleporter.md)**
 
 ## **Events**
 

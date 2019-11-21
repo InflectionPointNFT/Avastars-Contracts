@@ -2,8 +2,8 @@
 
 View Source: [@openzeppelin/contracts/token/ERC721/IERC721.sol](https://github.com/Dapp-Wizards/Avastars-Contracts/blob/master/@openzeppelin/contracts/token/ERC721/IERC721.sol)
 
-**IERC721** **↗ Extends: [IERC165](IERC165.md)**
-**↘ Derived Contracts: [ERC721](ERC721.md), [IERC721Enumerable](IERC721Enumerable.md), [IERC721Metadata](IERC721Metadata.md)**
+**IERC721** **↗ Extends: [IERC165](contracts/IERC165.md)**
+**↘ Derived Contracts: [ERC721](contracts/ERC721.md), [IERC721Enumerable](contracts/IERC721Enumerable.md), [IERC721Metadata](contracts/IERC721Metadata.md)**
 
 Required interface of an ERC721 compliant contract.
 
@@ -81,7 +81,7 @@ event ApprovalForAll(
 
 ### balanceOf
 
-⤿ Overridden Implementation(s): [ERC721.balanceOf](ERC721.md#balanceof)
+⤿ Overridden Implementation(s): [ERC721.balanceOf](contracts/ERC721.md#balanceof)
 
 Returns the number of NFTs in `owner`'s account.
 
@@ -105,7 +105,7 @@ returns (uint256 balance)
 
 ### ownerOf
 
-⤿ Overridden Implementation(s): [ERC721.ownerOf](ERC721.md#ownerof)
+⤿ Overridden Implementation(s): [ERC721.ownerOf](contracts/ERC721.md#ownerof)
 
 Returns the owner of the NFT specified by `tokenId`.
 
@@ -129,7 +129,7 @@ returns (address owner)
 
 ### safeTransferFrom
 
-⤿ Overridden Implementation(s): [ERC721.safeTransferFrom](ERC721.md#safetransferfrom)
+⤿ Overridden Implementation(s): [ERC721.safeTransferFrom](contracts/ERC721.md#safetransferfrom)
 
 Transfers a specific NFT (`tokenId`) from one account (`from`) to
 another (`to`).
@@ -159,7 +159,7 @@ public nonpayable
 
 ### transferFrom
 
-⤿ Overridden Implementation(s): [ERC721.transferFrom](ERC721.md#transferfrom)
+⤿ Overridden Implementation(s): [ERC721.transferFrom](contracts/ERC721.md#transferfrom)
 
 Transfers a specific NFT (`tokenId`) from one account (`from`) to
 another (`to`).
@@ -186,7 +186,7 @@ public nonpayable
 
 ### approve
 
-⤿ Overridden Implementation(s): [ERC721.approve](ERC721.md#approve)
+⤿ Overridden Implementation(s): [ERC721.approve](contracts/ERC721.md#approve)
 
 ```solidity
 function approve(address to, uint256 tokenId)
@@ -202,7 +202,7 @@ public nonpayable
 
 ### getApproved
 
-⤿ Overridden Implementation(s): [ERC721.getApproved](ERC721.md#getapproved)
+⤿ Overridden Implementation(s): [ERC721.getApproved](contracts/ERC721.md#getapproved)
 
 ```solidity
 function getApproved(uint256 tokenId)
@@ -224,7 +224,7 @@ returns (address operator)
 
 ### setApprovalForAll
 
-⤿ Overridden Implementation(s): [ERC721.setApprovalForAll](ERC721.md#setapprovalforall)
+⤿ Overridden Implementation(s): [ERC721.setApprovalForAll](contracts/ERC721.md#setapprovalforall)
 
 ```solidity
 function setApprovalForAll(address operator, bool _approved)
@@ -240,7 +240,7 @@ public nonpayable
 
 ### isApprovedForAll
 
-⤿ Overridden Implementation(s): [ERC721.isApprovedForAll](ERC721.md#isapprovedforall)
+⤿ Overridden Implementation(s): [ERC721.isApprovedForAll](contracts/ERC721.md#isapprovedforall)
 
 ```solidity
 function isApprovedForAll(address owner, address operator)
@@ -263,7 +263,7 @@ returns (bool)
 
 ### safeTransferFrom
 
-⤿ Overridden Implementation(s): [ERC721.safeTransferFrom](ERC721.md#safetransferfrom)
+⤿ Overridden Implementation(s): [ERC721.safeTransferFrom](contracts/ERC721.md#safetransferfrom)
 
 ```solidity
 function safeTransferFrom(

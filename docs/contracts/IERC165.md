@@ -3,7 +3,7 @@
 View Source: [@openzeppelin/contracts/introspection/IERC165.sol](https://github.com/Dapp-Wizards/Avastars-Contracts/blob/master/@openzeppelin/contracts/introspection/IERC165.sol)
 
 **IERC165** 
-**↘ Derived Contracts: [ERC165](ERC165.md), [IERC721](IERC721.md)**
+**↘ Derived Contracts: [ERC165](contracts/ERC165.md), [IERC721](contracts/IERC721.md)**
 
 Interface of the ERC165 standard, as defined in the
 https://eips.ethereum.org/EIPS/eip-165[EIP].
@@ -17,7 +17,7 @@ queried by others ({ERC165Checker}).
 
 ### supportsInterface
 
-⤿ Overridden Implementation(s): [ERC165.supportsInterface](ERC165.md#supportsinterface)
+⤿ Overridden Implementation(s): [ERC165.supportsInterface](contracts/ERC165.md#supportsinterface)
 
 Returns true if this contract implements the interface defined by
 `interfaceId`. See the corresponding

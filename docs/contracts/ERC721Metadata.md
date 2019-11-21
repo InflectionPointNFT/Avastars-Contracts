@@ -2,8 +2,8 @@
 
 View Source: [@openzeppelin/contracts/token/ERC721/ERC721Metadata.sol](https://github.com/Dapp-Wizards/Avastars-Contracts/blob/master/@openzeppelin/contracts/token/ERC721/ERC721Metadata.sol)
 
-**ERC721Metadata** **↗ Extends: [Context](Context.md), [ERC165](ERC165.md), [ERC721](ERC721.md), [IERC721Metadata](IERC721Metadata.md)**
-**↘ Derived Contracts: [ERC721Full](ERC721Full.md)**
+**ERC721Metadata** **↗ Extends: [Context](contracts/Context.md), [ERC165](contracts/ERC165.md), [ERC721](contracts/ERC721.md), [IERC721Metadata](contracts/IERC721Metadata.md)**
+**↘ Derived Contracts: [ERC721Full](contracts/ERC721Full.md)**
 
 ## Constructor
 
@@ -35,7 +35,7 @@ bytes4 private constant _INTERFACE_ID_ERC721_METADATA;
 
 ### name
 
-⤾ overrides [IERC721Metadata.name](IERC721Metadata.md#name)
+⤾ overrides [IERC721Metadata.name](contracts/IERC721Metadata.md#name)
 
 Gets the token name.
 
@@ -53,7 +53,7 @@ returns (string)
 
 ### symbol
 
-⤾ overrides [IERC721Metadata.symbol](IERC721Metadata.md#symbol)
+⤾ overrides [IERC721Metadata.symbol](contracts/IERC721Metadata.md#symbol)
 
 Gets the token symbol.
 
@@ -71,7 +71,7 @@ returns (string)
 
 ### tokenURI
 
-⤾ overrides [IERC721Metadata.tokenURI](IERC721Metadata.md#tokenuri)
+⤾ overrides [IERC721Metadata.tokenURI](contracts/IERC721Metadata.md#tokenuri)
 
 Returns an URI for a given token ID.
 Throws if the token ID does not exist. May return an empty string.
@@ -113,7 +113,7 @@ internal nonpayable
 
 ### _burn
 
-⤾ overrides [ERC721._burn](ERC721.md#_burn)
+⤾ overrides [ERC721._burn](contracts/ERC721.md#_burn)
 
 Internal function to burn a specific token.
 Reverts if the token does not exist.

@@ -2,8 +2,8 @@
 
 View Source: [@openzeppelin/contracts/token/ERC721/ERC721Full.sol](https://github.com/Dapp-Wizards/Avastars-Contracts/blob/master/@openzeppelin/contracts/token/ERC721/ERC721Full.sol)
 
-**ERC721Full** **↗ Extends: [ERC721](ERC721.md), [ERC721Enumerable](ERC721Enumerable.md), [ERC721Metadata](ERC721Metadata.md)**
-**↘ Derived Contracts: [AvastarState](AvastarState.md)**
+**ERC721Full** **↗ Extends: [ERC721](contracts/ERC721.md), [ERC721Enumerable](contracts/ERC721Enumerable.md), [ERC721Metadata](contracts/ERC721Metadata.md)**
+**↘ Derived Contracts: [AvastarState](contracts/AvastarState.md)**
 
 This implementation includes all the required and some optional functionality of the ERC721 standard
 Moreover, it includes approve all functionality using operator terminology.

@@ -3,7 +3,7 @@
 View Source: [contracts/AccessControl.sol](https://github.com/Dapp-Wizards/Avastars-Contracts/blob/master/contracts/AccessControl.sol)
 
 **AccessControl** 
-**↘ Derived Contracts: [AvastarMinter](AvastarMinter.md), [AvastarState](AvastarState.md)**
+**↘ Derived Contracts: [AvastarMinter](contracts/AvastarMinter.md), [AvastarState](contracts/AvastarState.md)**
 
 Role-based access control and contract upgrade functionality.
 

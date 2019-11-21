@@ -2,8 +2,8 @@
 
 View Source: [@openzeppelin/contracts/token/ERC721/IERC721Metadata.sol](https://github.com/Dapp-Wizards/Avastars-Contracts/blob/master/@openzeppelin/contracts/token/ERC721/IERC721Metadata.sol)
 
-**IERC721Metadata** **↗ Extends: [IERC721](IERC721.md)**
-**↘ Derived Contracts: [ERC721Metadata](ERC721Metadata.md)**
+**IERC721Metadata** **↗ Extends: [IERC721](contracts/IERC721.md)**
+**↘ Derived Contracts: [ERC721Metadata](contracts/ERC721Metadata.md)**
 
 See https://eips.ethereum.org/EIPS/eip-721
 
@@ -15,7 +15,7 @@ See https://eips.ethereum.org/EIPS/eip-721
 
 ### name
 
-⤿ Overridden Implementation(s): [ERC721Metadata.name](ERC721Metadata.md#name)
+⤿ Overridden Implementation(s): [ERC721Metadata.name](contracts/ERC721Metadata.md#name)
 
 ```solidity
 function name()
@@ -31,7 +31,7 @@ returns (string)
 
 ### symbol
 
-⤿ Overridden Implementation(s): [ERC721Metadata.symbol](ERC721Metadata.md#symbol)
+⤿ Overridden Implementation(s): [ERC721Metadata.symbol](contracts/ERC721Metadata.md#symbol)
 
 ```solidity
 function symbol()
@@ -47,7 +47,7 @@ returns (string)
 
 ### tokenURI
 
-⤿ Overridden Implementation(s): [ERC721Metadata.tokenURI](ERC721Metadata.md#tokenuri)
+⤿ Overridden Implementation(s): [ERC721Metadata.tokenURI](contracts/ERC721Metadata.md#tokenuri)
 
 ```solidity
 function tokenURI(uint256 tokenId)
