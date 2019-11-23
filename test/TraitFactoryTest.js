@@ -25,7 +25,7 @@ contract('TraitFactory', function(accounts) {
         "gender" : constants.GENDER.FEMALE,
         "gene" : constants.GENE.FACIAL_FEATURE,
         "name" : "Circuit Board Makeup",
-        "series" : [ constants.SERIES.ONE ],
+        "series" : [ constants.SERIES.ONE, constants.SERIES.TWO, constants.SERIES.THREE, constants.SERIES.FOUR, constants.SERIES.FIVE ],
         "svg" : "<g fill=\"none\" stroke=\"#219860\" stroke-miterlimit=\"10\"><path d=\"M402.6 463.7c-13.7 0-10.1-1.3-16.2 4.8H380\"/><path d=\"M377.3 465.7c3.7 0 3.7 5.6 0 5.6s-3.7-5.6 0-5.6zM394.6 457.8c-20.4 0-15.7 1.3-21.9-4.9h-16\"/><path d=\"M353.9 450.1c3.7 0 3.7 5.6 0 5.6s-3.7-5.6 0-5.6z\"/><g><path d=\"M388.6 451.8c-13.2 0-9.7 1.2-15.9-4.8h-6.4\"/><path d=\"M363.6 443.7c3.7 0 3.7 5.6 0 5.6s-3.7-5.6 0-5.6z\"/></g><g><path d=\"M438 468.2c0 10.1-1.2 7.2 4.8 13.2v18.4M442.8 499.8c3.7 0 3.7 5.6 0 5.6s-3.7-5.6 0-5.6zM432 468.2c0 14.5-1.2 10.9 4.8 16.9v29.4M436.8 514.5c3.7 0 3.7 5.6 0 5.6s-3.7-5.6 0-5.6zM426.1 468.2c0 14.5-1.2 10.9 4.8 16.9v10.4\"/><path d=\"M431.3 495.4c3.7 0 3.7 5.6 0 5.6s-3.7-5.6 0-5.6z\"/><g><path d=\"M420.1 468.2c0 14.5 1.2 10.9-4.8 16.9v18.4\"/><path d=\"M415.3 503.4c3.7 0 3.7 5.6 0 5.6s-3.7-5.6 0-5.6z\"/></g><g><path d=\"M414.1 468.2c0 10.1 1.2 7.2-4.8 13.2v14.1\"/><path d=\"M409.3 495.4c3.7 0 3.7 5.6 0 5.6s-3.7-5.6 0-5.6z\"/></g></g><g><path d=\"M424.1 390.6c0-26.5 1.6-20.5-4.8-26.9v-46.8\"/><path d=\"M419.3 311.4c3.7 0 3.7 5.6 0 5.6s-3.7-5.6 0-5.6z\"/><g><path d=\"M418.1 384.6c0-14.9 1.2-11.2-4.8-17.2v-25.1M413.3 336.7c3.7 0 3.7 5.6 0 5.6s-3.7-5.6 0-5.6z\"/></g></g><g><path d=\"M597 463.7c13.7 0 10.1-1.3 16.2 4.8h6.4\"/><path d=\"M622.3 465.7c3.7 0 3.7 5.6 0 5.6s-3.7-5.6 0-5.6zM605 457.8c20.4 0 15.7 1.3 21.9-4.9h16\"/><path d=\"M645.7 450.1c3.7 0 3.7 5.6 0 5.6s-3.7-5.6 0-5.6z\"/><g><path d=\"M611 451.8c13.2 0 9.7 1.2 15.9-4.8h6.4\"/><path d=\"M636 443.7c3.7 0 3.7 5.6 0 5.6s-3.7-5.6 0-5.6z\"/></g><g><path d=\"M561.6 468.2c0 10.1 1.2 7.2-4.8 13.2v18.4M556.8 499.8c3.7 0 3.7 5.6 0 5.6s-3.7-5.6 0-5.6zM567.6 468.2c0 14.5 1.2 10.9-4.8 16.9v29.4M562.8 514.5c3.7 0 3.7 5.6 0 5.6s-3.7-5.6 0-5.6zM573.5 468.2c0 14.5 1.2 10.9-4.8 16.9v10.4\"/><path d=\"M568.3 495.4c3.7 0 3.7 5.6 0 5.6s-3.7-5.6 0-5.6z\"/><g><path d=\"M579.5 468.2c0 14.5-1.2 10.9 4.8 16.9v18.4\"/><path d=\"M584.3 503.4c3.7 0 3.7 5.6 0 5.6s-3.7-5.6 0-5.6z\"/></g><g><path d=\"M585.5 468.2c0 10.1-1.2 7.2 4.8 13.2v14.1\"/><path d=\"M590.3 495.4c3.7 0 3.7 5.6 0 5.6s-3.7-5.6 0-5.6z\"/></g></g><g><path d=\"M575.5 390.6c0-26.5-1.6-20.5 4.8-26.9v-46.8\"/><path d=\"M580.3 311.4c3.7 0 3.7 5.6 0 5.6s-3.7-5.6 0-5.6z\"/><g><path d=\"M581.5 384.6c0-14.9-1.2-11.2 4.8-17.2v-25.1M586.3 336.7c3.7 0 3.7 5.6 0 5.6s-3.7-5.6 0-5.6z\"/></g></g></g></g>",
         "variation" : 2
     };
@@ -147,22 +147,13 @@ contract('TraitFactory', function(accounts) {
 
     });
 
-    it("should allow non-sysadmins to retrieve a trait", async function() {
+    it("should not allow non-sysadmins to retrieve a trait", async function() {
 
-        const {generation, gender, gene, name, series, svg, variation} = trait1;
         let id = new BN(0,10);
 
-        // Make sure the stored trait is correct
-        const trait = await contract.getTrait(id, {from: nonSysAdmin});
-        assert.ok(trait[0].eq(id), "Trait ID field wasn't correct");
-        assert.equal(trait[1], generation, "Generation field wasn't correct");
-        assert.equal(trait[2].length, series.length, "Series field wasn't correct");
-        trait[2].forEach((sNum, index) => assert.equal(sNum.toNumber(), series[index], "Series content wasn't correct"));
-        assert.equal(trait[3], gender, "Gender field wasn't correct");
-        assert.equal(trait[4].toNumber(), gene, "Gene field wasn't correct");
-        assert.equal(trait[5], variation, "Variation field wasn't correct");
-        assert.equal(trait[6], name, "Name field wasn't correct");
-        assert.equal(trait[7], svg, "SVG field wasn't correct");
+        await exceptions.catchRevert(
+            contract.getTrait(id, {from: nonSysAdmin})
+        );
 
     });
 
@@ -297,6 +288,7 @@ contract('TraitFactory', function(accounts) {
 
     });
 
+    // TODO: Make this contract function internal and only call it from renderAvastar()
     it("should allow anyone to assemble artwork by generation and trait hash", async function() {
 
         const traits = [trait1, trait2];
@@ -304,11 +296,11 @@ contract('TraitFactory', function(accounts) {
         // Get the hash for traits 1 and 2
         const traitHash = traitMath.computeHash(traits);
 
-        // Compute the
+        // Compute the expected result
         const expected = traitMath.computeArt(traits);
 
         // Get the rendered artwork
-        const art = await contract.renderAvastar(constants.GENERATION.ONE, traitHash, {from: nonSysAdmin});
+        const art = await contract.assembleArtwork(constants.GENERATION.ONE, traitHash, {from: sysAdmin});
 
         assert.equal(art, expected, "Assembled art wasn't correct");
 

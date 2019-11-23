@@ -8,10 +8,17 @@ import "./AvastarState.sol";
  */
 contract TraitFactory is AvastarState {
 
+    /**
+     * @notice Event emitted when a new Trait is created
+     * @param id the Trait ID
+     * @param gene the gene that the trait is a variation of
+     * @param name the name of the trait
+     */
     event NewTrait(uint256 id, Gene gene, uint8 variation, string name);
 
     /**
-     * @notice Retrieve a Trait by ID
+     * @notice Retrieve a Trait by ID.
+     * Only invokable by a system administrator.
      * @param _traitId the ID of the Trait to retrieve
      * @return id the ID of the trait
      * @return generation generation of the trait
@@ -23,7 +30,7 @@ contract TraitFactory is AvastarState {
      * @return svg svg layer representation of the trait
      */
     function getTrait(uint256 _traitId)
-    external view
+    external view onlySysAdmin
     returns (
         uint256 id,
         Generation generation,
@@ -124,7 +131,7 @@ contract TraitFactory is AvastarState {
      * @param _traitHash the Avastar's trait hash
      * @return svg the fully rendered SVG for the Avastar
      */
-    function renderAvastar(Generation _generation, uint256 _traitHash)
+    function assembleArtwork(Generation _generation, uint256 _traitHash)
     public view
     returns (string memory svg)
     {

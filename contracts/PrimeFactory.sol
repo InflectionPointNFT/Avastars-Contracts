@@ -71,7 +71,7 @@ contract PrimeFactory is TraitFactory {
      * @return ranking the Prime's ranking
      */
     function getPrimeByTokenId(uint256 _tokenId)
-    external view
+    public view
     returns (
         uint256 tokenId,
         uint256 serial,

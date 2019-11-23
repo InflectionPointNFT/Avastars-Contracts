@@ -95,4 +95,18 @@ contract AvastarTeleporter is ReplicantFactory {
 
     }
 
+    /**
+     * @notice Render the Avastar Prime or Replicant from the original on-chain art.
+     * @param _tokenId the token ID of the Prime or Replicant
+     * @return svg the fully rendered SVG representation of the Avastar
+     */
+    function renderAvastar(uint256 _tokenId) external view returns (string memory svg) {
+        require(_tokenId < avastars.length);
+        Avastar memory avastar = avastars[_tokenId];
+        uint256 traits = (avastar.wave == Wave.PRIME)
+            ? primesByGeneration[uint8(avastar.generation)][uint256(avastar.serial)].traits
+            : replicantsByGeneration[uint8(avastar.generation)][uint256(avastar.serial)].traits;
+        svg = assembleArtwork(avastar.generation, traits);
+    }
+
 }
