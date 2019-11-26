@@ -215,7 +215,7 @@ module.exports = {
     max_art_size: 12798,
     max_ext_size: 2133,
 
-    traits: [
+    avastar: [
         background,
         skin_tone,
         hair_color,
@@ -226,12 +226,15 @@ module.exports = {
         mouth,
         facial_feature,
         eyes,
-        hair_style,
+        hair_style
+    ],
+
+    borderline: [
         eyes_two,
         hair_style_two,
         hair_style_three,
         hair_style_four
-        ],
+    ],
 
     too_big: [
         hair_style_five,

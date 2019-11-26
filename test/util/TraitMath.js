@@ -3,7 +3,7 @@ const BN = require('bn.js');
 module.exports = {
     computeHash: (traits) => {
         let hash = 0;
-        if (traits.length) {
+        if (traits && traits.length) {
             let slotMultiplier = new BN(256,0);
             hash = traits.reduce( (acc, trait) => {
                 let variation = new BN(trait.variation, 10);

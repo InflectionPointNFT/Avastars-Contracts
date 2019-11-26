@@ -3,6 +3,8 @@ const truffleAssert = require('truffle-assertions');
 const exceptions = require ("./util/Exceptions");
 const constants = require("./util/Constants");
 const traitData = require("./util/TraitData");
+const traitMath = require("./util/TraitMath");
+
 const BN = require('bn.js');
 
 contract('AvastarTeleporter', function(accounts) {
@@ -15,7 +17,7 @@ contract('AvastarTeleporter', function(accounts) {
     const stranger = accounts[4];
     const traits1 = new BN('4835703422573704792572931', 10);
     const traits2 = new BN('59374701396491835636974613', 10);
-    const traits3 = new BN('6044669605981521127212033', 10);
+    const traits3 = traitMath.computeHash(traitData.avastar);
     const id1 = new BN(0,10);
     const id2 = new BN(1,10);
     const id3 = new BN(2,10);
@@ -37,7 +39,7 @@ contract('AvastarTeleporter', function(accounts) {
     };
 
     const prime3 = {
-        "generation" : constants.GENERATION.TWO,
+        "generation" : constants.GENERATION.ONE,
         "gender"     : constants.GENDER.MALE,
         "series"     : constants.SERIES.ONE,
         "traits"     : traits3,
@@ -61,19 +63,20 @@ contract('AvastarTeleporter', function(accounts) {
         await mint(prime2);
         await mint(prime3);
 
-        // Load a full avastar trait set
-        const load = trait =>  teleporter.createTrait(trait.generation, trait.series, trait.gender, trait.gene, trait.variation, trait.name, trait.svg, {from: sysAdmin, gas: '9950000'});
-        await load(traitData.traits[0]);
-        await load(traitData.traits[1]);
-        await load(traitData.traits[2]);
-        await load(traitData.traits[3]);
-        await load(traitData.traits[4]);
-        await load(traitData.traits[5]);
-        await load(traitData.traits[6]);
-        await load(traitData.traits[7]);
-        await load(traitData.traits[8]);
-        await load(traitData.traits[9]);
-        await load(traitData.traits[10]);
+        // Create prime3's full trait set
+        const create = trait =>  teleporter.createTrait(trait.generation, trait.series, trait.gender, trait.gene, trait.variation, trait.name, trait.svg, {from: sysAdmin, gas: '9950000'});
+        await create(traitData.avastar[0]);
+        await create(traitData.avastar[1]);
+        await create(traitData.avastar[2]);
+        await create(traitData.avastar[3]);
+        await create(traitData.avastar[4]);
+        await create(traitData.avastar[5]);
+        await create(traitData.avastar[6]);
+        await create(traitData.avastar[7]);
+        await create(traitData.avastar[8]);
+        await create(traitData.avastar[9]);
+        await create(traitData.avastar[10]);
+
     });
 
     it("should not allow system administrator to approve trait access for another user's primes", async function() {
@@ -156,6 +159,20 @@ contract('AvastarTeleporter', function(accounts) {
             teleporter.useTraits(id1, requestFlags, {from: handler})
         )
 
+    });
+
+    it("should allow anyone to render the art for a given Avastar", async function() {
+
+        // Compute the expected result
+        const expected = traitMath.computeArt(traitData.avastar);
+
+        // Get the rendered artwork
+        const art = await teleporter.renderAvastar(id3, {from: stranger});
+
+        // Make certain the assembled art is as expected
+        assert.equal(art, expected, "Assembled art wasn't correct");
+
+        console.log(art);
     });
 
 });
