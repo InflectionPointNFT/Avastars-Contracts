@@ -80,7 +80,7 @@ Get the Avastar Replicant metadata associated with a given Token ID
 
 ```solidity
 function getReplicantByTokenId(uint256 _tokenId)
-external view
+public view
 returns (
 	uint256 tokenId,
 	uint256 serial,

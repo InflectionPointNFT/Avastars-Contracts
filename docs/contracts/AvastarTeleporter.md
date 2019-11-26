@@ -51,6 +51,7 @@ event TraitsUsed(
 - [isAvastarTeleporter](#isavastarteleporter)
 - [approveTraitAccess](#approvetraitaccess)
 - [useTraits](#usetraits)
+- [renderAvastar](#renderavastar)
 
 ### isAvastarTeleporter
 
@@ -102,4 +103,26 @@ external nonpayable
 | ------------- |------------- | -----|
 | _primeId | uint256 | the token id for the Prime whose Traits are to be used | 
 | _traitFlags | bool[] | an array of no more than 32 booleans representing the Traits to be used | 
+
+### renderAvastar
+
+Render the Avastar Prime or Replicant from the original on-chain art.
+
+```solidity
+function renderAvastar(uint256 _tokenId)
+external view
+returns (string svg)
+```
+
+**Arguments**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _tokenId | uint256 | the token ID of the Prime or Replicant | 
+
+**Returns**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| svg | string | the fully rendered SVG representation of the Avastar | 
 

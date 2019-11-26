@@ -8,8 +8,11 @@ View Source: [contracts/TraitFactory.sol](https://github.com/Dapp-Wizards/Avasta
 ## **Events**
 
 - [NewTrait](#newtrait)
+- [TraitArtExtended](#traitartextended)
 
 ### NewTrait
+
+Event emitted when a new Trait is created.
 
 ```solidity
 event NewTrait(
@@ -24,26 +27,42 @@ event NewTrait(
 
 | Name        | Type           | Description  |
 | ------------- |------------- | -----|
-| id | uint256 |  | 
-| gene | enum AvastarTypes.Gene |  | 
+| id | uint256 | the Trait ID | 
+| gene | enum AvastarTypes.Gene | the gene that the trait is a variation of | 
 | variation | uint8 |  | 
-| name | string |  | 
+| name | string | the name of the trait | 
+
+### TraitArtExtended
+
+Event emitted when a Trait's art is created.
+
+```solidity
+event TraitArtExtended(uint256 id)
+```
+
+**Arguments**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| id | uint256 | the Trait ID | 
 
 ## **Functions**
 
 - [getTrait](#gettrait)
 - [getTraitIdByGenerationGeneAndVariation](#gettraitidbygenerationgeneandvariation)
 - [createTrait](#createtrait)
-- [renderAvastar](#renderavastar)
+- [extendTraitArt](#extendtraitart)
+- [assembleArtwork](#assembleartwork)
 - [strConcat](#strconcat)
 
 ### getTrait
 
-Retrieve a Trait by ID
+Retrieve a Trait by ID.
+Only invokable by a system administrator.
 
 ```solidity
 function getTrait(uint256 _traitId)
-external view
+external view onlySysAdmin 
 returns (
 	uint256 id,
 	enum AvastarTypes.Generation generation,
@@ -77,7 +96,7 @@ returns (
 
 ### getTraitIdByGenerationGeneAndVariation
 
-Get Trait ID by Generation, Gene, and Variation
+Get Trait ID by Generation, Gene, and Variation.
 
 ```solidity
 function getTraitIdByGenerationGeneAndVariation(
@@ -139,12 +158,30 @@ returns (uint256 traitId)
 | ------------- |------------- | -----|
 | traitId | uint256 | the token ID of the newly created trait | 
 
-### renderAvastar
+### extendTraitArt
+
+Extend a Trait's art.
+Only invokable by a system administrator.
+If successful, emits a `TraitArtExtended` event with the resultant artwork.
+
+```solidity
+function extendTraitArt(uint256 _traitId, string _svg)
+external nonpayable onlySysAdmin whenNotPaused 
+```
+
+**Arguments**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _traitId | uint256 | the ID of the Trait to retrieve | 
+| _svg | string | the svg content to be concatenated to the existing svg property | 
+
+### assembleArtwork
 
 Assemble the artwork for a given Trait hash with art from the given Generation
 
 ```solidity
-function renderAvastar(enum AvastarTypes.Generation _generation, uint256 _traitHash)
+function assembleArtwork(enum AvastarTypes.Generation _generation, uint256 _traitHash)
 public view
 returns (string svg)
 ```

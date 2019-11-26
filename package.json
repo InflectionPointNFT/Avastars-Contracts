@@ -6,7 +6,7 @@
   "scripts": {
     "ganache:start": "node ./start-ganache.js",
     "truffle:start": "npx truffle console",
-    "uml:generate": "sol2uml ./contracts -f png -o docs/_media/AvastarsUML.png",
+    "uml:generate": "sol2uml ./contracts -f png -o docs/media/AvastarsUML.png",
     "doc:generate": "node solidoc/cli.js",
     "doc:serve": "docsify serve docs"
   },
@@ -29,7 +29,7 @@
     "docsify-cli": "^4.4.0",
     "eth-gas-reporter": "^0.2.12",
     "ganache-cli": "^6.7.0",
-    "sol2uml": "^1.1.11",
+    "sol2uml": "^1.1.12",
     "solhint": "^2.3.0",
     "truffle": "^5.0.39",
     "truffle-assertions": "^0.9.1",

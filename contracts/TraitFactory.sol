@@ -9,12 +9,18 @@ import "./AvastarState.sol";
 contract TraitFactory is AvastarState {
 
     /**
-     * @notice Event emitted when a new Trait is created
+     * @notice Event emitted when a new Trait is created.
      * @param id the Trait ID
      * @param gene the gene that the trait is a variation of
      * @param name the name of the trait
      */
     event NewTrait(uint256 id, Gene gene, uint8 variation, string name);
+
+    /**
+     * @notice Event emitted when a Trait's art is created.
+     * @param id the Trait ID
+     */
+    event TraitArtExtended(uint256 id);
 
     /**
      * @notice Retrieve a Trait by ID.
@@ -56,7 +62,7 @@ contract TraitFactory is AvastarState {
     }
 
     /**
-     * @notice Get Trait ID by Generation, Gene, and Variation
+     * @notice Get Trait ID by Generation, Gene, and Variation.
      * @param _generation the generation the trait belongs to
      * @param _gene gene the trait belongs to
      * @param _variationSafe the variation of the gene
@@ -115,7 +121,7 @@ contract TraitFactory is AvastarState {
             Trait(traitId, _generation, _series, _gender, _gene, variation, _name, _svg)
         );
 
-        // Create generation/gene/variation to traitId mapping
+        // Create generation/gene/variation to traitId mapping required by assembleArtwork
         traitIdByGenerationGeneAndVariation[uint8(_generation)][uint8(_gene)][uint8(variation)] = traitId;
 
         // Send the NewTrait event
@@ -123,6 +129,22 @@ contract TraitFactory is AvastarState {
 
         // Return the new Trait ID
         return traitId;
+    }
+
+    /**
+     * @notice Extend a Trait's art.
+     * Only invokable by a system administrator.
+     * If successful, emits a `TraitArtExtended` event with the resultant artwork.
+     * @param _traitId the ID of the Trait to retrieve
+     * @param _svg the svg content to be concatenated to the existing svg property
+     */
+    function extendTraitArt(uint256 _traitId, string calldata _svg)
+    external onlySysAdmin whenNotPaused
+    {
+        require(_traitId < traits.length);
+        string memory art = strConcat(traits[_traitId].svg, _svg);
+        traits[_traitId].svg = art;
+        emit TraitArtExtended(_traitId);
     }
 
     /**
@@ -172,26 +194,10 @@ contract TraitFactory is AvastarState {
      * @param _b the second string
      * @return result the concatenation of `_a` and `_b`
      */
-    function strConcat(
-        string memory _a,
-        string memory _b
-    )
+    function strConcat(string memory _a, string memory _b)
     private pure
-    returns (string memory result)
-    {
-        bytes memory bA = bytes(_a);
-        bytes memory bB = bytes(_b);
-        string memory sChunk = new string(bA.length + bB.length);
-        bytes memory bChunk = bytes(sChunk);
-        uint k = 0;
-        uint i = 0;
-        for (i = 0; i < bA.length; i++) {
-            bChunk[k++] = bA[i];
-        }
-        for (i = 0; i < bB.length; i++) {
-            bChunk[k++] = bB[i];
-        }
-        return string(bChunk);
+    returns(string memory result) {
+        result = string(abi.encodePacked(bytes(_a), bytes(_b)));
     }
 
 }

@@ -61,21 +61,19 @@ contract('AvastarTeleporter', function(accounts) {
         await mint(prime2);
         await mint(prime3);
 
-        // Load a full avastar's trait set
-        const load = trait => teleporter.createTrait(trait.generation, trait.series, trait.gender, trait.gene, trait.variation, trait.name, trait.svg, {from:sysAdmin, gas: '9950000'});
-        console.log(traitData.traits[0].svg.length); await load(traitData.traits[0]);
-        console.log(traitData.traits[1].svg.length); await load(traitData.traits[1]);
-        console.log(traitData.traits[2].svg.length); await load(traitData.traits[2]);
-        console.log(traitData.traits[3].svg.length); await load(traitData.traits[3]);
-        console.log(traitData.traits[4].svg.length); await load(traitData.traits[4]);
-        console.log(traitData.traits[5].svg.length); await load(traitData.traits[5]);
-        console.log(traitData.traits[6].svg.length); await load(traitData.traits[6]);
-        console.log(traitData.traits[7].svg.length); await load(traitData.traits[7]);
-        console.log(traitData.traits[8].svg.length); await load(traitData.traits[8]);
-        console.log(traitData.traits[9].svg.length); await load(traitData.traits[9]);
-        console.log(traitData.traits[10].svg.length); await load(traitData.traits[10]);
-        //console.log(traitData.traits[11].svg.length); await load(traitData.traits[11]); //too big!
-
+        // Load a full avastar trait set
+        const load = trait =>  teleporter.createTrait(trait.generation, trait.series, trait.gender, trait.gene, trait.variation, trait.name, trait.svg, {from: sysAdmin, gas: '9950000'});
+        await load(traitData.traits[0]);
+        await load(traitData.traits[1]);
+        await load(traitData.traits[2]);
+        await load(traitData.traits[3]);
+        await load(traitData.traits[4]);
+        await load(traitData.traits[5]);
+        await load(traitData.traits[6]);
+        await load(traitData.traits[7]);
+        await load(traitData.traits[8]);
+        await load(traitData.traits[9]);
+        await load(traitData.traits[10]);
     });
 
     it("should not allow system administrator to approve trait access for another user's primes", async function() {

@@ -86,7 +86,7 @@ Get the Avastar Prime metadata associated with a given Token ID.
 
 ```solidity
 function getPrimeByTokenId(uint256 _tokenId)
-external view
+public view
 returns (
 	uint256 tokenId,
 	uint256 serial,

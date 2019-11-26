@@ -3,6 +3,7 @@ const truffleAssert = require('truffle-assertions');
 const exceptions = require ("./util/Exceptions");
 const constants = require("./util/Constants");
 const traitMath = require("./util/TraitMath");
+const traitData = require("./util/TraitData");
 const BN = require('bn.js');
 
 contract('TraitFactory', function(accounts) {
@@ -189,6 +190,84 @@ contract('TraitFactory', function(accounts) {
         assert.equal(trait[4].toNumber(), gene, "Gene field wasn't correct");
         assert.equal(trait[5], variation, "Variation field wasn't correct");
         assert.equal(trait[6], name, "Name field wasn't correct");
+        assert.equal(trait[7], svg, "SVG field wasn't correct");
+    });
+
+    it("should allow sysadmin to create a trait and extend its art", async function() {
+
+        const {generation, gender, gene, name, series, svg, variation} = traitData.too_big[3];
+        let id = new BN(2,10);
+
+        // Split art into two pieces with first being the max size for createTrait
+        let svg1 = svg.slice(0,traitData.max_art_size);
+        let svg2 = svg.slice(traitData.max_art_size);
+
+        assert.equal(`${svg1}${svg2}`, svg, 'SVG slice invalid');
+
+        // Split second part into two pieces, with the first being the max size for extendTraitArt
+        let svg2_1 = svg2.slice(0, traitData.max_ext_size);
+        let svg2_2 = svg2.slice(traitData.max_ext_size, traitData.max_ext_size * 2);
+        let svg2_3 = svg2.slice(traitData.max_ext_size * 2, traitData.max_ext_size * 2 + traitData.max_ext_size);
+        let svg2_4 = svg2.slice(traitData.max_ext_size * 2 + traitData.max_ext_size);
+
+        assert.equal(`${svg2_1}${svg2_2}${svg2_3}${svg2_4}`, svg2, 'SVG2 slice invalid');
+
+        // Create the trait with partial data
+        let createResult = await contract.createTrait(generation, series, gender, gene, variation, name, svg1, {from: sysAdmin, gas: '9950000'});
+
+        // Test that appropriate event was emitted
+        truffleAssert.eventEmitted(createResult, 'NewTrait', (ev) => {
+            return (
+                ev.id.eq(id) &&
+                ev.gene.toNumber() === gene &&
+                ev.variation.toNumber() === variation &&
+                ev.name === name
+            );
+        }, 'NewTrait event should be emitted with correct info');
+
+        // Extend the artwork once
+        const firstExtendResult = await contract.extendTraitArt(id, svg2_1, {from: sysAdmin, gas: '9950000'});
+
+        // Test that appropriate event was emitted
+        truffleAssert.eventEmitted(firstExtendResult, 'TraitArtExtended', (ev) => {
+            return (
+                ev.id.eq(id)
+            );
+        }, 'TraitArtExtended event should be emitted with correct info');
+
+
+        // Extend the artwork again
+        const secondExtendResult = await contract.extendTraitArt(id, svg2_2, {from: sysAdmin, gas: '9950000'});
+
+        // Test that appropriate event was emitted
+        truffleAssert.eventEmitted(secondExtendResult, 'TraitArtExtended', (ev) => {
+            return (
+                ev.id.eq(id)
+            );
+        }, 'TraitArtExtended event should be emitted with correct info');
+
+        // Extend the artwork again
+        const thirdExtendResult = await contract.extendTraitArt(id, svg2_3, {from: sysAdmin, gas: '9950000'});
+
+        // Test that appropriate event was emitted
+        truffleAssert.eventEmitted(thirdExtendResult, 'TraitArtExtended', (ev) => {
+            return (
+                ev.id.eq(id)
+            );
+        }, 'TraitArtExtended event should be emitted with correct info');
+
+        // Extend the artwork again
+        const fourthExtendResult = await contract.extendTraitArt(id, svg2_4, {from: sysAdmin, gas: '9950000'});
+
+        // Test that appropriate event was emitted
+        truffleAssert.eventEmitted(fourthExtendResult, 'TraitArtExtended', (ev) => {
+            return (
+                ev.id.eq(id)
+            );
+        }, 'TraitArtExtended event should be emitted with correct info');
+
+        // Make sure the stored trait is correct
+        const trait = await contract.getTrait(id, {from: sysAdmin});
         assert.equal(trait[7], svg, "SVG field wasn't correct");
     });
 
