@@ -15,6 +15,7 @@
 	* [PrimeFactory](contracts/PrimeFactory.md)
 	* [ReplicantFactory](contracts/ReplicantFactory.md)
 	* [TraitFactory](contracts/TraitFactory.md)
+	* [TraitFactoryInternalTester](contracts/TraitFactoryInternalTester.md)
 
 * FOREIGN CONTRACTS
 	* [Address](contracts/Address.md)

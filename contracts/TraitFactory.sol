@@ -154,7 +154,7 @@ contract TraitFactory is AvastarState {
      * @return svg the fully rendered SVG for the Avastar
      */
     function assembleArtwork(Generation _generation, uint256 _traitHash)
-    public view
+    internal view
     returns (string memory svg)
     {
         require(_traitHash > 0);
@@ -195,7 +195,7 @@ contract TraitFactory is AvastarState {
      * @return result the concatenation of `_a` and `_b`
      */
     function strConcat(string memory _a, string memory _b)
-    private pure
+    internal pure
     returns(string memory result) {
         result = string(abi.encodePacked(bytes(_a), bytes(_b)));
     }

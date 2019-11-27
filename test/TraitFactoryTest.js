@@ -1,4 +1,5 @@
 const TraitFactory = artifacts.require("./TraitFactory.sol");
+const InternalTester = artifacts.require("./TraitFactoryInternalTester.sol");
 const truffleAssert = require('truffle-assertions');
 const exceptions = require ("./util/Exceptions");
 const constants = require("./util/Constants");
@@ -8,7 +9,7 @@ const BN = require('bn.js');
 
 contract('TraitFactory', function(accounts) {
 
-    let contract ;
+    let contract;
     const sysAdmin = accounts[0];
     const nonSysAdmin = accounts[1];
 
@@ -87,7 +88,11 @@ contract('TraitFactory', function(accounts) {
 
     before(async () => {
         // Get the contract instance for this suite
-        contract = await TraitFactory.new();
+        // The InternalTraitFactoryTesterContract inherits TraitFactory, so
+        // all TraitFactory's public and external methods are available
+        // additionally, pass-through functions for testing TraitFactory's
+        // internal functions are available.
+        contract = await InternalTester.new();
 
         // Unpause the contract
         await contract.unpause();
@@ -367,8 +372,7 @@ contract('TraitFactory', function(accounts) {
 
     });
 
-    // TODO: Make this contract function internal and only call it from renderAvastar()
-    it("should allow anyone to assemble artwork by generation and trait hash", async function() {
+    it("should allow descendent contracts to assemble artwork by generation and trait hash", async function() {
 
         const traits = [trait1, trait2];
 
@@ -379,9 +383,21 @@ contract('TraitFactory', function(accounts) {
         const expected = traitMath.computeArt(traits);
 
         // Get the rendered artwork
-        const art = await contract.assembleArtwork(constants.GENERATION.ONE, traitHash, {from: sysAdmin});
+        const art = await contract._assembleArtwork(constants.GENERATION.ONE, traitHash, {from: sysAdmin});
 
         assert.equal(art, expected, "Assembled art wasn't correct");
+
+    });
+
+    it("should allow descendent contracts to concatenate two strings", async function() {
+
+        // Compute the expected result
+        const expected = `${trait1.svg}${trait2.svg}`;
+
+        // Get the concatenated string
+        const result = await contract._strConcat(trait1.svg, trait2.svg);
+
+        assert.equal(result, expected, "Concatenated string wasn't correct");
 
     });
 

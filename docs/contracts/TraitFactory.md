@@ -3,7 +3,7 @@
 View Source: [contracts/TraitFactory.sol](https://github.com/Dapp-Wizards/Avastars-Contracts/blob/master/contracts/TraitFactory.sol)
 
 **TraitFactory** **↗ Extends: [AvastarState](contracts/AvastarState.md)**
-**↘ Derived Contracts: [PrimeFactory](contracts/PrimeFactory.md)**
+**↘ Derived Contracts: [PrimeFactory](contracts/PrimeFactory.md), [TraitFactoryInternalTester](contracts/TraitFactoryInternalTester.md)**
 
 ## **Events**
 
@@ -182,7 +182,7 @@ Assemble the artwork for a given Trait hash with art from the given Generation
 
 ```solidity
 function assembleArtwork(enum AvastarTypes.Generation _generation, uint256 _traitHash)
-public view
+internal view
 returns (string svg)
 ```
 
@@ -205,7 +205,7 @@ Concatenate two strings
 
 ```solidity
 function strConcat(string _a, string _b)
-private pure
+internal pure
 returns (string result)
 ```
 
