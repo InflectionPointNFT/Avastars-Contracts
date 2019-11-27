@@ -3,7 +3,7 @@
 View Source: [contracts/TraitFactory.sol](https://github.com/Dapp-Wizards/Avastars-Contracts/blob/master/contracts/TraitFactory.sol)
 
 **TraitFactory** **↗ Extends: [AvastarState](contracts/AvastarState.md)**
-**↘ Derived Contracts: [PrimeFactory](contracts/PrimeFactory.md), [TraitFactoryInternalTester](contracts/TraitFactoryInternalTester.md)**
+**↘ Derived Contracts: [PrimeFactory](contracts/PrimeFactory.md), [TraitFactoryWrapper](contracts/TraitFactoryWrapper.md)**
 
 ## **Events**
 

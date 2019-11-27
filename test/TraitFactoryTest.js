@@ -1,5 +1,4 @@
-const TraitFactory = artifacts.require("./TraitFactory.sol");
-const InternalTester = artifacts.require("./TraitFactoryInternalTester.sol");
+const TraitFactory = artifacts.require("./TraitFactoryWrapper.sol");
 const truffleAssert = require('truffle-assertions');
 const exceptions = require ("./util/Exceptions");
 const constants = require("./util/Constants");
@@ -92,7 +91,7 @@ contract('TraitFactory', function(accounts) {
         // all TraitFactory's public and external methods are available
         // additionally, pass-through functions for testing TraitFactory's
         // internal functions are available.
-        contract = await InternalTester.new();
+        contract = await TraitFactory.new();
 
         // Unpause the contract
         await contract.unpause();

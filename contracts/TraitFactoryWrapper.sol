@@ -3,12 +3,12 @@ pragma solidity ^0.5.12;
 import "./TraitFactory.sol";
 
 /**
- * @title TraitFactory Internal Function Tester
+ * @title TraitFactory Wrapper
  * @notice Side contract (not deployed or inherited) that extends
  * `TraitFactory` and exposes methods for testing its internal functions.
  * @author Cliff Hall
  */
-contract TraitFactoryInternalTester is TraitFactory {
+contract TraitFactoryWrapper is TraitFactory {
 
     /**
      * @notice Passthrough function for testing `TraitFactory.assembleArtwork`.
