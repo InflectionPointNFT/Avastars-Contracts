@@ -5,13 +5,13 @@ import "./IAvastarTeleporter.sol";
 import "./AccessControl.sol";
 
 /**
- * @title Avastar Minter Proxy
+ * @title Avastar Prime Minter Proxy
  * @author Cliff Hall
- * @notice Mints Avastars using the `AvastarTeleporter` contract on behalf of depositors.
+ * @notice Mints Avastar Primes using the `AvastarTeleporter` contract on behalf of depositors.
  * Allows system admin to set current generation and series.
  * Manages accounting of depositor and franchise balances.
  */
-contract AvastarMinter is AvastarTypes, AccessControl {
+contract AvastarPrimeMinter is AvastarTypes, AccessControl {
 
     /**
      * @notice Event emitted when the current Generation is changed
@@ -215,44 +215,6 @@ contract AvastarMinter is AvastarTypes, AccessControl {
         depositsByAddress[_purchaser] = depositsByAddress[_purchaser].sub(_price);
         unspentDeposits = unspentDeposits.sub(_price);
         (tokenId, serial) = teleporterContract.mintPrime(_purchaser, _traits, currentGeneration, currentSeries, _gender, _ranking);
-        emit DepositorBalance(_purchaser, depositsByAddress[_purchaser]);
-        return (tokenId, serial);
-    }
-
-    /**
-     * @notice Mint an Avastar Replicant for a purchaser who has previously deposited funds.
-     * Invokable only by minter role, when contract is not paused.
-     * Minted token will be owned by `_purchaser` address.
-     * If successful, emits a `DepositorBalance` event with the depositor's remaining balance,
-     * and the `AvastarTeleporter` contract will emit a `NewReplicant` event.
-     * @param _purchaser address that will own the token
-     * @param _price price in ETH of token, removed from purchaser's deposit balance
-     * @param _traits the Avastar's Trait hash
-     * @param _generation the Avastar's Generation
-     * @param _gender the Avastar's Gender
-     * @param _ranking the Avastar's Ranking
-     * @return tokenId the Avastar's tokenId
-     * @return serial the Replicant's serial
-     */
-    function purchaseReplicant(
-        address _purchaser,
-        uint256 _price,
-        uint256 _traits,
-        Generation _generation,
-        Gender _gender,
-        uint8 _ranking
-    )
-    external
-    onlyMinter
-    whenNotPaused
-    returns (uint256 tokenId, uint256 serial)
-    {
-        require(_purchaser != address(0));
-        require (depositsByAddress[_purchaser] >= _price);
-        require(_gender > Gender.ANY);
-        depositsByAddress[_purchaser] = depositsByAddress[_purchaser].sub(_price);
-        unspentDeposits = unspentDeposits.sub(_price);
-        (tokenId, serial) = teleporterContract.mintReplicant(_purchaser, _traits, _generation, _gender, _ranking);
         emit DepositorBalance(_purchaser, depositsByAddress[_purchaser]);
         return (tokenId, serial);
     }

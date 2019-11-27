@@ -3,7 +3,7 @@
 View Source: [contracts/AvastarTypes.sol](https://github.com/Dapp-Wizards/Avastars-Contracts/blob/master/contracts/AvastarTypes.sol)
 
 **AvastarTypes** 
-**↘ Derived Contracts: [AvastarMinter](contracts/AvastarMinter.md), [AvastarState](contracts/AvastarState.md), [IAvastarTeleporter](contracts/IAvastarTeleporter.md)**
+**↘ Derived Contracts: [AvastarPrimeMinter](contracts/AvastarPrimeMinter.md), [AvastarState](contracts/AvastarState.md), [IAvastarTeleporter](contracts/IAvastarTeleporter.md)**
 
 ## **Enums**
 ### Generation

@@ -1,12 +1,12 @@
 const AvastarTeleporter = artifacts.require("./AvastarTeleporter.sol");
-const AvastarMinter = artifacts.require("./AvastarMinter.sol");
+const AvastarPrimeMinter = artifacts.require("./AvastarPrimeMinter.sol");
 const truffleAssert = require('truffle-assertions');
 const truffleEvent  = require('./util/truffle-events');
 const exceptions = require ("./util/Exceptions");
 const constants = require("./util/Constants");
 const BN = require('bn.js');
 
-contract('AvastarMinter', function(accounts) {
+contract('AvastarPrimeMinter', function(accounts) {
 
     let teleporterContract, minterContract;
     const sysAdmin = accounts[0];
@@ -60,21 +60,12 @@ contract('AvastarMinter', function(accounts) {
         "price"      : price
     };
 
-    const replicant1 = {
-        "generation" : constants.GENERATION.ONE,
-        "gender"     : constants.GENDER.MALE,
-        "traits"     : traits4,
-        "ranking"    : 34,
-        "price"      : price
-    };
-
-
     before(async () => {
         // Create the factory contract and unpause
         teleporterContract = await AvastarTeleporter.new();
 
         // Create the minter contract and set the factory contract
-        minterContract = await AvastarMinter.new();
+        minterContract = await AvastarPrimeMinter.new();
         await minterContract.setTeleporterContract(teleporterContract.address);
         minterContract.addMinter(minter);
         minterContract.addOwner(owner);
@@ -485,28 +476,6 @@ contract('AvastarMinter', function(accounts) {
                 ev.series === String(series)
             );
         }, 'NewPrime event should be emitted with correct info');
-
-    });
-
-    it("should allow minting of replicants from generation other than current generation", async function() {
-
-        const {generation, price, gender, traits, ranking} = replicant1;
-
-        // Purchase the prime
-        await minterContract.deposit({from: purchaser, value: depositAmount});
-        let result = await minterContract.purchaseReplicant(purchaser, price, traits, generation, gender, ranking, {from: minter});
-
-        // Get events emitted from the AvastarTeleporter
-        let replicantScope = truffleEvent.formTxObject('AvastarTeleporter', 1, result);
-
-        // Test that appropriate event was emitted
-        truffleAssert.eventEmitted(replicantScope, 'NewReplicant', (ev) => {
-            return (
-                ev.generation === String(generation) &&
-                ev.gender === String(gender) &&
-                ev.traits === String(traits)
-            );
-        }, 'NewReplicant event should be emitted with correct info');
 
     });
 

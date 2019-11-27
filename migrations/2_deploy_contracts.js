@@ -1,16 +1,16 @@
 let AvastarTeleporter = artifacts.require("./AvastarTeleporter.sol");
-let AvastarMinter = artifacts.require("./AvastarMinter.sol");
+let AvastarPrimeMinter = artifacts.require("./AvastarPrimeMinter.sol");
 
 module.exports = deployer => {
     deployer.then(async () => {
 
         // Deploy the contracts
         const avastarTeleporter = await deployer.deploy(AvastarTeleporter);
-        const avastarMinter = await deployer.deploy(AvastarMinter);
+        const avastarPrimeMinter = await deployer.deploy(AvastarPrimeMinter);
 
         // Unpause the contract
         await avastarTeleporter.unpause();
-        await avastarMinter.unpause();
+        await avastarPrimeMinter.unpause();
 
     });
 };
