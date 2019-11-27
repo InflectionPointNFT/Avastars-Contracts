@@ -22,7 +22,8 @@ module.exports = {
         development: {
             host: "127.0.0.1",
             port: 7545,
-            network_id: "*"
+            network_id: "*",
+            from: "0x76bcF85fdBa45B7e604BcC6D8b5939D341f5ee95",
         },
         ropsten: {
             provider: () => new HDWalletProvider(keys.mnemonic, url, 1),

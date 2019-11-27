@@ -22,7 +22,6 @@ contract AccessControl {
      * Starts paused. System admin must unpause after full migration.
      */
     constructor() public {
-        paused = true;
         admins.add(msg.sender);
     }
 
@@ -60,7 +59,7 @@ contract AccessControl {
      */
     event SysAdminAdded(address sysAdminAddress);
 
-    bool public paused = false;
+    bool public paused = true;
     bool public upgraded = false;
     address public newContractAddress;
 

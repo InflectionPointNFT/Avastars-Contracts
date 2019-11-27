@@ -52,7 +52,7 @@ contract('AvastarTeleporter', function(accounts) {
         teleporter = await AvastarTeleporter.new();
 
         // Unpause the contract
-        await teleporter.unpause();
+        await teleporter.unpause({from: sysAdmin});
 
         // Add the minter
         await teleporter.addMinter(minter);
@@ -172,7 +172,6 @@ contract('AvastarTeleporter', function(accounts) {
         // Make certain the assembled art is as expected
         assert.equal(art, expected, "Assembled art wasn't correct");
 
-        console.log(art);
     });
 
 });
