@@ -1,0 +1,1985 @@
+Gene: 0, Variation: 1, SVG Size: 117
+Block: 467 Gas Used: 417440
+
+
+Gene: 0, Variation: 2, SVG Size: 117
+Block: 468 Gas Used: 432824
+
+
+Gene: 0, Variation: 3, SVG Size: 117
+Block: 469 Gas Used: 432568
+
+
+Gene: 0, Variation: 4, SVG Size: 117
+Block: 470 Gas Used: 432952
+
+
+Gene: 0, Variation: 5, SVG Size: 117
+Block: 471 Gas Used: 448016
+
+
+Gene: 0, Variation: 6, SVG Size: 117
+Block: 472 Gas Used: 447504
+
+
+Gene: 0, Variation: 7, SVG Size: 117
+Block: 473 Gas Used: 447824
+
+
+Gene: 0, Variation: 8, SVG Size: 117
+Block: 474 Gas Used: 447824
+
+
+Gene: 0, Variation: 9, SVG Size: 117
+Block: 475 Gas Used: 447760
+
+
+Gene: 0, Variation: 10, SVG Size: 117
+Block: 476 Gas Used: 447632
+
+
+Gene: 0, Variation: 11, SVG Size: 117
+Block: 477 Gas Used: 447824
+
+
+Gene: 0, Variation: 12, SVG Size: 117
+Block: 478 Gas Used: 447760
+
+
+Gene: 0, Variation: 13, SVG Size: 117
+Block: 479 Gas Used: 447888
+
+
+Gene: 0, Variation: 14, SVG Size: 117
+Block: 480 Gas Used: 448016
+
+
+Gene: 0, Variation: 15, SVG Size: 117
+Block: 481 Gas Used: 447952
+
+
+Gene: 0, Variation: 16, SVG Size: 117
+Block: 482 Gas Used: 448016
+
+
+Gene: 0, Variation: 17, SVG Size: 117
+Block: 483 Gas Used: 447440
+
+
+Gene: 0, Variation: 18, SVG Size: 117
+Block: 484 Gas Used: 448016
+
+
+Gene: 0, Variation: 19, SVG Size: 117
+Block: 485 Gas Used: 447824
+
+
+Gene: 0, Variation: 20, SVG Size: 117
+Block: 486 Gas Used: 447888
+
+
+Gene: 0, Variation: 21, SVG Size: 117
+Block: 487 Gas Used: 448088
+
+
+Gene: 0, Variation: 22, SVG Size: 117
+Block: 488 Gas Used: 448088
+
+
+Gene: 0, Variation: 23, SVG Size: 117
+Block: 489 Gas Used: 448024
+
+
+Gene: 0, Variation: 24, SVG Size: 117
+Block: 490 Gas Used: 447832
+
+
+Gene: 0, Variation: 25, SVG Size: 117
+Block: 491 Gas Used: 448088
+
+
+Gene: 0, Variation: 26, SVG Size: 117
+Block: 492 Gas Used: 448152
+
+
+Gene: 0, Variation: 27, SVG Size: 117
+Block: 493 Gas Used: 447960
+
+
+Gene: 0, Variation: 28, SVG Size: 117
+Block: 494 Gas Used: 448216
+
+
+Gene: 0, Variation: 29, SVG Size: 117
+Block: 495 Gas Used: 447824
+
+
+Gene: 0, Variation: 30, SVG Size: 117
+Block: 496 Gas Used: 447952
+
+
+Gene: 0, Variation: 31, SVG Size: 117
+Block: 497 Gas Used: 447888
+
+
+Gene: 0, Variation: 32, SVG Size: 117
+Block: 498 Gas Used: 447568
+
+
+Gene: 0, Variation: 33, SVG Size: 117
+Block: 499 Gas Used: 448288
+
+
+Gene: 0, Variation: 34, SVG Size: 117
+Block: 500 Gas Used: 448544
+
+
+Gene: 0, Variation: 35, SVG Size: 117
+Block: 501 Gas Used: 448288
+
+
+Gene: 0, Variation: 36, SVG Size: 117
+Block: 502 Gas Used: 448288
+
+
+Gene: 0, Variation: 37, SVG Size: 117
+Error: Returned error: VM Exception while processing transaction: invalid opcode
+
+
+
+Gene: 0, Variation: 38, SVG Size: 117
+Error: Returned error: VM Exception while processing transaction: invalid opcode
+
+
+
+Gene: 0, Variation: 39, SVG Size: 117
+Error: Returned error: VM Exception while processing transaction: invalid opcode
+
+
+
+Gene: 0, Variation: 40, SVG Size: 117
+Error: Returned error: VM Exception while processing transaction: invalid opcode
+
+
+
+Gene: 0, Variation: 41, SVG Size: 117
+Block: 507 Gas Used: 448104
+
+
+Gene: 0, Variation: 42, SVG Size: 117
+Block: 508 Gas Used: 448744
+
+
+Gene: 0, Variation: 43, SVG Size: 117
+Block: 509 Gas Used: 448488
+
+
+Gene: 0, Variation: 44, SVG Size: 117
+Block: 510 Gas Used: 448488
+
+
+Gene: 0, Variation: 45, SVG Size: 117
+Block: 511 Gas Used: 447952
+
+
+Gene: 0, Variation: 46, SVG Size: 117
+Block: 512 Gas Used: 447888
+
+
+Gene: 0, Variation: 47, SVG Size: 117
+Block: 513 Gas Used: 447440
+
+
+Gene: 0, Variation: 48, SVG Size: 117
+Block: 514 Gas Used: 448016
+
+
+Gene: 0, Variation: 49, SVG Size: 117
+Block: 515 Gas Used: 448945
+
+
+Gene: 0, Variation: 50, SVG Size: 117
+Block: 516 Gas Used: 449009
+
+
+Gene: 0, Variation: 51, SVG Size: 117
+Block: 517 Gas Used: 448689
+
+
+Gene: 0, Variation: 52, SVG Size: 117
+Block: 518 Gas Used: 448497
+
+
+Gene: 1, Variation: 1, SVG Size: 172
+Block: 519 Gas Used: 492745
+
+
+Gene: 1, Variation: 2, SVG Size: 172
+Block: 520 Gas Used: 492873
+
+
+Gene: 1, Variation: 3, SVG Size: 172
+Block: 521 Gas Used: 492809
+
+
+Gene: 1, Variation: 4, SVG Size: 172
+Block: 522 Gas Used: 493065
+
+
+Gene: 1, Variation: 5, SVG Size: 172
+Block: 523 Gas Used: 492873
+
+
+Gene: 1, Variation: 6, SVG Size: 172
+Block: 524 Gas Used: 492873
+
+
+Gene: 1, Variation: 7, SVG Size: 172
+Block: 525 Gas Used: 492937
+
+
+Gene: 1, Variation: 8, SVG Size: 172
+Block: 526 Gas Used: 492425
+
+
+Gene: 1, Variation: 9, SVG Size: 172
+Block: 527 Gas Used: 493001
+
+
+Gene: 1, Variation: 10, SVG Size: 172
+Block: 528 Gas Used: 493065
+
+
+Gene: 1, Variation: 11, SVG Size: 172
+Block: 529 Gas Used: 492809
+
+
+Gene: 1, Variation: 12, SVG Size: 172
+Block: 530 Gas Used: 492873
+
+
+Gene: 1, Variation: 13, SVG Size: 172
+Block: 531 Gas Used: 493001
+
+
+Gene: 1, Variation: 14, SVG Size: 172
+Block: 532 Gas Used: 492553
+
+
+Gene: 1, Variation: 15, SVG Size: 172
+Block: 533 Gas Used: 492489
+
+
+Gene: 2, Variation: 1, SVG Size: 140
+Block: 534 Gas Used: 454820
+
+
+Gene: 2, Variation: 2, SVG Size: 140
+Block: 535 Gas Used: 454628
+
+
+Gene: 2, Variation: 3, SVG Size: 140
+Block: 536 Gas Used: 454628
+
+
+Gene: 2, Variation: 4, SVG Size: 140
+Block: 537 Gas Used: 470012
+
+
+Gene: 2, Variation: 5, SVG Size: 140
+Block: 538 Gas Used: 469500
+
+
+Gene: 2, Variation: 6, SVG Size: 140
+Block: 539 Gas Used: 469436
+
+
+Gene: 2, Variation: 7, SVG Size: 140
+Block: 540 Gas Used: 469244
+
+
+Gene: 2, Variation: 8, SVG Size: 140
+Block: 541 Gas Used: 469628
+
+
+Gene: 2, Variation: 9, SVG Size: 140
+Block: 542 Gas Used: 469500
+
+
+Gene: 2, Variation: 10, SVG Size: 140
+Block: 543 Gas Used: 469244
+
+
+Gene: 2, Variation: 11, SVG Size: 140
+Block: 544 Gas Used: 469500
+
+
+Gene: 2, Variation: 12, SVG Size: 140
+Block: 545 Gas Used: 469564
+
+
+Gene: 2, Variation: 13, SVG Size: 140
+Block: 546 Gas Used: 469564
+
+
+Gene: 2, Variation: 14, SVG Size: 140
+Block: 547 Gas Used: 469628
+
+
+Gene: 2, Variation: 15, SVG Size: 140
+Block: 548 Gas Used: 469500
+
+
+Gene: 2, Variation: 16, SVG Size: 140
+Block: 549 Gas Used: 469956
+
+
+Gene: 2, Variation: 17, SVG Size: 140
+Block: 550 Gas Used: 469764
+
+
+Gene: 2, Variation: 18, SVG Size: 140
+Block: 551 Gas Used: 469892
+
+
+Gene: 2, Variation: 19, SVG Size: 140
+Block: 552 Gas Used: 470148
+
+
+Gene: 2, Variation: 20, SVG Size: 140
+Block: 553 Gas Used: 469956
+
+
+Gene: 2, Variation: 21, SVG Size: 140
+Block: 554 Gas Used: 469892
+
+
+Gene: 2, Variation: 22, SVG Size: 140
+Block: 555 Gas Used: 469692
+
+
+Gene: 2, Variation: 23, SVG Size: 140
+Block: 556 Gas Used: 469756
+
+
+Gene: 2, Variation: 24, SVG Size: 140
+Block: 557 Gas Used: 469180
+
+
+Gene: 2, Variation: 25, SVG Size: 140
+Block: 558 Gas Used: 469900
+
+
+Gene: 2, Variation: 26, SVG Size: 140
+Block: 559 Gas Used: 470092
+
+
+Gene: 2, Variation: 27, SVG Size: 140
+Block: 560 Gas Used: 469836
+
+
+Gene: 2, Variation: 28, SVG Size: 140
+Error: Returned error: VM Exception while processing transaction: invalid opcode
+
+
+
+Gene: 2, Variation: 29, SVG Size: 140
+Error: Returned error: VM Exception while processing transaction: invalid opcode
+
+
+
+Gene: 2, Variation: 30, SVG Size: 140
+Error: Returned error: VM Exception while processing transaction: invalid opcode
+
+
+
+Gene: 2, Variation: 31, SVG Size: 140
+Block: 564 Gas Used: 469909
+
+
+Gene: 2, Variation: 32, SVG Size: 140
+Block: 565 Gas Used: 470037
+
+
+Gene: 2, Variation: 33, SVG Size: 140
+Block: 566 Gas Used: 470037
+
+
+Gene: 2, Variation: 34, SVG Size: 140
+Block: 567 Gas Used: 469500
+
+
+Gene: 2, Variation: 35, SVG Size: 140
+Block: 568 Gas Used: 469180
+
+
+Gene: 2, Variation: 36, SVG Size: 140
+Block: 569 Gas Used: 469500
+
+
+Gene: 2, Variation: 37, SVG Size: 140
+Block: 570 Gas Used: 470557
+
+
+Gene: 2, Variation: 38, SVG Size: 140
+Block: 571 Gas Used: 470749
+
+
+Gene: 2, Variation: 39, SVG Size: 140
+Block: 572 Gas Used: 470173
+
+
+Gene: 3, Variation: 1, SVG Size: 56
+Block: 573 Gas Used: 388320
+
+
+Gene: 3, Variation: 2, SVG Size: 56
+Block: 574 Gas Used: 388384
+
+
+Gene: 3, Variation: 3, SVG Size: 56
+Block: 575 Gas Used: 388128
+
+
+Gene: 3, Variation: 4, SVG Size: 56
+Block: 576 Gas Used: 388384
+
+
+Gene: 3, Variation: 5, SVG Size: 56
+Block: 577 Gas Used: 403448
+
+
+Gene: 3, Variation: 6, SVG Size: 56
+Block: 578 Gas Used: 403384
+
+
+Gene: 3, Variation: 7, SVG Size: 56
+Block: 579 Gas Used: 403512
+
+
+Gene: 3, Variation: 8, SVG Size: 56
+Block: 580 Gas Used: 403576
+
+
+Gene: 3, Variation: 9, SVG Size: 56
+Block: 581 Gas Used: 403896
+
+
+Gene: 3, Variation: 10, SVG Size: 56
+Block: 582 Gas Used: 403448
+
+
+Gene: 3, Variation: 11, SVG Size: 56
+Block: 583 Gas Used: 403256
+
+
+Gene: 3, Variation: 12, SVG Size: 56
+Block: 584 Gas Used: 403704
+
+
+Gene: 3, Variation: 13, SVG Size: 56
+Block: 585 Gas Used: 403384
+
+
+Gene: 3, Variation: 14, SVG Size: 56
+Block: 586 Gas Used: 403576
+
+
+Gene: 3, Variation: 15, SVG Size: 56
+Block: 587 Gas Used: 403832
+
+
+Gene: 3, Variation: 16, SVG Size: 56
+Block: 588 Gas Used: 403256
+
+
+Gene: 3, Variation: 17, SVG Size: 56
+Block: 589 Gas Used: 403704
+
+
+Gene: 3, Variation: 18, SVG Size: 56
+Block: 590 Gas Used: 403832
+
+
+Gene: 3, Variation: 19, SVG Size: 56
+Block: 591 Gas Used: 403448
+
+
+Gene: 3, Variation: 20, SVG Size: 56
+Block: 592 Gas Used: 403832
+
+
+Gene: 3, Variation: 21, SVG Size: 56
+Block: 593 Gas Used: 403840
+
+
+Gene: 3, Variation: 22, SVG Size: 56
+Block: 594 Gas Used: 403712
+
+
+Gene: 3, Variation: 23, SVG Size: 56
+Block: 595 Gas Used: 403776
+
+
+Gene: 3, Variation: 24, SVG Size: 56
+Block: 596 Gas Used: 403456
+
+
+Gene: 3, Variation: 25, SVG Size: 56
+Block: 597 Gas Used: 403840
+
+
+Gene: 3, Variation: 26, SVG Size: 56
+Block: 598 Gas Used: 403968
+
+
+Gene: 3, Variation: 27, SVG Size: 56
+Block: 599 Gas Used: 403584
+
+
+Gene: 3, Variation: 28, SVG Size: 56
+Block: 600 Gas Used: 404032
+
+
+Gene: 3, Variation: 29, SVG Size: 56
+Block: 601 Gas Used: 403256
+
+
+Gene: 3, Variation: 30, SVG Size: 56
+Block: 602 Gas Used: 403320
+
+
+Gene: 3, Variation: 31, SVG Size: 56
+Block: 603 Gas Used: 403384
+
+
+Gene: 3, Variation: 32, SVG Size: 56
+Block: 604 Gas Used: 403640
+
+
+Gene: 3, Variation: 33, SVG Size: 56
+Block: 605 Gas Used: 403784
+
+
+Gene: 3, Variation: 34, SVG Size: 56
+Block: 606 Gas Used: 404232
+
+
+Gene: 3, Variation: 35, SVG Size: 56
+Block: 607 Gas Used: 403976
+
+
+Gene: 3, Variation: 36, SVG Size: 56
+Block: 608 Gas Used: 403848
+
+
+Gene: 3, Variation: 37, SVG Size: 56
+Error: Returned error: VM Exception while processing transaction: invalid opcode
+
+
+
+Gene: 3, Variation: 38, SVG Size: 56
+Error: Returned error: VM Exception while processing transaction: invalid opcode
+
+
+
+Gene: 3, Variation: 39, SVG Size: 56
+Error: Returned error: VM Exception while processing transaction: invalid opcode
+
+
+
+Gene: 3, Variation: 40, SVG Size: 56
+Error: Returned error: VM Exception while processing transaction: invalid opcode
+
+
+
+Gene: 3, Variation: 41, SVG Size: 56
+Block: 613 Gas Used: 404240
+
+
+Gene: 3, Variation: 42, SVG Size: 56
+Block: 614 Gas Used: 403984
+
+
+Gene: 3, Variation: 43, SVG Size: 56
+Block: 615 Gas Used: 404048
+
+
+Gene: 3, Variation: 44, SVG Size: 56
+Block: 616 Gas Used: 404624
+
+
+Gene: 3, Variation: 45, SVG Size: 56
+Block: 617 Gas Used: 403192
+
+
+Gene: 3, Variation: 46, SVG Size: 56
+Block: 618 Gas Used: 403768
+
+
+Gene: 3, Variation: 47, SVG Size: 56
+Block: 619 Gas Used: 403576
+
+
+Gene: 3, Variation: 48, SVG Size: 56
+Block: 620 Gas Used: 403832
+
+
+Gene: 3, Variation: 49, SVG Size: 56
+Block: 621 Gas Used: 404248
+
+
+Gene: 3, Variation: 50, SVG Size: 56
+Block: 622 Gas Used: 404632
+
+
+Gene: 3, Variation: 51, SVG Size: 56
+Block: 623 Gas Used: 404312
+
+
+Gene: 3, Variation: 52, SVG Size: 56
+Block: 624 Gas Used: 404632
+
+
+Gene: 4, Variation: 1, SVG Size: 2844
+Block: 625 Gas Used: 2324587
+
+
+Gene: 4, Variation: 2, SVG Size: 3047
+Block: 626 Gas Used: 2479011
+
+
+Gene: 4, Variation: 3, SVG Size: 2916
+Block: 627 Gas Used: 2389873
+
+
+Gene: 4, Variation: 4, SVG Size: 3127
+Block: 628 Gas Used: 2524604
+
+
+Gene: 4, Variation: 5, SVG Size: 2852
+Block: 629 Gas Used: 2360368
+
+
+Gene: 4, Variation: 6, SVG Size: 3074
+Block: 630 Gas Used: 2516007
+
+
+Gene: 4, Variation: 7, SVG Size: 3037
+Block: 631 Gas Used: 2473614
+
+
+Gene: 4, Variation: 8, SVG Size: 3263
+Block: 632 Gas Used: 2629510
+
+
+Gene: 4, Variation: 9, SVG Size: 3040
+Block: 633 Gas Used: 2473486
+
+
+Gene: 4, Variation: 10, SVG Size: 3295
+Block: 634 Gas Used: 2651442
+
+
+Gene: 4, Variation: 11, SVG Size: 3133
+Block: 635 Gas Used: 2540116
+
+
+Gene: 4, Variation: 12, SVG Size: 3133
+Block: 636 Gas Used: 2540116
+
+
+Gene: 4, Variation: 13, SVG Size: 3256
+Block: 637 Gas Used: 2628614
+
+
+Gene: 4, Variation: 14, SVG Size: 3256
+Block: 638 Gas Used: 2628614
+
+
+Gene: 4, Variation: 15, SVG Size: 3215
+Block: 639 Gas Used: 2606489
+
+
+Gene: 4, Variation: 16, SVG Size: 3311
+Block: 640 Gas Used: 2673247
+
+
+Gene: 4, Variation: 17, SVG Size: 3474
+Block: 641 Gas Used: 2784701
+
+
+Gene: 4, Variation: 18, SVG Size: 4828
+Block: 642 Gas Used: 3719950
+
+
+Gene: 4, Variation: 19, SVG Size: 5114
+Block: 643 Gas Used: 3920097
+
+
+Gene: 4, Variation: 20, SVG Size: 5114
+Block: 644 Gas Used: 3920097
+
+
+Gene: 4, Variation: 21, SVG Size: 3961
+Block: 645 Gas Used: 3119394
+
+
+Gene: 4, Variation: 22, SVG Size: 4133
+Block: 646 Gas Used: 3251885
+
+
+Gene: 4, Variation: 23, SVG Size: 3597
+Block: 647 Gas Used: 2873656
+
+
+Gene: 4, Variation: 24, SVG Size: 4052
+Block: 648 Gas Used: 3185704
+
+
+Gene: 4, Variation: 25, SVG Size: 8318
+Block: 649 Gas Used: 6146357
+
+
+Gene: 4, Variation: 26, SVG Size: 3256
+Block: 650 Gas Used: 2630286
+
+
+Gene: 4, Variation: 27, SVG Size: 4087
+Block: 651 Gas Used: 3208660
+
+
+Gene: 4, Variation: 28, SVG Size: 6420
+Block: 652 Gas Used: 4833174
+
+
+Gene: 4, Variation: 29, SVG Size: 4296
+Block: 653 Gas Used: 3362756
+
+
+Gene: 4, Variation: 30, SVG Size: 4296
+Block: 654 Gas Used: 3362756
+
+
+Gene: 4, Variation: 31, SVG Size: 3491
+Block: 655 Gas Used: 2806122
+
+
+Gene: 4, Variation: 32, SVG Size: 4009
+Block: 656 Gas Used: 3162546
+
+
+Gene: 4, Variation: 33, SVG Size: 4958
+Block: 657 Gas Used: 3809682
+
+
+Gene: 4, Variation: 34, SVG Size: 4406
+Block: 658 Gas Used: 3431195
+
+
+Gene: 4, Variation: 35, SVG Size: 4129
+Block: 659 Gas Used: 3251894
+
+
+Gene: 4, Variation: 36, SVG Size: 4228
+Block: 660 Gas Used: 3318908
+
+
+Gene: 4, Variation: 37, SVG Size: 3648
+Block: 661 Gas Used: 2896996
+
+
+Gene: 4, Variation: 38, SVG Size: 3775
+Block: 662 Gas Used: 2985942
+
+
+Gene: 4, Variation: 39, SVG Size: 3947
+Block: 663 Gas Used: 3118626
+
+
+Gene: 4, Variation: 40, SVG Size: 5158
+Block: 664 Gas Used: 3963907
+
+
+Gene: 4, Variation: 41, SVG Size: 3194
+Block: 665 Gas Used: 2585030
+
+
+Gene: 4, Variation: 42, SVG Size: 3199
+Block: 666 Gas Used: 2585350
+
+
+Gene: 4, Variation: 43, SVG Size: 3045
+Block: 667 Gas Used: 2494484
+
+
+Gene: 4, Variation: 44, SVG Size: 4967
+Block: 668 Gas Used: 3830984
+
+
+Gene: 4, Variation: 45, SVG Size: 4039
+Block: 669 Gas Used: 3184735
+
+
+Gene: 4, Variation: 46, SVG Size: 3250
+Block: 670 Gas Used: 2628102
+
+
+Gene: 4, Variation: 47, SVG Size: 3773
+Block: 671 Gas Used: 2985870
+
+
+Gene: 4, Variation: 48, SVG Size: 3937
+Block: 672 Gas Used: 3117849
+
+
+Gene: 4, Variation: 49, SVG Size: 3438
+Block: 673 Gas Used: 2763251
+
+
+Gene: 4, Variation: 50, SVG Size: 4387
+Block: 674 Gas Used: 3430380
+
+
+Gene: 4, Variation: 51, SVG Size: 4624
+Block: 675 Gas Used: 3587045
+
+
+Gene: 4, Variation: 52, SVG Size: 3921
+Block: 676 Gas Used: 3097551
+
+
+Gene: 5, Variation: 1, SVG Size: 2681
+Block: 677 Gas Used: 2228982
+
+
+Gene: 5, Variation: 2, SVG Size: 2616
+Block: 678 Gas Used: 2184213
+
+
+Gene: 5, Variation: 3, SVG Size: 2500
+Block: 679 Gas Used: 2116504
+
+
+Gene: 5, Variation: 4, SVG Size: 2516
+Block: 680 Gas Used: 2117328
+
+
+Gene: 5, Variation: 5, SVG Size: 2845
+Block: 681 Gas Used: 2340500
+
+
+Gene: 5, Variation: 6, SVG Size: 2848
+Block: 682 Gas Used: 2340492
+
+
+Gene: 5, Variation: 7, SVG Size: 2873
+Block: 683 Gas Used: 2362625
+
+
+Gene: 5, Variation: 8, SVG Size: 2797
+Block: 684 Gas Used: 2317151
+
+
+Gene: 5, Variation: 9, SVG Size: 2827
+Block: 685 Gas Used: 2339348
+
+
+Gene: 5, Variation: 10, SVG Size: 2960
+Block: 686 Gas Used: 2428478
+
+
+Gene: 5, Variation: 11, SVG Size: 2897
+Block: 687 Gas Used: 2384365
+
+
+Gene: 5, Variation: 12, SVG Size: 2994
+Block: 688 Gas Used: 2450986
+
+
+Gene: 5, Variation: 13, SVG Size: 2988
+Block: 689 Gas Used: 2450675
+
+
+Gene: 5, Variation: 14, SVG Size: 2974
+Block: 690 Gas Used: 2429374
+
+
+Gene: 5, Variation: 15, SVG Size: 3023
+Block: 691 Gas Used: 2473247
+
+
+Gene: 5, Variation: 16, SVG Size: 3023
+Block: 692 Gas Used: 2473047
+
+
+Gene: 6, Variation: 1, SVG Size: 4053
+Block: 693 Gas Used: 3169735
+
+
+Gene: 6, Variation: 2, SVG Size: 4070
+Block: 694 Gas Used: 3191028
+
+
+Gene: 6, Variation: 3, SVG Size: 3842
+Block: 695 Gas Used: 3035196
+
+
+Gene: 6, Variation: 4, SVG Size: 3973
+Block: 696 Gas Used: 3124398
+
+
+Gene: 6, Variation: 5, SVG Size: 4929
+Block: 697 Gas Used: 3806529
+
+
+Gene: 6, Variation: 6, SVG Size: 4968
+Block: 698 Gas Used: 3829230
+
+
+Gene: 6, Variation: 7, SVG Size: 4620
+Block: 699 Gas Used: 3584706
+
+
+Gene: 6, Variation: 8, SVG Size: 4683
+Block: 700 Gas Used: 3629148
+
+
+Gene: 6, Variation: 9, SVG Size: 4572
+Block: 701 Gas Used: 3541161
+
+
+Gene: 6, Variation: 10, SVG Size: 4660
+Block: 702 Gas Used: 3607407
+
+
+Gene: 6, Variation: 11, SVG Size: 4461
+Block: 703 Gas Used: 3473443
+
+
+Gene: 6, Variation: 12, SVG Size: 4449
+Block: 704 Gas Used: 3472675
+
+
+Gene: 6, Variation: 13, SVG Size: 4775
+Block: 705 Gas Used: 3695650
+
+
+Gene: 6, Variation: 14, SVG Size: 4843
+Block: 706 Gas Used: 3740411
+
+
+Gene: 6, Variation: 15, SVG Size: 4470
+Block: 707 Gas Used: 3474147
+
+
+Gene: 6, Variation: 16, SVG Size: 4639
+Block: 708 Gas Used: 3585986
+
+
+Gene: 6, Variation: 17, SVG Size: 4834
+Block: 709 Gas Used: 3740027
+
+
+Gene: 6, Variation: 18, SVG Size: 5063
+Block: 710 Gas Used: 3896116
+
+
+Gene: 6, Variation: 19, SVG Size: 4673
+Block: 711 Gas Used: 3628508
+
+
+Gene: 6, Variation: 20, SVG Size: 4712
+Block: 712 Gas Used: 3651208
+
+
+Gene: 6, Variation: 21, SVG Size: 5017
+Block: 713 Gas Used: 3852963
+
+
+Gene: 6, Variation: 22, SVG Size: 5020
+Block: 714 Gas Used: 3853155
+
+
+Gene: 6, Variation: 23, SVG Size: 4903
+Block: 715 Gas Used: 3785693
+
+
+Gene: 6, Variation: 24, SVG Size: 5020
+Block: 716 Gas Used: 3853795
+
+
+Gene: 6, Variation: 25, SVG Size: 5218
+Block: 717 Gas Used: 4007708
+
+
+Gene: 6, Variation: 26, SVG Size: 5143
+Block: 718 Gas Used: 3942294
+
+
+Gene: 6, Variation: 27, SVG Size: 4580
+Block: 719 Gas Used: 3562462
+
+
+Gene: 6, Variation: 28, SVG Size: 4570
+Block: 720 Gas Used: 3541618
+
+
+Gene: 6, Variation: 29, SVG Size: 4922
+Block: 721 Gas Used: 3786516
+
+
+Gene: 6, Variation: 30, SVG Size: 4992
+Block: 722 Gas Used: 3831406
+
+
+Gene: 6, Variation: 31, SVG Size: 4526
+Block: 723 Gas Used: 3518268
+
+
+Gene: 6, Variation: 32, SVG Size: 4568
+Block: 724 Gas Used: 3541161
+
+
+Gene: 6, Variation: 33, SVG Size: 4969
+Block: 725 Gas Used: 3830079
+
+
+Gene: 6, Variation: 34, SVG Size: 5299
+Block: 726 Gas Used: 4053247
+
+
+Gene: 6, Variation: 35, SVG Size: 4771
+Block: 727 Gas Used: 3696243
+
+
+Gene: 6, Variation: 36, SVG Size: 4807
+Block: 728 Gas Used: 3718752
+
+
+Gene: 6, Variation: 37, SVG Size: 4695
+Block: 729 Gas Used: 3630436
+
+
+Gene: 6, Variation: 38, SVG Size: 4694
+Block: 730 Gas Used: 3630372
+
+
+Gene: 6, Variation: 39, SVG Size: 5205
+Block: 731 Gas Used: 3986736
+
+
+Gene: 6, Variation: 40, SVG Size: 5268
+Block: 732 Gas Used: 4031177
+
+
+Gene: 6, Variation: 41, SVG Size: 5679
+Block: 733 Gas Used: 4320536
+
+
+Gene: 6, Variation: 42, SVG Size: 5418
+Block: 734 Gas Used: 4142194
+
+
+Gene: 6, Variation: 43, SVG Size: 5829
+Block: 735 Gas Used: 4430648
+
+
+Gene: 6, Variation: 44, SVG Size: 6018
+Block: 736 Gas Used: 4563973
+
+
+Gene: 6, Variation: 45, SVG Size: 5993
+Block: 737 Gas Used: 4542351
+
+
+Gene: 6, Variation: 46, SVG Size: 5708
+Block: 738 Gas Used: 4342268
+
+
+Gene: 6, Variation: 47, SVG Size: 5171
+Block: 739 Gas Used: 3964035
+
+
+Gene: 6, Variation: 48, SVG Size: 5127
+Block: 740 Gas Used: 3941014
+
+
+Gene: 6, Variation: 49, SVG Size: 8084
+Block: 741 Gas Used: 5989589
+
+
+Gene: 6, Variation: 50, SVG Size: 8537
+Block: 742 Gas Used: 6301452
+
+
+Gene: 6, Variation: 51, SVG Size: 4370
+Block: 743 Gas Used: 3408704
+
+
+Gene: 6, Variation: 52, SVG Size: 4566
+Block: 744 Gas Used: 3542476
+
+
+Gene: 7, Variation: 1, SVG Size: 9942
+Block: 745 Gas Used: 7264534
+
+
+Gene: 7, Variation: 2, SVG Size: 9969
+Block: 746 Gas Used: 7286467
+
+
+Gene: 7, Variation: 3, SVG Size: 2670
+Block: 747 Gas Used: 2212621
+
+
+Gene: 7, Variation: 4, SVG Size: 2762
+Block: 748 Gas Used: 2279123
+
+
+Gene: 7, Variation: 5, SVG Size: 3194
+Block: 749 Gas Used: 2569557
+
+
+Gene: 7, Variation: 6, SVG Size: 2965
+Block: 750 Gas Used: 2413469
+
+
+Gene: 7, Variation: 7, SVG Size: 2191
+Block: 751 Gas Used: 1894411
+
+
+Gene: 7, Variation: 8, SVG Size: 2492
+Block: 752 Gas Used: 2095515
+
+
+Gene: 7, Variation: 9, SVG Size: 2194
+Block: 753 Gas Used: 1893899
+
+
+Gene: 7, Variation: 10, SVG Size: 2308
+Block: 754 Gas Used: 1982013
+
+
+Gene: 7, Variation: 11, SVG Size: 4843
+Block: 755 Gas Used: 3741115
+
+
+Gene: 7, Variation: 12, SVG Size: 4779
+Block: 756 Gas Used: 3696610
+
+
+Gene: 7, Variation: 13, SVG Size: 4556
+Block: 757 Gas Used: 3540457
+
+
+Gene: 7, Variation: 14, SVG Size: 4466
+Block: 758 Gas Used: 3474083
+
+
+Gene: 7, Variation: 15, SVG Size: 2380
+Block: 759 Gas Used: 2027670
+
+
+Gene: 7, Variation: 16, SVG Size: 2504
+Block: 760 Gas Used: 2116423
+
+
+Gene: 7, Variation: 19, SVG Size: 2181
+Block: 761 Gas Used: 1893707
+
+
+Gene: 7, Variation: 20, SVG Size: 2471
+Block: 762 Gas Used: 2094107
+
+
+Gene: 7, Variation: 21, SVG Size: 3555
+Block: 763 Gas Used: 2849795
+
+
+Gene: 7, Variation: 22, SVG Size: 3789
+Block: 764 Gas Used: 3006202
+
+
+Gene: 7, Variation: 23, SVG Size: 3853
+Block: 765 Gas Used: 3051284
+
+
+Gene: 7, Variation: 24, SVG Size: 2885
+Block: 766 Gas Used: 2382812
+
+
+Gene: 7, Variation: 27, SVG Size: 2332
+Block: 767 Gas Used: 1984253
+
+
+Gene: 7, Variation: 28, SVG Size: 2594
+Block: 768 Gas Used: 2182860
+
+
+Gene: 7, Variation: 29, SVG Size: 2931
+Block: 769 Gas Used: 2406089
+
+
+Gene: 7, Variation: 30, SVG Size: 2483
+Block: 770 Gas Used: 2094427
+
+
+Gene: 7, Variation: 31, SVG Size: 3314
+Block: 771 Gas Used: 2673255
+
+
+Gene: 7, Variation: 32, SVG Size: 2619
+Block: 772 Gas Used: 2184213
+
+
+Gene: 7, Variation: 33, SVG Size: 4042
+Block: 773 Gas Used: 3184744
+
+
+Gene: 7, Variation: 34, SVG Size: 4068
+Block: 774 Gas Used: 3206612
+
+
+Gene: 7, Variation: 37, SVG Size: 2738
+Block: 775 Gas Used: 2272711
+
+
+Gene: 7, Variation: 38, SVG Size: 2763
+Block: 776 Gas Used: 2294515
+
+
+Gene: 7, Variation: 39, SVG Size: 3504
+Block: 777 Gas Used: 2806834
+
+
+Gene: 7, Variation: 40, SVG Size: 3869
+Block: 778 Gas Used: 3052444
+
+
+Gene: 7, Variation: 45, SVG Size: 9154
+Block: 779 Gas Used: 6744431
+
+
+Gene: 7, Variation: 46, SVG Size: 8902
+Block: 780 Gas Used: 6566662
+
+
+Gene: 7, Variation: 49, SVG Size: 2864
+Block: 781 Gas Used: 2361537
+
+
+Gene: 7, Variation: 50, SVG Size: 2845
+Block: 782 Gas Used: 2340116
+
+
+Gene: 7, Variation: 51, SVG Size: 2480
+Block: 783 Gas Used: 2095148
+
+
+Gene: 7, Variation: 52, SVG Size: 2222
+Block: 784 Gas Used: 1917001
+
+
+Gene: 7, Variation: 53, SVG Size: 4300
+Block: 785 Gas Used: 3362645
+
+
+Gene: 7, Variation: 54, SVG Size: 4519
+Block: 786 Gas Used: 3518094
+
+
+Gene: 7, Variation: 55, SVG Size: 6533
+Block: 787 Gas Used: 4920010
+
+
+Gene: 7, Variation: 56, SVG Size: 2924
+Block: 788 Gas Used: 2405841
+
+
+Gene: 7, Variation: 59, SVG Size: 2901
+Block: 789 Gas Used: 2384229
+
+
+Gene: 7, Variation: 60, SVG Size: 3357
+Block: 790 Gas Used: 2696276
+
+
+Gene: 7, Variation: 65, SVG Size: 2997
+Block: 791 Gas Used: 2451835
+
+
+Gene: 7, Variation: 66, SVG Size: 3065
+Block: 792 Gas Used: 2496596
+
+
+Gene: 7, Variation: 68, SVG Size: 5453
+Block: 793 Gas Used: 4163405
+
+
+Gene: 7, Variation: 69, SVG Size: 12151
+Block: 794 Gas Used: 8815085
+
+
+Gene: 7, Variation: 70, SVG Size: 12221
+Block: 795 Gas Used: 8859976
+
+
+Gene: 7, Variation: 71, SVG Size: 5334
+Block: 796 Gas Used: 4075226
+
+
+Gene: 7, Variation: 72, SVG Size: 4984
+Block: 797 Gas Used: 3830574
+
+
+Gene: 7, Variation: 73, SVG Size: 6048
+Block: 798 Gas Used: 4566550
+
+
+Gene: 7, Variation: 74, SVG Size: 4460
+Block: 799 Gas Used: 3474886
+
+
+Gene: 7, Variation: 75, SVG Size: 2285
+Block: 800 Gas Used: 1961778
+
+
+Gene: 7, Variation: 76, SVG Size: 2343
+Block: 801 Gas Used: 2005899
+
+
+Gene: 7, Variation: 77, SVG Size: 3451
+Block: 802 Gas Used: 2763443
+
+
+Gene: 7, Variation: 78, SVG Size: 3112
+Block: 803 Gas Used: 2539702
+
+
+Gene: 8, Variation: 1, SVG Size: 19
+Block: 804 Gas Used: 345454
+
+
+Gene: 8, Variation: 2, SVG Size: 933
+Block: 805 Gas Used: 1010228
+
+
+Gene: 8, Variation: 3, SVG Size: 2269
+Block: 806 Gas Used: 1925004
+
+
+Gene: 8, Variation: 4, SVG Size: 19
+Block: 807 Gas Used: 360710
+
+
+Gene: 8, Variation: 5, SVG Size: 153
+Block: 808 Gas Used: 470396
+
+
+Gene: 8, Variation: 6, SVG Size: 19
+Block: 809 Gas Used: 360710
+
+
+Gene: 8, Variation: 7, SVG Size: 4228
+Block: 810 Gas Used: 3317163
+
+
+Gene: 8, Variation: 8, SVG Size: 6014
+Block: 811 Gas Used: 4542726
+
+
+Gene: 8, Variation: 9, SVG Size: 19
+Block: 812 Gas Used: 360710
+
+
+Gene: 8, Variation: 10, SVG Size: 8185
+Block: 813 Gas Used: 6056120
+
+
+Gene: 8, Variation: 11, SVG Size: 927
+Block: 814 Gas Used: 1005152
+
+
+Gene: 8, Variation: 12, SVG Size: 19
+Block: 815 Gas Used: 360710
+
+
+Gene: 8, Variation: 13, SVG Size: 871
+Block: 816 Gas Used: 980916
+
+
+Gene: 8, Variation: 14, SVG Size: 4455
+Block: 817 Gas Used: 3473123
+
+
+Gene: 8, Variation: 15, SVG Size: 14583
+Skipping, SVG size over threshold.
+
+
+Gene: 8, Variation: 16, SVG Size: 3741
+Block: 818 Gas Used: 2963114
+
+
+Gene: 8, Variation: 17, SVG Size: 8601
+Block: 819 Gas Used: 6345547
+
+
+Gene: 8, Variation: 19, SVG Size: 891
+Block: 820 Gas Used: 982844
+
+
+Gene: 8, Variation: 20, SVG Size: 4132
+Block: 821 Gas Used: 3251373
+
+
+Gene: 8, Variation: 23, SVG Size: 3015
+Block: 822 Gas Used: 2471950
+
+
+Gene: 8, Variation: 24, SVG Size: 641
+Block: 823 Gas Used: 825406
+
+
+Gene: 8, Variation: 25, SVG Size: 2628
+Block: 824 Gas Used: 2204601
+
+
+Gene: 8, Variation: 26, SVG Size: 2684
+Block: 825 Gas Used: 2228581
+
+
+Gene: 8, Variation: 27, SVG Size: 361
+Block: 826 Gas Used: 626049
+
+
+Gene: 8, Variation: 28, SVG Size: 249
+Block: 827 Gas Used: 537873
+
+
+Gene: 8, Variation: 29, SVG Size: 803
+Block: 828 Gas Used: 937132
+
+
+Gene: 8, Variation: 30, SVG Size: 5597
+Block: 829 Gas Used: 4254161
+
+
+Gene: 8, Variation: 31, SVG Size: 8032
+Block: 830 Gas Used: 5945247
+
+
+Gene: 8, Variation: 32, SVG Size: 8328
+Block: 831 Gas Used: 6166498
+
+
+Gene: 8, Variation: 33, SVG Size: 2442
+Block: 832 Gas Used: 2071863
+
+
+Gene: 8, Variation: 35, SVG Size: 457
+Block: 833 Gas Used: 692686
+
+
+Gene: 8, Variation: 36, SVG Size: 1576
+Block: 834 Gas Used: 1471450
+
+
+Gene: 8, Variation: 37, SVG Size: 8031
+Block: 835 Gas Used: 5945457
+
+
+Gene: 8, Variation: 38, SVG Size: 456
+Block: 836 Gas Used: 693006
+
+
+Gene: 8, Variation: 39, SVG Size: 1015
+Block: 837 Gas Used: 1071461
+
+
+Gene: 8, Variation: 40, SVG Size: 469
+Block: 838 Gas Used: 693045
+
+
+Gene: 8, Variation: 41, SVG Size: 16666
+Skipping, SVG size over threshold.
+
+
+Gene: 8, Variation: 42, SVG Size: 1390
+Block: 839 Gas Used: 1337912
+
+
+Gene: 8, Variation: 43, SVG Size: 6706
+Block: 840 Gas Used: 5032581
+
+
+Gene: 8, Variation: 44, SVG Size: 2929
+Block: 841 Gas Used: 2406699
+
+
+Gene: 8, Variation: 45, SVG Size: 575
+Block: 842 Gas Used: 761307
+
+
+Gene: 8, Variation: 46, SVG Size: 7548
+Block: 843 Gas Used: 5612311
+
+
+Gene: 9, Variation: 1, SVG Size: 3770
+Block: 844 Gas Used: 2969782
+
+
+Gene: 9, Variation: 2, SVG Size: 4095
+Block: 845 Gas Used: 3192628
+
+
+Gene: 9, Variation: 3, SVG Size: 4538
+Block: 846 Gas Used: 3504292
+
+
+Gene: 9, Variation: 4, SVG Size: 4315
+Block: 847 Gas Used: 3348588
+
+
+Gene: 9, Variation: 5, SVG Size: 4349
+Block: 848 Gas Used: 3370585
+
+
+Gene: 9, Variation: 6, SVG Size: 5537
+Block: 849 Gas Used: 4214395
+
+
+Gene: 9, Variation: 7, SVG Size: 3992
+Block: 850 Gas Used: 3140678
+
+
+Gene: 9, Variation: 8, SVG Size: 3995
+Block: 851 Gas Used: 3140870
+
+
+Gene: 9, Variation: 11, SVG Size: 3697
+Block: 852 Gas Used: 2940085
+
+
+Gene: 9, Variation: 12, SVG Size: 3360
+Block: 853 Gas Used: 2696267
+
+
+Gene: 9, Variation: 13, SVG Size: 4882
+Block: 854 Gas Used: 3763112
+
+
+Gene: 9, Variation: 14, SVG Size: 4526
+Block: 855 Gas Used: 3518076
+
+
+Gene: 9, Variation: 19, SVG Size: 4887
+Block: 856 Gas Used: 3764008
+
+
+Gene: 9, Variation: 20, SVG Size: 4959
+Block: 857 Gas Used: 3809025
+
+
+Gene: 9, Variation: 21, SVG Size: 6949
+Block: 858 Gas Used: 5208969
+
+
+Gene: 9, Variation: 22, SVG Size: 6760
+Block: 859 Gas Used: 5075643
+
+
+Gene: 9, Variation: 23, SVG Size: 5090
+Block: 860 Gas Used: 3918241
+
+
+Gene: 9, Variation: 24, SVG Size: 4999
+Block: 861 Gas Used: 3851802
+
+
+Gene: 9, Variation: 25, SVG Size: 5067
+Block: 862 Gas Used: 3896244
+
+
+Gene: 9, Variation: 26, SVG Size: 4885
+Block: 863 Gas Used: 3763368
+
+
+Gene: 9, Variation: 29, SVG Size: 4238
+Block: 864 Gas Used: 3317995
+
+
+Gene: 9, Variation: 30, SVG Size: 4021
+Block: 865 Gas Used: 3162674
+
+
+Gene: 9, Variation: 31, SVG Size: 3893
+Block: 866 Gas Used: 3073929
+
+
+Gene: 9, Variation: 32, SVG Size: 3561
+Block: 867 Gas Used: 2850635
+
+
+Gene: 9, Variation: 33, SVG Size: 4518
+Block: 868 Gas Used: 3517829
+
+
+Gene: 9, Variation: 34, SVG Size: 4068
+Block: 869 Gas Used: 3206164
+
+
+Gene: 9, Variation: 35, SVG Size: 4924
+Block: 870 Gas Used: 3786845
+
+
+Gene: 9, Variation: 36, SVG Size: 7817
+Block: 871 Gas Used: 5810641
+
+
+Gene: 9, Variation: 37, SVG Size: 3903
+Block: 872 Gas Used: 3074697
+
+
+Gene: 9, Variation: 38, SVG Size: 3570
+Block: 873 Gas Used: 2851339
+
+
+Gene: 9, Variation: 39, SVG Size: 7961
+Block: 874 Gas Used: 5900485
+
+
+Gene: 9, Variation: 40, SVG Size: 8038
+Block: 875 Gas Used: 5966028
+
+
+Gene: 9, Variation: 41, SVG Size: 8626
+Block: 876 Gas Used: 6367480
+
+
+Gene: 9, Variation: 42, SVG Size: 10902
+Block: 877 Gas Used: 7947720
+
+
+Gene: 9, Variation: 43, SVG Size: 5553
+Block: 878 Gas Used: 4230739
+
+
+Gene: 9, Variation: 44, SVG Size: 5020
+Block: 879 Gas Used: 3853146
+
+
+Gene: 9, Variation: 47, SVG Size: 11337
+Block: 880 Gas Used: 8258555
+
+
+Gene: 9, Variation: 48, SVG Size: 8750
+Block: 881 Gas Used: 6456356
+
+
+Gene: 9, Variation: 49, SVG Size: 6654
+Block: 882 Gas Used: 4988697
+
+
+Gene: 9, Variation: 50, SVG Size: 6205
+Block: 883 Gas Used: 4677093
+
+
+Gene: 9, Variation: 55, SVG Size: 4350
+Block: 884 Gas Used: 3386873
+
+
+Gene: 9, Variation: 56, SVG Size: 4223
+Block: 885 Gas Used: 3297927
+
+
+Gene: 9, Variation: 59, SVG Size: 4231
+Block: 886 Gas Used: 3317939
+
+
+Gene: 9, Variation: 60, SVG Size: 3715
+Block: 887 Gas Used: 2961642
+
+
+Gene: 9, Variation: 63, SVG Size: 9196
+Block: 888 Gas Used: 6767736
+
+
+Gene: 9, Variation: 64, SVG Size: 11175
+Block: 889 Gas Used: 8147124
+
+
+Gene: 9, Variation: 65, SVG Size: 3962
+Block: 890 Gas Used: 3119347
+
+
+Gene: 9, Variation: 66, SVG Size: 3860
+Block: 891 Gas Used: 3052205
+
+
+Gene: 9, Variation: 67, SVG Size: 6211
+Block: 892 Gas Used: 4697024
+
+
+Gene: 9, Variation: 68, SVG Size: 7896
+Block: 893 Gas Used: 5855778
+
+
+Gene: 9, Variation: 69, SVG Size: 6548
+Block: 894 Gas Used: 4920449
+
+
+Gene: 9, Variation: 70, SVG Size: 6447
+Block: 895 Gas Used: 4853370
+
+
+Gene: 9, Variation: 71, SVG Size: 5657
+Block: 896 Gas Used: 4298073
+
+
+Gene: 9, Variation: 72, SVG Size: 6848
+Block: 897 Gas Used: 5121685
+
+
+Gene: 9, Variation: 73, SVG Size: 5721
+Block: 898 Gas Used: 4343382
+
+
+Gene: 9, Variation: 74, SVG Size: 7138
+Block: 899 Gas Used: 5343291
+
+
+Gene: 9, Variation: 75, SVG Size: 4822
+Block: 900 Gas Used: 3720049
+
+
+Gene: 9, Variation: 76, SVG Size: 4201
+Block: 901 Gas Used: 3296417
+
+
+Gene: 9, Variation: 77, SVG Size: 8723
+Block: 902 Gas Used: 6434779
+
+
+Gene: 9, Variation: 78, SVG Size: 8334
+Block: 903 Gas Used: 6167422
+
+
+Gene: 10, Variation: 1, SVG Size: 9228
+Block: 904 Gas Used: 6774258
+
+
+Gene: 10, Variation: 2, SVG Size: 15963
+Skipping, SVG size over threshold.
+
+
+Gene: 10, Variation: 3, SVG Size: 7740
+Block: 905 Gas Used: 5729129
+
+
+Gene: 10, Variation: 4, SVG Size: 6099
+Block: 906 Gas Used: 4593781
+
+
+Gene: 10, Variation: 5, SVG Size: 6748
+Block: 907 Gas Used: 5039286
+
+
+Gene: 10, Variation: 6, SVG Size: 4176
+Block: 908 Gas Used: 3259001
+
+
+Gene: 10, Variation: 7, SVG Size: 19
+Block: 909 Gas Used: 360582
+
+
+Gene: 10, Variation: 8, SVG Size: 16206
+Skipping, SVG size over threshold.
+
+
+Gene: 10, Variation: 9, SVG Size: 23728
+Skipping, SVG size over threshold.
+
+
+Gene: 10, Variation: 10, SVG Size: 19
+Block: 910 Gas Used: 360582
+
+
+Gene: 10, Variation: 11, SVG Size: 12632
+Block: 911 Gas Used: 9149081
+
+
+Gene: 10, Variation: 12, SVG Size: 11103
+Block: 912 Gas Used: 8081295
+
+
+Gene: 10, Variation: 13, SVG Size: 16146
+Skipping, SVG size over threshold.
+
+
+Gene: 10, Variation: 14, SVG Size: 11136
+Block: 913 Gas Used: 8103549
+
+
+Gene: 10, Variation: 16, SVG Size: 14257
+Skipping, SVG size over threshold.
+
+
+Gene: 10, Variation: 17, SVG Size: 9181
+Block: 914 Gas Used: 6745903
+
+
+Gene: 10, Variation: 19, SVG Size: 9162
+Block: 915 Gas Used: 6744815
+
+
+Gene: 10, Variation: 25, SVG Size: 10927
+Block: 916 Gas Used: 7969644
+
+
+Gene: 10, Variation: 28, SVG Size: 7661
+Block: 917 Gas Used: 5699687
+
+
+Gene: 10, Variation: 29, SVG Size: 2971
+Block: 918 Gas Used: 2428661
+
+
+Gene: 10, Variation: 31, SVG Size: 8339
+Block: 919 Gas Used: 6167202
+
+
+Gene: 10, Variation: 32, SVG Size: 10786
+Block: 920 Gas Used: 7879616
+
+
+Gene: 10, Variation: 33, SVG Size: 5751
+Block: 921 Gas Used: 4364777
+
+
+Gene: 10, Variation: 34, SVG Size: 7747
+Block: 922 Gas Used: 5765431
+
+
+Gene: 10, Variation: 37, SVG Size: 11557
+Block: 923 Gas Used: 8413507
+
+
+Gene: 10, Variation: 38, SVG Size: 14113
+Skipping, SVG size over threshold.
+
+
+Gene: 10, Variation: 41, SVG Size: 11453
+Block: 924 Gas Used: 8325965
+
+
+Gene: 10, Variation: 42, SVG Size: 11207
+Block: 925 Gas Used: 8168783
+
+
+Gene: 10, Variation: 45, SVG Size: 6037
+Block: 926 Gas Used: 4564467
+
+
+Gene: 10, Variation: 46, SVG Size: 8648
+Block: 927 Gas Used: 6388444
+
+
+Gene: 10, Variation: 49, SVG Size: 5395
+Block: 928 Gas Used: 4120261
+
+
+Gene: 10, Variation: 50, SVG Size: 5395
+Block: 929 Gas Used: 4120261
+
+
+Gene: 10, Variation: 51, SVG Size: 16121
+Skipping, SVG size over threshold.
+
+
+Gene: 10, Variation: 52, SVG Size: 14474
+Skipping, SVG size over threshold.
+
+
+Gene: 10, Variation: 55, SVG Size: 7622
+Block: 930 Gas Used: 5676675
+
+
+Gene: 10, Variation: 56, SVG Size: 7728
+Block: 931 Gas Used: 5744074
+
+
+Gene: 10, Variation: 57, SVG Size: 10873
+Block: 932 Gas Used: 7925467
+
+
+Gene: 10, Variation: 58, SVG Size: 12798
+Skipping, SVG size over threshold.
+
+
+Gene: 10, Variation: 60, SVG Size: 18000
+Skipping, SVG size over threshold.
+
+
+Gene: 10, Variation: 61, SVG Size: 11511
+Block: 933 Gas Used: 8371067
+
+
+Gene: 10, Variation: 62, SVG Size: 16150
+Skipping, SVG size over threshold.
+
+
+Gene: 10, Variation: 63, SVG Size: 15527
+Skipping, SVG size over threshold.
+
+
+Gene: 10, Variation: 64, SVG Size: 20538
+Skipping, SVG size over threshold.
+
+
+Gene: 10, Variation: 65, SVG Size: 7860
+Block: 934 Gas Used: 5834000
+
+
+Gene: 10, Variation: 66, SVG Size: 11395
+Block: 935 Gas Used: 8303027
+
+
+Gene: 10, Variation: 69, SVG Size: 9266
+Block: 936 Gas Used: 6811831
+
+
+Gene: 10, Variation: 70, SVG Size: 10658
+Block: 937 Gas Used: 7790145
+
+
+Gene: 10, Variation: 71, SVG Size: 9183
+Block: 938 Gas Used: 6746287
+
+
+Gene: 10, Variation: 72, SVG Size: 12373
+Block: 939 Gas Used: 8971052
+
+
+Gene: 10, Variation: 73, SVG Size: 14726
+Skipping, SVG size over threshold.
+
+
+Gene: 10, Variation: 74, SVG Size: 9920
+Block: 940 Gas Used: 7259430
+
+
+Gene: 10, Variation: 75, SVG Size: 7522
+Block: 941 Gas Used: 5610519
+
+
+Gene: 10, Variation: 76, SVG Size: 10240
+Block: 942 Gas Used: 7481643
+
+
+Gene: 10, Variation: 77, SVG Size: 9460
+Block: 943 Gas Used: 6946732
+
+
+Gene: 10, Variation: 78, SVG Size: 10795
+Block: 944 Gas Used: 7880796

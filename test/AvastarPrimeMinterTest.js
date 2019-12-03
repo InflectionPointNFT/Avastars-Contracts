@@ -22,7 +22,6 @@ contract('AvastarPrimeMinter', function(accounts) {
     const traits1 = new BN('4835703422573704792572931', 10);
     const traits2 = new BN('59374701396491835636974613', 10);
     const traits3 = new BN('6044669605981521127212033', 10);
-    const traits4 = new BN('6248374900703763965019406', 10);
 
     const prime1 = {
         "generation" : constants.GENERATION.ONE,

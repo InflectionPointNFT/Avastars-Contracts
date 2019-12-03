@@ -23,13 +23,12 @@ module.exports = {
         SKIN_TONE: 1,
         HAIR_COLOR: 2,
         EYE_COLOR: 3,
-        FACE: 4,
-        EARS: 5,
+        EARS: 4,
+        FACE: 5,
         NOSE: 6,
         MOUTH: 7,
         FACIAL_FEATURE: 8,
         EYES: 9,
         HAIR_STYLE: 10
-    }
+    },
 };
-
