@@ -31,4 +31,8 @@ module.exports = {
         EYES: 9,
         HAIR_STYLE: 10
     },
+
+    MAX_ART_SIZE: 12000,
+    MAX_EXT_SIZE: 2133,
+
 };

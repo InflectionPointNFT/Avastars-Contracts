@@ -7,9 +7,25 @@ const logfile = "data/CreateTraitsLog.txt";
 const AvastarTeleporter = artifacts.require("contracts/AvastarTeleporter.sol");
 
 module.exports = async function(done) {
+    // Bizarrely, even though this can be included as
+    // Cordwood.js over in tests/TraitFactoryTest.js,
+    // It will not work via require in a command script
+    if (!String.prototype.cordwood) {
+        String.prototype.cordwood = function(cordlen) {
+            if (cordlen === undefined || cordlen > this.length) {
+                cordlen = this.length;
+            }
+            let yardstick = new RegExp(`.{${cordlen}}`, 'g');
+            let pieces = this.match(yardstick);
+            let accumulated = (pieces.length * cordlen);
+            let modulo = this.length % accumulated;
+            if (modulo) pieces.push(this.slice(accumulated));
+            return pieces;
+        };
+    }
 
     console.log('Creating log file...');
-    let log = fs.createWriteStream(logfile);
+    const log = fs.createWriteStream(logfile);
 
     console.log('Processing raw database dump...');
     const traits = getTraits(traitsJSON);
@@ -27,10 +43,33 @@ module.exports = async function(done) {
         console.log('----------------------------');
         try {
             for (const trait of traits) {
-                if (trait.svg) {
-                    console.log(trait.gene, trait.variation);
+                if (trait.svg && trait.svg.length <= constants.MAX_ART_SIZE) {
                     await createTrait(teleporter, trait, accounts, log);
+                } else if (trait.svg && trait.svg.length > constants.MAX_ART_SIZE){
+                    // Split the trait into pieces
+                    let initial = trait.svg.slice(0, constants.MAX_ART_SIZE);
+                    let remainder = trait.svg.slice(constants.MAX_ART_SIZE);
+                    let pieces = remainder.cordwood(constants.MAX_EXT_SIZE);
+
+                    // Create the trait with the initial piece that is equal to max_art_length
+                    trait.svg = initial;
+                    let traitId = await createTrait(teleporter, trait, accounts, log);
+
+                    // Extend the artwork with all the remaining pieces
+                    for (const piece of pieces) {
+                        logIt(log, `Extending art by ${piece.length}`);
+                        await teleporter.extendTraitArt(traitId, piece, {
+                            from: accounts.sysAdmin,
+                            gas: '9950000'
+                        });
+                    }
+                } else {
+                    let {gene, variation} = trait;
+                    let preamble = `Gene: ${gene}, Variation: ${variation}, SVG Size: 0`;
+                    logIt(log, preamble);
+                    logIt(log, "Skipping, no SVG data yet.");
                 }
+                logIt(log, '\n');
             }
         } catch (e) {
             console.log('woopsy: ');
@@ -45,30 +84,30 @@ module.exports = async function(done) {
 };
 
 async function createTrait(teleporter, trait, accounts, log){
-    const max_art_size = 12798;
-    const max_ext_size = 2133;
 
     let {generation, gender, gene, name, series, svg, variation} = trait;
     let preamble = `Gene: ${gene}, Variation: ${variation}, SVG Size: ${svg.length}`;
     logIt(log, preamble);
-    if (svg.length < max_art_size) {
-        try {
-            let result = await teleporter.createTrait(generation, series, gender, gene, variation, name, svg, {
-                from: accounts.sysAdmin,
-                gas: '9950000'
-            });
-            let postamble = `Block: ${result.receipt.blockNumber} Gas Used: ${result.receipt.gasUsed}`;
-            logIt(log, postamble);
-        } catch (e) {
-            let err = e.toString() + '\n';
-            logIt(log, err);
-        }
-    } else {
-        logIt(log, 'Skipping, SVG size over threshold.');
+    let traitId = -1;
+    try {
+        traitId = await teleporter.createTrait.call(generation, series, gender, gene, variation, name, svg, {
+            from: accounts.sysAdmin,
+            gas: '9950000'
+        });
+        let result = await teleporter.createTrait(generation, series, gender, gene, variation, name, svg, {
+            from: accounts.sysAdmin,
+            gas: '9950000' // TODO: estimate gas!
+        });
+        let postamble = `Trait ID: ${traitId} Block: ${result.receipt.blockNumber} Gas Used: ${result.receipt.gasUsed}`;
+        logIt(log, postamble);
+    } catch (e) {
+        let err = e.toString() + '\n';
+        logIt(log, err);
     }
 
-    logIt(log, '\n');
-};
+    return traitId;
+}
+
 
 function logIt(log, value) {
     console.log(value);

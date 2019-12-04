@@ -5,6 +5,7 @@ const constants = require("./util/Constants");
 const traitMath = require("./util/TraitMath");
 const traitData = require("./util/TraitData");
 const BN = require('bn.js');
+require("./util/Cordwood");
 
 contract('TraitFactory', function(accounts) {
 
@@ -203,19 +204,15 @@ contract('TraitFactory', function(accounts) {
         let id = new BN(2,10);
 
         // Split art into two pieces with first being the max size for createTrait
-        let svg1 = svg.slice(0,traitData.max_art_size);
-        let svg2 = svg.slice(traitData.max_art_size);
+        let svg1 = svg.slice(0,constants.MAX_ART_SIZE);
+        let svg2 = svg.slice(constants.MAX_ART_SIZE);
 
         assert.equal(`${svg1}${svg2}`, svg, 'SVG slice invalid');
 
-        // Split second part into two pieces, with the first being the max size for extendTraitArt
-        let svg2_1 = svg2.slice(0, traitData.max_ext_size);
-        let svg2_2 = svg2.slice(traitData.max_ext_size, traitData.max_ext_size * 2);
-        let svg2_3 = svg2.slice(traitData.max_ext_size * 2, traitData.max_ext_size * 2 + traitData.max_ext_size);
-        let svg2_4 = svg2.slice(traitData.max_ext_size * 2 + traitData.max_ext_size);
+        // Split second part into pieces the max size for extendTraitArt or smaller
+        let pieces = svg2.cordwood(constants.MAX_EXT_SIZE);
 
-        assert.equal(`${svg2_1}${svg2_2}${svg2_3}${svg2_4}`, svg2, 'SVG2 slice invalid');
-
+        assert.equal(pieces.join(''), svg2, 'SVG2 slice invalid');
         // Create the trait with partial data
         let createResult = await contract.createTrait(generation, series, gender, gene, variation, name, svg1, {from: sysAdmin, gas: '9950000'});
 
@@ -229,50 +226,24 @@ contract('TraitFactory', function(accounts) {
             );
         }, 'NewTrait event should be emitted with correct info');
 
-        // Extend the artwork once
-        const firstExtendResult = await contract.extendTraitArt(id, svg2_1, {from: sysAdmin, gas: '9950000'});
+        // Extend the artwork with all the remaining pieces
+        for (const piece of pieces) {
 
-        // Test that appropriate event was emitted
-        truffleAssert.eventEmitted(firstExtendResult, 'TraitArtExtended', (ev) => {
-            return (
-                ev.id.eq(id)
-            );
-        }, 'TraitArtExtended event should be emitted with correct info');
+            const extendResult = await contract.extendTraitArt(id, piece, {from: sysAdmin, gas: '9950000'});
 
+            // Test that appropriate event was emitted
+            truffleAssert.eventEmitted(extendResult, 'TraitArtExtended', (ev) => {
+                return (
+                    ev.id.eq(id)
+                );
+            }, 'TraitArtExtended event should be emitted with correct info');
 
-        // Extend the artwork again
-        const secondExtendResult = await contract.extendTraitArt(id, svg2_2, {from: sysAdmin, gas: '9950000'});
-
-        // Test that appropriate event was emitted
-        truffleAssert.eventEmitted(secondExtendResult, 'TraitArtExtended', (ev) => {
-            return (
-                ev.id.eq(id)
-            );
-        }, 'TraitArtExtended event should be emitted with correct info');
-
-        // Extend the artwork again
-        const thirdExtendResult = await contract.extendTraitArt(id, svg2_3, {from: sysAdmin, gas: '9950000'});
-
-        // Test that appropriate event was emitted
-        truffleAssert.eventEmitted(thirdExtendResult, 'TraitArtExtended', (ev) => {
-            return (
-                ev.id.eq(id)
-            );
-        }, 'TraitArtExtended event should be emitted with correct info');
-
-        // Extend the artwork again
-        const fourthExtendResult = await contract.extendTraitArt(id, svg2_4, {from: sysAdmin, gas: '9950000'});
-
-        // Test that appropriate event was emitted
-        truffleAssert.eventEmitted(fourthExtendResult, 'TraitArtExtended', (ev) => {
-            return (
-                ev.id.eq(id)
-            );
-        }, 'TraitArtExtended event should be emitted with correct info');
+        }
 
         // Make sure the stored trait is correct
         const trait = await contract.getTrait(id, {from: sysAdmin});
         assert.equal(trait[7], svg, "SVG field wasn't correct");
+
     });
 
     it("should not allow sysadmin to create trait with bad value for generation", async function() {

@@ -212,9 +212,6 @@ const hair_style_six = { // 23.17kb way too big
 
 module.exports = {
 
-    max_art_size: 12798,
-    max_ext_size: 2133,
-
     avastar: [
         background,
         skin_tone,
