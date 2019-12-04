@@ -1,145 +1,145 @@
 Gene: 0, Variation: 1, SVG Size: 117
-Trait ID: 0 Block: 794 Gas Used: 417440
+Trait ID: 0 Block: 36 Gas Used: 417440
 
 
 Gene: 0, Variation: 2, SVG Size: 117
-Trait ID: 1 Block: 795 Gas Used: 432824
+Trait ID: 1 Block: 37 Gas Used: 432824
 
 
 Gene: 0, Variation: 3, SVG Size: 117
-Trait ID: 2 Block: 796 Gas Used: 432568
+Trait ID: 2 Block: 38 Gas Used: 432568
 
 
 Gene: 0, Variation: 4, SVG Size: 117
-Trait ID: 3 Block: 797 Gas Used: 432952
+Trait ID: 3 Block: 39 Gas Used: 432952
 
 
 Gene: 0, Variation: 5, SVG Size: 117
-Trait ID: 4 Block: 798 Gas Used: 448016
+Trait ID: 4 Block: 40 Gas Used: 448016
 
 
 Gene: 0, Variation: 6, SVG Size: 117
-Trait ID: 5 Block: 799 Gas Used: 447504
+Trait ID: 5 Block: 41 Gas Used: 447504
 
 
 Gene: 0, Variation: 7, SVG Size: 117
-Trait ID: 6 Block: 800 Gas Used: 447824
+Trait ID: 6 Block: 42 Gas Used: 447824
 
 
 Gene: 0, Variation: 8, SVG Size: 117
-Trait ID: 7 Block: 801 Gas Used: 447824
+Trait ID: 7 Block: 43 Gas Used: 447824
 
 
 Gene: 0, Variation: 9, SVG Size: 117
-Trait ID: 8 Block: 802 Gas Used: 447760
+Trait ID: 8 Block: 44 Gas Used: 447760
 
 
 Gene: 0, Variation: 10, SVG Size: 117
-Trait ID: 9 Block: 803 Gas Used: 447632
+Trait ID: 9 Block: 45 Gas Used: 447632
 
 
 Gene: 0, Variation: 11, SVG Size: 117
-Trait ID: 10 Block: 804 Gas Used: 447824
+Trait ID: 10 Block: 46 Gas Used: 447824
 
 
 Gene: 0, Variation: 12, SVG Size: 117
-Trait ID: 11 Block: 805 Gas Used: 447760
+Trait ID: 11 Block: 47 Gas Used: 447760
 
 
 Gene: 0, Variation: 13, SVG Size: 117
-Trait ID: 12 Block: 806 Gas Used: 447888
+Trait ID: 12 Block: 48 Gas Used: 447888
 
 
 Gene: 0, Variation: 14, SVG Size: 117
-Trait ID: 13 Block: 807 Gas Used: 448016
+Trait ID: 13 Block: 49 Gas Used: 448016
 
 
 Gene: 0, Variation: 15, SVG Size: 117
-Trait ID: 14 Block: 808 Gas Used: 447952
+Trait ID: 14 Block: 50 Gas Used: 447952
 
 
 Gene: 0, Variation: 16, SVG Size: 117
-Trait ID: 15 Block: 809 Gas Used: 448016
+Trait ID: 15 Block: 51 Gas Used: 448016
 
 
 Gene: 0, Variation: 17, SVG Size: 117
-Trait ID: 16 Block: 810 Gas Used: 447440
+Trait ID: 16 Block: 52 Gas Used: 447440
 
 
 Gene: 0, Variation: 18, SVG Size: 117
-Trait ID: 17 Block: 811 Gas Used: 448016
+Trait ID: 17 Block: 53 Gas Used: 448016
 
 
 Gene: 0, Variation: 19, SVG Size: 117
-Trait ID: 18 Block: 812 Gas Used: 447824
+Trait ID: 18 Block: 54 Gas Used: 447824
 
 
 Gene: 0, Variation: 20, SVG Size: 117
-Trait ID: 19 Block: 813 Gas Used: 447888
+Trait ID: 19 Block: 55 Gas Used: 447888
 
 
 Gene: 0, Variation: 21, SVG Size: 117
-Trait ID: 20 Block: 814 Gas Used: 448088
+Trait ID: 20 Block: 56 Gas Used: 448088
 
 
 Gene: 0, Variation: 22, SVG Size: 117
-Trait ID: 21 Block: 815 Gas Used: 448088
+Trait ID: 21 Block: 57 Gas Used: 448088
 
 
 Gene: 0, Variation: 23, SVG Size: 117
-Trait ID: 22 Block: 816 Gas Used: 448024
+Trait ID: 22 Block: 58 Gas Used: 448024
 
 
 Gene: 0, Variation: 24, SVG Size: 117
-Trait ID: 23 Block: 817 Gas Used: 447832
+Trait ID: 23 Block: 59 Gas Used: 447832
 
 
 Gene: 0, Variation: 25, SVG Size: 117
-Trait ID: 24 Block: 818 Gas Used: 448088
+Trait ID: 24 Block: 60 Gas Used: 448088
 
 
 Gene: 0, Variation: 26, SVG Size: 117
-Trait ID: 25 Block: 819 Gas Used: 448152
+Trait ID: 25 Block: 61 Gas Used: 448152
 
 
 Gene: 0, Variation: 27, SVG Size: 117
-Trait ID: 26 Block: 820 Gas Used: 447960
+Trait ID: 26 Block: 62 Gas Used: 447960
 
 
 Gene: 0, Variation: 28, SVG Size: 117
-Trait ID: 27 Block: 821 Gas Used: 448216
+Trait ID: 27 Block: 63 Gas Used: 448216
 
 
 Gene: 0, Variation: 29, SVG Size: 117
-Trait ID: 28 Block: 822 Gas Used: 447824
+Trait ID: 28 Block: 64 Gas Used: 447824
 
 
 Gene: 0, Variation: 30, SVG Size: 117
-Trait ID: 29 Block: 823 Gas Used: 447952
+Trait ID: 29 Block: 65 Gas Used: 447952
 
 
 Gene: 0, Variation: 31, SVG Size: 117
-Trait ID: 30 Block: 824 Gas Used: 447888
+Trait ID: 30 Block: 66 Gas Used: 447888
 
 
 Gene: 0, Variation: 32, SVG Size: 117
-Trait ID: 31 Block: 825 Gas Used: 447568
+Trait ID: 31 Block: 67 Gas Used: 447568
 
 
 Gene: 0, Variation: 33, SVG Size: 117
-Trait ID: 32 Block: 826 Gas Used: 448288
+Trait ID: 32 Block: 68 Gas Used: 448288
 
 
 Gene: 0, Variation: 34, SVG Size: 117
-Trait ID: 33 Block: 827 Gas Used: 448544
+Trait ID: 33 Block: 69 Gas Used: 448544
 
 
 Gene: 0, Variation: 35, SVG Size: 117
-Trait ID: 34 Block: 828 Gas Used: 448288
+Trait ID: 34 Block: 70 Gas Used: 448288
 
 
 Gene: 0, Variation: 36, SVG Size: 117
-Trait ID: 35 Block: 829 Gas Used: 448288
+Trait ID: 35 Block: 71 Gas Used: 448288
 
 
 Gene: 0, Variation: 37, SVG Size: 117
@@ -163,219 +163,219 @@ Error: Returned error: VM Exception while processing transaction: invalid opcode
 
 
 Gene: 0, Variation: 41, SVG Size: 117
-Trait ID: 36 Block: 830 Gas Used: 448104
+Trait ID: 36 Block: 72 Gas Used: 448104
 
 
 Gene: 0, Variation: 42, SVG Size: 117
-Trait ID: 37 Block: 831 Gas Used: 448744
+Trait ID: 37 Block: 73 Gas Used: 448744
 
 
 Gene: 0, Variation: 43, SVG Size: 117
-Trait ID: 38 Block: 832 Gas Used: 448488
+Trait ID: 38 Block: 74 Gas Used: 448488
 
 
 Gene: 0, Variation: 44, SVG Size: 117
-Trait ID: 39 Block: 833 Gas Used: 448488
+Trait ID: 39 Block: 75 Gas Used: 448488
 
 
 Gene: 0, Variation: 45, SVG Size: 117
-Trait ID: 40 Block: 834 Gas Used: 447952
+Trait ID: 40 Block: 76 Gas Used: 447952
 
 
 Gene: 0, Variation: 46, SVG Size: 117
-Trait ID: 41 Block: 835 Gas Used: 447888
+Trait ID: 41 Block: 77 Gas Used: 447888
 
 
 Gene: 0, Variation: 47, SVG Size: 117
-Trait ID: 42 Block: 836 Gas Used: 447440
+Trait ID: 42 Block: 78 Gas Used: 447440
 
 
 Gene: 0, Variation: 48, SVG Size: 117
-Trait ID: 43 Block: 837 Gas Used: 448016
+Trait ID: 43 Block: 79 Gas Used: 448016
 
 
 Gene: 0, Variation: 49, SVG Size: 117
-Trait ID: 44 Block: 838 Gas Used: 448945
+Trait ID: 44 Block: 80 Gas Used: 448945
 
 
 Gene: 0, Variation: 50, SVG Size: 117
-Trait ID: 45 Block: 839 Gas Used: 449009
+Trait ID: 45 Block: 81 Gas Used: 449009
 
 
 Gene: 0, Variation: 51, SVG Size: 117
-Trait ID: 46 Block: 840 Gas Used: 448689
+Trait ID: 46 Block: 82 Gas Used: 448689
 
 
 Gene: 0, Variation: 52, SVG Size: 117
-Trait ID: 47 Block: 841 Gas Used: 448497
+Trait ID: 47 Block: 83 Gas Used: 448497
 
 
 Gene: 1, Variation: 1, SVG Size: 172
-Trait ID: 48 Block: 842 Gas Used: 492745
+Trait ID: 48 Block: 84 Gas Used: 492745
 
 
 Gene: 1, Variation: 2, SVG Size: 172
-Trait ID: 49 Block: 843 Gas Used: 492873
+Trait ID: 49 Block: 85 Gas Used: 492873
 
 
 Gene: 1, Variation: 3, SVG Size: 172
-Trait ID: 50 Block: 844 Gas Used: 492809
+Trait ID: 50 Block: 86 Gas Used: 492809
 
 
 Gene: 1, Variation: 4, SVG Size: 172
-Trait ID: 51 Block: 845 Gas Used: 493065
+Trait ID: 51 Block: 87 Gas Used: 493065
 
 
 Gene: 1, Variation: 5, SVG Size: 172
-Trait ID: 52 Block: 846 Gas Used: 492873
+Trait ID: 52 Block: 88 Gas Used: 492873
 
 
 Gene: 1, Variation: 6, SVG Size: 172
-Trait ID: 53 Block: 847 Gas Used: 492873
+Trait ID: 53 Block: 89 Gas Used: 492873
 
 
 Gene: 1, Variation: 7, SVG Size: 172
-Trait ID: 54 Block: 848 Gas Used: 492937
+Trait ID: 54 Block: 90 Gas Used: 492937
 
 
 Gene: 1, Variation: 8, SVG Size: 172
-Trait ID: 55 Block: 849 Gas Used: 492425
+Trait ID: 55 Block: 91 Gas Used: 492425
 
 
 Gene: 1, Variation: 9, SVG Size: 172
-Trait ID: 56 Block: 850 Gas Used: 493001
+Trait ID: 56 Block: 92 Gas Used: 493001
 
 
 Gene: 1, Variation: 10, SVG Size: 172
-Trait ID: 57 Block: 851 Gas Used: 493065
+Trait ID: 57 Block: 93 Gas Used: 493065
 
 
 Gene: 1, Variation: 11, SVG Size: 172
-Trait ID: 58 Block: 852 Gas Used: 492809
+Trait ID: 58 Block: 94 Gas Used: 492809
 
 
 Gene: 1, Variation: 12, SVG Size: 172
-Trait ID: 59 Block: 853 Gas Used: 492873
+Trait ID: 59 Block: 95 Gas Used: 492873
 
 
 Gene: 1, Variation: 13, SVG Size: 172
-Trait ID: 60 Block: 854 Gas Used: 493001
+Trait ID: 60 Block: 96 Gas Used: 493001
 
 
 Gene: 1, Variation: 14, SVG Size: 172
-Trait ID: 61 Block: 855 Gas Used: 492553
+Trait ID: 61 Block: 97 Gas Used: 492553
 
 
 Gene: 1, Variation: 15, SVG Size: 172
-Trait ID: 62 Block: 856 Gas Used: 492489
+Trait ID: 62 Block: 98 Gas Used: 492489
 
 
 Gene: 2, Variation: 1, SVG Size: 140
-Trait ID: 63 Block: 857 Gas Used: 454820
+Trait ID: 63 Block: 99 Gas Used: 454820
 
 
 Gene: 2, Variation: 2, SVG Size: 140
-Trait ID: 64 Block: 858 Gas Used: 454628
+Trait ID: 64 Block: 100 Gas Used: 454628
 
 
 Gene: 2, Variation: 3, SVG Size: 140
-Trait ID: 65 Block: 859 Gas Used: 454628
+Trait ID: 65 Block: 101 Gas Used: 454628
 
 
 Gene: 2, Variation: 4, SVG Size: 140
-Trait ID: 66 Block: 860 Gas Used: 470012
+Trait ID: 66 Block: 102 Gas Used: 470012
 
 
 Gene: 2, Variation: 5, SVG Size: 140
-Trait ID: 67 Block: 861 Gas Used: 469500
+Trait ID: 67 Block: 103 Gas Used: 469500
 
 
 Gene: 2, Variation: 6, SVG Size: 140
-Trait ID: 68 Block: 862 Gas Used: 469436
+Trait ID: 68 Block: 104 Gas Used: 469436
 
 
 Gene: 2, Variation: 7, SVG Size: 140
-Trait ID: 69 Block: 863 Gas Used: 469244
+Trait ID: 69 Block: 105 Gas Used: 469244
 
 
 Gene: 2, Variation: 8, SVG Size: 140
-Trait ID: 70 Block: 864 Gas Used: 469628
+Trait ID: 70 Block: 106 Gas Used: 469628
 
 
 Gene: 2, Variation: 9, SVG Size: 140
-Trait ID: 71 Block: 865 Gas Used: 469500
+Trait ID: 71 Block: 107 Gas Used: 469500
 
 
 Gene: 2, Variation: 10, SVG Size: 140
-Trait ID: 72 Block: 866 Gas Used: 469244
+Trait ID: 72 Block: 108 Gas Used: 469244
 
 
 Gene: 2, Variation: 11, SVG Size: 140
-Trait ID: 73 Block: 867 Gas Used: 469500
+Trait ID: 73 Block: 109 Gas Used: 469500
 
 
 Gene: 2, Variation: 12, SVG Size: 140
-Trait ID: 74 Block: 868 Gas Used: 469564
+Trait ID: 74 Block: 110 Gas Used: 469564
 
 
 Gene: 2, Variation: 13, SVG Size: 140
-Trait ID: 75 Block: 869 Gas Used: 469564
+Trait ID: 75 Block: 111 Gas Used: 469564
 
 
 Gene: 2, Variation: 14, SVG Size: 140
-Trait ID: 76 Block: 870 Gas Used: 469628
+Trait ID: 76 Block: 112 Gas Used: 469628
 
 
 Gene: 2, Variation: 15, SVG Size: 140
-Trait ID: 77 Block: 871 Gas Used: 469500
+Trait ID: 77 Block: 113 Gas Used: 469500
 
 
 Gene: 2, Variation: 16, SVG Size: 140
-Trait ID: 78 Block: 872 Gas Used: 469956
+Trait ID: 78 Block: 114 Gas Used: 469956
 
 
 Gene: 2, Variation: 17, SVG Size: 140
-Trait ID: 79 Block: 873 Gas Used: 469764
+Trait ID: 79 Block: 115 Gas Used: 469764
 
 
 Gene: 2, Variation: 18, SVG Size: 140
-Trait ID: 80 Block: 874 Gas Used: 469892
+Trait ID: 80 Block: 116 Gas Used: 469892
 
 
 Gene: 2, Variation: 19, SVG Size: 140
-Trait ID: 81 Block: 875 Gas Used: 470148
+Trait ID: 81 Block: 117 Gas Used: 470148
 
 
 Gene: 2, Variation: 20, SVG Size: 140
-Trait ID: 82 Block: 876 Gas Used: 469956
+Trait ID: 82 Block: 118 Gas Used: 469956
 
 
 Gene: 2, Variation: 21, SVG Size: 140
-Trait ID: 83 Block: 877 Gas Used: 469892
+Trait ID: 83 Block: 119 Gas Used: 469892
 
 
 Gene: 2, Variation: 22, SVG Size: 140
-Trait ID: 84 Block: 878 Gas Used: 469692
+Trait ID: 84 Block: 120 Gas Used: 469692
 
 
 Gene: 2, Variation: 23, SVG Size: 140
-Trait ID: 85 Block: 879 Gas Used: 469756
+Trait ID: 85 Block: 121 Gas Used: 469756
 
 
 Gene: 2, Variation: 24, SVG Size: 140
-Trait ID: 86 Block: 880 Gas Used: 469180
+Trait ID: 86 Block: 122 Gas Used: 469180
 
 
 Gene: 2, Variation: 25, SVG Size: 140
-Trait ID: 87 Block: 881 Gas Used: 469900
+Trait ID: 87 Block: 123 Gas Used: 469900
 
 
 Gene: 2, Variation: 26, SVG Size: 140
-Trait ID: 88 Block: 882 Gas Used: 470092
+Trait ID: 88 Block: 124 Gas Used: 470092
 
 
 Gene: 2, Variation: 27, SVG Size: 140
-Trait ID: 89 Block: 883 Gas Used: 469836
+Trait ID: 89 Block: 125 Gas Used: 469836
 
 
 Gene: 2, Variation: 28, SVG Size: 140
@@ -394,183 +394,183 @@ Error: Returned error: VM Exception while processing transaction: invalid opcode
 
 
 Gene: 2, Variation: 31, SVG Size: 140
-Trait ID: 90 Block: 884 Gas Used: 469909
+Trait ID: 90 Block: 126 Gas Used: 469909
 
 
 Gene: 2, Variation: 32, SVG Size: 140
-Trait ID: 91 Block: 885 Gas Used: 470037
+Trait ID: 91 Block: 127 Gas Used: 470037
 
 
 Gene: 2, Variation: 33, SVG Size: 140
-Trait ID: 92 Block: 886 Gas Used: 470037
+Trait ID: 92 Block: 128 Gas Used: 470037
 
 
 Gene: 2, Variation: 34, SVG Size: 140
-Trait ID: 93 Block: 887 Gas Used: 469500
+Trait ID: 93 Block: 129 Gas Used: 469500
 
 
 Gene: 2, Variation: 35, SVG Size: 140
-Trait ID: 94 Block: 888 Gas Used: 469180
+Trait ID: 94 Block: 130 Gas Used: 469180
 
 
 Gene: 2, Variation: 36, SVG Size: 140
-Trait ID: 95 Block: 889 Gas Used: 469500
+Trait ID: 95 Block: 131 Gas Used: 469500
 
 
 Gene: 2, Variation: 37, SVG Size: 140
-Trait ID: 96 Block: 890 Gas Used: 470557
+Trait ID: 96 Block: 132 Gas Used: 470557
 
 
 Gene: 2, Variation: 38, SVG Size: 140
-Trait ID: 97 Block: 891 Gas Used: 470749
+Trait ID: 97 Block: 133 Gas Used: 470749
 
 
 Gene: 2, Variation: 39, SVG Size: 140
-Trait ID: 98 Block: 892 Gas Used: 470173
+Trait ID: 98 Block: 134 Gas Used: 470173
 
 
 Gene: 3, Variation: 1, SVG Size: 56
-Trait ID: 99 Block: 893 Gas Used: 388320
+Trait ID: 99 Block: 135 Gas Used: 388320
 
 
 Gene: 3, Variation: 2, SVG Size: 56
-Trait ID: 100 Block: 894 Gas Used: 388384
+Trait ID: 100 Block: 136 Gas Used: 388384
 
 
 Gene: 3, Variation: 3, SVG Size: 56
-Trait ID: 101 Block: 895 Gas Used: 388128
+Trait ID: 101 Block: 137 Gas Used: 388128
 
 
 Gene: 3, Variation: 4, SVG Size: 56
-Trait ID: 102 Block: 896 Gas Used: 388384
+Trait ID: 102 Block: 138 Gas Used: 388384
 
 
 Gene: 3, Variation: 5, SVG Size: 56
-Trait ID: 103 Block: 897 Gas Used: 403448
+Trait ID: 103 Block: 139 Gas Used: 403448
 
 
 Gene: 3, Variation: 6, SVG Size: 56
-Trait ID: 104 Block: 898 Gas Used: 403384
+Trait ID: 104 Block: 140 Gas Used: 403384
 
 
 Gene: 3, Variation: 7, SVG Size: 56
-Trait ID: 105 Block: 899 Gas Used: 403512
+Trait ID: 105 Block: 141 Gas Used: 403512
 
 
 Gene: 3, Variation: 8, SVG Size: 56
-Trait ID: 106 Block: 900 Gas Used: 403576
+Trait ID: 106 Block: 142 Gas Used: 403576
 
 
 Gene: 3, Variation: 9, SVG Size: 56
-Trait ID: 107 Block: 901 Gas Used: 403896
+Trait ID: 107 Block: 143 Gas Used: 403896
 
 
 Gene: 3, Variation: 10, SVG Size: 56
-Trait ID: 108 Block: 902 Gas Used: 403448
+Trait ID: 108 Block: 144 Gas Used: 403448
 
 
 Gene: 3, Variation: 11, SVG Size: 56
-Trait ID: 109 Block: 903 Gas Used: 403256
+Trait ID: 109 Block: 145 Gas Used: 403256
 
 
 Gene: 3, Variation: 12, SVG Size: 56
-Trait ID: 110 Block: 904 Gas Used: 403704
+Trait ID: 110 Block: 146 Gas Used: 403704
 
 
 Gene: 3, Variation: 13, SVG Size: 56
-Trait ID: 111 Block: 905 Gas Used: 403384
+Trait ID: 111 Block: 147 Gas Used: 403384
 
 
 Gene: 3, Variation: 14, SVG Size: 56
-Trait ID: 112 Block: 906 Gas Used: 403576
+Trait ID: 112 Block: 148 Gas Used: 403576
 
 
 Gene: 3, Variation: 15, SVG Size: 56
-Trait ID: 113 Block: 907 Gas Used: 403832
+Trait ID: 113 Block: 149 Gas Used: 403832
 
 
 Gene: 3, Variation: 16, SVG Size: 56
-Trait ID: 114 Block: 908 Gas Used: 403256
+Trait ID: 114 Block: 150 Gas Used: 403256
 
 
 Gene: 3, Variation: 17, SVG Size: 56
-Trait ID: 115 Block: 909 Gas Used: 403704
+Trait ID: 115 Block: 151 Gas Used: 403704
 
 
 Gene: 3, Variation: 18, SVG Size: 56
-Trait ID: 116 Block: 910 Gas Used: 403832
+Trait ID: 116 Block: 152 Gas Used: 403832
 
 
 Gene: 3, Variation: 19, SVG Size: 56
-Trait ID: 117 Block: 911 Gas Used: 403448
+Trait ID: 117 Block: 153 Gas Used: 403448
 
 
 Gene: 3, Variation: 20, SVG Size: 56
-Trait ID: 118 Block: 912 Gas Used: 403832
+Trait ID: 118 Block: 154 Gas Used: 403832
 
 
 Gene: 3, Variation: 21, SVG Size: 56
-Trait ID: 119 Block: 913 Gas Used: 403840
+Trait ID: 119 Block: 155 Gas Used: 403840
 
 
 Gene: 3, Variation: 22, SVG Size: 56
-Trait ID: 120 Block: 914 Gas Used: 403712
+Trait ID: 120 Block: 156 Gas Used: 403712
 
 
 Gene: 3, Variation: 23, SVG Size: 56
-Trait ID: 121 Block: 915 Gas Used: 403776
+Trait ID: 121 Block: 157 Gas Used: 403776
 
 
 Gene: 3, Variation: 24, SVG Size: 56
-Trait ID: 122 Block: 916 Gas Used: 403456
+Trait ID: 122 Block: 158 Gas Used: 403456
 
 
 Gene: 3, Variation: 25, SVG Size: 56
-Trait ID: 123 Block: 917 Gas Used: 403840
+Trait ID: 123 Block: 159 Gas Used: 403840
 
 
 Gene: 3, Variation: 26, SVG Size: 56
-Trait ID: 124 Block: 918 Gas Used: 403968
+Trait ID: 124 Block: 160 Gas Used: 403968
 
 
 Gene: 3, Variation: 27, SVG Size: 56
-Trait ID: 125 Block: 919 Gas Used: 403584
+Trait ID: 125 Block: 161 Gas Used: 403584
 
 
 Gene: 3, Variation: 28, SVG Size: 56
-Trait ID: 126 Block: 920 Gas Used: 404032
+Trait ID: 126 Block: 162 Gas Used: 404032
 
 
 Gene: 3, Variation: 29, SVG Size: 56
-Trait ID: 127 Block: 921 Gas Used: 403256
+Trait ID: 127 Block: 163 Gas Used: 403256
 
 
 Gene: 3, Variation: 30, SVG Size: 56
-Trait ID: 128 Block: 922 Gas Used: 403320
+Trait ID: 128 Block: 164 Gas Used: 403320
 
 
 Gene: 3, Variation: 31, SVG Size: 56
-Trait ID: 129 Block: 923 Gas Used: 403384
+Trait ID: 129 Block: 165 Gas Used: 403384
 
 
 Gene: 3, Variation: 32, SVG Size: 56
-Trait ID: 130 Block: 924 Gas Used: 403640
+Trait ID: 130 Block: 166 Gas Used: 403640
 
 
 Gene: 3, Variation: 33, SVG Size: 56
-Trait ID: 131 Block: 925 Gas Used: 403784
+Trait ID: 131 Block: 167 Gas Used: 403784
 
 
 Gene: 3, Variation: 34, SVG Size: 56
-Trait ID: 132 Block: 926 Gas Used: 404232
+Trait ID: 132 Block: 168 Gas Used: 404232
 
 
 Gene: 3, Variation: 35, SVG Size: 56
-Trait ID: 133 Block: 927 Gas Used: 403976
+Trait ID: 133 Block: 169 Gas Used: 403976
 
 
 Gene: 3, Variation: 36, SVG Size: 56
-Trait ID: 134 Block: 928 Gas Used: 403848
+Trait ID: 134 Block: 170 Gas Used: 403848
 
 
 Gene: 3, Variation: 37, SVG Size: 56
@@ -594,931 +594,931 @@ Error: Returned error: VM Exception while processing transaction: invalid opcode
 
 
 Gene: 3, Variation: 41, SVG Size: 56
-Trait ID: 135 Block: 929 Gas Used: 404240
+Trait ID: 135 Block: 171 Gas Used: 404240
 
 
 Gene: 3, Variation: 42, SVG Size: 56
-Trait ID: 136 Block: 930 Gas Used: 403984
+Trait ID: 136 Block: 172 Gas Used: 403984
 
 
 Gene: 3, Variation: 43, SVG Size: 56
-Trait ID: 137 Block: 931 Gas Used: 404048
+Trait ID: 137 Block: 173 Gas Used: 404048
 
 
 Gene: 3, Variation: 44, SVG Size: 56
-Trait ID: 138 Block: 932 Gas Used: 404624
+Trait ID: 138 Block: 174 Gas Used: 404624
 
 
 Gene: 3, Variation: 45, SVG Size: 56
-Trait ID: 139 Block: 933 Gas Used: 403192
+Trait ID: 139 Block: 175 Gas Used: 403192
 
 
 Gene: 3, Variation: 46, SVG Size: 56
-Trait ID: 140 Block: 934 Gas Used: 403768
+Trait ID: 140 Block: 176 Gas Used: 403768
 
 
 Gene: 3, Variation: 47, SVG Size: 56
-Trait ID: 141 Block: 935 Gas Used: 403576
+Trait ID: 141 Block: 177 Gas Used: 403576
 
 
 Gene: 3, Variation: 48, SVG Size: 56
-Trait ID: 142 Block: 936 Gas Used: 403832
+Trait ID: 142 Block: 178 Gas Used: 403832
 
 
 Gene: 3, Variation: 49, SVG Size: 56
-Trait ID: 143 Block: 937 Gas Used: 404248
+Trait ID: 143 Block: 179 Gas Used: 404248
 
 
 Gene: 3, Variation: 50, SVG Size: 56
-Trait ID: 144 Block: 938 Gas Used: 404632
+Trait ID: 144 Block: 180 Gas Used: 404632
 
 
 Gene: 3, Variation: 51, SVG Size: 56
-Trait ID: 145 Block: 939 Gas Used: 404312
+Trait ID: 145 Block: 181 Gas Used: 404312
 
 
 Gene: 3, Variation: 52, SVG Size: 56
-Trait ID: 146 Block: 940 Gas Used: 404632
+Trait ID: 146 Block: 182 Gas Used: 404632
 
 
 Gene: 4, Variation: 1, SVG Size: 2844
-Trait ID: 147 Block: 941 Gas Used: 2324587
+Trait ID: 147 Block: 183 Gas Used: 2324587
 
 
 Gene: 4, Variation: 2, SVG Size: 3047
-Trait ID: 148 Block: 942 Gas Used: 2479011
+Trait ID: 148 Block: 184 Gas Used: 2479011
 
 
 Gene: 4, Variation: 3, SVG Size: 2916
-Trait ID: 149 Block: 943 Gas Used: 2389873
+Trait ID: 149 Block: 185 Gas Used: 2389873
 
 
 Gene: 4, Variation: 4, SVG Size: 3127
-Trait ID: 150 Block: 944 Gas Used: 2524604
+Trait ID: 150 Block: 186 Gas Used: 2524604
 
 
 Gene: 4, Variation: 5, SVG Size: 2852
-Trait ID: 151 Block: 945 Gas Used: 2360368
+Trait ID: 151 Block: 187 Gas Used: 2360368
 
 
 Gene: 4, Variation: 6, SVG Size: 3074
-Trait ID: 152 Block: 946 Gas Used: 2516007
+Trait ID: 152 Block: 188 Gas Used: 2516007
 
 
 Gene: 4, Variation: 7, SVG Size: 3037
-Trait ID: 153 Block: 947 Gas Used: 2473614
+Trait ID: 153 Block: 189 Gas Used: 2473614
 
 
 Gene: 4, Variation: 8, SVG Size: 3263
-Trait ID: 154 Block: 948 Gas Used: 2629510
+Trait ID: 154 Block: 190 Gas Used: 2629510
 
 
 Gene: 4, Variation: 9, SVG Size: 3040
-Trait ID: 155 Block: 949 Gas Used: 2473486
+Trait ID: 155 Block: 191 Gas Used: 2473486
 
 
 Gene: 4, Variation: 10, SVG Size: 3295
-Trait ID: 156 Block: 950 Gas Used: 2651442
+Trait ID: 156 Block: 192 Gas Used: 2651442
 
 
 Gene: 4, Variation: 11, SVG Size: 3133
-Trait ID: 157 Block: 951 Gas Used: 2540116
+Trait ID: 157 Block: 193 Gas Used: 2540116
 
 
 Gene: 4, Variation: 12, SVG Size: 3133
-Trait ID: 158 Block: 952 Gas Used: 2540116
+Trait ID: 158 Block: 194 Gas Used: 2540116
 
 
 Gene: 4, Variation: 13, SVG Size: 3256
-Trait ID: 159 Block: 953 Gas Used: 2628614
+Trait ID: 159 Block: 195 Gas Used: 2628614
 
 
 Gene: 4, Variation: 14, SVG Size: 3256
-Trait ID: 160 Block: 954 Gas Used: 2628614
+Trait ID: 160 Block: 196 Gas Used: 2628614
 
 
 Gene: 4, Variation: 15, SVG Size: 3215
-Trait ID: 161 Block: 955 Gas Used: 2606489
+Trait ID: 161 Block: 197 Gas Used: 2606489
 
 
 Gene: 4, Variation: 16, SVG Size: 3311
-Trait ID: 162 Block: 956 Gas Used: 2673247
+Trait ID: 162 Block: 198 Gas Used: 2673247
 
 
 Gene: 4, Variation: 17, SVG Size: 3474
-Trait ID: 163 Block: 957 Gas Used: 2784701
+Trait ID: 163 Block: 199 Gas Used: 2784701
 
 
 Gene: 4, Variation: 18, SVG Size: 4828
-Trait ID: 164 Block: 958 Gas Used: 3719950
+Trait ID: 164 Block: 200 Gas Used: 3719950
 
 
 Gene: 4, Variation: 19, SVG Size: 5114
-Trait ID: 165 Block: 959 Gas Used: 3920097
+Trait ID: 165 Block: 201 Gas Used: 3920097
 
 
 Gene: 4, Variation: 20, SVG Size: 5114
-Trait ID: 166 Block: 960 Gas Used: 3920097
+Trait ID: 166 Block: 202 Gas Used: 3920097
 
 
 Gene: 4, Variation: 21, SVG Size: 3961
-Trait ID: 167 Block: 961 Gas Used: 3119394
+Trait ID: 167 Block: 203 Gas Used: 3119394
 
 
 Gene: 4, Variation: 22, SVG Size: 4133
-Trait ID: 168 Block: 962 Gas Used: 3251885
+Trait ID: 168 Block: 204 Gas Used: 3251885
 
 
 Gene: 4, Variation: 23, SVG Size: 3597
-Trait ID: 169 Block: 963 Gas Used: 2873656
+Trait ID: 169 Block: 205 Gas Used: 2873656
 
 
 Gene: 4, Variation: 24, SVG Size: 4052
-Trait ID: 170 Block: 964 Gas Used: 3185704
+Trait ID: 170 Block: 206 Gas Used: 3185704
 
 
 Gene: 4, Variation: 25, SVG Size: 8318
-Trait ID: 171 Block: 965 Gas Used: 6146357
+Trait ID: 171 Block: 207 Gas Used: 6146357
 
 
 Gene: 4, Variation: 26, SVG Size: 3256
-Trait ID: 172 Block: 966 Gas Used: 2630286
+Trait ID: 172 Block: 208 Gas Used: 2630286
 
 
 Gene: 4, Variation: 27, SVG Size: 4087
-Trait ID: 173 Block: 967 Gas Used: 3208660
+Trait ID: 173 Block: 209 Gas Used: 3208660
 
 
 Gene: 4, Variation: 28, SVG Size: 6420
-Trait ID: 174 Block: 968 Gas Used: 4833174
+Trait ID: 174 Block: 210 Gas Used: 4833174
 
 
 Gene: 4, Variation: 29, SVG Size: 4296
-Trait ID: 175 Block: 969 Gas Used: 3362756
+Trait ID: 175 Block: 211 Gas Used: 3362756
 
 
 Gene: 4, Variation: 30, SVG Size: 4296
-Trait ID: 176 Block: 970 Gas Used: 3362756
+Trait ID: 176 Block: 212 Gas Used: 3362756
 
 
 Gene: 4, Variation: 31, SVG Size: 3491
-Trait ID: 177 Block: 971 Gas Used: 2806122
+Trait ID: 177 Block: 213 Gas Used: 2806122
 
 
 Gene: 4, Variation: 32, SVG Size: 4009
-Trait ID: 178 Block: 972 Gas Used: 3162546
+Trait ID: 178 Block: 214 Gas Used: 3162546
 
 
 Gene: 4, Variation: 33, SVG Size: 4958
-Trait ID: 179 Block: 973 Gas Used: 3809682
+Trait ID: 179 Block: 215 Gas Used: 3809682
 
 
 Gene: 4, Variation: 34, SVG Size: 4406
-Trait ID: 180 Block: 974 Gas Used: 3431195
+Trait ID: 180 Block: 216 Gas Used: 3431195
 
 
 Gene: 4, Variation: 35, SVG Size: 4129
-Trait ID: 181 Block: 975 Gas Used: 3251894
+Trait ID: 181 Block: 217 Gas Used: 3251894
 
 
 Gene: 4, Variation: 36, SVG Size: 4228
-Trait ID: 182 Block: 976 Gas Used: 3318908
+Trait ID: 182 Block: 218 Gas Used: 3318908
 
 
 Gene: 4, Variation: 37, SVG Size: 3648
-Trait ID: 183 Block: 977 Gas Used: 2896996
+Trait ID: 183 Block: 219 Gas Used: 2896996
 
 
 Gene: 4, Variation: 38, SVG Size: 3775
-Trait ID: 184 Block: 978 Gas Used: 2985942
+Trait ID: 184 Block: 220 Gas Used: 2985942
 
 
 Gene: 4, Variation: 39, SVG Size: 3947
-Trait ID: 185 Block: 979 Gas Used: 3118626
+Trait ID: 185 Block: 221 Gas Used: 3118626
 
 
 Gene: 4, Variation: 40, SVG Size: 5158
-Trait ID: 186 Block: 980 Gas Used: 3963907
+Trait ID: 186 Block: 222 Gas Used: 3963907
 
 
 Gene: 4, Variation: 41, SVG Size: 3194
-Trait ID: 187 Block: 981 Gas Used: 2585030
+Trait ID: 187 Block: 223 Gas Used: 2585030
 
 
 Gene: 4, Variation: 42, SVG Size: 3199
-Trait ID: 188 Block: 982 Gas Used: 2585350
+Trait ID: 188 Block: 224 Gas Used: 2585350
 
 
 Gene: 4, Variation: 43, SVG Size: 3045
-Trait ID: 189 Block: 983 Gas Used: 2494484
+Trait ID: 189 Block: 225 Gas Used: 2494484
 
 
 Gene: 4, Variation: 44, SVG Size: 4967
-Trait ID: 190 Block: 984 Gas Used: 3830984
+Trait ID: 190 Block: 226 Gas Used: 3830984
 
 
 Gene: 4, Variation: 45, SVG Size: 4039
-Trait ID: 191 Block: 985 Gas Used: 3184735
+Trait ID: 191 Block: 227 Gas Used: 3184735
 
 
 Gene: 4, Variation: 46, SVG Size: 3250
-Trait ID: 192 Block: 986 Gas Used: 2628102
+Trait ID: 192 Block: 228 Gas Used: 2628102
 
 
 Gene: 4, Variation: 47, SVG Size: 3773
-Trait ID: 193 Block: 987 Gas Used: 2985870
+Trait ID: 193 Block: 229 Gas Used: 2985870
 
 
 Gene: 4, Variation: 48, SVG Size: 3937
-Trait ID: 194 Block: 988 Gas Used: 3117849
+Trait ID: 194 Block: 230 Gas Used: 3117849
 
 
 Gene: 4, Variation: 49, SVG Size: 3438
-Trait ID: 195 Block: 989 Gas Used: 2763251
+Trait ID: 195 Block: 231 Gas Used: 2763251
 
 
 Gene: 4, Variation: 50, SVG Size: 4387
-Trait ID: 196 Block: 990 Gas Used: 3430380
+Trait ID: 196 Block: 232 Gas Used: 3430380
 
 
 Gene: 4, Variation: 51, SVG Size: 4624
-Trait ID: 197 Block: 991 Gas Used: 3587045
+Trait ID: 197 Block: 233 Gas Used: 3587045
 
 
 Gene: 4, Variation: 52, SVG Size: 3921
-Trait ID: 198 Block: 992 Gas Used: 3097551
+Trait ID: 198 Block: 234 Gas Used: 3097551
 
 
 Gene: 5, Variation: 1, SVG Size: 2681
-Trait ID: 199 Block: 993 Gas Used: 2228982
+Trait ID: 199 Block: 235 Gas Used: 2228982
 
 
 Gene: 5, Variation: 2, SVG Size: 2616
-Trait ID: 200 Block: 994 Gas Used: 2184213
+Trait ID: 200 Block: 236 Gas Used: 2184213
 
 
 Gene: 5, Variation: 3, SVG Size: 2500
-Trait ID: 201 Block: 995 Gas Used: 2116504
+Trait ID: 201 Block: 237 Gas Used: 2116504
 
 
 Gene: 5, Variation: 4, SVG Size: 2516
-Trait ID: 202 Block: 996 Gas Used: 2117328
+Trait ID: 202 Block: 238 Gas Used: 2117328
 
 
 Gene: 5, Variation: 5, SVG Size: 2845
-Trait ID: 203 Block: 997 Gas Used: 2340500
+Trait ID: 203 Block: 239 Gas Used: 2340500
 
 
 Gene: 5, Variation: 6, SVG Size: 2848
-Trait ID: 204 Block: 998 Gas Used: 2340492
+Trait ID: 204 Block: 240 Gas Used: 2340492
 
 
 Gene: 5, Variation: 7, SVG Size: 2873
-Trait ID: 205 Block: 999 Gas Used: 2362625
+Trait ID: 205 Block: 241 Gas Used: 2362625
 
 
 Gene: 5, Variation: 8, SVG Size: 2797
-Trait ID: 206 Block: 1000 Gas Used: 2317151
+Trait ID: 206 Block: 242 Gas Used: 2317151
 
 
 Gene: 5, Variation: 9, SVG Size: 2827
-Trait ID: 207 Block: 1001 Gas Used: 2339348
+Trait ID: 207 Block: 243 Gas Used: 2339348
 
 
 Gene: 5, Variation: 10, SVG Size: 2960
-Trait ID: 208 Block: 1002 Gas Used: 2428478
+Trait ID: 208 Block: 244 Gas Used: 2428478
 
 
 Gene: 5, Variation: 11, SVG Size: 2897
-Trait ID: 209 Block: 1003 Gas Used: 2384365
+Trait ID: 209 Block: 245 Gas Used: 2384365
 
 
 Gene: 5, Variation: 12, SVG Size: 2994
-Trait ID: 210 Block: 1004 Gas Used: 2450986
+Trait ID: 210 Block: 246 Gas Used: 2450986
 
 
 Gene: 5, Variation: 13, SVG Size: 2988
-Trait ID: 211 Block: 1005 Gas Used: 2450675
+Trait ID: 211 Block: 247 Gas Used: 2450675
 
 
 Gene: 5, Variation: 14, SVG Size: 2974
-Trait ID: 212 Block: 1006 Gas Used: 2429374
+Trait ID: 212 Block: 248 Gas Used: 2429374
 
 
 Gene: 5, Variation: 15, SVG Size: 3023
-Trait ID: 213 Block: 1007 Gas Used: 2473247
+Trait ID: 213 Block: 249 Gas Used: 2473247
 
 
 Gene: 5, Variation: 16, SVG Size: 3023
-Trait ID: 214 Block: 1008 Gas Used: 2473047
+Trait ID: 214 Block: 250 Gas Used: 2473047
 
 
-Gene: 5, Variation: 17, SVG Size: 0
-Skipping, no SVG data yet.
+Gene: 5, Variation: 17, SVG Size: 2939
+Trait ID: 215 Block: 251 Gas Used: 2407130
 
 
-Gene: 5, Variation: 18, SVG Size: 0
-Skipping, no SVG data yet.
+Gene: 5, Variation: 18, SVG Size: 3004
+Trait ID: 216 Block: 252 Gas Used: 2451562
 
 
-Gene: 5, Variation: 19, SVG Size: 0
-Skipping, no SVG data yet.
+Gene: 5, Variation: 19, SVG Size: 2918
+Trait ID: 217 Block: 253 Gas Used: 2405914
 
 
-Gene: 5, Variation: 20, SVG Size: 0
-Skipping, no SVG data yet.
+Gene: 5, Variation: 20, SVG Size: 2982
+Trait ID: 218 Block: 254 Gas Used: 2450282
 
 
 Gene: 6, Variation: 1, SVG Size: 4053
-Trait ID: 215 Block: 1009 Gas Used: 3169735
+Trait ID: 219 Block: 255 Gas Used: 3169735
 
 
 Gene: 6, Variation: 2, SVG Size: 4070
-Trait ID: 216 Block: 1010 Gas Used: 3191028
+Trait ID: 220 Block: 256 Gas Used: 3191028
 
 
 Gene: 6, Variation: 3, SVG Size: 3842
-Trait ID: 217 Block: 1011 Gas Used: 3035196
+Trait ID: 221 Block: 257 Gas Used: 3035196
 
 
 Gene: 6, Variation: 4, SVG Size: 3973
-Trait ID: 218 Block: 1012 Gas Used: 3124398
+Trait ID: 222 Block: 258 Gas Used: 3124398
 
 
 Gene: 6, Variation: 5, SVG Size: 4929
-Trait ID: 219 Block: 1013 Gas Used: 3806529
+Trait ID: 223 Block: 259 Gas Used: 3806529
 
 
 Gene: 6, Variation: 6, SVG Size: 4968
-Trait ID: 220 Block: 1014 Gas Used: 3829230
+Trait ID: 224 Block: 260 Gas Used: 3829230
 
 
 Gene: 6, Variation: 7, SVG Size: 4620
-Trait ID: 221 Block: 1015 Gas Used: 3584706
+Trait ID: 225 Block: 261 Gas Used: 3584706
 
 
 Gene: 6, Variation: 8, SVG Size: 4683
-Trait ID: 222 Block: 1016 Gas Used: 3629148
+Trait ID: 226 Block: 262 Gas Used: 3629148
 
 
 Gene: 6, Variation: 9, SVG Size: 4572
-Trait ID: 223 Block: 1017 Gas Used: 3541161
+Trait ID: 227 Block: 263 Gas Used: 3541161
 
 
 Gene: 6, Variation: 10, SVG Size: 4660
-Trait ID: 224 Block: 1018 Gas Used: 3607407
+Trait ID: 228 Block: 264 Gas Used: 3607407
 
 
 Gene: 6, Variation: 11, SVG Size: 4461
-Trait ID: 225 Block: 1019 Gas Used: 3473443
+Trait ID: 229 Block: 265 Gas Used: 3473443
 
 
 Gene: 6, Variation: 12, SVG Size: 4449
-Trait ID: 226 Block: 1020 Gas Used: 3472675
+Trait ID: 230 Block: 266 Gas Used: 3472675
 
 
 Gene: 6, Variation: 13, SVG Size: 4775
-Trait ID: 227 Block: 1021 Gas Used: 3695650
+Trait ID: 231 Block: 267 Gas Used: 3695650
 
 
 Gene: 6, Variation: 14, SVG Size: 4843
-Trait ID: 228 Block: 1022 Gas Used: 3740411
+Trait ID: 232 Block: 268 Gas Used: 3740411
 
 
 Gene: 6, Variation: 15, SVG Size: 4470
-Trait ID: 229 Block: 1023 Gas Used: 3474147
+Trait ID: 233 Block: 269 Gas Used: 3474147
 
 
 Gene: 6, Variation: 16, SVG Size: 4639
-Trait ID: 230 Block: 1024 Gas Used: 3585986
+Trait ID: 234 Block: 270 Gas Used: 3585986
 
 
 Gene: 6, Variation: 17, SVG Size: 4834
-Trait ID: 231 Block: 1025 Gas Used: 3740027
+Trait ID: 235 Block: 271 Gas Used: 3740027
 
 
 Gene: 6, Variation: 18, SVG Size: 5063
-Trait ID: 232 Block: 1026 Gas Used: 3896116
+Trait ID: 236 Block: 272 Gas Used: 3896116
 
 
 Gene: 6, Variation: 19, SVG Size: 4673
-Trait ID: 233 Block: 1027 Gas Used: 3628508
+Trait ID: 237 Block: 273 Gas Used: 3628508
 
 
 Gene: 6, Variation: 20, SVG Size: 4712
-Trait ID: 234 Block: 1028 Gas Used: 3651208
+Trait ID: 238 Block: 274 Gas Used: 3651208
 
 
 Gene: 6, Variation: 21, SVG Size: 5017
-Trait ID: 235 Block: 1029 Gas Used: 3852963
+Trait ID: 239 Block: 275 Gas Used: 3852963
 
 
 Gene: 6, Variation: 22, SVG Size: 5020
-Trait ID: 236 Block: 1030 Gas Used: 3853155
+Trait ID: 240 Block: 276 Gas Used: 3853155
 
 
 Gene: 6, Variation: 23, SVG Size: 4903
-Trait ID: 237 Block: 1031 Gas Used: 3785693
+Trait ID: 241 Block: 277 Gas Used: 3785693
 
 
 Gene: 6, Variation: 24, SVG Size: 5020
-Trait ID: 238 Block: 1032 Gas Used: 3853795
+Trait ID: 242 Block: 278 Gas Used: 3853795
 
 
 Gene: 6, Variation: 25, SVG Size: 5218
-Trait ID: 239 Block: 1033 Gas Used: 4007708
+Trait ID: 243 Block: 279 Gas Used: 4007708
 
 
 Gene: 6, Variation: 26, SVG Size: 5143
-Trait ID: 240 Block: 1034 Gas Used: 3942294
+Trait ID: 244 Block: 280 Gas Used: 3942294
 
 
 Gene: 6, Variation: 27, SVG Size: 4580
-Trait ID: 241 Block: 1035 Gas Used: 3562462
+Trait ID: 245 Block: 281 Gas Used: 3562462
 
 
 Gene: 6, Variation: 28, SVG Size: 4570
-Trait ID: 242 Block: 1036 Gas Used: 3541618
+Trait ID: 246 Block: 282 Gas Used: 3541618
 
 
 Gene: 6, Variation: 29, SVG Size: 4922
-Trait ID: 243 Block: 1037 Gas Used: 3786516
+Trait ID: 247 Block: 283 Gas Used: 3786516
 
 
 Gene: 6, Variation: 30, SVG Size: 4992
-Trait ID: 244 Block: 1038 Gas Used: 3831406
+Trait ID: 248 Block: 284 Gas Used: 3831406
 
 
 Gene: 6, Variation: 31, SVG Size: 4526
-Trait ID: 245 Block: 1039 Gas Used: 3518268
+Trait ID: 249 Block: 285 Gas Used: 3518268
 
 
 Gene: 6, Variation: 32, SVG Size: 4568
-Trait ID: 246 Block: 1040 Gas Used: 3541161
+Trait ID: 250 Block: 286 Gas Used: 3541161
 
 
 Gene: 6, Variation: 33, SVG Size: 4969
-Trait ID: 247 Block: 1041 Gas Used: 3830079
+Trait ID: 251 Block: 287 Gas Used: 3830079
 
 
 Gene: 6, Variation: 34, SVG Size: 5299
-Trait ID: 248 Block: 1042 Gas Used: 4053247
+Trait ID: 252 Block: 288 Gas Used: 4053247
 
 
 Gene: 6, Variation: 35, SVG Size: 4771
-Trait ID: 249 Block: 1043 Gas Used: 3696243
+Trait ID: 253 Block: 289 Gas Used: 3696243
 
 
 Gene: 6, Variation: 36, SVG Size: 4807
-Trait ID: 250 Block: 1044 Gas Used: 3718752
+Trait ID: 254 Block: 290 Gas Used: 3718752
 
 
 Gene: 6, Variation: 37, SVG Size: 4695
-Trait ID: 251 Block: 1045 Gas Used: 3630436
+Trait ID: 255 Block: 291 Gas Used: 3630436
 
 
 Gene: 6, Variation: 38, SVG Size: 4694
-Trait ID: 252 Block: 1046 Gas Used: 3630372
+Trait ID: 256 Block: 292 Gas Used: 3630372
 
 
 Gene: 6, Variation: 39, SVG Size: 5205
-Trait ID: 253 Block: 1047 Gas Used: 3986736
+Trait ID: 257 Block: 293 Gas Used: 3986736
 
 
 Gene: 6, Variation: 40, SVG Size: 5268
-Trait ID: 254 Block: 1048 Gas Used: 4031177
+Trait ID: 258 Block: 294 Gas Used: 4031177
 
 
 Gene: 6, Variation: 41, SVG Size: 5679
-Trait ID: 255 Block: 1049 Gas Used: 4320536
+Trait ID: 259 Block: 295 Gas Used: 4320536
 
 
 Gene: 6, Variation: 42, SVG Size: 5418
-Trait ID: 256 Block: 1050 Gas Used: 4142194
+Trait ID: 260 Block: 296 Gas Used: 4142194
 
 
 Gene: 6, Variation: 43, SVG Size: 5829
-Trait ID: 257 Block: 1051 Gas Used: 4430648
+Trait ID: 261 Block: 297 Gas Used: 4430648
 
 
 Gene: 6, Variation: 44, SVG Size: 6018
-Trait ID: 258 Block: 1052 Gas Used: 4563973
+Trait ID: 262 Block: 298 Gas Used: 4563973
 
 
 Gene: 6, Variation: 45, SVG Size: 5993
-Trait ID: 259 Block: 1053 Gas Used: 4542351
+Trait ID: 263 Block: 299 Gas Used: 4542351
 
 
 Gene: 6, Variation: 46, SVG Size: 5708
-Trait ID: 260 Block: 1054 Gas Used: 4342268
+Trait ID: 264 Block: 300 Gas Used: 4342268
 
 
 Gene: 6, Variation: 47, SVG Size: 5171
-Trait ID: 261 Block: 1055 Gas Used: 3964035
+Trait ID: 265 Block: 301 Gas Used: 3964035
 
 
 Gene: 6, Variation: 48, SVG Size: 5127
-Trait ID: 262 Block: 1056 Gas Used: 3941014
+Trait ID: 266 Block: 302 Gas Used: 3941014
 
 
 Gene: 6, Variation: 49, SVG Size: 8084
-Trait ID: 263 Block: 1057 Gas Used: 5989589
+Trait ID: 267 Block: 303 Gas Used: 5989589
 
 
 Gene: 6, Variation: 50, SVG Size: 8537
-Trait ID: 264 Block: 1058 Gas Used: 6301452
+Trait ID: 268 Block: 304 Gas Used: 6301452
 
 
 Gene: 6, Variation: 51, SVG Size: 4370
-Trait ID: 265 Block: 1059 Gas Used: 3408704
+Trait ID: 269 Block: 305 Gas Used: 3408704
 
 
 Gene: 6, Variation: 52, SVG Size: 4566
-Trait ID: 266 Block: 1060 Gas Used: 3542476
+Trait ID: 270 Block: 306 Gas Used: 3542476
 
 
 Gene: 7, Variation: 1, SVG Size: 9942
-Trait ID: 267 Block: 1061 Gas Used: 7264534
+Trait ID: 271 Block: 307 Gas Used: 7264534
 
 
 Gene: 7, Variation: 2, SVG Size: 9969
-Trait ID: 268 Block: 1062 Gas Used: 7286467
+Trait ID: 272 Block: 308 Gas Used: 7286467
 
 
 Gene: 7, Variation: 3, SVG Size: 2670
-Trait ID: 269 Block: 1063 Gas Used: 2212621
+Trait ID: 273 Block: 309 Gas Used: 2212621
 
 
 Gene: 7, Variation: 4, SVG Size: 2762
-Trait ID: 270 Block: 1064 Gas Used: 2279123
+Trait ID: 274 Block: 310 Gas Used: 2279123
 
 
 Gene: 7, Variation: 5, SVG Size: 3194
-Trait ID: 271 Block: 1065 Gas Used: 2569557
+Trait ID: 275 Block: 311 Gas Used: 2569557
 
 
 Gene: 7, Variation: 6, SVG Size: 2965
-Trait ID: 272 Block: 1066 Gas Used: 2413469
+Trait ID: 276 Block: 312 Gas Used: 2413469
 
 
 Gene: 7, Variation: 7, SVG Size: 2191
-Trait ID: 273 Block: 1067 Gas Used: 1894411
+Trait ID: 277 Block: 313 Gas Used: 1894411
 
 
 Gene: 7, Variation: 8, SVG Size: 2492
-Trait ID: 274 Block: 1068 Gas Used: 2095515
+Trait ID: 278 Block: 314 Gas Used: 2095515
 
 
 Gene: 7, Variation: 9, SVG Size: 2194
-Trait ID: 275 Block: 1069 Gas Used: 1893899
+Trait ID: 279 Block: 315 Gas Used: 1893899
 
 
 Gene: 7, Variation: 10, SVG Size: 2308
-Trait ID: 276 Block: 1070 Gas Used: 1982013
+Trait ID: 280 Block: 316 Gas Used: 1982013
 
 
 Gene: 7, Variation: 11, SVG Size: 4843
-Trait ID: 277 Block: 1071 Gas Used: 3741115
+Trait ID: 281 Block: 317 Gas Used: 3741115
 
 
 Gene: 7, Variation: 12, SVG Size: 4779
-Trait ID: 278 Block: 1072 Gas Used: 3696610
+Trait ID: 282 Block: 318 Gas Used: 3696610
 
 
 Gene: 7, Variation: 13, SVG Size: 4556
-Trait ID: 279 Block: 1073 Gas Used: 3540457
+Trait ID: 283 Block: 319 Gas Used: 3540457
 
 
 Gene: 7, Variation: 14, SVG Size: 4466
-Trait ID: 280 Block: 1074 Gas Used: 3474083
+Trait ID: 284 Block: 320 Gas Used: 3474083
 
 
 Gene: 7, Variation: 15, SVG Size: 2380
-Trait ID: 281 Block: 1075 Gas Used: 2027670
+Trait ID: 285 Block: 321 Gas Used: 2027670
 
 
 Gene: 7, Variation: 16, SVG Size: 2504
-Trait ID: 282 Block: 1076 Gas Used: 2116423
+Trait ID: 286 Block: 322 Gas Used: 2116423
 
 
-Gene: 7, Variation: 17, SVG Size: 0
-Skipping, no SVG data yet.
+Gene: 7, Variation: 17, SVG Size: 1256
+Trait ID: 287 Block: 323 Gas Used: 1248135
 
 
-Gene: 7, Variation: 18, SVG Size: 0
-Skipping, no SVG data yet.
+Gene: 7, Variation: 18, SVG Size: 3657
+Trait ID: 288 Block: 324 Gas Used: 2917192
 
 
 Gene: 7, Variation: 19, SVG Size: 2181
-Trait ID: 283 Block: 1077 Gas Used: 1893707
+Trait ID: 289 Block: 325 Gas Used: 1893707
 
 
 Gene: 7, Variation: 20, SVG Size: 2471
-Trait ID: 284 Block: 1078 Gas Used: 2094107
+Trait ID: 290 Block: 326 Gas Used: 2094107
 
 
 Gene: 7, Variation: 21, SVG Size: 3555
-Trait ID: 285 Block: 1079 Gas Used: 2849795
+Trait ID: 291 Block: 327 Gas Used: 2849795
 
 
 Gene: 7, Variation: 22, SVG Size: 3789
-Trait ID: 286 Block: 1080 Gas Used: 3006202
+Trait ID: 292 Block: 328 Gas Used: 3006202
 
 
 Gene: 7, Variation: 23, SVG Size: 3853
-Trait ID: 287 Block: 1081 Gas Used: 3051284
+Trait ID: 293 Block: 329 Gas Used: 3051284
 
 
 Gene: 7, Variation: 24, SVG Size: 2885
-Trait ID: 288 Block: 1082 Gas Used: 2382812
+Trait ID: 294 Block: 330 Gas Used: 2382812
 
 
-Gene: 7, Variation: 25, SVG Size: 0
-Skipping, no SVG data yet.
+Gene: 7, Variation: 25, SVG Size: 4277
+Trait ID: 295 Block: 331 Gas Used: 3340375
 
 
-Gene: 7, Variation: 26, SVG Size: 0
-Skipping, no SVG data yet.
+Gene: 7, Variation: 26, SVG Size: 3483
+Trait ID: 296 Block: 332 Gas Used: 2784445
 
 
 Gene: 7, Variation: 27, SVG Size: 2332
-Trait ID: 289 Block: 1083 Gas Used: 1984253
+Trait ID: 297 Block: 333 Gas Used: 1984253
 
 
 Gene: 7, Variation: 28, SVG Size: 2594
-Trait ID: 290 Block: 1084 Gas Used: 2182860
+Trait ID: 298 Block: 334 Gas Used: 2182860
 
 
 Gene: 7, Variation: 29, SVG Size: 2931
-Trait ID: 291 Block: 1085 Gas Used: 2406089
+Trait ID: 299 Block: 335 Gas Used: 2406089
 
 
 Gene: 7, Variation: 30, SVG Size: 2483
-Trait ID: 292 Block: 1086 Gas Used: 2094427
+Trait ID: 300 Block: 336 Gas Used: 2094427
 
 
 Gene: 7, Variation: 31, SVG Size: 3314
-Trait ID: 293 Block: 1087 Gas Used: 2673255
+Trait ID: 301 Block: 337 Gas Used: 2673255
 
 
 Gene: 7, Variation: 32, SVG Size: 2619
-Trait ID: 294 Block: 1088 Gas Used: 2184213
+Trait ID: 302 Block: 338 Gas Used: 2184213
 
 
 Gene: 7, Variation: 33, SVG Size: 4042
-Trait ID: 295 Block: 1089 Gas Used: 3184744
+Trait ID: 303 Block: 339 Gas Used: 3184744
 
 
 Gene: 7, Variation: 34, SVG Size: 4068
-Trait ID: 296 Block: 1090 Gas Used: 3206612
+Trait ID: 304 Block: 340 Gas Used: 3206612
 
 
-Gene: 7, Variation: 35, SVG Size: 0
-Skipping, no SVG data yet.
+Gene: 7, Variation: 35, SVG Size: 4816
+Trait ID: 305 Block: 341 Gas Used: 3718999
 
 
-Gene: 7, Variation: 36, SVG Size: 0
-Skipping, no SVG data yet.
+Gene: 7, Variation: 36, SVG Size: 5849
+Trait ID: 306 Block: 342 Gas Used: 4431663
 
 
 Gene: 7, Variation: 37, SVG Size: 2738
-Trait ID: 297 Block: 1091 Gas Used: 2272711
+Trait ID: 307 Block: 343 Gas Used: 2272711
 
 
 Gene: 7, Variation: 38, SVG Size: 2763
-Trait ID: 298 Block: 1092 Gas Used: 2294515
+Trait ID: 308 Block: 344 Gas Used: 2294515
 
 
 Gene: 7, Variation: 39, SVG Size: 3504
-Trait ID: 299 Block: 1093 Gas Used: 2806834
+Trait ID: 309 Block: 345 Gas Used: 2806834
 
 
 Gene: 7, Variation: 40, SVG Size: 3869
-Trait ID: 300 Block: 1094 Gas Used: 3052444
+Trait ID: 310 Block: 346 Gas Used: 3052444
 
 
-Gene: 7, Variation: 41, SVG Size: 0
-Skipping, no SVG data yet.
+Gene: 7, Variation: 41, SVG Size: 3482
+Trait ID: 311 Block: 347 Gas Used: 2785670
 
 
-Gene: 7, Variation: 42, SVG Size: 0
-Skipping, no SVG data yet.
+Gene: 7, Variation: 42, SVG Size: 3926
+Trait ID: 312 Block: 348 Gas Used: 3096949
 
 
-Gene: 7, Variation: 43, SVG Size: 0
-Skipping, no SVG data yet.
+Gene: 7, Variation: 43, SVG Size: 3809
+Trait ID: 313 Block: 349 Gas Used: 3028391
 
 
-Gene: 7, Variation: 44, SVG Size: 0
-Skipping, no SVG data yet.
+Gene: 7, Variation: 44, SVG Size: 4885
+Trait ID: 314 Block: 350 Gas Used: 3763752
 
 
 Gene: 7, Variation: 45, SVG Size: 9154
-Trait ID: 301 Block: 1095 Gas Used: 6744431
+Trait ID: 315 Block: 351 Gas Used: 6744431
 
 
 Gene: 7, Variation: 46, SVG Size: 8902
-Trait ID: 302 Block: 1096 Gas Used: 6566662
+Trait ID: 316 Block: 352 Gas Used: 6566662
 
 
-Gene: 7, Variation: 47, SVG Size: 0
-Skipping, no SVG data yet.
+Gene: 7, Variation: 47, SVG Size: 2561
+Trait ID: 317 Block: 353 Gas Used: 2160160
 
 
-Gene: 7, Variation: 48, SVG Size: 0
-Skipping, no SVG data yet.
+Gene: 7, Variation: 48, SVG Size: 2857
+Trait ID: 318 Block: 354 Gas Used: 2360944
 
 
 Gene: 7, Variation: 49, SVG Size: 2864
-Trait ID: 303 Block: 1097 Gas Used: 2361537
+Trait ID: 319 Block: 355 Gas Used: 2361537
 
 
 Gene: 7, Variation: 50, SVG Size: 2845
-Trait ID: 304 Block: 1098 Gas Used: 2340116
+Trait ID: 320 Block: 356 Gas Used: 2340116
 
 
 Gene: 7, Variation: 51, SVG Size: 2480
-Trait ID: 305 Block: 1099 Gas Used: 2095148
+Trait ID: 321 Block: 357 Gas Used: 2095148
 
 
 Gene: 7, Variation: 52, SVG Size: 2222
-Trait ID: 306 Block: 1100 Gas Used: 1917001
+Trait ID: 322 Block: 358 Gas Used: 1917001
 
 
 Gene: 7, Variation: 53, SVG Size: 4300
-Trait ID: 307 Block: 1101 Gas Used: 3362645
+Trait ID: 323 Block: 359 Gas Used: 3362645
 
 
 Gene: 7, Variation: 54, SVG Size: 4519
-Trait ID: 308 Block: 1102 Gas Used: 3518094
+Trait ID: 324 Block: 360 Gas Used: 3518094
 
 
 Gene: 7, Variation: 55, SVG Size: 6533
-Trait ID: 309 Block: 1103 Gas Used: 4920010
+Trait ID: 325 Block: 361 Gas Used: 4920010
 
 
 Gene: 7, Variation: 56, SVG Size: 2924
-Trait ID: 310 Block: 1104 Gas Used: 2405841
+Trait ID: 326 Block: 362 Gas Used: 2405841
 
 
-Gene: 7, Variation: 57, SVG Size: 0
-Skipping, no SVG data yet.
+Gene: 7, Variation: 57, SVG Size: 5730
+Trait ID: 327 Block: 363 Gas Used: 4363241
 
 
-Gene: 7, Variation: 58, SVG Size: 0
-Skipping, no SVG data yet.
+Gene: 7, Variation: 58, SVG Size: 5362
+Trait ID: 328 Block: 364 Gas Used: 4097231
 
 
 Gene: 7, Variation: 59, SVG Size: 2901
-Trait ID: 311 Block: 1105 Gas Used: 2384229
+Trait ID: 329 Block: 365 Gas Used: 2384229
 
 
 Gene: 7, Variation: 60, SVG Size: 3357
-Trait ID: 312 Block: 1106 Gas Used: 2696276
+Trait ID: 330 Block: 366 Gas Used: 2696276
 
 
-Gene: 7, Variation: 61, SVG Size: 0
-Skipping, no SVG data yet.
+Gene: 7, Variation: 61, SVG Size: 7080
+Trait ID: 331 Block: 367 Gas Used: 5299096
 
 
-Gene: 7, Variation: 62, SVG Size: 0
-Skipping, no SVG data yet.
+Gene: 7, Variation: 62, SVG Size: 5535
+Trait ID: 332 Block: 368 Gas Used: 4210177
 
 
-Gene: 7, Variation: 63, SVG Size: 0
-Skipping, no SVG data yet.
+Gene: 7, Variation: 63, SVG Size: 7002
+Trait ID: 333 Block: 369 Gas Used: 5233681
 
 
-Gene: 7, Variation: 64, SVG Size: 0
-Skipping, no SVG data yet.
+Gene: 7, Variation: 64, SVG Size: 5891
+Trait ID: 334 Block: 370 Gas Used: 4475610
 
 
 Gene: 7, Variation: 65, SVG Size: 2997
-Trait ID: 313 Block: 1107 Gas Used: 2451835
+Trait ID: 335 Block: 371 Gas Used: 2451835
 
 
 Gene: 7, Variation: 66, SVG Size: 3065
-Trait ID: 314 Block: 1108 Gas Used: 2496596
+Trait ID: 336 Block: 372 Gas Used: 2496596
 
 
-Gene: 7, Variation: 67, SVG Size: 0
-Skipping, no SVG data yet.
+Gene: 7, Variation: 67, SVG Size: 4942
+Trait ID: 337 Block: 373 Gas Used: 3807425
 
 
 Gene: 7, Variation: 68, SVG Size: 5453
-Trait ID: 315 Block: 1109 Gas Used: 4163405
+Trait ID: 338 Block: 374 Gas Used: 4163405
 
 
 Gene: 7, Variation: 69, SVG Size: 12000
-Trait ID: 316 Block: 1110 Gas Used: 8704393
+Trait ID: 339 Block: 375 Gas Used: 8704393
 Extending art by 151
 
 
 Gene: 7, Variation: 70, SVG Size: 12000
-Trait ID: 317 Block: 1112 Gas Used: 8704393
+Trait ID: 340 Block: 377 Gas Used: 8704393
 Extending art by 221
 
 
 Gene: 7, Variation: 71, SVG Size: 5334
-Trait ID: 318 Block: 1114 Gas Used: 4075226
+Trait ID: 341 Block: 379 Gas Used: 4075226
 
 
 Gene: 7, Variation: 72, SVG Size: 4984
-Trait ID: 319 Block: 1115 Gas Used: 3830574
+Trait ID: 342 Block: 380 Gas Used: 3830574
 
 
 Gene: 7, Variation: 73, SVG Size: 6048
-Trait ID: 320 Block: 1116 Gas Used: 4566550
+Trait ID: 343 Block: 381 Gas Used: 4566550
 
 
 Gene: 7, Variation: 74, SVG Size: 4460
-Trait ID: 321 Block: 1117 Gas Used: 3474886
+Trait ID: 344 Block: 382 Gas Used: 3474886
 
 
 Gene: 7, Variation: 75, SVG Size: 2285
-Trait ID: 322 Block: 1118 Gas Used: 1961778
+Trait ID: 345 Block: 383 Gas Used: 1961778
 
 
 Gene: 7, Variation: 76, SVG Size: 2343
-Trait ID: 323 Block: 1119 Gas Used: 2005899
+Trait ID: 346 Block: 384 Gas Used: 2005899
 
 
 Gene: 7, Variation: 77, SVG Size: 3451
-Trait ID: 324 Block: 1120 Gas Used: 2763443
+Trait ID: 347 Block: 385 Gas Used: 2763443
 
 
 Gene: 7, Variation: 78, SVG Size: 3112
-Trait ID: 325 Block: 1121 Gas Used: 2539702
+Trait ID: 348 Block: 386 Gas Used: 2539702
 
 
 Gene: 8, Variation: 1, SVG Size: 19
-Trait ID: 326 Block: 1122 Gas Used: 345454
+Trait ID: 349 Block: 387 Gas Used: 345454
 
 
 Gene: 8, Variation: 2, SVG Size: 933
-Trait ID: 327 Block: 1123 Gas Used: 1010228
+Trait ID: 350 Block: 388 Gas Used: 1010228
 
 
 Gene: 8, Variation: 3, SVG Size: 2269
-Trait ID: 328 Block: 1124 Gas Used: 1925004
+Trait ID: 351 Block: 389 Gas Used: 1925004
 
 
 Gene: 8, Variation: 4, SVG Size: 19
-Trait ID: 329 Block: 1125 Gas Used: 360710
+Trait ID: 352 Block: 390 Gas Used: 360710
 
 
 Gene: 8, Variation: 5, SVG Size: 153
-Trait ID: 330 Block: 1126 Gas Used: 470396
+Trait ID: 353 Block: 391 Gas Used: 470396
 
 
 Gene: 8, Variation: 6, SVG Size: 19
-Trait ID: 331 Block: 1127 Gas Used: 360710
+Trait ID: 354 Block: 392 Gas Used: 360710
 
 
 Gene: 8, Variation: 7, SVG Size: 4228
-Trait ID: 332 Block: 1128 Gas Used: 3317163
+Trait ID: 355 Block: 393 Gas Used: 3317163
 
 
 Gene: 8, Variation: 8, SVG Size: 6014
-Trait ID: 333 Block: 1129 Gas Used: 4542726
+Trait ID: 356 Block: 394 Gas Used: 4542726
 
 
 Gene: 8, Variation: 9, SVG Size: 19
-Trait ID: 334 Block: 1130 Gas Used: 360710
+Trait ID: 357 Block: 395 Gas Used: 360710
 
 
 Gene: 8, Variation: 10, SVG Size: 8185
-Trait ID: 335 Block: 1131 Gas Used: 6056120
+Trait ID: 358 Block: 396 Gas Used: 6056120
 
 
 Gene: 8, Variation: 11, SVG Size: 927
-Trait ID: 336 Block: 1132 Gas Used: 1005152
+Trait ID: 359 Block: 397 Gas Used: 1005152
 
 
 Gene: 8, Variation: 12, SVG Size: 19
-Trait ID: 337 Block: 1133 Gas Used: 360710
+Trait ID: 360 Block: 398 Gas Used: 360710
 
 
 Gene: 8, Variation: 13, SVG Size: 871
-Trait ID: 338 Block: 1134 Gas Used: 980916
+Trait ID: 361 Block: 399 Gas Used: 980916
 
 
 Gene: 8, Variation: 14, SVG Size: 4455
-Trait ID: 339 Block: 1135 Gas Used: 3473123
+Trait ID: 362 Block: 400 Gas Used: 3473123
 
 
 Gene: 8, Variation: 15, SVG Size: 12000
-Trait ID: 340 Block: 1136 Gas Used: 8704531
+Trait ID: 363 Block: 401 Gas Used: 8704531
 Extending art by 2133
 Extending art by 450
 
 
 Gene: 8, Variation: 16, SVG Size: 3741
-Trait ID: 341 Block: 1139 Gas Used: 2963114
+Trait ID: 364 Block: 404 Gas Used: 2963114
 
 
 Gene: 8, Variation: 17, SVG Size: 8601
-Trait ID: 342 Block: 1140 Gas Used: 6345547
+Trait ID: 365 Block: 405 Gas Used: 6345547
 
 
 Gene: 8, Variation: 18, SVG Size: 0
@@ -1526,470 +1526,470 @@ Skipping, no SVG data yet.
 
 
 Gene: 8, Variation: 19, SVG Size: 891
-Trait ID: 343 Block: 1141 Gas Used: 982844
+Trait ID: 366 Block: 406 Gas Used: 982844
 
 
 Gene: 8, Variation: 20, SVG Size: 4132
-Trait ID: 344 Block: 1142 Gas Used: 3251373
+Trait ID: 367 Block: 407 Gas Used: 3251373
 
 
-Gene: 8, Variation: 21, SVG Size: 0
-Skipping, no SVG data yet.
+Gene: 8, Variation: 21, SVG Size: 916
+Trait ID: 368 Block: 408 Gas Used: 1004776
 
 
-Gene: 8, Variation: 22, SVG Size: 0
-Skipping, no SVG data yet.
+Gene: 8, Variation: 22, SVG Size: 5753
+Trait ID: 369 Block: 409 Gas Used: 4364905
 
 
 Gene: 8, Variation: 23, SVG Size: 3015
-Trait ID: 345 Block: 1143 Gas Used: 2471950
+Trait ID: 370 Block: 410 Gas Used: 2471950
 
 
 Gene: 8, Variation: 24, SVG Size: 641
-Trait ID: 346 Block: 1144 Gas Used: 825406
+Trait ID: 371 Block: 411 Gas Used: 825406
 
 
 Gene: 8, Variation: 25, SVG Size: 2628
-Trait ID: 347 Block: 1145 Gas Used: 2204601
+Trait ID: 372 Block: 412 Gas Used: 2204601
 
 
 Gene: 8, Variation: 26, SVG Size: 2684
-Trait ID: 348 Block: 1146 Gas Used: 2228581
+Trait ID: 373 Block: 413 Gas Used: 2228581
 
 
 Gene: 8, Variation: 27, SVG Size: 361
-Trait ID: 349 Block: 1147 Gas Used: 626049
+Trait ID: 374 Block: 414 Gas Used: 626049
 
 
 Gene: 8, Variation: 28, SVG Size: 249
-Trait ID: 350 Block: 1148 Gas Used: 537873
+Trait ID: 375 Block: 415 Gas Used: 537873
 
 
 Gene: 8, Variation: 29, SVG Size: 803
-Trait ID: 351 Block: 1149 Gas Used: 937132
+Trait ID: 376 Block: 416 Gas Used: 937132
 
 
 Gene: 8, Variation: 30, SVG Size: 5597
-Trait ID: 352 Block: 1150 Gas Used: 4254161
+Trait ID: 377 Block: 417 Gas Used: 4254161
 
 
 Gene: 8, Variation: 31, SVG Size: 8032
-Trait ID: 353 Block: 1151 Gas Used: 5945247
+Trait ID: 378 Block: 418 Gas Used: 5945247
 
 
 Gene: 8, Variation: 32, SVG Size: 8328
-Trait ID: 354 Block: 1152 Gas Used: 6166498
+Trait ID: 379 Block: 419 Gas Used: 6166498
 
 
 Gene: 8, Variation: 33, SVG Size: 2442
-Trait ID: 355 Block: 1153 Gas Used: 2071863
+Trait ID: 380 Block: 420 Gas Used: 2071863
 
 
-Gene: 8, Variation: 34, SVG Size: 0
-Skipping, no SVG data yet.
+Gene: 8, Variation: 34, SVG Size: 4572
+Trait ID: 381 Block: 421 Gas Used: 3541810
 
 
 Gene: 8, Variation: 35, SVG Size: 457
-Trait ID: 356 Block: 1154 Gas Used: 692686
+Trait ID: 382 Block: 422 Gas Used: 692686
 
 
 Gene: 8, Variation: 36, SVG Size: 1576
-Trait ID: 357 Block: 1155 Gas Used: 1471450
+Trait ID: 383 Block: 423 Gas Used: 1471450
 
 
 Gene: 8, Variation: 37, SVG Size: 8031
-Trait ID: 358 Block: 1156 Gas Used: 5945457
+Trait ID: 384 Block: 424 Gas Used: 5945457
 
 
 Gene: 8, Variation: 38, SVG Size: 456
-Trait ID: 359 Block: 1157 Gas Used: 693006
+Trait ID: 385 Block: 425 Gas Used: 693006
 
 
 Gene: 8, Variation: 39, SVG Size: 1015
-Trait ID: 360 Block: 1158 Gas Used: 1071461
+Trait ID: 386 Block: 426 Gas Used: 1071461
 
 
 Gene: 8, Variation: 40, SVG Size: 469
-Trait ID: 361 Block: 1159 Gas Used: 693045
+Trait ID: 387 Block: 427 Gas Used: 693045
 
 
 Gene: 8, Variation: 41, SVG Size: 12000
-Trait ID: 362 Block: 1160 Gas Used: 8704649
+Trait ID: 388 Block: 428 Gas Used: 8704649
 Extending art by 2133
 Extending art by 2133
 Extending art by 400
 
 
 Gene: 8, Variation: 42, SVG Size: 1390
-Trait ID: 363 Block: 1164 Gas Used: 1337912
+Trait ID: 389 Block: 432 Gas Used: 1337912
 
 
 Gene: 8, Variation: 43, SVG Size: 6706
-Trait ID: 364 Block: 1165 Gas Used: 5032581
+Trait ID: 390 Block: 433 Gas Used: 5032581
 
 
 Gene: 8, Variation: 44, SVG Size: 2929
-Trait ID: 365 Block: 1166 Gas Used: 2406699
+Trait ID: 391 Block: 434 Gas Used: 2406699
 
 
 Gene: 8, Variation: 45, SVG Size: 575
-Trait ID: 366 Block: 1167 Gas Used: 761307
+Trait ID: 392 Block: 435 Gas Used: 761307
 
 
 Gene: 8, Variation: 46, SVG Size: 7548
-Trait ID: 367 Block: 1168 Gas Used: 5612311
+Trait ID: 393 Block: 436 Gas Used: 5612311
 
 
 Gene: 9, Variation: 1, SVG Size: 3770
-Trait ID: 368 Block: 1169 Gas Used: 2969782
+Trait ID: 394 Block: 437 Gas Used: 2969782
 
 
 Gene: 9, Variation: 2, SVG Size: 4095
-Trait ID: 369 Block: 1170 Gas Used: 3192628
+Trait ID: 395 Block: 438 Gas Used: 3192628
 
 
 Gene: 9, Variation: 3, SVG Size: 4538
-Trait ID: 370 Block: 1171 Gas Used: 3504292
+Trait ID: 396 Block: 439 Gas Used: 3504292
 
 
 Gene: 9, Variation: 4, SVG Size: 4315
-Trait ID: 371 Block: 1172 Gas Used: 3348588
+Trait ID: 397 Block: 440 Gas Used: 3348588
 
 
 Gene: 9, Variation: 5, SVG Size: 4349
-Trait ID: 372 Block: 1173 Gas Used: 3370585
+Trait ID: 398 Block: 441 Gas Used: 3370585
 
 
 Gene: 9, Variation: 6, SVG Size: 5537
-Trait ID: 373 Block: 1174 Gas Used: 4214395
+Trait ID: 399 Block: 442 Gas Used: 4214395
 
 
 Gene: 9, Variation: 7, SVG Size: 3992
-Trait ID: 374 Block: 1175 Gas Used: 3140678
+Trait ID: 400 Block: 443 Gas Used: 3140678
 
 
 Gene: 9, Variation: 8, SVG Size: 3995
-Trait ID: 375 Block: 1176 Gas Used: 3140870
+Trait ID: 401 Block: 444 Gas Used: 3140870
 
 
-Gene: 9, Variation: 9, SVG Size: 0
-Skipping, no SVG data yet.
+Gene: 9, Variation: 9, SVG Size: 7974
+Trait ID: 402 Block: 445 Gas Used: 5921321
 
 
-Gene: 9, Variation: 10, SVG Size: 0
-Skipping, no SVG data yet.
+Gene: 9, Variation: 10, SVG Size: 7639
+Trait ID: 403 Block: 446 Gas Used: 5677626
 
 
 Gene: 9, Variation: 11, SVG Size: 3697
-Trait ID: 376 Block: 1177 Gas Used: 2940085
+Trait ID: 404 Block: 447 Gas Used: 2940085
 
 
 Gene: 9, Variation: 12, SVG Size: 3360
-Trait ID: 377 Block: 1178 Gas Used: 2696267
+Trait ID: 405 Block: 448 Gas Used: 2696267
 
 
 Gene: 9, Variation: 13, SVG Size: 4882
-Trait ID: 378 Block: 1179 Gas Used: 3763112
+Trait ID: 406 Block: 449 Gas Used: 3763112
 
 
 Gene: 9, Variation: 14, SVG Size: 4526
-Trait ID: 379 Block: 1180 Gas Used: 3518076
+Trait ID: 407 Block: 450 Gas Used: 3518076
 
 
-Gene: 9, Variation: 15, SVG Size: 0
-Skipping, no SVG data yet.
+Gene: 9, Variation: 15, SVG Size: 4982
+Trait ID: 408 Block: 451 Gas Used: 3830574
 
 
-Gene: 9, Variation: 16, SVG Size: 0
-Skipping, no SVG data yet.
+Gene: 9, Variation: 16, SVG Size: 4511
+Trait ID: 409 Block: 452 Gas Used: 3497360
 
 
-Gene: 9, Variation: 17, SVG Size: 0
-Skipping, no SVG data yet.
+Gene: 9, Variation: 17, SVG Size: 9908
+Trait ID: 410 Block: 453 Gas Used: 7257216
 
 
-Gene: 9, Variation: 18, SVG Size: 0
-Skipping, no SVG data yet.
+Gene: 9, Variation: 18, SVG Size: 7885
+Trait ID: 411 Block: 454 Gas Used: 5854818
 
 
 Gene: 9, Variation: 19, SVG Size: 4887
-Trait ID: 380 Block: 1181 Gas Used: 3764008
+Trait ID: 412 Block: 455 Gas Used: 3764008
 
 
 Gene: 9, Variation: 20, SVG Size: 4959
-Trait ID: 381 Block: 1182 Gas Used: 3809025
+Trait ID: 413 Block: 456 Gas Used: 3809025
 
 
 Gene: 9, Variation: 21, SVG Size: 6949
-Trait ID: 382 Block: 1183 Gas Used: 5208969
+Trait ID: 414 Block: 457 Gas Used: 5208969
 
 
 Gene: 9, Variation: 22, SVG Size: 6760
-Trait ID: 383 Block: 1184 Gas Used: 5075643
+Trait ID: 415 Block: 458 Gas Used: 5075643
 
 
 Gene: 9, Variation: 23, SVG Size: 5090
-Trait ID: 384 Block: 1185 Gas Used: 3918241
+Trait ID: 416 Block: 459 Gas Used: 3918241
 
 
 Gene: 9, Variation: 24, SVG Size: 4999
-Trait ID: 385 Block: 1186 Gas Used: 3851802
+Trait ID: 417 Block: 460 Gas Used: 3851802
 
 
 Gene: 9, Variation: 25, SVG Size: 5067
-Trait ID: 386 Block: 1187 Gas Used: 3896244
+Trait ID: 418 Block: 461 Gas Used: 3896244
 
 
 Gene: 9, Variation: 26, SVG Size: 4885
-Trait ID: 387 Block: 1188 Gas Used: 3763368
+Trait ID: 419 Block: 462 Gas Used: 3763368
 
 
-Gene: 9, Variation: 27, SVG Size: 0
-Skipping, no SVG data yet.
+Gene: 9, Variation: 27, SVG Size: 5249
+Trait ID: 420 Block: 463 Gas Used: 4028928
 
 
-Gene: 9, Variation: 28, SVG Size: 0
-Skipping, no SVG data yet.
+Gene: 9, Variation: 28, SVG Size: 5264
+Trait ID: 421 Block: 464 Gas Used: 4029888
 
 
 Gene: 9, Variation: 29, SVG Size: 4238
-Trait ID: 388 Block: 1189 Gas Used: 3317995
+Trait ID: 422 Block: 465 Gas Used: 3317995
 
 
 Gene: 9, Variation: 30, SVG Size: 4021
-Trait ID: 389 Block: 1190 Gas Used: 3162674
+Trait ID: 423 Block: 466 Gas Used: 3162674
 
 
 Gene: 9, Variation: 31, SVG Size: 3893
-Trait ID: 390 Block: 1191 Gas Used: 3073929
+Trait ID: 424 Block: 467 Gas Used: 3073929
 
 
 Gene: 9, Variation: 32, SVG Size: 3561
-Trait ID: 391 Block: 1192 Gas Used: 2850635
+Trait ID: 425 Block: 468 Gas Used: 2850635
 
 
 Gene: 9, Variation: 33, SVG Size: 4518
-Trait ID: 392 Block: 1193 Gas Used: 3517829
+Trait ID: 426 Block: 469 Gas Used: 3517829
 
 
 Gene: 9, Variation: 34, SVG Size: 4068
-Trait ID: 393 Block: 1194 Gas Used: 3206164
+Trait ID: 427 Block: 470 Gas Used: 3206164
 
 
 Gene: 9, Variation: 35, SVG Size: 4924
-Trait ID: 394 Block: 1195 Gas Used: 3786845
+Trait ID: 428 Block: 471 Gas Used: 3786845
 
 
 Gene: 9, Variation: 36, SVG Size: 7817
-Trait ID: 395 Block: 1196 Gas Used: 5810641
+Trait ID: 429 Block: 472 Gas Used: 5810641
 
 
 Gene: 9, Variation: 37, SVG Size: 3903
-Trait ID: 396 Block: 1197 Gas Used: 3074697
+Trait ID: 430 Block: 473 Gas Used: 3074697
 
 
 Gene: 9, Variation: 38, SVG Size: 3570
-Trait ID: 397 Block: 1198 Gas Used: 2851339
+Trait ID: 431 Block: 474 Gas Used: 2851339
 
 
 Gene: 9, Variation: 39, SVG Size: 7961
-Trait ID: 398 Block: 1199 Gas Used: 5900485
+Trait ID: 432 Block: 475 Gas Used: 5900485
 
 
 Gene: 9, Variation: 40, SVG Size: 8038
-Trait ID: 399 Block: 1200 Gas Used: 5966028
+Trait ID: 433 Block: 476 Gas Used: 5966028
 
 
 Gene: 9, Variation: 41, SVG Size: 8626
-Trait ID: 400 Block: 1201 Gas Used: 6367480
+Trait ID: 434 Block: 477 Gas Used: 6367480
 
 
 Gene: 9, Variation: 42, SVG Size: 10902
-Trait ID: 401 Block: 1202 Gas Used: 7947720
+Trait ID: 435 Block: 478 Gas Used: 7947720
 
 
 Gene: 9, Variation: 43, SVG Size: 5553
-Trait ID: 402 Block: 1203 Gas Used: 4230739
+Trait ID: 436 Block: 479 Gas Used: 4230739
 
 
 Gene: 9, Variation: 44, SVG Size: 5020
-Trait ID: 403 Block: 1204 Gas Used: 3853146
+Trait ID: 437 Block: 480 Gas Used: 3853146
 
 
-Gene: 9, Variation: 45, SVG Size: 0
-Skipping, no SVG data yet.
+Gene: 9, Variation: 45, SVG Size: 7450
+Trait ID: 438 Block: 481 Gas Used: 5543980
 
 
-Gene: 9, Variation: 46, SVG Size: 0
-Skipping, no SVG data yet.
+Gene: 9, Variation: 46, SVG Size: 9110
+Trait ID: 439 Block: 482 Gas Used: 6700885
 
 
 Gene: 9, Variation: 47, SVG Size: 11337
-Trait ID: 404 Block: 1205 Gas Used: 8258555
+Trait ID: 440 Block: 483 Gas Used: 8258555
 
 
 Gene: 9, Variation: 48, SVG Size: 8750
-Trait ID: 405 Block: 1206 Gas Used: 6456356
+Trait ID: 441 Block: 484 Gas Used: 6456356
 
 
 Gene: 9, Variation: 49, SVG Size: 6654
-Trait ID: 406 Block: 1207 Gas Used: 4988697
+Trait ID: 442 Block: 485 Gas Used: 4988697
 
 
 Gene: 9, Variation: 50, SVG Size: 6205
-Trait ID: 407 Block: 1208 Gas Used: 4677093
+Trait ID: 443 Block: 486 Gas Used: 4677093
 
 
-Gene: 9, Variation: 51, SVG Size: 0
-Skipping, no SVG data yet.
+Gene: 9, Variation: 51, SVG Size: 5202
+Trait ID: 444 Block: 487 Gas Used: 3986488
 
 
-Gene: 9, Variation: 52, SVG Size: 0
-Skipping, no SVG data yet.
+Gene: 9, Variation: 52, SVG Size: 4240
+Trait ID: 445 Block: 488 Gas Used: 3318780
 
 
-Gene: 9, Variation: 53, SVG Size: 0
-Skipping, no SVG data yet.
+Gene: 9, Variation: 53, SVG Size: 8312
+Trait ID: 446 Block: 489 Gas Used: 6145406
 
 
-Gene: 9, Variation: 54, SVG Size: 0
-Skipping, no SVG data yet.
+Gene: 9, Variation: 54, SVG Size: 10149
+Trait ID: 447 Block: 490 Gas Used: 7434878
 
 
 Gene: 9, Variation: 55, SVG Size: 4350
-Trait ID: 408 Block: 1209 Gas Used: 3386873
+Trait ID: 448 Block: 491 Gas Used: 3386873
 
 
 Gene: 9, Variation: 56, SVG Size: 4223
-Trait ID: 409 Block: 1210 Gas Used: 3297927
+Trait ID: 449 Block: 492 Gas Used: 3297927
 
 
-Gene: 9, Variation: 57, SVG Size: 0
-Skipping, no SVG data yet.
+Gene: 9, Variation: 57, SVG Size: 5754
+Trait ID: 450 Block: 493 Gas Used: 4364777
 
 
-Gene: 9, Variation: 58, SVG Size: 0
-Skipping, no SVG data yet.
+Gene: 9, Variation: 58, SVG Size: 5355
+Trait ID: 451 Block: 494 Gas Used: 4096783
 
 
 Gene: 9, Variation: 59, SVG Size: 4231
-Trait ID: 410 Block: 1211 Gas Used: 3317939
+Trait ID: 452 Block: 495 Gas Used: 3317939
 
 
 Gene: 9, Variation: 60, SVG Size: 3715
-Trait ID: 411 Block: 1212 Gas Used: 2961642
+Trait ID: 453 Block: 496 Gas Used: 2961642
 
 
-Gene: 9, Variation: 61, SVG Size: 0
-Skipping, no SVG data yet.
+Gene: 9, Variation: 61, SVG Size: 9344
+Trait ID: 454 Block: 497 Gas Used: 6857965
 
 
-Gene: 9, Variation: 62, SVG Size: 0
-Skipping, no SVG data yet.
+Gene: 9, Variation: 62, SVG Size: 9090
+Trait ID: 455 Block: 498 Gas Used: 6700273
 
 
 Gene: 9, Variation: 63, SVG Size: 9196
-Trait ID: 412 Block: 1213 Gas Used: 6767736
+Trait ID: 456 Block: 499 Gas Used: 6767736
 
 
 Gene: 9, Variation: 64, SVG Size: 11175
-Trait ID: 413 Block: 1214 Gas Used: 8147124
+Trait ID: 457 Block: 500 Gas Used: 8147124
 
 
 Gene: 9, Variation: 65, SVG Size: 3962
-Trait ID: 414 Block: 1215 Gas Used: 3119347
+Trait ID: 458 Block: 501 Gas Used: 3119347
 
 
 Gene: 9, Variation: 66, SVG Size: 3860
-Trait ID: 415 Block: 1216 Gas Used: 3052205
+Trait ID: 459 Block: 502 Gas Used: 3052205
 
 
 Gene: 9, Variation: 67, SVG Size: 6211
-Trait ID: 416 Block: 1217 Gas Used: 4697024
+Trait ID: 460 Block: 503 Gas Used: 4697024
 
 
 Gene: 9, Variation: 68, SVG Size: 7896
-Trait ID: 417 Block: 1218 Gas Used: 5855778
+Trait ID: 461 Block: 504 Gas Used: 5855778
 
 
 Gene: 9, Variation: 69, SVG Size: 6548
-Trait ID: 418 Block: 1219 Gas Used: 4920449
+Trait ID: 462 Block: 505 Gas Used: 4920449
 
 
 Gene: 9, Variation: 70, SVG Size: 6447
-Trait ID: 419 Block: 1220 Gas Used: 4853370
+Trait ID: 463 Block: 506 Gas Used: 4853370
 
 
 Gene: 9, Variation: 71, SVG Size: 5657
-Trait ID: 420 Block: 1221 Gas Used: 4298073
+Trait ID: 464 Block: 507 Gas Used: 4298073
 
 
 Gene: 9, Variation: 72, SVG Size: 6848
-Trait ID: 421 Block: 1222 Gas Used: 5121685
+Trait ID: 465 Block: 508 Gas Used: 5121685
 
 
 Gene: 9, Variation: 73, SVG Size: 5721
-Trait ID: 422 Block: 1223 Gas Used: 4343382
+Trait ID: 466 Block: 509 Gas Used: 4343382
 
 
 Gene: 9, Variation: 74, SVG Size: 7138
-Trait ID: 423 Block: 1224 Gas Used: 5343291
+Trait ID: 467 Block: 510 Gas Used: 5343291
 
 
 Gene: 9, Variation: 75, SVG Size: 4822
-Trait ID: 424 Block: 1225 Gas Used: 3720049
+Trait ID: 468 Block: 511 Gas Used: 3720049
 
 
 Gene: 9, Variation: 76, SVG Size: 4201
-Trait ID: 425 Block: 1226 Gas Used: 3296417
+Trait ID: 469 Block: 512 Gas Used: 3296417
 
 
 Gene: 9, Variation: 77, SVG Size: 8723
-Trait ID: 426 Block: 1227 Gas Used: 6434779
+Trait ID: 470 Block: 513 Gas Used: 6434779
 
 
 Gene: 9, Variation: 78, SVG Size: 8334
-Trait ID: 427 Block: 1228 Gas Used: 6167422
+Trait ID: 471 Block: 514 Gas Used: 6167422
 
 
 Gene: 10, Variation: 1, SVG Size: 9228
-Trait ID: 428 Block: 1229 Gas Used: 6774258
+Trait ID: 472 Block: 515 Gas Used: 6774258
 
 
 Gene: 10, Variation: 2, SVG Size: 12000
-Trait ID: 429 Block: 1230 Gas Used: 8689073
+Trait ID: 473 Block: 516 Gas Used: 8689073
 Extending art by 2133
 Extending art by 1830
 
 
 Gene: 10, Variation: 3, SVG Size: 7740
-Trait ID: 430 Block: 1233 Gas Used: 5729129
+Trait ID: 474 Block: 519 Gas Used: 5729129
 
 
 Gene: 10, Variation: 4, SVG Size: 6099
-Trait ID: 431 Block: 1234 Gas Used: 4593781
+Trait ID: 475 Block: 520 Gas Used: 4593781
 
 
 Gene: 10, Variation: 5, SVG Size: 6748
-Trait ID: 432 Block: 1235 Gas Used: 5039286
+Trait ID: 476 Block: 521 Gas Used: 5039286
 
 
 Gene: 10, Variation: 6, SVG Size: 4176
-Trait ID: 433 Block: 1236 Gas Used: 3259001
+Trait ID: 477 Block: 522 Gas Used: 3259001
 
 
 Gene: 10, Variation: 7, SVG Size: 19
-Trait ID: 434 Block: 1237 Gas Used: 360582
+Trait ID: 478 Block: 523 Gas Used: 360582
 
 
 Gene: 10, Variation: 8, SVG Size: 12000
-Trait ID: 435 Block: 1238 Gas Used: 8704329
+Trait ID: 479 Block: 524 Gas Used: 8704329
 Extending art by 2133
 Extending art by 2073
 
 
 Gene: 10, Variation: 9, SVG Size: 12000
-Trait ID: 436 Block: 1241 Gas Used: 8704585
+Trait ID: 480 Block: 527 Gas Used: 8704585
 Extending art by 2133
 Extending art by 2133
 Extending art by 2133
@@ -1999,26 +1999,26 @@ Extending art by 1063
 
 
 Gene: 10, Variation: 10, SVG Size: 19
-Trait ID: 437 Block: 1248 Gas Used: 360582
+Trait ID: 481 Block: 534 Gas Used: 360582
 
 
 Gene: 10, Variation: 11, SVG Size: 12000
-Trait ID: 438 Block: 1249 Gas Used: 8704521
+Trait ID: 482 Block: 535 Gas Used: 8704521
 Extending art by 632
 
 
 Gene: 10, Variation: 12, SVG Size: 11103
-Trait ID: 439 Block: 1251 Gas Used: 8081295
+Trait ID: 483 Block: 537 Gas Used: 8081295
 
 
 Gene: 10, Variation: 13, SVG Size: 12000
-Trait ID: 440 Block: 1252 Gas Used: 8704457
+Trait ID: 484 Block: 538 Gas Used: 8704457
 Extending art by 2133
 Extending art by 2013
 
 
 Gene: 10, Variation: 14, SVG Size: 11136
-Trait ID: 441 Block: 1255 Gas Used: 8103549
+Trait ID: 485 Block: 541 Gas Used: 8103549
 
 
 Gene: 10, Variation: 15, SVG Size: 0
@@ -2026,13 +2026,13 @@ Skipping, no SVG data yet.
 
 
 Gene: 10, Variation: 16, SVG Size: 12000
-Trait ID: 442 Block: 1256 Gas Used: 8704329
+Trait ID: 486 Block: 542 Gas Used: 8704329
 Extending art by 2133
 Extending art by 124
 
 
 Gene: 10, Variation: 17, SVG Size: 9181
-Trait ID: 443 Block: 1259 Gas Used: 6745903
+Trait ID: 487 Block: 545 Gas Used: 6745903
 
 
 Gene: 10, Variation: 18, SVG Size: 0
@@ -2040,200 +2040,206 @@ Skipping, no SVG data yet.
 
 
 Gene: 10, Variation: 19, SVG Size: 9162
-Trait ID: 444 Block: 1260 Gas Used: 6744815
+Trait ID: 488 Block: 546 Gas Used: 6744815
 
 
-Gene: 10, Variation: 20, SVG Size: 0
-Skipping, no SVG data yet.
+Gene: 10, Variation: 20, SVG Size: 2234
+Trait ID: 489 Block: 547 Gas Used: 1916728
 
 
-Gene: 10, Variation: 21, SVG Size: 0
-Skipping, no SVG data yet.
+Gene: 10, Variation: 21, SVG Size: 7951
+Trait ID: 490 Block: 548 Gas Used: 5899324
 
 
-Gene: 10, Variation: 22, SVG Size: 0
-Skipping, no SVG data yet.
+Gene: 10, Variation: 22, SVG Size: 12000
+Trait ID: 491 Block: 549 Gas Used: 8704649
+Extending art by 2133
+Extending art by 69
 
 
-Gene: 10, Variation: 23, SVG Size: 0
-Skipping, no SVG data yet.
+Gene: 10, Variation: 23, SVG Size: 2193
+Trait ID: 492 Block: 552 Gas Used: 1893899
 
 
-Gene: 10, Variation: 24, SVG Size: 0
-Skipping, no SVG data yet.
+Gene: 10, Variation: 24, SVG Size: 4943
+Trait ID: 493 Block: 553 Gas Used: 3807553
 
 
 Gene: 10, Variation: 25, SVG Size: 10927
-Trait ID: 445 Block: 1261 Gas Used: 7969644
+Trait ID: 494 Block: 554 Gas Used: 7969644
 
 
-Gene: 10, Variation: 26, SVG Size: 0
-Skipping, no SVG data yet.
+Gene: 10, Variation: 26, SVG Size: 7892
+Trait ID: 495 Block: 555 Gas Used: 5855650
 
 
-Gene: 10, Variation: 27, SVG Size: 0
-Skipping, no SVG data yet.
+Gene: 10, Variation: 27, SVG Size: 7702
+Trait ID: 496 Block: 556 Gas Used: 5721876
 
 
 Gene: 10, Variation: 28, SVG Size: 7661
-Trait ID: 446 Block: 1262 Gas Used: 5699687
+Trait ID: 497 Block: 557 Gas Used: 5699687
 
 
 Gene: 10, Variation: 29, SVG Size: 2971
-Trait ID: 447 Block: 1263 Gas Used: 2428661
+Trait ID: 498 Block: 558 Gas Used: 2428661
 
 
-Gene: 10, Variation: 30, SVG Size: 0
-Skipping, no SVG data yet.
+Gene: 10, Variation: 30, SVG Size: 8141
+Trait ID: 499 Block: 559 Gas Used: 6033035
 
 
 Gene: 10, Variation: 31, SVG Size: 8339
-Trait ID: 448 Block: 1264 Gas Used: 6167202
+Trait ID: 500 Block: 560 Gas Used: 6167202
 
 
 Gene: 10, Variation: 32, SVG Size: 10786
-Trait ID: 449 Block: 1265 Gas Used: 7879616
+Trait ID: 501 Block: 561 Gas Used: 7879616
 
 
 Gene: 10, Variation: 33, SVG Size: 5751
-Trait ID: 450 Block: 1266 Gas Used: 4364777
+Trait ID: 502 Block: 562 Gas Used: 4364777
 
 
 Gene: 10, Variation: 34, SVG Size: 7747
-Trait ID: 451 Block: 1267 Gas Used: 5765431
+Trait ID: 503 Block: 563 Gas Used: 5765431
 
 
-Gene: 10, Variation: 35, SVG Size: 0
-Skipping, no SVG data yet.
+Gene: 10, Variation: 35, SVG Size: 4939
+Trait ID: 504 Block: 564 Gas Used: 3807498
 
 
-Gene: 10, Variation: 36, SVG Size: 0
-Skipping, no SVG data yet.
+Gene: 10, Variation: 36, SVG Size: 5717
+Trait ID: 505 Block: 565 Gas Used: 4342204
 
 
 Gene: 10, Variation: 37, SVG Size: 11557
-Trait ID: 452 Block: 1268 Gas Used: 8413507
+Trait ID: 506 Block: 566 Gas Used: 8413507
 
 
 Gene: 10, Variation: 38, SVG Size: 12000
-Trait ID: 453 Block: 1269 Gas Used: 8704531
+Trait ID: 507 Block: 567 Gas Used: 8704531
 Extending art by 2113
 
 
-Gene: 10, Variation: 39, SVG Size: 0
-Skipping, no SVG data yet.
+Gene: 10, Variation: 39, SVG Size: 12000
+Trait ID: 508 Block: 569 Gas Used: 8704531
+Extending art by 2133
+Extending art by 2133
+Extending art by 1708
 
 
-Gene: 10, Variation: 40, SVG Size: 0
-Skipping, no SVG data yet.
+Gene: 10, Variation: 40, SVG Size: 12000
+Trait ID: 509 Block: 573 Gas Used: 8704531
+Extending art by 1494
 
 
 Gene: 10, Variation: 41, SVG Size: 11453
-Trait ID: 454 Block: 1271 Gas Used: 8325965
+Trait ID: 510 Block: 575 Gas Used: 8325965
 
 
 Gene: 10, Variation: 42, SVG Size: 11207
-Trait ID: 455 Block: 1272 Gas Used: 8168783
+Trait ID: 511 Block: 576 Gas Used: 8168783
 
 
-Gene: 10, Variation: 43, SVG Size: 0
-Skipping, no SVG data yet.
+Gene: 10, Variation: 43, SVG Size: 3959
+Trait ID: 512 Block: 577 Gas Used: 3118233
 
 
-Gene: 10, Variation: 44, SVG Size: 0
-Skipping, no SVG data yet.
+Gene: 10, Variation: 44, SVG Size: 7604
+Trait ID: 513 Block: 578 Gas Used: 5654861
 
 
 Gene: 10, Variation: 45, SVG Size: 6037
-Trait ID: 456 Block: 1273 Gas Used: 4564467
+Trait ID: 514 Block: 579 Gas Used: 4564467
 
 
 Gene: 10, Variation: 46, SVG Size: 8648
-Trait ID: 457 Block: 1274 Gas Used: 6388444
+Trait ID: 515 Block: 580 Gas Used: 6388444
 
 
-Gene: 10, Variation: 47, SVG Size: 0
-Skipping, no SVG data yet.
+Gene: 10, Variation: 47, SVG Size: 5329
+Trait ID: 516 Block: 581 Gas Used: 4074650
 
 
-Gene: 10, Variation: 48, SVG Size: 0
-Skipping, no SVG data yet.
+Gene: 10, Variation: 48, SVG Size: 4816
+Trait ID: 517 Block: 582 Gas Used: 3718542
 
 
 Gene: 10, Variation: 49, SVG Size: 5395
-Trait ID: 458 Block: 1275 Gas Used: 4120261
+Trait ID: 518 Block: 583 Gas Used: 4120261
 
 
 Gene: 10, Variation: 50, SVG Size: 5395
-Trait ID: 459 Block: 1276 Gas Used: 4120261
+Trait ID: 519 Block: 584 Gas Used: 4120261
 
 
 Gene: 10, Variation: 51, SVG Size: 12000
-Trait ID: 460 Block: 1277 Gas Used: 8705117
+Trait ID: 520 Block: 585 Gas Used: 8705117
 Extending art by 2133
 Extending art by 1988
 
 
 Gene: 10, Variation: 52, SVG Size: 12000
-Trait ID: 461 Block: 1280 Gas Used: 8705117
+Trait ID: 521 Block: 588 Gas Used: 8705117
 Extending art by 2133
 Extending art by 341
 
 
-Gene: 10, Variation: 53, SVG Size: 0
-Skipping, no SVG data yet.
+Gene: 10, Variation: 53, SVG Size: 7026
+Trait ID: 522 Block: 591 Gas Used: 5255157
 
 
-Gene: 10, Variation: 54, SVG Size: 0
-Skipping, no SVG data yet.
+Gene: 10, Variation: 54, SVG Size: 9476
+Trait ID: 523 Block: 592 Gas Used: 6967750
 
 
 Gene: 10, Variation: 55, SVG Size: 7622
-Trait ID: 462 Block: 1283 Gas Used: 5676675
+Trait ID: 524 Block: 593 Gas Used: 5676675
 
 
 Gene: 10, Variation: 56, SVG Size: 7728
-Trait ID: 463 Block: 1284 Gas Used: 5744074
+Trait ID: 525 Block: 594 Gas Used: 5744074
 
 
 Gene: 10, Variation: 57, SVG Size: 10873
-Trait ID: 464 Block: 1285 Gas Used: 7925467
+Trait ID: 526 Block: 595 Gas Used: 7925467
 
 
 Gene: 10, Variation: 58, SVG Size: 12000
-Trait ID: 465 Block: 1286 Gas Used: 8704787
+Trait ID: 527 Block: 596 Gas Used: 8704787
 Extending art by 798
 
 
-Gene: 10, Variation: 59, SVG Size: 0
-Skipping, no SVG data yet.
+Gene: 10, Variation: 59, SVG Size: 9790
+Trait ID: 528 Block: 598 Gas Used: 7168916
 
 
 Gene: 10, Variation: 60, SVG Size: 12000
-Trait ID: 466 Block: 1288 Gas Used: 8704531
+Trait ID: 529 Block: 599 Gas Used: 8704531
 Extending art by 2133
 Extending art by 2133
 Extending art by 1734
 
 
 Gene: 10, Variation: 61, SVG Size: 11511
-Trait ID: 467 Block: 1292 Gas Used: 8371067
+Trait ID: 530 Block: 603 Gas Used: 8371067
 
 
 Gene: 10, Variation: 62, SVG Size: 12000
-Trait ID: 468 Block: 1293 Gas Used: 8705446
+Trait ID: 531 Block: 604 Gas Used: 8705446
 Extending art by 2133
 Extending art by 2017
 
 
 Gene: 10, Variation: 63, SVG Size: 12000
-Trait ID: 469 Block: 1296 Gas Used: 8704998
+Trait ID: 532 Block: 607 Gas Used: 8704998
 Extending art by 2133
 Extending art by 1394
 
 
 Gene: 10, Variation: 64, SVG Size: 12000
-Trait ID: 470 Block: 1299 Gas Used: 8704998
+Trait ID: 533 Block: 610 Gas Used: 8704998
 Extending art by 2133
 Extending art by 2133
 Extending art by 2133
@@ -2242,61 +2248,63 @@ Extending art by 6
 
 
 Gene: 10, Variation: 65, SVG Size: 7860
-Trait ID: 471 Block: 1305 Gas Used: 5834000
+Trait ID: 534 Block: 616 Gas Used: 5834000
 
 
 Gene: 10, Variation: 66, SVG Size: 11395
-Trait ID: 472 Block: 1306 Gas Used: 8303027
+Trait ID: 535 Block: 617 Gas Used: 8303027
 
 
-Gene: 10, Variation: 67, SVG Size: 0
-Skipping, no SVG data yet.
+Gene: 10, Variation: 67, SVG Size: 12000
+Trait ID: 536 Block: 618 Gas Used: 8704585
+Extending art by 1684
 
 
-Gene: 10, Variation: 68, SVG Size: 0
-Skipping, no SVG data yet.
+Gene: 10, Variation: 68, SVG Size: 12000
+Trait ID: 537 Block: 620 Gas Used: 8704393
+Extending art by 595
 
 
 Gene: 10, Variation: 69, SVG Size: 9266
-Trait ID: 473 Block: 1307 Gas Used: 6811831
+Trait ID: 538 Block: 622 Gas Used: 6811831
 
 
 Gene: 10, Variation: 70, SVG Size: 10658
-Trait ID: 474 Block: 1308 Gas Used: 7790145
+Trait ID: 539 Block: 623 Gas Used: 7790145
 
 
 Gene: 10, Variation: 71, SVG Size: 9183
-Trait ID: 475 Block: 1309 Gas Used: 6746287
+Trait ID: 540 Block: 624 Gas Used: 6746287
 
 
 Gene: 10, Variation: 72, SVG Size: 12000
-Trait ID: 476 Block: 1310 Gas Used: 8704713
+Trait ID: 541 Block: 625 Gas Used: 8704713
 Extending art by 373
 
 
 Gene: 10, Variation: 73, SVG Size: 12000
-Trait ID: 477 Block: 1312 Gas Used: 8705648
+Trait ID: 542 Block: 627 Gas Used: 8705648
 Extending art by 2133
 Extending art by 593
 
 
 Gene: 10, Variation: 74, SVG Size: 9920
-Trait ID: 478 Block: 1315 Gas Used: 7259430
+Trait ID: 543 Block: 630 Gas Used: 7259430
 
 
 Gene: 10, Variation: 75, SVG Size: 7522
-Trait ID: 479 Block: 1316 Gas Used: 5610519
+Trait ID: 544 Block: 631 Gas Used: 5610519
 
 
 Gene: 10, Variation: 76, SVG Size: 10240
-Trait ID: 480 Block: 1317 Gas Used: 7481643
+Trait ID: 545 Block: 632 Gas Used: 7481643
 
 
 Gene: 10, Variation: 77, SVG Size: 9460
-Trait ID: 481 Block: 1318 Gas Used: 6946732
+Trait ID: 546 Block: 633 Gas Used: 6946732
 
 
 Gene: 10, Variation: 78, SVG Size: 10795
-Trait ID: 482 Block: 1319 Gas Used: 7880796
+Trait ID: 547 Block: 634 Gas Used: 7880796
 
 
