@@ -1,6 +1,5 @@
 const fs = require("fs");
 const constants = require("../test/util/Constants");
-const exceptions = require("../test/util/Exceptions");
 const GetAccounts = require('./util/GetAccounts');
 const traitsJSON = "data/avastars-dashboard-genes-export.json";
 const logfile = "data/CreateTraitsLog.txt";
@@ -8,7 +7,7 @@ const AvastarTeleporter = artifacts.require("contracts/AvastarTeleporter.sol");
 
 module.exports = async function(done) {
     // Bizarrely, even though this can be included as
-    // Cordwood.js over in tests/TraitFactoryTest.js,
+    // Cordwood.js over in test/TraitFactoryTest.js,
     // It will not work via require in a command script
     if (!String.prototype.cordwood) {
         String.prototype.cordwood = function(cordlen) {
@@ -86,7 +85,7 @@ module.exports = async function(done) {
 async function createTrait(teleporter, trait, accounts, log){
 
     let {generation, gender, gene, name, series, svg, variation} = trait;
-    let preamble = `Gene: ${gene}, Variation: ${variation}, SVG Size: ${svg.length}`;
+    let preamble = `Gene: ${gene}, Variation: ${variation}, Series: ${series.toString()} SVG Size: ${svg.length}`;
     logIt(log, preamble);
     let traitId = -1;
     try {
@@ -118,8 +117,8 @@ function logIt(log, value) {
 // of enum-adjusted objects, ready to be added to the contract
 function getTraits(file) {
     const lookupGeneEnum = gene => constants.GENE[gene.toUpperCase().replace(' ','_')];
-    const addGeneration = trait => trait['generation'] = constants.GENERATION.ONE;
-    const adjustSeries = trait => trait.series = trait.series.map(item => --item);
+    const addGeneration = trait => trait.generation = constants.GENERATION.ONE;
+    const adjustSeries = trait => trait.series = trait.series.map(item => item - 1);
     const adjustGender = trait => trait.gender = constants.GENDER[trait.gender.toUpperCase()];
     const adjustGene = trait => trait.gene = lookupGeneEnum(trait.gene);
 
