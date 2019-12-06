@@ -31,13 +31,13 @@
     "ganache-cli": "^6.7.0",
     "sol2uml": "^1.1.12",
     "solhint": "^2.3.0",
-    "truffle": "^5.0.39",
-    "truffle-assertions": "^0.9.1",
+    "truffle": "^5.1.2",
+    "truffle-assertions": "^0.9.2",
     "truffle-contract": "^4.0.31",
     "truffle-hdwallet-provider": "^1.0.14"
   },
   "dependencies": {
     "@openzeppelin/contracts": "^2.4.0",
-    "web3": "^1.2.1"
+    "web3": "^1.2.4"
   }
 }

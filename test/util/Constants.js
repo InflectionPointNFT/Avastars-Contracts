@@ -34,5 +34,6 @@ module.exports = {
 
     MAX_ART_SIZE: 12000,
     MAX_EXT_SIZE: 2133,
+    MAX_GAS: 9950000
 
 };

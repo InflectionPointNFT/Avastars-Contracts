@@ -5,6 +5,10 @@ const traitsJSON = "data/avastars-dashboard-genes-export.json";
 const logfile = "data/CreateTraitsLog.txt";
 const AvastarTeleporter = artifacts.require("contracts/AvastarTeleporter.sol");
 
+let total_gas = 0;
+let most_gas_spent = 0;
+let costliest_trait;
+
 module.exports = async function(done) {
     // Bizarrely, even though this can be included as
     // Cordwood.js over in test/TraitFactoryTest.js,
@@ -74,6 +78,9 @@ module.exports = async function(done) {
             console.log('woopsy: ');
             console.log(e.message);
         }
+
+        let summary = `\n----------------------------------------\nTotal gas used: ${total_gas}\nCostliest Trait => \n${costliest_trait}`;
+        logIt(log, summary);
         done();
 
     } else {
@@ -83,22 +90,39 @@ module.exports = async function(done) {
 };
 
 async function createTrait(teleporter, trait, accounts, log){
-
+    const bumpGas = gas => gas + Math.round((gas * .01));
     let {generation, gender, gene, name, series, svg, variation} = trait;
     let preamble = `Gene: ${gene}, Variation: ${variation}, Series: ${series.toString()} SVG Size: ${svg.length}`;
     logIt(log, preamble);
     let traitId = -1;
     try {
+        let gas = await teleporter.createTrait.estimateGas(generation, series, gender, gene, variation, name, svg, {
+            from: accounts.sysAdmin,
+            gas: constants.MAX_GAS
+        });
+        let plusALittle = (bumpGas(gas) > constants.MAX_GAS)
+            ? constants.MAX_GAS
+            : bumpGas(gas);
+
+        let estimate = `Estimated Gas: ${gas} Plus a little: ${plusALittle}`;
+        logIt(log, estimate.toString());
         traitId = await teleporter.createTrait.call(generation, series, gender, gene, variation, name, svg, {
             from: accounts.sysAdmin,
-            gas: '9950000'
+            gas: plusALittle
         });
         let result = await teleporter.createTrait(generation, series, gender, gene, variation, name, svg, {
             from: accounts.sysAdmin,
-            gas: '9950000' // TODO: estimate gas!
+            gas: plusALittle
         });
-        let postamble = `Trait ID: ${traitId} Block: ${result.receipt.blockNumber} Gas Used: ${result.receipt.gasUsed}`;
+        let gasUsed = result.receipt.gasUsed;
+        let postamble = `Trait ID: ${traitId} Block: ${result.receipt.blockNumber} Gas Used: ${gasUsed}`;
         logIt(log, postamble);
+
+        total_gas += gasUsed;
+        if (gasUsed > most_gas_spent) {
+            most_gas_spent = gasUsed;
+            costliest_trait = `${preamble}\n${estimate}\n${postamble}`;
+        }
     } catch (e) {
         let err = e.toString() + '\n';
         logIt(log, err);
