@@ -8,6 +8,9 @@ const AvastarTeleporter = artifacts.require("contracts/AvastarTeleporter.sol");
 let total_gas = 0;
 let most_gas_spent = 0;
 let costliest_trait;
+let current_trait_spent;
+let current_trait;
+const bumpGas = gas => gas + Math.round((gas * .01));
 
 module.exports = async function(done) {
     // Bizarrely, even though this can be included as
@@ -44,10 +47,11 @@ module.exports = async function(done) {
     if (isTeleporter) {
         console.log('Adding traits to contract...');
         console.log('----------------------------');
+        logIt(log, `Max Gas: ${constants.MAX_GAS} Max Art Size: ${constants.MAX_ART_SIZE} Max Extension Size: ${constants.MAX_EXT_SIZE}\n`);
         try {
             for (const trait of traits) {
                 if (trait.svg && trait.svg.length <= constants.MAX_ART_SIZE) {
-                    await createTrait(teleporter, trait, accounts, log);
+                    //await createTrait(teleporter, trait, accounts, log);
                 } else if (trait.svg && trait.svg.length > constants.MAX_ART_SIZE){
                     // Split the trait into pieces
                     let initial = trait.svg.slice(0, constants.MAX_ART_SIZE);
@@ -59,27 +63,25 @@ module.exports = async function(done) {
                     let traitId = await createTrait(teleporter, trait, accounts, log);
 
                     // Extend the artwork with all the remaining pieces
-                    for (const piece of pieces) {
-                        logIt(log, `Extending art by ${piece.length}`);
-                        await teleporter.extendTraitArt(traitId, piece, {
-                            from: accounts.sysAdmin,
-                            gas: '9950000'
-                        });
+                    for (let piece of pieces) {
+                        await extendTrait(teleporter, traitId, piece, accounts, log);
                     }
+                    logIt(log, `Total gas spent this trait: ${current_trait_spent}`);
+                    logIt(log, '\n');
                 } else {
                     let {gene, variation} = trait;
                     let preamble = `Gene: ${gene}, Variation: ${variation}, SVG Size: 0`;
                     logIt(log, preamble);
                     logIt(log, "Skipping, no SVG data yet.");
                 }
-                logIt(log, '\n');
+
             }
         } catch (e) {
             console.log('woopsy: ');
             console.log(e.message);
         }
 
-        let summary = `\n----------------------------------------\nTotal gas used: ${total_gas}\nCostliest Trait => \n${costliest_trait}`;
+        let summary = `\n----------------------------------------\nTotal gas used: ${total_gas}\nCostliest Trait\n${costliest_trait} Gas Used: ${most_gas_spent}`;
         logIt(log, summary);
         done();
 
@@ -90,7 +92,10 @@ module.exports = async function(done) {
 };
 
 async function createTrait(teleporter, trait, accounts, log){
-    const bumpGas = gas => gas + Math.round((gas * .01));
+    if (current_trait_spent > costliest_trait) {
+        most_gas_spent = current_trait_spent;
+        costliest_trait = current_trait;
+    }
     let {generation, gender, gene, name, series, svg, variation} = trait;
     let preamble = `Gene: ${gene}, Variation: ${variation}, Series: ${series.toString()} SVG Size: ${svg.length}`;
     logIt(log, preamble);
@@ -119,9 +124,11 @@ async function createTrait(teleporter, trait, accounts, log){
         logIt(log, postamble);
 
         total_gas += gasUsed;
-        if (gasUsed > most_gas_spent) {
-            most_gas_spent = gasUsed;
-            costliest_trait = `${preamble}\n${estimate}\n${postamble}`;
+        current_trait_spent = gasUsed;
+        current_trait = `${preamble}\n`;
+        if (current_trait_spent > most_gas_spent) {
+            most_gas_spent = current_trait_spent;
+            costliest_trait = current_trait;
         }
     } catch (e) {
         let err = e.toString() + '\n';
@@ -131,6 +138,39 @@ async function createTrait(teleporter, trait, accounts, log){
     return traitId;
 }
 
+async function extendTrait(teleporter, traitId, piece, accounts, log){
+    logIt(log, `Extending art by ${piece.length}`);
+    try {
+        let gas = await teleporter.extendTraitArt.estimateGas(traitId, piece, {
+            from: accounts.sysAdmin,
+            gas: constants.MAX_GAS
+        });
+        let plusALittle = (bumpGas(gas) > constants.MAX_GAS)
+            ? constants.MAX_GAS
+            : bumpGas(gas);
+
+        let estimate = `Estimated Gas: ${gas} Plus a little: ${plusALittle}`;
+        logIt(log, estimate.toString());
+
+        let result = await teleporter.extendTraitArt(traitId, piece,  {
+            from: accounts.sysAdmin,
+            gas: plusALittle
+        });
+
+        let gasUsed = result.receipt.gasUsed;
+        current_trait_spent += gasUsed;
+        let postamble = `Trait ID: ${traitId} Block: ${result.receipt.blockNumber} Gas Used: ${gasUsed}`;
+        if (current_trait_spent > most_gas_spent) {
+            most_gas_spent = current_trait_spent;
+            costliest_trait = current_trait;
+        }
+        logIt(log, postamble);
+
+    } catch (e) {
+        let err = e.toString() + '\n';
+        logIt(log, err);
+    }
+}
 
 function logIt(log, value) {
     console.log(value);
