@@ -5,30 +5,53 @@ const traitsJSON = "data/avastars-dashboard-genes-export.json";
 const logfile = "data/CreateTraitsLog.txt";
 const AvastarTeleporter = artifacts.require("contracts/AvastarTeleporter.sol");
 
+// Bizarrely, even though this can be included as
+// Cordwood.js over in test/TraitFactoryTest.js,
+// It will not work via require in a command script
+if (!String.prototype.cordwood) {
+    String.prototype.cordwood = function(cordlen) {
+        if (cordlen === undefined || cordlen > this.length) {
+            cordlen = this.length;
+        }
+        let yardstick = new RegExp(`.{${cordlen}}`, 'g');
+        let pieces = this.match(yardstick);
+        let accumulated = (pieces.length * cordlen);
+        let modulo = this.length % accumulated;
+        if (modulo) pieces.push(this.slice(accumulated));
+        return pieces;
+    };
+}
+
+function ProcessedTrait(trait, max_art, max_ext){
+    this.trait = trait;
+    this.id = "-";
+    this.totalGasSpent = 0;
+    this.totalSections = 0;
+    this.artSize = (!!trait && !!trait.svg) ? trait.svg.length : 0;
+    if (this.artSize > max_art) {
+        // Split the art into pieces
+        this.initial = this.trait.svg.substring(0, max_art);
+        let remainder = this.trait.svg.substring(max_art);
+        this.pieces = remainder.cordwood(max_ext);
+        this.totalSections = this.pieces.length + 1;
+    } else if (this.artSize > 0) {
+        // Set the initial section to the entire art
+        this.initial = this.trait.svg;
+        this.totalSections = 1;
+    }
+}
+ProcessedTrait.prototype.toString = function() {
+    return (this.trait && this.trait.svg)
+        ? `Id: ${this.id}\tGene: ${this.trait.gene}\tVariation: ${this.trait.variation}\tArt Size: ${this.artSize}\tSections: ${this.totalSections}\tGas Spent: ${this.totalGasSpent}`
+        : "";
+};
+
 let total_gas = 0;
-let most_gas_spent = 0;
-let costliest_trait;
-let current_trait_spent;
-let current_trait;
+let costliest_trait = new ProcessedTrait();
 const bumpGas = gas => gas + Math.round((gas * .01));
+const logIt = (log, value) => { console.log(value); log.write(`${value}\n`) };
 
 module.exports = async function(done) {
-    // Bizarrely, even though this can be included as
-    // Cordwood.js over in test/TraitFactoryTest.js,
-    // It will not work via require in a command script
-    if (!String.prototype.cordwood) {
-        String.prototype.cordwood = function(cordlen) {
-            if (cordlen === undefined || cordlen > this.length) {
-                cordlen = this.length;
-            }
-            let yardstick = new RegExp(`.{${cordlen}}`, 'g');
-            let pieces = this.match(yardstick);
-            let accumulated = (pieces.length * cordlen);
-            let modulo = this.length % accumulated;
-            if (modulo) pieces.push(this.slice(accumulated));
-            return pieces;
-        };
-    }
 
     console.log('Creating log file...');
     const log = fs.createWriteStream(logfile);
@@ -47,42 +70,47 @@ module.exports = async function(done) {
     if (isTeleporter) {
         console.log('Adding traits to contract...');
         console.log('----------------------------');
-        logIt(log, `Max Gas: ${constants.MAX_GAS} Max Art Size: ${constants.MAX_ART_SIZE} Max Extension Size: ${constants.MAX_EXT_SIZE}\n`);
+        logIt(log, `Max Gas: ${constants.MAX_GAS}\tMax Art Size: ${constants.MAX_ART_SIZE}\tMax Extension Size: ${constants.MAX_EXT_SIZE}\n`);
         try {
+            // Process all the traits
             for (const trait of traits) {
-                if (trait.svg && trait.svg.length <= constants.MAX_ART_SIZE) {
-                    //await createTrait(teleporter, trait, accounts, log);
-                } else if (trait.svg && trait.svg.length > constants.MAX_ART_SIZE){
-                    // Split the trait into pieces
-                    let initial = trait.svg.slice(0, constants.MAX_ART_SIZE);
-                    let remainder = trait.svg.slice(constants.MAX_ART_SIZE);
-                    let pieces = remainder.cordwood(constants.MAX_EXT_SIZE);
 
-                    // Create the trait with the initial piece that is equal to max_art_length
-                    trait.svg = initial;
-                    let traitId = await createTrait(teleporter, trait, accounts, log);
+                let processing = new ProcessedTrait(trait, constants.MAX_ART_SIZE, constants.MAX_EXT_SIZE);
+
+                if (processing.totalSections === 1) {
+
+                    // Create the trait in one go
+                    await createTrait(teleporter, processing, accounts, log);
+
+                } else if (processing.totalSections > 1){
+
+                    // Create the trait with the initial section
+                    await createTrait(teleporter, processing, accounts, log);
 
                     // Extend the artwork with all the remaining pieces
-                    for (let piece of pieces) {
-                        await extendTrait(teleporter, traitId, piece, accounts, log);
+                    for (let piece of processing.pieces) {
+                        await extendTrait(teleporter, processing, piece, accounts, log);
                     }
-                    logIt(log, `Total gas spent this trait: ${current_trait_spent}`);
-                    logIt(log, '\n');
-                } else {
-                    let {gene, variation} = trait;
-                    let preamble = `Gene: ${gene}, Variation: ${variation}, SVG Size: 0`;
-                    logIt(log, preamble);
-                    logIt(log, "Skipping, no SVG data yet.");
+
+                }
+
+                logIt(log, processing.toString());
+
+                if (processing.totalGasSpent > 0) {
+                    total_gas += processing.totalGasSpent;
+                    if (processing.totalGasSpent > costliest_trait.totalGasSpent) costliest_trait = processing;
                 }
 
             }
+
+            // Report the summary
+            let summary = `Total gas used: ${total_gas}\nCostliest Trait:\n${costliest_trait.toString()}`;
+            logIt(log, `\n----------------------------------------\n${summary}`);
+
         } catch (e) {
-            console.log('woopsy: ');
-            console.log(e.message);
+            logIt(log, e.message);
         }
 
-        let summary = `\n----------------------------------------\nTotal gas used: ${total_gas}\nCostliest Trait\n${costliest_trait} Gas Used: ${most_gas_spent}`;
-        logIt(log, summary);
         done();
 
     } else {
@@ -91,17 +119,11 @@ module.exports = async function(done) {
     }
 };
 
-async function createTrait(teleporter, trait, accounts, log){
-    if (current_trait_spent > costliest_trait) {
-        most_gas_spent = current_trait_spent;
-        costliest_trait = current_trait;
-    }
-    let {generation, gender, gene, name, series, svg, variation} = trait;
-    let preamble = `Gene: ${gene}, Variation: ${variation}, Series: ${series.toString()} SVG Size: ${svg.length}`;
-    logIt(log, preamble);
-    let traitId = -1;
+async function createTrait(teleporter, processing, accounts, log){
+    let {generation, gender, gene, name, series, variation} = processing.trait;
+    let {initial} = processing;
     try {
-        let gas = await teleporter.createTrait.estimateGas(generation, series, gender, gene, variation, name, svg, {
+        let gas = await teleporter.createTrait.estimateGas(generation, series, gender, gene, variation, name, initial, {
             from: accounts.sysAdmin,
             gas: constants.MAX_GAS
         });
@@ -109,39 +131,28 @@ async function createTrait(teleporter, trait, accounts, log){
             ? constants.MAX_GAS
             : bumpGas(gas);
 
-        let estimate = `Estimated Gas: ${gas} Plus a little: ${plusALittle}`;
-        logIt(log, estimate.toString());
-        traitId = await teleporter.createTrait.call(generation, series, gender, gene, variation, name, svg, {
+        let traitId = await teleporter.createTrait.call(generation, series, gender, gene, variation, name, initial, {
             from: accounts.sysAdmin,
             gas: plusALittle
         });
-        let result = await teleporter.createTrait(generation, series, gender, gene, variation, name, svg, {
+        let result = await teleporter.createTrait(generation, series, gender, gene, variation, name, initial, {
             from: accounts.sysAdmin,
             gas: plusALittle
         });
-        let gasUsed = result.receipt.gasUsed;
-        let postamble = `Trait ID: ${traitId} Block: ${result.receipt.blockNumber} Gas Used: ${gasUsed}`;
-        logIt(log, postamble);
 
-        total_gas += gasUsed;
-        current_trait_spent = gasUsed;
-        current_trait = `${preamble}\n`;
-        if (current_trait_spent > most_gas_spent) {
-            most_gas_spent = current_trait_spent;
-            costliest_trait = current_trait;
-        }
+        let gasUsed = result.receipt.gasUsed;
+        processing.id = traitId;
+        processing.totalGasSpent = gasUsed;
+
     } catch (e) {
         let err = e.toString() + '\n';
         logIt(log, err);
     }
-
-    return traitId;
 }
 
-async function extendTrait(teleporter, traitId, piece, accounts, log){
-    logIt(log, `Extending art by ${piece.length}`);
+async function extendTrait(teleporter, processing, piece, accounts, log){
     try {
-        let gas = await teleporter.extendTraitArt.estimateGas(traitId, piece, {
+        let gas = await teleporter.extendTraitArt.estimateGas(processing.id, piece, {
             from: accounts.sysAdmin,
             gas: constants.MAX_GAS
         });
@@ -149,32 +160,18 @@ async function extendTrait(teleporter, traitId, piece, accounts, log){
             ? constants.MAX_GAS
             : bumpGas(gas);
 
-        let estimate = `Estimated Gas: ${gas} Plus a little: ${plusALittle}`;
-        logIt(log, estimate.toString());
-
-        let result = await teleporter.extendTraitArt(traitId, piece,  {
+        let result = await teleporter.extendTraitArt(processing.id, piece,  {
             from: accounts.sysAdmin,
             gas: plusALittle
         });
 
         let gasUsed = result.receipt.gasUsed;
-        current_trait_spent += gasUsed;
-        let postamble = `Trait ID: ${traitId} Block: ${result.receipt.blockNumber} Gas Used: ${gasUsed}`;
-        if (current_trait_spent > most_gas_spent) {
-            most_gas_spent = current_trait_spent;
-            costliest_trait = current_trait;
-        }
-        logIt(log, postamble);
+        processing.totalGasSpent += gasUsed;
 
     } catch (e) {
         let err = e.toString() + '\n';
-        logIt(log, err);
+        logIt(log, `${err} ${processing.toString()}`);
     }
-}
-
-function logIt(log, value) {
-    console.log(value);
-    log.write(`${value}\n`);
 }
 
 // Process the raw trait dump from the database, returning a single array

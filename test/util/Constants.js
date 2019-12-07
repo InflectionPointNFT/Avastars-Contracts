@@ -32,8 +32,8 @@ module.exports = {
         HAIR_STYLE: 10
     },
 
-    MAX_ART_SIZE: 12000,
-    MAX_EXT_SIZE: 2133,
-    MAX_GAS: 9950000
+    MAX_ART_SIZE: 9000,
+    MAX_EXT_SIZE: 2100,
+    MAX_GAS: 8000000
 
 };
