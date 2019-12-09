@@ -73,7 +73,8 @@ module.exports = async function(done) {
         console.log('Adding traits to contract...');
         console.log('----------------------------');
         logIt(log, div);
-        logIt(log, `Max Gas/Tx: ${constants.MAX_GAS}\tMax Initial Section: ${constants.MAX_ART_SIZE} bytes\tMax Extension Section: ${constants.MAX_EXT_SIZE} bytes`);
+        logIt(log, `> Operational Maximums:`);
+        logIt(log, `Gas/Tx: ${constants.MAX_GAS}\tInitial Section: ${constants.MAX_ART_SIZE} bytes\tExtension Section: ${constants.MAX_EXT_SIZE} bytes`);
         logIt(log, div);
         try {
             // Process all the traits
@@ -110,9 +111,9 @@ module.exports = async function(done) {
             // Report the summary
             let gas_expenditure = await GetGasCost(web3, total_gas);
             logIt(log, div);
-            logIt(log, `Costliest Trait:\n${costliest_trait.toString()}`);
+            logIt(log, `> Costliest Trait\n${costliest_trait.toString()}`);
             logIt(log, div);
-            logIt(log, `Gas Expenditure:\n${gas_expenditure}`);
+            logIt(log, `> Total Expenditure\n${gas_expenditure}`);
             logIt(log, div);
 
         } catch (e) {

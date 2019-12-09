@@ -1,5 +1,6 @@
 -------------------------------------------------------------------------------------------
-Max Gas/Tx: 8000000    Max Initial Section: 9000 bytes  Max Extension Section: 2100 bytes
+> Operational Maximums
+Gas/Tx: 8000000    Initial Section: 9000 bytes  Extension Section: 2100 bytes
 -------------------------------------------------------------------------------------------
 Id: 0	Gene: 0	Variation: 1	SVG: 117 bytes  Sections: 1	Gas: 417440
 Id: 1	Gene: 0	Variation: 2	SVG: 117 bytes  Sections: 1	Gas: 432824
@@ -564,9 +565,9 @@ Id: 556	Gene: 10	Variation: 76	SVG: 10240 bytes   Sections: 2	Gas: 9042450
 Id: 557	Gene: 10	Variation: 77	SVG: 9460 bytes    Sections: 2	Gas: 8505349
 Id: 558	Gene: 10	Variation: 78	SVG: 10795 bytes   Sections: 2	Gas: 9443138
 -------------------------------------------------------------------------------------------
-Costliest Trait:
+> Costliest Trait
 Id: 491	Gene: 10	Variation: 9	SVG: 23728 bytes   Sections: 9	Gas: 39307285
 -------------------------------------------------------------------------------------------
-Gas Expenditure:
+> Total Expenditure
 Gas Used: 2015115492 units	Gas Price: 2000000000 wei	Gas Cost: 4.030230984 ether
 -------------------------------------------------------------------------------------------
