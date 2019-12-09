@@ -5,6 +5,7 @@ const GetGasCost = require('./util/GetGasCost');
 const traitsJSON = "data/avastars-dashboard-genes-export.json";
 const logfile = "data/CreateTraitsLog.txt";
 const AvastarTeleporter = artifacts.require("contracts/AvastarTeleporter.sol");
+const div = "-----------------------------------------------------------------------------------";
 
 // Bizarrely, even though this can be included as
 // Cordwood.js over in test/TraitFactoryTest.js,
@@ -71,7 +72,9 @@ module.exports = async function(done) {
     if (isTeleporter) {
         console.log('Adding traits to contract...');
         console.log('----------------------------');
-        logIt(log, `Max Gas: ${constants.MAX_GAS}\tMax Art Size: ${constants.MAX_ART_SIZE}\tMax Extension Size: ${constants.MAX_EXT_SIZE}\n`);
+        logIt(log, div);
+        logIt(log, `Block Gas Limit: ${constants.MAX_GAS}\tMax Initial Art Size: ${constants.MAX_ART_SIZE}\tMax Extension Size: ${constants.MAX_EXT_SIZE}`);
+        logIt(log, div);
         try {
             // Process all the traits
             for (const trait of traits) {
@@ -105,9 +108,12 @@ module.exports = async function(done) {
             }
 
             // Report the summary
-            logIt(log, `\n----------------------------------------\n`);
-            logIt(log, await GetGasCost(web3, total_gas));
+            let gas_expenditure = await GetGasCost(web3, total_gas);
+            logIt(log, div);
             logIt(log, `Costliest Trait:\n${costliest_trait.toString()}`);
+            logIt(log, div);
+            logIt(log, `Gas Expenditure:\n${gas_expenditure}`);
+            logIt(log, div);
 
         } catch (e) {
             logIt(log, e.message);

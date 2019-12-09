@@ -1,5 +1,6 @@
-Max Gas: 8000000	Max Art Size: 9000	Max Extension Size: 2100
-
+-----------------------------------------------------------------------------------
+Block Gas Limit: 8000000	Max Initial Art Size: 9000	Max Extension Size: 2100
+-----------------------------------------------------------------------------------
 Id: 0	Gene: 0	Variation: 1	Art Size: 117	Sections: 1	Gas Spent: 417440
 Id: 1	Gene: 0	Variation: 2	Art Size: 117	Sections: 1	Gas Spent: 432824
 Id: 2	Gene: 0	Variation: 3	Art Size: 117	Sections: 1	Gas Spent: 432568
@@ -562,9 +563,10 @@ Id: 555	Gene: 10	Variation: 75	Art Size: 7522	Sections: 1	Gas Spent: 5610519
 Id: 556	Gene: 10	Variation: 76	Art Size: 10240	Sections: 2	Gas Spent: 9042450
 Id: 557	Gene: 10	Variation: 77	Art Size: 9460	Sections: 2	Gas Spent: 8505349
 Id: 558	Gene: 10	Variation: 78	Art Size: 10795	Sections: 2	Gas Spent: 9443138
-
-----------------------------------------
-
-Gas Used: 2015115492 units	Gas Price: 2000000000 wei	Gas Cost: 4.030230984 ether
+-----------------------------------------------------------------------------------
 Costliest Trait:
 Id: 491	Gene: 10	Variation: 9	Art Size: 23728	Sections: 9	Gas Spent: 39307285
+-----------------------------------------------------------------------------------
+Gas Expenditure:
+Gas Used: 2015115492 units	Gas Price: 2000000000 wei	Gas Cost: 4.030230984 ether
+-----------------------------------------------------------------------------------
