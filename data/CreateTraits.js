@@ -44,7 +44,7 @@ function ProcessedTrait(trait, max_art, max_ext){
 }
 ProcessedTrait.prototype.toString = function() {
     return (this.trait && this.trait.svg)
-        ? `Id: ${this.id}\tGene: ${this.trait.gene}\tVariation: ${this.trait.variation}\tArt Size: ${this.artSize}\tSections: ${this.totalSections}\tGas Spent: ${this.totalGasSpent}`
+        ? `Id: ${this.id}\tGene: ${this.trait.gene}\tVariation: ${this.trait.variation}\tArt Size: ${this.artSize} bytes \tSections: ${this.totalSections}\tGas Spent: ${this.totalGasSpent}`
         : "";
 };
 
@@ -73,7 +73,7 @@ module.exports = async function(done) {
         console.log('Adding traits to contract...');
         console.log('----------------------------');
         logIt(log, div);
-        logIt(log, `Max Gas/Tx: ${constants.MAX_GAS}\tMax Initial Section: ${constants.MAX_ART_SIZE}\tMax Extension Section: ${constants.MAX_EXT_SIZE}`);
+        logIt(log, `Max Gas/Tx: ${constants.MAX_GAS}\tMax Initial Section: ${constants.MAX_ART_SIZE} bytes\tMax Extension Section: ${constants.MAX_EXT_SIZE} bytes`);
         logIt(log, div);
         try {
             // Process all the traits
