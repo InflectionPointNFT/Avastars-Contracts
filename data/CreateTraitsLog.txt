@@ -1,5 +1,5 @@
 -------------------------------------------------------------------------------------------
-Max Gas: 8000000    Max Initial Section: 9000  Max Extension Section: 2100
+Max Gas/Tx: 8000000    Max Initial Section: 9000  Max Extension Section: 2100
 -------------------------------------------------------------------------------------------
 Id: 0	Gene: 0	Variation: 1	Art Size: 117	Sections: 1	Gas Spent: 417440
 Id: 1	Gene: 0	Variation: 2	Art Size: 117	Sections: 1	Gas Spent: 432824
