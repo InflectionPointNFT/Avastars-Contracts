@@ -1,6 +1,7 @@
 const fs = require("fs");
 const constants = require("../test/util/Constants");
 const GetAccounts = require('./util/GetAccounts');
+const GetGasCost = require('./util/GetGasCost');
 const traitsJSON = "data/avastars-dashboard-genes-export.json";
 const logfile = "data/CreateTraitsLog.txt";
 const AvastarTeleporter = artifacts.require("contracts/AvastarTeleporter.sol");
@@ -104,8 +105,9 @@ module.exports = async function(done) {
             }
 
             // Report the summary
-            let summary = `Total gas used: ${total_gas}\nCostliest Trait:\n${costliest_trait.toString()}`;
-            logIt(log, `\n----------------------------------------\n${summary}`);
+            logIt(log, `\n----------------------------------------\n`);
+            logIt(log, await GetGasCost(web3, total_gas));
+            logIt(log, `Costliest Trait:\n${costliest_trait.toString()}`);
 
         } catch (e) {
             logIt(log, e.message);

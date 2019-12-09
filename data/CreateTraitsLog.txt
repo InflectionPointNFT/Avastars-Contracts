@@ -564,6 +564,7 @@ Id: 557	Gene: 10	Variation: 77	Art Size: 9460	Sections: 2	Gas Spent: 8505349
 Id: 558	Gene: 10	Variation: 78	Art Size: 10795	Sections: 2	Gas Spent: 9443138
 
 ----------------------------------------
-Total gas used: 2015115492
+
+Gas Used: 2015115492 units	Gas Price: 2000000000 wei	Gas Cost: 4.030230984 ether
 Costliest Trait:
 Id: 491	Gene: 10	Variation: 9	Art Size: 23728	Sections: 9	Gas Spent: 39307285
