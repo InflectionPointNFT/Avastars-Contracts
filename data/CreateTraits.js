@@ -44,7 +44,7 @@ function ProcessedTrait(trait, max_art, max_ext){
 }
 ProcessedTrait.prototype.toString = function() {
     return (this.trait && this.trait.svg)
-        ? `Id: ${this.id}\tGene: ${this.trait.gene}\tVariation: ${this.trait.variation}\tSVG: ${this.artSize} bytes\tSections: ${this.totalSections}\tGas Spent: ${this.totalGasSpent}`
+        ? `Id: ${this.id}\tGene: ${this.trait.gene}\tVariation: ${this.trait.variation}\tSVG: ${this.artSize} bytes\tSections: ${this.totalSections}\tGas: ${this.totalGasSpent}`
         : "";
 };
 
