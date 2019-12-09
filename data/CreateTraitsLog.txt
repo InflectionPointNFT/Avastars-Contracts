@@ -562,7 +562,7 @@ Id: 554	Gene: 10	Variation: 74	SVG: 9920 bytes    Sections: 2	Gas: 8819286
 Id: 555	Gene: 10	Variation: 75	SVG: 7522 bytes    Sections: 1	Gas: 5610519
 Id: 556	Gene: 10	Variation: 76	SVG: 10240 bytes   Sections: 2	Gas: 9042450
 Id: 557	Gene: 10	Variation: 77	SVG: 9460 bytes    Sections: 2	Gas: 8505349
-Id: 558	Gene: 10    Variation: 78	SVG: 10795 bytes   Sections: 2	Gas: 9443138
+Id: 558	Gene: 10	Variation: 78	SVG: 10795 bytes   Sections: 2	Gas: 9443138
 -------------------------------------------------------------------------------------------
 Costliest Trait:
 Id: 491	Gene: 10	Variation: 9	SVG: 23728 bytes   Sections: 9	Gas: 39307285
