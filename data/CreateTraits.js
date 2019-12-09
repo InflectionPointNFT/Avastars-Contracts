@@ -74,7 +74,7 @@ module.exports = async function(done) {
         console.log('----------------------------');
         logIt(log, div);
         logIt(log, `> Operational Maximums:`);
-        logIt(log, `Gas/Tx: ${constants.MAX_GAS}\tInitial Section: ${constants.MAX_ART_SIZE} bytes\tExtension Section: ${constants.MAX_EXT_SIZE} bytes`);
+        logIt(log, `Gas/Tx: ${constants.MAX_GAS} units\tInitial Section: ${constants.MAX_ART_SIZE} bytes\tExtension Section: ${constants.MAX_EXT_SIZE} bytes`);
         logIt(log, div);
         try {
             // Process all the traits
