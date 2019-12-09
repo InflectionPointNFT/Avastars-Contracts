@@ -73,7 +73,7 @@ module.exports = async function(done) {
         console.log('Adding traits to contract...');
         console.log('----------------------------');
         logIt(log, div);
-        logIt(log, `Block Gas Limit: ${constants.MAX_GAS}\tMax Initial Art Size: ${constants.MAX_ART_SIZE}\tMax Extension Size: ${constants.MAX_EXT_SIZE}`);
+        logIt(log, `Max Gas / Tx: ${constants.MAX_GAS}\tMax Initial Art Size: ${constants.MAX_ART_SIZE}\tMax Extension Size: ${constants.MAX_EXT_SIZE}`);
         logIt(log, div);
         try {
             // Process all the traits
