@@ -1,571 +1,571 @@
 -------------------------------------------------------------------------------------------
 Max Gas/Tx: 8000000    Max Initial Section: 9000 bytes  Max Extension Section: 2100 bytes
 -------------------------------------------------------------------------------------------
-    Id: 0	Gene: 0	Variation: 1	Art Size: 117 bytes Sections: 1	Gas Spent: 417440
-    Id: 1	Gene: 0	Variation: 2	Art Size: 117 bytes Sections: 1	Gas Spent: 432824
-    Id: 2	Gene: 0	Variation: 3	Art Size: 117 bytes Sections: 1	Gas Spent: 432568
-    Id: 3	Gene: 0	Variation: 4	Art Size: 117 bytes Sections: 1	Gas Spent: 432952
-    Id: 4	Gene: 0	Variation: 5	Art Size: 117 bytes Sections: 1	Gas Spent: 448016
-    Id: 5	Gene: 0	Variation: 6	Art Size: 117 bytes Sections: 1	Gas Spent: 447504
-    Id: 6	Gene: 0	Variation: 7	Art Size: 117 bytes Sections: 1	Gas Spent: 447824
-    Id: 7	Gene: 0	Variation: 8	Art Size: 117 bytes Sections: 1	Gas Spent: 447824
-    Id: 8	Gene: 0	Variation: 9	Art Size: 117 bytes Sections: 1	Gas Spent: 447760
-    Id: 9	Gene: 0	Variation: 10	Art Size: 117 bytes Sections: 1	Gas Spent: 447632
-    Id: 10	Gene: 0	Variation: 11	Art Size: 117 bytes Sections: 1	Gas Spent: 447824
-    Id: 11	Gene: 0	Variation: 12	Art Size: 117 bytes Sections: 1	Gas Spent: 447760
-    Id: 12	Gene: 0	Variation: 13	Art Size: 117 bytes Sections: 1	Gas Spent: 447888
-    Id: 13	Gene: 0	Variation: 14	Art Size: 117 bytes Sections: 1	Gas Spent: 448016
-    Id: 14	Gene: 0	Variation: 15	Art Size: 117 bytes Sections: 1	Gas Spent: 447952
-    Id: 15	Gene: 0	Variation: 16	Art Size: 117 bytes Sections: 1	Gas Spent: 448016
-    Id: 16	Gene: 0	Variation: 17	Art Size: 117 bytes Sections: 1	Gas Spent: 447440
-    Id: 17	Gene: 0	Variation: 18	Art Size: 117 bytes Sections: 1	Gas Spent: 448016
-    Id: 18	Gene: 0	Variation: 19	Art Size: 117 bytes Sections: 1	Gas Spent: 447824
-    Id: 19	Gene: 0	Variation: 20	Art Size: 117 bytes Sections: 1	Gas Spent: 447888
-    Id: 20	Gene: 0	Variation: 21	Art Size: 117 bytes Sections: 1	Gas Spent: 448088
-    Id: 21	Gene: 0	Variation: 22	Art Size: 117 bytes Sections: 1	Gas Spent: 448088
-    Id: 22	Gene: 0	Variation: 23	Art Size: 117 bytes Sections: 1	Gas Spent: 448024
-    Id: 23	Gene: 0	Variation: 24	Art Size: 117 bytes Sections: 1	Gas Spent: 447832
-    Id: 24	Gene: 0	Variation: 25	Art Size: 117 bytes Sections: 1	Gas Spent: 448088
-    Id: 25	Gene: 0	Variation: 26	Art Size: 117 bytes Sections: 1	Gas Spent: 448152
-    Id: 26	Gene: 0	Variation: 27	Art Size: 117 bytes Sections: 1	Gas Spent: 447960
-    Id: 27	Gene: 0	Variation: 28	Art Size: 117 bytes Sections: 1	Gas Spent: 448216
-    Id: 28	Gene: 0	Variation: 29	Art Size: 117 bytes Sections: 1	Gas Spent: 447824
-    Id: 29	Gene: 0	Variation: 30	Art Size: 117 bytes Sections: 1	Gas Spent: 447952
-    Id: 30	Gene: 0	Variation: 31	Art Size: 117 bytes Sections: 1	Gas Spent: 447888
-    Id: 31	Gene: 0	Variation: 32	Art Size: 117 bytes Sections: 1	Gas Spent: 447568
-    Id: 32	Gene: 0	Variation: 33	Art Size: 117 bytes Sections: 1	Gas Spent: 448288
-    Id: 33	Gene: 0	Variation: 34	Art Size: 117 bytes Sections: 1	Gas Spent: 448544
-    Id: 34	Gene: 0	Variation: 35	Art Size: 117 bytes Sections: 1	Gas Spent: 448288
-    Id: 35	Gene: 0	Variation: 36	Art Size: 117 bytes Sections: 1	Gas Spent: 448288
-    Id: 36	Gene: 0	Variation: 37	Art Size: 117 bytes Sections: 1	Gas Spent: 448152
-    Id: 37	Gene: 0	Variation: 38	Art Size: 117 bytes Sections: 1	Gas Spent: 448216
-    Id: 38	Gene: 0	Variation: 39	Art Size: 117 bytes Sections: 1	Gas Spent: 448216
-    Id: 39	Gene: 0	Variation: 40	Art Size: 117 bytes Sections: 1	Gas Spent: 448216
-    Id: 40	Gene: 0	Variation: 41	Art Size: 117 bytes Sections: 1	Gas Spent: 448104
-    Id: 41	Gene: 0	Variation: 42	Art Size: 117 bytes Sections: 1	Gas Spent: 448744
-    Id: 42	Gene: 0	Variation: 43	Art Size: 117 bytes Sections: 1	Gas Spent: 448488
-    Id: 43	Gene: 0	Variation: 44	Art Size: 117 bytes Sections: 1	Gas Spent: 448488
-    Id: 44	Gene: 0	Variation: 45	Art Size: 117 bytes Sections: 1	Gas Spent: 447952
-    Id: 45	Gene: 0	Variation: 46	Art Size: 117 bytes Sections: 1	Gas Spent: 447888
-    Id: 46	Gene: 0	Variation: 47	Art Size: 117 bytes Sections: 1	Gas Spent: 447440
-    Id: 47	Gene: 0	Variation: 48	Art Size: 117 bytes Sections: 1	Gas Spent: 448016
-    Id: 48	Gene: 0	Variation: 49	Art Size: 117 bytes Sections: 1	Gas Spent: 448945
-    Id: 49	Gene: 0	Variation: 50	Art Size: 117 bytes Sections: 1	Gas Spent: 449009
-    Id: 50	Gene: 0	Variation: 51	Art Size: 117 bytes Sections: 1	Gas Spent: 448689
-    Id: 51	Gene: 0	Variation: 52	Art Size: 117 bytes Sections: 1	Gas Spent: 448497
-    Id: 52	Gene: 1	Variation: 1	Art Size: 172 bytes Sections: 1	Gas Spent: 492745
-    Id: 53	Gene: 1	Variation: 2	Art Size: 172 bytes Sections: 1	Gas Spent: 492873
-    Id: 54	Gene: 1	Variation: 3	Art Size: 172 bytes Sections: 1	Gas Spent: 492809
-    Id: 55	Gene: 1	Variation: 4	Art Size: 172 bytes Sections: 1	Gas Spent: 493065
-    Id: 56	Gene: 1	Variation: 5	Art Size: 172 bytes Sections: 1	Gas Spent: 492873
-    Id: 57	Gene: 1	Variation: 6	Art Size: 172 bytes Sections: 1	Gas Spent: 492873
-    Id: 58	Gene: 1	Variation: 7	Art Size: 172 bytes Sections: 1	Gas Spent: 492937
-    Id: 59	Gene: 1	Variation: 8	Art Size: 172 bytes Sections: 1	Gas Spent: 492425
-    Id: 60	Gene: 1	Variation: 9	Art Size: 172 bytes Sections: 1	Gas Spent: 493001
-    Id: 61	Gene: 1	Variation: 10	Art Size: 172 bytes Sections: 1	Gas Spent: 493065
-    Id: 62	Gene: 1	Variation: 11	Art Size: 172 bytes Sections: 1	Gas Spent: 492809
-    Id: 63	Gene: 1	Variation: 12	Art Size: 172 bytes Sections: 1	Gas Spent: 492873
-    Id: 64	Gene: 1	Variation: 13	Art Size: 172 bytes Sections: 1	Gas Spent: 493001
-    Id: 65	Gene: 1	Variation: 14	Art Size: 172 bytes Sections: 1	Gas Spent: 492553
-    Id: 66	Gene: 1	Variation: 15	Art Size: 172 bytes Sections: 1	Gas Spent: 492489
-    Id: 67	Gene: 2	Variation: 1	Art Size: 140 bytes Sections: 1	Gas Spent: 454820
-    Id: 68	Gene: 2	Variation: 2	Art Size: 140 bytes Sections: 1	Gas Spent: 454628
-    Id: 69	Gene: 2	Variation: 3	Art Size: 140 bytes Sections: 1	Gas Spent: 454628
-    Id: 70	Gene: 2	Variation: 4	Art Size: 140 bytes Sections: 1	Gas Spent: 470012
-    Id: 71	Gene: 2	Variation: 5	Art Size: 140 bytes Sections: 1	Gas Spent: 469500
-    Id: 72	Gene: 2	Variation: 6	Art Size: 140 bytes Sections: 1	Gas Spent: 469436
-    Id: 73	Gene: 2	Variation: 7	Art Size: 140 bytes Sections: 1	Gas Spent: 469244
-    Id: 74	Gene: 2	Variation: 8	Art Size: 140 bytes Sections: 1	Gas Spent: 469628
-    Id: 75	Gene: 2	Variation: 9	Art Size: 140 bytes Sections: 1	Gas Spent: 469500
-    Id: 76	Gene: 2	Variation: 10	Art Size: 140 bytes Sections: 1	Gas Spent: 469244
-    Id: 77	Gene: 2	Variation: 11	Art Size: 140 bytes Sections: 1	Gas Spent: 469500
-    Id: 78	Gene: 2	Variation: 12	Art Size: 140 bytes Sections: 1	Gas Spent: 469564
-    Id: 79	Gene: 2	Variation: 13	Art Size: 140 bytes Sections: 1	Gas Spent: 469564
-    Id: 80	Gene: 2	Variation: 14	Art Size: 140 bytes Sections: 1	Gas Spent: 469628
-    Id: 81	Gene: 2	Variation: 15	Art Size: 140 bytes Sections: 1	Gas Spent: 469500
-    Id: 82	Gene: 2	Variation: 16	Art Size: 140 bytes Sections: 1	Gas Spent: 469956
-    Id: 83	Gene: 2	Variation: 17	Art Size: 140 bytes Sections: 1	Gas Spent: 469764
-    Id: 84	Gene: 2	Variation: 18	Art Size: 140 bytes Sections: 1	Gas Spent: 469892
-    Id: 85	Gene: 2	Variation: 19	Art Size: 140 bytes Sections: 1	Gas Spent: 470148
-    Id: 86	Gene: 2	Variation: 20	Art Size: 140 bytes Sections: 1	Gas Spent: 469956
-    Id: 87	Gene: 2	Variation: 21	Art Size: 140 bytes Sections: 1	Gas Spent: 469892
-    Id: 88	Gene: 2	Variation: 22	Art Size: 140 bytes Sections: 1	Gas Spent: 469692
-    Id: 89	Gene: 2	Variation: 23	Art Size: 140 bytes Sections: 1	Gas Spent: 469756
-    Id: 90	Gene: 2	Variation: 24	Art Size: 140 bytes Sections: 1	Gas Spent: 469180
-    Id: 91	Gene: 2	Variation: 25	Art Size: 140 bytes Sections: 1	Gas Spent: 469900
-    Id: 92	Gene: 2	Variation: 26	Art Size: 140 bytes Sections: 1	Gas Spent: 470092
-    Id: 93	Gene: 2	Variation: 27	Art Size: 140 bytes Sections: 1	Gas Spent: 469836
-    Id: 94	Gene: 2	Variation: 28	Art Size: 140 bytes Sections: 1	Gas Spent: 469380
-    Id: 95	Gene: 2	Variation: 29	Art Size: 140 bytes Sections: 1	Gas Spent: 469444
-    Id: 96	Gene: 2	Variation: 30	Art Size: 140 bytes Sections: 1	Gas Spent: 469444
-    Id: 97	Gene: 2	Variation: 31	Art Size: 140 bytes Sections: 1	Gas Spent: 469909
-    Id: 98	Gene: 2	Variation: 32	Art Size: 140 bytes Sections: 1	Gas Spent: 470037
-    Id: 99	Gene: 2	Variation: 33	Art Size: 140 bytes Sections: 1	Gas Spent: 470037
-    Id: 100	Gene: 2	Variation: 34	Art Size: 140 bytes Sections: 1	Gas Spent: 469500
-    Id: 101	Gene: 2	Variation: 35	Art Size: 140 bytes Sections: 1	Gas Spent: 469180
-    Id: 102	Gene: 2	Variation: 36	Art Size: 140 bytes Sections: 1	Gas Spent: 469500
-    Id: 103	Gene: 2	Variation: 37	Art Size: 140 bytes Sections: 1	Gas Spent: 470557
-    Id: 104	Gene: 2	Variation: 38	Art Size: 140 bytes Sections: 1	Gas Spent: 470749
-    Id: 105	Gene: 2	Variation: 39	Art Size: 140 bytes Sections: 1	Gas Spent: 470173
-    Id: 106	Gene: 3	Variation: 1	Art Size: 56 bytes  Sections: 1	Gas Spent: 388320
-    Id: 107	Gene: 3	Variation: 2	Art Size: 56 bytes  Sections: 1	Gas Spent: 388384
-    Id: 108	Gene: 3	Variation: 3	Art Size: 56 bytes  Sections: 1	Gas Spent: 388128
-    Id: 109	Gene: 3	Variation: 4	Art Size: 56 bytes  Sections: 1	Gas Spent: 388384
-    Id: 110	Gene: 3	Variation: 5	Art Size: 56 bytes  Sections: 1	Gas Spent: 403448
-    Id: 111	Gene: 3	Variation: 6	Art Size: 56 bytes  Sections: 1	Gas Spent: 403384
-    Id: 112	Gene: 3	Variation: 7	Art Size: 56 bytes  Sections: 1	Gas Spent: 403512
-    Id: 113	Gene: 3	Variation: 8	Art Size: 56 bytes  Sections: 1	Gas Spent: 403576
-    Id: 114	Gene: 3	Variation: 9	Art Size: 56 bytes  Sections: 1	Gas Spent: 403896
-    Id: 115	Gene: 3	Variation: 10	Art Size: 56 bytes  Sections: 1	Gas Spent: 403448
-    Id: 116	Gene: 3	Variation: 11	Art Size: 56 bytes  Sections: 1	Gas Spent: 403256
-    Id: 117	Gene: 3	Variation: 12	Art Size: 56 bytes  Sections: 1	Gas Spent: 403704
-    Id: 118	Gene: 3	Variation: 13	Art Size: 56 bytes  Sections: 1	Gas Spent: 403384
-    Id: 119	Gene: 3	Variation: 14	Art Size: 56 bytes  Sections: 1	Gas Spent: 403576
-    Id: 120	Gene: 3	Variation: 15	Art Size: 56 bytes  Sections: 1	Gas Spent: 403832
-    Id: 121	Gene: 3	Variation: 16	Art Size: 56 bytes  Sections: 1	Gas Spent: 403256
-    Id: 122	Gene: 3	Variation: 17	Art Size: 56 bytes  Sections: 1	Gas Spent: 403704
-    Id: 123	Gene: 3	Variation: 18	Art Size: 56 bytes  Sections: 1	Gas Spent: 403832
-    Id: 124	Gene: 3	Variation: 19	Art Size: 56 bytes  Sections: 1	Gas Spent: 403448
-    Id: 125	Gene: 3	Variation: 20	Art Size: 56 bytes  Sections: 1	Gas Spent: 403832
-    Id: 126	Gene: 3	Variation: 21	Art Size: 56 bytes  Sections: 1	Gas Spent: 403840
-    Id: 127	Gene: 3	Variation: 22	Art Size: 56 bytes  Sections: 1	Gas Spent: 403712
-    Id: 128	Gene: 3	Variation: 23	Art Size: 56 bytes  Sections: 1	Gas Spent: 403776
-    Id: 129	Gene: 3	Variation: 24	Art Size: 56 bytes  Sections: 1	Gas Spent: 403456
-    Id: 130	Gene: 3	Variation: 25	Art Size: 56 bytes  Sections: 1	Gas Spent: 403840
-    Id: 131	Gene: 3	Variation: 26	Art Size: 56 bytes  Sections: 1	Gas Spent: 403968
-    Id: 132	Gene: 3	Variation: 27	Art Size: 56 bytes  Sections: 1	Gas Spent: 403584
-    Id: 133	Gene: 3	Variation: 28	Art Size: 56 bytes  Sections: 1	Gas Spent: 404032
-    Id: 134	Gene: 3	Variation: 29	Art Size: 56 bytes  Sections: 1	Gas Spent: 403256
-    Id: 135	Gene: 3	Variation: 30	Art Size: 56 bytes  Sections: 1	Gas Spent: 403320
-    Id: 136	Gene: 3	Variation: 31	Art Size: 56 bytes  Sections: 1	Gas Spent: 403384
-    Id: 137	Gene: 3	Variation: 32	Art Size: 56 bytes  Sections: 1	Gas Spent: 403640
-    Id: 138	Gene: 3	Variation: 33	Art Size: 56 bytes  Sections: 1	Gas Spent: 403784
-    Id: 139	Gene: 3	Variation: 34	Art Size: 56 bytes  Sections: 1	Gas Spent: 404232
-    Id: 140	Gene: 3	Variation: 35	Art Size: 56 bytes  Sections: 1	Gas Spent: 403976
-    Id: 141	Gene: 3	Variation: 36	Art Size: 56 bytes  Sections: 1	Gas Spent: 403848
-    Id: 142	Gene: 3	Variation: 37	Art Size: 56 bytes  Sections: 1	Gas Spent: 403712
-    Id: 143	Gene: 3	Variation: 38	Art Size: 56 bytes  Sections: 1	Gas Spent: 403456
-    Id: 144	Gene: 3	Variation: 39	Art Size: 56 bytes  Sections: 1	Gas Spent: 403648
-    Id: 145	Gene: 3	Variation: 40	Art Size: 56 bytes  Sections: 1	Gas Spent: 403456
-    Id: 146	Gene: 3	Variation: 41	Art Size: 56 bytes  Sections: 1	Gas Spent: 404240
-    Id: 147	Gene: 3	Variation: 42	Art Size: 56 bytes  Sections: 1	Gas Spent: 403984
-    Id: 148	Gene: 3	Variation: 43	Art Size: 56 bytes  Sections: 1	Gas Spent: 404048
-    Id: 149	Gene: 3	Variation: 44	Art Size: 56 bytes  Sections: 1	Gas Spent: 404624
-    Id: 150	Gene: 3	Variation: 45	Art Size: 56 bytes  Sections: 1	Gas Spent: 403192
-    Id: 151	Gene: 3	Variation: 46	Art Size: 56 bytes  Sections: 1	Gas Spent: 403768
-    Id: 152	Gene: 3	Variation: 47	Art Size: 56 bytes  Sections: 1	Gas Spent: 403576
-    Id: 153	Gene: 3	Variation: 48	Art Size: 56 bytes  Sections: 1	Gas Spent: 403832
-    Id: 154	Gene: 3	Variation: 49	Art Size: 56 bytes  Sections: 1	Gas Spent: 404248
-    Id: 155	Gene: 3	Variation: 50	Art Size: 56 bytes  Sections: 1	Gas Spent: 404632
-    Id: 156	Gene: 3	Variation: 51	Art Size: 56 bytes  Sections: 1	Gas Spent: 404312
-    Id: 157	Gene: 3	Variation: 52	Art Size: 56 bytes  Sections: 1	Gas Spent: 404632
-    Id: 158	Gene: 4	Variation: 1	Art Size: 2844 bytes    Sections: 1	Gas Spent: 2324587
-    Id: 159	Gene: 4	Variation: 2	Art Size: 3047 bytes    Sections: 1	Gas Spent: 2479011
-    Id: 160	Gene: 4	Variation: 3	Art Size: 2916 bytes    Sections: 1	Gas Spent: 2389873
-    Id: 161	Gene: 4	Variation: 4	Art Size: 3127 bytes    Sections: 1	Gas Spent: 2524604
-    Id: 162	Gene: 4	Variation: 5	Art Size: 2852 bytes    Sections: 1	Gas Spent: 2360368
-    Id: 163	Gene: 4	Variation: 6	Art Size: 3074 bytes    Sections: 1	Gas Spent: 2516007
-    Id: 164	Gene: 4	Variation: 7	Art Size: 3037 bytes    Sections: 1	Gas Spent: 2473614
-    Id: 165	Gene: 4	Variation: 8	Art Size: 3263 bytes    Sections: 1	Gas Spent: 2629510
-    Id: 166	Gene: 4	Variation: 9	Art Size: 3040 bytes    Sections: 1	Gas Spent: 2473486
-    Id: 167	Gene: 4	Variation: 10	Art Size: 3295 bytes    Sections: 1	Gas Spent: 2651442
-    Id: 168	Gene: 4	Variation: 11	Art Size: 3133 bytes    Sections: 1	Gas Spent: 2540116
-    Id: 169	Gene: 4	Variation: 12	Art Size: 3133 bytes    Sections: 1	Gas Spent: 2540116
-    Id: 170	Gene: 4	Variation: 13	Art Size: 3256 bytes    Sections: 1	Gas Spent: 2628614
-    Id: 171	Gene: 4	Variation: 14	Art Size: 3256 bytes    Sections: 1	Gas Spent: 2628614
-    Id: 172	Gene: 4	Variation: 15	Art Size: 3215 bytes    Sections: 1	Gas Spent: 2606489
-    Id: 173	Gene: 4	Variation: 16	Art Size: 3311 bytes    Sections: 1	Gas Spent: 2673247
-    Id: 174	Gene: 4	Variation: 17	Art Size: 3474 bytes    Sections: 1	Gas Spent: 2784701
-    Id: 175	Gene: 4	Variation: 18	Art Size: 4828 bytes    Sections: 1	Gas Spent: 3719950
-    Id: 176	Gene: 4	Variation: 19	Art Size: 5114 bytes    Sections: 1	Gas Spent: 3920097
-    Id: 177	Gene: 4	Variation: 20	Art Size: 5114 bytes    Sections: 1	Gas Spent: 3920097
-    Id: 178	Gene: 4	Variation: 21	Art Size: 3961 bytes    Sections: 1	Gas Spent: 3119394
-    Id: 179	Gene: 4	Variation: 22	Art Size: 4133 bytes    Sections: 1	Gas Spent: 3251885
-    Id: 180	Gene: 4	Variation: 23	Art Size: 3597 bytes    Sections: 1	Gas Spent: 2873656
-    Id: 181	Gene: 4	Variation: 24	Art Size: 4052 bytes    Sections: 1	Gas Spent: 3185704
-    Id: 182	Gene: 4	Variation: 25	Art Size: 8318 bytes    Sections: 1	Gas Spent: 6146357
-    Id: 183	Gene: 4	Variation: 26	Art Size: 3256 bytes    Sections: 1	Gas Spent: 2630286
-    Id: 184	Gene: 4	Variation: 27	Art Size: 4087 bytes    Sections: 1	Gas Spent: 3208660
-    Id: 185	Gene: 4	Variation: 28	Art Size: 6420 bytes    Sections: 1	Gas Spent: 4833174
-    Id: 186	Gene: 4	Variation: 29	Art Size: 4296 bytes    Sections: 1	Gas Spent: 3362756
-    Id: 187	Gene: 4	Variation: 30	Art Size: 4296 bytes    Sections: 1	Gas Spent: 3362756
-    Id: 188	Gene: 4	Variation: 31	Art Size: 3491 bytes    Sections: 1	Gas Spent: 2806122
-    Id: 189	Gene: 4	Variation: 32	Art Size: 4009 bytes    Sections: 1	Gas Spent: 3162546
-    Id: 190	Gene: 4	Variation: 33	Art Size: 4958 bytes    Sections: 1	Gas Spent: 3809682
-    Id: 191	Gene: 4	Variation: 34	Art Size: 4406 bytes    Sections: 1	Gas Spent: 3431195
-    Id: 192	Gene: 4	Variation: 35	Art Size: 4129 bytes    Sections: 1	Gas Spent: 3251894
-    Id: 193	Gene: 4	Variation: 36	Art Size: 4228 bytes    Sections: 1	Gas Spent: 3318908
-    Id: 194	Gene: 4	Variation: 37	Art Size: 3648 bytes    Sections: 1	Gas Spent: 2896996
-    Id: 195	Gene: 4	Variation: 38	Art Size: 3775 bytes    Sections: 1	Gas Spent: 2985942
-    Id: 196	Gene: 4	Variation: 39	Art Size: 3947 bytes    Sections: 1	Gas Spent: 3118626
-    Id: 197	Gene: 4	Variation: 40	Art Size: 5158 bytes    Sections: 1	Gas Spent: 3963907
-    Id: 198	Gene: 4	Variation: 41	Art Size: 3194 bytes    Sections: 1	Gas Spent: 2585030
-    Id: 199	Gene: 4	Variation: 42	Art Size: 3199 bytes    Sections: 1	Gas Spent: 2585350
-    Id: 200	Gene: 4	Variation: 43	Art Size: 3045 bytes    Sections: 1	Gas Spent: 2494484
-    Id: 201	Gene: 4	Variation: 44	Art Size: 4967 bytes    Sections: 1	Gas Spent: 3830984
-    Id: 202	Gene: 4	Variation: 45	Art Size: 4039 bytes    Sections: 1	Gas Spent: 3184735
-    Id: 203	Gene: 4	Variation: 46	Art Size: 3250 bytes    Sections: 1	Gas Spent: 2628102
-    Id: 204	Gene: 4	Variation: 47	Art Size: 3773 bytes    Sections: 1	Gas Spent: 2985870
-    Id: 205	Gene: 4	Variation: 48	Art Size: 3937 bytes    Sections: 1	Gas Spent: 3117849
-    Id: 206	Gene: 4	Variation: 49	Art Size: 3438 bytes    Sections: 1	Gas Spent: 2763251
-    Id: 207	Gene: 4	Variation: 50	Art Size: 4387 bytes    Sections: 1	Gas Spent: 3430380
-    Id: 208	Gene: 4	Variation: 51	Art Size: 4624 bytes    Sections: 1	Gas Spent: 3587045
-    Id: 209	Gene: 4	Variation: 52	Art Size: 3921 bytes    Sections: 1	Gas Spent: 3097551
-    Id: 210	Gene: 5	Variation: 1	Art Size: 2681 bytes    Sections: 1	Gas Spent: 2228982
-    Id: 211	Gene: 5	Variation: 2	Art Size: 2616 bytes    Sections: 1	Gas Spent: 2184213
-    Id: 212	Gene: 5	Variation: 3	Art Size: 2500 bytes    Sections: 1	Gas Spent: 2116504
-    Id: 213	Gene: 5	Variation: 4	Art Size: 2516 bytes    Sections: 1	Gas Spent: 2117328
-    Id: 214	Gene: 5	Variation: 5	Art Size: 2845 bytes    Sections: 1	Gas Spent: 2340500
-    Id: 215	Gene: 5	Variation: 6	Art Size: 2848 bytes    Sections: 1	Gas Spent: 2340492
-    Id: 216	Gene: 5	Variation: 7	Art Size: 2873 bytes    Sections: 1	Gas Spent: 2362625
-    Id: 217	Gene: 5	Variation: 8	Art Size: 2797 bytes    Sections: 1	Gas Spent: 2317151
-    Id: 218	Gene: 5	Variation: 9	Art Size: 2827 bytes    Sections: 1	Gas Spent: 2339348
-    Id: 219	Gene: 5	Variation: 10	Art Size: 2960 bytes    Sections: 1	Gas Spent: 2428478
-    Id: 220	Gene: 5	Variation: 11	Art Size: 2897 bytes    Sections: 1	Gas Spent: 2384365
-    Id: 221	Gene: 5	Variation: 12	Art Size: 2994 bytes    Sections: 1	Gas Spent: 2450986
-    Id: 222	Gene: 5	Variation: 13	Art Size: 2988 bytes    Sections: 1	Gas Spent: 2450675
-    Id: 223	Gene: 5	Variation: 14	Art Size: 2974 bytes    Sections: 1	Gas Spent: 2429374
-    Id: 224	Gene: 5	Variation: 15	Art Size: 3023 bytes    Sections: 1	Gas Spent: 2473247
-    Id: 225	Gene: 5	Variation: 16	Art Size: 3023 bytes    Sections: 1	Gas Spent: 2473047
-    Id: 226	Gene: 5	Variation: 17	Art Size: 2939 bytes    Sections: 1	Gas Spent: 2407130
-    Id: 227	Gene: 5	Variation: 18	Art Size: 3004 bytes    Sections: 1	Gas Spent: 2451562
-    Id: 228	Gene: 5	Variation: 19	Art Size: 2918 bytes    Sections: 1	Gas Spent: 2405914
-    Id: 229	Gene: 5	Variation: 20	Art Size: 2982 bytes    Sections: 1	Gas Spent: 2450282
-    Id: 230	Gene: 6	Variation: 1	Art Size: 4053 bytes    Sections: 1	Gas Spent: 3169735
-    Id: 231	Gene: 6	Variation: 2	Art Size: 4070 bytes    Sections: 1	Gas Spent: 3191028
-    Id: 232	Gene: 6	Variation: 3	Art Size: 3842 bytes    Sections: 1	Gas Spent: 3035196
-    Id: 233	Gene: 6	Variation: 4	Art Size: 3973 bytes    Sections: 1	Gas Spent: 3124398
-    Id: 234	Gene: 6	Variation: 5	Art Size: 4929 bytes    Sections: 1	Gas Spent: 3806529
-    Id: 235	Gene: 6	Variation: 6	Art Size: 4968 bytes    Sections: 1	Gas Spent: 3829230
-    Id: 236	Gene: 6	Variation: 7	Art Size: 4620 bytes    Sections: 1	Gas Spent: 3584706
-    Id: 237	Gene: 6	Variation: 8	Art Size: 4683 bytes    Sections: 1	Gas Spent: 3629148
-    Id: 238	Gene: 6	Variation: 9	Art Size: 4572 bytes    Sections: 1	Gas Spent: 3541161
-    Id: 239	Gene: 6	Variation: 10	Art Size: 4660 bytes    Sections: 1	Gas Spent: 3607407
-    Id: 240	Gene: 6	Variation: 11	Art Size: 4461 bytes    Sections: 1	Gas Spent: 3473443
-    Id: 241	Gene: 6	Variation: 12	Art Size: 4449 bytes    Sections: 1	Gas Spent: 3472675
-    Id: 242	Gene: 6	Variation: 13	Art Size: 4775 bytes    Sections: 1	Gas Spent: 3695650
-    Id: 243	Gene: 6	Variation: 14	Art Size: 4843 bytes    Sections: 1	Gas Spent: 3740411
-    Id: 244	Gene: 6	Variation: 15	Art Size: 4470 bytes    Sections: 1	Gas Spent: 3474147
-    Id: 245	Gene: 6	Variation: 16	Art Size: 4639 bytes    Sections: 1	Gas Spent: 3585986
-    Id: 246	Gene: 6	Variation: 17	Art Size: 4834 bytes    Sections: 1	Gas Spent: 3740027
-    Id: 247	Gene: 6	Variation: 18	Art Size: 5063 bytes    Sections: 1	Gas Spent: 3896116
-    Id: 248	Gene: 6	Variation: 19	Art Size: 4673 bytes    Sections: 1	Gas Spent: 3628508
-    Id: 249	Gene: 6	Variation: 20	Art Size: 4712 bytes    Sections: 1	Gas Spent: 3651208
-    Id: 250	Gene: 6	Variation: 21	Art Size: 5017 bytes    Sections: 1	Gas Spent: 3852963
-    Id: 251	Gene: 6	Variation: 22	Art Size: 5020 bytes    Sections: 1	Gas Spent: 3853155
-    Id: 252	Gene: 6	Variation: 23	Art Size: 4903 bytes    Sections: 1	Gas Spent: 3785693
-    Id: 253	Gene: 6	Variation: 24	Art Size: 5020 bytes    Sections: 1	Gas Spent: 3853795
-    Id: 254	Gene: 6	Variation: 25	Art Size: 5218 bytes    Sections: 1	Gas Spent: 4007708
-    Id: 255	Gene: 6	Variation: 26	Art Size: 5143 bytes    Sections: 1	Gas Spent: 3942294
-    Id: 256	Gene: 6	Variation: 27	Art Size: 4580 bytes    Sections: 1	Gas Spent: 3562462
-    Id: 257	Gene: 6	Variation: 28	Art Size: 4570 bytes    Sections: 1	Gas Spent: 3541618
-    Id: 258	Gene: 6	Variation: 29	Art Size: 4922 bytes    Sections: 1	Gas Spent: 3786516
-    Id: 259	Gene: 6	Variation: 30	Art Size: 4992 bytes    Sections: 1	Gas Spent: 3831406
-    Id: 260	Gene: 6	Variation: 31	Art Size: 4526 bytes    Sections: 1	Gas Spent: 3518268
-    Id: 261	Gene: 6	Variation: 32	Art Size: 4568 bytes    Sections: 1	Gas Spent: 3541161
-    Id: 262	Gene: 6	Variation: 33	Art Size: 4969 bytes    Sections: 1	Gas Spent: 3830079
-    Id: 263	Gene: 6	Variation: 34	Art Size: 5299 bytes    Sections: 1	Gas Spent: 4053247
-    Id: 264	Gene: 6	Variation: 35	Art Size: 4771 bytes    Sections: 1	Gas Spent: 3696243
-    Id: 265	Gene: 6	Variation: 36	Art Size: 4807 bytes    Sections: 1	Gas Spent: 3718752
-    Id: 266	Gene: 6	Variation: 37	Art Size: 4695 bytes    Sections: 1	Gas Spent: 3630436
-    Id: 267	Gene: 6	Variation: 38	Art Size: 4694 bytes    Sections: 1	Gas Spent: 3630372
-    Id: 268	Gene: 6	Variation: 39	Art Size: 5205 bytes    Sections: 1	Gas Spent: 3986736
-    Id: 269	Gene: 6	Variation: 40	Art Size: 5268 bytes    Sections: 1	Gas Spent: 4031177
-    Id: 270	Gene: 6	Variation: 41	Art Size: 5679 bytes    Sections: 1	Gas Spent: 4320536
-    Id: 271	Gene: 6	Variation: 42	Art Size: 5418 bytes    Sections: 1	Gas Spent: 4142194
-    Id: 272	Gene: 6	Variation: 43	Art Size: 5829 bytes    Sections: 1	Gas Spent: 4430648
-    Id: 273	Gene: 6	Variation: 44	Art Size: 6018 bytes    Sections: 1	Gas Spent: 4563973
-    Id: 274	Gene: 6	Variation: 45	Art Size: 5993 bytes    Sections: 1	Gas Spent: 4542351
-    Id: 275	Gene: 6	Variation: 46	Art Size: 5708 bytes    Sections: 1	Gas Spent: 4342268
-    Id: 276	Gene: 6	Variation: 47	Art Size: 5171 bytes    Sections: 1	Gas Spent: 3964035
-    Id: 277	Gene: 6	Variation: 48	Art Size: 5127 bytes    Sections: 1	Gas Spent: 3941014
-    Id: 278	Gene: 6	Variation: 49	Art Size: 8084 bytes    Sections: 1	Gas Spent: 5989589
-    Id: 279	Gene: 6	Variation: 50	Art Size: 8537 bytes    Sections: 1	Gas Spent: 6301452
-    Id: 280	Gene: 6	Variation: 51	Art Size: 4370 bytes    Sections: 1	Gas Spent: 3408704
-    Id: 281	Gene: 6	Variation: 52	Art Size: 4566 bytes    Sections: 1	Gas Spent: 3542476
-    Id: 282	Gene: 7	Variation: 1	Art Size: 2285 bytes    Sections: 1	Gas Spent: 1945721
-    Id: 283	Gene: 7	Variation: 2	Art Size: 2343 bytes    Sections: 1	Gas Spent: 1989841
-    Id: 284	Gene: 7	Variation: 3	Art Size: 2670 bytes    Sections: 1	Gas Spent: 2212621
-    Id: 285	Gene: 7	Variation: 4	Art Size: 2762 bytes    Sections: 1	Gas Spent: 2279123
-    Id: 286	Gene: 7	Variation: 5	Art Size: 3194 bytes    Sections: 1	Gas Spent: 2569557
-    Id: 287	Gene: 7	Variation: 6	Art Size: 2965 bytes    Sections: 1	Gas Spent: 2413469
-    Id: 288	Gene: 7	Variation: 7	Art Size: 2191 bytes    Sections: 1	Gas Spent: 1894411
-    Id: 289	Gene: 7	Variation: 8	Art Size: 2492 bytes    Sections: 1	Gas Spent: 2095515
-    Id: 290	Gene: 7	Variation: 9	Art Size: 2194 bytes    Sections: 1	Gas Spent: 1893899
-    Id: 291	Gene: 7	Variation: 10	Art Size: 2308 bytes    Sections: 1	Gas Spent: 1982013
-    Id: 292	Gene: 7	Variation: 11	Art Size: 3504 bytes    Sections: 1	Gas Spent: 2806570
-    Id: 293	Gene: 7	Variation: 12	Art Size: 3869 bytes    Sections: 1	Gas Spent: 3052180
-    Id: 294	Gene: 7	Variation: 13	Art Size: 4556 bytes    Sections: 1	Gas Spent: 3540457
-    Id: 295	Gene: 7	Variation: 14	Art Size: 4466 bytes    Sections: 1	Gas Spent: 3474083
-    Id: 296	Gene: 7	Variation: 15	Art Size: 2380 bytes    Sections: 1	Gas Spent: 2027670
-    Id: 297	Gene: 7	Variation: 16	Art Size: 2504 bytes    Sections: 1	Gas Spent: 2116423
-    Id: 298	Gene: 7	Variation: 17	Art Size: 1256 bytes    Sections: 1	Gas Spent: 1248135
-    Id: 299	Gene: 7	Variation: 18	Art Size: 3657 bytes    Sections: 1	Gas Spent: 2917192
-    Id: 300	Gene: 7	Variation: 19	Art Size: 2181 bytes    Sections: 1	Gas Spent: 1893707
-    Id: 301	Gene: 7	Variation: 20	Art Size: 2471 bytes    Sections: 1	Gas Spent: 2094107
-    Id: 302	Gene: 7	Variation: 21	Art Size: 3555 bytes    Sections: 1	Gas Spent: 2849795
-    Id: 303	Gene: 7	Variation: 22	Art Size: 3789 bytes    Sections: 1	Gas Spent: 3006202
-    Id: 304	Gene: 7	Variation: 23	Art Size: 3314 bytes    Sections: 1	Gas Spent: 2673055
-    Id: 305	Gene: 7	Variation: 24	Art Size: 2885 bytes    Sections: 1	Gas Spent: 2382812
-    Id: 306	Gene: 7	Variation: 25	Art Size: 4277 bytes    Sections: 1	Gas Spent: 3340375
-    Id: 307	Gene: 7	Variation: 26	Art Size: 3483 bytes    Sections: 1	Gas Spent: 2784445
-    Id: 308	Gene: 7	Variation: 27	Art Size: 2332 bytes    Sections: 1	Gas Spent: 1984253
-    Id: 309	Gene: 7	Variation: 28	Art Size: 2594 bytes    Sections: 1	Gas Spent: 2182860
-    Id: 310	Gene: 7	Variation: 29	Art Size: 2931 bytes    Sections: 1	Gas Spent: 2406089
-    Id: 311	Gene: 7	Variation: 30	Art Size: 2483 bytes    Sections: 1	Gas Spent: 2094427
-    Id: 312	Gene: 7	Variation: 31	Art Size: 3853 bytes    Sections: 1	Gas Spent: 3051484
-    Id: 313	Gene: 7	Variation: 32	Art Size: 2619 bytes    Sections: 1	Gas Spent: 2184213
-    Id: 314	Gene: 7	Variation: 33	Art Size: 4042 bytes    Sections: 1	Gas Spent: 3184744
-    Id: 315	Gene: 7	Variation: 34	Art Size: 4068 bytes    Sections: 1	Gas Spent: 3206612
-    Id: 316	Gene: 7	Variation: 35	Art Size: 4816 bytes    Sections: 1	Gas Spent: 3718999
-    Id: 317	Gene: 7	Variation: 36	Art Size: 5849 bytes    Sections: 1	Gas Spent: 4431663
-    Id: 318	Gene: 7	Variation: 37	Art Size: 3482 bytes    Sections: 1	Gas Spent: 2785670
-    Id: 319	Gene: 7	Variation: 38	Art Size: 3926 bytes    Sections: 1	Gas Spent: 3096949
-    Id: 320	Gene: 7	Variation: 39	Art Size: 4843 bytes    Sections: 1	Gas Spent: 3741380
-    Id: 321	Gene: 7	Variation: 40	Art Size: 4779 bytes    Sections: 1	Gas Spent: 3696874
-    Id: 322	Gene: 7	Variation: 41	Art Size: 2480 bytes    Sections: 1	Gas Spent: 2094947
-    Id: 323	Gene: 7	Variation: 42	Art Size: 2222 bytes    Sections: 1	Gas Spent: 1916800
-    Id: 324	Gene: 7	Variation: 43	Art Size: 3809 bytes    Sections: 1	Gas Spent: 3028391
-    Id: 325	Gene: 7	Variation: 44	Art Size: 4885 bytes    Sections: 1	Gas Spent: 3763752
-    Id: 326	Gene: 7	Variation: 45	Art Size: 9154 bytes    Sections: 2	Gas Spent: 8301971
-    Id: 327	Gene: 7	Variation: 46	Art Size: 8902 bytes    Sections: 1	Gas Spent: 6566662
-    Id: 328	Gene: 7	Variation: 47	Art Size: 7080 bytes    Sections: 1	Gas Spent: 5298365
-    Id: 329	Gene: 7	Variation: 48	Art Size: 5535 bytes    Sections: 1	Gas Spent: 4209446
-    Id: 330	Gene: 7	Variation: 49	Art Size: 2864 bytes    Sections: 1	Gas Spent: 2361537
-    Id: 331	Gene: 7	Variation: 50	Art Size: 2845 bytes    Sections: 1	Gas Spent: 2340116
-    Id: 332	Gene: 7	Variation: 51	Art Size: 2738 bytes    Sections: 1	Gas Spent: 2272911
-    Id: 333	Gene: 7	Variation: 52	Art Size: 2763 bytes    Sections: 1	Gas Spent: 2294715
-    Id: 334	Gene: 7	Variation: 53	Art Size: 4300 bytes    Sections: 1	Gas Spent: 3362645
-    Id: 335	Gene: 7	Variation: 54	Art Size: 4519 bytes    Sections: 1	Gas Spent: 3518094
-    Id: 336	Gene: 7	Variation: 55	Art Size: 6533 bytes    Sections: 1	Gas Spent: 4920010
-    Id: 337	Gene: 7	Variation: 56	Art Size: 2924 bytes    Sections: 1	Gas Spent: 2405841
-    Id: 338	Gene: 7	Variation: 57	Art Size: 5730 bytes    Sections: 1	Gas Spent: 4363241
-    Id: 339	Gene: 7	Variation: 58	Art Size: 5362 bytes    Sections: 1	Gas Spent: 4097231
-    Id: 340	Gene: 7	Variation: 59	Art Size: 2997 bytes    Sections: 1	Gas Spent: 2451370
-    Id: 341	Gene: 7	Variation: 60	Art Size: 3065 bytes    Sections: 1	Gas Spent: 2496131
-    Id: 342	Gene: 7	Variation: 61	Art Size: 6048 bytes    Sections: 1	Gas Spent: 4566286
-    Id: 343	Gene: 7	Variation: 62	Art Size: 4460 bytes    Sections: 1	Gas Spent: 3474621
-    Id: 344	Gene: 7	Variation: 63	Art Size: 7002 bytes    Sections: 1	Gas Spent: 5233681
-    Id: 345	Gene: 7	Variation: 64	Art Size: 5891 bytes    Sections: 1	Gas Spent: 4475610
-    Id: 346	Gene: 7	Variation: 65	Art Size: 2901 bytes    Sections: 1	Gas Spent: 2384694
-    Id: 347	Gene: 7	Variation: 66	Art Size: 3357 bytes    Sections: 1	Gas Spent: 2696741
-    Id: 348	Gene: 7	Variation: 67	Art Size: 4942 bytes    Sections: 1	Gas Spent: 3807425
-    Id: 349	Gene: 7	Variation: 68	Art Size: 5453 bytes    Sections: 1	Gas Spent: 4163405
-    Id: 350	Gene: 7	Variation: 69	Art Size: 12151 bytes   Sections: 3	Gas Spent: 12290180
-    Id: 351	Gene: 7	Variation: 70	Art Size: 12221 bytes   Sections: 3	Gas Spent: 12335469
-    Id: 352	Gene: 7	Variation: 71	Art Size: 5334 bytes    Sections: 1	Gas Spent: 4075226
-    Id: 353	Gene: 7	Variation: 72	Art Size: 4984 bytes    Sections: 1	Gas Spent: 3830574
-    Id: 354	Gene: 7	Variation: 73	Art Size: 2561 bytes    Sections: 1	Gas Spent: 2161154
-    Id: 355	Gene: 7	Variation: 74	Art Size: 2857 bytes    Sections: 1	Gas Spent: 2361938
-    Id: 356	Gene: 7	Variation: 75	Art Size: 9942 bytes    Sections: 2	Gas Spent: 8840540
-    Id: 357	Gene: 7	Variation: 76	Art Size: 9969 bytes    Sections: 2	Gas Spent: 8862562
-    Id: 358	Gene: 7	Variation: 77	Art Size: 3451 bytes    Sections: 1	Gas Spent: 2763443
-    Id: 359	Gene: 7	Variation: 78	Art Size: 3112 bytes    Sections: 1	Gas Spent: 2539702
-    Id: 360	Gene: 8	Variation: 1	Art Size: 19 bytes  Sections: 1	Gas Spent: 345454
-    Id: 361	Gene: 8	Variation: 2	Art Size: 933 bytes Sections: 1	Gas Spent: 1010228
-    Id: 362	Gene: 8	Variation: 3	Art Size: 14583 bytes   Sections: 4	Gas Spent: 16239714
-    Id: 363	Gene: 8	Variation: 4	Art Size: 19 bytes  Sections: 1	Gas Spent: 360710
-    Id: 364	Gene: 8	Variation: 5	Art Size: 153 bytes Sections: 1	Gas Spent: 470396
-    Id: 365	Gene: 8	Variation: 6	Art Size: 19 bytes  Sections: 1	Gas Spent: 360710
+    Id: 0	Gene: 0	Variation: 1	SVG: 117 bytes Sections: 1	Gas Spent: 417440
+    Id: 1	Gene: 0	Variation: 2	SVG: 117 bytes Sections: 1	Gas Spent: 432824
+    Id: 2	Gene: 0	Variation: 3	SVG: 117 bytes Sections: 1	Gas Spent: 432568
+    Id: 3	Gene: 0	Variation: 4	SVG: 117 bytes Sections: 1	Gas Spent: 432952
+    Id: 4	Gene: 0	Variation: 5	SVG: 117 bytes Sections: 1	Gas Spent: 448016
+    Id: 5	Gene: 0	Variation: 6	SVG: 117 bytes Sections: 1	Gas Spent: 447504
+    Id: 6	Gene: 0	Variation: 7	SVG: 117 bytes Sections: 1	Gas Spent: 447824
+    Id: 7	Gene: 0	Variation: 8	SVG: 117 bytes Sections: 1	Gas Spent: 447824
+    Id: 8	Gene: 0	Variation: 9	SVG: 117 bytes Sections: 1	Gas Spent: 447760
+    Id: 9	Gene: 0	Variation: 10	SVG: 117 bytes Sections: 1	Gas Spent: 447632
+    Id: 10	Gene: 0	Variation: 11	SVG: 117 bytes Sections: 1	Gas Spent: 447824
+    Id: 11	Gene: 0	Variation: 12	SVG: 117 bytes Sections: 1	Gas Spent: 447760
+    Id: 12	Gene: 0	Variation: 13	SVG: 117 bytes Sections: 1	Gas Spent: 447888
+    Id: 13	Gene: 0	Variation: 14	SVG: 117 bytes Sections: 1	Gas Spent: 448016
+    Id: 14	Gene: 0	Variation: 15	SVG: 117 bytes Sections: 1	Gas Spent: 447952
+    Id: 15	Gene: 0	Variation: 16	SVG: 117 bytes Sections: 1	Gas Spent: 448016
+    Id: 16	Gene: 0	Variation: 17	SVG: 117 bytes Sections: 1	Gas Spent: 447440
+    Id: 17	Gene: 0	Variation: 18	SVG: 117 bytes Sections: 1	Gas Spent: 448016
+    Id: 18	Gene: 0	Variation: 19	SVG: 117 bytes Sections: 1	Gas Spent: 447824
+    Id: 19	Gene: 0	Variation: 20	SVG: 117 bytes Sections: 1	Gas Spent: 447888
+    Id: 20	Gene: 0	Variation: 21	SVG: 117 bytes Sections: 1	Gas Spent: 448088
+    Id: 21	Gene: 0	Variation: 22	SVG: 117 bytes Sections: 1	Gas Spent: 448088
+    Id: 22	Gene: 0	Variation: 23	SVG: 117 bytes Sections: 1	Gas Spent: 448024
+    Id: 23	Gene: 0	Variation: 24	SVG: 117 bytes Sections: 1	Gas Spent: 447832
+    Id: 24	Gene: 0	Variation: 25	SVG: 117 bytes Sections: 1	Gas Spent: 448088
+    Id: 25	Gene: 0	Variation: 26	SVG: 117 bytes Sections: 1	Gas Spent: 448152
+    Id: 26	Gene: 0	Variation: 27	SVG: 117 bytes Sections: 1	Gas Spent: 447960
+    Id: 27	Gene: 0	Variation: 28	SVG: 117 bytes Sections: 1	Gas Spent: 448216
+    Id: 28	Gene: 0	Variation: 29	SVG: 117 bytes Sections: 1	Gas Spent: 447824
+    Id: 29	Gene: 0	Variation: 30	SVG: 117 bytes Sections: 1	Gas Spent: 447952
+    Id: 30	Gene: 0	Variation: 31	SVG: 117 bytes Sections: 1	Gas Spent: 447888
+    Id: 31	Gene: 0	Variation: 32	SVG: 117 bytes Sections: 1	Gas Spent: 447568
+    Id: 32	Gene: 0	Variation: 33	SVG: 117 bytes Sections: 1	Gas Spent: 448288
+    Id: 33	Gene: 0	Variation: 34	SVG: 117 bytes Sections: 1	Gas Spent: 448544
+    Id: 34	Gene: 0	Variation: 35	SVG: 117 bytes Sections: 1	Gas Spent: 448288
+    Id: 35	Gene: 0	Variation: 36	SVG: 117 bytes Sections: 1	Gas Spent: 448288
+    Id: 36	Gene: 0	Variation: 37	SVG: 117 bytes Sections: 1	Gas Spent: 448152
+    Id: 37	Gene: 0	Variation: 38	SVG: 117 bytes Sections: 1	Gas Spent: 448216
+    Id: 38	Gene: 0	Variation: 39	SVG: 117 bytes Sections: 1	Gas Spent: 448216
+    Id: 39	Gene: 0	Variation: 40	SVG: 117 bytes Sections: 1	Gas Spent: 448216
+    Id: 40	Gene: 0	Variation: 41	SVG: 117 bytes Sections: 1	Gas Spent: 448104
+    Id: 41	Gene: 0	Variation: 42	SVG: 117 bytes Sections: 1	Gas Spent: 448744
+    Id: 42	Gene: 0	Variation: 43	SVG: 117 bytes Sections: 1	Gas Spent: 448488
+    Id: 43	Gene: 0	Variation: 44	SVG: 117 bytes Sections: 1	Gas Spent: 448488
+    Id: 44	Gene: 0	Variation: 45	SVG: 117 bytes Sections: 1	Gas Spent: 447952
+    Id: 45	Gene: 0	Variation: 46	SVG: 117 bytes Sections: 1	Gas Spent: 447888
+    Id: 46	Gene: 0	Variation: 47	SVG: 117 bytes Sections: 1	Gas Spent: 447440
+    Id: 47	Gene: 0	Variation: 48	SVG: 117 bytes Sections: 1	Gas Spent: 448016
+    Id: 48	Gene: 0	Variation: 49	SVG: 117 bytes Sections: 1	Gas Spent: 448945
+    Id: 49	Gene: 0	Variation: 50	SVG: 117 bytes Sections: 1	Gas Spent: 449009
+    Id: 50	Gene: 0	Variation: 51	SVG: 117 bytes Sections: 1	Gas Spent: 448689
+    Id: 51	Gene: 0	Variation: 52	SVG: 117 bytes Sections: 1	Gas Spent: 448497
+    Id: 52	Gene: 1	Variation: 1	SVG: 172 bytes Sections: 1	Gas Spent: 492745
+    Id: 53	Gene: 1	Variation: 2	SVG: 172 bytes Sections: 1	Gas Spent: 492873
+    Id: 54	Gene: 1	Variation: 3	SVG: 172 bytes Sections: 1	Gas Spent: 492809
+    Id: 55	Gene: 1	Variation: 4	SVG: 172 bytes Sections: 1	Gas Spent: 493065
+    Id: 56	Gene: 1	Variation: 5	SVG: 172 bytes Sections: 1	Gas Spent: 492873
+    Id: 57	Gene: 1	Variation: 6	SVG: 172 bytes Sections: 1	Gas Spent: 492873
+    Id: 58	Gene: 1	Variation: 7	SVG: 172 bytes Sections: 1	Gas Spent: 492937
+    Id: 59	Gene: 1	Variation: 8	SVG: 172 bytes Sections: 1	Gas Spent: 492425
+    Id: 60	Gene: 1	Variation: 9	SVG: 172 bytes Sections: 1	Gas Spent: 493001
+    Id: 61	Gene: 1	Variation: 10	SVG: 172 bytes Sections: 1	Gas Spent: 493065
+    Id: 62	Gene: 1	Variation: 11	SVG: 172 bytes Sections: 1	Gas Spent: 492809
+    Id: 63	Gene: 1	Variation: 12	SVG: 172 bytes Sections: 1	Gas Spent: 492873
+    Id: 64	Gene: 1	Variation: 13	SVG: 172 bytes Sections: 1	Gas Spent: 493001
+    Id: 65	Gene: 1	Variation: 14	SVG: 172 bytes Sections: 1	Gas Spent: 492553
+    Id: 66	Gene: 1	Variation: 15	SVG: 172 bytes Sections: 1	Gas Spent: 492489
+    Id: 67	Gene: 2	Variation: 1	SVG: 140 bytes Sections: 1	Gas Spent: 454820
+    Id: 68	Gene: 2	Variation: 2	SVG: 140 bytes Sections: 1	Gas Spent: 454628
+    Id: 69	Gene: 2	Variation: 3	SVG: 140 bytes Sections: 1	Gas Spent: 454628
+    Id: 70	Gene: 2	Variation: 4	SVG: 140 bytes Sections: 1	Gas Spent: 470012
+    Id: 71	Gene: 2	Variation: 5	SVG: 140 bytes Sections: 1	Gas Spent: 469500
+    Id: 72	Gene: 2	Variation: 6	SVG: 140 bytes Sections: 1	Gas Spent: 469436
+    Id: 73	Gene: 2	Variation: 7	SVG: 140 bytes Sections: 1	Gas Spent: 469244
+    Id: 74	Gene: 2	Variation: 8	SVG: 140 bytes Sections: 1	Gas Spent: 469628
+    Id: 75	Gene: 2	Variation: 9	SVG: 140 bytes Sections: 1	Gas Spent: 469500
+    Id: 76	Gene: 2	Variation: 10	SVG: 140 bytes Sections: 1	Gas Spent: 469244
+    Id: 77	Gene: 2	Variation: 11	SVG: 140 bytes Sections: 1	Gas Spent: 469500
+    Id: 78	Gene: 2	Variation: 12	SVG: 140 bytes Sections: 1	Gas Spent: 469564
+    Id: 79	Gene: 2	Variation: 13	SVG: 140 bytes Sections: 1	Gas Spent: 469564
+    Id: 80	Gene: 2	Variation: 14	SVG: 140 bytes Sections: 1	Gas Spent: 469628
+    Id: 81	Gene: 2	Variation: 15	SVG: 140 bytes Sections: 1	Gas Spent: 469500
+    Id: 82	Gene: 2	Variation: 16	SVG: 140 bytes Sections: 1	Gas Spent: 469956
+    Id: 83	Gene: 2	Variation: 17	SVG: 140 bytes Sections: 1	Gas Spent: 469764
+    Id: 84	Gene: 2	Variation: 18	SVG: 140 bytes Sections: 1	Gas Spent: 469892
+    Id: 85	Gene: 2	Variation: 19	SVG: 140 bytes Sections: 1	Gas Spent: 470148
+    Id: 86	Gene: 2	Variation: 20	SVG: 140 bytes Sections: 1	Gas Spent: 469956
+    Id: 87	Gene: 2	Variation: 21	SVG: 140 bytes Sections: 1	Gas Spent: 469892
+    Id: 88	Gene: 2	Variation: 22	SVG: 140 bytes Sections: 1	Gas Spent: 469692
+    Id: 89	Gene: 2	Variation: 23	SVG: 140 bytes Sections: 1	Gas Spent: 469756
+    Id: 90	Gene: 2	Variation: 24	SVG: 140 bytes Sections: 1	Gas Spent: 469180
+    Id: 91	Gene: 2	Variation: 25	SVG: 140 bytes Sections: 1	Gas Spent: 469900
+    Id: 92	Gene: 2	Variation: 26	SVG: 140 bytes Sections: 1	Gas Spent: 470092
+    Id: 93	Gene: 2	Variation: 27	SVG: 140 bytes Sections: 1	Gas Spent: 469836
+    Id: 94	Gene: 2	Variation: 28	SVG: 140 bytes Sections: 1	Gas Spent: 469380
+    Id: 95	Gene: 2	Variation: 29	SVG: 140 bytes Sections: 1	Gas Spent: 469444
+    Id: 96	Gene: 2	Variation: 30	SVG: 140 bytes Sections: 1	Gas Spent: 469444
+    Id: 97	Gene: 2	Variation: 31	SVG: 140 bytes Sections: 1	Gas Spent: 469909
+    Id: 98	Gene: 2	Variation: 32	SVG: 140 bytes Sections: 1	Gas Spent: 470037
+    Id: 99	Gene: 2	Variation: 33	SVG: 140 bytes Sections: 1	Gas Spent: 470037
+    Id: 100	Gene: 2	Variation: 34	SVG: 140 bytes Sections: 1	Gas Spent: 469500
+    Id: 101	Gene: 2	Variation: 35	SVG: 140 bytes Sections: 1	Gas Spent: 469180
+    Id: 102	Gene: 2	Variation: 36	SVG: 140 bytes Sections: 1	Gas Spent: 469500
+    Id: 103	Gene: 2	Variation: 37	SVG: 140 bytes Sections: 1	Gas Spent: 470557
+    Id: 104	Gene: 2	Variation: 38	SVG: 140 bytes Sections: 1	Gas Spent: 470749
+    Id: 105	Gene: 2	Variation: 39	SVG: 140 bytes Sections: 1	Gas Spent: 470173
+    Id: 106	Gene: 3	Variation: 1	SVG: 56 bytes  Sections: 1	Gas Spent: 388320
+    Id: 107	Gene: 3	Variation: 2	SVG: 56 bytes  Sections: 1	Gas Spent: 388384
+    Id: 108	Gene: 3	Variation: 3	SVG: 56 bytes  Sections: 1	Gas Spent: 388128
+    Id: 109	Gene: 3	Variation: 4	SVG: 56 bytes  Sections: 1	Gas Spent: 388384
+    Id: 110	Gene: 3	Variation: 5	SVG: 56 bytes  Sections: 1	Gas Spent: 403448
+    Id: 111	Gene: 3	Variation: 6	SVG: 56 bytes  Sections: 1	Gas Spent: 403384
+    Id: 112	Gene: 3	Variation: 7	SVG: 56 bytes  Sections: 1	Gas Spent: 403512
+    Id: 113	Gene: 3	Variation: 8	SVG: 56 bytes  Sections: 1	Gas Spent: 403576
+    Id: 114	Gene: 3	Variation: 9	SVG: 56 bytes  Sections: 1	Gas Spent: 403896
+    Id: 115	Gene: 3	Variation: 10	SVG: 56 bytes  Sections: 1	Gas Spent: 403448
+    Id: 116	Gene: 3	Variation: 11	SVG: 56 bytes  Sections: 1	Gas Spent: 403256
+    Id: 117	Gene: 3	Variation: 12	SVG: 56 bytes  Sections: 1	Gas Spent: 403704
+    Id: 118	Gene: 3	Variation: 13	SVG: 56 bytes  Sections: 1	Gas Spent: 403384
+    Id: 119	Gene: 3	Variation: 14	SVG: 56 bytes  Sections: 1	Gas Spent: 403576
+    Id: 120	Gene: 3	Variation: 15	SVG: 56 bytes  Sections: 1	Gas Spent: 403832
+    Id: 121	Gene: 3	Variation: 16	SVG: 56 bytes  Sections: 1	Gas Spent: 403256
+    Id: 122	Gene: 3	Variation: 17	SVG: 56 bytes  Sections: 1	Gas Spent: 403704
+    Id: 123	Gene: 3	Variation: 18	SVG: 56 bytes  Sections: 1	Gas Spent: 403832
+    Id: 124	Gene: 3	Variation: 19	SVG: 56 bytes  Sections: 1	Gas Spent: 403448
+    Id: 125	Gene: 3	Variation: 20	SVG: 56 bytes  Sections: 1	Gas Spent: 403832
+    Id: 126	Gene: 3	Variation: 21	SVG: 56 bytes  Sections: 1	Gas Spent: 403840
+    Id: 127	Gene: 3	Variation: 22	SVG: 56 bytes  Sections: 1	Gas Spent: 403712
+    Id: 128	Gene: 3	Variation: 23	SVG: 56 bytes  Sections: 1	Gas Spent: 403776
+    Id: 129	Gene: 3	Variation: 24	SVG: 56 bytes  Sections: 1	Gas Spent: 403456
+    Id: 130	Gene: 3	Variation: 25	SVG: 56 bytes  Sections: 1	Gas Spent: 403840
+    Id: 131	Gene: 3	Variation: 26	SVG: 56 bytes  Sections: 1	Gas Spent: 403968
+    Id: 132	Gene: 3	Variation: 27	SVG: 56 bytes  Sections: 1	Gas Spent: 403584
+    Id: 133	Gene: 3	Variation: 28	SVG: 56 bytes  Sections: 1	Gas Spent: 404032
+    Id: 134	Gene: 3	Variation: 29	SVG: 56 bytes  Sections: 1	Gas Spent: 403256
+    Id: 135	Gene: 3	Variation: 30	SVG: 56 bytes  Sections: 1	Gas Spent: 403320
+    Id: 136	Gene: 3	Variation: 31	SVG: 56 bytes  Sections: 1	Gas Spent: 403384
+    Id: 137	Gene: 3	Variation: 32	SVG: 56 bytes  Sections: 1	Gas Spent: 403640
+    Id: 138	Gene: 3	Variation: 33	SVG: 56 bytes  Sections: 1	Gas Spent: 403784
+    Id: 139	Gene: 3	Variation: 34	SVG: 56 bytes  Sections: 1	Gas Spent: 404232
+    Id: 140	Gene: 3	Variation: 35	SVG: 56 bytes  Sections: 1	Gas Spent: 403976
+    Id: 141	Gene: 3	Variation: 36	SVG: 56 bytes  Sections: 1	Gas Spent: 403848
+    Id: 142	Gene: 3	Variation: 37	SVG: 56 bytes  Sections: 1	Gas Spent: 403712
+    Id: 143	Gene: 3	Variation: 38	SVG: 56 bytes  Sections: 1	Gas Spent: 403456
+    Id: 144	Gene: 3	Variation: 39	SVG: 56 bytes  Sections: 1	Gas Spent: 403648
+    Id: 145	Gene: 3	Variation: 40	SVG: 56 bytes  Sections: 1	Gas Spent: 403456
+    Id: 146	Gene: 3	Variation: 41	SVG: 56 bytes  Sections: 1	Gas Spent: 404240
+    Id: 147	Gene: 3	Variation: 42	SVG: 56 bytes  Sections: 1	Gas Spent: 403984
+    Id: 148	Gene: 3	Variation: 43	SVG: 56 bytes  Sections: 1	Gas Spent: 404048
+    Id: 149	Gene: 3	Variation: 44	SVG: 56 bytes  Sections: 1	Gas Spent: 404624
+    Id: 150	Gene: 3	Variation: 45	SVG: 56 bytes  Sections: 1	Gas Spent: 403192
+    Id: 151	Gene: 3	Variation: 46	SVG: 56 bytes  Sections: 1	Gas Spent: 403768
+    Id: 152	Gene: 3	Variation: 47	SVG: 56 bytes  Sections: 1	Gas Spent: 403576
+    Id: 153	Gene: 3	Variation: 48	SVG: 56 bytes  Sections: 1	Gas Spent: 403832
+    Id: 154	Gene: 3	Variation: 49	SVG: 56 bytes  Sections: 1	Gas Spent: 404248
+    Id: 155	Gene: 3	Variation: 50	SVG: 56 bytes  Sections: 1	Gas Spent: 404632
+    Id: 156	Gene: 3	Variation: 51	SVG: 56 bytes  Sections: 1	Gas Spent: 404312
+    Id: 157	Gene: 3	Variation: 52	SVG: 56 bytes  Sections: 1	Gas Spent: 404632
+    Id: 158	Gene: 4	Variation: 1	SVG: 2844 bytes    Sections: 1	Gas Spent: 2324587
+    Id: 159	Gene: 4	Variation: 2	SVG: 3047 bytes    Sections: 1	Gas Spent: 2479011
+    Id: 160	Gene: 4	Variation: 3	SVG: 2916 bytes    Sections: 1	Gas Spent: 2389873
+    Id: 161	Gene: 4	Variation: 4	SVG: 3127 bytes    Sections: 1	Gas Spent: 2524604
+    Id: 162	Gene: 4	Variation: 5	SVG: 2852 bytes    Sections: 1	Gas Spent: 2360368
+    Id: 163	Gene: 4	Variation: 6	SVG: 3074 bytes    Sections: 1	Gas Spent: 2516007
+    Id: 164	Gene: 4	Variation: 7	SVG: 3037 bytes    Sections: 1	Gas Spent: 2473614
+    Id: 165	Gene: 4	Variation: 8	SVG: 3263 bytes    Sections: 1	Gas Spent: 2629510
+    Id: 166	Gene: 4	Variation: 9	SVG: 3040 bytes    Sections: 1	Gas Spent: 2473486
+    Id: 167	Gene: 4	Variation: 10	SVG: 3295 bytes    Sections: 1	Gas Spent: 2651442
+    Id: 168	Gene: 4	Variation: 11	SVG: 3133 bytes    Sections: 1	Gas Spent: 2540116
+    Id: 169	Gene: 4	Variation: 12	SVG: 3133 bytes    Sections: 1	Gas Spent: 2540116
+    Id: 170	Gene: 4	Variation: 13	SVG: 3256 bytes    Sections: 1	Gas Spent: 2628614
+    Id: 171	Gene: 4	Variation: 14	SVG: 3256 bytes    Sections: 1	Gas Spent: 2628614
+    Id: 172	Gene: 4	Variation: 15	SVG: 3215 bytes    Sections: 1	Gas Spent: 2606489
+    Id: 173	Gene: 4	Variation: 16	SVG: 3311 bytes    Sections: 1	Gas Spent: 2673247
+    Id: 174	Gene: 4	Variation: 17	SVG: 3474 bytes    Sections: 1	Gas Spent: 2784701
+    Id: 175	Gene: 4	Variation: 18	SVG: 4828 bytes    Sections: 1	Gas Spent: 3719950
+    Id: 176	Gene: 4	Variation: 19	SVG: 5114 bytes    Sections: 1	Gas Spent: 3920097
+    Id: 177	Gene: 4	Variation: 20	SVG: 5114 bytes    Sections: 1	Gas Spent: 3920097
+    Id: 178	Gene: 4	Variation: 21	SVG: 3961 bytes    Sections: 1	Gas Spent: 3119394
+    Id: 179	Gene: 4	Variation: 22	SVG: 4133 bytes    Sections: 1	Gas Spent: 3251885
+    Id: 180	Gene: 4	Variation: 23	SVG: 3597 bytes    Sections: 1	Gas Spent: 2873656
+    Id: 181	Gene: 4	Variation: 24	SVG: 4052 bytes    Sections: 1	Gas Spent: 3185704
+    Id: 182	Gene: 4	Variation: 25	SVG: 8318 bytes    Sections: 1	Gas Spent: 6146357
+    Id: 183	Gene: 4	Variation: 26	SVG: 3256 bytes    Sections: 1	Gas Spent: 2630286
+    Id: 184	Gene: 4	Variation: 27	SVG: 4087 bytes    Sections: 1	Gas Spent: 3208660
+    Id: 185	Gene: 4	Variation: 28	SVG: 6420 bytes    Sections: 1	Gas Spent: 4833174
+    Id: 186	Gene: 4	Variation: 29	SVG: 4296 bytes    Sections: 1	Gas Spent: 3362756
+    Id: 187	Gene: 4	Variation: 30	SVG: 4296 bytes    Sections: 1	Gas Spent: 3362756
+    Id: 188	Gene: 4	Variation: 31	SVG: 3491 bytes    Sections: 1	Gas Spent: 2806122
+    Id: 189	Gene: 4	Variation: 32	SVG: 4009 bytes    Sections: 1	Gas Spent: 3162546
+    Id: 190	Gene: 4	Variation: 33	SVG: 4958 bytes    Sections: 1	Gas Spent: 3809682
+    Id: 191	Gene: 4	Variation: 34	SVG: 4406 bytes    Sections: 1	Gas Spent: 3431195
+    Id: 192	Gene: 4	Variation: 35	SVG: 4129 bytes    Sections: 1	Gas Spent: 3251894
+    Id: 193	Gene: 4	Variation: 36	SVG: 4228 bytes    Sections: 1	Gas Spent: 3318908
+    Id: 194	Gene: 4	Variation: 37	SVG: 3648 bytes    Sections: 1	Gas Spent: 2896996
+    Id: 195	Gene: 4	Variation: 38	SVG: 3775 bytes    Sections: 1	Gas Spent: 2985942
+    Id: 196	Gene: 4	Variation: 39	SVG: 3947 bytes    Sections: 1	Gas Spent: 3118626
+    Id: 197	Gene: 4	Variation: 40	SVG: 5158 bytes    Sections: 1	Gas Spent: 3963907
+    Id: 198	Gene: 4	Variation: 41	SVG: 3194 bytes    Sections: 1	Gas Spent: 2585030
+    Id: 199	Gene: 4	Variation: 42	SVG: 3199 bytes    Sections: 1	Gas Spent: 2585350
+    Id: 200	Gene: 4	Variation: 43	SVG: 3045 bytes    Sections: 1	Gas Spent: 2494484
+    Id: 201	Gene: 4	Variation: 44	SVG: 4967 bytes    Sections: 1	Gas Spent: 3830984
+    Id: 202	Gene: 4	Variation: 45	SVG: 4039 bytes    Sections: 1	Gas Spent: 3184735
+    Id: 203	Gene: 4	Variation: 46	SVG: 3250 bytes    Sections: 1	Gas Spent: 2628102
+    Id: 204	Gene: 4	Variation: 47	SVG: 3773 bytes    Sections: 1	Gas Spent: 2985870
+    Id: 205	Gene: 4	Variation: 48	SVG: 3937 bytes    Sections: 1	Gas Spent: 3117849
+    Id: 206	Gene: 4	Variation: 49	SVG: 3438 bytes    Sections: 1	Gas Spent: 2763251
+    Id: 207	Gene: 4	Variation: 50	SVG: 4387 bytes    Sections: 1	Gas Spent: 3430380
+    Id: 208	Gene: 4	Variation: 51	SVG: 4624 bytes    Sections: 1	Gas Spent: 3587045
+    Id: 209	Gene: 4	Variation: 52	SVG: 3921 bytes    Sections: 1	Gas Spent: 3097551
+    Id: 210	Gene: 5	Variation: 1	SVG: 2681 bytes    Sections: 1	Gas Spent: 2228982
+    Id: 211	Gene: 5	Variation: 2	SVG: 2616 bytes    Sections: 1	Gas Spent: 2184213
+    Id: 212	Gene: 5	Variation: 3	SVG: 2500 bytes    Sections: 1	Gas Spent: 2116504
+    Id: 213	Gene: 5	Variation: 4	SVG: 2516 bytes    Sections: 1	Gas Spent: 2117328
+    Id: 214	Gene: 5	Variation: 5	SVG: 2845 bytes    Sections: 1	Gas Spent: 2340500
+    Id: 215	Gene: 5	Variation: 6	SVG: 2848 bytes    Sections: 1	Gas Spent: 2340492
+    Id: 216	Gene: 5	Variation: 7	SVG: 2873 bytes    Sections: 1	Gas Spent: 2362625
+    Id: 217	Gene: 5	Variation: 8	SVG: 2797 bytes    Sections: 1	Gas Spent: 2317151
+    Id: 218	Gene: 5	Variation: 9	SVG: 2827 bytes    Sections: 1	Gas Spent: 2339348
+    Id: 219	Gene: 5	Variation: 10	SVG: 2960 bytes    Sections: 1	Gas Spent: 2428478
+    Id: 220	Gene: 5	Variation: 11	SVG: 2897 bytes    Sections: 1	Gas Spent: 2384365
+    Id: 221	Gene: 5	Variation: 12	SVG: 2994 bytes    Sections: 1	Gas Spent: 2450986
+    Id: 222	Gene: 5	Variation: 13	SVG: 2988 bytes    Sections: 1	Gas Spent: 2450675
+    Id: 223	Gene: 5	Variation: 14	SVG: 2974 bytes    Sections: 1	Gas Spent: 2429374
+    Id: 224	Gene: 5	Variation: 15	SVG: 3023 bytes    Sections: 1	Gas Spent: 2473247
+    Id: 225	Gene: 5	Variation: 16	SVG: 3023 bytes    Sections: 1	Gas Spent: 2473047
+    Id: 226	Gene: 5	Variation: 17	SVG: 2939 bytes    Sections: 1	Gas Spent: 2407130
+    Id: 227	Gene: 5	Variation: 18	SVG: 3004 bytes    Sections: 1	Gas Spent: 2451562
+    Id: 228	Gene: 5	Variation: 19	SVG: 2918 bytes    Sections: 1	Gas Spent: 2405914
+    Id: 229	Gene: 5	Variation: 20	SVG: 2982 bytes    Sections: 1	Gas Spent: 2450282
+    Id: 230	Gene: 6	Variation: 1	SVG: 4053 bytes    Sections: 1	Gas Spent: 3169735
+    Id: 231	Gene: 6	Variation: 2	SVG: 4070 bytes    Sections: 1	Gas Spent: 3191028
+    Id: 232	Gene: 6	Variation: 3	SVG: 3842 bytes    Sections: 1	Gas Spent: 3035196
+    Id: 233	Gene: 6	Variation: 4	SVG: 3973 bytes    Sections: 1	Gas Spent: 3124398
+    Id: 234	Gene: 6	Variation: 5	SVG: 4929 bytes    Sections: 1	Gas Spent: 3806529
+    Id: 235	Gene: 6	Variation: 6	SVG: 4968 bytes    Sections: 1	Gas Spent: 3829230
+    Id: 236	Gene: 6	Variation: 7	SVG: 4620 bytes    Sections: 1	Gas Spent: 3584706
+    Id: 237	Gene: 6	Variation: 8	SVG: 4683 bytes    Sections: 1	Gas Spent: 3629148
+    Id: 238	Gene: 6	Variation: 9	SVG: 4572 bytes    Sections: 1	Gas Spent: 3541161
+    Id: 239	Gene: 6	Variation: 10	SVG: 4660 bytes    Sections: 1	Gas Spent: 3607407
+    Id: 240	Gene: 6	Variation: 11	SVG: 4461 bytes    Sections: 1	Gas Spent: 3473443
+    Id: 241	Gene: 6	Variation: 12	SVG: 4449 bytes    Sections: 1	Gas Spent: 3472675
+    Id: 242	Gene: 6	Variation: 13	SVG: 4775 bytes    Sections: 1	Gas Spent: 3695650
+    Id: 243	Gene: 6	Variation: 14	SVG: 4843 bytes    Sections: 1	Gas Spent: 3740411
+    Id: 244	Gene: 6	Variation: 15	SVG: 4470 bytes    Sections: 1	Gas Spent: 3474147
+    Id: 245	Gene: 6	Variation: 16	SVG: 4639 bytes    Sections: 1	Gas Spent: 3585986
+    Id: 246	Gene: 6	Variation: 17	SVG: 4834 bytes    Sections: 1	Gas Spent: 3740027
+    Id: 247	Gene: 6	Variation: 18	SVG: 5063 bytes    Sections: 1	Gas Spent: 3896116
+    Id: 248	Gene: 6	Variation: 19	SVG: 4673 bytes    Sections: 1	Gas Spent: 3628508
+    Id: 249	Gene: 6	Variation: 20	SVG: 4712 bytes    Sections: 1	Gas Spent: 3651208
+    Id: 250	Gene: 6	Variation: 21	SVG: 5017 bytes    Sections: 1	Gas Spent: 3852963
+    Id: 251	Gene: 6	Variation: 22	SVG: 5020 bytes    Sections: 1	Gas Spent: 3853155
+    Id: 252	Gene: 6	Variation: 23	SVG: 4903 bytes    Sections: 1	Gas Spent: 3785693
+    Id: 253	Gene: 6	Variation: 24	SVG: 5020 bytes    Sections: 1	Gas Spent: 3853795
+    Id: 254	Gene: 6	Variation: 25	SVG: 5218 bytes    Sections: 1	Gas Spent: 4007708
+    Id: 255	Gene: 6	Variation: 26	SVG: 5143 bytes    Sections: 1	Gas Spent: 3942294
+    Id: 256	Gene: 6	Variation: 27	SVG: 4580 bytes    Sections: 1	Gas Spent: 3562462
+    Id: 257	Gene: 6	Variation: 28	SVG: 4570 bytes    Sections: 1	Gas Spent: 3541618
+    Id: 258	Gene: 6	Variation: 29	SVG: 4922 bytes    Sections: 1	Gas Spent: 3786516
+    Id: 259	Gene: 6	Variation: 30	SVG: 4992 bytes    Sections: 1	Gas Spent: 3831406
+    Id: 260	Gene: 6	Variation: 31	SVG: 4526 bytes    Sections: 1	Gas Spent: 3518268
+    Id: 261	Gene: 6	Variation: 32	SVG: 4568 bytes    Sections: 1	Gas Spent: 3541161
+    Id: 262	Gene: 6	Variation: 33	SVG: 4969 bytes    Sections: 1	Gas Spent: 3830079
+    Id: 263	Gene: 6	Variation: 34	SVG: 5299 bytes    Sections: 1	Gas Spent: 4053247
+    Id: 264	Gene: 6	Variation: 35	SVG: 4771 bytes    Sections: 1	Gas Spent: 3696243
+    Id: 265	Gene: 6	Variation: 36	SVG: 4807 bytes    Sections: 1	Gas Spent: 3718752
+    Id: 266	Gene: 6	Variation: 37	SVG: 4695 bytes    Sections: 1	Gas Spent: 3630436
+    Id: 267	Gene: 6	Variation: 38	SVG: 4694 bytes    Sections: 1	Gas Spent: 3630372
+    Id: 268	Gene: 6	Variation: 39	SVG: 5205 bytes    Sections: 1	Gas Spent: 3986736
+    Id: 269	Gene: 6	Variation: 40	SVG: 5268 bytes    Sections: 1	Gas Spent: 4031177
+    Id: 270	Gene: 6	Variation: 41	SVG: 5679 bytes    Sections: 1	Gas Spent: 4320536
+    Id: 271	Gene: 6	Variation: 42	SVG: 5418 bytes    Sections: 1	Gas Spent: 4142194
+    Id: 272	Gene: 6	Variation: 43	SVG: 5829 bytes    Sections: 1	Gas Spent: 4430648
+    Id: 273	Gene: 6	Variation: 44	SVG: 6018 bytes    Sections: 1	Gas Spent: 4563973
+    Id: 274	Gene: 6	Variation: 45	SVG: 5993 bytes    Sections: 1	Gas Spent: 4542351
+    Id: 275	Gene: 6	Variation: 46	SVG: 5708 bytes    Sections: 1	Gas Spent: 4342268
+    Id: 276	Gene: 6	Variation: 47	SVG: 5171 bytes    Sections: 1	Gas Spent: 3964035
+    Id: 277	Gene: 6	Variation: 48	SVG: 5127 bytes    Sections: 1	Gas Spent: 3941014
+    Id: 278	Gene: 6	Variation: 49	SVG: 8084 bytes    Sections: 1	Gas Spent: 5989589
+    Id: 279	Gene: 6	Variation: 50	SVG: 8537 bytes    Sections: 1	Gas Spent: 6301452
+    Id: 280	Gene: 6	Variation: 51	SVG: 4370 bytes    Sections: 1	Gas Spent: 3408704
+    Id: 281	Gene: 6	Variation: 52	SVG: 4566 bytes    Sections: 1	Gas Spent: 3542476
+    Id: 282	Gene: 7	Variation: 1	SVG: 2285 bytes    Sections: 1	Gas Spent: 1945721
+    Id: 283	Gene: 7	Variation: 2	SVG: 2343 bytes    Sections: 1	Gas Spent: 1989841
+    Id: 284	Gene: 7	Variation: 3	SVG: 2670 bytes    Sections: 1	Gas Spent: 2212621
+    Id: 285	Gene: 7	Variation: 4	SVG: 2762 bytes    Sections: 1	Gas Spent: 2279123
+    Id: 286	Gene: 7	Variation: 5	SVG: 3194 bytes    Sections: 1	Gas Spent: 2569557
+    Id: 287	Gene: 7	Variation: 6	SVG: 2965 bytes    Sections: 1	Gas Spent: 2413469
+    Id: 288	Gene: 7	Variation: 7	SVG: 2191 bytes    Sections: 1	Gas Spent: 1894411
+    Id: 289	Gene: 7	Variation: 8	SVG: 2492 bytes    Sections: 1	Gas Spent: 2095515
+    Id: 290	Gene: 7	Variation: 9	SVG: 2194 bytes    Sections: 1	Gas Spent: 1893899
+    Id: 291	Gene: 7	Variation: 10	SVG: 2308 bytes    Sections: 1	Gas Spent: 1982013
+    Id: 292	Gene: 7	Variation: 11	SVG: 3504 bytes    Sections: 1	Gas Spent: 2806570
+    Id: 293	Gene: 7	Variation: 12	SVG: 3869 bytes    Sections: 1	Gas Spent: 3052180
+    Id: 294	Gene: 7	Variation: 13	SVG: 4556 bytes    Sections: 1	Gas Spent: 3540457
+    Id: 295	Gene: 7	Variation: 14	SVG: 4466 bytes    Sections: 1	Gas Spent: 3474083
+    Id: 296	Gene: 7	Variation: 15	SVG: 2380 bytes    Sections: 1	Gas Spent: 2027670
+    Id: 297	Gene: 7	Variation: 16	SVG: 2504 bytes    Sections: 1	Gas Spent: 2116423
+    Id: 298	Gene: 7	Variation: 17	SVG: 1256 bytes    Sections: 1	Gas Spent: 1248135
+    Id: 299	Gene: 7	Variation: 18	SVG: 3657 bytes    Sections: 1	Gas Spent: 2917192
+    Id: 300	Gene: 7	Variation: 19	SVG: 2181 bytes    Sections: 1	Gas Spent: 1893707
+    Id: 301	Gene: 7	Variation: 20	SVG: 2471 bytes    Sections: 1	Gas Spent: 2094107
+    Id: 302	Gene: 7	Variation: 21	SVG: 3555 bytes    Sections: 1	Gas Spent: 2849795
+    Id: 303	Gene: 7	Variation: 22	SVG: 3789 bytes    Sections: 1	Gas Spent: 3006202
+    Id: 304	Gene: 7	Variation: 23	SVG: 3314 bytes    Sections: 1	Gas Spent: 2673055
+    Id: 305	Gene: 7	Variation: 24	SVG: 2885 bytes    Sections: 1	Gas Spent: 2382812
+    Id: 306	Gene: 7	Variation: 25	SVG: 4277 bytes    Sections: 1	Gas Spent: 3340375
+    Id: 307	Gene: 7	Variation: 26	SVG: 3483 bytes    Sections: 1	Gas Spent: 2784445
+    Id: 308	Gene: 7	Variation: 27	SVG: 2332 bytes    Sections: 1	Gas Spent: 1984253
+    Id: 309	Gene: 7	Variation: 28	SVG: 2594 bytes    Sections: 1	Gas Spent: 2182860
+    Id: 310	Gene: 7	Variation: 29	SVG: 2931 bytes    Sections: 1	Gas Spent: 2406089
+    Id: 311	Gene: 7	Variation: 30	SVG: 2483 bytes    Sections: 1	Gas Spent: 2094427
+    Id: 312	Gene: 7	Variation: 31	SVG: 3853 bytes    Sections: 1	Gas Spent: 3051484
+    Id: 313	Gene: 7	Variation: 32	SVG: 2619 bytes    Sections: 1	Gas Spent: 2184213
+    Id: 314	Gene: 7	Variation: 33	SVG: 4042 bytes    Sections: 1	Gas Spent: 3184744
+    Id: 315	Gene: 7	Variation: 34	SVG: 4068 bytes    Sections: 1	Gas Spent: 3206612
+    Id: 316	Gene: 7	Variation: 35	SVG: 4816 bytes    Sections: 1	Gas Spent: 3718999
+    Id: 317	Gene: 7	Variation: 36	SVG: 5849 bytes    Sections: 1	Gas Spent: 4431663
+    Id: 318	Gene: 7	Variation: 37	SVG: 3482 bytes    Sections: 1	Gas Spent: 2785670
+    Id: 319	Gene: 7	Variation: 38	SVG: 3926 bytes    Sections: 1	Gas Spent: 3096949
+    Id: 320	Gene: 7	Variation: 39	SVG: 4843 bytes    Sections: 1	Gas Spent: 3741380
+    Id: 321	Gene: 7	Variation: 40	SVG: 4779 bytes    Sections: 1	Gas Spent: 3696874
+    Id: 322	Gene: 7	Variation: 41	SVG: 2480 bytes    Sections: 1	Gas Spent: 2094947
+    Id: 323	Gene: 7	Variation: 42	SVG: 2222 bytes    Sections: 1	Gas Spent: 1916800
+    Id: 324	Gene: 7	Variation: 43	SVG: 3809 bytes    Sections: 1	Gas Spent: 3028391
+    Id: 325	Gene: 7	Variation: 44	SVG: 4885 bytes    Sections: 1	Gas Spent: 3763752
+    Id: 326	Gene: 7	Variation: 45	SVG: 9154 bytes    Sections: 2	Gas Spent: 8301971
+    Id: 327	Gene: 7	Variation: 46	SVG: 8902 bytes    Sections: 1	Gas Spent: 6566662
+    Id: 328	Gene: 7	Variation: 47	SVG: 7080 bytes    Sections: 1	Gas Spent: 5298365
+    Id: 329	Gene: 7	Variation: 48	SVG: 5535 bytes    Sections: 1	Gas Spent: 4209446
+    Id: 330	Gene: 7	Variation: 49	SVG: 2864 bytes    Sections: 1	Gas Spent: 2361537
+    Id: 331	Gene: 7	Variation: 50	SVG: 2845 bytes    Sections: 1	Gas Spent: 2340116
+    Id: 332	Gene: 7	Variation: 51	SVG: 2738 bytes    Sections: 1	Gas Spent: 2272911
+    Id: 333	Gene: 7	Variation: 52	SVG: 2763 bytes    Sections: 1	Gas Spent: 2294715
+    Id: 334	Gene: 7	Variation: 53	SVG: 4300 bytes    Sections: 1	Gas Spent: 3362645
+    Id: 335	Gene: 7	Variation: 54	SVG: 4519 bytes    Sections: 1	Gas Spent: 3518094
+    Id: 336	Gene: 7	Variation: 55	SVG: 6533 bytes    Sections: 1	Gas Spent: 4920010
+    Id: 337	Gene: 7	Variation: 56	SVG: 2924 bytes    Sections: 1	Gas Spent: 2405841
+    Id: 338	Gene: 7	Variation: 57	SVG: 5730 bytes    Sections: 1	Gas Spent: 4363241
+    Id: 339	Gene: 7	Variation: 58	SVG: 5362 bytes    Sections: 1	Gas Spent: 4097231
+    Id: 340	Gene: 7	Variation: 59	SVG: 2997 bytes    Sections: 1	Gas Spent: 2451370
+    Id: 341	Gene: 7	Variation: 60	SVG: 3065 bytes    Sections: 1	Gas Spent: 2496131
+    Id: 342	Gene: 7	Variation: 61	SVG: 6048 bytes    Sections: 1	Gas Spent: 4566286
+    Id: 343	Gene: 7	Variation: 62	SVG: 4460 bytes    Sections: 1	Gas Spent: 3474621
+    Id: 344	Gene: 7	Variation: 63	SVG: 7002 bytes    Sections: 1	Gas Spent: 5233681
+    Id: 345	Gene: 7	Variation: 64	SVG: 5891 bytes    Sections: 1	Gas Spent: 4475610
+    Id: 346	Gene: 7	Variation: 65	SVG: 2901 bytes    Sections: 1	Gas Spent: 2384694
+    Id: 347	Gene: 7	Variation: 66	SVG: 3357 bytes    Sections: 1	Gas Spent: 2696741
+    Id: 348	Gene: 7	Variation: 67	SVG: 4942 bytes    Sections: 1	Gas Spent: 3807425
+    Id: 349	Gene: 7	Variation: 68	SVG: 5453 bytes    Sections: 1	Gas Spent: 4163405
+    Id: 350	Gene: 7	Variation: 69	SVG: 12151 bytes   Sections: 3	Gas Spent: 12290180
+    Id: 351	Gene: 7	Variation: 70	SVG: 12221 bytes   Sections: 3	Gas Spent: 12335469
+    Id: 352	Gene: 7	Variation: 71	SVG: 5334 bytes    Sections: 1	Gas Spent: 4075226
+    Id: 353	Gene: 7	Variation: 72	SVG: 4984 bytes    Sections: 1	Gas Spent: 3830574
+    Id: 354	Gene: 7	Variation: 73	SVG: 2561 bytes    Sections: 1	Gas Spent: 2161154
+    Id: 355	Gene: 7	Variation: 74	SVG: 2857 bytes    Sections: 1	Gas Spent: 2361938
+    Id: 356	Gene: 7	Variation: 75	SVG: 9942 bytes    Sections: 2	Gas Spent: 8840540
+    Id: 357	Gene: 7	Variation: 76	SVG: 9969 bytes    Sections: 2	Gas Spent: 8862562
+    Id: 358	Gene: 7	Variation: 77	SVG: 3451 bytes    Sections: 1	Gas Spent: 2763443
+    Id: 359	Gene: 7	Variation: 78	SVG: 3112 bytes    Sections: 1	Gas Spent: 2539702
+    Id: 360	Gene: 8	Variation: 1	SVG: 19 bytes  Sections: 1	Gas Spent: 345454
+    Id: 361	Gene: 8	Variation: 2	SVG: 933 bytes Sections: 1	Gas Spent: 1010228
+    Id: 362	Gene: 8	Variation: 3	SVG: 14583 bytes   Sections: 4	Gas Spent: 16239714
+    Id: 363	Gene: 8	Variation: 4	SVG: 19 bytes  Sections: 1	Gas Spent: 360710
+    Id: 364	Gene: 8	Variation: 5	SVG: 153 bytes Sections: 1	Gas Spent: 470396
+    Id: 365	Gene: 8	Variation: 6	SVG: 19 bytes  Sections: 1	Gas Spent: 360710
 
-    Id: 366	Gene: 8	Variation: 8	Art Size: 6014 bytes    Sections: 1	Gas Spent: 4542726
-    Id: 367	Gene: 8	Variation: 9	Art Size: 19 bytes  Sections: 1	Gas Spent: 360710
-    Id: 368	Gene: 8	Variation: 10	Art Size: 8185 bytes    Sections: 1	Gas Spent: 6056120
-    Id: 369	Gene: 8	Variation: 11	Art Size: 927 bytes Sections: 1	Gas Spent: 1005152
-    Id: 370	Gene: 8	Variation: 12	Art Size: 19 bytes  Sections: 1	Gas Spent: 360710
-    Id: 371	Gene: 8	Variation: 13	Art Size: 916 bytes Sections: 1	Gas Spent: 1004512
-    Id: 372	Gene: 8	Variation: 14	Art Size: 4455 bytes    Sections: 1	Gas Spent: 3473123
-    Id: 373	Gene: 8	Variation: 15	Art Size: 2269 bytes    Sections: 1	Gas Spent: 1940269
-    Id: 374	Gene: 8	Variation: 16	Art Size: 3741 bytes    Sections: 1	Gas Spent: 2963114
-    Id: 375	Gene: 8	Variation: 17	Art Size: 8601 bytes    Sections: 1	Gas Spent: 6345547
-    Id: 376	Gene: 8	Variation: 18	Art Size: 4228 bytes    Sections: 1	Gas Spent: 3317363
-    Id: 377	Gene: 8	Variation: 19	Art Size: 891 bytes Sections: 1	Gas Spent: 982844
-    Id: 378	Gene: 8	Variation: 20	Art Size: 4132 bytes    Sections: 1	Gas Spent: 3251373
-    Id: 379	Gene: 8	Variation: 21	Art Size: 871 bytes Sections: 1	Gas Spent: 981180
-    Id: 380	Gene: 8	Variation: 22	Art Size: 5753 bytes    Sections: 1	Gas Spent: 4364905
-    Id: 381	Gene: 8	Variation: 23	Art Size: 3015 bytes    Sections: 1	Gas Spent: 2471950
-    Id: 382	Gene: 8	Variation: 24	Art Size: 641 bytes Sections: 1	Gas Spent: 825406
-    Id: 383	Gene: 8	Variation: 25	Art Size: 2628 bytes    Sections: 1	Gas Spent: 2204601
-    Id: 384	Gene: 8	Variation: 26	Art Size: 2684 bytes    Sections: 1	Gas Spent: 2228581
-    Id: 385	Gene: 8	Variation: 27	Art Size: 361 bytes Sections: 1	Gas Spent: 626049
-    Id: 386	Gene: 8	Variation: 28	Art Size: 249 bytes Sections: 1	Gas Spent: 537873
-    Id: 387	Gene: 8	Variation: 29	Art Size: 803 bytes Sections: 1	Gas Spent: 937132
-    Id: 388	Gene: 8	Variation: 30	Art Size: 5597 bytes    Sections: 1	Gas Spent: 4254161
-    Id: 389	Gene: 8	Variation: 31	Art Size: 8032 bytes    Sections: 1	Gas Spent: 5945247
-    Id: 390	Gene: 8	Variation: 32	Art Size: 8328 bytes    Sections: 1	Gas Spent: 6166498
-    Id: 391	Gene: 8	Variation: 33	Art Size: 2442 bytes    Sections: 1	Gas Spent: 2071863
-    Id: 392	Gene: 8	Variation: 34	Art Size: 4572 bytes    Sections: 1	Gas Spent: 3541810
-    Id: 393	Gene: 8	Variation: 35	Art Size: 457 bytes Sections: 1	Gas Spent: 692686
-    Id: 394	Gene: 8	Variation: 36	Art Size: 1576 bytes    Sections: 1	Gas Spent: 1471450
-    Id: 395	Gene: 8	Variation: 37	Art Size: 8031 bytes    Sections: 1	Gas Spent: 5945457
-    Id: 396	Gene: 8	Variation: 38	Art Size: 456 bytes Sections: 1	Gas Spent: 693006
-    Id: 397	Gene: 8	Variation: 39	Art Size: 1015 bytes    Sections: 1	Gas Spent: 1071461
-    Id: 398	Gene: 8	Variation: 40	Art Size: 469 bytes Sections: 1	Gas Spent: 693045
-    Id: 399	Gene: 8	Variation: 41	Art Size: 16666 bytes   Sections: 5	Gas Spent: 20331418
-    Id: 400	Gene: 8	Variation: 42	Art Size: 1390 bytes    Sections: 1	Gas Spent: 1337912
-    Id: 401	Gene: 8	Variation: 43	Art Size: 6706 bytes    Sections: 1	Gas Spent: 5032581
-    Id: 402	Gene: 8	Variation: 44	Art Size: 2929 bytes    Sections: 1	Gas Spent: 2406699
-    Id: 403	Gene: 8	Variation: 45	Art Size: 575 bytes Sections: 1	Gas Spent: 761307
-    Id: 404	Gene: 8	Variation: 46	Art Size: 7548 bytes    Sections: 1	Gas Spent: 5612311
-    Id: 405	Gene: 9	Variation: 1	Art Size: 3770 bytes    Sections: 1	Gas Spent: 2969782
-    Id: 406	Gene: 9	Variation: 2	Art Size: 4095 bytes    Sections: 1	Gas Spent: 3192628
-    Id: 407	Gene: 9	Variation: 3	Art Size: 4538 bytes    Sections: 1	Gas Spent: 3504292
-    Id: 408	Gene: 9	Variation: 4	Art Size: 4315 bytes    Sections: 1	Gas Spent: 3348588
-    Id: 409	Gene: 9	Variation: 5	Art Size: 4349 bytes    Sections: 1	Gas Spent: 3370585
-    Id: 410	Gene: 9	Variation: 6	Art Size: 5537 bytes    Sections: 1	Gas Spent: 4214395
-    Id: 411	Gene: 9	Variation: 7	Art Size: 3992 bytes    Sections: 1	Gas Spent: 3140678
-    Id: 412	Gene: 9	Variation: 8	Art Size: 3995 bytes    Sections: 1	Gas Spent: 3140870
-    Id: 413	Gene: 9	Variation: 9	Art Size: 3893 bytes    Sections: 1	Gas Spent: 3073728
-    Id: 414	Gene: 9	Variation: 10	Art Size: 3561 bytes    Sections: 1	Gas Spent: 2850435
-    Id: 415	Gene: 9	Variation: 11	Art Size: 3697 bytes    Sections: 1	Gas Spent: 2940085
-    Id: 416	Gene: 9	Variation: 12	Art Size: 3360 bytes    Sections: 1	Gas Spent: 2696267
-    Id: 417	Gene: 9	Variation: 13	Art Size: 4882 bytes    Sections: 1	Gas Spent: 3763112
-    Id: 418	Gene: 9	Variation: 14	Art Size: 4526 bytes    Sections: 1	Gas Spent: 3518076
-    Id: 419	Gene: 9	Variation: 15	Art Size: 4982 bytes    Sections: 1	Gas Spent: 3830574
-    Id: 420	Gene: 9	Variation: 16	Art Size: 4511 bytes    Sections: 1	Gas Spent: 3497360
-    Id: 421	Gene: 9	Variation: 17	Art Size: 3903 bytes    Sections: 1	Gas Spent: 3074432
-    Id: 422	Gene: 9	Variation: 18	Art Size: 3570 bytes    Sections: 1	Gas Spent: 2851075
-    Id: 423	Gene: 9	Variation: 19	Art Size: 4887 bytes    Sections: 1	Gas Spent: 3764008
-    Id: 424	Gene: 9	Variation: 20	Art Size: 4959 bytes    Sections: 1	Gas Spent: 3809025
-    Id: 425	Gene: 9	Variation: 21	Art Size: 6949 bytes    Sections: 1	Gas Spent: 5208969
-    Id: 426	Gene: 9	Variation: 22	Art Size: 6760 bytes    Sections: 1	Gas Spent: 5075643
-    Id: 427	Gene: 9	Variation: 23	Art Size: 5090 bytes    Sections: 1	Gas Spent: 3918241
-    Id: 428	Gene: 9	Variation: 24	Art Size: 4999 bytes    Sections: 1	Gas Spent: 3851802
-    Id: 429	Gene: 9	Variation: 25	Art Size: 5067 bytes    Sections: 1	Gas Spent: 3896244
-    Id: 430	Gene: 9	Variation: 26	Art Size: 4885 bytes    Sections: 1	Gas Spent: 3763368
-    Id: 431	Gene: 9	Variation: 27	Art Size: 5249 bytes    Sections: 1	Gas Spent: 4028928
-    Id: 432	Gene: 9	Variation: 28	Art Size: 5264 bytes    Sections: 1	Gas Spent: 4029888
-    Id: 433	Gene: 9	Variation: 29	Art Size: 4238 bytes    Sections: 1	Gas Spent: 3317995
-    Id: 434	Gene: 9	Variation: 30	Art Size: 4021 bytes    Sections: 1	Gas Spent: 3162674
-    Id: 435	Gene: 9	Variation: 31	Art Size: 7974 bytes    Sections: 1	Gas Spent: 5921522
-    Id: 436	Gene: 9	Variation: 32	Art Size: 7639 bytes    Sections: 1	Gas Spent: 5677827
-    Id: 437	Gene: 9	Variation: 33	Art Size: 4518 bytes    Sections: 1	Gas Spent: 3517829
-    Id: 438	Gene: 9	Variation: 34	Art Size: 4068 bytes    Sections: 1	Gas Spent: 3206164
-    Id: 439	Gene: 9	Variation: 35	Art Size: 4924 bytes    Sections: 1	Gas Spent: 3786845
-    Id: 440	Gene: 9	Variation: 36	Art Size: 7817 bytes    Sections: 1	Gas Spent: 5810641
-    Id: 441	Gene: 9	Variation: 37	Art Size: 9908 bytes    Sections: 2	Gas Spent: 8817339
-    Id: 442	Gene: 9	Variation: 38	Art Size: 7885 bytes    Sections: 1	Gas Spent: 5855083
-    Id: 443	Gene: 9	Variation: 39	Art Size: 7961 bytes    Sections: 1	Gas Spent: 5900485
-    Id: 444	Gene: 9	Variation: 40	Art Size: 8038 bytes    Sections: 1	Gas Spent: 5966028
-    Id: 445	Gene: 9	Variation: 41	Art Size: 3962 bytes    Sections: 1	Gas Spent: 3118882
-    Id: 446	Gene: 9	Variation: 42	Art Size: 3860 bytes    Sections: 1	Gas Spent: 3051740
-    Id: 447	Gene: 9	Variation: 43	Art Size: 5553 bytes    Sections: 1	Gas Spent: 4230739
-    Id: 448	Gene: 9	Variation: 44	Art Size: 5020 bytes    Sections: 1	Gas Spent: 3853146
-    Id: 449	Gene: 9	Variation: 45	Art Size: 4350 bytes    Sections: 1	Gas Spent: 3386609
-    Id: 450	Gene: 9	Variation: 46	Art Size: 4223 bytes    Sections: 1	Gas Spent: 3297662
-    Id: 451	Gene: 9	Variation: 47	Art Size: 6548 bytes    Sections: 1	Gas Spent: 4920449
-    Id: 452	Gene: 9	Variation: 48	Art Size: 6447 bytes    Sections: 1	Gas Spent: 4853370
-    Id: 453	Gene: 9	Variation: 49	Art Size: 6654 bytes    Sections: 1	Gas Spent: 4988697
-    Id: 454	Gene: 9	Variation: 50	Art Size: 6205 bytes    Sections: 1	Gas Spent: 4677093
-    Id: 455	Gene: 9	Variation: 51	Art Size: 9196 bytes    Sections: 2	Gas Spent: 8325318
-    Id: 456	Gene: 9	Variation: 52	Art Size: 11175 bytes   Sections: 3	Gas Spent: 11619212
-    Id: 457	Gene: 9	Variation: 53	Art Size: 8312 bytes    Sections: 1	Gas Spent: 6145406
-    Id: 458	Gene: 9	Variation: 54	Art Size: 10149 bytes   Sections: 2	Gas Spent: 8995226
-    Id: 459	Gene: 9	Variation: 55	Art Size: 7450 bytes    Sections: 1	Gas Spent: 5544245
-    Id: 460	Gene: 9	Variation: 56	Art Size: 9110 bytes    Sections: 2	Gas Spent: 8258732
-    Id: 461	Gene: 9	Variation: 57	Art Size: 5754 bytes    Sections: 1	Gas Spent: 4364777
-    Id: 462	Gene: 9	Variation: 58	Art Size: 5355 bytes    Sections: 1	Gas Spent: 4096783
-    Id: 463	Gene: 9	Variation: 59	Art Size: 4231 bytes    Sections: 1	Gas Spent: 3317939
-    Id: 464	Gene: 9	Variation: 60	Art Size: 3715 bytes    Sections: 1	Gas Spent: 2961642
-    Id: 465	Gene: 9	Variation: 61	Art Size: 9344 bytes    Sections: 2	Gas Spent: 8416229
-    Id: 466	Gene: 9	Variation: 62	Art Size: 9090 bytes    Sections: 2	Gas Spent: 8257636
-    Id: 467	Gene: 9	Variation: 63	Art Size: 5202 bytes    Sections: 1	Gas Spent: 3986753
-    Id: 468	Gene: 9	Variation: 64	Art Size: 4240 bytes    Sections: 1	Gas Spent: 3319045
-    Id: 469	Gene: 9	Variation: 65	Art Size: 8626 bytes    Sections: 1	Gas Spent: 6367947
-    Id: 470	Gene: 9	Variation: 66	Art Size: 10902 bytes   Sections: 2	Gas Spent: 9510796
-    Id: 471	Gene: 9	Variation: 67	Art Size: 6211 bytes    Sections: 1	Gas Spent: 4697024
-    Id: 472	Gene: 9	Variation: 68	Art Size: 7896 bytes    Sections: 1	Gas Spent: 5855778
-    Id: 473	Gene: 9	Variation: 69	Art Size: 11337 bytes   Sections: 3	Gas Spent: 11731353
-    Id: 474	Gene: 9	Variation: 70	Art Size: 8750 bytes    Sections: 1	Gas Spent: 6456356
-    Id: 475	Gene: 9	Variation: 71	Art Size: 5657 bytes    Sections: 1	Gas Spent: 4298073
-    Id: 476	Gene: 9	Variation: 72	Art Size: 6848 bytes    Sections: 1	Gas Spent: 5121685
-    Id: 477	Gene: 9	Variation: 73	Art Size: 5721 bytes    Sections: 1	Gas Spent: 4343382
-    Id: 478	Gene: 9	Variation: 74	Art Size: 7138 bytes    Sections: 1	Gas Spent: 5343291
-    Id: 479	Gene: 9	Variation: 75	Art Size: 4822 bytes    Sections: 1	Gas Spent: 3720049
-    Id: 480	Gene: 9	Variation: 76	Art Size: 4201 bytes    Sections: 1	Gas Spent: 3296417
-    Id: 481	Gene: 9	Variation: 77	Art Size: 8723 bytes    Sections: 1	Gas Spent: 6434779
-    Id: 482	Gene: 9	Variation: 78	Art Size: 8334 bytes    Sections: 1	Gas Spent: 6167422
-    Id: 483	Gene: 10	Variation: 1	Art Size: 9228 bytes    Sections: 2	Gas Spent: 8332192
-    Id: 484	Gene: 10	Variation: 2	Art Size: 15963 bytes   Sections: 5	Gas Spent: 19824315
-    Id: 485	Gene: 10	Variation: 3	Art Size: 7740 bytes    Sections: 1	Gas Spent: 5729129
-    Id: 486	Gene: 10	Variation: 4	Art Size: 6099 bytes    Sections: 1	Gas Spent: 4593781
-    Id: 487	Gene: 10	Variation: 5	Art Size: 6748 bytes    Sections: 1	Gas Spent: 5039286
-    Id: 488	Gene: 10	Variation: 6	Art Size: 4176 bytes    Sections: 1	Gas Spent: 3259001
-    Id: 489	Gene: 10	Variation: 7	Art Size: 19 bytes  Sections: 1	Gas Spent: 360582
-    Id: 490	Gene: 10	Variation: 8	Art Size: 16206 bytes   Sections: 5	Gas Spent: 20017499
-    Id: 491	Gene: 10	Variation: 9	Art Size: 23728 bytes   Sections: 9	Gas Spent: 39307285
-    Id: 492	Gene: 10	Variation: 10	Art Size: 19 bytes  Sections: 1	Gas Spent: 360582
-    Id: 493	Gene: 10	Variation: 11	Art Size: 12632 bytes   Sections: 3	Gas Spent: 12625518
-    Id: 494	Gene: 10	Variation: 12	Art Size: 11103 bytes   Sections: 3	Gas Spent: 11553600
-    Id: 495	Gene: 10	Variation: 13	Art Size: 12798 bytes   Sections: 3	Gas Spent: 12737838
-    Id: 496	Gene: 10	Variation: 14	Art Size: 11136 bytes   Sections: 3	Gas Spent: 11575942
+    Id: 366	Gene: 8	Variation: 8	SVG: 6014 bytes    Sections: 1	Gas Spent: 4542726
+    Id: 367	Gene: 8	Variation: 9	SVG: 19 bytes  Sections: 1	Gas Spent: 360710
+    Id: 368	Gene: 8	Variation: 10	SVG: 8185 bytes    Sections: 1	Gas Spent: 6056120
+    Id: 369	Gene: 8	Variation: 11	SVG: 927 bytes Sections: 1	Gas Spent: 1005152
+    Id: 370	Gene: 8	Variation: 12	SVG: 19 bytes  Sections: 1	Gas Spent: 360710
+    Id: 371	Gene: 8	Variation: 13	SVG: 916 bytes Sections: 1	Gas Spent: 1004512
+    Id: 372	Gene: 8	Variation: 14	SVG: 4455 bytes    Sections: 1	Gas Spent: 3473123
+    Id: 373	Gene: 8	Variation: 15	SVG: 2269 bytes    Sections: 1	Gas Spent: 1940269
+    Id: 374	Gene: 8	Variation: 16	SVG: 3741 bytes    Sections: 1	Gas Spent: 2963114
+    Id: 375	Gene: 8	Variation: 17	SVG: 8601 bytes    Sections: 1	Gas Spent: 6345547
+    Id: 376	Gene: 8	Variation: 18	SVG: 4228 bytes    Sections: 1	Gas Spent: 3317363
+    Id: 377	Gene: 8	Variation: 19	SVG: 891 bytes Sections: 1	Gas Spent: 982844
+    Id: 378	Gene: 8	Variation: 20	SVG: 4132 bytes    Sections: 1	Gas Spent: 3251373
+    Id: 379	Gene: 8	Variation: 21	SVG: 871 bytes Sections: 1	Gas Spent: 981180
+    Id: 380	Gene: 8	Variation: 22	SVG: 5753 bytes    Sections: 1	Gas Spent: 4364905
+    Id: 381	Gene: 8	Variation: 23	SVG: 3015 bytes    Sections: 1	Gas Spent: 2471950
+    Id: 382	Gene: 8	Variation: 24	SVG: 641 bytes Sections: 1	Gas Spent: 825406
+    Id: 383	Gene: 8	Variation: 25	SVG: 2628 bytes    Sections: 1	Gas Spent: 2204601
+    Id: 384	Gene: 8	Variation: 26	SVG: 2684 bytes    Sections: 1	Gas Spent: 2228581
+    Id: 385	Gene: 8	Variation: 27	SVG: 361 bytes Sections: 1	Gas Spent: 626049
+    Id: 386	Gene: 8	Variation: 28	SVG: 249 bytes Sections: 1	Gas Spent: 537873
+    Id: 387	Gene: 8	Variation: 29	SVG: 803 bytes Sections: 1	Gas Spent: 937132
+    Id: 388	Gene: 8	Variation: 30	SVG: 5597 bytes    Sections: 1	Gas Spent: 4254161
+    Id: 389	Gene: 8	Variation: 31	SVG: 8032 bytes    Sections: 1	Gas Spent: 5945247
+    Id: 390	Gene: 8	Variation: 32	SVG: 8328 bytes    Sections: 1	Gas Spent: 6166498
+    Id: 391	Gene: 8	Variation: 33	SVG: 2442 bytes    Sections: 1	Gas Spent: 2071863
+    Id: 392	Gene: 8	Variation: 34	SVG: 4572 bytes    Sections: 1	Gas Spent: 3541810
+    Id: 393	Gene: 8	Variation: 35	SVG: 457 bytes Sections: 1	Gas Spent: 692686
+    Id: 394	Gene: 8	Variation: 36	SVG: 1576 bytes    Sections: 1	Gas Spent: 1471450
+    Id: 395	Gene: 8	Variation: 37	SVG: 8031 bytes    Sections: 1	Gas Spent: 5945457
+    Id: 396	Gene: 8	Variation: 38	SVG: 456 bytes Sections: 1	Gas Spent: 693006
+    Id: 397	Gene: 8	Variation: 39	SVG: 1015 bytes    Sections: 1	Gas Spent: 1071461
+    Id: 398	Gene: 8	Variation: 40	SVG: 469 bytes Sections: 1	Gas Spent: 693045
+    Id: 399	Gene: 8	Variation: 41	SVG: 16666 bytes   Sections: 5	Gas Spent: 20331418
+    Id: 400	Gene: 8	Variation: 42	SVG: 1390 bytes    Sections: 1	Gas Spent: 1337912
+    Id: 401	Gene: 8	Variation: 43	SVG: 6706 bytes    Sections: 1	Gas Spent: 5032581
+    Id: 402	Gene: 8	Variation: 44	SVG: 2929 bytes    Sections: 1	Gas Spent: 2406699
+    Id: 403	Gene: 8	Variation: 45	SVG: 575 bytes Sections: 1	Gas Spent: 761307
+    Id: 404	Gene: 8	Variation: 46	SVG: 7548 bytes    Sections: 1	Gas Spent: 5612311
+    Id: 405	Gene: 9	Variation: 1	SVG: 3770 bytes    Sections: 1	Gas Spent: 2969782
+    Id: 406	Gene: 9	Variation: 2	SVG: 4095 bytes    Sections: 1	Gas Spent: 3192628
+    Id: 407	Gene: 9	Variation: 3	SVG: 4538 bytes    Sections: 1	Gas Spent: 3504292
+    Id: 408	Gene: 9	Variation: 4	SVG: 4315 bytes    Sections: 1	Gas Spent: 3348588
+    Id: 409	Gene: 9	Variation: 5	SVG: 4349 bytes    Sections: 1	Gas Spent: 3370585
+    Id: 410	Gene: 9	Variation: 6	SVG: 5537 bytes    Sections: 1	Gas Spent: 4214395
+    Id: 411	Gene: 9	Variation: 7	SVG: 3992 bytes    Sections: 1	Gas Spent: 3140678
+    Id: 412	Gene: 9	Variation: 8	SVG: 3995 bytes    Sections: 1	Gas Spent: 3140870
+    Id: 413	Gene: 9	Variation: 9	SVG: 3893 bytes    Sections: 1	Gas Spent: 3073728
+    Id: 414	Gene: 9	Variation: 10	SVG: 3561 bytes    Sections: 1	Gas Spent: 2850435
+    Id: 415	Gene: 9	Variation: 11	SVG: 3697 bytes    Sections: 1	Gas Spent: 2940085
+    Id: 416	Gene: 9	Variation: 12	SVG: 3360 bytes    Sections: 1	Gas Spent: 2696267
+    Id: 417	Gene: 9	Variation: 13	SVG: 4882 bytes    Sections: 1	Gas Spent: 3763112
+    Id: 418	Gene: 9	Variation: 14	SVG: 4526 bytes    Sections: 1	Gas Spent: 3518076
+    Id: 419	Gene: 9	Variation: 15	SVG: 4982 bytes    Sections: 1	Gas Spent: 3830574
+    Id: 420	Gene: 9	Variation: 16	SVG: 4511 bytes    Sections: 1	Gas Spent: 3497360
+    Id: 421	Gene: 9	Variation: 17	SVG: 3903 bytes    Sections: 1	Gas Spent: 3074432
+    Id: 422	Gene: 9	Variation: 18	SVG: 3570 bytes    Sections: 1	Gas Spent: 2851075
+    Id: 423	Gene: 9	Variation: 19	SVG: 4887 bytes    Sections: 1	Gas Spent: 3764008
+    Id: 424	Gene: 9	Variation: 20	SVG: 4959 bytes    Sections: 1	Gas Spent: 3809025
+    Id: 425	Gene: 9	Variation: 21	SVG: 6949 bytes    Sections: 1	Gas Spent: 5208969
+    Id: 426	Gene: 9	Variation: 22	SVG: 6760 bytes    Sections: 1	Gas Spent: 5075643
+    Id: 427	Gene: 9	Variation: 23	SVG: 5090 bytes    Sections: 1	Gas Spent: 3918241
+    Id: 428	Gene: 9	Variation: 24	SVG: 4999 bytes    Sections: 1	Gas Spent: 3851802
+    Id: 429	Gene: 9	Variation: 25	SVG: 5067 bytes    Sections: 1	Gas Spent: 3896244
+    Id: 430	Gene: 9	Variation: 26	SVG: 4885 bytes    Sections: 1	Gas Spent: 3763368
+    Id: 431	Gene: 9	Variation: 27	SVG: 5249 bytes    Sections: 1	Gas Spent: 4028928
+    Id: 432	Gene: 9	Variation: 28	SVG: 5264 bytes    Sections: 1	Gas Spent: 4029888
+    Id: 433	Gene: 9	Variation: 29	SVG: 4238 bytes    Sections: 1	Gas Spent: 3317995
+    Id: 434	Gene: 9	Variation: 30	SVG: 4021 bytes    Sections: 1	Gas Spent: 3162674
+    Id: 435	Gene: 9	Variation: 31	SVG: 7974 bytes    Sections: 1	Gas Spent: 5921522
+    Id: 436	Gene: 9	Variation: 32	SVG: 7639 bytes    Sections: 1	Gas Spent: 5677827
+    Id: 437	Gene: 9	Variation: 33	SVG: 4518 bytes    Sections: 1	Gas Spent: 3517829
+    Id: 438	Gene: 9	Variation: 34	SVG: 4068 bytes    Sections: 1	Gas Spent: 3206164
+    Id: 439	Gene: 9	Variation: 35	SVG: 4924 bytes    Sections: 1	Gas Spent: 3786845
+    Id: 440	Gene: 9	Variation: 36	SVG: 7817 bytes    Sections: 1	Gas Spent: 5810641
+    Id: 441	Gene: 9	Variation: 37	SVG: 9908 bytes    Sections: 2	Gas Spent: 8817339
+    Id: 442	Gene: 9	Variation: 38	SVG: 7885 bytes    Sections: 1	Gas Spent: 5855083
+    Id: 443	Gene: 9	Variation: 39	SVG: 7961 bytes    Sections: 1	Gas Spent: 5900485
+    Id: 444	Gene: 9	Variation: 40	SVG: 8038 bytes    Sections: 1	Gas Spent: 5966028
+    Id: 445	Gene: 9	Variation: 41	SVG: 3962 bytes    Sections: 1	Gas Spent: 3118882
+    Id: 446	Gene: 9	Variation: 42	SVG: 3860 bytes    Sections: 1	Gas Spent: 3051740
+    Id: 447	Gene: 9	Variation: 43	SVG: 5553 bytes    Sections: 1	Gas Spent: 4230739
+    Id: 448	Gene: 9	Variation: 44	SVG: 5020 bytes    Sections: 1	Gas Spent: 3853146
+    Id: 449	Gene: 9	Variation: 45	SVG: 4350 bytes    Sections: 1	Gas Spent: 3386609
+    Id: 450	Gene: 9	Variation: 46	SVG: 4223 bytes    Sections: 1	Gas Spent: 3297662
+    Id: 451	Gene: 9	Variation: 47	SVG: 6548 bytes    Sections: 1	Gas Spent: 4920449
+    Id: 452	Gene: 9	Variation: 48	SVG: 6447 bytes    Sections: 1	Gas Spent: 4853370
+    Id: 453	Gene: 9	Variation: 49	SVG: 6654 bytes    Sections: 1	Gas Spent: 4988697
+    Id: 454	Gene: 9	Variation: 50	SVG: 6205 bytes    Sections: 1	Gas Spent: 4677093
+    Id: 455	Gene: 9	Variation: 51	SVG: 9196 bytes    Sections: 2	Gas Spent: 8325318
+    Id: 456	Gene: 9	Variation: 52	SVG: 11175 bytes   Sections: 3	Gas Spent: 11619212
+    Id: 457	Gene: 9	Variation: 53	SVG: 8312 bytes    Sections: 1	Gas Spent: 6145406
+    Id: 458	Gene: 9	Variation: 54	SVG: 10149 bytes   Sections: 2	Gas Spent: 8995226
+    Id: 459	Gene: 9	Variation: 55	SVG: 7450 bytes    Sections: 1	Gas Spent: 5544245
+    Id: 460	Gene: 9	Variation: 56	SVG: 9110 bytes    Sections: 2	Gas Spent: 8258732
+    Id: 461	Gene: 9	Variation: 57	SVG: 5754 bytes    Sections: 1	Gas Spent: 4364777
+    Id: 462	Gene: 9	Variation: 58	SVG: 5355 bytes    Sections: 1	Gas Spent: 4096783
+    Id: 463	Gene: 9	Variation: 59	SVG: 4231 bytes    Sections: 1	Gas Spent: 3317939
+    Id: 464	Gene: 9	Variation: 60	SVG: 3715 bytes    Sections: 1	Gas Spent: 2961642
+    Id: 465	Gene: 9	Variation: 61	SVG: 9344 bytes    Sections: 2	Gas Spent: 8416229
+    Id: 466	Gene: 9	Variation: 62	SVG: 9090 bytes    Sections: 2	Gas Spent: 8257636
+    Id: 467	Gene: 9	Variation: 63	SVG: 5202 bytes    Sections: 1	Gas Spent: 3986753
+    Id: 468	Gene: 9	Variation: 64	SVG: 4240 bytes    Sections: 1	Gas Spent: 3319045
+    Id: 469	Gene: 9	Variation: 65	SVG: 8626 bytes    Sections: 1	Gas Spent: 6367947
+    Id: 470	Gene: 9	Variation: 66	SVG: 10902 bytes   Sections: 2	Gas Spent: 9510796
+    Id: 471	Gene: 9	Variation: 67	SVG: 6211 bytes    Sections: 1	Gas Spent: 4697024
+    Id: 472	Gene: 9	Variation: 68	SVG: 7896 bytes    Sections: 1	Gas Spent: 5855778
+    Id: 473	Gene: 9	Variation: 69	SVG: 11337 bytes   Sections: 3	Gas Spent: 11731353
+    Id: 474	Gene: 9	Variation: 70	SVG: 8750 bytes    Sections: 1	Gas Spent: 6456356
+    Id: 475	Gene: 9	Variation: 71	SVG: 5657 bytes    Sections: 1	Gas Spent: 4298073
+    Id: 476	Gene: 9	Variation: 72	SVG: 6848 bytes    Sections: 1	Gas Spent: 5121685
+    Id: 477	Gene: 9	Variation: 73	SVG: 5721 bytes    Sections: 1	Gas Spent: 4343382
+    Id: 478	Gene: 9	Variation: 74	SVG: 7138 bytes    Sections: 1	Gas Spent: 5343291
+    Id: 479	Gene: 9	Variation: 75	SVG: 4822 bytes    Sections: 1	Gas Spent: 3720049
+    Id: 480	Gene: 9	Variation: 76	SVG: 4201 bytes    Sections: 1	Gas Spent: 3296417
+    Id: 481	Gene: 9	Variation: 77	SVG: 8723 bytes    Sections: 1	Gas Spent: 6434779
+    Id: 482	Gene: 9	Variation: 78	SVG: 8334 bytes    Sections: 1	Gas Spent: 6167422
+    Id: 483	Gene: 10	Variation: 1	SVG: 9228 bytes    Sections: 2	Gas Spent: 8332192
+    Id: 484	Gene: 10	Variation: 2	SVG: 15963 bytes   Sections: 5	Gas Spent: 19824315
+    Id: 485	Gene: 10	Variation: 3	SVG: 7740 bytes    Sections: 1	Gas Spent: 5729129
+    Id: 486	Gene: 10	Variation: 4	SVG: 6099 bytes    Sections: 1	Gas Spent: 4593781
+    Id: 487	Gene: 10	Variation: 5	SVG: 6748 bytes    Sections: 1	Gas Spent: 5039286
+    Id: 488	Gene: 10	Variation: 6	SVG: 4176 bytes    Sections: 1	Gas Spent: 3259001
+    Id: 489	Gene: 10	Variation: 7	SVG: 19 bytes  Sections: 1	Gas Spent: 360582
+    Id: 490	Gene: 10	Variation: 8	SVG: 16206 bytes   Sections: 5	Gas Spent: 20017499
+    Id: 491	Gene: 10	Variation: 9	SVG: 23728 bytes   Sections: 9	Gas Spent: 39307285
+    Id: 492	Gene: 10	Variation: 10	SVG: 19 bytes  Sections: 1	Gas Spent: 360582
+    Id: 493	Gene: 10	Variation: 11	SVG: 12632 bytes   Sections: 3	Gas Spent: 12625518
+    Id: 494	Gene: 10	Variation: 12	SVG: 11103 bytes   Sections: 3	Gas Spent: 11553600
+    Id: 495	Gene: 10	Variation: 13	SVG: 12798 bytes   Sections: 3	Gas Spent: 12737838
+    Id: 496	Gene: 10	Variation: 14	SVG: 11136 bytes   Sections: 3	Gas Spent: 11575942
 
-    Id: 497	Gene: 10	Variation: 16	Art Size: 10873 bytes   Sections: 2	Gas Spent: 9487722
-    Id: 498	Gene: 10	Variation: 17	Art Size: 9181 bytes    Sections: 2	Gas Spent: 8303661
+    Id: 497	Gene: 10	Variation: 16	SVG: 10873 bytes   Sections: 2	Gas Spent: 9487722
+    Id: 498	Gene: 10	Variation: 17	SVG: 9181 bytes    Sections: 2	Gas Spent: 8303661
 
-    Id: 499	Gene: 10	Variation: 19	Art Size: 11207 bytes   Sections: 3	Gas Spent: 11640959
-    Id: 500	Gene: 10	Variation: 20	Art Size: 2234 bytes    Sections: 1	Gas Spent: 1916728
-    Id: 501	Gene: 10	Variation: 21	Art Size: 7951 bytes    Sections: 1	Gas Spent: 5899324
-    Id: 502	Gene: 10	Variation: 22	Art Size: 14202 bytes   Sections: 4	Gas Spent: 15987161
-    Id: 503	Gene: 10	Variation: 23	Art Size: 2193 bytes    Sections: 1	Gas Spent: 1893899
-    Id: 504	Gene: 10	Variation: 24	Art Size: 4943 bytes    Sections: 1	Gas Spent: 3807553
-    Id: 505	Gene: 10	Variation: 25	Art Size: 12595 bytes   Sections: 3	Gas Spent: 12602727
-    Id: 506	Gene: 10	Variation: 26	Art Size: 7892 bytes    Sections: 1	Gas Spent: 5855650
-    Id: 507	Gene: 10	Variation: 27	Art Size: 7702 bytes    Sections: 1	Gas Spent: 5721876
-    Id: 508	Gene: 10	Variation: 28	Art Size: 11453 bytes   Sections: 3	Gas Spent: 11799048
-    Id: 509	Gene: 10	Variation: 29	Art Size: 2971 bytes    Sections: 1	Gas Spent: 2428661
-    Id: 510	Gene: 10	Variation: 30	Art Size: 8141 bytes    Sections: 1	Gas Spent: 6033035
-    Id: 511	Gene: 10	Variation: 31	Art Size: 8339 bytes    Sections: 1	Gas Spent: 6167202
-    Id: 512	Gene: 10	Variation: 32	Art Size: 10786 bytes   Sections: 2	Gas Spent: 9441676
-    Id: 513	Gene: 10	Variation: 33	Art Size: 5751 bytes    Sections: 1	Gas Spent: 4364777
-    Id: 514	Gene: 10	Variation: 34	Art Size: 7747 bytes    Sections: 1	Gas Spent: 5765431
-    Id: 515	Gene: 10	Variation: 35	Art Size: 4939 bytes    Sections: 1	Gas Spent: 3807498
-    Id: 516	Gene: 10	Variation: 36	Art Size: 5717 bytes    Sections: 1	Gas Spent: 4342204
-    Id: 517	Gene: 10	Variation: 37	Art Size: 11557 bytes   Sections: 3	Gas Spent: 11886994
-    Id: 518	Gene: 10	Variation: 38	Art Size: 14113 bytes   Sections: 4	Gas Spent: 15940536
-    Id: 519	Gene: 10	Variation: 39	Art Size: 17974 bytes   Sections: 6	Gas Spent: 24222976
-    Id: 520	Gene: 10	Variation: 40	Art Size: 13494 bytes   Sections: 4	Gas Spent: 15495223
-    Id: 521	Gene: 10	Variation: 41	Art Size: 7661 bytes    Sections: 1	Gas Spent: 5699952
-    Id: 522	Gene: 10	Variation: 42	Art Size: 9162 bytes    Sections: 2	Gas Spent: 8302839
-    Id: 523	Gene: 10	Variation: 43	Art Size: 3959 bytes    Sections: 1	Gas Spent: 3118233
-    Id: 524	Gene: 10	Variation: 44	Art Size: 7604 bytes    Sections: 1	Gas Spent: 5654861
-    Id: 525	Gene: 10	Variation: 45	Art Size: 6037 bytes    Sections: 1	Gas Spent: 4564467
-    Id: 526	Gene: 10	Variation: 46	Art Size: 8648 bytes    Sections: 1	Gas Spent: 6388444
-    Id: 527	Gene: 10	Variation: 47	Art Size: 5329 bytes    Sections: 1	Gas Spent: 4074650
-    Id: 528	Gene: 10	Variation: 48	Art Size: 4816 bytes    Sections: 1	Gas Spent: 3718542
-    Id: 529	Gene: 10	Variation: 49	Art Size: 5395 bytes    Sections: 1	Gas Spent: 4120261
-    Id: 530	Gene: 10	Variation: 50	Art Size: 5395 bytes    Sections: 1	Gas Spent: 4120261
-    Id: 531	Gene: 10	Variation: 51	Art Size: 16121 bytes   Sections: 5	Gas Spent: 19951955
-    Id: 532	Gene: 10	Variation: 52	Art Size: 14474 bytes   Sections: 4	Gas Spent: 16187481
-    Id: 533	Gene: 10	Variation: 53	Art Size: 7026 bytes    Sections: 1	Gas Spent: 5255157
-    Id: 534	Gene: 10	Variation: 54	Art Size: 9476 bytes    Sections: 2	Gas Spent: 8526238
-    Id: 535	Gene: 10	Variation: 55	Art Size: 7622 bytes    Sections: 1	Gas Spent: 5676675
-    Id: 536	Gene: 10	Variation: 56	Art Size: 7728 bytes    Sections: 1	Gas Spent: 5744074
-    Id: 537	Gene: 10	Variation: 57	Art Size: 14257 bytes   Sections: 4	Gas Spent: 16031219
-    Id: 538	Gene: 10	Variation: 58	Art Size: 16146 bytes   Sections: 5	Gas Spent: 19973459
-    Id: 539	Gene: 10	Variation: 59	Art Size: 9790 bytes    Sections: 2	Gas Spent: 8728420
-    Id: 540	Gene: 10	Variation: 60	Art Size: 18000 bytes   Sections: 6	Gas Spent: 24244938
-    Id: 541	Gene: 10	Variation: 61	Art Size: 11511 bytes   Sections: 3	Gas Spent: 11844375
-    Id: 542	Gene: 10	Variation: 62	Art Size: 16150 bytes   Sections: 5	Gas Spent: 19974437
-    Id: 543	Gene: 10	Variation: 63	Art Size: 15527 bytes   Sections: 5	Gas Spent: 19548413
-    Id: 544	Gene: 10	Variation: 64	Art Size: 20538 bytes   Sections: 7	Gas Spent: 29344930
-    Id: 545	Gene: 10	Variation: 65	Art Size: 7860 bytes    Sections: 1	Gas Spent: 5834000
-    Id: 546	Gene: 10	Variation: 66	Art Size: 11395 bytes   Sections: 3	Gas Spent: 11776067
-    Id: 547	Gene: 10	Variation: 67	Art Size: 13684 bytes   Sections: 4	Gas Spent: 15629211
-    Id: 548	Gene: 10	Variation: 68	Art Size: 10927 bytes   Sections: 2	Gas Spent: 9532342
-    Id: 549	Gene: 10	Variation: 69	Art Size: 9266 bytes    Sections: 2	Gas Spent: 8369918
-    Id: 550	Gene: 10	Variation: 70	Art Size: 10658 bytes   Sections: 2	Gas Spent: 9351913
-    Id: 551	Gene: 10	Variation: 71	Art Size: 9183 bytes    Sections: 2	Gas Spent: 8304045
-    Id: 552	Gene: 10	Variation: 72	Art Size: 12373 bytes   Sections: 3	Gas Spent: 12446773
-    Id: 553	Gene: 10	Variation: 73	Art Size: 14726 bytes   Sections: 4	Gas Spent: 16366509
-    Id: 554	Gene: 10	Variation: 74	Art Size: 9920 bytes    Sections: 2	Gas Spent: 8819286
-    Id: 555	Gene: 10	Variation: 75	Art Size: 7522 bytes    Sections: 1	Gas Spent: 5610519
-    Id: 556	Gene: 10	Variation: 76	Art Size: 10240 bytes   Sections: 2	Gas Spent: 9042450
-    Id: 557	Gene: 10	Variation: 77	Art Size: 9460 bytes    Sections: 2	Gas Spent: 8505349
-    Id: 558	Gene: 10	Variation: 78	Art Size: 10795 bytes   Sections: 2	Gas Spent: 9443138
+    Id: 499	Gene: 10	Variation: 19	SVG: 11207 bytes   Sections: 3	Gas Spent: 11640959
+    Id: 500	Gene: 10	Variation: 20	SVG: 2234 bytes    Sections: 1	Gas Spent: 1916728
+    Id: 501	Gene: 10	Variation: 21	SVG: 7951 bytes    Sections: 1	Gas Spent: 5899324
+    Id: 502	Gene: 10	Variation: 22	SVG: 14202 bytes   Sections: 4	Gas Spent: 15987161
+    Id: 503	Gene: 10	Variation: 23	SVG: 2193 bytes    Sections: 1	Gas Spent: 1893899
+    Id: 504	Gene: 10	Variation: 24	SVG: 4943 bytes    Sections: 1	Gas Spent: 3807553
+    Id: 505	Gene: 10	Variation: 25	SVG: 12595 bytes   Sections: 3	Gas Spent: 12602727
+    Id: 506	Gene: 10	Variation: 26	SVG: 7892 bytes    Sections: 1	Gas Spent: 5855650
+    Id: 507	Gene: 10	Variation: 27	SVG: 7702 bytes    Sections: 1	Gas Spent: 5721876
+    Id: 508	Gene: 10	Variation: 28	SVG: 11453 bytes   Sections: 3	Gas Spent: 11799048
+    Id: 509	Gene: 10	Variation: 29	SVG: 2971 bytes    Sections: 1	Gas Spent: 2428661
+    Id: 510	Gene: 10	Variation: 30	SVG: 8141 bytes    Sections: 1	Gas Spent: 6033035
+    Id: 511	Gene: 10	Variation: 31	SVG: 8339 bytes    Sections: 1	Gas Spent: 6167202
+    Id: 512	Gene: 10	Variation: 32	SVG: 10786 bytes   Sections: 2	Gas Spent: 9441676
+    Id: 513	Gene: 10	Variation: 33	SVG: 5751 bytes    Sections: 1	Gas Spent: 4364777
+    Id: 514	Gene: 10	Variation: 34	SVG: 7747 bytes    Sections: 1	Gas Spent: 5765431
+    Id: 515	Gene: 10	Variation: 35	SVG: 4939 bytes    Sections: 1	Gas Spent: 3807498
+    Id: 516	Gene: 10	Variation: 36	SVG: 5717 bytes    Sections: 1	Gas Spent: 4342204
+    Id: 517	Gene: 10	Variation: 37	SVG: 11557 bytes   Sections: 3	Gas Spent: 11886994
+    Id: 518	Gene: 10	Variation: 38	SVG: 14113 bytes   Sections: 4	Gas Spent: 15940536
+    Id: 519	Gene: 10	Variation: 39	SVG: 17974 bytes   Sections: 6	Gas Spent: 24222976
+    Id: 520	Gene: 10	Variation: 40	SVG: 13494 bytes   Sections: 4	Gas Spent: 15495223
+    Id: 521	Gene: 10	Variation: 41	SVG: 7661 bytes    Sections: 1	Gas Spent: 5699952
+    Id: 522	Gene: 10	Variation: 42	SVG: 9162 bytes    Sections: 2	Gas Spent: 8302839
+    Id: 523	Gene: 10	Variation: 43	SVG: 3959 bytes    Sections: 1	Gas Spent: 3118233
+    Id: 524	Gene: 10	Variation: 44	SVG: 7604 bytes    Sections: 1	Gas Spent: 5654861
+    Id: 525	Gene: 10	Variation: 45	SVG: 6037 bytes    Sections: 1	Gas Spent: 4564467
+    Id: 526	Gene: 10	Variation: 46	SVG: 8648 bytes    Sections: 1	Gas Spent: 6388444
+    Id: 527	Gene: 10	Variation: 47	SVG: 5329 bytes    Sections: 1	Gas Spent: 4074650
+    Id: 528	Gene: 10	Variation: 48	SVG: 4816 bytes    Sections: 1	Gas Spent: 3718542
+    Id: 529	Gene: 10	Variation: 49	SVG: 5395 bytes    Sections: 1	Gas Spent: 4120261
+    Id: 530	Gene: 10	Variation: 50	SVG: 5395 bytes    Sections: 1	Gas Spent: 4120261
+    Id: 531	Gene: 10	Variation: 51	SVG: 16121 bytes   Sections: 5	Gas Spent: 19951955
+    Id: 532	Gene: 10	Variation: 52	SVG: 14474 bytes   Sections: 4	Gas Spent: 16187481
+    Id: 533	Gene: 10	Variation: 53	SVG: 7026 bytes    Sections: 1	Gas Spent: 5255157
+    Id: 534	Gene: 10	Variation: 54	SVG: 9476 bytes    Sections: 2	Gas Spent: 8526238
+    Id: 535	Gene: 10	Variation: 55	SVG: 7622 bytes    Sections: 1	Gas Spent: 5676675
+    Id: 536	Gene: 10	Variation: 56	SVG: 7728 bytes    Sections: 1	Gas Spent: 5744074
+    Id: 537	Gene: 10	Variation: 57	SVG: 14257 bytes   Sections: 4	Gas Spent: 16031219
+    Id: 538	Gene: 10	Variation: 58	SVG: 16146 bytes   Sections: 5	Gas Spent: 19973459
+    Id: 539	Gene: 10	Variation: 59	SVG: 9790 bytes    Sections: 2	Gas Spent: 8728420
+    Id: 540	Gene: 10	Variation: 60	SVG: 18000 bytes   Sections: 6	Gas Spent: 24244938
+    Id: 541	Gene: 10	Variation: 61	SVG: 11511 bytes   Sections: 3	Gas Spent: 11844375
+    Id: 542	Gene: 10	Variation: 62	SVG: 16150 bytes   Sections: 5	Gas Spent: 19974437
+    Id: 543	Gene: 10	Variation: 63	SVG: 15527 bytes   Sections: 5	Gas Spent: 19548413
+    Id: 544	Gene: 10	Variation: 64	SVG: 20538 bytes   Sections: 7	Gas Spent: 29344930
+    Id: 545	Gene: 10	Variation: 65	SVG: 7860 bytes    Sections: 1	Gas Spent: 5834000
+    Id: 546	Gene: 10	Variation: 66	SVG: 11395 bytes   Sections: 3	Gas Spent: 11776067
+    Id: 547	Gene: 10	Variation: 67	SVG: 13684 bytes   Sections: 4	Gas Spent: 15629211
+    Id: 548	Gene: 10	Variation: 68	SVG: 10927 bytes   Sections: 2	Gas Spent: 9532342
+    Id: 549	Gene: 10	Variation: 69	SVG: 9266 bytes    Sections: 2	Gas Spent: 8369918
+    Id: 550	Gene: 10	Variation: 70	SVG: 10658 bytes   Sections: 2	Gas Spent: 9351913
+    Id: 551	Gene: 10	Variation: 71	SVG: 9183 bytes    Sections: 2	Gas Spent: 8304045
+    Id: 552	Gene: 10	Variation: 72	SVG: 12373 bytes   Sections: 3	Gas Spent: 12446773
+    Id: 553	Gene: 10	Variation: 73	SVG: 14726 bytes   Sections: 4	Gas Spent: 16366509
+    Id: 554	Gene: 10	Variation: 74	SVG: 9920 bytes    Sections: 2	Gas Spent: 8819286
+    Id: 555	Gene: 10	Variation: 75	SVG: 7522 bytes    Sections: 1	Gas Spent: 5610519
+    Id: 556	Gene: 10	Variation: 76	SVG: 10240 bytes   Sections: 2	Gas Spent: 9042450
+    Id: 557	Gene: 10	Variation: 77	SVG: 9460 bytes    Sections: 2	Gas Spent: 8505349
+    Id: 558	Gene: 10	Variation: 78	SVG: 10795 bytes   Sections: 2	Gas Spent: 9443138
 -------------------------------------------------------------------------------------------
 Costliest Trait:
-    Id: 491	Gene: 10	Variation: 9	Art Size: 23728 bytes   Sections: 9	Gas Spent: 39307285
+    Id: 491	Gene: 10	Variation: 9	SVG: 23728 bytes   Sections: 9	Gas Spent: 39307285
 -------------------------------------------------------------------------------------------
 Gas Expenditure:
 Gas Used: 2015115492 units	Gas Price: 2000000000 wei	Gas Cost: 4.030230984 ether
