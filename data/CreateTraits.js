@@ -5,7 +5,7 @@ const GetGasCost = require('./util/GetGasCost');
 const traitsJSON = "data/avastars-dashboard-genes-export.json";
 const logfile = "data/CreateTraitsLog.txt";
 const AvastarTeleporter = artifacts.require("contracts/AvastarTeleporter.sol");
-const div = "-------------------------------------------------------------------------------------------";
+const div = "---------------------------------------------------------------------------------------------";
 
 // Bizarrely, even though this can be included as
 // Cordwood.js over in test/TraitFactoryTest.js,
