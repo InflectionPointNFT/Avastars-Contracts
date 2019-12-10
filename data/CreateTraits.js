@@ -44,9 +44,15 @@ function ProcessedTrait(trait, max_art, max_ext){
 }
 ProcessedTrait.prototype.toString = function() {
     return (this.trait && this.trait.svg)
-        ? `Id: ${this.id}\tGene: ${this.trait.gene}\tVariation: ${this.trait.variation}\tSVG: ${this.artSize} bytes\tSections: ${this.totalSections}\tGas: ${this.totalGasSpent}`
+        ? `Id: ${this.getId()}\tGene: ${this.getGene()}\tVariation: ${this.getVariation()}\tSVG: ${this.getArtSize()} bytes\tSections: ${this.getTotalSections()}\tGas: ${this.getGasSpent()}`
         : "";
 };
+ProcessedTrait.prototype.getId = function () { return this.id?String(this.id).padStart(3):""; };
+ProcessedTrait.prototype.getGene = function () { return (this.trait)?String(this.trait.gene).padStart(2):""; };
+ProcessedTrait.prototype.getVariation = function () { return (this.trait)?String(this.trait.variation).padStart(2):""; };
+ProcessedTrait.prototype.getArtSize = function () { return (this.artSize)?String(this.artSize).padStart(5):""; };
+ProcessedTrait.prototype.getTotalSections = function () { return (this.totalSections)?String(this.totalSections).padStart(2):""; };
+ProcessedTrait.prototype.getGasSpent = function () { return (this.totalGasSpent)?String(this.totalGasSpent).padStart(8):""; };
 
 let total_gas = 0;
 let costliest_trait = new ProcessedTrait();
