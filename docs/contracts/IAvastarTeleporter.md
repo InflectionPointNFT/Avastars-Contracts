@@ -4,7 +4,7 @@ View Source: [contracts/IAvastarTeleporter.sol](https://github.com/Dapp-Wizards/
 
 **IAvastarTeleporter** **↗ Extends: [AvastarTypes](contracts/AvastarTypes.md)**
 
-Declared with contract rather than interface as it must inherit for enum types.
+Declared as abstract contract rather than interface as it must inherit for enum types.
 Used by AvastarMinter contract to interact with subset of AvastarTeleporter contract functions.
 
 ## **Functions**

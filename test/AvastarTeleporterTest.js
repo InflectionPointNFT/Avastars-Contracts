@@ -64,7 +64,7 @@ contract('AvastarTeleporter', function(accounts) {
         await mint(prime3);
 
         // Create prime3's full trait set
-        const create = trait =>  teleporter.createTrait(trait.generation, trait.series, trait.gender, trait.gene, trait.variation, trait.name, trait.svg, {from: sysAdmin, gas: '9950000'});
+        const create = trait =>  teleporter.createTrait(trait.generation, trait.series, trait.gender, trait.gene, trait.variation, trait.name, trait.svg, {from: sysAdmin, gas: constants.MAX_GAS});
         await create(traitData.avastar[0]);
         await create(traitData.avastar[1]);
         await create(traitData.avastar[2]);

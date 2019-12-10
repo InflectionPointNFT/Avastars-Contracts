@@ -142,4 +142,17 @@ contract AvastarTypes {
         Wave wave;
     }
 
+    struct Attribution {
+
+        // Generation
+        Generation generation;
+
+        // Artist name
+        string artist;
+
+        // Artist Info URI
+        string infoURI;
+
+    }
+
 }

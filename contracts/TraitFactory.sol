@@ -11,10 +11,20 @@ contract TraitFactory is AvastarState {
     /**
      * @notice Event emitted when a new Trait is created.
      * @param id the Trait ID
+     * @param generation the generation of the trait
      * @param gene the gene that the trait is a variation of
+     * @param variation variation of the gene the trait represents
      * @param name the name of the trait
      */
-    event NewTrait(uint256 id, Gene gene, uint8 variation, string name);
+    event NewTrait(uint256 id, Generation generation, Gene gene, uint8 variation, string name);
+
+    /**
+     * @notice Event emitted when artist attribution is set for a generation.
+     * @param generation the generation that attribution was set for
+     * @param artist the artist who created the artwork for the generation
+     * @param infoURI the artist's website / portfolio URI
+     */
+    event AttributionSet(Generation generation, string artist, string infoURI);
 
     /**
      * @notice Event emitted when a Trait's art is created.
@@ -82,6 +92,45 @@ contract TraitFactory is AvastarState {
     }
 
     /**
+     * @notice Get the artist Attribution for a given Generation.
+     * @param _generation the generation to retrieve artist attribution for
+     * @return generation the generation artist attribution was requested for
+     * @return artist the artist who created the art for the generation
+     * @return infoURI the URI for the artist's website / portfolio
+     */
+    function getAttribution(Generation _generation)
+    external view
+    returns (
+        Generation generation,
+        string memory artist,
+        string memory infoURI
+    ){
+        Attribution memory attribution = attributionByGeneration[uint8(_generation)];
+        return (
+            attribution.generation,
+            attribution.artist,
+            attribution.infoURI
+        );
+    }
+
+    /**
+     * @notice Set the artist Attribution for a given Generation
+     * @param _generation the generation to set artist attribution for
+     * @param _artist the artist who created the art for the generation
+     * @param _infoURI the URI for the artist's website / portfolio
+     */
+    function setAttribution(
+        Generation _generation,
+        string calldata _artist,
+        string calldata _infoURI
+    )
+    external onlySysAdmin
+    {
+        attributionByGeneration[uint8(_generation)] = Attribution(_generation, _artist, _infoURI);
+        emit AttributionSet(_generation, _artist, _infoURI);
+    }
+
+    /**
      * @notice Create a Trait
      * @param _generation the generation the trait belongs to
      * @param _series list of series the trait may appear in
@@ -125,7 +174,7 @@ contract TraitFactory is AvastarState {
         traitIdByGenerationGeneAndVariation[uint8(_generation)][uint8(_gene)][uint8(variation)] = traitId;
 
         // Send the NewTrait event
-        emit NewTrait(traitId, _gene, variation, _name);
+        emit NewTrait(traitId, _generation, _gene, variation, _name);
 
         // Return the new Trait ID
         return traitId;

@@ -13,6 +13,13 @@ contract('TraitFactory', function(accounts) {
     const sysAdmin = accounts[0];
     const nonSysAdmin = accounts[1];
 
+    const attribution = {
+        "generation": constants.GENERATION.ONE,
+        "artist": "Marmota vs Milky",
+        "infoURI": "https://www.twine.fm/marmotavsmilky"
+
+    };
+
     const trait1 = {
         "generation": constants.GENERATION.ONE,
         "gender" : constants.GENDER.MALE,
@@ -115,6 +122,7 @@ contract('TraitFactory', function(accounts) {
         truffleAssert.eventEmitted(result, 'NewTrait', (ev) => {
             return (
                 ev.id.eq(id) &&
+                ev.generation.toNumber() === generation &&
                 ev.gene.toNumber() === gene &&
                 ev.variation.toNumber() === variation &&
                 ev.name === name
@@ -179,6 +187,7 @@ contract('TraitFactory', function(accounts) {
         truffleAssert.eventEmitted(result, 'NewTrait', (ev) => {
             return (
                 ev.id.eq(id) &&
+                ev.generation.toNumber() === generation &&
                 ev.gene.toNumber() === gene &&
                 ev.variation.toNumber() === variation &&
                 ev.name === name
@@ -214,12 +223,13 @@ contract('TraitFactory', function(accounts) {
 
         assert.equal(pieces.join(''), svg2, 'SVG2 slice invalid');
         // Create the trait with partial data
-        let createResult = await contract.createTrait(generation, series, gender, gene, variation, name, svg1, {from: sysAdmin, gas: '9950000'});
+        let createResult = await contract.createTrait(generation, series, gender, gene, variation, name, svg1, {from: sysAdmin, gas: constants.MAX_GAS});
 
         // Test that appropriate event was emitted
         truffleAssert.eventEmitted(createResult, 'NewTrait', (ev) => {
             return (
                 ev.id.eq(id) &&
+                ev.generation.toNumber() === generation &&
                 ev.gene.toNumber() === gene &&
                 ev.variation.toNumber() === variation &&
                 ev.name === name
@@ -229,7 +239,7 @@ contract('TraitFactory', function(accounts) {
         // Extend the artwork with all the remaining pieces
         for (const piece of pieces) {
 
-            const extendResult = await contract.extendTraitArt(id, piece, {from: sysAdmin, gas: '9950000'});
+            const extendResult = await contract.extendTraitArt(id, piece, {from: sysAdmin, gas: constants.MAX_GAS});
 
             // Test that appropriate event was emitted
             truffleAssert.eventEmitted(extendResult, 'TraitArtExtended', (ev) => {
@@ -368,6 +378,35 @@ contract('TraitFactory', function(accounts) {
         const result = await contract._strConcat(trait1.svg, trait2.svg);
 
         assert.equal(result, expected, "Concatenated string wasn't correct");
+
+    });
+
+    it("should allow the sysadmin to set the artist attribution for a generation", async function() {
+        const {generation, artist, infoURI} = attribution;
+
+        // Set the attribution
+        let result = await contract.setAttribution(generation, artist, infoURI, {from: sysAdmin});
+
+        // Test that appropriate event was emitted
+        truffleAssert.eventEmitted(result, 'AttributionSet', (ev) => {
+            return (
+                ev.generation.toNumber() === generation &&
+                ev.artist === artist &&
+                ev.infoURI === infoURI
+            );
+        }, 'AttributionSet event should be emitted with correct info');
+    });
+
+    it("should allow anyone to retrieve the artist attribution for a generation", async function() {
+        const {generation, artist, infoURI} = attribution;
+
+        // Get the attribution
+        let result = await contract.getAttribution(generation, {from: nonSysAdmin});
+
+        // Test results
+        assert.equal(result[0], generation, "Generation field wasn't correct");
+        assert.equal(result[1], artist, "Artist field wasn't correct");
+        assert.equal(result[2], infoURI, "InfoURI field wasn't correct");
 
     });
 

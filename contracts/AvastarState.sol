@@ -41,6 +41,12 @@ contract AvastarState is AvastarTypes, AccessControl, ERC721Full {
     mapping(uint8 => Replicant[]) internal replicantsByGeneration;
 
     /**
+     * Retrieve Artist Attribution by Generation
+     * Attribution attribution = attributionByGeneration[Generation(_generation)]
+     */
+    mapping(uint8 => Attribution) internal attributionByGeneration;
+
+    /**
      * Retrieve the approved Trait handler for a given Avastar Prime by Token ID
      */
     mapping(uint256 => address) internal traitHandlerByPrimeTokenId;

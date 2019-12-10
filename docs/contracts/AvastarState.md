@@ -34,6 +34,7 @@ struct AvastarTypes.Avastar[] internal avastars;
 struct AvastarTypes.Trait[] internal traits;
 mapping(uint8 => struct AvastarTypes.Prime[]) internal primesByGeneration;
 mapping(uint8 => struct AvastarTypes.Replicant[]) internal replicantsByGeneration;
+mapping(uint8 => struct AvastarTypes.Attribution) internal attributionByGeneration;
 mapping(uint256 => address) internal traitHandlerByPrimeTokenId;
 mapping(uint8 => mapping(uint256 => bool)) internal isHashUsedByGeneration;
 mapping(uint8 => mapping(uint256 => uint256)) internal tokenIdByGenerationAndHash;

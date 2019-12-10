@@ -123,3 +123,13 @@ struct Avastar {
 }
 ```
 
+### Attribution
+
+```solidity
+struct Attribution {
+ enum AvastarTypes.Generation generation,
+ string artist,
+ string infoURI
+}
+```
+

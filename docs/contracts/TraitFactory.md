@@ -8,6 +8,7 @@ View Source: [contracts/TraitFactory.sol](https://github.com/Dapp-Wizards/Avasta
 ## **Events**
 
 - [NewTrait](#newtrait)
+- [AttributionSet](#attributionset)
 - [TraitArtExtended](#traitartextended)
 
 ### NewTrait
@@ -17,6 +18,7 @@ Event emitted when a new Trait is created.
 ```solidity
 event NewTrait(
 	uint256 id,
+	enum AvastarTypes.Generation generation,
 	enum AvastarTypes.Gene gene,
 	uint8 variation,
 	string name
@@ -28,9 +30,30 @@ event NewTrait(
 | Name        | Type           | Description  |
 | ------------- |------------- | -----|
 | id | uint256 | the Trait ID | 
-| gene | enum AvastarTypes.Gene | the gene that the trait is a variation of | 
-| variation | uint8 |  | 
+| generation | enum AvastarTypes.Generation | the generation of the trait | 
+| gene | enum AvastarTypes.Gene | ration the generation of the trait | 
+| variation | uint8 | variation of the gene the trait represents | 
 | name | string | the name of the trait | 
+
+### AttributionSet
+
+Event emitted when artist attribution is set for a generation.
+
+```solidity
+event AttributionSet(
+	enum AvastarTypes.Generation generation,
+	string artist,
+	string infoURI
+)
+```
+
+**Arguments**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| generation | enum AvastarTypes.Generation | the generation that attribution was set for | 
+| artist | string | the artist who created the artwork for the generation | 
+| infoURI | string | the artist's website / portfolio URI | 
 
 ### TraitArtExtended
 
@@ -50,6 +73,8 @@ event TraitArtExtended(uint256 id)
 
 - [getTrait](#gettrait)
 - [getTraitIdByGenerationGeneAndVariation](#gettraitidbygenerationgeneandvariation)
+- [getAttribution](#getattribution)
+- [setAttribution](#setattribution)
 - [createTrait](#createtrait)
 - [extendTraitArt](#extendtraitart)
 - [assembleArtwork](#assembleartwork)
@@ -121,6 +146,55 @@ returns (uint256 traitId)
 | Name        | Type           | Description  |
 | ------------- |------------- | -----|
 | traitId | uint256 | the ID of the specified trait | 
+
+### getAttribution
+
+Get the artist Attribution for a given Generation.
+
+```solidity
+function getAttribution(enum AvastarTypes.Generation _generation)
+external view
+returns (
+	enum AvastarTypes.Generation generation,
+	string artist,
+	string infoURI
+)
+```
+
+**Arguments**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _generation | enum AvastarTypes.Generation | the generation to retrieve artist attribution for | 
+
+**Returns**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| generation | enum AvastarTypes.Generation | the generation artist attribution was requested for | 
+| artist | string | the artist who created the art for the generation | 
+| infoURI | string | the URI for the artist's website / portfolio | 
+
+### setAttribution
+
+Set the artist Attribution for a given Generation
+
+```solidity
+function setAttribution(
+	enum AvastarTypes.Generation _generation,
+	string _artist,
+	string _infoURI
+)
+external nonpayable onlySysAdmin 
+```
+
+**Arguments**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _generation | enum AvastarTypes.Generation | the generation to set artist attribution for | 
+| _artist | string | the artist who created the art for the generation | 
+| _infoURI | string | the URI for the artist's website / portfolio | 
 
 ### createTrait
 

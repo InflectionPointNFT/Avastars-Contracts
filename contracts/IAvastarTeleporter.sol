@@ -5,7 +5,7 @@ import "./AvastarTypes.sol";
 /**
  * @title AvastarTeleporter Interface
  * @author Cliff Hall
- * @notice Declared with contract rather than interface as it must inherit for enum types.
+ * @notice Declared as abstract contract rather than interface as it must inherit for enum types.
  * Used by AvastarMinter contract to interact with subset of AvastarTeleporter contract functions.
  */
 contract IAvastarTeleporter is AvastarTypes {
