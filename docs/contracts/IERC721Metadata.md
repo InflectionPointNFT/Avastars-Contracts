@@ -47,7 +47,7 @@ returns (string)
 
 ### tokenURI
 
-⤿ Overridden Implementation(s): [ERC721Metadata.tokenURI](contracts/ERC721Metadata.md#tokenuri)
+⤿ Overridden Implementation(s): [AvastarTeleporter.tokenURI](contracts/AvastarTeleporter.md#tokenuri),[ERC721Metadata.tokenURI](contracts/ERC721Metadata.md#tokenuri)
 
 ```solidity
 function tokenURI(uint256 tokenId)

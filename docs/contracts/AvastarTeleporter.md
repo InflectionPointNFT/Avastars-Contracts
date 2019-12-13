@@ -10,6 +10,7 @@ Management of Avastar Primes, Replicants, and Traits
 
 - [TraitAccessApproved](#traitaccessapproved)
 - [TraitsUsed](#traitsused)
+- [TokenUriBaseSet](#tokenuribaseset)
 
 ### TraitAccessApproved
 
@@ -46,12 +47,28 @@ event TraitsUsed(
 | primeId | uint256 | the token id of the Prime supplying the Traits | 
 | used | bool[] | the array of flags representing the Primes resulting Trait usage | 
 
+### TokenUriBaseSet
+
+Event emitted when metadata base changes
+
+```solidity
+event TokenUriBaseSet(string tokenUriBase)
+```
+
+**Arguments**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| tokenUriBase | string | the base URI for tokenURI calls | 
+
 ## **Functions**
 
 - [isAvastarTeleporter](#isavastarteleporter)
 - [approveTraitAccess](#approvetraitaccess)
 - [useTraits](#usetraits)
 - [renderAvastar](#renderavastar)
+- [tokenURI](#tokenuri)
+- [setTokenUriBase](#settokenuribase)
 
 ### isAvastarTeleporter
 
@@ -125,4 +142,46 @@ returns (string svg)
 | Name        | Type           | Description  |
 | ------------- |------------- | -----|
 | svg | string | the fully rendered SVG representation of the Avastar | 
+
+### tokenURI
+
+⤾ overrides [ERC721Metadata.tokenURI](contracts/ERC721Metadata.md#tokenuri)
+
+Get token URI for a given Avastar Token ID.
+Reverts if given token id is not a valid Avastar Token ID.
+
+```solidity
+function tokenURI(uint256 _tokenId)
+external view
+returns (string uri)
+```
+
+**Arguments**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _tokenId | uint256 | the Token ID of a previously minted Avastar Prime or Replicant | 
+
+**Returns**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| uri | string | the off-chain URI to the JSON metadata for the given Avastar | 
+
+### setTokenUriBase
+
+Set the address of the AvastarMetadata contract.
+Only invokable by system admin role, when contract is paused and not upgraded.
+If successful, emits an `MetadataContractSet` event.
+
+```solidity
+function setTokenUriBase(string _tokenUriBase)
+external nonpayable onlySysAdmin whenPaused whenNotUpgraded 
+```
+
+**Arguments**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _tokenUriBase | string | base for the tokenURI | 
 

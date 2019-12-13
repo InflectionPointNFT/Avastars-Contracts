@@ -17,6 +17,10 @@
     ✓ should allow sysadmin to upgrade the contract when paused (73211 gas)
     ✓ should not allow sysadmin to unpause contract after the contract is upgraded (22264 gas)
 
+  Contract: AvastarBase
+    ✓ should allow descendent contracts to concatenate two strings
+    ✓ should allow descendent contracts to convert a uint to a string
+
   Contract: AvastarPrimeMinter
     ✓ should allow anyone to deposit ETH (64180 gas)
     ✓ should allow another depositor to deposit ETH (49180 gas)
@@ -45,11 +49,13 @@
   Contract: AvastarTeleporter
     ✓ should not allow system administrator to approve trait access for another user's primes (24551 gas)
     ✓ should not allow minter to approve trait access for another user's primes (24551 gas)
-    ✓ should not allow an unapproved stranger to use traits on a prime (23325 gas)
+    ✓ should not allow an unapproved stranger to use traits on a prime (23236 gas)
     ✓ should allow owner to approve trait access for a specific set of their primes (89215 gas)
-    ✓ should allow a handler to use traits for primes they are approved for (44084 gas)
-    ✓ should not allow a handler to use more traits on a prime without being approved again (23325 gas)
+    ✓ should allow a handler to use traits for primes they are approved for (43995 gas)
+    ✓ should not allow a handler to use more traits on a prime without being approved again (23236 gas)
     ✓ should allow anyone to render the art for a given Avastar
+    ✓ should not allow system administrator to change the token URI base when contract is not paused (25153 gas)
+    ✓ should allow the sysadmin to change the token URI base when contract is paused (100279 gas)
 
   Contract: PrimeFactory
     ✓ should not allow system administrator to create a prime (24572 gas)
@@ -75,27 +81,25 @@
     ✓ should allow anyone to retrieve a replicant by token id
 
   Contract: TraitFactory
-    ✓ should allow sysadmin to create a trait (2436256 gas)
+    ✓ should allow sysadmin to create a trait (2436278 gas)
     ✓ should allow sysadmin to retrieve a trait
-    ✓ should not allow non-sysadmins to create traits (181219 gas)
+    ✓ should not allow non-sysadmins to create traits (181241 gas)
     ✓ should not allow non-sysadmins to retrieve a trait
-    ✓ should allow sysadmin to create and retrieve another trait (1941395 gas)
-    ✓ should allow sysadmin to create a trait and extend its art (39292044 gas)
+    ✓ should allow sysadmin to create and retrieve another trait (1941417 gas)
+    ✓ should allow sysadmin to create a trait and extend its art (39292242 gas)
     ✓ should not allow sysadmin to create trait with bad value for generation (6721975 gas)
     ✓ should not allow sysadmin to create trait with bad value for gender (6721975 gas)
     ✓ should not allow sysadmin to create trait with bad value for gene (6721975 gas)
-    ✓ should not allow sysadmin to create trait with empty array for series (180438 gas)
+    ✓ should not allow sysadmin to create trait with empty array for series (180460 gas)
     ✓ should not allow sysadmin to create trait with bad value for series (6721975 gas)
-    ✓ should not allow sysadmin to create trait with bad value for variation (180818 gas)
-    ✓ should not allow sysadmin to create traits when contract is paused (238688 gas)
+    ✓ should not allow sysadmin to create trait with bad value for variation (180840 gas)
+    ✓ should not allow sysadmin to create traits when contract is paused (238743 gas)
     ✓ should allow anyone to retrieve a trait id by generation, gene, and variation
     ✓ should allow descendent contracts to assemble artwork by generation and trait hash
-    ✓ should allow descendent contracts to concatenate two strings
     ✓ should allow the sysadmin to set the artist attribution for a generation (117107 gas)
     ✓ should allow anyone to retrieve the artist attribution for a generation
 
-  79 passing (1m)
-
+  82 passing (2m)
 ```
 
 #### ** Gas by Contract Method **
@@ -103,7 +107,7 @@
 ·----------------------------------------------------|---------------------------|-------------|----------------------------·
 |        Solc version: 0.5.12+commit.7709ece9        ·  Optimizer enabled: true  ·  Runs: 200  ·  Block limit: 8000000 gas  │
 ·····················································|···························|·············|·····························
-|  Methods                                           ·               1 gwei/gas                ·       145.11 usd/eth       │
+|  Methods                                           ·               1 gwei/gas                ·       144.69 usd/eth       │
 ························|····························|·············|·············|·············|··············|··············
 |  Contract             ·  Method                    ·  Min        ·  Max        ·  Avg        ·  # calls     ·  usd (avg)  │
 ························|····························|·············|·············|·············|··············|··············
@@ -137,11 +141,15 @@
 ························|····························|·············|·············|·············|··············|··············
 |  AvastarTeleporter    ·  approveTraitAccess        ·          -  ·          -  ·      89215  ·           2  ·       0.01  │
 ························|····························|·············|·············|·············|··············|··············
-|  AvastarTeleporter    ·  createTrait               ·          -  ·          -  ·    4594071  ·           1  ·       0.67  │
+|  AvastarTeleporter    ·  createTrait               ·          -  ·          -  ·    4594093  ·           1  ·       0.66  │
 ························|····························|·············|·············|·············|··············|··············
-|  AvastarTeleporter    ·  unpause                   ·          -  ·          -  ·      14161  ·           1  ·       0.00  │
+|  AvastarTeleporter    ·  pause                     ·          -  ·          -  ·      43071  ·           1  ·       0.01  │
 ························|····························|·············|·············|·············|··············|··············
-|  AvastarTeleporter    ·  useTraits                 ·          -  ·          -  ·      44084  ·           2  ·       0.01  │
+|  AvastarTeleporter    ·  setTokenUriBase           ·          -  ·          -  ·      43047  ·           1  ·       0.01  │
+························|····························|·············|·············|·············|··············|··············
+|  AvastarTeleporter    ·  unpause                   ·          -  ·          -  ·      14161  ·           2  ·       0.00  │
+························|····························|·············|·············|·············|··············|··············
+|  AvastarTeleporter    ·  useTraits                 ·          -  ·          -  ·      43995  ·           2  ·       0.01  │
 ························|····························|·············|·············|·············|··············|··············
 |  PrimeFactory         ·  addMinter                 ·          -  ·          -  ·      45139  ·           1  ·       0.01  │
 ························|····························|·············|·············|·············|··············|··············
@@ -151,21 +159,23 @@
 ························|····························|·············|·············|·············|··············|··············
 |  ReplicantFactory     ·  mintReplicant             ·     380805  ·     396125  ·     384352  ·           9  ·       0.06  │
 ························|····························|·············|·············|·············|··············|··············
-|  TraitFactoryWrapper  ·  createTrait               ·    1941395  ·    6618756  ·    2968386  ·           6  ·       0.43  │
+|  TraitFactoryWrapper  ·  createTrait               ·    1941417  ·    6618778  ·    2968408  ·           6  ·       0.43  │
 ························|····························|·············|·············|·············|··············|··············
-|  TraitFactoryWrapper  ·  extendTraitArt            ·    3010826  ·    5159696  ·    4082043  ·           9  ·       0.59  │
+|  TraitFactoryWrapper  ·  extendTraitArt            ·    3010848  ·    5159718  ·    4082065  ·           9  ·       0.59  │
 ························|····························|·············|·············|·············|··············|··············
-|  TraitFactoryWrapper  ·  pause                     ·          -  ·          -  ·      43093  ·           1  ·       0.01  │
+|  TraitFactoryWrapper  ·  pause                     ·          -  ·          -  ·      43115  ·           1  ·       0.01  │
 ························|····························|·············|·············|·············|··············|··············
 |  TraitFactoryWrapper  ·  setAttribution            ·          -  ·          -  ·     117107  ·           2  ·       0.02  │
 ························|····························|·············|·············|·············|··············|··············
-|  TraitFactoryWrapper  ·  unpause                   ·          -  ·          -  ·      14150  ·           6  ·       0.00  │
+|  TraitFactoryWrapper  ·  unpause                   ·          -  ·          -  ·      14161  ·           5  ·       0.00  │
 ························|····························|·············|·············|·············|··············|··············
 |  Deployments                                       ·                                         ·  % of limit  ·             │
 ·····················································|·············|·············|·············|··············|··············
+|  AvastarBaseWrapper                                ·          -  ·          -  ·     313666  ·       3.9 %  ·       0.05  │
+·····················································|·············|·············|·············|··············|··············
 |  AvastarPrimeMinter                                ·          -  ·          -  ·    1231922  ·      15.4 %  ·       0.18  │
 ·····················································|·············|·············|·············|··············|··············
-|  AvastarTeleporter                                 ·          -  ·          -  ·    5640155  ·      70.5 %  ·       0.82  │
+|  AvastarTeleporter                                 ·          -  ·          -  ·    5775015  ·      72.2 %  ·       0.84  │
 ·----------------------------------------------------|-------------|-------------|-------------|--------------|-------------·
 ```
 <!-- tabs:end -->

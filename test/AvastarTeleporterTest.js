@@ -9,7 +9,7 @@ const BN = require('bn.js');
 
 contract('AvastarTeleporter', function(accounts) {
 
-    let teleporter, result;
+    let teleporter;
     const sysAdmin = accounts[0];
     const tokenOwner = accounts[1];
     const minter = accounts[2];
@@ -48,8 +48,11 @@ contract('AvastarTeleporter', function(accounts) {
 
     before(async () => {
 
-        // Get the contract instance for this suite
+        // Get the AvastarTeleporter contract instance for this suite
         teleporter = await AvastarTeleporter.new();
+
+        // Set the teleporter's reference to the metadata contract
+        await teleporter.setTokenUriBase(constants.TOKEN_URI_BASE.DEV);
 
         // Unpause the contract
         await teleporter.unpause({from: sysAdmin});
@@ -173,5 +176,44 @@ contract('AvastarTeleporter', function(accounts) {
         assert.equal(art, expected, "Assembled art wasn't correct");
 
     });
+
+    it("should not allow system administrator to change the token URI base when contract is not paused", async function() {
+
+        // Try to change token URI base
+        await exceptions.catchRevert(
+            teleporter.setTokenUriBase(constants.TOKEN_URI_BASE.TEST, {from: sysAdmin})
+        )
+
+    });
+
+
+    it("should allow the sysadmin to change the token URI base when contract is paused", async function() {
+
+        // Pause the contract
+        await teleporter.pause();
+
+        // Set the token URI base
+        let result = await teleporter.setTokenUriBase(constants.TOKEN_URI_BASE.TEST, {from: sysAdmin});
+
+        // Test that appropriate event was emitted
+        truffleAssert.eventEmitted(result, 'TokenUriBaseSet', (ev) => {
+            return (
+                ev.tokenUriBase === constants.TOKEN_URI_BASE.TEST
+            );
+        }, 'TokenUriBaseSet event should be emitted with correct info');
+
+        // Unpause the contract
+        await teleporter.unpause();
+
+        // The expected tokenURI
+        const expected = `${constants.TOKEN_URI_BASE.TEST}1`;
+
+        // Request tokenURI for Token ID 2
+        result = await teleporter.tokenURI(id2, {from: stranger});
+
+        // Test result
+        assert.equal(result, expected, "TokenURI wasn't correct");
+    })
+
 
 });

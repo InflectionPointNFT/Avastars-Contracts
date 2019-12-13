@@ -1,14 +1,18 @@
 pragma solidity ^0.5.12;
 
 import "./AvastarTypes.sol";
+import "./AvastarBase.sol";
 import "./AccessControl.sol";
 import "@openzeppelin/contracts/token/ERC721/ERC721Full.sol";
 
 /**
  * @title Avastar State
  * @author Cliff Hall
+ * @notice This contract maintains the state variables for the Avastar Teleporter
+ * and inherits the ERC7121, Access Control, Avastar Types, and Avastar Base utils
+ * contract functionalities.
  */
-contract AvastarState is AvastarTypes, AccessControl, ERC721Full {
+contract AvastarState is AvastarBase, AvastarTypes, AccessControl, ERC721Full {
 
     /**
      * @notice Calls ERC721Full constructor with token name and symbol.
@@ -19,60 +23,65 @@ contract AvastarState is AvastarTypes, AccessControl, ERC721Full {
     string public constant TOKEN_SYMBOL = "AVAST";
 
     /**
-     * All Avastars across all Waves and Generations
+     * @notice The base of the Token URI
+     */
+    string internal tokenUriBase;
+
+    /**
+     * @notice All Avastars across all Waves and Generations
      */
     Avastar[] internal avastars;
 
     /**
-     * List of all Traits across all Generations
+     * @notice List of all Traits across all Generations
      */
     Trait[] internal traits;
 
     /**
-     * Retrieve Primes by Generation
+     * @notice  Retrieve Primes by Generation
      * Prime[] primes = primesByGeneration[Prime(_generation)]
      */
     mapping(uint8 => Prime[]) internal primesByGeneration;
 
     /**
-     * Retrieve Replicants by Generation
+     * @notice Retrieve Replicants by Generation
      * Replicant[] replicants = replicantsByGeneration[Replicant(_generation)]
      */
     mapping(uint8 => Replicant[]) internal replicantsByGeneration;
 
     /**
-     * Retrieve Artist Attribution by Generation
+     * @notice Retrieve Artist Attribution by Generation
      * Attribution attribution = attributionByGeneration[Generation(_generation)]
      */
     mapping(uint8 => Attribution) internal attributionByGeneration;
 
     /**
-     * Retrieve the approved Trait handler for a given Avastar Prime by Token ID
+     * @notice Retrieve the approved Trait handler for a given Avastar Prime by Token ID
      */
     mapping(uint256 => address) internal traitHandlerByPrimeTokenId;
 
     /**
-     * Is a given Trait Hash used within a given Generation
+     * @notice Is a given Trait Hash used within a given Generation
      * bool used = isHashUsedByGeneration[uint8(_generation)][uint256(_traits)]
      * This mapping ensures that within a Generation, a given Trait Hash is unique and can only be used once
      */
     mapping(uint8 => mapping(uint256 => bool)) internal isHashUsedByGeneration;
 
     /**
-     * Retrieve Token ID for a given Trait Hash within a given Generation
+     * @notice Retrieve Token ID for a given Trait Hash within a given Generation
      * uint256 tokenId = tokenIdByGenerationAndHash[uint8(_generation)][uint256(_traits)]
      * Since Token IDs start at 0 and empty mappings for uint256 return 0, check isHashUsedByGeneration first
      */
     mapping(uint8 => mapping(uint256 => uint256)) internal tokenIdByGenerationAndHash;
 
     /**
-     * Retrieve the Token ID for an Avastar by a given Generation, Wave, and Serial
+     * @notice Retrieve the Token ID for an Avastar by a given Generation, Wave, and Serial
      * uint256 tokenId = tokenIdByGenerationWaveAndSerial[uint8(_generation)][uint256(_wave)][uint256(_serial)]
      */
     mapping(uint8 => mapping(uint8 => mapping(uint256 => uint256))) internal tokenIdByGenerationWaveAndSerial;
 
     /**
-     * Retrieve the Trait ID for a Trait from a given Generation by Gene and Variation
+     * @notice Retrieve the Trait ID for a Trait from a given Generation by Gene and Variation
      * uint256 traitId = traitIdByGenerationGeneAndVariation[uint8(_generation)][uint8(_gene)][uint8(_variation)]
      */
     mapping(uint8 => mapping(uint8 => mapping(uint8 => uint256))) public traitIdByGenerationGeneAndVariation;

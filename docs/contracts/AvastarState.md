@@ -2,8 +2,12 @@
 
 View Source: [contracts/AvastarState.sol](https://github.com/Dapp-Wizards/Avastars-Contracts/blob/master/contracts/AvastarState.sol)
 
-**AvastarState** **↗ Extends: [AvastarTypes](contracts/AvastarTypes.md), [AccessControl](contracts/AccessControl.md), [ERC721Full](contracts/ERC721Full.md)**
+**AvastarState** **↗ Extends: [AvastarBase](contracts/AvastarBase.md), [AvastarTypes](contracts/AvastarTypes.md), [AccessControl](contracts/AccessControl.md), [ERC721Full](contracts/ERC721Full.md)**
 **↘ Derived Contracts: [TraitFactory](contracts/TraitFactory.md)**
+
+This contract maintains the state variables for the Avastar Teleporter
+and inherits the ERC7121, Access Control, Avastar Types, and Avastar Base utils
+contract functionalities.
 
 ## Constructor
 
@@ -30,6 +34,7 @@ string public constant TOKEN_SYMBOL;
 mapping(uint8 => mapping(uint8 => mapping(uint8 => uint256))) public traitIdByGenerationGeneAndVariation;
 
 // internal members
+string internal tokenUriBase;
 struct AvastarTypes.Avastar[] internal avastars;
 struct AvastarTypes.Trait[] internal traits;
 mapping(uint8 => struct AvastarTypes.Prime[]) internal primesByGeneration;

@@ -73,6 +73,8 @@ returns (string)
 
 ⤾ overrides [IERC721Metadata.tokenURI](contracts/IERC721Metadata.md#tokenuri)
 
+⤿ Overridden Implementation(s): [AvastarTeleporter.tokenURI](contracts/AvastarTeleporter.md#tokenuri)
+
 Returns an URI for a given token ID.
 Throws if the token ID does not exist. May return an empty string.
 

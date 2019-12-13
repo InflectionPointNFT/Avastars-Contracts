@@ -10,7 +10,6 @@ Side contract (not deployed or inherited) that extends
 ## **Functions**
 
 - [_assembleArtwork](#_assembleartwork)
-- [_strConcat](#_strconcat)
 
 ### _assembleArtwork
 
@@ -34,27 +33,4 @@ returns (string svg)
 | Name        | Type           | Description  |
 | ------------- |------------- | -----|
 | svg | string | the fully rendered SVG for the Avastar | 
-
-### _strConcat
-
-Passthrough function for testing `TraitFactory.strConcat`.
-
-```solidity
-function _strConcat(string _a, string _b)
-public pure
-returns (string result)
-```
-
-**Arguments**
-
-| Name        | Type           | Description  |
-| ------------- |------------- | -----|
-| _a | string | the first string | 
-| _b | string | the second string | 
-
-**Returns**
-
-| Name        | Type           | Description  |
-| ------------- |------------- | -----|
-| result | string | the concatenation of `_a` and `_b` | 
 

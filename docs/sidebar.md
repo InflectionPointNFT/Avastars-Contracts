@@ -6,6 +6,8 @@
 	
 * LOCAL CONTRACTS
 	* [AccessControl](contracts/AccessControl.md)
+	* [AvastarBase](contracts/AvastarBase.md)
+	* [AvastarBaseWrapper](contracts/AvastarBaseWrapper.md)
 	* [AvastarPrimeMinter](contracts/AvastarPrimeMinter.md)
 	* [AvastarState](contracts/AvastarState.md)
 	* [AvastarTeleporter](contracts/AvastarTeleporter.md)

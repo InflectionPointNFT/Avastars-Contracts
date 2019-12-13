@@ -78,7 +78,6 @@ event TraitArtExtended(uint256 id)
 - [createTrait](#createtrait)
 - [extendTraitArt](#extendtraitart)
 - [assembleArtwork](#assembleartwork)
-- [strConcat](#strconcat)
 
 ### getTrait
 
@@ -272,27 +271,4 @@ returns (string svg)
 | Name        | Type           | Description  |
 | ------------- |------------- | -----|
 | svg | string | the fully rendered SVG for the Avastar | 
-
-### strConcat
-
-Concatenate two strings
-
-```solidity
-function strConcat(string _a, string _b)
-internal pure
-returns (string result)
-```
-
-**Arguments**
-
-| Name        | Type           | Description  |
-| ------------- |------------- | -----|
-| _a | string | the first string | 
-| _b | string | the second string | 
-
-**Returns**
-
-| Name        | Type           | Description  |
-| ------------- |------------- | -----|
-| result | string | the concatenation of `_a` and `_b` | 
 

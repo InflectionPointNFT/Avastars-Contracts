@@ -24,6 +24,13 @@ contract AvastarTeleporter is ReplicantFactory {
      */
     event TraitsUsed(address indexed handler, uint256 primeId, bool[] used);
 
+
+    /**
+     * @notice Event emitted when metadata base changes
+     * @param tokenUriBase the base URI for tokenURI calls
+     */
+    event TokenUriBaseSet(string tokenUriBase);
+
     /**
      * @notice Acknowledge contract is `AvastarTeleporter`
      * @return always true
@@ -100,7 +107,9 @@ contract AvastarTeleporter is ReplicantFactory {
      * @param _tokenId the token ID of the Prime or Replicant
      * @return svg the fully rendered SVG representation of the Avastar
      */
-    function renderAvastar(uint256 _tokenId) external view returns (string memory svg) {
+    function renderAvastar(uint256 _tokenId)
+    external view
+    returns (string memory svg) {
         require(_tokenId < avastars.length);
         Avastar memory avastar = avastars[_tokenId];
         uint256 traits = (avastar.wave == Wave.PRIME)
@@ -108,5 +117,38 @@ contract AvastarTeleporter is ReplicantFactory {
             : replicantsByGeneration[uint8(avastar.generation)][uint256(avastar.serial)].traits;
         svg = assembleArtwork(avastar.generation, traits);
     }
+
+    /**
+     * @notice Get token URI for a given Avastar Token ID.
+     * Reverts if given token id is not a valid Avastar Token ID.
+     * @param _tokenId the Token ID of a previously minted Avastar Prime or Replicant
+     * @return uri the off-chain URI to the JSON metadata for the given Avastar
+     */
+    function tokenURI(uint _tokenId)
+    external view
+    returns (string memory uri)
+    {
+        require(_tokenId < avastars.length);
+        string memory id = uintToStr(_tokenId);
+        uri = strConcat(tokenUriBase, id);
+    }
+
+    /**
+      * @notice Set the address of the AvastarMetadata contract.
+      * Only invokable by system admin role, when contract is paused and not upgraded.
+      * If successful, emits an `MetadataContractSet` event.
+      * @param _tokenUriBase base for the tokenURI
+      */
+    function setTokenUriBase(string calldata _tokenUriBase)
+    external onlySysAdmin whenPaused whenNotUpgraded
+    {
+        // Set the base for metadata tokenURI
+        tokenUriBase = _tokenUriBase;
+
+        // Emit the event
+        emit TokenUriBaseSet(_tokenUriBase);
+    }
+
+
 
 }
