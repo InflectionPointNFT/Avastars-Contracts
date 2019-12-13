@@ -381,6 +381,21 @@ contract('TraitFactory', function(accounts) {
 
     });
 
+    it("should allow descendent contracts to convert a uint to a string", async function() {
+
+        // Compute the expected result
+        const expected = "90125";
+
+        // Create the uint
+        const value = new BN(expected, 10);
+
+        // Get the converted value
+        const result = await contract._uintToStr(value);
+
+        assert.equal(new Buffer(result).toString('base64'), new Buffer(expected).toString('base64'), "Converted value wasn't correct");
+
+    });
+
     it("should allow the sysadmin to set the artist attribution for a generation", async function() {
         const {generation, artist, infoURI} = attribution;
 

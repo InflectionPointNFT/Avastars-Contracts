@@ -34,4 +34,14 @@ contract TraitFactoryWrapper is TraitFactory {
         result = strConcat(_a, _b);
     }
 
+    /**
+     * @notice Convert a `uint` value to a `string`
+     * @param _value the `uint` value to be converted
+     * @return result the `string` representation of the given `uint` value
+     */
+    function _uintToStr(uint _value)
+    public pure
+    returns (string memory result) {
+        result = uint2Str(_value);
+    }
 }
