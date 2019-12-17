@@ -67,6 +67,18 @@ enum Gender {
 }
 ```
 
+### Rarity
+
+```solidity
+enum Rarity {
+ COMMON,
+ UNCOMMON,
+ RARE,
+ EPIC,
+ LEGENDARY
+}
+```
+
 ## Structs
 ### Trait
 
@@ -77,6 +89,7 @@ struct Trait {
  enum AvastarTypes.Series[] series,
  enum AvastarTypes.Gender gender,
  enum AvastarTypes.Gene gene,
+ enum AvastarTypes.Rarity rarity,
  uint8 variation,
  string name,
  string svg

@@ -135,10 +135,10 @@ module.exports = async function(done) {
 };
 
 async function createTrait(teleporter, processing, accounts, log){
-    let {generation, gender, gene, name, series, variation} = processing.trait;
+    let {generation, gender, gene, name, series, variation, rarity} = processing.trait;
     let {initial} = processing;
     try {
-        let gas = await teleporter.createTrait.estimateGas(generation, series, gender, gene, variation, name, initial, {
+        let gas = await teleporter.createTrait.estimateGas(generation, series, gender, gene, rarity, variation, name, initial, {
             from: accounts.sysAdmin,
             gas: constants.MAX_GAS
         });
@@ -146,11 +146,11 @@ async function createTrait(teleporter, processing, accounts, log){
             ? constants.MAX_GAS
             : bumpGas(gas);
 
-        let traitId = await teleporter.createTrait.call(generation, series, gender, gene, variation, name, initial, {
+        let traitId = await teleporter.createTrait.call(generation, series, gender, gene, rarity, variation, name, initial, {
             from: accounts.sysAdmin,
             gas: plusALittle
         });
-        let result = await teleporter.createTrait(generation, series, gender, gene, variation, name, initial, {
+        let result = await teleporter.createTrait(generation, series, gender, gene, rarity, variation, name, initial, {
             from: accounts.sysAdmin,
             gas: plusALittle
         });
@@ -196,6 +196,7 @@ function getTraits(file) {
     const addGeneration = trait => trait.generation = constants.GENERATION.ONE;
     const adjustSeries = trait => trait.series = trait.series.map(item => item - 1);
     const adjustGender = trait => trait.gender = constants.GENDER[trait.gender.toUpperCase()];
+    const adjustRarity = trait => trait.rarity = constants.RARITY[trait.rarity.toUpperCase()];
     const adjustGene = trait => trait.gene = lookupGeneEnum(trait.gene);
 
     let retVal;
@@ -225,6 +226,7 @@ function getTraits(file) {
                     addGeneration(trait);
                     adjustSeries(trait);
                     adjustGender(trait);
+                    adjustRarity(trait);
                     adjustGene(trait);
                     return trait;
                 }));

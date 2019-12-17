@@ -13,10 +13,11 @@ contract TraitFactory is AvastarState {
      * @param id the Trait ID
      * @param generation the generation of the trait
      * @param gene the gene that the trait is a variation of
+     * @param rarity the rarity level of this trait
      * @param variation variation of the gene the trait represents
      * @param name the name of the trait
      */
-    event NewTrait(uint256 id, Generation generation, Gene gene, uint8 variation, string name);
+    event NewTrait(uint256 id, Generation generation, Gene gene, Rarity rarity, uint8 variation, string name);
 
     /**
      * @notice Event emitted when artist attribution is set for a generation.
@@ -42,6 +43,7 @@ contract TraitFactory is AvastarState {
      * @return gender gender(s) the trait is valid for
      * @return gene gene the trait belongs to
      * @return variation variation of the gene the trait represents
+     * @return rarity the rarity level of this trait
      * @return name name of the trait
      * @return svg svg layer representation of the trait
      */
@@ -53,6 +55,7 @@ contract TraitFactory is AvastarState {
         Series[] memory series,
         Gender gender,
         Gene gene,
+        Rarity rarity,
         uint8 variation,
         string memory name,
         string memory svg
@@ -65,6 +68,7 @@ contract TraitFactory is AvastarState {
             trait.series,
             trait.gender,
             trait.gene,
+            trait.rarity,
             trait.variation,
             trait.name,
             trait.svg
@@ -136,6 +140,7 @@ contract TraitFactory is AvastarState {
      * @param _series list of series the trait may appear in
      * @param _gender gender the trait is valid for
      * @param _gene gene the trait belongs to
+     * @param _rarity the rarity level of this trait
      * @param _variationSafe the variation of the gene the trait belongs to
      * @param _name the name of the trait
      * @param _svg svg layer representation of the trait
@@ -146,6 +151,7 @@ contract TraitFactory is AvastarState {
         Series[] calldata _series,
         Gender _gender,
         Gene _gene,
+        Rarity _rarity,
         uint256 _variationSafe,
         string calldata _name,
         string calldata _svg
@@ -167,14 +173,14 @@ contract TraitFactory is AvastarState {
 
         // Create and store trait
         traits.push(
-            Trait(traitId, _generation, _series, _gender, _gene, variation, _name, _svg)
+            Trait(traitId, _generation, _series, _gender, _gene, _rarity, variation, _name, _svg)
         );
 
         // Create generation/gene/variation to traitId mapping required by assembleArtwork
         traitIdByGenerationGeneAndVariation[uint8(_generation)][uint8(_gene)][uint8(variation)] = traitId;
 
         // Send the NewTrait event
-        emit NewTrait(traitId, _generation, _gene, variation, _name);
+        emit NewTrait(traitId, _generation, _gene, _rarity, variation, _name);
 
         // Return the new Trait ID
         return traitId;

@@ -20,6 +20,7 @@ event NewTrait(
 	uint256 id,
 	enum AvastarTypes.Generation generation,
 	enum AvastarTypes.Gene gene,
+	enum AvastarTypes.Rarity rarity,
 	uint8 variation,
 	string name
 )
@@ -32,6 +33,7 @@ event NewTrait(
 | id | uint256 | the Trait ID | 
 | generation | enum AvastarTypes.Generation | the generation of the trait | 
 | gene | enum AvastarTypes.Gene | ration the generation of the trait | 
+| rarity | enum AvastarTypes.Rarity | the rarity level of this trait | 
 | variation | uint8 | variation of the gene the trait represents | 
 | name | string | the name of the trait | 
 
@@ -93,6 +95,7 @@ returns (
 	enum AvastarTypes.Series[] series,
 	enum AvastarTypes.Gender gender,
 	enum AvastarTypes.Gene gene,
+	enum AvastarTypes.Rarity rarity,
 	uint8 variation,
 	string name,
 	string svg
@@ -114,6 +117,7 @@ returns (
 | series | enum AvastarTypes.Series[] | list of series the trait may appear in | 
 | gender | enum AvastarTypes.Gender | gender(s) the trait is valid for | 
 | gene | enum AvastarTypes.Gene | ration generation of the trait | 
+| rarity | enum AvastarTypes.Rarity | the rarity level of this trait | 
 | variation | uint8 | variation of the gene the trait represents | 
 | name | string | name of the trait | 
 | svg | string | svg layer representation of the trait | 
@@ -205,6 +209,7 @@ function createTrait(
 	enum AvastarTypes.Series[] _series,
 	enum AvastarTypes.Gender _gender,
 	enum AvastarTypes.Gene _gene,
+	enum AvastarTypes.Rarity _rarity,
 	uint256 _variationSafe,
 	string _name,
 	string _svg
@@ -221,6 +226,7 @@ returns (uint256 traitId)
 | _series | enum AvastarTypes.Series[] | list of series the trait may appear in | 
 | _gender | enum AvastarTypes.Gender | gender the trait is valid for | 
 | _gene | enum AvastarTypes.Gene | ration the generation the trait belongs to | 
+| _rarity | enum AvastarTypes.Rarity | the rarity level of this trait | 
 | _variationSafe | uint256 | the variation of the gene the trait belongs to | 
 | _name | string | the name of the trait | 
 | _svg | string | svg layer representation of the trait | 

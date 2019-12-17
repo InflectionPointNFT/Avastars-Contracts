@@ -1,4 +1,5 @@
 module.exports = {
+
     GENERATION: {
         ONE: 0,
         TWO: 1,
@@ -6,6 +7,7 @@ module.exports = {
         FOUR: 3,
         FIVE: 4
     },
+
     SERIES: {
         ONE: 0,
         TWO: 1,
@@ -13,11 +15,21 @@ module.exports = {
         FOUR: 3,
         FIVE: 4
     },
+
     GENDER: {
         ANY: 0,
         MALE: 1,
         FEMALE: 2
     },
+
+    RARITY: {
+        COMMON: 0,
+        UNCOMMON: 1,
+        RARE: 2,
+        EPIC: 3,
+        LEGENDARY: 4
+    },
+
     GENE: {
         BACKGROUND: 0,
         SKIN_TONE: 1,

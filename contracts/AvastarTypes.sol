@@ -47,6 +47,14 @@ contract AvastarTypes {
         FEMALE
     }
 
+    enum Rarity {
+        COMMON,
+        UNCOMMON,
+        RARE,
+        EPIC,
+        LEGENDARY
+    }
+
     struct Trait {
 
         // Trait ID
@@ -63,6 +71,9 @@ contract AvastarTypes {
 
         // Gene this trait is a variation of (0-255)
         Gene gene;
+
+        // The rarity of this trait
+        Rarity rarity;
 
         // The variation number (0-255)
         uint8 variation;
