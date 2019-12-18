@@ -224,7 +224,7 @@ contract TraitFactory is AvastarState {
         Trait memory trait;
 
         // Iterate trait hash by Gene and assemble SVG sandwich
-        for (uint8 slot = uint8(Gene.BACKGROUND); slot <= uint8(Gene.HAIR_STYLE); slot++){
+        for (uint8 slot = 0; slot <= uint8(Gene.HAIR_STYLE); slot++){
             slotMultiplier = uint256(slotConst**slot);  // Create slot multiplier
             bitMask = slotMask * slotMultiplier;        // Create bit mask for slot
             slottedValue = _traitHash & bitMask;        // Extract slotted value from hash

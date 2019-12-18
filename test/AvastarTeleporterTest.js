@@ -62,23 +62,16 @@ contract('AvastarTeleporter', function(accounts) {
 
         // Mint 3 primes
         const mint = prime => teleporter.mintPrime(tokenOwner, prime.traits, prime.generation, prime.series, prime.gender, prime.ranking, {from: minter});
-        await mint(prime1);
-        await mint(prime2);
-        await mint(prime3);
+        for (const prime of [prime1, prime2, prime3]) {
+            await mint(prime);
+        }
 
         // Create prime3's full trait set
         const create = trait =>  teleporter.createTrait(trait.generation, trait.series, trait.gender, trait.gene, trait.rarity, trait.variation, trait.name, trait.svg, {from: sysAdmin, gas: constants.MAX_GAS});
-        await create(traitData.avastar[0]);
-        await create(traitData.avastar[1]);
-        await create(traitData.avastar[2]);
-        await create(traitData.avastar[3]);
-        await create(traitData.avastar[4]);
-        await create(traitData.avastar[5]);
-        await create(traitData.avastar[6]);
-        await create(traitData.avastar[7]);
-        await create(traitData.avastar[8]);
-        await create(traitData.avastar[9]);
-        await create(traitData.avastar[10]);
+
+        for (const trait of traitData.avastar){
+            await create(trait);
+        }
 
     });
 

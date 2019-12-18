@@ -31,17 +31,18 @@ module.exports = {
     },
 
     GENE: {
-        BACKGROUND: 0,
-        SKIN_TONE: 1,
-        HAIR_COLOR: 2,
-        EYE_COLOR: 3,
-        EARS: 4,
-        FACE: 5,
-        NOSE: 6,
-        MOUTH: 7,
-        FACIAL_FEATURE: 8,
-        EYES: 9,
-        HAIR_STYLE: 10
+        SKIN_TONE: 0,
+        HAIR_COLOR: 1,
+        EYE_COLOR: 2,
+        BG_COLOR: 3,
+        BACKDROP: 4,
+        EARS: 5,
+        FACE: 6,
+        NOSE: 7,
+        MOUTH: 8,
+        FACIAL_FEATURE: 9,
+        EYES: 10,
+        HAIR_STYLE: 11
     },
 
     MAX_ART_SIZE: 9000,

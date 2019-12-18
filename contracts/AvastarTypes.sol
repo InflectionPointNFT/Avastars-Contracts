@@ -28,10 +28,11 @@ contract AvastarTypes {
     }
 
     enum Gene {
-        BACKGROUND,
         SKIN_TONE,
         HAIR_COLOR,
         EYE_COLOR,
+        BG_COLOR,
+        BACKDROP,
         EARS,
         FACE,
         NOSE,

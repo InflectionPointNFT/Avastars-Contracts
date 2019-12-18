@@ -6,6 +6,12 @@ const traitsJSON = "data/avastars-dashboard-genes-export.json";
 const logfile = "data/CreateTraitsLog.txt";
 const AvastarTeleporter = artifacts.require("contracts/AvastarTeleporter.sol");
 const div = "---------------------------------------------------------------------------------------------";
+const orderedKeys = Object.keys(constants.GENE).map(
+    key => key
+        .toLowerCase()
+        .replace('_',' ')
+        .replace(/(^\w{1})|(\s{1}\w{1})/g, match => match.toUpperCase())
+);
 
 // Bizarrely, even though this can be included as
 // Cordwood.js over in test/TraitFactoryTest.js,
@@ -201,22 +207,8 @@ function getTraits(file) {
 
     let retVal;
     try {
-        let json = fs.readFileSync(file, "utf8");
-        let genes = JSON.parse(json);
-
-        let orderedKeys = [
-            'Background',
-            'Skin Tone',
-            'Hair Color',
-            'Eye Color',
-            'Ears',
-            'Face',
-            'Nose',
-            'Mouth',
-            'Facial Feature',
-            'Eyes',
-            'Hair Style'
-        ];
+        const json = fs.readFileSync(file, "utf8");
+        const genes = JSON.parse(json);
 
         retVal = orderedKeys.map( key => {
             let traits = [];

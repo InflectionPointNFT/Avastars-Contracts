@@ -1,16 +1,5 @@
 const constants = require("./Constants");
 
-const background = {
-    "generation": constants.GENERATION.ONE,
-    "gender" : constants.GENDER.ANY,
-    "gene" : constants.GENE.BACKGROUND,
-    "name" : "Pale Leaf",
-    "rarity" : constants.RARITY.COMMON,
-    "series" : [ constants.SERIES.ONE ],
-    "svg" : "<style type=\"text/css\">.bg{fill:#EFFFF0;}</style><g id='Background'><rect class='bg' width='100%' height='100%'/></g>",
-    "variation" : 12
-};
-
 const skin_tone = {
     "generation": constants.GENERATION.ONE,
     "gender" : constants.GENDER.ANY,
@@ -42,6 +31,28 @@ const eye_color = {
     "series" : [ constants.SERIES.ONE ],
     "svg" : "<style type=\"text/css\">.eye_iris{fill:#E7FEFF;} </style>",
     "variation" : 1
+};
+
+const bg_color = {
+    "generation": constants.GENERATION.ONE,
+    "gender" : constants.GENDER.ANY,
+    "gene" : constants.GENE.BG_COLOR,
+    "name" : "Black White",
+    "rarity" : constants.RARITY.COMMON,
+    "series" : [ constants.SERIES.ONE ],
+    "svg" : "<style type=\"text/css\">.bg_color{fill:#FFFEF3;} .bg_shape{fill:#F9F5DC;} .bg_halftone{fill:#EADFA8;} </style>",
+    "variation" : 2
+};
+
+const backdrop = {
+    "generation": constants.GENERATION.ONE,
+    "gender" : constants.GENDER.ANY,
+    "gene" : constants.GENE.BACKDROP,
+    "name" : "Backdrop 11",
+    "rarity" : constants.RARITY.RARE,
+    "series" : [ constants.SERIES.ONE, constants.SERIES.TWO, constants.SERIES.THREE, constants.SERIES.FOUR, constants.SERIES.FIVE ],
+    "svg" : "<pattern id=\"backdrop_c\" width=\"28.8\" height=\"28.8\" y=\"1000\" overflow=\"visible\" patternUnits=\"userSpaceOnUse\" viewBox=\"1.4 -30.2 28.8 28.8\"><defs><path id=\"backdrop_a\" d=\"M1.4-30.2h28.8v28.8H1.4z\"/></defs><clipPath id=\"backdrop_b\"><use overflow=\"visible\" xlink:href=\"#backdrop_a\"/></clipPath><g class=\"bg_halftone\" clip-path=\"url(#backdrop_b)\"><path d=\"M30.2 0c.8 0 1.4-.6 1.4-1.4s-.6-1.4-1.4-1.4-1.4.6-1.4 1.4c0 .8.6 1.4 1.4 1.4zM15.8 0c.8 0 1.4-.6 1.4-1.4s-.6-1.4-1.4-1.4c-.8 0-1.4.6-1.4 1.4 0 .8.6 1.4 1.4 1.4zM30.2-14.4c.8 0 1.4-.6 1.4-1.4s-.6-1.4-1.4-1.4-1.4.6-1.4 1.4c0 .8.6 1.4 1.4 1.4zM15.8-14.4c.8 0 1.4-.6 1.4-1.4s-.6-1.4-1.4-1.4c-.8 0-1.4.6-1.4 1.4 0 .8.6 1.4 1.4 1.4zM8.6-7.2c.8 0 1.4-.6 1.4-1.4S9.4-10 8.6-10c-.8 0-1.4.6-1.4 1.4 0 .8.6 1.4 1.4 1.4zM23-7.2c.8 0 1.4-.6 1.4-1.4S23.8-10 23-10s-1.4.6-1.4 1.4.6 1.4 1.4 1.4zM8.6-21.6c.8 0 1.4-.6 1.4-1.4s-.6-1.4-1.4-1.4c-.8 0-1.4.6-1.4 1.4 0 .8.6 1.4 1.4 1.4zM23-21.6c.8 0 1.4-.6 1.4-1.4s-.6-1.4-1.4-1.4-1.4.6-1.4 1.4c0 .8.6 1.4 1.4 1.4z\"/><g><path d=\"M1.4 0c.8 0 1.4-.6 1.4-1.4s-.6-1.4-1.4-1.4C.6-2.9 0-2.2 0-1.4 0-.6.6 0 1.4 0zM1.4-14.4c.8 0 1.4-.6 1.4-1.4s-.6-1.4-1.4-1.4-1.4.6-1.4 1.4.6 1.4 1.4 1.4z\"/></g><g><path d=\"M30.2-28.8c.8 0 1.4-.6 1.4-1.4s-.6-1.4-1.4-1.4-1.4.6-1.4 1.4c0 .8.6 1.4 1.4 1.4zM15.8-28.8c.8 0 1.4-.6 1.4-1.4s-.6-1.4-1.4-1.4-1.4.6-1.4 1.4c0 .8.6 1.4 1.4 1.4z\"/></g><path d=\"M1.4-28.8c.8 0 1.4-.6 1.4-1.4s-.6-1.4-1.4-1.4C.6-31.7 0-31 0-30.2c0 .8.6 1.4 1.4 1.4z\"/></g></pattern><path class=\"bg_color\" d=\"M0 0h1000v1000H0z\"/><pattern id=\"backdrop_d\" patternTransform=\"translate(-42.425 -6.866)\" xlink:href=\"#backdrop_c\"/><path fill=\"url(#backdrop_d)\" d=\"M474.2 267.5L620.7 61.3l-42.5 231.8 294.7-166.4-214.6 237.4 234.3 6.3-196.3 93.9 75.2 70.5-88.1 35.8 159 174.8-219.8-86.7 148.9 266.9-243.8-217.2-80.5 230.3-26.5-230.3-140.4 125.2 45.5-174.9L39.5 790 265 570.6 85.8 524.8l166.3-60.5L39.5 308.8l250.6 55.3L89 105.2l281.2 187.9-2.2-166.4z\"/><path class=\"bg_shape\" d=\"M512.5 260.3L659.1 54.2l-42.6 231.7 294.7-166.4L696.6 357l234.3 6.2-196.3 93.9 75.2 70.6-88.1 35.7 159.1 174.8-219.9-86.7 148.9 266.9-243.7-217.1-80.6 230.2L459 701.3 318.6 826.5l45.6-175L77.8 782.8l225.5-219.4-179.2-45.7 166.3-60.6L77.8 301.6 328.4 357 127.3 98.1l281.3 187.8-2.2-166.4z\"/><pattern id=\"backdrop_e\" patternTransform=\"translate(7084.725 20320.893) scale(1.125)\" xlink:href=\"#backdrop_c\"/><path fill=\"url(#backdrop_e)\" d=\"M530 267.5L676.6 61.3 634 293.1l294.7-166.4-214.5 237.4 234.2 6.3-196.3 93.9 75.3 70.5-88.2 35.8 159.1 174.8-219.9-86.7 149 266.9-243.8-217.2-80.5 230.3-26.6-230.3-140.4 125.2 45.6-174.9L95.3 790l225.6-219.4-179.3-45.8L308 464.3 95.3 308.8l250.6 55.3-201-258.9 281.2 187.9-2.2-166.4z\"/>",
+    "variation" : 11
 };
 
 const face = {
@@ -213,10 +224,11 @@ const hair_style_six = { // 23.17kb way too big
 module.exports = {
 
     avastar: [
-        background,
         skin_tone,
         hair_color,
         eye_color,
+        bg_color,
+        backdrop,
         ears,
         face,
         nose,

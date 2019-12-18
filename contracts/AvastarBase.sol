@@ -3,7 +3,7 @@ pragma solidity ^0.5.12;
 /**
  * @title Avastar Base
  * @author Cliff Hall
- * @notice Utilities used by contracts in the Avastars contract ecosystem
+ * @notice Utilities used by descendant contracts
  */
 contract AvastarBase {
 
