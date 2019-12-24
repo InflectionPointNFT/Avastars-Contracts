@@ -6,11 +6,21 @@ View Source: [contracts/AvastarTeleporter.sol](https://github.com/Dapp-Wizards/A
 
 Management of Avastar Primes, Replicants, and Traits
 
+## Contract Members
+**Constants & Variables**
+
+```solidity
+// private members
+contract IAvastarMetadata private metadataContract;
+
+```
+
 ## **Events**
 
 - [TraitAccessApproved](#traitaccessapproved)
 - [TraitsUsed](#traitsused)
 - [TokenUriBaseSet](#tokenuribaseset)
+- [MetadataContractSet](#metadatacontractset)
 
 ### TraitAccessApproved
 
@@ -49,7 +59,7 @@ event TraitsUsed(
 
 ### TokenUriBaseSet
 
-Event emitted when metadata base changes
+Event emitted when TokenURI base changes
 
 ```solidity
 event TokenUriBaseSet(string tokenUriBase)
@@ -61,14 +71,31 @@ event TokenUriBaseSet(string tokenUriBase)
 | ------------- |------------- | -----|
 | tokenUriBase | string | the base URI for tokenURI calls | 
 
+### MetadataContractSet
+
+Event emitted when AvastarMetadata contract is set
+
+```solidity
+event MetadataContractSet(address contractAddress)
+```
+
+**Arguments**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| contractAddress | address | the address of the AvastarMetadata contract | 
+
 ## **Functions**
 
 - [isAvastarTeleporter](#isavastarteleporter)
+- [setMetadataContract](#setmetadatacontract)
+- [setTokenUriBase](#settokenuribase)
+- [getAvastarMetadata](#getavastarmetadata)
+- [getAvastarWaveByTokenId](#getavastarwavebytokenid)
 - [approveTraitAccess](#approvetraitaccess)
 - [useTraits](#usetraits)
 - [renderAvastar](#renderavastar)
 - [tokenURI](#tokenuri)
-- [setTokenUriBase](#settokenuribase)
 
 ### isAvastarTeleporter
 
@@ -85,6 +112,84 @@ returns (bool)
 | Name        | Type           | Description  |
 | ------------- |------------- | -----|
 |  | bool | always true | 
+
+### setMetadataContract
+
+Set the address of the `AvastarMetadata` contract.
+Only invokable by system admin role, when contract is paused and not upgraded.
+If successful, emits an `TeleporterContractSet` event.
+
+```solidity
+function setMetadataContract(address _address)
+external nonpayable onlySysAdmin whenPaused whenNotUpgraded 
+```
+
+**Arguments**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _address | address | address of AvastarTeleporter contract | 
+
+### setTokenUriBase
+
+Set the base URI for creating `tokenURI` for each Avastar.
+Only invokable by system admin role, when contract is paused and not upgraded.
+If successful, emits an `TokenUriBaseSet` event.
+
+```solidity
+function setTokenUriBase(string _tokenUriBase)
+external nonpayable onlySysAdmin whenPaused whenNotUpgraded 
+```
+
+**Arguments**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _tokenUriBase | string | base for the tokenURI | 
+
+### getAvastarMetadata
+
+Get human-readable metadata for a given Avastar by Token ID.
+
+```solidity
+function getAvastarMetadata(uint256 _tokenId)
+public view
+returns (string metadata)
+```
+
+**Arguments**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _tokenId | uint256 | the token id of the given Avastar | 
+
+**Returns**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| metadata | string | the Avastar's human-readable metadata | 
+
+### getAvastarWaveByTokenId
+
+Get an Avastar's Wave by token ID.
+
+```solidity
+function getAvastarWaveByTokenId(uint256 _tokenId)
+external view
+returns (enum AvastarTypes.Wave wave)
+```
+
+**Arguments**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _tokenId | uint256 | the token id of the given Avastar | 
+
+**Returns**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| wave | enum AvastarTypes.Wave | the Avastar's wave (Prime/Replicant) | 
 
 ### approveTraitAccess
 
@@ -167,21 +272,4 @@ returns (string uri)
 | Name        | Type           | Description  |
 | ------------- |------------- | -----|
 | uri | string | the off-chain URI to the JSON metadata for the given Avastar | 
-
-### setTokenUriBase
-
-Set the address of the AvastarMetadata contract.
-Only invokable by system admin role, when contract is paused and not upgraded.
-If successful, emits an `MetadataContractSet` event.
-
-```solidity
-function setTokenUriBase(string _tokenUriBase)
-external nonpayable onlySysAdmin whenPaused whenNotUpgraded 
-```
-
-**Arguments**
-
-| Name        | Type           | Description  |
-| ------------- |------------- | -----|
-| _tokenUriBase | string | base for the tokenURI | 
 

@@ -76,7 +76,7 @@ returns (
 
 ### getReplicantByTokenId
 
-Get the Avastar Replicant metadata associated with a given Token ID
+Get the Avastar Replicant associated with a given Token ID
 
 ```solidity
 function getReplicantByTokenId(uint256 _tokenId)

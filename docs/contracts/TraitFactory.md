@@ -73,22 +73,21 @@ event TraitArtExtended(uint256 id)
 
 ## **Functions**
 
-- [getTrait](#gettrait)
-- [getTraitIdByGenerationGeneAndVariation](#gettraitidbygenerationgeneandvariation)
+- [getTraitInfo](#gettraitinfo)
+- [getTraitArt](#gettraitart)
 - [getAttribution](#getattribution)
 - [setAttribution](#setattribution)
 - [createTrait](#createtrait)
 - [extendTraitArt](#extendtraitart)
 - [assembleArtwork](#assembleartwork)
 
-### getTrait
+### getTraitInfo
 
-Retrieve a Trait by ID.
-Only invokable by a system administrator.
+Retrieve a Trait's info by ID.
 
 ```solidity
-function getTrait(uint256 _traitId)
-external view onlySysAdmin 
+function getTraitInfo(uint256 _traitId)
+external view
 returns (
 	uint256 id,
 	enum AvastarTypes.Generation generation,
@@ -97,8 +96,7 @@ returns (
 	enum AvastarTypes.Gene gene,
 	enum AvastarTypes.Rarity rarity,
 	uint8 variation,
-	string name,
-	string svg
+	string name
 )
 ```
 
@@ -120,35 +118,29 @@ returns (
 | rarity | enum AvastarTypes.Rarity | the rarity level of this trait | 
 | variation | uint8 | variation of the gene the trait represents | 
 | name | string | name of the trait | 
-| svg | string | svg layer representation of the trait | 
 
-### getTraitIdByGenerationGeneAndVariation
+### getTraitArt
 
-Get Trait ID by Generation, Gene, and Variation.
+Retrieve a Trait's art by ID.
+Only invokable by a system administrator.
 
 ```solidity
-function getTraitIdByGenerationGeneAndVariation(
-	enum AvastarTypes.Generation _generation,
-	enum AvastarTypes.Gene _gene,
-	uint256 _variationSafe
-)
-external view
-returns (uint256 traitId)
+function getTraitArt(uint256 _traitId)
+external view onlySysAdmin 
+returns (string art)
 ```
 
 **Arguments**
 
 | Name        | Type           | Description  |
 | ------------- |------------- | -----|
-| _generation | enum AvastarTypes.Generation | the generation the trait belongs to | 
-| _gene | enum AvastarTypes.Gene | ration the generation the trait belongs to | 
-| _variationSafe | uint256 | the variation of the gene | 
+| _traitId | uint256 | the ID of the Trait to retrieve | 
 
 **Returns**
 
 | Name        | Type           | Description  |
 | ------------- |------------- | -----|
-| traitId | uint256 | the ID of the specified trait | 
+| art | string | the svg layer representation of the trait | 
 
 ### getAttribution
 

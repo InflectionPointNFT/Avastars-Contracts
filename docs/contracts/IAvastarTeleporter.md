@@ -10,6 +10,11 @@ Used by AvastarMinter contract to interact with subset of AvastarTeleporter cont
 ## **Functions**
 
 - [isAvastarTeleporter](#isavastarteleporter)
+- [tokenURI](#tokenuri)
+- [getAvastarWaveByTokenId](#getavastarwavebytokenid)
+- [getPrimeByTokenId](#getprimebytokenid)
+- [getReplicantByTokenId](#getreplicantbytokenid)
+- [getTraitInfo](#gettraitinfo)
 - [mintPrime](#mintprime)
 - [mintReplicant](#mintreplicant)
 - [ownerOf](#ownerof)
@@ -29,6 +34,161 @@ returns (bool)
 | Name        | Type           | Description  |
 | ------------- |------------- | -----|
 |  | bool | always true if the contract is in fact `AvastarTeleporter` | 
+
+### tokenURI
+
+Get token URI for a given Avastar Token ID.
+Reverts if given token id is not a valid Avastar Token ID.
+
+```solidity
+function tokenURI(uint256 _tokenId)
+external view
+returns (string uri)
+```
+
+**Arguments**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _tokenId | uint256 | the Token ID of a previously minted Avastar Prime or Replicant | 
+
+**Returns**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| uri | string | the off-chain URI to the JSON metadata for the given Avastar | 
+
+### getAvastarWaveByTokenId
+
+Get an Avastar's Wave by token ID.
+
+```solidity
+function getAvastarWaveByTokenId(uint256 _tokenId)
+external view
+returns (enum AvastarTypes.Wave wave)
+```
+
+**Arguments**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _tokenId | uint256 | the token id of the given Avastar | 
+
+**Returns**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| wave | enum AvastarTypes.Wave | the Avastar's wave (Prime/Replicant) | 
+
+### getPrimeByTokenId
+
+Get the Avastar Prime metadata associated with a given Token ID.
+
+```solidity
+function getPrimeByTokenId(uint256 _tokenId)
+public view
+returns (
+	uint256 tokenId,
+	uint256 serial,
+	uint256 traits,
+	bool[] replicated,
+	enum AvastarTypes.Generation generation,
+	enum AvastarTypes.Series series,
+	enum AvastarTypes.Gender gender,
+	uint8 ranking
+)
+```
+
+**Arguments**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _tokenId | uint256 | the Token ID of the specified Prime | 
+
+**Returns**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| tokenId | uint256 | the Prime's token ID | 
+| serial | uint256 | the Prime's serial | 
+| traits | uint256 | the Prime's trait hash | 
+| replicated | bool[] | the Prime's trait replication indicators | 
+| generation | enum AvastarTypes.Generation | the Prime's generation | 
+| series | enum AvastarTypes.Series | the Prime's series | 
+| gender | enum AvastarTypes.Gender | the Prime's gender | 
+| ranking | uint8 | the Prime's ranking | 
+
+### getReplicantByTokenId
+
+Get the Avastar Replicant metadata associated with a given Token ID
+
+```solidity
+function getReplicantByTokenId(uint256 _tokenId)
+public view
+returns (
+	uint256 tokenId,
+	uint256 serial,
+	uint256 traits,
+	enum AvastarTypes.Generation generation,
+	enum AvastarTypes.Gender gender,
+	uint8 ranking
+)
+```
+
+**Arguments**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _tokenId | uint256 | the token ID of the specified Replicant | 
+
+**Returns**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| tokenId | uint256 | the Replicant's token ID | 
+| serial | uint256 | the Replicant's serial | 
+| traits | uint256 | the Replicant's trait hash | 
+| generation | enum AvastarTypes.Generation | the Replicant's generation | 
+| gender | enum AvastarTypes.Gender | the Replicant's gender | 
+| ranking | uint8 | the Replicant's ranking | 
+
+### getTraitInfo
+
+Retrieve a Trait's info by ID.
+
+```solidity
+function getTraitInfo(uint256 _traitId)
+external view
+returns (
+	uint256 id,
+	enum AvastarTypes.Generation generation,
+	enum AvastarTypes.Series[] series,
+	enum AvastarTypes.Gender gender,
+	enum AvastarTypes.Gene gene,
+	enum AvastarTypes.Rarity rarity,
+	uint8 variation,
+	string name
+)
+```
+
+**Arguments**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _traitId | uint256 | the ID of the Trait to retrieve | 
+
+**Returns**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| id | uint256 | the ID of the trait | 
+| generation | enum AvastarTypes.Generation | generation of the trait | 
+| series | enum AvastarTypes.Series[] | list of series the trait may appear in | 
+| gender | enum AvastarTypes.Gender | gender(s) the trait is valid for | 
+| gene | enum AvastarTypes.Gene | ration generation of the trait | 
+| rarity | enum AvastarTypes.Rarity | the rarity level of this trait | 
+| variation | uint8 | variation of the gene the trait represents | 
+| name | string | name of the trait | 
 
 ### mintPrime
 

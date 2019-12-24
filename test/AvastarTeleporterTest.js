@@ -1,4 +1,5 @@
 const AvastarTeleporter = artifacts.require("./AvastarTeleporter.sol");
+const AvastarMetadata = artifacts.require("./AvastarMetadata.sol");
 const truffleAssert = require('truffle-assertions');
 const exceptions = require ("./util/Exceptions");
 const constants = require("./util/Constants");
@@ -9,7 +10,7 @@ const BN = require('bn.js');
 
 contract('AvastarTeleporter', function(accounts) {
 
-    let teleporter;
+    let teleporter, metadataContract;
     const sysAdmin = accounts[0];
     const tokenOwner = accounts[1];
     const minter = accounts[2];
@@ -51,7 +52,17 @@ contract('AvastarTeleporter', function(accounts) {
         // Get the AvastarTeleporter contract instance for this suite
         teleporter = await AvastarTeleporter.new();
 
+        // Deploy the metadata contract
+        metadataContract = await AvastarMetadata.new(
+            teleporter.address,
+            constants.TOKEN_MEDIA_BASE.DEV,
+            constants.TOKEN_VIEW_BASE.DEV
+        );
+
         // Set the teleporter's reference to the metadata contract
+        await teleporter.setMetadataContract(metadataContract.address);
+
+        // Set the token URI base
         await teleporter.setTokenUriBase(constants.TOKEN_URI_BASE.DEV);
 
         // Unpause the contract
@@ -72,6 +83,15 @@ contract('AvastarTeleporter', function(accounts) {
         for (const trait of traitData.avastar){
             await create(trait);
         }
+
+    });
+
+    it("should allow anyone to get the metadata for an avastar", async function() {
+
+        // Get the metadata
+        let result = await teleporter.getAvastarMetadata(id1, {from: stranger});
+
+        console.log(result);
 
     });
 
@@ -170,6 +190,16 @@ contract('AvastarTeleporter', function(accounts) {
 
     });
 
+    it("should allow anyone to retrieve the wave for a given Avastar by Token ID", async function() {
+
+        // Get the Avastar info
+        const wave = await teleporter.getAvastarWaveByTokenId(id3, {from: stranger});
+
+        // Test results
+        assert.equal(wave.toNumber(), constants.WAVE.MALE, "Wave field wasn't correct");
+
+    });
+
     it("should not allow system administrator to change the token URI base when contract is not paused", async function() {
 
         // Try to change token URI base
@@ -178,7 +208,6 @@ contract('AvastarTeleporter', function(accounts) {
         )
 
     });
-
 
     it("should allow the sysadmin to change the token URI base when contract is paused", async function() {
 
@@ -207,6 +236,5 @@ contract('AvastarTeleporter', function(accounts) {
         // Test result
         assert.equal(result, expected, "TokenURI wasn't correct");
     })
-
 
 });

@@ -34,8 +34,7 @@ contract TraitFactory is AvastarState {
     event TraitArtExtended(uint256 id);
 
     /**
-     * @notice Retrieve a Trait by ID.
-     * Only invokable by a system administrator.
+     * @notice Retrieve a Trait's info by ID.
      * @param _traitId the ID of the Trait to retrieve
      * @return id the ID of the trait
      * @return generation generation of the trait
@@ -45,10 +44,9 @@ contract TraitFactory is AvastarState {
      * @return variation variation of the gene the trait represents
      * @return rarity the rarity level of this trait
      * @return name name of the trait
-     * @return svg svg layer representation of the trait
      */
-    function getTrait(uint256 _traitId)
-    external view onlySysAdmin
+    function getTraitInfo(uint256 _traitId)
+    external view
     returns (
         uint256 id,
         Generation generation,
@@ -57,8 +55,7 @@ contract TraitFactory is AvastarState {
         Gene gene,
         Rarity rarity,
         uint8 variation,
-        string memory name,
-        string memory svg
+        string memory name
     ) {
         require(_traitId < traits.length);
         Trait memory trait = traits[_traitId];
@@ -70,29 +67,22 @@ contract TraitFactory is AvastarState {
             trait.gene,
             trait.rarity,
             trait.variation,
-            trait.name,
-            trait.svg
+            trait.name
         );
     }
 
     /**
-     * @notice Get Trait ID by Generation, Gene, and Variation.
-     * @param _generation the generation the trait belongs to
-     * @param _gene gene the trait belongs to
-     * @param _variationSafe the variation of the gene
-     * @return traitId the ID of the specified trait
+     * @notice Retrieve a Trait's art by ID.
+     * Only invokable by a system administrator.
+     * @param _traitId the ID of the Trait to retrieve
+     * @return art the svg layer representation of the trait
      */
-    function getTraitIdByGenerationGeneAndVariation(
-        Generation _generation,
-        Gene _gene,
-        uint256 _variationSafe
-    )
-    external view
-    returns (uint256 traitId)
-    {
-        require(_variationSafe >=0 && _variationSafe <=255);
-        uint8 variation = uint8(_variationSafe);
-        return traitIdByGenerationGeneAndVariation[uint8(_generation)][uint8(_gene)][uint8(variation)];
+    function getTraitArt(uint256 _traitId)
+    external view onlySysAdmin
+    returns (string memory art) {
+        require(_traitId < traits.length);
+        Trait memory trait = traits[_traitId];
+        art = trait.svg;
     }
 
     /**

@@ -3,7 +3,7 @@
 View Source: [contracts/AvastarTypes.sol](https://github.com/Dapp-Wizards/Avastars-Contracts/blob/master/contracts/AvastarTypes.sol)
 
 **AvastarTypes** 
-**↘ Derived Contracts: [AvastarPrimeMinter](contracts/AvastarPrimeMinter.md), [AvastarState](contracts/AvastarState.md), [IAvastarTeleporter](contracts/IAvastarTeleporter.md)**
+**↘ Derived Contracts: [AvastarMetadata](contracts/AvastarMetadata.md), [AvastarPrimeMinter](contracts/AvastarPrimeMinter.md), [AvastarState](contracts/AvastarState.md), [IAvastarTeleporter](contracts/IAvastarTeleporter.md)**
 
 ## **Enums**
 ### Generation
@@ -43,10 +43,11 @@ enum Wave {
 
 ```solidity
 enum Gene {
- BACKGROUND,
  SKIN_TONE,
  HAIR_COLOR,
  EYE_COLOR,
+ BG_COLOR,
+ BACKDROP,
  EARS,
  FACE,
  NOSE,

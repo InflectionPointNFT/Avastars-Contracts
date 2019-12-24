@@ -1,6 +1,7 @@
 pragma solidity ^0.5.12;
 
 import "./ReplicantFactory.sol";
+import "./IAvastarMetadata.sol";
 
 /**
  * @title AvastarTeleporter
@@ -24,18 +25,90 @@ contract AvastarTeleporter is ReplicantFactory {
      */
     event TraitsUsed(address indexed handler, uint256 primeId, bool[] used);
 
-
     /**
-     * @notice Event emitted when metadata base changes
+     * @notice Event emitted when TokenURI base changes
      * @param tokenUriBase the base URI for tokenURI calls
      */
     event TokenUriBaseSet(string tokenUriBase);
+
+    /**
+     * @notice Event emitted when AvastarMetadata contract is set
+     * @param contractAddress the address of the AvastarMetadata contract
+     */
+    event MetadataContractSet(address contractAddress);
+
+    /**
+ * @notice Address of the AvastarTeleporter contract
+ */
+    IAvastarMetadata private metadataContract ;
 
     /**
      * @notice Acknowledge contract is `AvastarTeleporter`
      * @return always true
      */
     function isAvastarTeleporter() external pure returns (bool) {return true;}
+
+    /**
+     * @notice Set the address of the `AvastarMetadata` contract.
+     * Only invokable by system admin role, when contract is paused and not upgraded.
+     * If successful, emits an `TeleporterContractSet` event.
+     * @param _address address of AvastarTeleporter contract
+     */
+    function setMetadataContract(address _address)
+    external onlySysAdmin whenPaused whenNotUpgraded {
+
+        // Cast the candidate contract to the IAvastarMetadata interface
+        IAvastarMetadata candidateContract = IAvastarMetadata(_address);
+
+        // Verify that we have the appropriate address
+        require(candidateContract.isAvastarMetadata());
+
+        // Set the contract address
+        metadataContract = IAvastarMetadata(_address);
+
+        // Emit the event
+        emit MetadataContractSet(_address);
+    }
+
+    /**
+     * @notice Set the base URI for creating `tokenURI` for each Avastar.
+     * Only invokable by system admin role, when contract is paused and not upgraded.
+     * If successful, emits an `TokenUriBaseSet` event.
+     * @param _tokenUriBase base for the tokenURI
+     */
+    function setTokenUriBase(string calldata _tokenUriBase)
+    external onlySysAdmin whenPaused whenNotUpgraded
+    {
+        // Set the base for metadata tokenURI
+        tokenUriBase = _tokenUriBase;
+
+        // Emit the event
+        emit TokenUriBaseSet(_tokenUriBase);
+    }
+
+    /**
+     * @notice Get human-readable metadata for a given Avastar by Token ID.
+     * @param _tokenId the token id of the given Avastar
+     * @return metadata the Avastar's human-readable metadata
+     */
+    function getAvastarMetadata(uint256 _tokenId)
+    public view
+    returns (string memory metadata) {
+        return metadataContract.getAvastarMetadata(_tokenId);
+    }
+
+    /**
+     * @notice Get an Avastar's Wave by token ID.
+     * @param _tokenId the token id of the given Avastar
+     * @return wave the Avastar's wave (Prime/Replicant)
+     */
+    function getAvastarWaveByTokenId(uint256 _tokenId)
+    external view
+    returns (Wave wave)
+    {
+        require(_tokenId < avastars.length);
+        wave = avastars[_tokenId].wave;
+    }
 
     /**
      * @notice Approve a handler to manage Trait replication for a set of Avastar Primes.
@@ -132,23 +205,5 @@ contract AvastarTeleporter is ReplicantFactory {
         string memory id = uintToStr(_tokenId);
         uri = strConcat(tokenUriBase, id);
     }
-
-    /**
-      * @notice Set the address of the AvastarMetadata contract.
-      * Only invokable by system admin role, when contract is paused and not upgraded.
-      * If successful, emits an `MetadataContractSet` event.
-      * @param _tokenUriBase base for the tokenURI
-      */
-    function setTokenUriBase(string calldata _tokenUriBase)
-    external onlySysAdmin whenPaused whenNotUpgraded
-    {
-        // Set the base for metadata tokenURI
-        tokenUriBase = _tokenUriBase;
-
-        // Emit the event
-        emit TokenUriBaseSet(_tokenUriBase);
-    }
-
-
 
 }

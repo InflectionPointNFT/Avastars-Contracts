@@ -82,7 +82,7 @@ returns (
 
 ### getPrimeByTokenId
 
-Get the Avastar Prime metadata associated with a given Token ID.
+Get the Avastar Prime associated with a given Token ID.
 
 ```solidity
 function getPrimeByTokenId(uint256 _tokenId)

@@ -71,10 +71,10 @@ contract AvastarPrimeMinter is AvastarTypes, AccessControl {
     uint256 private unspentDeposits;
 
     /**
-     * @notice Set the address of the AvastarTeleporter contract.
+     * @notice Set the address of the `AvastarTeleporter` contract.
      * Only invokable by system admin role, when contract is paused and not upgraded.
      * If successful, emits an `TeleporterContractSet` event.
-     * @param _address address of AvastarTeleporter contract
+     * @param _address address of `AvastarTeleporter` contract
      */
     function setTeleporterContract(address _address) external onlySysAdmin whenPaused whenNotUpgraded {
 

@@ -52,7 +52,7 @@ contract ReplicantFactory is PrimeFactory {
     }
 
     /**
-     * @notice Get the Avastar Replicant metadata associated with a given Token ID
+     * @notice Get the Avastar Replicant associated with a given Token ID
      * @param _tokenId the token ID of the specified Replicant
      * @return tokenId the Replicant's token ID
      * @return serial the Replicant's serial

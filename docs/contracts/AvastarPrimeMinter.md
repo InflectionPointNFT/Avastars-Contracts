@@ -115,7 +115,7 @@ event TeleporterContractSet(address contractAddress)
 
 ### setTeleporterContract
 
-Set the address of the AvastarTeleporter contract.
+Set the address of the `AvastarTeleporter` contract.
 Only invokable by system admin role, when contract is paused and not upgraded.
 If successful, emits an `TeleporterContractSet` event.
 
@@ -128,7 +128,7 @@ external nonpayable onlySysAdmin whenPaused whenNotUpgraded
 
 | Name        | Type           | Description  |
 | ------------- |------------- | -----|
-| _address | address | address of AvastarTeleporter contract | 
+| _address | address | address of `AvastarTeleporter` contract | 
 
 ### setCurrentGeneration
 

@@ -45,6 +45,11 @@ module.exports = {
         HAIR_STYLE: 11
     },
 
+    WAVE: {
+        MALE: 0,
+        FEMALE: 1
+    },
+
     MAX_ART_SIZE: 9000,
     MAX_EXT_SIZE: 2100,
     MAX_GAS: 8000000,
@@ -53,6 +58,19 @@ module.exports = {
         DEV: "https://dev.avastars.io/metadata/",
         TEST: "https://test.avastars.io/metadata/",
         PROD: "https://avastars.io/metadata/",
+    },
+
+    TOKEN_VIEW_BASE: {
+        DEV: "https://dev.avastars.io/avastar/",
+        TEST: "https://test.avastars.io/avastar/",
+        PROD: "https://avastars.io/avastar/",
+    },
+
+    TOKEN_MEDIA_BASE: {
+        DEV: "https://dev.avastars.io/media/",
+        TEST: "https://test.avastars.io/media/",
+        PROD: "https://avastars.io/media/",
     }
+
 
 };

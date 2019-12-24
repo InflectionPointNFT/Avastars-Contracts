@@ -1,4 +1,5 @@
 const AvastarTeleporter = artifacts.require("./AvastarTeleporter.sol");
+const AvastarMetadata = artifacts.require("./AvastarMetadata.sol");
 const AvastarPrimeMinter = artifacts.require("./AvastarPrimeMinter.sol");
 const constants = require("../test/util/Constants");
 const BN = require('bn.js');
@@ -6,12 +7,22 @@ const BN = require('bn.js');
 module.exports = deployer => {
     deployer.then(async () => {
 
+        // TODO: determine deployment environment programmatically if possible
+        const env = 'DEV';
+
         // Deploy the contracts
         const avastarTeleporter = await deployer.deploy(AvastarTeleporter);
         const avastarPrimeMinter = await deployer.deploy(AvastarPrimeMinter);
+        const avastarMetadata = await deployer.deploy(
+            AvastarMetadata,
+            avastarTeleporter.address,
+            constants.TOKEN_MEDIA_BASE[env],
+            constants.TOKEN_VIEW_BASE[env]
+        );
 
         // Prepare the Avastar Teleporter contract for use
-        await avastarTeleporter.setTokenUriBase(constants.TOKEN_URI_BASE.DEV);
+        await avastarTeleporter.setTokenUriBase(constants.TOKEN_URI_BASE[env]);
+        await avastarTeleporter.setMetadataContract(avastarMetadata.address);
         await avastarTeleporter.unpause();
 
         // Prepare the Avastar Prime Minter contract for use

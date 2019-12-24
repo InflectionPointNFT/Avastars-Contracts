@@ -141,23 +141,33 @@ contract('TraitFactory', function(accounts) {
 
     });
 
-    it("should allow sysadmin to retrieve a trait", async function() {
+    it("should allow anyone to retrieve a trait's info", async function() {
 
-        const {generation, gender, gene, name, series, svg, variation, rarity} = trait1;
+        const {generation, gender, gene, name, series, variation, rarity} = trait1;
         let id = new BN(0,10);
 
         // Make sure the stored trait is correct
-        const trait = await contract.getTrait(id, {from: sysAdmin});
-        assert.ok(trait[0].eq(id), "Trait ID field wasn't correct");
-        assert.equal(trait[1], generation, "Generation field wasn't correct");
-        assert.equal(trait[2].length, series.length, "Series field wasn't correct");
-        trait[2].forEach((sNum, index) => assert.equal(sNum.toNumber(), series[index], "Series content wasn't correct"));
-        assert.equal(trait[3], gender, "Gender field wasn't correct");
-        assert.equal(trait[4].toNumber(), gene, "Gene field wasn't correct");
-        assert.equal(trait[5], rarity, "Rarity field wasn't correct");
-        assert.equal(trait[6], variation, "Variation field wasn't correct");
-        assert.equal(trait[7], name, "Name field wasn't correct");
-        assert.equal(trait[8], svg, "SVG field wasn't correct");
+        const info = await contract.getTraitInfo(id, {from: nonSysAdmin});
+        assert.ok(info[0].eq(id), "Trait ID field wasn't correct");
+        assert.equal(info[1], generation, "Generation field wasn't correct");
+        assert.equal(info[2].length, series.length, "Series field wasn't correct");
+        info[2].forEach((sNum, index) => assert.equal(sNum.toNumber(), series[index], "Series content wasn't correct"));
+        assert.equal(info[3], gender, "Gender field wasn't correct");
+        assert.equal(info[4].toNumber(), gene, "Gene field wasn't correct");
+        assert.equal(info[5], rarity, "Rarity field wasn't correct");
+        assert.equal(info[6], variation, "Variation field wasn't correct");
+        assert.equal(info[7], name, "Name field wasn't correct");
+
+    });
+
+    it("should allow sysadmin to retrieve a trait's art", async function() {
+
+        const {svg} = trait1;
+        let id = new BN(0,10);
+
+        // Make sure the stored trait is correct
+        const art = await contract.getTraitArt(id, {from: sysAdmin});
+        assert.equal(art, svg, "SVG wasn't correct");
 
     });
 
@@ -172,12 +182,12 @@ contract('TraitFactory', function(accounts) {
 
     });
 
-    it("should not allow non-sysadmins to retrieve a trait", async function() {
+    it("should not allow non-sysadmins to retrieve a trait's art", async function() {
 
         let id = new BN(0,10);
 
         await exceptions.catchRevert(
-            contract.getTrait(id, {from: nonSysAdmin})
+            contract.getTraitArt(id, {from: nonSysAdmin})
         );
 
     });
@@ -207,17 +217,21 @@ contract('TraitFactory', function(accounts) {
         }, 'NewTrait event should be emitted with correct info');
 
         // Make sure the stored trait is correct
-        const trait = await contract.getTrait(id, {from: sysAdmin});
-        assert.ok(trait[0].eq(id), "Trait ID field wasn't correct");
-        assert.equal(trait[1], generation, "Generation field wasn't correct");
-        assert.equal(trait[2].length, series.length, "Series field wasn't correct");
-        trait[2].forEach((sNum, index) => assert.equal(sNum.toNumber(), series[index], "Series content wasn't correct"));
-        assert.equal(trait[3], gender, "Gender field wasn't correct");
-        assert.equal(trait[4].toNumber(), gene, "Gene field wasn't correct");
-        assert.equal(trait[5], rarity, "Rarity field wasn't correct");
-        assert.equal(trait[6], variation, "Variation field wasn't correct");
-        assert.equal(trait[7], name, "Name field wasn't correct");
-        assert.equal(trait[8], svg, "SVG field wasn't correct");
+        const info = await contract.getTraitInfo(id, {from: sysAdmin});
+        assert.ok(info[0].eq(id), "Trait ID field wasn't correct");
+        assert.equal(info[1], generation, "Generation field wasn't correct");
+        assert.equal(info[2].length, series.length, "Series field wasn't correct");
+        info[2].forEach((sNum, index) => assert.equal(sNum.toNumber(), series[index], "Series content wasn't correct"));
+        assert.equal(info[3], gender, "Gender field wasn't correct");
+        assert.equal(info[4].toNumber(), gene, "Gene field wasn't correct");
+        assert.equal(info[5], rarity, "Rarity field wasn't correct");
+        assert.equal(info[6], variation, "Variation field wasn't correct");
+        assert.equal(info[7], name, "Name field wasn't correct");
+
+        // Make sure the stored trait is correct
+        const art = await contract.getTraitArt(id, {from: sysAdmin});
+        assert.equal(art, svg, "SVG field wasn't correct");
+
     });
 
     it("should allow sysadmin to create a trait and extend its art", async function() {
@@ -264,9 +278,9 @@ contract('TraitFactory', function(accounts) {
 
         }
 
-        // Make sure the stored trait is correct
-        const trait = await contract.getTrait(id, {from: sysAdmin});
-        assert.equal(trait[8], svg, "SVG field wasn't correct");
+        // Make sure the stored art is correct
+        const art = await contract.getTraitArt(id, {from: sysAdmin});
+        assert.equal(art, svg, "SVG wasn't correct");
 
     });
 
@@ -355,11 +369,11 @@ contract('TraitFactory', function(accounts) {
 
     it("should allow anyone to retrieve a trait id by generation, gene, and variation", async function() {
 
-        const {generation, gene, variation, rarity} = trait2;
+        const {generation, gene, variation} = trait2;
         let id = new BN(1,10);
 
         // Get the trait id via generation, gene, and variation
-        let traitId = await contract.getTraitIdByGenerationGeneAndVariation(generation, gene, variation, {from: nonSysAdmin});
+        let traitId = await contract.traitIdByGenerationGeneAndVariation(generation, gene, variation, {from: nonSysAdmin});
 
         // Make sure the retrieved trait id is correct
         assert.ok(traitId.eq(id),  "Trait ID wasn't correct");

@@ -3,9 +3,9 @@
 View Source: [contracts/AvastarBase.sol](https://github.com/Dapp-Wizards/Avastars-Contracts/blob/master/contracts/AvastarBase.sol)
 
 **AvastarBase** 
-**↘ Derived Contracts: [AvastarBaseWrapper](contracts/AvastarBaseWrapper.md), [AvastarState](contracts/AvastarState.md)**
+**↘ Derived Contracts: [AvastarBaseWrapper](contracts/AvastarBaseWrapper.md), [AvastarMetadata](contracts/AvastarMetadata.md), [AvastarState](contracts/AvastarState.md)**
 
-Utilities used by contracts in the Avastars contract ecosystem
+Utilities used by descendant contracts
 
 ## **Functions**
 

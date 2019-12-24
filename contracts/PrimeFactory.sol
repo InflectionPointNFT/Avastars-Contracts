@@ -59,7 +59,7 @@ contract PrimeFactory is TraitFactory {
     }
 
     /**
-     * @notice Get the Avastar Prime metadata associated with a given Token ID.
+     * @notice Get the Avastar Prime associated with a given Token ID.
      * @param _tokenId the Token ID of the specified Prime
      * @return tokenId the Prime's token ID
      * @return serial the Prime's serial
