@@ -112,23 +112,14 @@ contract ReplicantFactory is PrimeFactory {
         require(_gender > Gender.ANY);
         require(_ranking >= 0 && _ranking <= 100);
 
-        // Get Prime Serial and Token ID
+        // Get Replicant Serial and mint Avastar, getting tokenId
         serial = replicantsByGeneration[uint8(_generation)].length;
-        tokenId = avastars.length;
+        tokenId = mintAvastar(_owner, serial, _traits, _generation, Wave.REPLICANT);
 
         // Create and store Replicant struct
         replicantsByGeneration[uint8(_generation)].push(
             Replicant(tokenId, serial, _traits, _generation, _gender, _ranking)
         );
-
-        // Create and store Avastar token
-        Avastar memory avastar = Avastar(tokenId, serial, _traits, _generation, Wave.REPLICANT);
-
-        // Track the avastar by various dimensions
-        trackAvastar(avastar);
-
-        // Mint the token
-        super._mint(_owner, tokenId);
 
         // Send the NewReplicant event
         emit NewReplicant(tokenId, serial, _generation, _gender, _traits);

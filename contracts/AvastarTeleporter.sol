@@ -26,12 +26,6 @@ contract AvastarTeleporter is ReplicantFactory {
     event TraitsUsed(address indexed handler, uint256 primeId, bool[] used);
 
     /**
-     * @notice Event emitted when TokenURI base changes
-     * @param tokenUriBase the base URI for tokenURI calls
-     */
-    event TokenUriBaseSet(string tokenUriBase);
-
-    /**
      * @notice Event emitted when AvastarMetadata contract is set
      * @param contractAddress the address of the AvastarMetadata contract
      */
@@ -55,8 +49,8 @@ contract AvastarTeleporter is ReplicantFactory {
      * @param _address address of AvastarTeleporter contract
      */
     function setMetadataContract(address _address)
-    external onlySysAdmin whenPaused whenNotUpgraded {
-
+    external onlySysAdmin whenPaused whenNotUpgraded
+    {
         // Cast the candidate contract to the IAvastarMetadata interface
         IAvastarMetadata candidateContract = IAvastarMetadata(_address);
 
@@ -71,19 +65,45 @@ contract AvastarTeleporter is ReplicantFactory {
     }
 
     /**
-     * @notice Set the base URI for creating `tokenURI` for each Avastar.
-     * Only invokable by system admin role, when contract is paused and not upgraded.
-     * If successful, emits an `TokenUriBaseSet` event.
-     * @param _tokenUriBase base for the tokenURI
+     * @notice Get view URI for a given Avastar Token ID.
+     * Reverts if given token id is not a valid Avastar Token ID.
+     * @param _tokenId the Token ID of a previously minted Avastar Prime or Replicant
+     * @return uri the off-chain URI to view the Avastar on the Avastars website
      */
-    function setTokenUriBase(string calldata _tokenUriBase)
-    external onlySysAdmin whenPaused whenNotUpgraded
+    function viewURI(uint _tokenId)
+    external view
+    returns (string memory uri)
     {
-        // Set the base for metadata tokenURI
-        tokenUriBase = _tokenUriBase;
+        require(_tokenId < avastars.length);
+        return metadataContract.viewURI(_tokenId);
+    }
 
-        // Emit the event
-        emit TokenUriBaseSet(_tokenUriBase);
+    /**
+     * @notice Get media URI for a given Avastar Token ID.
+     * Reverts if given token id is not a valid Avastar Token ID.
+     * @param _tokenId the Token ID of a previously minted Avastar Prime or Replicant
+     * @return uri the off-chain URI to the Avastar image
+     */
+    function mediaURI(uint _tokenId)
+    external view
+    returns (string memory uri)
+    {
+        require(_tokenId < avastars.length);
+        return metadataContract.mediaURI(_tokenId);
+    }
+
+    /**
+     * @notice Get token URI for a given Avastar Token ID.
+     * Reverts if given token id is not a valid Avastar Token ID.
+     * @param _tokenId the Token ID of a previously minted Avastar Prime or Replicant
+     * @return uri the Avastar's off-chain JSON metadata URI
+     */
+    function tokenURI(uint _tokenId)
+    external view
+    returns (string memory uri)
+    {
+        require(_tokenId < avastars.length);
+        return metadataContract.tokenURI(_tokenId);
     }
 
     /**
@@ -93,21 +113,9 @@ contract AvastarTeleporter is ReplicantFactory {
      */
     function getAvastarMetadata(uint256 _tokenId)
     public view
-    returns (string memory metadata) {
-        return metadataContract.getAvastarMetadata(_tokenId);
-    }
-
-    /**
-     * @notice Get an Avastar's Wave by token ID.
-     * @param _tokenId the token id of the given Avastar
-     * @return wave the Avastar's wave (Prime/Replicant)
-     */
-    function getAvastarWaveByTokenId(uint256 _tokenId)
-    external view
-    returns (Wave wave)
+    returns (string memory metadata)
     {
-        require(_tokenId < avastars.length);
-        wave = avastars[_tokenId].wave;
+        return metadataContract.getAvastarMetadata(_tokenId);
     }
 
     /**
@@ -116,10 +124,10 @@ contract AvastarTeleporter is ReplicantFactory {
      * @param _handler the address approved for Trait access
      * @param _primeIds the token ids for which to approve the handler
      */
-    function approveTraitAccess(address _handler, uint256[] calldata _primeIds) external {
-
+    function approveTraitAccess(address _handler, uint256[] calldata _primeIds)
+    external
+    {
         require(_handler != address(0));
-
         uint256 primeId;
         for (uint8 i = 0; i < _primeIds.length; i++) {
             primeId = _primeIds[i];
@@ -138,8 +146,9 @@ contract AvastarTeleporter is ReplicantFactory {
      * @param _primeId the token id for the Prime whose Traits are to be used
      * @param _traitFlags an array of no more than 32 booleans representing the Traits to be used
      */
-    function useTraits(uint256 _primeId, bool[] calldata _traitFlags) external {
-
+    function useTraits(uint256 _primeId, bool[] calldata _traitFlags)
+    external
+    {
         // Make certain caller is token owner OR approved handler
         require(msg.sender == super.ownerOf(_primeId) || msg.sender == traitHandlerByPrimeTokenId[_primeId]);
 
@@ -172,38 +181,6 @@ contract AvastarTeleporter is ReplicantFactory {
 
         // Emit the TraitsUsed event
         emit TraitsUsed(msg.sender, _primeId, prime.replicated);
-
-    }
-
-    /**
-     * @notice Render the Avastar Prime or Replicant from the original on-chain art.
-     * @param _tokenId the token ID of the Prime or Replicant
-     * @return svg the fully rendered SVG representation of the Avastar
-     */
-    function renderAvastar(uint256 _tokenId)
-    external view
-    returns (string memory svg) {
-        require(_tokenId < avastars.length);
-        Avastar memory avastar = avastars[_tokenId];
-        uint256 traits = (avastar.wave == Wave.PRIME)
-            ? primesByGeneration[uint8(avastar.generation)][uint256(avastar.serial)].traits
-            : replicantsByGeneration[uint8(avastar.generation)][uint256(avastar.serial)].traits;
-        svg = assembleArtwork(avastar.generation, traits);
-    }
-
-    /**
-     * @notice Get token URI for a given Avastar Token ID.
-     * Reverts if given token id is not a valid Avastar Token ID.
-     * @param _tokenId the Token ID of a previously minted Avastar Prime or Replicant
-     * @return uri the off-chain URI to the JSON metadata for the given Avastar
-     */
-    function tokenURI(uint _tokenId)
-    external view
-    returns (string memory uri)
-    {
-        require(_tokenId < avastars.length);
-        string memory id = uintToStr(_tokenId);
-        uri = strConcat(tokenUriBase, id);
     }
 
 }

@@ -16,12 +16,13 @@ module.exports = deployer => {
         const avastarMetadata = await deployer.deploy(
             AvastarMetadata,
             avastarTeleporter.address,
-            constants.TOKEN_MEDIA_BASE[env],
-            constants.TOKEN_VIEW_BASE[env]
+            constants.MEDIA_URI_BASE[env],
+            constants.VIEW_URI_BASE[env],
+            constants.TOKEN_URI_BASE[env]
         );
+        await avastarMetadata.unpause();
 
         // Prepare the Avastar Teleporter contract for use
-        await avastarTeleporter.setTokenUriBase(constants.TOKEN_URI_BASE[env]);
         await avastarTeleporter.setMetadataContract(avastarMetadata.address);
         await avastarTeleporter.unpause();
 

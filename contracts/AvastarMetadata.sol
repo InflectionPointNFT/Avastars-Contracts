@@ -9,25 +9,32 @@ import "./AccessControl.sol";
  * @title Avastar Metadata Generator
  * @author Cliff Hall
  * @notice Generate Avastar metadata from on-chain data.
- * This contract is used by `AvastarTeleporter` to generate the human and machine readable metadata
- * for a given Avastar token Id. Since this functionality is not built into the `AvastarTeleporter`
- * contract, it can be upgraded in that contract by setting a new address for this contract.
+ * Don't call this contract directly. It is used by `AvastarTeleporter` to generate
+ * the human and machine readable metadata for a given Avastar token Id. Since this
+ * functionality is not built into the `AvastarTeleporter` contract, it can be upgraded
+ * in that contract by setting a new address for this contract.
  */
-contract AvastarMetadata is  AvastarBase, AvastarTypes, AccessControl {
+contract AvastarMetadata is AvastarBase, AvastarTypes, AccessControl {
+
+    /**
+     * @notice Event emitted when TokenURI base changes
+     * @param tokenUriBase the base URI for tokenURI calls
+     */
+    event TokenUriBaseSet(string tokenUriBase);
 
     /**
      * @notice Event emitted when the `mediaUriBase` is set.
-     * Only emitted if the `mediaUriBase` is set after contract deployment.
+     * Only emitted when the `mediaUriBase` is set after contract deployment.
      * @param mediaUriBase the new URI
      */
     event MediaUriBaseSet(string mediaUriBase);
 
     /**
      * @notice Event emitted when the `viewUriBase` is set.
-     * Only emitted if the `viewUriBase` is set after contract deployment.
-     * @param mediaUriBase the new URI
+     * Only emitted when the `viewUriBase` is set after contract deployment.
+     * @param viewUriBase the new URI
      */
-    event ViewUriBaseSet(string mediaUriBase);
+    event ViewUriBaseSet(string viewUriBase);
 
     /**
      * @notice Address of the AvastarTeleporter contract
@@ -35,7 +42,12 @@ contract AvastarMetadata is  AvastarBase, AvastarTypes, AccessControl {
     IAvastarTeleporter private teleporterContract ;
 
     /**
-     * @notice Base uri for an Avastar image
+     * @notice The base URI for an Avastar's off-chain metadata
+     */
+    string internal tokenUriBase;
+
+    /**
+     * @notice Base URI for an Avastar's off-chain image
      */
     string private mediaUriBase;
 
@@ -50,8 +62,12 @@ contract AvastarMetadata is  AvastarBase, AvastarTypes, AccessControl {
      * @param _mediaUriBase base uri for an Avastar image
      * @param _viewUriBase base uri to view an Avastar on the Avastars website
      */
-    constructor (address _teleporter, string memory _mediaUriBase, string memory _viewUriBase) public{
-
+    constructor (
+        address _teleporter,
+        string memory _mediaUriBase,
+        string memory _viewUriBase,
+        string memory _tokenUriBase) public
+    {
         // Cast the candidate contract to the IAvastarTeleporter interface
         IAvastarTeleporter candidateContract = IAvastarTeleporter(_teleporter);
 
@@ -66,6 +82,9 @@ contract AvastarMetadata is  AvastarBase, AvastarTypes, AccessControl {
 
         // View URI
         viewUriBase = _viewUriBase;
+
+        // Token URI
+        tokenUriBase = _tokenUriBase;
     }
 
     /**
@@ -73,6 +92,22 @@ contract AvastarMetadata is  AvastarBase, AvastarTypes, AccessControl {
      * @return always true
      */
     function isAvastarMetadata() external pure returns (bool) {return true;}
+
+    /**
+     * @notice Set the base URI for creating `tokenURI` for each Avastar.
+     * Only invokable by system admin role, when contract is paused and not upgraded.
+     * If successful, emits an `TokenUriBaseSet` event.
+     * @param _tokenUriBase base for the ERC721 tokenURI
+     */
+    function setTokenUriBase(string calldata _tokenUriBase)
+    external onlySysAdmin whenPaused whenNotUpgraded
+    {
+        // Set the base for metadata tokenURI
+        tokenUriBase = _tokenUriBase;
+
+        // Emit the event
+        emit TokenUriBaseSet(_tokenUriBase);
+    }
 
     /**
      * @notice Set the base URI for the image of each Avastar.
@@ -112,11 +147,10 @@ contract AvastarMetadata is  AvastarBase, AvastarTypes, AccessControl {
      * @return uri the off-chain URI to view the Avastar on the Avastars website
      */
     function viewURI(uint _tokenId)
-    private view
+    public view
     returns (string memory uri)
     {
-        string memory id = uintToStr(_tokenId);
-        uri = strConcat(viewUriBase, id);
+        uri = strConcat(viewUriBase, uintToStr(_tokenId));
     }
 
     /**
@@ -125,11 +159,22 @@ contract AvastarMetadata is  AvastarBase, AvastarTypes, AccessControl {
      * @return uri the off-chain URI to the Avastar image
      */
     function mediaURI(uint _tokenId)
-    private view
+    public view
     returns (string memory uri)
     {
-        string memory id = uintToStr(_tokenId);
-        uri = strConcat(mediaUriBase, id);
+        uri = strConcat(mediaUriBase, uintToStr(_tokenId));
+    }
+
+    /**
+     * @notice Get token URI for a given Avastar Token ID.
+     * @param _tokenId the Token ID of a previously minted Avastar Prime or Replicant
+     * @return uri the Avastar's off-chain JSON metadata URI
+     */
+    function tokenURI(uint _tokenId)
+    public view
+    returns (string memory uri)
+    {
+        uri = strConcat(tokenUriBase, uintToStr(_tokenId));
     }
 
     /**
@@ -184,19 +229,19 @@ contract AvastarMetadata is  AvastarBase, AvastarTypes, AccessControl {
 
         // Generation
         metadata = strConcat(metadata, '    {\n');
-        metadata = strConcat(metadata, '      "display_type": "number"\n');
-        metadata = strConcat(metadata, '      "trait_type": "generation"\n');
+        metadata = strConcat(metadata, '      "display_type": "number",\n');
+        metadata = strConcat(metadata, '      "trait_type": "generation",\n');
         metadata = strConcat(metadata, '      "value": ');
         metadata = strConcat(metadata, uintToStr(uint8(generation) + 1));
         metadata = strConcat(metadata, '\n    },\n');
 
         // Series
         metadata = strConcat(metadata, '    {\n');
-        metadata = strConcat(metadata, '      "display_type": "number"\n');
-        metadata = strConcat(metadata, '      "trait_type": "series"\n');
+        metadata = strConcat(metadata, '      "display_type": "number",\n');
+        metadata = strConcat(metadata, '      "trait_type": "series",\n');
         metadata = strConcat(metadata, '      "value": ');
         metadata = strConcat(metadata, uintToStr(uint8(series) + 1));
-        metadata = strConcat(metadata, '\n    },\n');
+        metadata = strConcat(metadata, '\n    }\n');
 
 
         metadata = strConcat(metadata, '  ]');

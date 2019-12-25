@@ -46,8 +46,8 @@ module.exports = {
     },
 
     WAVE: {
-        MALE: 0,
-        FEMALE: 1
+        PRIME: 0,
+        REPLICANT: 1
     },
 
     MAX_ART_SIZE: 9000,
@@ -60,13 +60,13 @@ module.exports = {
         PROD: "https://avastars.io/metadata/",
     },
 
-    TOKEN_VIEW_BASE: {
+    VIEW_URI_BASE: {
         DEV: "https://dev.avastars.io/avastar/",
         TEST: "https://test.avastars.io/avastar/",
         PROD: "https://avastars.io/avastar/",
     },
 
-    TOKEN_MEDIA_BASE: {
+    MEDIA_URI_BASE: {
         DEV: "https://dev.avastars.io/media/",
         TEST: "https://test.avastars.io/media/",
         PROD: "https://avastars.io/media/",

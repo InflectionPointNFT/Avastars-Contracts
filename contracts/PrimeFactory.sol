@@ -1,12 +1,12 @@
 pragma solidity ^0.5.12;
 
-import "./TraitFactory.sol";
+import "./AvastarFactory.sol";
 
 /**
  * @title Avastar Prime Factory
  * @author Cliff Hall
  */
-contract PrimeFactory is TraitFactory {
+contract PrimeFactory is AvastarFactory {
 
     /**
      * @notice Event emitted upon the creation of an Avastar Prime
@@ -21,6 +21,7 @@ contract PrimeFactory is TraitFactory {
 
     /**
      * @notice Get the Avastar Prime metadata associated with a given Generation and Serial.
+     * Does not include the trait replication flags.
      * @param _generation the Generation of the Prime
      * @param _serial the Serial of the Prime
      * @return tokenId the Prime's token ID
@@ -38,7 +39,6 @@ contract PrimeFactory is TraitFactory {
         uint256 tokenId,
         uint256 serial,
         uint256 traits,
-        bool[] memory replicated,
         Generation generation,
         Series series,
         Gender gender,
@@ -50,7 +50,6 @@ contract PrimeFactory is TraitFactory {
             prime.id,
             prime.serial,
             prime.traits,
-            prime.replicated,
             prime.generation,
             prime.series,
             prime.gender,
@@ -60,11 +59,11 @@ contract PrimeFactory is TraitFactory {
 
     /**
      * @notice Get the Avastar Prime associated with a given Token ID.
+     * Does not include the trait replication flags.
      * @param _tokenId the Token ID of the specified Prime
      * @return tokenId the Prime's token ID
      * @return serial the Prime's serial
      * @return traits the Prime's trait hash
-     * @return replicated the Prime's trait replication indicators
      * @return generation the Prime's generation
      * @return series the Prime's series
      * @return gender the Prime's gender
@@ -76,7 +75,6 @@ contract PrimeFactory is TraitFactory {
         uint256 tokenId,
         uint256 serial,
         uint256 traits,
-        bool[] memory replicated,
         Generation generation,
         Series series,
         Gender gender,
@@ -89,11 +87,31 @@ contract PrimeFactory is TraitFactory {
             prime.id,
             prime.serial,
             prime.traits,
-            prime.replicated,
             prime.generation,
             prime.series,
             prime.gender,
             prime.ranking
+        );
+    }
+
+    /**
+     * @notice Get an Avastar Prime's replication flags by token ID.
+     * @param _tokenId the token ID of the specified Prime
+     * @return tokenId the Prime's token ID
+     * @return replicated the Prime's trait replication flags
+     */
+    function getPrimeReplicationByTokenId(uint256 _tokenId)
+    public view
+    returns (
+        uint256 tokenId,
+        bool[] memory replicated
+    ) {
+        require(_tokenId < avastars.length);
+        Avastar memory avastar = avastars[_tokenId];
+        Prime memory prime = primesByGeneration[uint8(avastar.generation)][uint256(avastar.serial)];
+        return (
+            prime.id,
+            prime.replicated
         );
     }
 
@@ -127,23 +145,14 @@ contract PrimeFactory is TraitFactory {
         require(_gender > Gender.ANY);
         require(_ranking >= 0 && _ranking <= 100);
 
-        // Get Prime Serial and Token ID
+        // Get Prime Serial and mint Avastar, getting tokenId
         serial = primesByGeneration[uint8(_generation)].length;
-        tokenId = avastars.length;
+        tokenId = mintAvastar(_owner, serial, _traits, _generation, Wave.PRIME);
 
         // Create and store Prime struct
         primesByGeneration[uint8(_generation)].push(
             Prime(tokenId, serial, _traits, new bool[](32), _generation, _series, _gender, _ranking)
         );
-
-        // Create and store Avastar token
-        Avastar memory avastar = Avastar(tokenId, serial, _traits, _generation, Wave.PRIME);
-
-        // Track the avastar by various dimensions
-        trackAvastar(avastar);
-
-        // Mint the token
-        super._mint(_owner, tokenId);
 
         // Send the NewPrime event
         emit NewPrime(tokenId, serial, _generation, _series, _gender, _traits);

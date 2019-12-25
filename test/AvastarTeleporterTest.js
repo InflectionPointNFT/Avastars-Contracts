@@ -47,6 +47,24 @@ contract('AvastarTeleporter', function(accounts) {
         "ranking"    : 68
     };
 
+    const prime3Meta = {
+        "description": "Avastar Prime",
+        "external_url": "https://dev.avastars.io/avastar/2",
+        "image": "https://dev.avastars.io/media/2",
+        "attributes": [
+            {
+                "display_type": "number",
+                "trait_type": "generation",
+                "value": 1
+            },
+            {
+                "display_type": "number",
+                "trait_type": "series",
+                "value": 1
+            }
+        ]
+    };
+
     before(async () => {
 
         // Get the AvastarTeleporter contract instance for this suite
@@ -55,21 +73,20 @@ contract('AvastarTeleporter', function(accounts) {
         // Deploy the metadata contract
         metadataContract = await AvastarMetadata.new(
             teleporter.address,
-            constants.TOKEN_MEDIA_BASE.DEV,
-            constants.TOKEN_VIEW_BASE.DEV
+            constants.MEDIA_URI_BASE.DEV,
+            constants.VIEW_URI_BASE.DEV,
+            constants.TOKEN_URI_BASE.DEV
         );
 
         // Set the teleporter's reference to the metadata contract
         await teleporter.setMetadataContract(metadataContract.address);
 
-        // Set the token URI base
-        await teleporter.setTokenUriBase(constants.TOKEN_URI_BASE.DEV);
-
-        // Unpause the contract
-        await teleporter.unpause({from: sysAdmin});
-
         // Add the minter
         await teleporter.addMinter(minter);
+
+        // Unpause the contracts
+        await teleporter.unpause({from: sysAdmin});
+        await metadataContract.unpause({from: sysAdmin});
 
         // Mint 3 primes
         const mint = prime => teleporter.mintPrime(tokenOwner, prime.traits, prime.generation, prime.series, prime.gender, prime.ranking, {from: minter});
@@ -83,15 +100,6 @@ contract('AvastarTeleporter', function(accounts) {
         for (const trait of traitData.avastar){
             await create(trait);
         }
-
-    });
-
-    it("should allow anyone to get the metadata for an avastar", async function() {
-
-        // Get the metadata
-        let result = await teleporter.getAvastarMetadata(id1, {from: stranger});
-
-        console.log(result);
 
     });
 
@@ -196,45 +204,79 @@ contract('AvastarTeleporter', function(accounts) {
         const wave = await teleporter.getAvastarWaveByTokenId(id3, {from: stranger});
 
         // Test results
-        assert.equal(wave.toNumber(), constants.WAVE.MALE, "Wave field wasn't correct");
+        assert.equal(wave.toNumber(), constants.WAVE.PRIME, "Wave field wasn't correct");
 
     });
 
-    it("should not allow system administrator to change the token URI base when contract is not paused", async function() {
+    it("should allow anyone to retrieve the tokenURI for a given Avastar by Token ID", async function() {
 
-        // Try to change token URI base
-        await exceptions.catchRevert(
-            teleporter.setTokenUriBase(constants.TOKEN_URI_BASE.TEST, {from: sysAdmin})
-        )
+        // Create expected value
+        const expected = `${constants.TOKEN_URI_BASE.DEV}${id3.toNumber()}`;
+
+        // Get the Avastar tokenURI
+        const tokenURI = await teleporter.tokenURI(id3, {from: stranger});
+
+        // Test results
+        assert.equal(tokenURI, expected, "tokenURI wasn't correct");
 
     });
 
-    it("should allow the sysadmin to change the token URI base when contract is paused", async function() {
+    it("should allow anyone to retrieve the mediaURI for a given Avastar by Token ID", async function() {
 
-        // Pause the contract
-        await teleporter.pause();
+        // Create expected value
+        const expected = `${constants.MEDIA_URI_BASE.DEV}${id3.toNumber()}`;
 
-        // Set the token URI base
-        let result = await teleporter.setTokenUriBase(constants.TOKEN_URI_BASE.TEST, {from: sysAdmin});
+        // Get the Avastar tokenURI
+        const mediaURI = await teleporter.mediaURI(id3, {from: stranger});
 
-        // Test that appropriate event was emitted
-        truffleAssert.eventEmitted(result, 'TokenUriBaseSet', (ev) => {
-            return (
-                ev.tokenUriBase === constants.TOKEN_URI_BASE.TEST
-            );
-        }, 'TokenUriBaseSet event should be emitted with correct info');
+        // Test results
+        assert.equal(mediaURI, expected, "mediaURI wasn't correct");
 
-        // Unpause the contract
-        await teleporter.unpause();
+    });
 
-        // The expected tokenURI
-        const expected = `${constants.TOKEN_URI_BASE.TEST}1`;
+    it("should allow anyone to retrieve the viewURI for a given Avastar by Token ID", async function() {
 
-        // Request tokenURI for Token ID 2
-        result = await teleporter.tokenURI(id2, {from: stranger});
+        // Create expected value
+        const expected = `${constants.VIEW_URI_BASE.DEV}${id3.toNumber()}`;
 
-        // Test result
-        assert.equal(result, expected, "TokenURI wasn't correct");
-    })
+        // Get the Avastar tokenURI
+        const viewURI = await teleporter.viewURI(id3, {from: stranger});
+
+        // Test results
+        assert.equal(viewURI, expected, "viewURI wasn't correct");
+
+    });
+
+    it("should allow anyone to get the metadata for an avastar", async function() {
+
+        // Get the metadata
+        let result = await teleporter.getAvastarMetadata(id3, {from: stranger});
+
+        // Parse into an object
+        let meta = JSON.parse(result);
+
+        // Test results
+        assert.equal(meta.description, prime3Meta.description, "description field wasn't correct");
+        assert.equal(meta.external_url,  prime3Meta.external_url, "external_url field wasn't correct");
+        assert.equal(meta.image,  prime3Meta.image, "image field wasn't correct");
+
+    });
+
+    it("should allow anyone to render the art for a given Avastar", async function() {
+
+        // Has to be tested here rather than in AvastarFactoryTest because
+        // mintPrime and mintReplicant functions set primes and replicants into mappings
+        // read by renderAvastar
+
+        // Compute the expected result
+        const expected = traitMath.computeArt(traitData.avastar);
+
+        // Get the rendered artwork
+        const art = await teleporter.renderAvastar(id3, {from: stranger});
+
+        // Make certain the assembled art is as expected
+        assert.equal(art, expected, "Assembled art wasn't correct");
+
+    });
 
 });

@@ -196,22 +196,15 @@ contract('PrimeFactory', function(accounts) {
         const {generation, gender, series, traits, ranking} = prime2;
         const id = new BN(1,10);
         const serial = new BN(1,10);
-        const replicated = JSON.stringify([ // 32 false booleans
-            false, false, false, false, false, false, false, false,
-            false, false, false, false, false, false, false, false,
-            false, false, false, false, false, false, false, false,
-            false, false, false, false, false, false, false, false,
-        ]);
 
         const prime = await contract.getPrimeByGenerationAndSerial(generation, serial, {from: anyone});
         assert.ok(prime[0].eq(id), "Token ID field wasn't correct");
         assert.ok(prime[1].eq(serial), "Serial field wasn't correct");
         assert.ok(prime[2].eq(traits), "Traits field wasn't correct");
-        assert.ok(JSON.stringify(prime[3]) === replicated, "Replicated field wasn't correct");
-        assert.equal(prime[4].toNumber(), generation, "Generation field wasn't correct");
-        assert.equal(prime[5].toNumber(), series, "Series field wasn't correct");
-        assert.equal(prime[6].toNumber(), gender, "Gender field wasn't correct");
-        assert.equal(prime[7].toNumber(), ranking, "Ranking field wasn't correct");
+        assert.equal(prime[3].toNumber(), generation, "Generation field wasn't correct");
+        assert.equal(prime[4].toNumber(), series, "Series field wasn't correct");
+        assert.equal(prime[5].toNumber(), gender, "Gender field wasn't correct");
+        assert.equal(prime[6].toNumber(), ranking, "Ranking field wasn't correct");
 
     });
 
@@ -220,6 +213,20 @@ contract('PrimeFactory', function(accounts) {
         const {generation, gender, series, traits, ranking} = prime3;
         let id = new BN(2,10);
         let serial = new BN(0,10);
+        const prime = await contract.getPrimeByTokenId(id, {from: anyone});
+        assert.ok(prime[0].eq(id), "Token ID field wasn't correct");
+        assert.ok(prime[1].eq(serial), "Serial field wasn't correct");
+        assert.ok(prime[2].eq(traits), "Traits field wasn't correct");
+        assert.equal(prime[3].toNumber(), generation, "Generation field wasn't correct");
+        assert.equal(prime[4].toNumber(), series, "Series field wasn't correct");
+        assert.equal(prime[5].toNumber(), gender, "Gender field wasn't correct");
+        assert.equal(prime[6].toNumber(), ranking, "Ranking field wasn't correct");
+
+    });
+
+    it("should allow anyone to retrieve a prime's replication flags by token id", async function() {
+
+        let id = new BN(2,10);
         const replicated = JSON.stringify([ // 32 false booleans
             false, false, false, false, false, false, false, false,
             false, false, false, false, false, false, false, false,
@@ -227,15 +234,11 @@ contract('PrimeFactory', function(accounts) {
             false, false, false, false, false, false, false, false,
         ]);
 
-        const prime = await contract.getPrimeByTokenId(id, {from: anyone});
-        assert.ok(prime[0].eq(id), "Token ID field wasn't correct");
-        assert.ok(prime[1].eq(serial), "Serial field wasn't correct");
-        assert.ok(prime[2].eq(traits), "Traits field wasn't correct");
-        assert.ok(JSON.stringify(prime[3]) === replicated, "Replicated field wasn't correct");
-        assert.equal(prime[4].toNumber(), generation, "Generation field wasn't correct");
-        assert.equal(prime[5].toNumber(), series, "Series field wasn't correct");
-        assert.equal(prime[6].toNumber(), gender, "Gender field wasn't correct");
-        assert.equal(prime[7].toNumber(), ranking, "Ranking field wasn't correct");
+        const result = await contract.getPrimeReplicationByTokenId(id, {from: anyone});
+
+        assert.ok(result[0].eq(id), "Token ID field wasn't correct");
+        assert.ok(JSON.stringify(result[1]) === replicated, "Replication flags weren't correct");
+
 
     });
 

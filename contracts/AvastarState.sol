@@ -8,9 +8,7 @@ import "@openzeppelin/contracts/token/ERC721/ERC721Full.sol";
 /**
  * @title Avastar State
  * @author Cliff Hall
- * @notice This contract maintains the state variables for the Avastar Teleporter
- * and inherits the ERC7121, Access Control, Avastar Types, and Avastar Base utils
- * contract functionalities.
+ * @notice This contract maintains the state variables for the Avastar Teleporter.
  */
 contract AvastarState is AvastarBase, AvastarTypes, AccessControl, ERC721Full {
 
@@ -21,11 +19,6 @@ contract AvastarState is AvastarBase, AvastarTypes, AccessControl, ERC721Full {
 
     string public constant TOKEN_NAME = "Avastars";
     string public constant TOKEN_SYMBOL = "AVAST";
-
-    /**
-     * @notice The base of the Token URI
-     */
-    string internal tokenUriBase;
 
     /**
      * @notice All Avastars across all Waves and Generations
@@ -85,28 +78,5 @@ contract AvastarState is AvastarBase, AvastarTypes, AccessControl, ERC721Full {
      * uint256 traitId = traitIdByGenerationGeneAndVariation[uint8(_generation)][uint8(_gene)][uint8(_variation)]
      */
     mapping(uint8 => mapping(uint8 => mapping(uint8 => uint256))) public traitIdByGenerationGeneAndVariation;
-
-    /**
-     * Store an Avastar and track its Token ID by various dimensions.
-     * Adds `_avastar` to `avastars` array.
-     * Sets `isHashUsedByGeneration` mapping to true for `_avastar.generation` and `_avastar.traits`.
-     * Sets `tokenIdByGenerationAndHash` mapping to `_avastar.id` for `_avastar.generation` and `_avastar.traits`.
-     * Sets `tokenIdByGenerationWaveAndSerial` mapping to `_avastar.id` for `_avastar.generation`, `_avastar.wave`, and `_avastar.serial`.
-     * @param _avastar the new Avastar to store and track
-     */
-    function trackAvastar(Avastar memory _avastar) internal {
-
-        // Store the avastar
-        avastars.push(_avastar);
-
-        // Indicate use of Trait Hash within given generation
-        isHashUsedByGeneration[uint8(_avastar.generation)][_avastar.traits] = true;
-
-        // Store token ID by Generation and Trait Hash
-        tokenIdByGenerationAndHash[uint8(_avastar.generation)][_avastar.traits] = _avastar.id;
-
-        // Create generation/wave/serial to tokenId mapping
-        tokenIdByGenerationWaveAndSerial[uint8(_avastar.generation)][uint8(_avastar.wave)][uint256(_avastar.serial)] = _avastar.id;
-    }
 
 }
