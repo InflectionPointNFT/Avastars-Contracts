@@ -2,7 +2,7 @@
 
 View Source: [contracts/PrimeFactory.sol](https://github.com/Dapp-Wizards/Avastars-Contracts/blob/master/contracts/PrimeFactory.sol)
 
-**PrimeFactory** **↗ Extends: [TraitFactory](contracts/TraitFactory.md)**
+**PrimeFactory** **↗ Extends: [AvastarFactory](contracts/AvastarFactory.md)**
 **↘ Derived Contracts: [ReplicantFactory](contracts/ReplicantFactory.md)**
 
 ## **Events**
@@ -39,11 +39,13 @@ event NewPrime(
 
 - [getPrimeByGenerationAndSerial](#getprimebygenerationandserial)
 - [getPrimeByTokenId](#getprimebytokenid)
+- [getPrimeReplicationByTokenId](#getprimereplicationbytokenid)
 - [mintPrime](#mintprime)
 
 ### getPrimeByGenerationAndSerial
 
 Get the Avastar Prime metadata associated with a given Generation and Serial.
+Does not include the trait replication flags.
 
 ```solidity
 function getPrimeByGenerationAndSerial(enum AvastarTypes.Generation _generation, uint256 _serial)
@@ -52,7 +54,6 @@ returns (
 	uint256 tokenId,
 	uint256 serial,
 	uint256 traits,
-	bool[] replicated,
 	enum AvastarTypes.Generation generation,
 	enum AvastarTypes.Series series,
 	enum AvastarTypes.Gender gender,
@@ -74,7 +75,6 @@ returns (
 | tokenId | uint256 | the Prime's token ID | 
 | serial | uint256 | the Prime's serial | 
 | traits | uint256 | the Prime's trait hash | 
-| replicated | bool[] | the Prime's trait replication indicators | 
 | generation | enum AvastarTypes.Generation | the Prime's generation | 
 | series | enum AvastarTypes.Series | the Prime's series | 
 | gender | enum AvastarTypes.Gender | the Prime's gender | 
@@ -83,6 +83,7 @@ returns (
 ### getPrimeByTokenId
 
 Get the Avastar Prime associated with a given Token ID.
+Does not include the trait replication flags.
 
 ```solidity
 function getPrimeByTokenId(uint256 _tokenId)
@@ -91,7 +92,6 @@ returns (
 	uint256 tokenId,
 	uint256 serial,
 	uint256 traits,
-	bool[] replicated,
 	enum AvastarTypes.Generation generation,
 	enum AvastarTypes.Series series,
 	enum AvastarTypes.Gender gender,
@@ -112,11 +112,33 @@ returns (
 | tokenId | uint256 | the Prime's token ID | 
 | serial | uint256 | the Prime's serial | 
 | traits | uint256 | the Prime's trait hash | 
-| replicated | bool[] | the Prime's trait replication indicators | 
 | generation | enum AvastarTypes.Generation | the Prime's generation | 
 | series | enum AvastarTypes.Series | the Prime's series | 
 | gender | enum AvastarTypes.Gender | the Prime's gender | 
 | ranking | uint8 | the Prime's ranking | 
+
+### getPrimeReplicationByTokenId
+
+Get an Avastar Prime's replication flags by token ID.
+
+```solidity
+function getPrimeReplicationByTokenId(uint256 _tokenId)
+public view
+returns (uint256 tokenId, bool[] replicated)
+```
+
+**Arguments**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _tokenId | uint256 | the token ID of the specified Prime | 
+
+**Returns**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| tokenId | uint256 | the Prime's token ID | 
+| replicated | bool[] | the Prime's trait replication flags | 
 
 ### mintPrime
 

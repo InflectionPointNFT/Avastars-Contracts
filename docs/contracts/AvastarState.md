@@ -5,9 +5,7 @@ View Source: [contracts/AvastarState.sol](https://github.com/Dapp-Wizards/Avasta
 **AvastarState** **↗ Extends: [AvastarBase](contracts/AvastarBase.md), [AvastarTypes](contracts/AvastarTypes.md), [AccessControl](contracts/AccessControl.md), [ERC721Full](contracts/ERC721Full.md)**
 **↘ Derived Contracts: [TraitFactory](contracts/TraitFactory.md)**
 
-This contract maintains the state variables for the Avastar Teleporter
-and inherits the ERC7121, Access Control, Avastar Types, and Avastar Base utils
-contract functionalities.
+This contract maintains the state variables for the Avastar Teleporter.
 
 ## Constructor
 
@@ -34,7 +32,6 @@ string public constant TOKEN_SYMBOL;
 mapping(uint8 => mapping(uint8 => mapping(uint8 => uint256))) public traitIdByGenerationGeneAndVariation;
 
 // internal members
-string internal tokenUriBase;
 struct AvastarTypes.Avastar[] internal avastars;
 struct AvastarTypes.Trait[] internal traits;
 mapping(uint8 => struct AvastarTypes.Prime[]) internal primesByGeneration;
@@ -46,21 +43,4 @@ mapping(uint8 => mapping(uint256 => uint256)) internal tokenIdByGenerationAndHas
 mapping(uint8 => mapping(uint8 => mapping(uint256 => uint256))) internal tokenIdByGenerationWaveAndSerial;
 
 ```
-
-## **Functions**
-
-- [trackAvastar](#trackavastar)
-
-### trackAvastar
-
-```solidity
-function trackAvastar(struct AvastarTypes.Avastar _avastar)
-internal nonpayable
-```
-
-**Arguments**
-
-| Name        | Type           | Description  |
-| ------------- |------------- | -----|
-| _avastar | struct AvastarTypes.Avastar | the new Avastar to store and track | 
 

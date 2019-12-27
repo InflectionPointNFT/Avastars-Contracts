@@ -3,7 +3,7 @@
 View Source: [contracts/TraitFactory.sol](https://github.com/Dapp-Wizards/Avastars-Contracts/blob/master/contracts/TraitFactory.sol)
 
 **TraitFactory** **↗ Extends: [AvastarState](contracts/AvastarState.md)**
-**↘ Derived Contracts: [PrimeFactory](contracts/PrimeFactory.md), [TraitFactoryWrapper](contracts/TraitFactoryWrapper.md)**
+**↘ Derived Contracts: [AvastarFactory](contracts/AvastarFactory.md), [TraitFactoryWrapper](contracts/TraitFactoryWrapper.md)**
 
 ## **Events**
 
@@ -73,20 +73,51 @@ event TraitArtExtended(uint256 id)
 
 ## **Functions**
 
-- [getTraitInfo](#gettraitinfo)
-- [getTraitArt](#gettraitart)
-- [getAttribution](#getattribution)
+- [getTraitIdByGenerationGeneAndVariation](#gettraitidbygenerationgeneandvariation)
+- [getTraitInfoById](#gettraitinfobyid)
+- [getTraitNameById](#gettraitnamebyid)
+- [getTraitArtById](#gettraitartbyid)
+- [getAttributionByGeneration](#getattributionbygeneration)
+- [getCombinedAttributionByGeneration](#getcombinedattributionbygeneration)
 - [setAttribution](#setattribution)
 - [createTrait](#createtrait)
 - [extendTraitArt](#extendtraitart)
 - [assembleArtwork](#assembleartwork)
 
-### getTraitInfo
+### getTraitIdByGenerationGeneAndVariation
+
+Get Trait ID by Generation, Gene, and Variation.
+
+```solidity
+function getTraitIdByGenerationGeneAndVariation(
+	enum AvastarTypes.Generation _generation,
+	enum AvastarTypes.Gene _gene,
+	uint256 _variationSafe
+)
+external view
+returns (uint256 traitId)
+```
+
+**Arguments**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _generation | enum AvastarTypes.Generation | the generation the trait belongs to | 
+| _gene | enum AvastarTypes.Gene | ration the generation the trait belongs to | 
+| _variationSafe | uint256 | the variation of the gene | 
+
+**Returns**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| traitId | uint256 | the ID of the specified trait | 
+
+### getTraitInfoById
 
 Retrieve a Trait's info by ID.
 
 ```solidity
-function getTraitInfo(uint256 _traitId)
+function getTraitInfoById(uint256 _traitId)
 external view
 returns (
 	uint256 id,
@@ -119,13 +150,35 @@ returns (
 | variation | uint8 | variation of the gene the trait represents | 
 | name | string | name of the trait | 
 
-### getTraitArt
+### getTraitNameById
+
+Retrieve a Trait's name by ID.
+
+```solidity
+function getTraitNameById(uint256 _traitId)
+external view
+returns (string name)
+```
+
+**Arguments**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _traitId | uint256 | the ID of the Trait to retrieve | 
+
+**Returns**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| name | string | name of the trait | 
+
+### getTraitArtById
 
 Retrieve a Trait's art by ID.
 Only invokable by a system administrator.
 
 ```solidity
-function getTraitArt(uint256 _traitId)
+function getTraitArtById(uint256 _traitId)
 external view onlySysAdmin 
 returns (string art)
 ```
@@ -142,18 +195,14 @@ returns (string art)
 | ------------- |------------- | -----|
 | art | string | the svg layer representation of the trait | 
 
-### getAttribution
+### getAttributionByGeneration
 
 Get the artist Attribution for a given Generation.
 
 ```solidity
-function getAttribution(enum AvastarTypes.Generation _generation)
+function getAttributionByGeneration(enum AvastarTypes.Generation _generation)
 external view
-returns (
-	enum AvastarTypes.Generation generation,
-	string artist,
-	string infoURI
-)
+returns (string artist, string infoURI)
 ```
 
 **Arguments**
@@ -166,9 +215,30 @@ returns (
 
 | Name        | Type           | Description  |
 | ------------- |------------- | -----|
-| generation | enum AvastarTypes.Generation | the generation artist attribution was requested for | 
 | artist | string | the artist who created the art for the generation | 
 | infoURI | string | the URI for the artist's website / portfolio | 
+
+### getCombinedAttributionByGeneration
+
+Get the artist Attribution for a given Generation, combined into a single string.
+
+```solidity
+function getCombinedAttributionByGeneration(enum AvastarTypes.Generation _generation)
+external view
+returns (string combined)
+```
+
+**Arguments**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _generation | enum AvastarTypes.Generation | the generation to retrieve artist attribution for | 
+
+**Returns**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| combined | string | attribution a single string with the artist and artist info URI | 
 
 ### setAttribution
 

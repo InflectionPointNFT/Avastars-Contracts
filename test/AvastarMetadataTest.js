@@ -21,6 +21,26 @@ contract('AvastarMetadata', function(accounts) {
     const id1 = new BN(0,10);
     const id2 = new BN(1,10);
     const id3 = new BN(2,10);
+    const id4 = new BN(3,10);
+
+    const attribution1 = {
+        "generation": constants.GENERATION.ONE,
+        "artist": "Marmota vs Milky",
+        "infoURI": "https://www.twine.fm/marmotavsmilky"
+    };
+
+    const attribution2 = {
+        "generation": constants.GENERATION.TWO,
+        "artist": "John Orion Young",
+        "infoURI": "https://www.joy.lol/"
+    };
+
+    const replicant1 = {
+        "generation" : constants.GENERATION.TWO,
+        "gender"     : constants.GENDER.MALE,
+        "traits"     : traits3,
+        "ranking"    : 76
+    };
 
     const prime1 = {
         "generation" : constants.GENERATION.ONE,
@@ -47,10 +67,15 @@ contract('AvastarMetadata', function(accounts) {
     };
 
     const prime3Meta = {
-        "description": "Avastar Prime",
+        "name": "Avastar #2",
+        "description": "Generation 1 Series 1 Male Prime. Original art by: Marmota vs Milky (https://www.twine.fm/marmotavsmilky)",
         "external_url": "https://test.avastars.io/avastar/2",
         "image": "https://test.avastars.io/media/2",
         "attributes": [
+            {
+                "trait_type": "gender",
+                "value": "male"
+            },
             {
                 "display_type": "number",
                 "trait_type": "generation",
@@ -60,6 +85,140 @@ contract('AvastarMetadata', function(accounts) {
                 "display_type": "number",
                 "trait_type": "series",
                 "value": 1
+            },
+            {
+                "display_type": "number",
+                "trait_type": "serial",
+                "value": 2
+            },
+            {
+                "display_type": "number",
+                "trait_type": "ranking",
+                "value": 68
+            },
+            {
+                "trait_type": "skin_tone",
+                "value": "Pale Pink"
+            },
+            {
+                "trait_type": "hair_color",
+                "value": "Bleached Blonde"
+            },
+            {
+                "trait_type": "eye_color",
+                "value": "Bubbles"
+            },
+            {
+                "trait_type": "background_color",
+                "value": "Black White"
+            },
+            {
+                "trait_type": "backdrop",
+                "value": "Backdrop 11"
+            },
+            {
+                "trait_type": "ears",
+                "value": "Square"
+            },
+            {
+                "trait_type": "face",
+                "value": "Male Face 1"
+            },
+            {
+                "trait_type": "nose",
+                "value": "Fleshy"
+            },
+            {
+                "trait_type": "mouth",
+                "value": "Gimp Ball"
+            },
+            {
+                "trait_type": "facial_feature",
+                "value": "Tribal"
+            },
+            {
+                "trait_type": "eyes",
+                "value": "Normal"
+            },
+            {
+                "trait_type": "hair_style",
+                "value": "Manbun"
+            }
+        ]
+    };
+
+    const replicant1Meta = {
+        "name": "Avastar #3",
+        "description": "Generation 2 Male Replicant. Original art by: John Orion Young (https://www.joy.lol/)",
+        "external_url": "https://test.avastars.io/avastar/3",
+        "image": "https://test.avastars.io/media/3",
+        "attributes": [
+            {
+                "trait_type": "gender",
+                "value": "male"
+            },
+            {
+                "display_type": "number",
+                "trait_type": "generation",
+                "value": 2
+            },
+            {
+                "display_type": "number",
+                "trait_type": "serial",
+                "value": 0
+            },
+            {
+                "display_type": "number",
+                "trait_type": "ranking",
+                "value": 76
+            },
+            {
+                "trait_type": "skin_tone",
+                "value": "Pale Pink"
+            },
+            {
+                "trait_type": "hair_color",
+                "value": "Bleached Blonde"
+            },
+            {
+                "trait_type": "eye_color",
+                "value": "Bubbles"
+            },
+            {
+                "trait_type": "background_color",
+                "value": "Black White"
+            },
+            {
+                "trait_type": "backdrop",
+                "value": "Backdrop 11"
+            },
+            {
+                "trait_type": "ears",
+                "value": "Square"
+            },
+            {
+                "trait_type": "face",
+                "value": "Male Face 1"
+            },
+            {
+                "trait_type": "nose",
+                "value": "Fleshy"
+            },
+            {
+                "trait_type": "mouth",
+                "value": "Gimp Ball"
+            },
+            {
+                "trait_type": "facial_feature",
+                "value": "Tribal"
+            },
+            {
+                "trait_type": "eyes",
+                "value": "Normal"
+            },
+            {
+                "trait_type": "hair_style",
+                "value": "Manbun"
             }
         ]
     };
@@ -93,13 +252,20 @@ contract('AvastarMetadata', function(accounts) {
             await mint(prime);
         }
 
+        // Mint 1 replicant
+        await teleporter.mintReplicant(tokenOwner, replicant1.traits, replicant1.generation, replicant1.gender, replicant1.ranking, {from: minter});
+
         // Create prime3's full trait set
         const create = trait =>  teleporter.createTrait(trait.generation, trait.series, trait.gender, trait.gene, trait.rarity, trait.variation, trait.name, trait.svg, {from: sysAdmin, gas: constants.MAX_GAS});
-
+        const replicate = trait =>  teleporter.createTrait(replicant1.generation, trait.series, trait.gender, trait.gene, trait.rarity, trait.variation, trait.name, trait.svg, {from: sysAdmin, gas: constants.MAX_GAS});
         for (const trait of traitData.avastar){
             await create(trait);
+            await replicate(trait);
         }
 
+        // Set artist attribution
+        await teleporter.setAttribution(attribution1.generation, attribution1.artist, attribution1.infoURI, {from: sysAdmin});
+        await teleporter.setAttribution(attribution2.generation, attribution2.artist, attribution2.infoURI, {from: sysAdmin});
     });
 
     it("should not allow non-sysadmins to change the token URI base regardless of contract pause state", async function() {
@@ -275,7 +441,7 @@ contract('AvastarMetadata', function(accounts) {
         assert.equal(result, expected, "viewURI wasn't correct");
     });
 
-    it("should allow anyone to get the metadata for an avastar", async function() {
+    it("should allow anyone to get the metadata for an avastar prime", async function() {
 
         // Get the metadata
         let result = await metadataContract.getAvastarMetadata(id3, {from: stranger});
@@ -287,7 +453,29 @@ contract('AvastarMetadata', function(accounts) {
         assert.equal(meta.description, prime3Meta.description, "description field wasn't correct");
         assert.equal(meta.external_url,  prime3Meta.external_url, "external_url field wasn't correct");
         assert.equal(meta.image,  prime3Meta.image, "image field wasn't correct");
+        prime3Meta.attributes.forEach( (attribute,index) => {
+            assert.equal(meta.attributes[index]['trait_type'],  attribute['trait_type'], `trait_type field wasn't correct for attribute ${index}`);
+            assert.equal(meta.attributes[index]['value'],  attribute['value'], `value field wasn't correct for attribute ${index}`);
+        })
 
+    });
+
+    it("should allow anyone to get the metadata for an avastar replicant", async function() {
+
+        // Get the metadata
+        let result = await metadataContract.getAvastarMetadata(id4, {from: stranger});
+
+        // Parse into an object
+        let meta = JSON.parse(result);
+
+        // Test results
+        assert.equal(meta.description, replicant1Meta.description, "description field wasn't correct");
+        assert.equal(meta.external_url, replicant1Meta.external_url, "external_url field wasn't correct");
+        assert.equal(meta.image,  replicant1Meta.image, "image field wasn't correct");
+        replicant1Meta.attributes.forEach( (attribute,index) => {
+            assert.equal(meta.attributes[index]['trait_type'],  attribute['trait_type'], `trait_type field wasn't correct for attribute ${index}`);
+            assert.equal(meta.attributes[index]['value'],  attribute['value'], `value field wasn't correct for attribute ${index}`);
+        })
 
     });
 

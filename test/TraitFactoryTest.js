@@ -147,7 +147,7 @@ contract('TraitFactory', function(accounts) {
         let id = new BN(0,10);
 
         // Make sure the stored trait is correct
-        const info = await contract.getTraitInfo(id, {from: nonSysAdmin});
+        const info = await contract.getTraitInfoById(id, {from: nonSysAdmin});
         assert.ok(info[0].eq(id), "Trait ID field wasn't correct");
         assert.equal(info[1], generation, "Generation field wasn't correct");
         assert.equal(info[2].length, series.length, "Series field wasn't correct");
@@ -166,7 +166,7 @@ contract('TraitFactory', function(accounts) {
         let id = new BN(0,10);
 
         // Make sure the stored trait is correct
-        const art = await contract.getTraitArt(id, {from: sysAdmin});
+        const art = await contract.getTraitArtById(id, {from: sysAdmin});
         assert.equal(art, svg, "SVG wasn't correct");
 
     });
@@ -187,7 +187,7 @@ contract('TraitFactory', function(accounts) {
         let id = new BN(0,10);
 
         await exceptions.catchRevert(
-            contract.getTraitArt(id, {from: nonSysAdmin})
+            contract.getTraitArtById(id, {from: nonSysAdmin})
         );
 
     });
@@ -217,7 +217,7 @@ contract('TraitFactory', function(accounts) {
         }, 'NewTrait event should be emitted with correct info');
 
         // Make sure the stored trait is correct
-        const info = await contract.getTraitInfo(id, {from: sysAdmin});
+        const info = await contract.getTraitInfoById(id, {from: sysAdmin});
         assert.ok(info[0].eq(id), "Trait ID field wasn't correct");
         assert.equal(info[1], generation, "Generation field wasn't correct");
         assert.equal(info[2].length, series.length, "Series field wasn't correct");
@@ -229,7 +229,7 @@ contract('TraitFactory', function(accounts) {
         assert.equal(info[7], name, "Name field wasn't correct");
 
         // Make sure the stored trait is correct
-        const art = await contract.getTraitArt(id, {from: sysAdmin});
+        const art = await contract.getTraitArtById(id, {from: sysAdmin});
         assert.equal(art, svg, "SVG field wasn't correct");
 
     });
@@ -279,7 +279,7 @@ contract('TraitFactory', function(accounts) {
         }
 
         // Make sure the stored art is correct
-        const art = await contract.getTraitArt(id, {from: sysAdmin});
+        const art = await contract.getTraitArtById(id, {from: sysAdmin});
         assert.equal(art, svg, "SVG wasn't correct");
 
     });
@@ -373,7 +373,7 @@ contract('TraitFactory', function(accounts) {
         let id = new BN(1,10);
 
         // Get the trait id via generation, gene, and variation
-        let traitId = await contract.traitIdByGenerationGeneAndVariation(generation, gene, variation, {from: nonSysAdmin});
+        let traitId = await contract.getTraitIdByGenerationGeneAndVariation(generation, gene, variation, {from: nonSysAdmin});
 
         // Make sure the retrieved trait id is correct
         assert.ok(traitId.eq(id),  "Trait ID wasn't correct");
@@ -417,12 +417,23 @@ contract('TraitFactory', function(accounts) {
         const {generation, artist, infoURI} = attribution;
 
         // Get the attribution
-        let result = await contract.getAttribution(generation, {from: nonSysAdmin});
+        let result = await contract.getAttributionByGeneration(generation, {from: nonSysAdmin});
 
         // Test results
-        assert.equal(result[0], generation, "Generation field wasn't correct");
-        assert.equal(result[1], artist, "Artist field wasn't correct");
-        assert.equal(result[2], infoURI, "InfoURI field wasn't correct");
+        assert.equal(result[0], artist, "Artist field wasn't correct");
+        assert.equal(result[1], infoURI, "InfoURI field wasn't correct");
+
+    });
+
+    it("should allow anyone to retrieve the combined artist attribution for a generation", async function() {
+        const {generation, artist, infoURI} = attribution;
+        const expected = `Original art by: ${artist} (${infoURI})`;
+
+        // Get the attribution
+        let result = await contract.getCombinedAttributionByGeneration(generation, {from: nonSysAdmin});
+
+        // Test results
+        assert.equal(result, expected, "Combined attribution wasn't correct");
 
     });
 

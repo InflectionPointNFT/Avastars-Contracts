@@ -183,36 +183,50 @@ contract AvastarMetadata is AvastarBase, AvastarTypes, AccessControl {
      * @return metadata the Avastar's human-readable metadata
      */
     function getAvastarMetadata(uint256 _tokenId)
-    public view
+    external view
     returns (string memory metadata) {
 
-        // Combined Avastar, Prime, and Replicant props
+        // Combined Artist, Avastar, Prime, and Replicant props
         uint256 id;
         uint256 serial;
         uint256 traits;
         Generation generation;
         Wave wave;
-        bool[] memory replicated;
         Series series;
         Gender gender;
         uint8 ranking;
+        string memory attribution;
 
         // Get the Avastar
         wave = teleporterContract.getAvastarWaveByTokenId(_tokenId);
 
-        // Get Prime or Replicant depending on Avastar's Wave
+        // Get Prime or Replicant info depending on Avastar's Wave
         if (wave == Wave.PRIME) {
-            //(id, serial, traits, replicated, generation, series, gender, ranking) = teleporterContract.getPrimeByTokenId(_tokenId);
+            (id, serial, traits, generation, series, gender, ranking) = teleporterContract.getPrimeByTokenId(_tokenId);
         } else {
-            //(id, serial, traits, generation, gender, ranking)  = teleporterContract.getReplicantByTokenId(_tokenId);
+            (id, serial, traits, generation, gender, ranking)  = teleporterContract.getReplicantByTokenId(_tokenId);
         }
 
+        // Get artist attribution
+        attribution = teleporterContract.getCombinedAttributionByGeneration(generation);
+
+        // Name
+        metadata = strConcat('{\n  "name": "Avastar #', uintToStr(uint8(id)));
+        metadata = strConcat(metadata, '",\n');
+
         // Description
-        metadata = strConcat('{\n  "description": "Avastar ',
-            (wave == Wave.PRIME)
-                ? 'Prime",\n'
-                : 'Replicant",\n'
-        );
+        metadata = strConcat(metadata, '  "description": "Generation ');
+        metadata = strConcat(metadata, uintToStr(uint8(generation) + 1));
+
+        if (wave == Wave.PRIME) {
+            metadata = strConcat(metadata, ' Series ');
+            metadata = strConcat(metadata, uintToStr(uint8(series) + 1));
+        }
+
+        metadata = strConcat(metadata, (gender == Gender.MALE) ? ' Male ' : ' Female ');
+        metadata = strConcat(metadata, (wave == Wave.PRIME) ? 'Prime. ' : 'Replicant. ');
+        metadata = strConcat(metadata, attribution);
+        metadata = strConcat(metadata, '",\n');
 
         // View URI
         metadata = strConcat(metadata, '  "external_url": "');
@@ -227,6 +241,13 @@ contract AvastarMetadata is AvastarBase, AvastarTypes, AccessControl {
         // Attributes (ala OpenSea)
         metadata = strConcat(metadata, '  "attributes": [\n');
 
+        // Gender
+        metadata = strConcat(metadata, '    {\n');
+        metadata = strConcat(metadata, '      "trait_type": "gender",\n');
+        metadata = strConcat(metadata, '      "value": "');
+        metadata = strConcat(metadata, (gender == Gender.MALE) ? 'male"' : 'female"');
+        metadata = strConcat(metadata, '\n    },\n');
+
         // Generation
         metadata = strConcat(metadata, '    {\n');
         metadata = strConcat(metadata, '      "display_type": "number",\n');
@@ -236,34 +257,51 @@ contract AvastarMetadata is AvastarBase, AvastarTypes, AccessControl {
         metadata = strConcat(metadata, '\n    },\n');
 
         // Series
+        if (wave == Wave.PRIME) {
+            metadata = strConcat(metadata, '    {\n');
+            metadata = strConcat(metadata, '      "display_type": "number",\n');
+            metadata = strConcat(metadata, '      "trait_type": "series",\n');
+            metadata = strConcat(metadata, '      "value": ');
+            metadata = strConcat(metadata, uintToStr(uint8(series) + 1));
+            metadata = strConcat(metadata, '\n    },\n');
+        }
+
+        // Serial
         metadata = strConcat(metadata, '    {\n');
         metadata = strConcat(metadata, '      "display_type": "number",\n');
-        metadata = strConcat(metadata, '      "trait_type": "series",\n');
+        metadata = strConcat(metadata, '      "trait_type": "serial",\n');
         metadata = strConcat(metadata, '      "value": ');
-        metadata = strConcat(metadata, uintToStr(uint8(series) + 1));
-        metadata = strConcat(metadata, '\n    }\n');
+        metadata = strConcat(metadata, uintToStr(serial));
+        metadata = strConcat(metadata, '\n    },\n');
 
+        // Ranking
+        metadata = strConcat(metadata, '    {\n');
+        metadata = strConcat(metadata, '      "display_type": "number",\n');
+        metadata = strConcat(metadata, '      "trait_type": "ranking",\n');
+        metadata = strConcat(metadata, '      "value": ');
+        metadata = strConcat(metadata, uintToStr(ranking));
+        metadata = strConcat(metadata, '\n    },\n');
 
-        metadata = strConcat(metadata, '  ]');
+        // Traits
+        metadata = strConcat(metadata, assembleTraitMetadata(generation, traits));
 
         // Finish JSON object
-        metadata = strConcat(metadata, '\n}');
+        metadata = strConcat(metadata, '  ]\n}');
+
     }
 
-
-
-
     /**
-     * @notice Assemble the artwork for a given Trait hash with art from the given Generation
+     * @notice Assemble the human-readable metadata for a given Trait hash.
+     * Used internally by
      * @param _generation the generation the Avastar belongs to
      * @param _traitHash the Avastar's trait hash
-     * @return svg the fully rendered SVG for the Avastar
+     * @return metdata the JSON trait metadata for the Avastar
+     */
     function assembleTraitMetadata(Generation _generation, uint256 _traitHash)
     internal view
-    returns (string memory svg)
+    returns (string memory metadata)
     {
         require(_traitHash > 0);
-        string memory accumulator = '\t"attributes": [\n';
         uint256 slotConst = 256;
         uint256 slotMask = 255;
         uint256 bitMask;
@@ -271,7 +309,6 @@ contract AvastarMetadata is AvastarBase, AvastarTypes, AccessControl {
         uint256 slotMultiplier;
         uint256 variation;
         uint256 traitId;
-        Trait memory trait;
 
         // Iterate trait hash by Gene and assemble trait attribute data
         for (uint8 slot = 0; slot <= uint8(Gene.HAIR_STYLE); slot++){
@@ -283,15 +320,44 @@ contract AvastarMetadata is AvastarBase, AvastarTypes, AccessControl {
                 ? slottedValue / slotMultiplier
                 : slottedValue;
                 if (variation > 0) {
-                    traitId = teleporterContract.traitIdByGenerationGeneAndVariation[uint8(_generation)][slot][uint8(variation)];
-                    trait = traits[traitId];
-                    accumulator = strConcat(accumulator, trait.svg);
+                    traitId = teleporterContract.getTraitIdByGenerationGeneAndVariation(_generation, Gene(slot), uint8(variation));
+                    metadata = strConcat(metadata, '    {\n');
+                    metadata = strConcat(metadata, '      "trait_type": "');
+                    if (slot == uint8(Gene.SKIN_TONE)) {
+                        metadata = strConcat(metadata, 'skin_tone');
+                    } else if (slot == uint8(Gene.HAIR_COLOR)) {
+                        metadata = strConcat(metadata, 'hair_color');
+                    } else if (slot == uint8(Gene.EYE_COLOR)) {
+                        metadata = strConcat(metadata, 'eye_color');
+                    } else if (slot == uint8(Gene.BG_COLOR)) {
+                        metadata = strConcat(metadata, 'background_color');
+                    } else if (slot == uint8(Gene.BACKDROP)) {
+                        metadata = strConcat(metadata, 'backdrop');
+                    } else if (slot == uint8(Gene.EARS)) {
+                        metadata = strConcat(metadata, 'ears');
+                    } else if (slot == uint8(Gene.FACE)) {
+                        metadata = strConcat(metadata, 'face');
+                    } else if (slot == uint8(Gene.NOSE)) {
+                        metadata = strConcat(metadata, 'nose');
+                    } else if (slot == uint8(Gene.MOUTH)) {
+                        metadata = strConcat(metadata, 'mouth');
+                    } else if (slot == uint8(Gene.FACIAL_FEATURE)) {
+                        metadata = strConcat(metadata, 'facial_feature');
+                    } else if (slot == uint8(Gene.EYES)) {
+                        metadata = strConcat(metadata, 'eyes');
+                    } else if (slot == uint8(Gene.HAIR_STYLE)) {
+                        metadata = strConcat(metadata, 'hair_style');
+                    }
+                    metadata = strConcat(metadata, '",\n');
+                    metadata = strConcat(metadata, '      "value": "');
+                    metadata = strConcat(metadata, teleporterContract.getTraitNameById(traitId));
+                    metadata = strConcat(metadata, '"\n    }');
+                    if (slot < uint8(Gene.HAIR_STYLE))  metadata = strConcat(metadata, ',');
+                    metadata = strConcat(metadata, '\n');
+
                 }
             }
         }
-
-        return strConcat(accumulator, '\t]');
     }
-    */
 
 }

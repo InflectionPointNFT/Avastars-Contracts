@@ -14,7 +14,10 @@ Used by AvastarMinter contract to interact with subset of AvastarTeleporter cont
 - [getAvastarWaveByTokenId](#getavastarwavebytokenid)
 - [getPrimeByTokenId](#getprimebytokenid)
 - [getReplicantByTokenId](#getreplicantbytokenid)
-- [getTraitInfo](#gettraitinfo)
+- [getTraitInfoById](#gettraitinfobyid)
+- [getTraitNameById](#gettraitnamebyid)
+- [getTraitIdByGenerationGeneAndVariation](#gettraitidbygenerationgeneandvariation)
+- [getCombinedAttributionByGeneration](#getcombinedattributionbygeneration)
 - [mintPrime](#mintprime)
 - [mintReplicant](#mintreplicant)
 - [ownerOf](#ownerof)
@@ -91,7 +94,6 @@ returns (
 	uint256 tokenId,
 	uint256 serial,
 	uint256 traits,
-	bool[] replicated,
 	enum AvastarTypes.Generation generation,
 	enum AvastarTypes.Series series,
 	enum AvastarTypes.Gender gender,
@@ -112,7 +114,6 @@ returns (
 | tokenId | uint256 | the Prime's token ID | 
 | serial | uint256 | the Prime's serial | 
 | traits | uint256 | the Prime's trait hash | 
-| replicated | bool[] | the Prime's trait replication indicators | 
 | generation | enum AvastarTypes.Generation | the Prime's generation | 
 | series | enum AvastarTypes.Series | the Prime's series | 
 | gender | enum AvastarTypes.Gender | the Prime's gender | 
@@ -152,12 +153,12 @@ returns (
 | gender | enum AvastarTypes.Gender | the Replicant's gender | 
 | ranking | uint8 | the Replicant's ranking | 
 
-### getTraitInfo
+### getTraitInfoById
 
 Retrieve a Trait's info by ID.
 
 ```solidity
-function getTraitInfo(uint256 _traitId)
+function getTraitInfoById(uint256 _traitId)
 external view
 returns (
 	uint256 id,
@@ -189,6 +190,78 @@ returns (
 | rarity | enum AvastarTypes.Rarity | the rarity level of this trait | 
 | variation | uint8 | variation of the gene the trait represents | 
 | name | string | name of the trait | 
+
+### getTraitNameById
+
+Retrieve a Trait's name by ID.
+
+```solidity
+function getTraitNameById(uint256 _traitId)
+external view
+returns (string name)
+```
+
+**Arguments**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _traitId | uint256 | the ID of the Trait to retrieve | 
+
+**Returns**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| name | string | name of the trait | 
+
+### getTraitIdByGenerationGeneAndVariation
+
+Get Trait ID by Generation, Gene, and Variation.
+
+```solidity
+function getTraitIdByGenerationGeneAndVariation(
+	enum AvastarTypes.Generation _generation,
+	enum AvastarTypes.Gene _gene,
+	uint256 _variationSafe
+)
+external view
+returns (uint256 traitId)
+```
+
+**Arguments**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _generation | enum AvastarTypes.Generation | the generation the trait belongs to | 
+| _gene | enum AvastarTypes.Gene | ration the generation the trait belongs to | 
+| _variationSafe | uint256 | the variation of the gene | 
+
+**Returns**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| traitId | uint256 | the ID of the specified trait | 
+
+### getCombinedAttributionByGeneration
+
+Get the artist Attribution for a given Generation, combined into a single string.
+
+```solidity
+function getCombinedAttributionByGeneration(enum AvastarTypes.Generation _generation)
+external view
+returns (string combined)
+```
+
+**Arguments**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _generation | enum AvastarTypes.Generation | the generation to retrieve artist attribution for | 
+
+**Returns**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| combined | string | attribution a single string with the artist and artist info URI | 
 
 ### mintPrime
 

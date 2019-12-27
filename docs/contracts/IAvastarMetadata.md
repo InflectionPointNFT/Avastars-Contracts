@@ -10,6 +10,9 @@ Used by `AvastarTeleporter` contract to generate metdata in an upgradable way.
 ## **Functions**
 
 - [isAvastarMetadata](#isavastarmetadata)
+- [viewURI](#viewuri)
+- [mediaURI](#mediauri)
+- [tokenURI](#tokenuri)
 - [getAvastarMetadata](#getavastarmetadata)
 
 ### isAvastarMetadata
@@ -27,6 +30,72 @@ returns (bool)
 | Name        | Type           | Description  |
 | ------------- |------------- | -----|
 |  | bool | always true | 
+
+### viewURI
+
+Get view URI for a given Avastar Token ID.
+
+```solidity
+function viewURI(uint256 _tokenId)
+external view
+returns (string uri)
+```
+
+**Arguments**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _tokenId | uint256 | the Token ID of a previously minted Avastar Prime or Replicant | 
+
+**Returns**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| uri | string | the off-chain URI to view the Avastar on the Avastars website | 
+
+### mediaURI
+
+Get media URI for a given Avastar Token ID.
+
+```solidity
+function mediaURI(uint256 _tokenId)
+external view
+returns (string uri)
+```
+
+**Arguments**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _tokenId | uint256 | the Token ID of a previously minted Avastar Prime or Replicant | 
+
+**Returns**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| uri | string | the off-chain URI to the Avastar image | 
+
+### tokenURI
+
+Get token URI for a given Avastar Token ID.
+
+```solidity
+function tokenURI(uint256 _tokenId)
+external view
+returns (string uri)
+```
+
+**Arguments**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _tokenId | uint256 | the Token ID of a previously minted Avastar Prime or Replicant | 
+
+**Returns**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| uri | string | the Avastar's off-chain JSON metadata URI | 
 
 ### getAvastarMetadata
 

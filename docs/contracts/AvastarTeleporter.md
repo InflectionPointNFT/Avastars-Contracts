@@ -19,7 +19,6 @@ contract IAvastarMetadata private metadataContract;
 
 - [TraitAccessApproved](#traitaccessapproved)
 - [TraitsUsed](#traitsused)
-- [TokenUriBaseSet](#tokenuribaseset)
 - [MetadataContractSet](#metadatacontractset)
 
 ### TraitAccessApproved
@@ -57,20 +56,6 @@ event TraitsUsed(
 | primeId | uint256 | the token id of the Prime supplying the Traits | 
 | used | bool[] | the array of flags representing the Primes resulting Trait usage | 
 
-### TokenUriBaseSet
-
-Event emitted when TokenURI base changes
-
-```solidity
-event TokenUriBaseSet(string tokenUriBase)
-```
-
-**Arguments**
-
-| Name        | Type           | Description  |
-| ------------- |------------- | -----|
-| tokenUriBase | string | the base URI for tokenURI calls | 
-
 ### MetadataContractSet
 
 Event emitted when AvastarMetadata contract is set
@@ -89,13 +74,12 @@ event MetadataContractSet(address contractAddress)
 
 - [isAvastarTeleporter](#isavastarteleporter)
 - [setMetadataContract](#setmetadatacontract)
-- [setTokenUriBase](#settokenuribase)
+- [viewURI](#viewuri)
+- [mediaURI](#mediauri)
+- [tokenURI](#tokenuri)
 - [getAvastarMetadata](#getavastarmetadata)
-- [getAvastarWaveByTokenId](#getavastarwavebytokenid)
 - [approveTraitAccess](#approvetraitaccess)
 - [useTraits](#usetraits)
-- [renderAvastar](#renderavastar)
-- [tokenURI](#tokenuri)
 
 ### isAvastarTeleporter
 
@@ -130,22 +114,76 @@ external nonpayable onlySysAdmin whenPaused whenNotUpgraded
 | ------------- |------------- | -----|
 | _address | address | address of AvastarTeleporter contract | 
 
-### setTokenUriBase
+### viewURI
 
-Set the base URI for creating `tokenURI` for each Avastar.
-Only invokable by system admin role, when contract is paused and not upgraded.
-If successful, emits an `TokenUriBaseSet` event.
+Get view URI for a given Avastar Token ID.
+Reverts if given token id is not a valid Avastar Token ID.
 
 ```solidity
-function setTokenUriBase(string _tokenUriBase)
-external nonpayable onlySysAdmin whenPaused whenNotUpgraded 
+function viewURI(uint256 _tokenId)
+external view
+returns (string uri)
 ```
 
 **Arguments**
 
 | Name        | Type           | Description  |
 | ------------- |------------- | -----|
-| _tokenUriBase | string | base for the tokenURI | 
+| _tokenId | uint256 | the Token ID of a previously minted Avastar Prime or Replicant | 
+
+**Returns**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| uri | string | the off-chain URI to view the Avastar on the Avastars website | 
+
+### mediaURI
+
+Get media URI for a given Avastar Token ID.
+Reverts if given token id is not a valid Avastar Token ID.
+
+```solidity
+function mediaURI(uint256 _tokenId)
+external view
+returns (string uri)
+```
+
+**Arguments**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _tokenId | uint256 | the Token ID of a previously minted Avastar Prime or Replicant | 
+
+**Returns**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| uri | string | the off-chain URI to the Avastar image | 
+
+### tokenURI
+
+⤾ overrides [ERC721Metadata.tokenURI](contracts/ERC721Metadata.md#tokenuri)
+
+Get token URI for a given Avastar Token ID.
+Reverts if given token id is not a valid Avastar Token ID.
+
+```solidity
+function tokenURI(uint256 _tokenId)
+external view
+returns (string uri)
+```
+
+**Arguments**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _tokenId | uint256 | the Token ID of a previously minted Avastar Prime or Replicant | 
+
+**Returns**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| uri | string | the Avastar's off-chain JSON metadata URI | 
 
 ### getAvastarMetadata
 
@@ -168,28 +206,6 @@ returns (string metadata)
 | Name        | Type           | Description  |
 | ------------- |------------- | -----|
 | metadata | string | the Avastar's human-readable metadata | 
-
-### getAvastarWaveByTokenId
-
-Get an Avastar's Wave by token ID.
-
-```solidity
-function getAvastarWaveByTokenId(uint256 _tokenId)
-external view
-returns (enum AvastarTypes.Wave wave)
-```
-
-**Arguments**
-
-| Name        | Type           | Description  |
-| ------------- |------------- | -----|
-| _tokenId | uint256 | the token id of the given Avastar | 
-
-**Returns**
-
-| Name        | Type           | Description  |
-| ------------- |------------- | -----|
-| wave | enum AvastarTypes.Wave | the Avastar's wave (Prime/Replicant) | 
 
 ### approveTraitAccess
 
@@ -225,51 +241,4 @@ external nonpayable
 | ------------- |------------- | -----|
 | _primeId | uint256 | the token id for the Prime whose Traits are to be used | 
 | _traitFlags | bool[] | an array of no more than 32 booleans representing the Traits to be used | 
-
-### renderAvastar
-
-Render the Avastar Prime or Replicant from the original on-chain art.
-
-```solidity
-function renderAvastar(uint256 _tokenId)
-external view
-returns (string svg)
-```
-
-**Arguments**
-
-| Name        | Type           | Description  |
-| ------------- |------------- | -----|
-| _tokenId | uint256 | the token ID of the Prime or Replicant | 
-
-**Returns**
-
-| Name        | Type           | Description  |
-| ------------- |------------- | -----|
-| svg | string | the fully rendered SVG representation of the Avastar | 
-
-### tokenURI
-
-⤾ overrides [ERC721Metadata.tokenURI](contracts/ERC721Metadata.md#tokenuri)
-
-Get token URI for a given Avastar Token ID.
-Reverts if given token id is not a valid Avastar Token ID.
-
-```solidity
-function tokenURI(uint256 _tokenId)
-external view
-returns (string uri)
-```
-
-**Arguments**
-
-| Name        | Type           | Description  |
-| ------------- |------------- | -----|
-| _tokenId | uint256 | the Token ID of a previously minted Avastar Prime or Replicant | 
-
-**Returns**
-
-| Name        | Type           | Description  |
-| ------------- |------------- | -----|
-| uri | string | the off-chain URI to the JSON metadata for the given Avastar | 
 

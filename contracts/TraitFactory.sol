@@ -34,6 +34,26 @@ contract TraitFactory is AvastarState {
     event TraitArtExtended(uint256 id);
 
     /**
+     * @notice Get Trait ID by Generation, Gene, and Variation.
+     * @param _generation the generation the trait belongs to
+     * @param _gene gene the trait belongs to
+     * @param _variationSafe the variation of the gene
+     * @return traitId the ID of the specified trait
+     */
+    function getTraitIdByGenerationGeneAndVariation(
+        Generation _generation,
+        Gene _gene,
+        uint256 _variationSafe
+    )
+    external view
+    returns (uint256 traitId)
+    {
+        require(_variationSafe >=0 && _variationSafe <=255);
+        uint8 variation = uint8(_variationSafe);
+        return traitIdByGenerationGeneAndVariation[uint8(_generation)][uint8(_gene)][uint8(variation)];
+    }
+
+    /**
      * @notice Retrieve a Trait's info by ID.
      * @param _traitId the ID of the Trait to retrieve
      * @return id the ID of the trait
@@ -45,7 +65,7 @@ contract TraitFactory is AvastarState {
      * @return rarity the rarity level of this trait
      * @return name name of the trait
      */
-    function getTraitInfo(uint256 _traitId)
+    function getTraitInfoById(uint256 _traitId)
     external view
     returns (
         uint256 id,
@@ -72,12 +92,23 @@ contract TraitFactory is AvastarState {
     }
 
     /**
+     * @notice Retrieve a Trait's name by ID.
+     * @param _traitId the ID of the Trait to retrieve
+     * @return name name of the trait
+     */
+    function getTraitNameById(uint256 _traitId)
+    external view
+    returns (string memory name) {
+        require(_traitId < traits.length);
+        name = traits[_traitId].name;
+    }
+    /**
      * @notice Retrieve a Trait's art by ID.
      * Only invokable by a system administrator.
      * @param _traitId the ID of the Trait to retrieve
      * @return art the svg layer representation of the trait
      */
-    function getTraitArt(uint256 _traitId)
+    function getTraitArtById(uint256 _traitId)
     external view onlySysAdmin
     returns (string memory art) {
         require(_traitId < traits.length);
@@ -88,23 +119,38 @@ contract TraitFactory is AvastarState {
     /**
      * @notice Get the artist Attribution for a given Generation.
      * @param _generation the generation to retrieve artist attribution for
-     * @return generation the generation artist attribution was requested for
      * @return artist the artist who created the art for the generation
      * @return infoURI the URI for the artist's website / portfolio
      */
-    function getAttribution(Generation _generation)
+    function getAttributionByGeneration(Generation _generation)
     external view
     returns (
-        Generation generation,
         string memory artist,
         string memory infoURI
     ){
         Attribution memory attribution = attributionByGeneration[uint8(_generation)];
         return (
-            attribution.generation,
             attribution.artist,
             attribution.infoURI
         );
+    }
+
+    /**
+     * @notice Get the artist Attribution for a given Generation, combined into a single string.
+     * @param _generation the generation to retrieve artist attribution for
+     * @return attribution a single string with the artist and artist info URI
+     */
+    function getCombinedAttributionByGeneration(Generation _generation)
+    external view
+    returns (
+        string memory combined
+    ){
+        Attribution memory attribution = attributionByGeneration[uint8(_generation)];
+        combined = strConcat(combined, 'Original art by: ');
+        combined = strConcat(combined, attribution.artist);
+        combined = strConcat(combined, ' (');
+        combined = strConcat(combined, attribution.infoURI);
+        combined = strConcat(combined, ')');
     }
 
     /**

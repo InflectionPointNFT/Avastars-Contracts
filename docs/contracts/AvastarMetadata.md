@@ -5,9 +5,10 @@ View Source: [contracts/AvastarMetadata.sol](https://github.com/Dapp-Wizards/Ava
 **AvastarMetadata** **↗ Extends: [AvastarBase](contracts/AvastarBase.md), [AvastarTypes](contracts/AvastarTypes.md), [AccessControl](contracts/AccessControl.md)**
 
 Generate Avastar metadata from on-chain data.
-This contract is used by `AvastarTeleporter` to generate the human and machine readable metadata
-for a given Avastar token Id. Since this functionality is not built into the `AvastarTeleporter`
-contract, it can be upgraded in that contract by setting a new address for this contract.
+Don't call this contract directly. It is used by `AvastarTeleporter` to generate
+the human and machine readable metadata for a given Avastar token Id. Since this
+functionality is not built into the `AvastarTeleporter` contract, it can be upgraded
+in that contract by setting a new address for this contract.
 
 ## Constructor
 
@@ -26,17 +27,35 @@ contract IAvastarTeleporter private teleporterContract;
 string private mediaUriBase;
 string private viewUriBase;
 
+// internal members
+string internal tokenUriBase;
+
 ```
 
 ## **Events**
 
+- [TokenUriBaseSet](#tokenuribaseset)
 - [MediaUriBaseSet](#mediauribaseset)
 - [ViewUriBaseSet](#viewuribaseset)
+
+### TokenUriBaseSet
+
+Event emitted when TokenURI base changes
+
+```solidity
+event TokenUriBaseSet(string tokenUriBase)
+```
+
+**Arguments**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| tokenUriBase | string | the base URI for tokenURI calls | 
 
 ### MediaUriBaseSet
 
 Event emitted when the `mediaUriBase` is set.
-Only emitted if the `mediaUriBase` is set after contract deployment.
+Only emitted when the `mediaUriBase` is set after contract deployment.
 
 ```solidity
 event MediaUriBaseSet(string mediaUriBase)
@@ -51,26 +70,29 @@ event MediaUriBaseSet(string mediaUriBase)
 ### ViewUriBaseSet
 
 Event emitted when the `viewUriBase` is set.
-Only emitted if the `viewUriBase` is set after contract deployment.
+Only emitted when the `viewUriBase` is set after contract deployment.
 
 ```solidity
-event ViewUriBaseSet(string mediaUriBase)
+event ViewUriBaseSet(string viewUriBase)
 ```
 
 **Arguments**
 
 | Name        | Type           | Description  |
 | ------------- |------------- | -----|
-| mediaUriBase | string | the new URI | 
+| viewUriBase | string | the new URI | 
 
 ## **Functions**
 
 - [isAvastarMetadata](#isavastarmetadata)
+- [setTokenUriBase](#settokenuribase)
 - [setMediaUriBase](#setmediauribase)
 - [setViewUriBase](#setviewuribase)
 - [viewURI](#viewuri)
 - [mediaURI](#mediauri)
+- [tokenURI](#tokenuri)
 - [getAvastarMetadata](#getavastarmetadata)
+- [assembleTraitMetadata](#assembletraitmetadata)
 
 ### isAvastarMetadata
 
@@ -87,6 +109,23 @@ returns (bool)
 | Name        | Type           | Description  |
 | ------------- |------------- | -----|
 |  | bool | always true | 
+
+### setTokenUriBase
+
+Set the base URI for creating `tokenURI` for each Avastar.
+Only invokable by system admin role, when contract is paused and not upgraded.
+If successful, emits an `TokenUriBaseSet` event.
+
+```solidity
+function setTokenUriBase(string _tokenUriBase)
+external nonpayable onlySysAdmin whenPaused whenNotUpgraded 
+```
+
+**Arguments**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _tokenUriBase | string | base for the ERC721 tokenURI | 
 
 ### setMediaUriBase
 
@@ -128,7 +167,7 @@ Get view URI for a given Avastar Token ID.
 
 ```solidity
 function viewURI(uint256 _tokenId)
-private view
+public view
 returns (string uri)
 ```
 
@@ -150,7 +189,7 @@ Get media URI for a given Avastar Token ID.
 
 ```solidity
 function mediaURI(uint256 _tokenId)
-private view
+public view
 returns (string uri)
 ```
 
@@ -166,13 +205,35 @@ returns (string uri)
 | ------------- |------------- | -----|
 | uri | string | the off-chain URI to the Avastar image | 
 
+### tokenURI
+
+Get token URI for a given Avastar Token ID.
+
+```solidity
+function tokenURI(uint256 _tokenId)
+public view
+returns (string uri)
+```
+
+**Arguments**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _tokenId | uint256 | the Token ID of a previously minted Avastar Prime or Replicant | 
+
+**Returns**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| uri | string | the Avastar's off-chain JSON metadata URI | 
+
 ### getAvastarMetadata
 
 Get human-readable metadata for a given Avastar by Token ID.
 
 ```solidity
 function getAvastarMetadata(uint256 _tokenId)
-public view
+external view
 returns (string metadata)
 ```
 
@@ -187,4 +248,28 @@ returns (string metadata)
 | Name        | Type           | Description  |
 | ------------- |------------- | -----|
 | metadata | string | the Avastar's human-readable metadata | 
+
+### assembleTraitMetadata
+
+Assemble the human-readable metadata for a given Trait hash.
+Used internally by
+
+```solidity
+function assembleTraitMetadata(enum AvastarTypes.Generation _generation, uint256 _traitHash)
+internal view
+returns (string metadata)
+```
+
+**Arguments**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _generation | enum AvastarTypes.Generation | the generation the Avastar belongs to | 
+| _traitHash | uint256 | the Avastar's trait hash | 
+
+**Returns**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| metadata | string | metdata the JSON trait metadata for the Avastar | 
 

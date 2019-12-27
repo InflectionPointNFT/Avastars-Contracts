@@ -8,6 +8,8 @@
 	* [AccessControl](contracts/AccessControl.md)
 	* [AvastarBase](contracts/AvastarBase.md)
 	* [AvastarBaseWrapper](contracts/AvastarBaseWrapper.md)
+	* [AvastarFactory](contracts/AvastarFactory.md)
+	* [AvastarFactoryWrapper](contracts/AvastarFactoryWrapper.md)
 	* [AvastarMetadata](contracts/AvastarMetadata.md)
 	* [AvastarPrimeMinter](contracts/AvastarPrimeMinter.md)
 	* [AvastarState](contracts/AvastarState.md)

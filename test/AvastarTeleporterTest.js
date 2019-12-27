@@ -23,6 +23,12 @@ contract('AvastarTeleporter', function(accounts) {
     const id2 = new BN(1,10);
     const id3 = new BN(2,10);
 
+    const attribution = {
+        "generation": constants.GENERATION.ONE,
+        "artist": "Marmota vs Milky",
+        "infoURI": "https://www.twine.fm/marmotavsmilky"
+    };
+
     const prime1 = {
         "generation" : constants.GENERATION.ONE,
         "gender"     : constants.GENDER.MALE,
@@ -48,10 +54,15 @@ contract('AvastarTeleporter', function(accounts) {
     };
 
     const prime3Meta = {
-        "description": "Avastar Prime",
+        "name": "Avastar #2",
+        "description": "Generation 1 Series 1 Male Prime. Original art by: Marmota vs Milky (https://www.twine.fm/marmotavsmilky)",
         "external_url": "https://dev.avastars.io/avastar/2",
         "image": "https://dev.avastars.io/media/2",
         "attributes": [
+            {
+                "trait_type": "gender",
+                "value": "male"
+            },
             {
                 "display_type": "number",
                 "trait_type": "generation",
@@ -61,6 +72,64 @@ contract('AvastarTeleporter', function(accounts) {
                 "display_type": "number",
                 "trait_type": "series",
                 "value": 1
+            },
+            {
+                "display_type": "number",
+                "trait_type": "serial",
+                "value": 2
+            },
+            {
+                "display_type": "number",
+                "trait_type": "ranking",
+                "value": 68
+            },
+            {
+                "trait_type": "skin_tone",
+                "value": "Pale Pink"
+            },
+            {
+                "trait_type": "hair_color",
+                "value": "Bleached Blonde"
+            },
+            {
+                "trait_type": "eye_color",
+                "value": "Bubbles"
+            },
+            {
+                "trait_type": "background_color",
+                "value": "Black White"
+            },
+            {
+                "trait_type": "backdrop",
+                "value": "Backdrop 11"
+            },
+            {
+                "trait_type": "ears",
+                "value": "Square"
+            },
+            {
+                "trait_type": "face",
+                "value": "Male Face 1"
+            },
+            {
+                "trait_type": "nose",
+                "value": "Fleshy"
+            },
+            {
+                "trait_type": "mouth",
+                "value": "Gimp Ball"
+            },
+            {
+                "trait_type": "facial_feature",
+                "value": "Tribal"
+            },
+            {
+                "trait_type": "eyes",
+                "value": "Normal"
+            },
+            {
+                "trait_type": "hair_style",
+                "value": "Manbun"
             }
         ]
     };
@@ -100,6 +169,9 @@ contract('AvastarTeleporter', function(accounts) {
         for (const trait of traitData.avastar){
             await create(trait);
         }
+
+        // Set artist attribution
+        await teleporter.setAttribution(attribution.generation, attribution.artist, attribution.infoURI, {from: sysAdmin});
 
     });
 
@@ -179,6 +251,21 @@ contract('AvastarTeleporter', function(accounts) {
         const requestFlags = [false, true];
 
         // Try to use traits
+        await exceptions.catchRevert(
+            teleporter.useTraits(id1, requestFlags, {from: handler})
+        )
+
+    });
+
+    it("should not allow an approved handler to set a previously used trait to unused", async function() {
+
+        // Approve trait access
+        await teleporter.approveTraitAccess(handler, [id1, id2, id3], {from: tokenOwner});
+
+        // Previously used trait
+        const requestFlags = [false];
+
+        // Set previously used trait to unused
         await exceptions.catchRevert(
             teleporter.useTraits(id1, requestFlags, {from: handler})
         )

@@ -41,7 +41,6 @@ contract IAvastarTeleporter is AvastarTypes {
      * @return tokenId the Prime's token ID
      * @return serial the Prime's serial
      * @return traits the Prime's trait hash
-     * @return replicated the Prime's trait replication indicators
      * @return generation the Prime's generation
      * @return series the Prime's series
      * @return gender the Prime's gender
@@ -53,7 +52,6 @@ contract IAvastarTeleporter is AvastarTypes {
         uint256 tokenId,
         uint256 serial,
         uint256 traits,
-        bool[] memory replicated,
         Generation generation,
         Series series,
         Gender gender,
@@ -93,7 +91,7 @@ contract IAvastarTeleporter is AvastarTypes {
      * @return rarity the rarity level of this trait
      * @return name name of the trait
      */
-    function getTraitInfo(uint256 _traitId)
+    function getTraitInfoById(uint256 _traitId)
     external view
     returns (
         uint256 id,
@@ -104,6 +102,42 @@ contract IAvastarTeleporter is AvastarTypes {
         Rarity rarity,
         uint8 variation,
         string memory name
+    );
+
+
+    /**
+     * @notice Retrieve a Trait's name by ID.
+     * @param _traitId the ID of the Trait to retrieve
+     * @return name name of the trait
+     */
+    function getTraitNameById(uint256 _traitId)
+    external view
+    returns (string memory name);
+
+    /**
+     * @notice Get Trait ID by Generation, Gene, and Variation.
+     * @param _generation the generation the trait belongs to
+     * @param _gene gene the trait belongs to
+     * @param _variationSafe the variation of the gene
+     * @return traitId the ID of the specified trait
+     */
+    function getTraitIdByGenerationGeneAndVariation(
+        Generation _generation,
+        Gene _gene,
+        uint256 _variationSafe
+    )
+    external view
+    returns (uint256 traitId);
+
+    /**
+     * @notice Get the artist Attribution for a given Generation, combined into a single string.
+     * @param _generation the generation to retrieve artist attribution for
+     * @return attribution a single string with the artist and artist info URI
+     */
+    function getCombinedAttributionByGeneration(Generation _generation)
+    external view
+    returns (
+        string memory combined
     );
 
     /**
@@ -119,7 +153,6 @@ contract IAvastarTeleporter is AvastarTypes {
      * @return tokenId the newly minted Prime's token ID
      * @return serial the newly minted Prime's serial
      */
-
     function mintPrime(
         address _owner,
         uint256 _traits,
@@ -159,6 +192,5 @@ contract IAvastarTeleporter is AvastarTypes {
      * @return owner the owner of the given token ID
      */
     function ownerOf(uint256 tokenId) external view returns (address owner);
-
 
 }
