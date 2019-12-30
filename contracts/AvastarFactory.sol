@@ -33,6 +33,16 @@ contract AvastarFactory is TraitFactory {
     internal whenNotPaused
     returns (uint256 tokenId)
     {
+        // Mapped Token Id for given generation and serial should always be 0 (uninitialized)
+        require(tokenIdByGenerationWaveAndSerial[uint8(_generation)][uint8(_wave)][uint256(_serial)] == 0);
+
+        // Serial should always be the current length of the primes or replicants array for the given generation
+        if (_wave == Wave.PRIME){
+            require(_serial == primesByGeneration[uint8(_generation)].length);
+        } else {
+            require(_serial == replicantsByGeneration[uint8(_generation)].length);
+        }
+
         // Get Token ID
         tokenId = avastars.length;
 
