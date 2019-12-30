@@ -1,4 +1,4 @@
-# Avastars Contracts UML
+# Avastars Contract Architecture
 
 The generated UML diagram below is quite difficult to navigate, so first, let's consider the contracts, their intended purpose, and their internal hierarchies. Keep in mind that Solidity contracts can inherit from multiple parent contracts.
 
@@ -68,4 +68,6 @@ Ultimately, there will be four deployed contracts:
 * AvastarReplicantMinter (Management of deposits, balance transfers, purchases of Avastar Replicants)
 ```
 ## Full System UML Diagram
+
+ [Download](https://dapp-wizards.github.io/Avastars-Contracts/media/AvastarsUML.svg)
  ![UML](../media/AvastarsUML.svg)

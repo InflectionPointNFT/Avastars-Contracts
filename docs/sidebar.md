@@ -1,8 +1,8 @@
 * PROJECT
 	* [Developer Setup](project/DeveloperSetup.md)
+	* [Contract Architecture](project/ContractArchitecture.md) 
 	* [Trait Hash Bitmasking](project/TraitHashBitmasking.md)
 	* [Unit Test Output](project/UnitTestOutput.md)
-	* [UML Diagram](project/ContractUML.md) 
 	
 * LOCAL CONTRACTS
 	* [AccessControl](contracts/AccessControl.md)
