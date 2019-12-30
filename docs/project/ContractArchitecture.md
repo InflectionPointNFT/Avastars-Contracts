@@ -9,7 +9,7 @@ Ultimately, there will be four deployed contracts:
   - The upgradable metadata contract, bidirectionally tied to the AvastarTeleporter contract, generates standard and extended token metadata.
 * AvastarPrimeMinter
   - The Avastar Prime minting proxy contract, unidirectionally tied to the AvastarTeleporter contract, manages user and franchise balances, and purchases of Primes. 
-* AvastarPrimeMinter (coming soon)
+* AvastarReplicantMinter (coming soon)
   - The Avastar Replicant minting proxy contract, unidirectionally tied to the AvastarTeleporter contract, manages user and franchise balances, and purchases of Replicants. 
 
 ## AvastarTeleporter Contract Structure
