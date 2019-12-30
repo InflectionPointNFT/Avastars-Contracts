@@ -39,11 +39,11 @@ Ultimately, there will be four deployed contracts:
 ## AvastarMetadata Contract Structure
 ```
 * AccessControl (Role-based access, SafeMath, contract pause, unpause, upgrade)
-:
-:    * AvastarTypes (Common enums and structs used throughout the system)
-:....:
-:      * AvastarBase (Common utility functions used throughout the system)
-:......:
+
+:   * AvastarTypes (Common enums and structs used throughout the system)
+:...:
+:     * AvastarBase (Common utility functions used throughout the system)
+:.....:
 :
 * AvastarMetadata (Generation of standard and extended token metadata)
 ```
@@ -52,8 +52,8 @@ Ultimately, there will be four deployed contracts:
 ```
 * AccessControl (Role-based access, SafeMath, contract pause, unpause, upgrade)
 :
-:    * AvastarTypes (Common enums and structs used throughout the system)
-:....:
+:   * AvastarTypes (Common enums and structs used throughout the system)
+:...:
 :
 * AvastarPrimeMinter (Management of deposits, balance transfers, purchases of Avastar Primes)
 ```
@@ -62,8 +62,8 @@ Ultimately, there will be four deployed contracts:
 ```
 * AccessControl (Role-based access, SafeMath, contract pause, unpause, upgrade)
 :
-:    * AvastarTypes (Common enums and structs used throughout the system)
-:....:
+:   * AvastarTypes (Common enums and structs used throughout the system)
+:...:
 :
 * AvastarReplicantMinter (Management of deposits, balance transfers, purchases of Avastar Replicants)
 ```
