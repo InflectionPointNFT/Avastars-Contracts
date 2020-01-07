@@ -11,6 +11,7 @@ import "@openzeppelin/contracts/math/SafeMath.sol";
 contract AccessControl {
 
     using SafeMath for uint256;
+    using SafeMath for uint16;
     using Roles for Roles.Role;
 
     Roles.Role private admins;

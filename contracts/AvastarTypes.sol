@@ -15,6 +15,7 @@ contract AvastarTypes {
     }
 
     enum Series {
+        PROMO,
         ONE,
         TWO,
         THREE,
@@ -134,6 +135,7 @@ contract AvastarTypes {
 
         // Rarity Ranking
         uint8 ranking;
+
     }
 
     struct Avastar {

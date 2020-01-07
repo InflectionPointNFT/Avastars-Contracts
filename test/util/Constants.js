@@ -9,11 +9,12 @@ module.exports = {
     },
 
     SERIES: {
-        ONE: 0,
-        TWO: 1,
-        THREE: 2,
-        FOUR: 3,
-        FIVE: 4
+        PROMO: 0,
+        ONE: 1,
+        TWO: 2,
+        THREE: 3,
+        FOUR: 4,
+        FIVE: 5
     },
 
     GENDER: {
@@ -71,6 +72,5 @@ module.exports = {
         TEST: "https://test.avastars.io/media/",
         PROD: "https://avastars.io/media/",
     }
-
 
 };

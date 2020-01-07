@@ -214,17 +214,25 @@ contract AvastarMetadata is AvastarBase, AvastarTypes, AccessControl {
         metadata = strConcat('{\n  "name": "Avastar #', uintToStr(uint8(id)));
         metadata = strConcat(metadata, '",\n');
 
-        // Description
+        // Description: Generation
         metadata = strConcat(metadata, '  "description": "Generation ');
         metadata = strConcat(metadata, uintToStr(uint8(generation) + 1));
 
-        if (wave == Wave.PRIME) {
+        // Description: Series (if 1-5)
+        if (wave == Wave.PRIME && series != Series.PROMO) {
             metadata = strConcat(metadata, ' Series ');
-            metadata = strConcat(metadata, uintToStr(uint8(series) + 1));
+            metadata = strConcat(metadata, uintToStr(uint8(series)));
         }
 
+        // Description: Gender
         metadata = strConcat(metadata, (gender == Gender.MALE) ? ' Male ' : ' Female ');
-        metadata = strConcat(metadata, (wave == Wave.PRIME) ? 'Prime. ' : 'Replicant. ');
+
+        // Description: Founder, Exclusive, Prime, or Replicant
+        if (wave == Wave.PRIME && series == Series.PROMO) {
+            metadata = strConcat(metadata, (serial <100) ? 'Founder. ' : 'Exclusive. ');
+        } else {
+            metadata = strConcat(metadata, (wave == Wave.PRIME) ? 'Prime. ' : 'Replicant. ');
+        }
         metadata = strConcat(metadata, attribution);
         metadata = strConcat(metadata, '",\n');
 
@@ -248,6 +256,13 @@ contract AvastarMetadata is AvastarBase, AvastarTypes, AccessControl {
         metadata = strConcat(metadata, (gender == Gender.MALE) ? 'male"' : 'female"');
         metadata = strConcat(metadata, '\n    },\n');
 
+        // Wave
+        metadata = strConcat(metadata, '    {\n');
+        metadata = strConcat(metadata, '      "trait_type": "wave",\n');
+        metadata = strConcat(metadata, '      "value": "');
+        metadata = strConcat(metadata, (wave == Wave.PRIME) ? 'prime"' : 'replicant"');
+        metadata = strConcat(metadata, '\n    },\n');
+
         // Generation
         metadata = strConcat(metadata, '    {\n');
         metadata = strConcat(metadata, '      "display_type": "number",\n');
@@ -262,7 +277,7 @@ contract AvastarMetadata is AvastarBase, AvastarTypes, AccessControl {
             metadata = strConcat(metadata, '      "display_type": "number",\n');
             metadata = strConcat(metadata, '      "trait_type": "series",\n');
             metadata = strConcat(metadata, '      "value": ');
-            metadata = strConcat(metadata, uintToStr(uint8(series) + 1));
+            metadata = strConcat(metadata, uintToStr(uint8(series)));
             metadata = strConcat(metadata, '\n    },\n');
         }
 

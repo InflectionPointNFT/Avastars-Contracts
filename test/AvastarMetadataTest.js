@@ -45,13 +45,13 @@ contract('AvastarMetadata', function(accounts) {
     const prime1 = {
         "generation" : constants.GENERATION.ONE,
         "gender"     : constants.GENDER.MALE,
-        "series"     : constants.SERIES.ONE,
+        "series"     : constants.SERIES.PROMO,
         "traits"     : traits1,
         "ranking"    : 33
     };
 
     const prime2 = {
-        "generation" : constants.GENERATION.ONE,
+        "generation" : constants.GENERATION.TWO,
         "gender"     : constants.GENDER.FEMALE,
         "series"     : constants.SERIES.TWO,
         "traits"     : traits2,
@@ -61,20 +61,24 @@ contract('AvastarMetadata', function(accounts) {
     const prime3 = {
         "generation" : constants.GENERATION.ONE,
         "gender"     : constants.GENDER.MALE,
-        "series"     : constants.SERIES.ONE,
+        "series"     : constants.SERIES.PROMO,
         "traits"     : traits3,
         "ranking"    : 68
     };
 
     const prime3Meta = {
         "name": "Avastar #2",
-        "description": "Generation 1 Series 1 Male Prime. Original art by: Marmota vs Milky (https://www.twine.fm/marmotavsmilky)",
+        "description": "Generation 1 Male Founder. Original art by: Marmota vs Milky (https://www.twine.fm/marmotavsmilky)",
         "external_url": "https://test.avastars.io/avastar/2",
         "image": "https://test.avastars.io/media/2",
         "attributes": [
             {
                 "trait_type": "gender",
                 "value": "male"
+            },
+            {
+                "trait_type": "wave",
+                "value": "prime"
             },
             {
                 "display_type": "number",
@@ -84,12 +88,12 @@ contract('AvastarMetadata', function(accounts) {
             {
                 "display_type": "number",
                 "trait_type": "series",
-                "value": 1
+                "value": 0
             },
             {
                 "display_type": "number",
                 "trait_type": "serial",
-                "value": 2
+                "value": 1
             },
             {
                 "display_type": "number",
@@ -156,6 +160,10 @@ contract('AvastarMetadata', function(accounts) {
             {
                 "trait_type": "gender",
                 "value": "male"
+            },
+            {
+                "trait_type": "wave",
+                "value": "replicant"
             },
             {
                 "display_type": "number",

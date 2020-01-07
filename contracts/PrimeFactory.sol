@@ -9,6 +9,13 @@ import "./AvastarFactory.sol";
 contract PrimeFactory is AvastarFactory {
 
     /**
+     * @notice Maximum number of primes that can be minted in
+     * any given series for any generation.
+     */
+    uint16 public constant MAX_PRIMES_PER_SERIES = 5000;
+    uint16 public constant MAX_PROMO_PRIMES_PER_GENERATION = 200;
+
+    /**
      * @notice Event emitted upon the creation of an Avastar Prime
      * @param id the token ID of the newly minted Prime
      * @param serial the serial of the Prime
@@ -144,6 +151,11 @@ contract PrimeFactory is AvastarFactory {
         require(isHashUsedByGeneration[uint8(_generation)][_traits] == false);
         require(_gender > Gender.ANY);
         require(_ranking >= 0 && _ranking <= 100);
+        if (_series == Series.PROMO) {
+            require(countByGenerationAndSeries[uint8(_generation)][uint8(_series)] < MAX_PROMO_PRIMES_PER_GENERATION);
+        } else {
+            require(countByGenerationAndSeries[uint8(_generation)][uint8(_series)] < MAX_PRIMES_PER_SERIES);
+        }
 
         // Get Prime Serial and mint Avastar, getting tokenId
         serial = primesByGeneration[uint8(_generation)].length;
@@ -153,6 +165,9 @@ contract PrimeFactory is AvastarFactory {
         primesByGeneration[uint8(_generation)].push(
             Prime(tokenId, serial, _traits, new bool[](32), _generation, _series, _gender, _ranking)
         );
+
+        // Increment count for given Generation/Series
+        countByGenerationAndSeries[uint8(_generation)][uint8(_series)].add(1);
 
         // Send the NewPrime event
         emit NewPrime(tokenId, serial, _generation, _series, _gender, _traits);

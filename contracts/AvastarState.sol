@@ -32,13 +32,13 @@ contract AvastarState is AvastarBase, AvastarTypes, AccessControl, ERC721Full {
 
     /**
      * @notice  Retrieve Primes by Generation
-     * Prime[] primes = primesByGeneration[Prime(_generation)]
+     * Prime[] primes = primesByGeneration[uint8(_generation)]
      */
     mapping(uint8 => Prime[]) internal primesByGeneration;
 
     /**
      * @notice Retrieve Replicants by Generation
-     * Replicant[] replicants = replicantsByGeneration[Replicant(_generation)]
+     * Replicant[] replicants = replicantsByGeneration[uint8(_generation)]
      */
     mapping(uint8 => Replicant[]) internal replicantsByGeneration;
 
@@ -66,6 +66,12 @@ contract AvastarState is AvastarBase, AvastarTypes, AccessControl, ERC721Full {
      * Since Token IDs start at 0 and empty mappings for uint256 return 0, check isHashUsedByGeneration first
      */
     mapping(uint8 => mapping(uint256 => uint256)) internal tokenIdByGenerationAndHash;
+
+    /**
+     * @notice  Retrieve count of Primes and Promos by Generation and Series
+     * uint16 count = countByGenerationAndSeries[uint8(_generation)][uint8(_series)]
+     */
+    mapping(uint8 =>  mapping(uint8 => uint16)) internal countByGenerationAndSeries;
 
     /**
      * @notice Retrieve the Token ID for an Avastar by a given Generation, Wave, and Serial
