@@ -60,6 +60,15 @@ contract('AvastarFactory', function(accounts) {
 
     });
 
+    it("should not mint an Avastar if the given Generation is invalid / out of range", async function() {
+
+        // Attempt to Mint Avastar with out of range Generation
+        await exceptions.catchInvalidOpcode(
+            contract._mintAvastar(tokenOwner, avastar.serial, avastar.traits, 12, avastar.wave)
+        );
+
+    });
+
 
     it("should not mint an Avastar if the given Prime serial is incorrect for the Generation", async function() {
 
