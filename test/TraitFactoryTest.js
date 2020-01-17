@@ -413,24 +413,12 @@ contract('TraitFactory', function(accounts) {
         }, 'AttributionSet event should be emitted with correct info');
     });
 
-    it("should allow anyone to retrieve the artist attribution for a generation", async function() {
-        const {generation, artist, infoURI} = attribution;
-
-        // Get the attribution
-        let result = await contract.getAttributionByGeneration(generation, {from: nonSysAdmin});
-
-        // Test results
-        assert.equal(result[0], artist, "Artist field wasn't correct");
-        assert.equal(result[1], infoURI, "InfoURI field wasn't correct");
-
-    });
-
     it("should allow anyone to retrieve the combined artist attribution for a generation", async function() {
         const {generation, artist, infoURI} = attribution;
         const expected = `Original art by: ${artist} (${infoURI})`;
 
         // Get the attribution
-        let result = await contract.getCombinedAttributionByGeneration(generation, {from: nonSysAdmin});
+        let result = await contract.getAttributionByGeneration(generation, {from: nonSysAdmin});
 
         // Test results
         assert.equal(result, expected, "Combined attribution wasn't correct");

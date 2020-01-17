@@ -5,6 +5,16 @@ View Source: [contracts/PrimeFactory.sol](https://github.com/Dapp-Wizards/Avasta
 **PrimeFactory** **↗ Extends: [AvastarFactory](contracts/AvastarFactory.md)**
 **↘ Derived Contracts: [ReplicantFactory](contracts/ReplicantFactory.md)**
 
+## Contract Members
+**Constants & Variables**
+
+```solidity
+// public members
+uint16 public constant MAX_PRIMES_PER_SERIES;
+uint16 public constant MAX_PROMO_PRIMES_PER_GENERATION;
+
+```
+
 ## **Events**
 
 - [NewPrime](#newprime)

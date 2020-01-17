@@ -22,6 +22,14 @@ contract('AvastarTeleporter', function(accounts) {
     const id1 = new BN(0,10);
     const id2 = new BN(1,10);
     const id3 = new BN(2,10);
+    const invalidID = new BN(50,10);
+
+    const usedTraits = [
+        true, false, true, true, false, true, false, false,
+        false, false, false, false, false, false, false, false,
+        false, false, false, false, false, false, false, false,
+        false, false, false, false, false, false, false, false,
+    ];
 
     const attribution = {
         "generation": constants.GENERATION.ONE,
@@ -148,7 +156,7 @@ contract('AvastarTeleporter', function(accounts) {
         );
 
         // Set the teleporter's reference to the metadata contract
-        await teleporter.setMetadataContract(metadataContract.address);
+        await teleporter.setMetadataContractAddress(metadataContract.address);
 
         // Add the minter
         await teleporter.addMinter(minter);
@@ -175,6 +183,18 @@ contract('AvastarTeleporter', function(accounts) {
 
     });
 
+    it("should allow anyone to retrieve the AvastarMetadata contract address", async function() {
+
+        const expected = metadataContract.address;
+
+        // Get the Avastar info
+        const address = await teleporter.getMetadataContractAddress({from: stranger});
+
+        // Test results
+        assert.equal(address, expected, "Address wasn't correct");
+
+    });
+
     it("should not allow system administrator to approve trait access for another user's primes", async function() {
 
         // Try to approve trait access
@@ -187,9 +207,10 @@ contract('AvastarTeleporter', function(accounts) {
     it("should not allow minter to approve trait access for another user's primes", async function() {
 
         // Try to approve trait access
-        await exceptions.catchRevert(
-            teleporter.approveTraitAccess(minter, [id1, id2, id3], {from: minter})
-        )
+        await truffleAssert.reverts(
+            teleporter.approveTraitAccess(minter, [id1, id2, id3], {from: minter}),
+            "Must be token owner"
+        );
 
     });
 
@@ -197,10 +218,10 @@ contract('AvastarTeleporter', function(accounts) {
 
         const requestFlags = [false, true];
 
-        // Try to use traits
-        await exceptions.catchRevert(
-            teleporter.useTraits(id1, requestFlags, {from: stranger})
-        )
+        await truffleAssert.reverts(
+            teleporter.useTraits(id1, requestFlags, {from: stranger}),
+            "Must be token owner or approved handler"
+        );
 
     });
 
@@ -224,13 +245,8 @@ contract('AvastarTeleporter', function(accounts) {
 
     it("should allow a handler to use traits for primes they are approved for", async function() {
 
-        const requestFlags = [true];
-        const expected = JSON.stringify([
-            true, false, false, false, false, false, false, false,
-            false, false, false, false, false, false, false, false,
-            false, false, false, false, false, false, false, false,
-            false, false, false, false, false, false, false, false,
-        ]);
+        const requestFlags = usedTraits;
+        const expected = JSON.stringify(usedTraits);
 
         // Try to use traits
         let result = await teleporter.useTraits(id1, requestFlags, {from: handler});
@@ -266,9 +282,20 @@ contract('AvastarTeleporter', function(accounts) {
         const requestFlags = [false];
 
         // Set previously used trait to unused
-        await exceptions.catchRevert(
-            teleporter.useTraits(id1, requestFlags, {from: handler})
-        )
+        await truffleAssert.reverts(
+            teleporter.useTraits(id1, requestFlags, {from: handler}),
+            "No reusable traits specified"
+        );
+
+    });
+
+    it("should allow anyone to see a prime's replication flags reflect authorized usage", async function() {
+
+        const expected = JSON.stringify(usedTraits);
+        const result = await teleporter.getPrimeReplicationByTokenId(id1, {from: stranger});
+
+        assert.ok(result[0].eq(id1), "Token ID field wasn't correct");
+        assert.ok(JSON.stringify(result[1]) === expected, "Replication flags weren't correct");
 
     });
 
@@ -287,65 +314,13 @@ contract('AvastarTeleporter', function(accounts) {
 
     it("should allow anyone to retrieve the wave for a given Avastar by Token ID", async function() {
 
+        const expected = new BN(constants.WAVE.PRIME, 10);
+
         // Get the Avastar info
         const wave = await teleporter.getAvastarWaveByTokenId(id3, {from: stranger});
 
         // Test results
-        assert.equal(wave.toNumber(), constants.WAVE.PRIME, "Wave field wasn't correct");
-
-    });
-
-    it("should allow anyone to retrieve the tokenURI for a given Avastar by Token ID", async function() {
-
-        // Create expected value
-        const expected = `${constants.TOKEN_URI_BASE.DEV}${id3.toNumber()}`;
-
-        // Get the Avastar tokenURI
-        const tokenURI = await teleporter.tokenURI(id3, {from: stranger});
-
-        // Test results
-        assert.equal(tokenURI, expected, "tokenURI wasn't correct");
-
-    });
-
-    it("should allow anyone to retrieve the mediaURI for a given Avastar by Token ID", async function() {
-
-        // Create expected value
-        const expected = `${constants.MEDIA_URI_BASE.DEV}${id3.toNumber()}`;
-
-        // Get the Avastar tokenURI
-        const mediaURI = await teleporter.mediaURI(id3, {from: stranger});
-
-        // Test results
-        assert.equal(mediaURI, expected, "mediaURI wasn't correct");
-
-    });
-
-    it("should allow anyone to retrieve the viewURI for a given Avastar by Token ID", async function() {
-
-        // Create expected value
-        const expected = `${constants.VIEW_URI_BASE.DEV}${id3.toNumber()}`;
-
-        // Get the Avastar tokenURI
-        const viewURI = await teleporter.viewURI(id3, {from: stranger});
-
-        // Test results
-        assert.equal(viewURI, expected, "viewURI wasn't correct");
-
-    });
-
-    it("should allow anyone to get the metadata for an avastar", async function() {
-
-        // Get the metadata
-        let result = await teleporter.getAvastarMetadata(id3, {from: stranger});
-
-        // Parse into an object
-        let meta = JSON.parse(result);
-
-        // Test results
-        assert.equal(meta.description, prime3Meta.description, "description field wasn't correct");
-        assert.equal(meta.external_url,  prime3Meta.external_url, "external_url field wasn't correct");
-        assert.equal(meta.image,  prime3Meta.image, "image field wasn't correct");
+        assert.ok(wave.eq(expected), "Wave field wasn't correct");
 
     });
 
@@ -363,6 +338,28 @@ contract('AvastarTeleporter', function(accounts) {
 
         // Make certain the assembled art is as expected
         assert.equal(art, expected, "Assembled art wasn't correct");
+
+    });
+
+    it("should allow anyone to retrieve the tokenURI for a given Avastar by Token ID", async function() {
+
+        // Create expected value
+        const expected = `${constants.TOKEN_URI_BASE.DEV}${id3.toNumber()}`;
+
+        // Get the Avastar tokenURI
+        const tokenURI = await teleporter.tokenURI(id3, {from: stranger});
+
+        // Test results
+        assert.equal(tokenURI, expected, "tokenURI wasn't correct");
+
+    });
+
+    it("should revert when trying to retrieve the tokenURI for an invalid Token ID", async function() {
+
+        // Try to get tokenURI for invalid token ID
+        await exceptions.catchRevert(
+            metadataContract.tokenURI(invalidID, {from: stranger})
+        );
 
     });
 

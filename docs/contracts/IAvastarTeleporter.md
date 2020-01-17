@@ -17,10 +17,11 @@ Used by AvastarMinter contract to interact with subset of AvastarTeleporter cont
 - [getTraitInfoById](#gettraitinfobyid)
 - [getTraitNameById](#gettraitnamebyid)
 - [getTraitIdByGenerationGeneAndVariation](#gettraitidbygenerationgeneandvariation)
-- [getCombinedAttributionByGeneration](#getcombinedattributionbygeneration)
+- [getAttributionByGeneration](#getattributionbygeneration)
 - [mintPrime](#mintprime)
 - [mintReplicant](#mintreplicant)
 - [ownerOf](#ownerof)
+- [totalSupply](#totalsupply)
 
 ### isAvastarTeleporter
 
@@ -241,14 +242,14 @@ returns (uint256 traitId)
 | ------------- |------------- | -----|
 | traitId | uint256 | the ID of the specified trait | 
 
-### getCombinedAttributionByGeneration
+### getAttributionByGeneration
 
 Get the artist Attribution for a given Generation, combined into a single string.
 
 ```solidity
-function getCombinedAttributionByGeneration(enum AvastarTypes.Generation _generation)
+function getAttributionByGeneration(enum AvastarTypes.Generation _generation)
 external view
-returns (string combined)
+returns (string attribution)
 ```
 
 **Arguments**
@@ -261,7 +262,7 @@ returns (string combined)
 
 | Name        | Type           | Description  |
 | ------------- |------------- | -----|
-| combined | string | attribution a single string with the artist and artist info URI | 
+| attribution | string | a single string with the artist and artist info URI | 
 
 ### mintPrime
 
@@ -354,4 +355,20 @@ returns (address owner)
 | Name        | Type           | Description  |
 | ------------- |------------- | -----|
 | owner | address | the owner of the given token ID | 
+
+### totalSupply
+
+Gets the total amount of tokens stored by the contract.
+
+```solidity
+function totalSupply()
+public view
+returns (uint256 count)
+```
+
+**Returns**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| count | uint256 | total number of tokens | 
 

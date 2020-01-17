@@ -9,12 +9,12 @@ import "./AccessControl.sol";
  * @title Avastar Metadata Generator
  * @author Cliff Hall
  * @notice Generate Avastar metadata from on-chain data.
- * Don't call this contract directly. It is used by `AvastarTeleporter` to generate
- * the human and machine readable metadata for a given Avastar token Id. Since this
- * functionality is not built into the `AvastarTeleporter` contract, it can be upgraded
- * in that contract by setting a new address for this contract.
+ * Refers to the `AvastarTeleporter` for raw data to generate
+ * the human and machine readable metadata for a given Avastar token Id.
  */
 contract AvastarMetadata is AvastarBase, AvastarTypes, AccessControl {
+
+    string public constant INVALID_TOKEN_ID = "Invalid Token ID";
 
     /**
      * @notice Event emitted when TokenURI base changes
@@ -150,6 +150,7 @@ contract AvastarMetadata is AvastarBase, AvastarTypes, AccessControl {
     public view
     returns (string memory uri)
     {
+        require(_tokenId < teleporterContract.totalSupply(), INVALID_TOKEN_ID);
         uri = strConcat(viewUriBase, uintToStr(_tokenId));
     }
 
@@ -162,6 +163,7 @@ contract AvastarMetadata is AvastarBase, AvastarTypes, AccessControl {
     public view
     returns (string memory uri)
     {
+        require(_tokenId < teleporterContract.totalSupply(), INVALID_TOKEN_ID);
         uri = strConcat(mediaUriBase, uintToStr(_tokenId));
     }
 
@@ -174,6 +176,7 @@ contract AvastarMetadata is AvastarBase, AvastarTypes, AccessControl {
     public view
     returns (string memory uri)
     {
+        require(_tokenId < teleporterContract.totalSupply(), INVALID_TOKEN_ID);
         uri = strConcat(tokenUriBase, uintToStr(_tokenId));
     }
 
@@ -186,7 +189,8 @@ contract AvastarMetadata is AvastarBase, AvastarTypes, AccessControl {
     external view
     returns (string memory metadata) {
 
-        // Combined Artist, Avastar, Prime, and Replicant props
+        require(_tokenId < teleporterContract.totalSupply(), INVALID_TOKEN_ID);
+
         uint256 id;
         uint256 serial;
         uint256 traits;
@@ -208,7 +212,7 @@ contract AvastarMetadata is AvastarBase, AvastarTypes, AccessControl {
         }
 
         // Get artist attribution
-        attribution = teleporterContract.getCombinedAttributionByGeneration(generation);
+        attribution = teleporterContract.getAttributionByGeneration(generation);
 
         // Name
         metadata = strConcat('{\n  "name": "Avastar #', uintToStr(uint8(id)));

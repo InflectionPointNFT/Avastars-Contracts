@@ -102,6 +102,7 @@ contract TraitFactory is AvastarState {
         require(_traitId < traits.length);
         name = traits[_traitId].name;
     }
+
     /**
      * @notice Retrieve a Trait's art by ID.
      * Only invokable by a system administrator.
@@ -117,40 +118,21 @@ contract TraitFactory is AvastarState {
     }
 
     /**
-     * @notice Get the artist Attribution for a given Generation.
+     * @notice Get the artist Attribution info for a given Generation, combined into a single string.
      * @param _generation the generation to retrieve artist attribution for
-     * @return artist the artist who created the art for the generation
-     * @return infoURI the URI for the artist's website / portfolio
+     * @return attrib a single string with the artist and artist info URI
      */
     function getAttributionByGeneration(Generation _generation)
     external view
     returns (
-        string memory artist,
-        string memory infoURI
+        string memory attribution
     ){
-        Attribution memory attribution = attributionByGeneration[uint8(_generation)];
-        return (
-            attribution.artist,
-            attribution.infoURI
-        );
-    }
-
-    /**
-     * @notice Get the artist Attribution for a given Generation, combined into a single string.
-     * @param _generation the generation to retrieve artist attribution for
-     * @return attribution a single string with the artist and artist info URI
-     */
-    function getCombinedAttributionByGeneration(Generation _generation)
-    external view
-    returns (
-        string memory combined
-    ){
-        Attribution memory attribution = attributionByGeneration[uint8(_generation)];
-        combined = strConcat(combined, 'Original art by: ');
-        combined = strConcat(combined, attribution.artist);
-        combined = strConcat(combined, ' (');
-        combined = strConcat(combined, attribution.infoURI);
-        combined = strConcat(combined, ')');
+        Attribution memory attrib = attributionByGeneration[uint8(_generation)];
+        attribution = strConcat(attribution, 'Original art by: ');
+        attribution = strConcat(attribution, attrib.artist);
+        attribution = strConcat(attribution, ' (');
+        attribution = strConcat(attribution, attrib.infoURI);
+        attribution = strConcat(attribution, ')');
     }
 
     /**

@@ -23,7 +23,7 @@ module.exports = deployer => {
         await avastarMetadata.unpause();
 
         // Prepare the Avastar Teleporter contract for use
-        await avastarTeleporter.setMetadataContract(avastarMetadata.address);
+        await avastarTeleporter.setMetadataContractAddress(avastarMetadata.address);
         await avastarTeleporter.unpause();
 
         // Prepare the Avastar Prime Minter contract for use
