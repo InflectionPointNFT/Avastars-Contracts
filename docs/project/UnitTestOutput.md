@@ -74,6 +74,9 @@
     ✓ should reflect change of generation and series in newly minted primes (633916 gas)
 
   Contract: AvastarTeleporter
+    ✓ should not allow changing of attribution once avastars have been produced for a given generation (27178 gas)
+    ✓ should not allow adding of traits once avastars have been produced for a given generation (27567 gas)
+    ✓ should not allow extending of trait art once avastars have been produced for a given generation (25086 gas)
     ✓ should allow anyone to retrieve the AvastarMetadata contract address
     ✓ should not allow system administrator to approve trait access for another user's primes (24903 gas)
     ✓ should not allow minter to approve trait access for another user's primes (24903 gas)
@@ -114,26 +117,25 @@
     ✓ should allow anyone to retrieve a replicant by token id
 
   Contract: TraitFactory
-    ✓ should allow sysadmin to create a trait (2442123 gas)
+    ✓ should allow sysadmin to create a trait (2442737 gas)
     ✓ should allow anyone to retrieve a trait's info
     ✓ should allow sysadmin to retrieve a trait's art
-    ✓ should not allow non-sysadmins to create traits (181450 gas)
+    ✓ should not allow non-sysadmins to create traits (181414 gas)
     ✓ should not allow non-sysadmins to retrieve a trait's art
-    ✓ should allow sysadmin to create and retrieve another trait (1947262 gas)
-    ✓ should allow sysadmin to create a trait and extend its art (39313624 gas)
+    ✓ should allow sysadmin to create and retrieve another trait (1947876 gas)
+    ✓ should allow sysadmin to create a trait and extend its art (39323102 gas)
     ✓ should not allow sysadmin to create trait with bad value for generation (6721975 gas)
     ✓ should not allow sysadmin to create trait with bad value for gender (6721975 gas)
     ✓ should not allow sysadmin to create trait with bad value for gene (6721975 gas)
-    ✓ should not allow sysadmin to create trait with empty array for series (180733 gas)
+    ✓ should not allow sysadmin to create trait with empty array for series (181380 gas)
     ✓ should not allow sysadmin to create trait with bad value for series (6721975 gas)
-    ✓ should not allow sysadmin to create trait with bad value for variation (181113 gas)
-    ✓ should not allow sysadmin to create traits when contract is paused (238941 gas)
+    ✓ should not allow sysadmin to create traits when contract is paused (238905 gas)
     ✓ should allow anyone to retrieve a trait id by generation, gene, and variation
     ✓ should allow descendent contracts to assemble artwork by generation and trait hash
-    ✓ should allow the sysadmin to set the artist attribution for a generation (117041 gas)
+    ✓ should allow the sysadmin to set the artist attribution for a generation (117704 gas)
     ✓ should allow anyone to retrieve the combined artist attribution for a generation
 
-  112 passing (2m)
+  114 passing (2m)
 
 ```
 
@@ -142,7 +144,7 @@
 ·------------------------------------------------------|---------------------------|-------------|----------------------------·
 |         Solc version: 0.5.12+commit.7709ece9         ·  Optimizer enabled: true  ·  Runs: 200  ·  Block limit: 8000000 gas  │
 ·······················································|···························|·············|·····························
-|  Methods                                             ·               1 gwei/gas                ·       163.56 usd/eth       │
+|  Methods                                             ·               1 gwei/gas                ·       172.88 usd/eth       │
 ··························|····························|·············|·············|·············|··············|··············
 |  Contract               ·  Method                    ·  Min        ·  Max        ·  Avg        ·  # calls     ·  usd (avg)  │
 ··························|····························|·············|·············|·············|··············|··············
@@ -156,7 +158,7 @@
 ··························|····························|·············|·············|·············|··············|··············
 |  AccessControl          ·  unpause                   ·          -  ·          -  ·      14127  ·           5  ·       0.00  │
 ··························|····························|·············|·············|·············|··············|··············
-|  AccessControl          ·  upgradeContract           ·          -  ·          -  ·      30186  ·           2  ·       0.00  │
+|  AccessControl          ·  upgradeContract           ·          -  ·          -  ·      30186  ·           2  ·       0.01  │
 ··························|····························|·············|·············|·············|··············|··············
 |  AvastarFactoryWrapper  ·  _mintAvastar              ·          -  ·          -  ·     221760  ·           2  ·       0.04  │
 ··························|····························|·············|·············|·············|··············|··············
@@ -180,7 +182,7 @@
 ··························|····························|·············|·············|·············|··············|··············
 |  AvastarPrimeMinter     ·  setCurrentGeneration      ·          -  ·          -  ·      36703  ·           1  ·       0.01  │
 ··························|····························|·············|·············|·············|··············|··············
-|  AvastarPrimeMinter     ·  setCurrentSeries          ·          -  ·          -  ·      29186  ·           1  ·       0.00  │
+|  AvastarPrimeMinter     ·  setCurrentSeries          ·          -  ·          -  ·      29186  ·           1  ·       0.01  │
 ··························|····························|·············|·············|·············|··············|··············
 |  AvastarPrimeMinter     ·  unpause                   ·          -  ·          -  ·      14138  ·           4  ·       0.00  │
 ··························|····························|·············|·············|·············|··············|··············
@@ -190,7 +192,9 @@
 ··························|····························|·············|·············|·············|··············|··············
 |  AvastarTeleporter      ·  approveTraitAccess        ·      59918  ·      89918  ·      79918  ·           3  ·       0.01  │
 ··························|····························|·············|·············|·············|··············|··············
-|  AvastarTeleporter      ·  setAttribution            ·      90577  ·     117041  ·     108220  ·           3  ·       0.02  │
+|  AvastarTeleporter      ·  mintPrime                 ·          -  ·          -  ·     583417  ·           1  ·       0.10  │
+··························|····························|·············|·············|·············|··············|··············
+|  AvastarTeleporter      ·  mintReplicant             ·          -  ·          -  ·     382498  ·           1  ·       0.07  │
 ··························|····························|·············|·············|·············|··············|··············
 |  AvastarTeleporter      ·  unpause                   ·          -  ·          -  ·      14183  ·           1  ·       0.00  │
 ··························|····························|·············|·············|·············|··············|··············
@@ -198,19 +202,19 @@
 ··························|····························|·············|·············|·············|··············|··············
 |  PrimeFactory           ·  addMinter                 ·          -  ·          -  ·      45250  ·           1  ·       0.01  │
 ··························|····························|·············|·············|·············|··············|··············
-|  PrimeFactory           ·  mintPrime                 ·     508055  ·     583375  ·     568273  ·          10  ·       0.09  │
+|  PrimeFactory           ·  mintPrime                 ·     508055  ·     583375  ·     568273  ·          10  ·       0.10  │
 ··························|····························|·············|·············|·············|··············|··············
-|  ReplicantFactory       ·  mintPrime                 ·          -  ·          -  ·     508375  ·           1  ·       0.08  │
+|  ReplicantFactory       ·  mintPrime                 ·          -  ·          -  ·     508375  ·           1  ·       0.09  │
 ··························|····························|·············|·············|·············|··············|··············
-|  ReplicantFactory       ·  mintReplicant             ·     382005  ·     397325  ·     385552  ·           9  ·       0.06  │
+|  ReplicantFactory       ·  mintReplicant             ·     382005  ·     397325  ·     385552  ·           9  ·       0.07  │
 ··························|····························|·············|·············|·············|··············|··············
-|  TraitFactoryWrapper    ·  createTrait               ·    1947262  ·    6639624  ·    2900377  ·           7  ·       0.47  │
+|  TraitFactoryWrapper    ·  createTrait               ·    1947876  ·    6640238  ·    2900991  ·           7  ·       0.50  │
 ··························|····························|·············|·············|·············|··············|··············
-|  TraitFactoryWrapper    ·  extendTraitArt            ·    3010915  ·    5159785  ·    4082132  ·           9  ·       0.67  │
+|  TraitFactoryWrapper    ·  extendTraitArt            ·    3012023  ·    5160893  ·    4083240  ·           9  ·       0.71  │
 ··························|····························|·············|·············|·············|··············|··············
 |  TraitFactoryWrapper    ·  pause                     ·          -  ·          -  ·      43115  ·           1  ·       0.01  │
 ··························|····························|·············|·············|·············|··············|··············
-|  TraitFactoryWrapper    ·  setAttribution            ·          -  ·          -  ·     117041  ·           2  ·       0.02  │
+|  TraitFactoryWrapper    ·  setAttribution            ·          -  ·          -  ·     117704  ·           2  ·       0.02  │
 ··························|····························|·············|·············|·············|··············|··············
 |  TraitFactoryWrapper    ·  unpause                   ·          -  ·          -  ·      14150  ·           5  ·       0.00  │
 ··························|····························|·············|·············|·············|··············|··············
@@ -218,11 +222,11 @@
 ·······················································|·············|·············|·············|··············|··············
 |  AvastarBaseWrapper                                  ·          -  ·          -  ·     313602  ·       3.9 %  ·       0.05  │
 ·······················································|·············|·············|·············|··············|··············
-|  AvastarMetadata                                     ·          -  ·          -  ·    2965329  ·      37.1 %  ·       0.49  │
+|  AvastarMetadata                                     ·          -  ·          -  ·    2966133  ·      37.1 %  ·       0.51  │
 ·······················································|·············|·············|·············|··············|··············
-|  AvastarPrimeMinter                                  ·          -  ·          -  ·    1231986  ·      15.4 %  ·       0.20  │
+|  AvastarPrimeMinter                                  ·          -  ·          -  ·    1231986  ·      15.4 %  ·       0.21  │
 ·······················································|·············|·············|·············|··············|··············
-|  AvastarTeleporter                                   ·          -  ·          -  ·    6608877  ·      82.6 %  ·       1.08  │
+|  AvastarTeleporter                                   ·          -  ·          -  ·    6683153  ·      83.5 %  ·       1.16  │
 ·------------------------------------------------------|-------------|-------------|-------------|--------------|-------------·
 ```
 <!-- tabs:end -->

@@ -255,15 +255,6 @@ contract('AvastarMetadata', function(accounts) {
         await teleporter.unpause({from: sysAdmin});
         await metadataContract.unpause({from: sysAdmin});
 
-        // Mint 3 primes
-        const mint = prime => teleporter.mintPrime(tokenOwner, prime.traits, prime.generation, prime.series, prime.gender, prime.ranking, {from: minter});
-        for (const prime of [prime1, prime2, prime3]) {
-            await mint(prime);
-        }
-
-        // Mint 1 replicant
-        await teleporter.mintReplicant(tokenOwner, replicant1.traits, replicant1.generation, replicant1.gender, replicant1.ranking, {from: minter});
-
         // Create prime3's full trait set
         const create = trait =>  teleporter.createTrait(trait.generation, trait.series, trait.gender, trait.gene, trait.rarity, trait.variation, trait.name, trait.svg, {from: sysAdmin, gas: constants.MAX_GAS});
         const replicate = trait =>  teleporter.createTrait(replicant1.generation, trait.series, trait.gender, trait.gene, trait.rarity, trait.variation, trait.name, trait.svg, {from: sysAdmin, gas: constants.MAX_GAS});
@@ -275,6 +266,16 @@ contract('AvastarMetadata', function(accounts) {
         // Set artist attribution
         await teleporter.setAttribution(attribution1.generation, attribution1.artist, attribution1.infoURI, {from: sysAdmin});
         await teleporter.setAttribution(attribution2.generation, attribution2.artist, attribution2.infoURI, {from: sysAdmin});
+
+        // Mint 3 primes
+        const mint = prime => teleporter.mintPrime(tokenOwner, prime.traits, prime.generation, prime.series, prime.gender, prime.ranking, {from: minter});
+        for (const prime of [prime1, prime2, prime3]) {
+            await mint(prime);
+        }
+
+        // Mint 1 replicant
+        await teleporter.mintReplicant(tokenOwner, replicant1.traits, replicant1.generation, replicant1.gender, replicant1.ranking, {from: minter});
+
     });
 
     it("should not allow non-sysadmins to change the token URI base regardless of contract pause state", async function() {

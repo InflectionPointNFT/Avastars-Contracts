@@ -339,17 +339,6 @@ contract('TraitFactory', function(accounts) {
 
     });
 
-    it("should not allow sysadmin to create trait with bad value for variation", async function() {
-
-        const {generation, gender, gene, name, series, svg, variation, rarity} = badVariation;
-
-        // Try to let sysadmin create a trait with a bad value for variation
-        await exceptions.catchRevert(
-            contract.createTrait(generation, series, gender, gene, rarity, variation, name, svg, {from: sysAdmin})
-        );
-
-    });
-
     it("should not allow sysadmin to create traits when contract is paused", async function() {
 
         const {generation, gender, gene, name, series, svg, variation, rarity} = trait2;

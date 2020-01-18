@@ -165,12 +165,6 @@ contract('AvastarTeleporter', function(accounts) {
         await teleporter.unpause({from: sysAdmin});
         await metadataContract.unpause({from: sysAdmin});
 
-        // Mint 3 primes
-        const mint = prime => teleporter.mintPrime(tokenOwner, prime.traits, prime.generation, prime.series, prime.gender, prime.ranking, {from: minter});
-        for (const prime of [prime1, prime2, prime3]) {
-            await mint(prime);
-        }
-
         // Create prime3's full trait set
         const create = trait =>  teleporter.createTrait(trait.generation, trait.series, trait.gender, trait.gene, trait.rarity, trait.variation, trait.name, trait.svg, {from: sysAdmin, gas: constants.MAX_GAS});
 
@@ -180,6 +174,41 @@ contract('AvastarTeleporter', function(accounts) {
 
         // Set artist attribution
         await teleporter.setAttribution(attribution.generation, attribution.artist, attribution.infoURI, {from: sysAdmin});
+
+        // Mint 3 primes
+        const mint = prime => teleporter.mintPrime(tokenOwner, prime.traits, prime.generation, prime.series, prime.gender, prime.ranking, {from: minter});
+        for (const prime of [prime1, prime2, prime3]) {
+            await mint(prime);
+        }
+
+    });
+
+    it("should not allow changing of attribution once avastars have been produced for a given generation", async function() {
+
+        // Try to set attribution
+        await exceptions.catchRevert(
+            teleporter.setAttribution(attribution.generation, attribution.artist, attribution.infoURI, {from: sysAdmin})
+        )
+
+    });
+
+    it("should not allow adding of traits once avastars have been produced for a given generation", async function() {
+
+        // Try to add trait
+        await exceptions.catchRevert(
+            teleporter.createTrait(constants.GENERATION.ONE, [constants.SERIES.ONE], constants.GENDER.MALE, constants.GENE.NOSE, constants.RARITY.RARE, 1, "test trait", "<path fill='none/>", {from: sysAdmin, gas: constants.MAX_GAS})
+        )
+
+    });
+
+    it("should not allow extending of trait art once avastars have been produced for a given generation", async function() {
+
+        const id = new BN(0, 10);
+
+        // Try to extend trait
+        await exceptions.catchRevert(
+            teleporter.extendTraitArt(id, "<path fill='none'/>", {from: sysAdmin, gas: constants.MAX_GAS})
+        )
 
     });
 
