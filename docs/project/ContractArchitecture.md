@@ -6,7 +6,7 @@ Ultimately, there will be four deployed contracts:
 * AvastarTeleporter
   - The main contract, maintains traits, mints Avastar Primes and Replicants, manages Prime replication flags and their handlers. The ERC-721 implementer.
 * AvastarMetadata 
-  - The upgradable metadata contract, bidirectionally tied to the AvastarTeleporter contract, generates standard and extended token metadata.
+  - The upgradable metadata contract, discoverable via the AvastarTeleporter contract, generates standard and extended token metadata.
 * AvastarPrimeMinter
   - The Avastar Prime minting proxy contract, unidirectionally tied to the AvastarTeleporter contract, manages user and franchise balances, and purchases of Primes. 
 * AvastarReplicantMinter (coming soon)
