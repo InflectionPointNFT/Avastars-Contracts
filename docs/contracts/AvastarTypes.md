@@ -22,6 +22,7 @@ enum Generation {
 
 ```solidity
 enum Series {
+ PROMO,
  ONE,
  TWO,
  THREE,

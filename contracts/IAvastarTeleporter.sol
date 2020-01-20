@@ -118,13 +118,13 @@ contract IAvastarTeleporter is AvastarTypes {
      * @notice Get Trait ID by Generation, Gene, and Variation.
      * @param _generation the generation the trait belongs to
      * @param _gene gene the trait belongs to
-     * @param _variationSafe the variation of the gene
+     * @param _variation the variation of the gene
      * @return traitId the ID of the specified trait
      */
     function getTraitIdByGenerationGeneAndVariation(
         Generation _generation,
         Gene _gene,
-        uint256 _variationSafe
+        uint8 _variation
     )
     external view
     returns (uint256 traitId);
@@ -134,10 +134,10 @@ contract IAvastarTeleporter is AvastarTypes {
      * @param _generation the generation to retrieve artist attribution for
      * @return attribution a single string with the artist and artist info URI
      */
-    function getCombinedAttributionByGeneration(Generation _generation)
+    function getAttributionByGeneration(Generation _generation)
     external view
     returns (
-        string memory combined
+        string memory attribution
     );
 
     /**
@@ -193,4 +193,9 @@ contract IAvastarTeleporter is AvastarTypes {
      */
     function ownerOf(uint256 tokenId) external view returns (address owner);
 
+    /**
+     * @notice Gets the total amount of tokens stored by the contract.
+     * @return count total number of tokens
+     */
+    function totalSupply() public view returns (uint256 count);
 }

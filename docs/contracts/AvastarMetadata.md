@@ -5,10 +5,8 @@ View Source: [contracts/AvastarMetadata.sol](https://github.com/Dapp-Wizards/Ava
 **AvastarMetadata** **↗ Extends: [AvastarBase](contracts/AvastarBase.md), [AvastarTypes](contracts/AvastarTypes.md), [AccessControl](contracts/AccessControl.md)**
 
 Generate Avastar metadata from on-chain data.
-Don't call this contract directly. It is used by `AvastarTeleporter` to generate
-the human and machine readable metadata for a given Avastar token Id. Since this
-functionality is not built into the `AvastarTeleporter` contract, it can be upgraded
-in that contract by setting a new address for this contract.
+Refers to the `AvastarTeleporter` for raw data to generate
+the human and machine readable metadata for a given Avastar token Id.
 
 ## Constructor
 
@@ -22,6 +20,9 @@ constructor() public
 **Constants & Variables**
 
 ```solidity
+// public members
+string public constant INVALID_TOKEN_ID;
+
 // private members
 contract IAvastarTeleporter private teleporterContract;
 string private mediaUriBase;

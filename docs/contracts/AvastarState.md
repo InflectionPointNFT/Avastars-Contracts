@@ -29,6 +29,9 @@ constructor(string memory TOKEN_NAME, string memory TOKEN_SYMBOL) public
 // public members
 string public constant TOKEN_NAME;
 string public constant TOKEN_SYMBOL;
+mapping(uint8 => struct AvastarTypes.Attribution) public attributionByGeneration;
+mapping(uint8 => mapping(uint256 => bool)) public isHashUsedByGeneration;
+mapping(uint8 => mapping(uint256 => uint256)) public tokenIdByGenerationAndHash;
 mapping(uint8 => mapping(uint8 => mapping(uint8 => uint256))) public traitIdByGenerationGeneAndVariation;
 
 // internal members
@@ -36,10 +39,8 @@ struct AvastarTypes.Avastar[] internal avastars;
 struct AvastarTypes.Trait[] internal traits;
 mapping(uint8 => struct AvastarTypes.Prime[]) internal primesByGeneration;
 mapping(uint8 => struct AvastarTypes.Replicant[]) internal replicantsByGeneration;
-mapping(uint8 => struct AvastarTypes.Attribution) internal attributionByGeneration;
 mapping(uint256 => address) internal traitHandlerByPrimeTokenId;
-mapping(uint8 => mapping(uint256 => bool)) internal isHashUsedByGeneration;
-mapping(uint8 => mapping(uint256 => uint256)) internal tokenIdByGenerationAndHash;
+mapping(uint8 => mapping(uint8 => uint16)) internal countByGenerationAndSeries;
 mapping(uint8 => mapping(uint8 => mapping(uint256 => uint256))) internal tokenIdByGenerationWaveAndSerial;
 
 ```

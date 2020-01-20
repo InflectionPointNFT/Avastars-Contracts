@@ -22,6 +22,7 @@ contract('AvastarMetadata', function(accounts) {
     const id2 = new BN(1,10);
     const id3 = new BN(2,10);
     const id4 = new BN(3,10);
+    const invalidID = new BN(50,10);
 
     const attribution1 = {
         "generation": constants.GENERATION.ONE,
@@ -245,7 +246,7 @@ contract('AvastarMetadata', function(accounts) {
         );
 
         // Set the teleporter's reference to the metadata contract
-        await teleporter.setMetadataContract(metadataContract.address);
+        await teleporter.setMetadataContractAddress(metadataContract.address);
 
         // Add the minter
         await teleporter.addMinter(minter);
@@ -253,15 +254,6 @@ contract('AvastarMetadata', function(accounts) {
         // Unpause the contracts
         await teleporter.unpause({from: sysAdmin});
         await metadataContract.unpause({from: sysAdmin});
-
-        // Mint 3 primes
-        const mint = prime => teleporter.mintPrime(tokenOwner, prime.traits, prime.generation, prime.series, prime.gender, prime.ranking, {from: minter});
-        for (const prime of [prime1, prime2, prime3]) {
-            await mint(prime);
-        }
-
-        // Mint 1 replicant
-        await teleporter.mintReplicant(tokenOwner, replicant1.traits, replicant1.generation, replicant1.gender, replicant1.ranking, {from: minter});
 
         // Create prime3's full trait set
         const create = trait =>  teleporter.createTrait(trait.generation, trait.series, trait.gender, trait.gene, trait.rarity, trait.variation, trait.name, trait.svg, {from: sysAdmin, gas: constants.MAX_GAS});
@@ -274,6 +266,16 @@ contract('AvastarMetadata', function(accounts) {
         // Set artist attribution
         await teleporter.setAttribution(attribution1.generation, attribution1.artist, attribution1.infoURI, {from: sysAdmin});
         await teleporter.setAttribution(attribution2.generation, attribution2.artist, attribution2.infoURI, {from: sysAdmin});
+
+        // Mint 3 primes
+        const mint = prime => teleporter.mintPrime(tokenOwner, prime.traits, prime.generation, prime.series, prime.gender, prime.ranking, {from: minter});
+        for (const prime of [prime1, prime2, prime3]) {
+            await mint(prime);
+        }
+
+        // Mint 1 replicant
+        await teleporter.mintReplicant(tokenOwner, replicant1.traits, replicant1.generation, replicant1.gender, replicant1.ranking, {from: minter});
+
     });
 
     it("should not allow non-sysadmins to change the token URI base regardless of contract pause state", async function() {
@@ -449,6 +451,73 @@ contract('AvastarMetadata', function(accounts) {
         assert.equal(result, expected, "viewURI wasn't correct");
     });
 
+    it("should allow anyone to retrieve the tokenURI for a given Avastar by Token ID", async function() {
+
+        // Create expected value
+        const expected = `${constants.TOKEN_URI_BASE.TEST}${id3.toNumber()}`;
+
+        // Get the Avastar tokenURI
+        const tokenURI = await metadataContract.tokenURI(id3, {from: stranger});
+
+        // Test results
+        assert.equal(tokenURI, expected, "tokenURI wasn't correct");
+
+    });
+
+    it("should revert when trying to retrieve the tokenURI for an invalid Token ID", async function() {
+
+        // Try to get tokenURI for invalid token ID
+        await exceptions.catchRevert(
+            metadataContract.tokenURI(invalidID, {from: stranger})
+        );
+
+    });
+
+    it("should allow anyone to retrieve the mediaURI for a given Avastar by Token ID", async function() {
+
+        // Create expected value
+        const expected = `${constants.MEDIA_URI_BASE.TEST}${id3.toNumber()}`;
+
+        // Get the Avastar tokenURI
+        const mediaURI = await metadataContract.mediaURI(id3, {from: stranger});
+
+        // Test results
+        assert.equal(mediaURI, expected, "mediaURI wasn't correct");
+
+    });
+
+    it("should revert when trying to retrieve the mediaURI for an invalid Token ID", async function() {
+
+        // Try to get mediaURI for invalid token ID
+        await exceptions.catchRevert(
+            metadataContract.mediaURI(invalidID, {from: stranger})
+        );
+
+    });
+
+    it("should allow anyone to retrieve the viewURI for a given Avastar by Token ID", async function() {
+
+        // Create expected value
+        const expected = `${constants.VIEW_URI_BASE.TEST}${id3.toNumber()}`;
+
+        // Get the Avastar tokenURI
+        const viewURI = await metadataContract.viewURI(id3, {from: stranger});
+
+        // Test results
+        assert.equal(viewURI, expected, "viewURI wasn't correct");
+
+    });
+
+    it("should revert when trying to retrieve the viewURI for an invalid Token ID", async function() {
+
+        // Try to get viewURI for invalid token ID
+        await exceptions.catchRevert(
+            metadataContract.viewURI(invalidID, {from: stranger})
+        );
+
+    });
+
+
     it("should allow anyone to get the metadata for an avastar prime", async function() {
 
         // Get the metadata
@@ -486,5 +555,15 @@ contract('AvastarMetadata', function(accounts) {
         })
 
     });
+
+    it("should revert when trying to retrieve the metadata for an invalid Token ID", async function() {
+
+        // Try to get avastar metadata for invalid token ID
+        await exceptions.catchRevert(
+            metadataContract.getAvastarMetadata(invalidID, {from: stranger})
+        );
+
+    });
+
 
 });

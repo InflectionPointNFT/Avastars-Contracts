@@ -26,15 +26,15 @@ contract AvastarTeleporter is ReplicantFactory {
     event TraitsUsed(address indexed handler, uint256 primeId, bool[] used);
 
     /**
-     * @notice Event emitted when AvastarMetadata contract is set
-     * @param contractAddress the address of the AvastarMetadata contract
+     * @notice Event emitted when AvastarMetadata contract address is set
+     * @param contractAddress the address of the new AvastarMetadata contract
      */
-    event MetadataContractSet(address contractAddress);
+    event MetadataContractAddressSet(address contractAddress);
 
     /**
- * @notice Address of the AvastarTeleporter contract
- */
-    IAvastarMetadata private metadataContract ;
+     * @notice Address of the AvastarMetadata contract
+     */
+    address private metadataContractAddress;
 
     /**
      * @notice Acknowledge contract is `AvastarTeleporter`
@@ -48,7 +48,7 @@ contract AvastarTeleporter is ReplicantFactory {
      * If successful, emits an `TeleporterContractSet` event.
      * @param _address address of AvastarTeleporter contract
      */
-    function setMetadataContract(address _address)
+    function setMetadataContractAddress(address _address)
     external onlySysAdmin whenPaused whenNotUpgraded
     {
         // Cast the candidate contract to the IAvastarMetadata interface
@@ -58,38 +58,20 @@ contract AvastarTeleporter is ReplicantFactory {
         require(candidateContract.isAvastarMetadata());
 
         // Set the contract address
-        metadataContract = IAvastarMetadata(_address);
+        metadataContractAddress = _address;
 
         // Emit the event
-        emit MetadataContractSet(_address);
+        emit MetadataContractAddressSet(_address);
     }
 
     /**
-     * @notice Get view URI for a given Avastar Token ID.
-     * Reverts if given token id is not a valid Avastar Token ID.
-     * @param _tokenId the Token ID of a previously minted Avastar Prime or Replicant
-     * @return uri the off-chain URI to view the Avastar on the Avastars website
+     * @notice Get the current address of the `AvastarMetadata` contract.
+     * return contractAddress the address of the `AvastarMetadata` contract
      */
-    function viewURI(uint _tokenId)
+    function getMetadataContractAddress()
     external view
-    returns (string memory uri)
-    {
-        require(_tokenId < avastars.length);
-        return metadataContract.viewURI(_tokenId);
-    }
-
-    /**
-     * @notice Get media URI for a given Avastar Token ID.
-     * Reverts if given token id is not a valid Avastar Token ID.
-     * @param _tokenId the Token ID of a previously minted Avastar Prime or Replicant
-     * @return uri the off-chain URI to the Avastar image
-     */
-    function mediaURI(uint _tokenId)
-    external view
-    returns (string memory uri)
-    {
-        require(_tokenId < avastars.length);
-        return metadataContract.mediaURI(_tokenId);
+    returns (address contractAddress) {
+        return metadataContractAddress;
     }
 
     /**
@@ -103,19 +85,7 @@ contract AvastarTeleporter is ReplicantFactory {
     returns (string memory uri)
     {
         require(_tokenId < avastars.length);
-        return metadataContract.tokenURI(_tokenId);
-    }
-
-    /**
-     * @notice Get human-readable metadata for a given Avastar by Token ID.
-     * @param _tokenId the token id of the given Avastar
-     * @return metadata the Avastar's human-readable metadata
-     */
-    function getAvastarMetadata(uint256 _tokenId)
-    public view
-    returns (string memory metadata)
-    {
-        return metadataContract.getAvastarMetadata(_tokenId);
+        return IAvastarMetadata(metadataContractAddress).tokenURI(_tokenId);
     }
 
     /**
@@ -127,11 +97,11 @@ contract AvastarTeleporter is ReplicantFactory {
     function approveTraitAccess(address _handler, uint256[] calldata _primeIds)
     external
     {
-        require(_handler != address(0));
         uint256 primeId;
         for (uint8 i = 0; i < _primeIds.length; i++) {
             primeId = _primeIds[i];
-            require(msg.sender == super.ownerOf(primeId));
+            require(primeId < avastars.length);
+            require(msg.sender == super.ownerOf(primeId), "Must be token owner");
             traitHandlerByPrimeTokenId[primeId] = _handler;
         }
 
@@ -149,15 +119,19 @@ contract AvastarTeleporter is ReplicantFactory {
     function useTraits(uint256 _primeId, bool[] calldata _traitFlags)
     external
     {
+        // Make certain token id is valid
+        require(_primeId < avastars.length);
+
         // Make certain caller is token owner OR approved handler
-        require(msg.sender == super.ownerOf(_primeId) || msg.sender == traitHandlerByPrimeTokenId[_primeId]);
+        require(msg.sender == super.ownerOf(_primeId) || msg.sender == traitHandlerByPrimeTokenId[_primeId],
+        "Must be token owner or approved handler" );
 
         // Get the Avastar and make sure it's a Prime
         Avastar memory avastar = avastars[_primeId];
         require(avastar.wave == Wave.PRIME);
 
         // Get the Prime
-        Prime memory prime = primesByGeneration[uint8(avastar.generation)][avastar.serial];
+        Prime storage prime = primesByGeneration[uint8(avastar.generation)][avastar.serial];
 
         // Set the flags.
         // _traitFlags array need only have as many flags as the highest trait slot to use.
@@ -174,7 +148,7 @@ contract AvastarTeleporter is ReplicantFactory {
         }
 
         // Revert if no flags changed
-        require(usedAtLeast1);
+        require(usedAtLeast1, "No reusable traits specified");
 
         // Clear trait handler
         traitHandlerByPrimeTokenId[_primeId] = address(0);

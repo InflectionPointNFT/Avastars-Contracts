@@ -78,7 +78,6 @@ event TraitArtExtended(uint256 id)
 - [getTraitNameById](#gettraitnamebyid)
 - [getTraitArtById](#gettraitartbyid)
 - [getAttributionByGeneration](#getattributionbygeneration)
-- [getCombinedAttributionByGeneration](#getcombinedattributionbygeneration)
 - [setAttribution](#setattribution)
 - [createTrait](#createtrait)
 - [extendTraitArt](#extendtraitart)
@@ -197,12 +196,12 @@ returns (string art)
 
 ### getAttributionByGeneration
 
-Get the artist Attribution for a given Generation.
+Get the artist Attribution info for a given Generation, combined into a single string.
 
 ```solidity
 function getAttributionByGeneration(enum AvastarTypes.Generation _generation)
 external view
-returns (string artist, string infoURI)
+returns (string attribution)
 ```
 
 **Arguments**
@@ -215,30 +214,7 @@ returns (string artist, string infoURI)
 
 | Name        | Type           | Description  |
 | ------------- |------------- | -----|
-| artist | string | the artist who created the art for the generation | 
-| infoURI | string | the URI for the artist's website / portfolio | 
-
-### getCombinedAttributionByGeneration
-
-Get the artist Attribution for a given Generation, combined into a single string.
-
-```solidity
-function getCombinedAttributionByGeneration(enum AvastarTypes.Generation _generation)
-external view
-returns (string combined)
-```
-
-**Arguments**
-
-| Name        | Type           | Description  |
-| ------------- |------------- | -----|
-| _generation | enum AvastarTypes.Generation | the generation to retrieve artist attribution for | 
-
-**Returns**
-
-| Name        | Type           | Description  |
-| ------------- |------------- | -----|
-| combined | string | attribution a single string with the artist and artist info URI | 
+| attribution | string | attrib a single string with the artist and artist info URI | 
 
 ### setAttribution
 

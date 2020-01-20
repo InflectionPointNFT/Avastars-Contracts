@@ -46,7 +46,7 @@ contract AvastarState is AvastarBase, AvastarTypes, AccessControl, ERC721Full {
      * @notice Retrieve Artist Attribution by Generation
      * Attribution attribution = attributionByGeneration[Generation(_generation)]
      */
-    mapping(uint8 => Attribution) internal attributionByGeneration;
+    mapping(uint8 => Attribution) public attributionByGeneration;
 
     /**
      * @notice Retrieve the approved Trait handler for a given Avastar Prime by Token ID
@@ -58,17 +58,17 @@ contract AvastarState is AvastarBase, AvastarTypes, AccessControl, ERC721Full {
      * bool used = isHashUsedByGeneration[uint8(_generation)][uint256(_traits)]
      * This mapping ensures that within a Generation, a given Trait Hash is unique and can only be used once
      */
-    mapping(uint8 => mapping(uint256 => bool)) internal isHashUsedByGeneration;
+    mapping(uint8 => mapping(uint256 => bool)) public isHashUsedByGeneration;
 
     /**
      * @notice Retrieve Token ID for a given Trait Hash within a given Generation
      * uint256 tokenId = tokenIdByGenerationAndHash[uint8(_generation)][uint256(_traits)]
      * Since Token IDs start at 0 and empty mappings for uint256 return 0, check isHashUsedByGeneration first
      */
-    mapping(uint8 => mapping(uint256 => uint256)) internal tokenIdByGenerationAndHash;
+    mapping(uint8 => mapping(uint256 => uint256)) public tokenIdByGenerationAndHash;
 
     /**
-     * @notice  Retrieve count of Primes and Promos by Generation and Series
+     * @notice Retrieve count of Primes and Promos by Generation and Series
      * uint16 count = countByGenerationAndSeries[uint8(_generation)][uint8(_series)]
      */
     mapping(uint8 =>  mapping(uint8 => uint16)) internal countByGenerationAndSeries;

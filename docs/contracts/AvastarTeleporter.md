@@ -11,7 +11,7 @@ Management of Avastar Primes, Replicants, and Traits
 
 ```solidity
 // private members
-contract IAvastarMetadata private metadataContract;
+address private metadataContractAddress;
 
 ```
 
@@ -19,7 +19,7 @@ contract IAvastarMetadata private metadataContract;
 
 - [TraitAccessApproved](#traitaccessapproved)
 - [TraitsUsed](#traitsused)
-- [MetadataContractSet](#metadatacontractset)
+- [MetadataContractAddressSet](#metadatacontractaddressset)
 
 ### TraitAccessApproved
 
@@ -56,28 +56,26 @@ event TraitsUsed(
 | primeId | uint256 | the token id of the Prime supplying the Traits | 
 | used | bool[] | the array of flags representing the Primes resulting Trait usage | 
 
-### MetadataContractSet
+### MetadataContractAddressSet
 
-Event emitted when AvastarMetadata contract is set
+Event emitted when AvastarMetadata contract address is set
 
 ```solidity
-event MetadataContractSet(address contractAddress)
+event MetadataContractAddressSet(address contractAddress)
 ```
 
 **Arguments**
 
 | Name        | Type           | Description  |
 | ------------- |------------- | -----|
-| contractAddress | address | the address of the AvastarMetadata contract | 
+| contractAddress | address | the address of the new AvastarMetadata contract | 
 
 ## **Functions**
 
 - [isAvastarTeleporter](#isavastarteleporter)
-- [setMetadataContract](#setmetadatacontract)
-- [viewURI](#viewuri)
-- [mediaURI](#mediauri)
+- [setMetadataContractAddress](#setmetadatacontractaddress)
+- [getMetadataContractAddress](#getmetadatacontractaddress)
 - [tokenURI](#tokenuri)
-- [getAvastarMetadata](#getavastarmetadata)
 - [approveTraitAccess](#approvetraitaccess)
 - [useTraits](#usetraits)
 
@@ -97,14 +95,14 @@ returns (bool)
 | ------------- |------------- | -----|
 |  | bool | always true | 
 
-### setMetadataContract
+### setMetadataContractAddress
 
 Set the address of the `AvastarMetadata` contract.
 Only invokable by system admin role, when contract is paused and not upgraded.
 If successful, emits an `TeleporterContractSet` event.
 
 ```solidity
-function setMetadataContract(address _address)
+function setMetadataContractAddress(address _address)
 external nonpayable onlySysAdmin whenPaused whenNotUpgraded 
 ```
 
@@ -114,51 +112,22 @@ external nonpayable onlySysAdmin whenPaused whenNotUpgraded
 | ------------- |------------- | -----|
 | _address | address | address of AvastarTeleporter contract | 
 
-### viewURI
+### getMetadataContractAddress
 
-Get view URI for a given Avastar Token ID.
-Reverts if given token id is not a valid Avastar Token ID.
+Get the current address of the `AvastarMetadata` contract.
+return contractAddress the address of the `AvastarMetadata` contract
 
 ```solidity
-function viewURI(uint256 _tokenId)
+function getMetadataContractAddress()
 external view
-returns (string uri)
+returns (address contractAddress)
 ```
-
-**Arguments**
-
-| Name        | Type           | Description  |
-| ------------- |------------- | -----|
-| _tokenId | uint256 | the Token ID of a previously minted Avastar Prime or Replicant | 
 
 **Returns**
 
 | Name        | Type           | Description  |
 | ------------- |------------- | -----|
-| uri | string | the off-chain URI to view the Avastar on the Avastars website | 
-
-### mediaURI
-
-Get media URI for a given Avastar Token ID.
-Reverts if given token id is not a valid Avastar Token ID.
-
-```solidity
-function mediaURI(uint256 _tokenId)
-external view
-returns (string uri)
-```
-
-**Arguments**
-
-| Name        | Type           | Description  |
-| ------------- |------------- | -----|
-| _tokenId | uint256 | the Token ID of a previously minted Avastar Prime or Replicant | 
-
-**Returns**
-
-| Name        | Type           | Description  |
-| ------------- |------------- | -----|
-| uri | string | the off-chain URI to the Avastar image | 
+| contractAddress | address |  | 
 
 ### tokenURI
 
@@ -184,28 +153,6 @@ returns (string uri)
 | Name        | Type           | Description  |
 | ------------- |------------- | -----|
 | uri | string | the Avastar's off-chain JSON metadata URI | 
-
-### getAvastarMetadata
-
-Get human-readable metadata for a given Avastar by Token ID.
-
-```solidity
-function getAvastarMetadata(uint256 _tokenId)
-public view
-returns (string metadata)
-```
-
-**Arguments**
-
-| Name        | Type           | Description  |
-| ------------- |------------- | -----|
-| _tokenId | uint256 | the token id of the given Avastar | 
-
-**Returns**
-
-| Name        | Type           | Description  |
-| ------------- |------------- | -----|
-| metadata | string | the Avastar's human-readable metadata | 
 
 ### approveTraitAccess
 
