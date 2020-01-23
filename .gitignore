@@ -54,10 +54,3 @@ node_modules
 ############
 .firebase
 .firebase/*
-
-# networks and accounts (secret) #
-########
-environments.js
-
-# Docs #
-========
