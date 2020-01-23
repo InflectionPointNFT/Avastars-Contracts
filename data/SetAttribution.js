@@ -1,5 +1,5 @@
 const fs = require("fs");
-const constants = require("../test/util/Constants");
+const constants = require("../util/Constants");
 const GetAccounts = require('./util/GetAccounts');
 const GetGasCost = require('./util/GetGasCost');
 const AvastarTeleporter = artifacts.require("contracts/AvastarTeleporter.sol");

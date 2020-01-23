@@ -1,6 +1,6 @@
 const AccessControl = artifacts.require("./AccessControl.sol");
 const truffleAssert = require('truffle-assertions');
-const exceptions = require ("./util/Exceptions");
+const exceptions = require ("../util/Exceptions");
 
 contract('AccessControl', function(accounts) {
 

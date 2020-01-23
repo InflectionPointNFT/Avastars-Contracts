@@ -1,7 +1,7 @@
 const ReplicantFactory = artifacts.require("./ReplicantFactory.sol");
 const truffleAssert = require('truffle-assertions');
-const exceptions = require ("./util/Exceptions");
-const constants = require("./util/Constants");
+const exceptions = require ("../util/Exceptions");
+const constants = require("../util/Constants");
 const BN = require('bn.js');
 
 contract('ReplicantFactory', function(accounts) {

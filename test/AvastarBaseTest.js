@@ -1,5 +1,5 @@
 const AvastarBase = artifacts.require("./AvastarBaseWrapper.sol");
-const traitData = require("./util/TraitData");
+const traitData = require("./data/TraitData");
 const BN = require('bn.js');
 
 contract('AvastarBase', function(accounts) {

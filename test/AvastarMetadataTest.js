@@ -1,10 +1,10 @@
 const AvastarTeleporter = artifacts.require("./AvastarTeleporter.sol");
 const AvastarMetadata = artifacts.require("./AvastarMetadata.sol");
 const truffleAssert = require('truffle-assertions');
-const exceptions = require ("./util/Exceptions");
-const constants = require("./util/Constants");
-const traitData = require("./util/TraitData");
-const traitMath = require("./util/TraitMath");
+const exceptions = require ("../util/Exceptions");
+const constants = require("../util/Constants");
+const traitData = require("./data/TraitData");
+const traitMath = require("../util/TraitMath");
 
 const BN = require('bn.js');
 
@@ -516,7 +516,6 @@ contract('AvastarMetadata', function(accounts) {
         );
 
     });
-
 
     it("should allow anyone to get the metadata for an avastar prime", async function() {
 

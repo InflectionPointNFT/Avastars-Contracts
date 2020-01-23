@@ -1,4 +1,4 @@
-const constants = require("./Constants");
+const constants = require("../../util/Constants");
 
 const skin_tone = {
     "generation": constants.GENERATION.ONE,

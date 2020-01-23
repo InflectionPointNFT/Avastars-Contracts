@@ -1,5 +1,5 @@
 const POC_AvaStars = artifacts.require("./POC_AvaStars.sol");
-const exceptions = require ("../../test/util/Exceptions");
+const exceptions = require ("../../util/Exceptions");
 
 
 contract('poc ComponentFactory', function(accounts) {

@@ -1,7 +1,7 @@
 const PrimeFactory = artifacts.require("./PrimeFactory.sol");
 const truffleAssert = require('truffle-assertions');
-const exceptions = require ("./util/Exceptions");
-const constants = require("./util/Constants");
+const exceptions = require ("../util/Exceptions");
+const constants = require("../util/Constants");
 const BN = require('bn.js');
 
 contract('PrimeFactory', function(accounts) {

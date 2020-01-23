@@ -1,9 +1,9 @@
 const AvastarTeleporter = artifacts.require("./AvastarTeleporter.sol");
 const AvastarPrimeMinter = artifacts.require("./AvastarPrimeMinter.sol");
 const truffleAssert = require('truffle-assertions');
-const truffleEvent  = require('./util/truffle-events');
-const exceptions = require ("./util/Exceptions");
-const constants = require("./util/Constants");
+const truffleEvent  = require('../util/truffle-events');
+const exceptions = require ("../util/Exceptions");
+const constants = require("../util/Constants");
 const BN = require('bn.js');
 
 contract('AvastarPrimeMinter', function(accounts) {

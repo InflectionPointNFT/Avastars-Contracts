@@ -1,7 +1,9 @@
 const {spawn} = require('child_process');
-const keys = require('./.project_keys');
+const config = require('./environments');
+const environment = config.ENV.DEV.NAME;
+const mnemonic = config[environment].mnemonic;
 
-const ganache = spawn('npx', ['ganache-cli', '-p 7545', '-d', `-m '${keys.mnemonic}`, '-l 8000000', '-e 1000', '-g 2000000000']);
+const ganache = spawn('npx', ['ganache-cli', '-p 7545', '-d', `-m ${mnemonic}`, '-l 8000000', '-e 1000', '-g 2000000000']);
 
 ganache.stdout.on('data', (data) => {
     let trimmed = String(data).trim();

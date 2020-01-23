@@ -1,11 +1,11 @@
 const TraitFactory = artifacts.require("./TraitFactoryWrapper.sol");
 const truffleAssert = require('truffle-assertions');
-const exceptions = require ("./util/Exceptions");
-const constants = require("./util/Constants");
-const traitMath = require("./util/TraitMath");
-const traitData = require("./util/TraitData");
+const exceptions = require ("../util/Exceptions");
+const constants = require("../util/Constants");
+const traitMath = require("../util/TraitMath");
+const traitData = require("./data/TraitData");
 const BN = require('bn.js');
-require("./util/Cordwood");
+require("../util/Cordwood");
 
 contract('TraitFactory', function(accounts) {
 

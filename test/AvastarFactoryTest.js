@@ -1,8 +1,8 @@
 const AvastarFactoryWrapper = artifacts.require("./AvastarFactoryWrapper.sol");
-const exceptions = require ("./util/Exceptions");
-const constants = require("./util/Constants");
-const traitData = require("./util/TraitData");
-const traitMath = require("./util/TraitMath");
+const exceptions = require ("../util/Exceptions");
+const constants = require("../util/Constants");
+const traitData = require("./data/TraitData");
+const traitMath = require("../util/TraitMath");
 
 const BN = require('bn.js');
 
