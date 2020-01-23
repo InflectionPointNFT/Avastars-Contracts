@@ -2,10 +2,10 @@ const fs = require("fs");
 const constants = require("../util/Constants");
 const GetAccounts = require('../util/GetAccounts');
 const GetGasCost = require('../util/GetGasCost');
-const traitsJSON = "data/avastars-dashboard-genes-export.json";
-const logfile = "data/CreateTraitsLog.txt";
+const traitsJSON = "data/create-traits.json";
+const logfile = "data/create-traits.txt";
 const AvastarTeleporter = artifacts.require("contracts/AvastarTeleporter.sol");
-const div = "---------------------------------------------------------------------------------------------";
+const div = "-------------------------------------------------------------------------------------";
 const orderedKeys = Object.keys(constants.GENE).map(
     key => key
         .toLowerCase()

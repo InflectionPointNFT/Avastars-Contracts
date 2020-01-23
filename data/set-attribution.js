@@ -15,7 +15,6 @@ module.exports = async function(done) {
     console.log('Fetching accounts...');
     const accounts = await GetAccounts(web3);
 
-
     // Create teleporter contract, verify, unpause
     let teleporter = await AvastarTeleporter.deployed();
     let isTeleporter = await teleporter.isAvastarTeleporter();
