@@ -57,7 +57,7 @@ node_modules
 
 # networks and accounts (secret) #
 ########
-#.environments.js
+.environments.js
 
 # Docs #
 ========
