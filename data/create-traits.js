@@ -1,6 +1,6 @@
 const fs = require("fs");
 const constants = require("../util/Constants");
-const GetAccounts = require('../util/GetAccounts');
+const GetWeb3Accounts = require('../util/GetWeb3Accounts');
 const GetGasCost = require('../util/GetGasCost');
 const traitsJSON = "data/create-traits.json";
 const logfile = "data/create-traits.txt";
@@ -76,7 +76,7 @@ module.exports = async function(done) {
 
     // Get accounts using default web3 provided by `truffle exec`
     console.log('Fetching accounts...');
-    const accounts = await GetAccounts(web3);
+    const accounts = await GetWeb3Accounts(web3);
 
     // Create teleporter contract, verify, unpause
     let teleporter = await AvastarTeleporter.deployed();
@@ -145,7 +145,7 @@ async function createTrait(teleporter, processing, accounts, log){
     let {initial} = processing;
     try {
         let gas = await teleporter.createTrait.estimateGas(generation, series, gender, gene, rarity, variation, name, initial, {
-            from: accounts.sysAdmin,
+            from: accounts.admins[0],
             gas: constants.MAX_GAS
         });
         let plusALittle = (bumpGas(gas) > constants.MAX_GAS)
@@ -153,11 +153,11 @@ async function createTrait(teleporter, processing, accounts, log){
             : bumpGas(gas);
 
         let traitId = await teleporter.createTrait.call(generation, series, gender, gene, rarity, variation, name, initial, {
-            from: accounts.sysAdmin,
+            from: accounts.admins[0],
             gas: plusALittle
         });
         let result = await teleporter.createTrait(generation, series, gender, gene, rarity, variation, name, initial, {
-            from: accounts.sysAdmin,
+            from: accounts.admins[0],
             gas: plusALittle
         });
 
@@ -174,7 +174,7 @@ async function createTrait(teleporter, processing, accounts, log){
 async function extendTrait(teleporter, processing, piece, accounts, log){
     try {
         let gas = await teleporter.extendTraitArt.estimateGas(processing.id, piece, {
-            from: accounts.sysAdmin,
+            from: accounts.admins[0],
             gas: constants.MAX_GAS
         });
         let plusALittle = (bumpGas(gas) > constants.MAX_GAS)
@@ -182,7 +182,7 @@ async function extendTrait(teleporter, processing, piece, accounts, log){
             : bumpGas(gas);
 
         let result = await teleporter.extendTraitArt(processing.id, piece,  {
-            from: accounts.sysAdmin,
+            from: accounts.admins[0],
             gas: plusALittle
         });
 

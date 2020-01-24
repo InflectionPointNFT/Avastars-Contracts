@@ -1,8 +1,11 @@
 #  Developer Setup
 ## Build / Run / Deploy Prerequisites
 ### Install Node (also installs NPM)
- * [Node](https://nodejs.org/en/download/) ([DO NOT INSTALL VERSION 12](https://github.com/trufflesuite/truffle/issues/2070)! - use 11 or below.)
-
+ * [Node](https://nodejs.org/en/download/) 
+   - Do not use version 10 or below since there is no support for `Array.flat()`
+   - Do not use version 12 because [Truffle has a conflict](https://github.com/trufflesuite/truffle/issues/2070)
+   - Version 11 works fine
+   
 ## Install required Node modules for project
 All NPM resources are project-local. No global installs required. We use `npx` to run any npm
 executables that needs to be started (e.g., Ganache, etc.)
