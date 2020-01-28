@@ -250,7 +250,6 @@ contract('PrimeFactory', function(accounts) {
         assert.ok(result[0].eq(id), "Token ID field wasn't correct");
         assert.ok(JSON.stringify(result[1]) === replicated, "Replication flags weren't correct");
 
-
     });
 
 });

@@ -89,6 +89,7 @@ contract PrimeFactory is AvastarFactory {
     ) {
         require(_tokenId < avastars.length);
         Avastar memory avastar = avastars[_tokenId];
+        require(avastar.wave ==  Wave.PRIME);
         Prime memory prime = primesByGeneration[uint8(avastar.generation)][uint256(avastar.serial)];
         return (
             prime.id,
@@ -115,6 +116,7 @@ contract PrimeFactory is AvastarFactory {
     ) {
         require(_tokenId < avastars.length);
         Avastar memory avastar = avastars[_tokenId];
+        require(avastar.wave ==  Wave.PRIME);
         Prime memory prime = primesByGeneration[uint8(avastar.generation)][uint256(avastar.serial)];
         return (
             prime.id,
@@ -149,12 +151,12 @@ contract PrimeFactory is AvastarFactory {
         require(_owner != address(0));
         require(_traits != 0);
         require(isHashUsedByGeneration[uint8(_generation)][_traits] == false);
-        require(_gender > Gender.ANY);
-        require(_ranking >= 0 && _ranking <= 100);
+        require(_ranking > 0 && _ranking <= 100);
+        uint256 count = countByGenerationAndSeries[uint8(_generation)][uint8(_series)];
         if (_series == Series.PROMO) {
-            require(countByGenerationAndSeries[uint8(_generation)][uint8(_series)] < MAX_PROMO_PRIMES_PER_GENERATION);
+            require(count < MAX_PROMO_PRIMES_PER_GENERATION);
         } else {
-            require(countByGenerationAndSeries[uint8(_generation)][uint8(_series)] < MAX_PRIMES_PER_SERIES);
+            require(count < MAX_PRIMES_PER_SERIES);
         }
 
         // Get Prime Serial and mint Avastar, getting tokenId

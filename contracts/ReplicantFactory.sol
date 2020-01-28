@@ -73,6 +73,7 @@ contract ReplicantFactory is PrimeFactory {
     ) {
         require(_tokenId < avastars.length);
         Avastar memory avastar = avastars[_tokenId];
+        require(avastar.wave ==  Wave.REPLICANT);
         Replicant memory replicant = replicantsByGeneration[uint8(avastar.generation)][uint256(avastar.serial)];
         return (
             replicant.id,
@@ -109,8 +110,7 @@ contract ReplicantFactory is PrimeFactory {
         require(_owner != address(0));
         require(_traits != 0);
         require(isHashUsedByGeneration[uint8(_generation)][_traits] == false);
-        require(_gender > Gender.ANY);
-        require(_ranking >= 0 && _ranking <= 100);
+        require(_ranking > 0 && _ranking <= 100);
 
         // Get Replicant Serial and mint Avastar, getting tokenId
         serial = replicantsByGeneration[uint8(_generation)].length;

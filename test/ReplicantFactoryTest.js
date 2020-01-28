@@ -158,7 +158,7 @@ contract('ReplicantFactory', function(accounts) {
         let id = new BN(3,10);
         let serial = new BN(0,10);
 
-        // Mint the prime
+        // Mint the replicant
         let result = await contract.mintReplicant(tokenOwner, traits, generation, gender, ranking, {from: minter});
 
         // Test that appropriate event was emitted
@@ -191,7 +191,7 @@ contract('ReplicantFactory', function(accounts) {
         let id = new BN(4,10);
         let serial = new BN(0,10);
 
-        // Mint the prime
+        // Mint the replicant
         let result = await contract.mintReplicant(tokenOwner, traits, generation, gender, ranking, {from: minter});
 
         // Test that appropriate event was emitted
@@ -238,5 +238,39 @@ contract('ReplicantFactory', function(accounts) {
         assert.equal(replicant[5].toNumber(), ranking, "Ranking field wasn't correct");
 
     });
+
+    it("should revert if trying to retrieve a replicant with a prime token id", async function() {
+
+        let id = new BN(0,10); // Prime1 token id
+
+        // Try to fetch a replicant with a prime id
+        await exceptions.catchRevert(
+            contract.getReplicantByTokenId(id, {from: anyone})
+        );
+
+    });
+
+    it("should revert if trying to retrieve a prime with a replicant token id", async function() {
+
+        let id = new BN(1,10); // Replicant1 token id
+
+        // Try to fetch a prime with a replicant id
+        await exceptions.catchRevert(
+            contract.getPrimeByTokenId(id, {from: anyone})
+        );
+
+    });
+
+    it("should revert if trying to retrieve a prime's replication flags with a replicant token id", async function() {
+
+        let id = new BN(1,10); // Replicant1 token id
+
+        // Try to fetch a prime's replication flags with a replicant id
+        await exceptions.catchRevert(
+            contract.getPrimeReplicationByTokenId(id, {from: anyone})
+        )
+
+    });
+
 
 });
