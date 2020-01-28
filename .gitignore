@@ -54,3 +54,5 @@ node_modules
 ############
 .firebase
 .firebase/*
+
+environments.js
