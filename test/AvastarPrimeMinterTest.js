@@ -149,6 +149,19 @@ contract('AvastarPrimeMinter', function(accounts) {
 
     });
 
+    it("should not allow minter to purchase a prime if AvastarTeleporter.mintPrime reverts", async function() {
+
+        const {price, gender, traits} = prime1;
+        const ranking = 0;
+
+        // Called function on teleporter reverts because ranking must be between 1 and 100
+        // Try to purchase the prime
+        await exceptions.catchRevert(
+            minterContract.purchasePrime(purchaser, price, traits, gender, ranking, {from: minter})
+        )
+
+    });
+
     it("should allow minter to purchase a prime if purchaser has already deposited ETH", async function() {
 
         const {generation, price, gender, series, traits, ranking} = prime1;
