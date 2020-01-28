@@ -111,6 +111,17 @@ contract('PrimeFactory', function(accounts) {
 
     });
 
+    it("should increase countByGenerationAndSeries after minting a prime", async function() {
+
+        const {generation, gender, series, traits, ranking} = prime1;
+        let expected = new BN(1,10);
+
+        // Check the count
+        let result = await contract.countByGenerationAndSeries(generation, series, {from: minter});
+        assert.ok(result.eq(expected));
+
+    });
+
     it("should allow minter to create a prime in same generation but different series, token id and serial both increase", async function() {
 
         const {generation, gender, series, traits, ranking} = prime2;

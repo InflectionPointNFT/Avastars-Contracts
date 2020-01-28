@@ -167,7 +167,7 @@ contract PrimeFactory is AvastarFactory {
         );
 
         // Increment count for given Generation/Series
-        countByGenerationAndSeries[uint8(_generation)][uint8(_series)].add(1);
+        countByGenerationAndSeries[uint8(_generation)][uint8(_series)]++;
 
         // Send the NewPrime event
         emit NewPrime(tokenId, serial, _generation, _series, _gender, _traits);
