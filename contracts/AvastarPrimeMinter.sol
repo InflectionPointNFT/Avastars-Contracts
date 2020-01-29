@@ -179,7 +179,7 @@ contract AvastarPrimeMinter is AvastarTypes, AccessControl {
         depositsByAddress[msg.sender] = 0;
         unspentDeposits = unspentDeposits.sub(depositorBalance);
         msg.sender.transfer(depositorBalance);
-        emit DepositorBalance(msg.sender, depositsByAddress[msg.sender]);
+        emit DepositorBalance(msg.sender, 0);
         return depositorBalance;
     }
 
