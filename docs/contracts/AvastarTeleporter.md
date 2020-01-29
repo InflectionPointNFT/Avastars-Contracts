@@ -157,6 +157,7 @@ returns (string uri)
 ### approveTraitAccess
 
 Approve a handler to manage Trait replication for a set of Avastar Primes.
+Accepts up to 256 primes for approval per call.
 If successful, emits a `TraitAccessApproved` event.
 
 ```solidity

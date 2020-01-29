@@ -89,13 +89,15 @@
     ✓ should not allow adding of traits once avastars have been produced for a given generation (27027 gas)
     ✓ should not allow extending of trait art once avastars have been produced for a given generation (26830 gas)
     ✓ should allow anyone to retrieve the AvastarMetadata contract address
-    ✓ should not allow system administrator to approve trait access for another user's primes (24625 gas)
-    ✓ should not allow minter to approve trait access for another user's primes (24613 gas)
+    ✓ should not allow system administrator to approve trait access for another user's primes (24682 gas)
+    ✓ should not allow minter to approve trait access for another user's primes (24670 gas)
     ✓ should not allow an unapproved stranger to use traits on a prime (25051 gas)
-    ✓ should allow owner to approve trait access for a specific set of their primes (93840 gas)
+    ✓ should not allow owner to pass more than 256 prime ids for trait access approval at once (55144 gas)
+    ✓ should not allow owner to pass zero prime ids for trait access approval (22210 gas)
+    ✓ should allow owner to approve trait access for a specific set of their primes (93897 gas)
     ✓ should allow a handler to use traits for primes they are approved for (189478 gas)
     ✓ should not allow a handler to use more traits on a prime without being approved again (25051 gas)
-    ✓ should not allow an approved handler to set a previously used trait to unused (90453 gas)
+    ✓ should not allow an approved handler to set a previously used trait to unused (90510 gas)
     ✓ should allow anyone to see a prime's replication flags reflect authorized usage
     ✓ should allow anyone to render the art for a given Avastar
     ✓ should allow anyone to retrieve the wave for a given Avastar by Token ID
@@ -150,7 +152,7 @@
     ✓ should allow the sysadmin to set the artist attribution for a generation (114110 gas)
     ✓ should allow anyone to retrieve the combined artist attribution for a generation
 
-  129 passing (2m)
+  131 passing (2m)
 
 ```
 
@@ -159,7 +161,7 @@
 ·------------------------------------------------------|---------------------------|-------------|----------------------------·
 |         Solc version: 0.5.12+commit.7709ece9         ·  Optimizer enabled: true  ·  Runs: 200  ·  Block limit: 8000000 gas  │
 ·······················································|···························|·············|·····························
-|  Methods                                             ·               1 gwei/gas                ·       176.50 usd/eth       │
+|  Methods                                             ·               1 gwei/gas                ·       176.75 usd/eth       │
 ··························|····························|·············|·············|·············|··············|··············
 |  Contract               ·  Method                    ·  Min        ·  Max        ·  Avg        ·  # calls     ·  usd (avg)  │
 ··························|····························|·············|·············|·············|··············|··············
@@ -207,7 +209,7 @@
 ··························|····························|·············|·············|·············|··············|··············
 |  AvastarPrimeMinter     ·  withdrawFranchiseBalance  ·          -  ·          -  ·      32998  ·           3  ·       0.01  │
 ··························|····························|·············|·············|·············|··············|··············
-|  AvastarTeleporter      ·  approveTraitAccess        ·      55440  ·      93840  ·      81040  ·           3  ·       0.01  │
+|  AvastarTeleporter      ·  approveTraitAccess        ·      55497  ·      93897  ·      81097  ·           3  ·       0.01  │
 ··························|····························|·············|·············|·············|··············|··············
 |  AvastarTeleporter      ·  mintPrime                 ·          -  ·          -  ·     465199  ·           1  ·       0.08  │
 ··························|····························|·············|·············|·············|··············|··············
@@ -243,8 +245,7 @@
 ·······················································|·············|·············|·············|··············|··············
 |  AvastarPrimeMinter                                  ·          -  ·          -  ·    1059327  ·      13.2 %  ·       0.19  │
 ·······················································|·············|·············|·············|··············|··············
-|  AvastarTeleporter                                   ·          -  ·          -  ·    5506820  ·      68.8 %  ·       0.97  │
+|  AvastarTeleporter                                   ·          -  ·          -  ·    5512424  ·      68.9 %  ·       0.97  │
 ·------------------------------------------------------|-------------|-------------|-------------|--------------|-------------·
 ```
 <!-- tabs:end -->
-

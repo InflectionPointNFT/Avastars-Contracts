@@ -90,6 +90,7 @@ contract AvastarTeleporter is ReplicantFactory {
 
     /**
      * @notice Approve a handler to manage Trait replication for a set of Avastar Primes.
+     * Accepts up to 256 primes for approval per call.
      * If successful, emits a `TraitAccessApproved` event.
      * @param _handler the address approved for Trait access
      * @param _primeIds the token ids for which to approve the handler
@@ -97,6 +98,7 @@ contract AvastarTeleporter is ReplicantFactory {
     function approveTraitAccess(address _handler, uint256[] calldata _primeIds)
     external
     {
+        require(_primeIds.length > 0 && _primeIds.length <= 256);
         uint256 primeId;
         for (uint8 i = 0; i < _primeIds.length; i++) {
             primeId = _primeIds[i];

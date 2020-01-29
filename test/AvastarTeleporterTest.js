@@ -254,6 +254,24 @@ contract('AvastarTeleporter', function(accounts) {
 
     });
 
+    it("should not allow owner to pass more than 256 prime ids for trait access approval at once", async function() {
+
+        let primes = new Array(257).fill(id1);
+
+        await truffleAssert.reverts(
+            teleporter.approveTraitAccess(handler, primes, {from: tokenOwner})
+        );
+
+    });
+
+    it("should not allow owner to pass zero prime ids for trait access approval", async function() {
+
+        await truffleAssert.reverts(
+            teleporter.approveTraitAccess(handler, [], {from: tokenOwner})
+        );
+
+    });
+
     it("should allow owner to approve trait access for a specific set of their primes", async function() {
 
         // Try to approve trait access
