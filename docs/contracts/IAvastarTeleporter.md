@@ -222,7 +222,7 @@ Get Trait ID by Generation, Gene, and Variation.
 function getTraitIdByGenerationGeneAndVariation(
 	enum AvastarTypes.Generation _generation,
 	enum AvastarTypes.Gene _gene,
-	uint256 _variationSafe
+	uint8 _variation
 )
 external view
 returns (uint256 traitId)
@@ -234,7 +234,7 @@ returns (uint256 traitId)
 | ------------- |------------- | -----|
 | _generation | enum AvastarTypes.Generation | the generation the trait belongs to | 
 | _gene | enum AvastarTypes.Gene | ration the generation the trait belongs to | 
-| _variationSafe | uint256 | the variation of the gene | 
+| _variation | uint8 | the variation of the gene | 
 
 **Returns**
 

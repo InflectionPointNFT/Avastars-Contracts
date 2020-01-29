@@ -71,6 +71,25 @@ event TraitArtExtended(uint256 id)
 | ------------- |------------- | -----|
 | id | uint256 | the Trait ID | 
 
+## Modifiers
+
+- [onlyBeforeProd](#onlybeforeprod)
+
+### onlyBeforeProd
+
+Modifier to ensure no trait modification after a generation's
+Avastar production has begun.
+
+```solidity
+modifier onlyBeforeProd(enum AvastarTypes.Generation _generation) internal
+```
+
+**Arguments**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _generation | enum AvastarTypes.Generation | the generation to check production status of | 
+
 ## **Functions**
 
 - [getTraitIdByGenerationGeneAndVariation](#gettraitidbygenerationgeneandvariation)
@@ -91,7 +110,7 @@ Get Trait ID by Generation, Gene, and Variation.
 function getTraitIdByGenerationGeneAndVariation(
 	enum AvastarTypes.Generation _generation,
 	enum AvastarTypes.Gene _gene,
-	uint256 _variationSafe
+	uint8 _variation
 )
 external view
 returns (uint256 traitId)
@@ -103,7 +122,7 @@ returns (uint256 traitId)
 | ------------- |------------- | -----|
 | _generation | enum AvastarTypes.Generation | the generation the trait belongs to | 
 | _gene | enum AvastarTypes.Gene | ration the generation the trait belongs to | 
-| _variationSafe | uint256 | the variation of the gene | 
+| _variation | uint8 | the variation of the gene | 
 
 **Returns**
 
@@ -226,7 +245,7 @@ function setAttribution(
 	string _artist,
 	string _infoURI
 )
-external nonpayable onlySysAdmin 
+external nonpayable onlySysAdmin onlyBeforeProd 
 ```
 
 **Arguments**
@@ -248,11 +267,11 @@ function createTrait(
 	enum AvastarTypes.Gender _gender,
 	enum AvastarTypes.Gene _gene,
 	enum AvastarTypes.Rarity _rarity,
-	uint256 _variationSafe,
+	uint8 _variation,
 	string _name,
 	string _svg
 )
-external nonpayable onlySysAdmin whenNotPaused 
+external nonpayable onlySysAdmin whenNotPaused onlyBeforeProd 
 returns (uint256 traitId)
 ```
 
@@ -265,7 +284,7 @@ returns (uint256 traitId)
 | _gender | enum AvastarTypes.Gender | gender the trait is valid for | 
 | _gene | enum AvastarTypes.Gene | ration the generation the trait belongs to | 
 | _rarity | enum AvastarTypes.Rarity | the rarity level of this trait | 
-| _variationSafe | uint256 | the variation of the gene the trait belongs to | 
+| _variation | uint8 | the variation of the gene the trait belongs to | 
 | _name | string | the name of the trait | 
 | _svg | string | svg layer representation of the trait | 
 
@@ -283,7 +302,7 @@ If successful, emits a `TraitArtExtended` event with the resultant artwork.
 
 ```solidity
 function extendTraitArt(uint256 _traitId, string _svg)
-external nonpayable onlySysAdmin whenNotPaused 
+external nonpayable onlySysAdmin whenNotPaused onlyBeforeProd 
 ```
 
 **Arguments**

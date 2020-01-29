@@ -28,7 +28,7 @@
     "bn.js": "^5.0.0",
     "docsify-cli": "^4.4.0",
     "eth-gas-reporter": "^0.2.12",
-    "ganache-cli": "^6.7.0",
+    "ganache-cli": "^6.8.2",
     "sol2uml": "^1.1.12",
     "solhint": "^2.3.0",
     "truffle": "^5.1.2",
