@@ -25,10 +25,8 @@ contract('AvastarTeleporter', function(accounts) {
     const invalidID = new BN(50,10);
 
     const usedTraits = [
-        true, false, true, true, false, true, false, false,
-        false, false, false, false, false, false, false, false,
-        false, false, false, false, false, false, false, false,
-        false, false, false, false, false, false, false, false,
+        true, false, true, true, false, true,
+        false, false, false, false, false, false
     ];
 
     const attribution = {
@@ -245,7 +243,7 @@ contract('AvastarTeleporter', function(accounts) {
 
     it("should not allow an unapproved stranger to use traits on a prime", async function() {
 
-        const requestFlags = [false, true];
+        const requestFlags = [false, true, false, false, false, false, false, false, false, false, false, false];
 
         await truffleAssert.reverts(
             teleporter.useTraits(id1, requestFlags, {from: stranger}),
@@ -311,7 +309,7 @@ contract('AvastarTeleporter', function(accounts) {
 
     it("should not allow a handler to use more traits on a prime without being approved again", async function() {
 
-        const requestFlags = [false, true];
+        const requestFlags = [false, true, true, true, true, false, false, false, false, false, false, false];
 
         // Try to use traits
         await exceptions.catchRevert(
@@ -326,7 +324,7 @@ contract('AvastarTeleporter', function(accounts) {
         await teleporter.approveTraitAccess(handler, [id1, id2, id3], {from: tokenOwner});
 
         // Previously used trait
-        const requestFlags = [false];
+        const requestFlags = [false, false, false, false, false, false, false, false, false, false, false, false];
 
         // Set previously used trait to unused
         await truffleAssert.reverts(

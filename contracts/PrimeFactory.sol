@@ -112,7 +112,7 @@ contract PrimeFactory is AvastarFactory {
     public view
     returns (
         uint256 tokenId,
-        bool[] memory replicated
+        bool[12] memory replicated
     ) {
         require(_tokenId < avastars.length);
         Avastar memory avastar = avastars[_tokenId];
@@ -164,8 +164,9 @@ contract PrimeFactory is AvastarFactory {
         tokenId = mintAvastar(_owner, serial, _traits, _generation, Wave.PRIME);
 
         // Create and store Prime struct
+        bool[12] memory replicated;
         primesByGeneration[uint8(_generation)].push(
-            Prime(tokenId, serial, _traits, new bool[](32), _generation, _series, _gender, _ranking)
+            Prime(tokenId, serial, _traits, replicated, _generation, _series, _gender, _ranking)
         );
 
         // Increment count for given Generation/Series

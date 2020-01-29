@@ -74,7 +74,7 @@ contract AvastarTypes {
         uint256 id;
         uint256 serial;
         uint256 traits;
-        bool[] replicated;
+        bool[12] replicated;
         Generation generation;
         Series series;
         Gender gender;

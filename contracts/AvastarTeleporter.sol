@@ -23,7 +23,7 @@ contract AvastarTeleporter is ReplicantFactory {
      * @param primeId the token id of the Prime supplying the Traits
      * @param used the array of flags representing the Primes resulting Trait usage
      */
-    event TraitsUsed(address indexed handler, uint256 primeId, bool[] used);
+    event TraitsUsed(address indexed handler, uint256 primeId, bool[12] used);
 
     /**
      * @notice Event emitted when AvastarMetadata contract address is set
@@ -114,11 +114,15 @@ contract AvastarTeleporter is ReplicantFactory {
     /**
      * @notice Mark some or all of an Avastar Prime's traits used.
      * Caller must be the token owner OR the approved handler.
+     * Caller must send all 12 flags with those to be used set to true, the rest to false.
+     * The position of each flag in the `_traitFlags` array corresponds to a Gene, of which Traits are variations.
+     * The flag order is: [ SKIN_TONE, HAIR_COLOR, EYE_COLOR, BG_COLOR, BACKDROP, EARS, FACE, NOSE, MOUTH, FACIAL_FEATURE, EYES, HAIR_STYLE ].
+     * Reverts if no usable traits are indicated.
      * If successful, emits a `TraitsUsed` event.
      * @param _primeId the token id for the Prime whose Traits are to be used
-     * @param _traitFlags an array of no more than 32 booleans representing the Traits to be used
+     * @param _traitFlags an array of no more than 12 booleans representing the Traits to be used
      */
-    function useTraits(uint256 _primeId, bool[] calldata _traitFlags)
+    function useTraits(uint256 _primeId, bool[12] calldata _traitFlags)
     external
     {
         // Make certain token id is valid
@@ -136,9 +140,8 @@ contract AvastarTeleporter is ReplicantFactory {
         Prime storage prime = primesByGeneration[uint8(avastar.generation)][avastar.serial];
 
         // Set the flags.
-        // _traitFlags array need only have as many flags as the highest trait slot to use.
         bool usedAtLeast1;
-        for (uint8 i = 0; i < prime.replicated.length; i++) {
+        for (uint8 i = 0; i < 12; i++) {
             if (_traitFlags.length > i ) {
                 if ( !prime.replicated[i] && _traitFlags[i] ) {
                     prime.replicated[i] = true;

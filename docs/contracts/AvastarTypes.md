@@ -105,7 +105,7 @@ struct Prime {
  uint256 id,
  uint256 serial,
  uint256 traits,
- bool[] replicated,
+ bool[12] replicated,
  enum AvastarTypes.Generation generation,
  enum AvastarTypes.Series series,
  enum AvastarTypes.Gender gender,

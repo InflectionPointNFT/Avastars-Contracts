@@ -238,11 +238,9 @@ contract('PrimeFactory', function(accounts) {
     it("should allow anyone to retrieve a prime's replication flags by token id", async function() {
 
         let id = new BN(2,10);
-        const replicated = JSON.stringify([ // 32 false booleans
-            false, false, false, false, false, false, false, false,
-            false, false, false, false, false, false, false, false,
-            false, false, false, false, false, false, false, false,
-            false, false, false, false, false, false, false, false,
+        const replicated = JSON.stringify([ // 12 false booleans
+            false, false, false, false, false, false,
+            false, false, false, false, false, false
         ]);
 
         const result = await contract.getPrimeReplicationByTokenId(id, {from: anyone});

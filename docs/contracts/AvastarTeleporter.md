@@ -44,7 +44,7 @@ Event emitted when a handler replicates Traits.
 event TraitsUsed(
 	address indexed handler,
 	uint256 primeId,
-	bool[] used
+	bool[12] used
 )
 ```
 
@@ -54,7 +54,7 @@ event TraitsUsed(
 | ------------- |------------- | -----|
 | handler | address | the address marking the Traits as used | 
 | primeId | uint256 | the token id of the Prime supplying the Traits | 
-| used | bool[] | the array of flags representing the Primes resulting Trait usage | 
+| used | bool[12] | the array of flags representing the Primes resulting Trait usage | 
 
 ### MetadataContractAddressSet
 
@@ -176,10 +176,14 @@ external nonpayable
 
 Mark some or all of an Avastar Prime's traits used.
 Caller must be the token owner OR the approved handler.
+Caller must send all 12 flags with those to be used set to true, the rest to false.
+The position of each flag in the `_traitFlags` array corresponds to a Gene, of which Traits are variations.
+The flag order is: [ SKIN_TONE, HAIR_COLOR, EYE_COLOR, BG_COLOR, BACKDROP, EARS, FACE, NOSE, MOUTH, FACIAL_FEATURE, EYES, HAIR_STYLE ].
+Reverts if no usable traits are indicated.
 If successful, emits a `TraitsUsed` event.
 
 ```solidity
-function useTraits(uint256 _primeId, bool[] _traitFlags)
+function useTraits(uint256 _primeId, bool[12] _traitFlags)
 external nonpayable
 ```
 
@@ -188,5 +192,5 @@ external nonpayable
 | Name        | Type           | Description  |
 | ------------- |------------- | -----|
 | _primeId | uint256 | the token id for the Prime whose Traits are to be used | 
-| _traitFlags | bool[] | an array of no more than 32 booleans representing the Traits to be used | 
+| _traitFlags | bool[12] | an array of no more than 12 booleans representing the Traits to be used | 
 

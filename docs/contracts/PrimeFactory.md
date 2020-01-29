@@ -134,7 +134,7 @@ Get an Avastar Prime's replication flags by token ID.
 ```solidity
 function getPrimeReplicationByTokenId(uint256 _tokenId)
 public view
-returns (uint256 tokenId, bool[] replicated)
+returns (uint256 tokenId, bool[12] replicated)
 ```
 
 **Arguments**
@@ -148,7 +148,7 @@ returns (uint256 tokenId, bool[] replicated)
 | Name        | Type           | Description  |
 | ------------- |------------- | -----|
 | tokenId | uint256 | the Prime's token ID | 
-| replicated | bool[] | the Prime's trait replication flags | 
+| replicated | bool[12] | the Prime's trait replication flags | 
 
 ### mintPrime
 
