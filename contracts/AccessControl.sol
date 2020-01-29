@@ -19,8 +19,8 @@ contract AccessControl {
     Roles.Role private owners;
 
     /**
-     * @notice Sets `msg.sender` as owner and system admin by default.
-     * Starts paused. System admin must unpause after full migration.
+     * @notice Sets `msg.sender` as system admin by default.
+     * Starts paused. System admin must unpause, and add other roles after deployment.
      */
     constructor() public {
         admins.add(msg.sender);
@@ -42,23 +42,6 @@ contract AccessControl {
      */
     event ContractUpgrade(address newContract);
 
-    /**
-     * @notice Emitted when system administrator grants the minter role for an address.
-     * @param minterAddress the address of the new minter (can be a contract or an individual)
-     */
-    event MinterAdded(address minterAddress);
-
-    /**
-     * @notice Emitted when system administrator grants the owner role for an address.
-     * @param ownerAddress the address of the new owner (can be a contract or an individual)
-     */
-    event OwnerAdded(address ownerAddress);
-
-    /**
-     * @notice Emitted when system administrator grants the sysAdmin role for an address.
-     * @param sysAdminAddress the address of the new sysAdmin (can be a contract or an individual)
-     */
-    event SysAdminAdded(address sysAdminAddress);
 
     bool public paused = true;
     bool public upgraded = false;
@@ -127,30 +110,56 @@ contract AccessControl {
     }
 
     /**
-     * @notice Called by a system administrator to add a minter
+     * @notice Called by a system administrator to add a minter.
+     * Reverts if `_minterAddress` already has minter role
      * @param _minterAddress approved minter
      */
     function addMinter(address _minterAddress) external onlySysAdmin {
         minters.add(_minterAddress);
-        emit MinterAdded(_minterAddress);
+        require(minters.has(_minterAddress));
     }
 
     /**
-     * @notice Called by a system administrator to add an owner
+     * @notice Called by a system administrator to add an owner.
+     * Reverts if `_ownerAddress` already has owner role
      * @param _ownerAddress approved owner
+     * @return added boolean indicating whether the role was granted
      */
     function addOwner(address _ownerAddress) external onlySysAdmin {
         owners.add(_ownerAddress);
-        emit OwnerAdded(_ownerAddress);
+        require(owners.has(_ownerAddress));
     }
 
     /**
-     * @notice Called by a system administrator to add another system admin
+     * @notice Called by a system administrator to add another system admin.
+     * Reverts if `_sysAdminAddress` already has sysAdmin role
      * @param _sysAdminAddress approved owner
      */
     function addSysAdmin(address _sysAdminAddress) external onlySysAdmin {
         admins.add(_sysAdminAddress);
-        emit SysAdminAdded(_sysAdminAddress);
+        require(admins.has(_sysAdminAddress));
+    }
+
+    /**
+     * @notice Called by an owner to remove all roles from an address.
+     * Reverts if address had no roles to be removed.
+     * @param _address address having its roles stripped
+     */
+    function stripRoles(address _address) external onlyOwner {
+        bool stripped = false;
+        if (admins.has(_address)) {
+            admins.remove(_address);
+            stripped = true;
+        }
+        if (minters.has(_address)) {
+            minters.remove(_address);
+            stripped = true;
+        }
+        if (owners.has(_address)) {
+            owners.remove(_address);
+            stripped = true;
+        }
+        require(stripped == true);
     }
 
     /**

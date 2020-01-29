@@ -10,6 +10,7 @@ contract('AccessControl', function(accounts) {
     const minter = accounts[2];
     const owner = accounts[3];
     const newSysAdmin = accounts[4];
+    const newOwner = accounts[5];
     const newContractAddress = accounts[3]; // just for these tests, treat this as a contract address
 
     before(async () => {
@@ -31,7 +32,7 @@ contract('AccessControl', function(accounts) {
 
     });
 
-    it("should allow sysadmin to pause the contract when unpaused", async function() {
+    it("should allow a sysadmin to pause the contract when unpaused", async function() {
 
         // Pause the contract
         result = await contract.pause({from: sysAdmin});
@@ -55,7 +56,7 @@ contract('AccessControl', function(accounts) {
 
     });
 
-    it("should allow sysadmin to unpause the contract when paused", async function() {
+    it("should allow a sysadmin to unpause the contract when paused", async function() {
 
         // Pause the contract
         result = await contract.unpause( {from: sysAdmin});
@@ -70,60 +71,33 @@ contract('AccessControl', function(accounts) {
 
     });
 
-    it("should allow sysadmin to add a minter", async function() {
+    it("should allow a sysadmin to add a minter", async function() {
 
-        // Pause the contract
-        result = await contract.addMinter(minter, {from: sysAdmin});
-
-        // Test that appropriate event was emitted
-        truffleAssert.eventEmitted(
-            result,
-            'MinterAdded',
-            (ev) => {
-                return (
-                    ev.minterAddress === minter
-                )},
-            'MinterAdded event should be emitted'
-        );
+        // Add the role
+        await contract.addMinter(minter, {from: sysAdmin});
 
     });
 
-    it("should allow sysadmin to add an owner", async function() {
+    it("should allow a sysadmin to add a sysadmin", async function() {
 
-        // Pause the contract
-        result = await contract.addOwner(owner, {from: sysAdmin});
-
-        // Test that appropriate event was emitted
-        truffleAssert.eventEmitted(
-            result,
-            'OwnerAdded',
-            (ev) => {
-                return (
-                    ev.ownerAddress === owner
-                )},
-            'OwnerAdded event should be emitted'
-        );
+        // Add the role
+        await contract.addSysAdmin(newSysAdmin, {from: sysAdmin});
 
     });
 
-    it("should allow sysadmin to add a sysadmin", async function() {
+    it("should allow a sysadmin to add an owner", async function() {
 
-        // Pause the contract
-        result = await contract.addSysAdmin(newSysAdmin, {from: sysAdmin});
-
-        // Test that appropriate event was emitted
-        truffleAssert.eventEmitted(
-            result,
-            'SysAdminAdded',
-            (ev) => {
-                return (
-                    ev.sysAdminAddress === newSysAdmin
-                )},
-            'SysAdminAdded event should be emitted'
-        );
+        // Add the role
+        await contract.addOwner(owner, {from: sysAdmin});
 
     });
 
+    it("should allow a sysadmin to add another owner", async function() {
+
+        // Add the role
+        await contract.addOwner(newOwner, {from: sysAdmin});
+
+    });
 
     it("should not allow non-sysadmins to set upgrade the contract when unpaused", async function() {
 
@@ -134,7 +108,7 @@ contract('AccessControl', function(accounts) {
 
     });
 
-    it("should not allow sysadmin to upgrade the contract when unpaused", async function() {
+    it("should not allow a sysadmin to upgrade the contract when unpaused", async function() {
 
         // Try to upgrade the contract
         await exceptions.catchRevert(
@@ -155,7 +129,7 @@ contract('AccessControl', function(accounts) {
         await contract.unpause({from: sysAdmin});
     });
 
-    it("should allow sysadmin to upgrade the contract when paused", async function() {
+    it("should allow a sysadmin to upgrade the contract when paused", async function() {
 
         // Pause the contract
         result = await contract.pause({from: sysAdmin});
@@ -181,12 +155,90 @@ contract('AccessControl', function(accounts) {
 
     });
 
-    it("should not allow sysadmin to unpause contract after the contract is upgraded", async function() {
+    it("should not allow a sysadmin to unpause contract after the contract is upgraded", async function() {
 
         // Try to unpause the contract
         await exceptions.catchRevert(
             contract.unpause({from: sysAdmin})
         );
+
+    });
+
+    it("should not allow a sysadmin to remove an owner", async function() {
+
+        // Try to strip all the roles from this address
+        await exceptions.catchRevert(
+            contract.stripRoles(owner, {from: sysAdmin})
+        );
+
+    });
+
+    it("should not allow a sysadmin to remove a minter", async function() {
+
+        // Try to strip all the roles from this address
+        await exceptions.catchRevert(
+            contract.stripRoles(minter, {from: sysAdmin})
+        );
+
+    });
+
+    it("should not allow a sysadmin to remove a sysadmin", async function() {
+
+        // Try to strip all the roles from this address
+        await exceptions.catchRevert(
+            contract.stripRoles(newSysAdmin, {from: sysAdmin})
+        );
+
+    });
+
+    it("should not allow a minter to remove an owner", async function() {
+
+        // Try to strip all the roles from this address
+        await exceptions.catchRevert(
+            contract.stripRoles(owner, {from: minter})
+        );
+
+    });
+
+    it("should not allow a minter to remove a minter", async function() {
+
+        // Try to strip all the roles from this address
+        await exceptions.catchRevert(
+            contract.stripRoles(minter, {from: minter})
+        );
+
+    });
+
+    it("should not allow a minter to remove a sysadmin", async function() {
+
+        // Try to strip all the roles from this address
+        await exceptions.catchRevert(
+            contract.stripRoles(newSysAdmin, {from: minter})
+        );
+
+    });
+
+    it("should allow an owner to remove a sysadmin", async function() {
+
+        // Strip all the roles from this address
+        // Reverts if address didn't have the role
+        await contract.stripRoles(sysAdmin, {from: owner});
+
+    });
+
+    it("should allow an owner to remove a minter", async function() {
+
+        // Strip all the roles from this address
+        // Reverts if address didn't have the role
+        await contract.stripRoles(minter, {from: owner});
+
+    });
+
+    it("should allow an owner to remove an owner", async function() {
+
+        // Strip all the roles from this address
+        // Reverts if address didn't have the role
+        await contract.stripRoles(newOwner, {from: owner});
 
     });
 

@@ -9,8 +9,8 @@ Role-based access control and contract upgrade functionality.
 
 ## Constructor
 
-Sets `msg.sender` as owner and system admin by default.
-Starts paused. System admin must unpause after full migration.
+Sets `msg.sender` as system admin by default.
+Starts paused. System admin must unpause, and add other roles after deployment.
 
 ```solidity
 constructor() public
@@ -37,9 +37,6 @@ address public newContractAddress;
 - [ContractPaused](#contractpaused)
 - [ContractUnpaused](#contractunpaused)
 - [ContractUpgrade](#contractupgrade)
-- [MinterAdded](#minteradded)
-- [OwnerAdded](#owneradded)
-- [SysAdminAdded](#sysadminadded)
 
 ### ContractPaused
 
@@ -70,48 +67,6 @@ event ContractUpgrade(address newContract)
 | Name        | Type           | Description  |
 | ------------- |------------- | -----|
 | newContract | address | address of the new version of the contract. | 
-
-### MinterAdded
-
-Emitted when system administrator grants the minter role for an address.
-
-```solidity
-event MinterAdded(address minterAddress)
-```
-
-**Arguments**
-
-| Name        | Type           | Description  |
-| ------------- |------------- | -----|
-| minterAddress | address | the address of the new minter (can be a contract or an individual) | 
-
-### OwnerAdded
-
-Emitted when system administrator grants the owner role for an address.
-
-```solidity
-event OwnerAdded(address ownerAddress)
-```
-
-**Arguments**
-
-| Name        | Type           | Description  |
-| ------------- |------------- | -----|
-| ownerAddress | address | the address of the new owner (can be a contract or an individual) | 
-
-### SysAdminAdded
-
-Emitted when system administrator grants the sysAdmin role for an address.
-
-```solidity
-event SysAdminAdded(address sysAdminAddress)
-```
-
-**Arguments**
-
-| Name        | Type           | Description  |
-| ------------- |------------- | -----|
-| sysAdminAddress | address | the address of the new sysAdmin (can be a contract or an individual) | 
 
 ## Modifiers
 
@@ -176,6 +131,7 @@ modifier whenNotUpgraded() internal
 - [addMinter](#addminter)
 - [addOwner](#addowner)
 - [addSysAdmin](#addsysadmin)
+- [stripRoles](#striproles)
 - [pause](#pause)
 - [unpause](#unpause)
 
@@ -200,7 +156,8 @@ external nonpayable onlySysAdmin whenPaused whenNotUpgraded
 
 ### addMinter
 
-Called by a system administrator to add a minter
+Called by a system administrator to add a minter.
+Reverts if `_minterAddress` already has minter role
 
 ```solidity
 function addMinter(address _minterAddress)
@@ -215,7 +172,8 @@ external nonpayable onlySysAdmin
 
 ### addOwner
 
-Called by a system administrator to add an owner
+Called by a system administrator to add an owner.
+Reverts if `_ownerAddress` already has owner role
 
 ```solidity
 function addOwner(address _ownerAddress)
@@ -230,7 +188,8 @@ external nonpayable onlySysAdmin
 
 ### addSysAdmin
 
-Called by a system administrator to add another system admin
+Called by a system administrator to add another system admin.
+Reverts if `_sysAdminAddress` already has sysAdmin role
 
 ```solidity
 function addSysAdmin(address _sysAdminAddress)
@@ -242,6 +201,22 @@ external nonpayable onlySysAdmin
 | Name        | Type           | Description  |
 | ------------- |------------- | -----|
 | _sysAdminAddress | address | approved owner | 
+
+### stripRoles
+
+Called by an owner to remove all roles from an address.
+Reverts if address had no roles to be removed.
+
+```solidity
+function stripRoles(address _address)
+external nonpayable onlyOwner 
+```
+
+**Arguments**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _address | address | address having its roles stripped | 
 
 ### pause
 
