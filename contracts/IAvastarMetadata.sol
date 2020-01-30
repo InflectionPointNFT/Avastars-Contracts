@@ -1,4 +1,4 @@
-pragma solidity ^0.5.12;
+pragma solidity 0.5.14;
 
 /**
  * @title Identification interface for Avastar Metadata generator contract

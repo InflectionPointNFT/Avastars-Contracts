@@ -1,4 +1,4 @@
-pragma solidity ^0.5.12;
+pragma solidity 0.5.14;
 
 import "@openzeppelin/contracts/access/Roles.sol";
 import "@openzeppelin/contracts/math/SafeMath.sol";

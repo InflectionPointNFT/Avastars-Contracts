@@ -70,12 +70,12 @@
     ✓ should allow minter to purchase a prime if purchaser has already deposited ETH (362478 gas)
     ✓ should allow minter to purchase another prime if purchaser has sufficient ETH remaining (464538 gas)
     ✓ should show appropriately decreased balance for depositor after purchasing primes
-    ✓ should allow a depositor to withdraw a non-zero balance (27923 gas)
+    ✓ should allow a depositor to withdraw a non-zero balance (27226 gas)
     ✓ should not allow minter to purchase a prime if purchaser has withdrawn their balance (25281 gas)
     ✓ should allow an owner to check the franchise balance, (has value after purchases)
-    ✓ should allow an owner to withdraw the franchise balance (32998 gas)
+    ✓ should allow an owner to withdraw the franchise balance (32301 gas)
     ✓ should allow another depositor to check their balance
-    ✓ should allow another depositor to withdraw a non-zero balance (21462 gas)
+    ✓ should allow another depositor to withdraw a non-zero balance (21113 gas)
     ✓ should not allow non-sysadmins to set current series (22451 gas)
     ✓ should not allow system administrator to set current series if contract not paused (23274 gas)
     ✓ should allow system administrator to set current series if paused (92100 gas)
@@ -162,9 +162,9 @@
 #### ** Gas by Contract Method **
 ```
 ·------------------------------------------------------|---------------------------|-------------|----------------------------·
-|         Solc version: 0.5.12+commit.7709ece9         ·  Optimizer enabled: true  ·  Runs: 200  ·  Block limit: 8000000 gas  │
+|         Solc version: 0.5.14+commit.01f1aaa4         ·  Optimizer enabled: true  ·  Runs: 200  ·  Block limit: 8000000 gas  │
 ·······················································|···························|·············|·····························
-|  Methods                                             ·               1 gwei/gas                ·       180.11 usd/eth       │
+|  Methods                                             ·               1 gwei/gas                ·       184.82 usd/eth       │
 ··························|····························|·············|·············|·············|··············|··············
 |  Contract               ·  Method                    ·  Min        ·  Max        ·  Avg        ·  # calls     ·  usd (avg)  │
 ··························|····························|·············|·············|·············|··············|··············
@@ -208,11 +208,11 @@
 ··························|····························|·············|·············|·············|··············|··············
 |  AvastarPrimeMinter     ·  unpause                   ·          -  ·          -  ·      15490  ·           4  ·       0.00  │
 ··························|····························|·············|·············|·············|··············|··············
-|  AvastarPrimeMinter     ·  withdrawDepositorBalance  ·      21462  ·      27923  ·      24693  ·           4  ·       0.00  │
+|  AvastarPrimeMinter     ·  withdrawDepositorBalance  ·      21113  ·      27226  ·      24170  ·           4  ·       0.00  │
 ··························|····························|·············|·············|·············|··············|··············
-|  AvastarPrimeMinter     ·  withdrawFranchiseBalance  ·          -  ·          -  ·      32998  ·           3  ·       0.01  │
+|  AvastarPrimeMinter     ·  withdrawFranchiseBalance  ·          -  ·          -  ·      32301  ·           3  ·       0.01  │
 ··························|····························|·············|·············|·············|··············|··············
-|  AvastarTeleporter      ·  approveTraitAccess        ·      54835  ·      96691  ·      82739  ·           3  ·       0.01  │
+|  AvastarTeleporter      ·  approveTraitAccess        ·      54835  ·      96691  ·      82739  ·           3  ·       0.02  │
 ··························|····························|·············|·············|·············|··············|··············
 |  AvastarTeleporter      ·  mintPrime                 ·          -  ·          -  ·     444099  ·           1  ·       0.08  │
 ··························|····························|·············|·············|·············|··············|··············
@@ -230,9 +230,9 @@
 ··························|····························|·············|·············|·············|··············|··············
 |  ReplicantFactory       ·  mintReplicant             ·     371973  ·     395433  ·     375915  ·          12  ·       0.07  │
 ··························|····························|·············|·············|·············|··············|··············
-|  TraitFactoryWrapper    ·  createTrait               ·    1708378  ·    6051404  ·    2585542  ·           7  ·       0.47  │
+|  TraitFactoryWrapper    ·  createTrait               ·    1708378  ·    6051404  ·    2585542  ·           7  ·       0.48  │
 ··························|····························|·············|·············|·············|··············|··············
-|  TraitFactoryWrapper    ·  extendTraitArt            ·    1407739  ·    2627943  ·    2075178  ·           9  ·       0.37  │
+|  TraitFactoryWrapper    ·  extendTraitArt            ·    1407739  ·    2627943  ·    2075178  ·           9  ·       0.38  │
 ··························|····························|·············|·············|·············|··············|··············
 |  TraitFactoryWrapper    ·  pause                     ·          -  ·          -  ·      44751  ·           1  ·       0.01  │
 ··························|····························|·············|·············|·············|··············|··············
@@ -244,11 +244,11 @@
 ·······················································|·············|·············|·············|··············|··············
 |  AvastarBaseWrapper                                  ·          -  ·          -  ·     264098  ·       3.3 %  ·       0.05  │
 ·······················································|·············|·············|·············|··············|··············
-|  AvastarMetadata                                     ·          -  ·          -  ·    2453443  ·      30.7 %  ·       0.44  │
+|  AvastarMetadata                                     ·          -  ·          -  ·    2453283  ·      30.7 %  ·       0.45  │
 ·······················································|·············|·············|·············|··············|··············
-|  AvastarPrimeMinter                                  ·          -  ·          -  ·    1060383  ·      13.3 %  ·       0.19  │
+|  AvastarPrimeMinter                                  ·          -  ·          -  ·    1059587  ·      13.2 %  ·       0.20  │
 ·······················································|·············|·············|·············|··············|··············
-|  AvastarTeleporter                                   ·          -  ·          -  ·    5492465  ·      68.7 %  ·       0.99  │
+|  AvastarTeleporter                                   ·          -  ·          -  ·    5491861  ·      68.6 %  ·       1.02  │
 ·------------------------------------------------------|-------------|-------------|-------------|--------------|-------------·
 ```
 <!-- tabs:end -->
