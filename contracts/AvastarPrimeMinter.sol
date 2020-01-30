@@ -149,7 +149,6 @@ contract AvastarPrimeMinter is AvastarTypes, AccessControl {
      */
     function deposit() external payable whenNotPaused {
         require(msg.value > 0);
-        require(msg.sender != address(0));
         depositsByAddress[msg.sender] = depositsByAddress[msg.sender].add(msg.value);
         unspentDeposits = unspentDeposits.add(msg.value);
         emit DepositorBalance(msg.sender, depositsByAddress[msg.sender]);
@@ -161,7 +160,6 @@ contract AvastarPrimeMinter is AvastarTypes, AccessControl {
      * @return the depositor's current ETH balance in the contract
      */
     function checkDepositorBalance() external view returns (uint256){
-        require(msg.sender != address(0));
         return depositsByAddress[msg.sender];
     }
 
@@ -173,7 +171,6 @@ contract AvastarPrimeMinter is AvastarTypes, AccessControl {
      * @return amountWithdrawn amount withdrawn
      */
     function withdrawDepositorBalance() external returns (uint256 amountWithdrawn) {
-        require(msg.sender != address(0));
         uint256 depositorBalance = depositsByAddress[msg.sender];
         require(depositorBalance > 0 && address(this).balance >= depositorBalance);
         depositsByAddress[msg.sender] = 0;
