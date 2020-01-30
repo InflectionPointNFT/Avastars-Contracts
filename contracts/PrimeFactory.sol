@@ -153,10 +153,10 @@ contract PrimeFactory is AvastarFactory {
         require(isHashUsedByGeneration[uint8(_generation)][_traits] == false);
         require(_ranking > 0 && _ranking <= 100);
         uint256 count = countByGenerationAndSeries[uint8(_generation)][uint8(_series)];
-        if (_series == Series.PROMO) {
-            require(count < MAX_PROMO_PRIMES_PER_GENERATION);
-        } else {
+        if (_series != Series.PROMO) {
             require(count < MAX_PRIMES_PER_SERIES);
+        } else {
+            require(count < MAX_PROMO_PRIMES_PER_GENERATION);
         }
 
         // Get Prime Serial and mint Avastar, getting tokenId
