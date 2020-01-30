@@ -1,6 +1,7 @@
 const AccessControl = artifacts.require("./AccessControl.sol");
 const truffleAssert = require('truffle-assertions');
 const exceptions = require ("../util/Exceptions");
+const BN = require('bn.js');
 
 contract('AccessControl', function(accounts) {
 
@@ -12,6 +13,7 @@ contract('AccessControl', function(accounts) {
     const newSysAdmin = accounts[4];
     const newOwner = accounts[5];
     const newContractAddress = accounts[3]; // just for these tests, treat this as a contract address
+    const zeroAddress = "0x0000000000000000000000000000000000000000";
 
     before(async () => {
 
@@ -124,6 +126,18 @@ contract('AccessControl', function(accounts) {
         // Try to set the new contract address
         await exceptions.catchRevert(
             contract.upgradeContract(newContractAddress, {from: nonSysAdmin})
+        );
+
+        await contract.unpause({from: sysAdmin});
+    });
+
+    it("should not allow sysadmins to upgrade the contract with a zero address even if paused", async function() {
+
+        result = await contract.pause({from: sysAdmin});
+
+        // Try to upgrade to the zero address
+        await exceptions.catchRevert(
+            contract.upgradeContract(zeroAddress, {from: sysAdmin})
         );
 
         await contract.unpause({from: sysAdmin});

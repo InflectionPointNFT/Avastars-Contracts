@@ -104,6 +104,7 @@ contract AccessControl {
      * @param _newAddress address of new contract
      */
     function upgradeContract(address _newAddress) external onlySysAdmin whenPaused whenNotUpgraded {
+        require(_newAddress != address(0));
         upgraded = true;
         newContractAddress = _newAddress;
         emit ContractUpgrade(_newAddress);
