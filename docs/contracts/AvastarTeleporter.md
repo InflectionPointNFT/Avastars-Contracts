@@ -158,6 +158,9 @@ returns (string uri)
 
 Approve a handler to manage Trait replication for a set of Avastar Primes.
 Accepts up to 256 primes for approval per call.
+Reverts if caller is not owner of all Primes specified.
+Reverts if no Primes are specified.
+Reverts if given handler already has approval for all Primes specified.
 If successful, emits a `TraitAccessApproved` event.
 
 ```solidity

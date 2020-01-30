@@ -90,15 +90,17 @@
     ✓ should not allow adding of traits once avastars have been produced for a given generation (27027 gas)
     ✓ should not allow extending of trait art once avastars have been produced for a given generation (26763 gas)
     ✓ should allow anyone to retrieve the AvastarMetadata contract address
-    ✓ should not allow system administrator to approve trait access for another user's primes (24682 gas)
-    ✓ should not allow minter to approve trait access for another user's primes (24670 gas)
+    ✓ should not allow system administrator to approve trait access for another user's primes (24685 gas)
+    ✓ should not allow minter to approve trait access for another user's primes (24673 gas)
+    ✓ should revert if empty array is sent to approve trait access (22210 gas)
     ✓ should not allow an unapproved stranger to use traits on a prime (25865 gas)
     ✓ should not allow owner to pass more than 256 prime ids for trait access approval at once (55144 gas)
     ✓ should not allow owner to pass zero prime ids for trait access approval (22210 gas)
-    ✓ should allow owner to approve trait access for a specific set of their primes (93897 gas)
+    ✓ should allow owner to approve trait access for a specific set of their primes (96691 gas)
+    ✓ should not allow owner to approve trait handler for primes they are already approved for (28390 gas)
     ✓ should allow a handler to use traits for primes they are approved for (79576 gas)
     ✓ should not allow a handler to use more traits on a prime without being approved again (25901 gas)
-    ✓ should not allow an approved handler to set a previously used trait to unused (101296 gas)
+    ✓ should not allow an approved handler to set a previously used trait to unused (100634 gas)
     ✓ should allow anyone to see a prime's replication flags reflect authorized usage
     ✓ should allow anyone to render the art for a given Avastar
     ✓ should allow anyone to retrieve the wave for a given Avastar by Token ID
@@ -153,7 +155,7 @@
     ✓ should allow the sysadmin to set the artist attribution for a generation (114110 gas)
     ✓ should allow anyone to retrieve the combined artist attribution for a generation
 
-  132 passing (2m)
+  134 passing (2m)
 
 ```
 
@@ -162,7 +164,7 @@
 ·------------------------------------------------------|---------------------------|-------------|----------------------------·
 |         Solc version: 0.5.12+commit.7709ece9         ·  Optimizer enabled: true  ·  Runs: 200  ·  Block limit: 8000000 gas  │
 ·······················································|···························|·············|·····························
-|  Methods                                             ·               1 gwei/gas                ·       172.37 usd/eth       │
+|  Methods                                             ·               1 gwei/gas                ·       180.11 usd/eth       │
 ··························|····························|·············|·············|·············|··············|··············
 |  Contract               ·  Method                    ·  Min        ·  Max        ·  Avg        ·  # calls     ·  usd (avg)  │
 ··························|····························|·············|·············|·············|··············|··············
@@ -210,11 +212,11 @@
 ··························|····························|·············|·············|·············|··············|··············
 |  AvastarPrimeMinter     ·  withdrawFranchiseBalance  ·          -  ·          -  ·      32998  ·           3  ·       0.01  │
 ··························|····························|·············|·············|·············|··············|··············
-|  AvastarTeleporter      ·  approveTraitAccess        ·      55497  ·      93897  ·      81097  ·           3  ·       0.01  │
+|  AvastarTeleporter      ·  approveTraitAccess        ·      54835  ·      96691  ·      82739  ·           3  ·       0.01  │
 ··························|····························|·············|·············|·············|··············|··············
 |  AvastarTeleporter      ·  mintPrime                 ·          -  ·          -  ·     444099  ·           1  ·       0.08  │
 ··························|····························|·············|·············|·············|··············|··············
-|  AvastarTeleporter      ·  mintReplicant             ·          -  ·          -  ·     372035  ·           1  ·       0.06  │
+|  AvastarTeleporter      ·  mintReplicant             ·          -  ·          -  ·     372035  ·           1  ·       0.07  │
 ··························|····························|·············|·············|·············|··············|··············
 |  AvastarTeleporter      ·  unpause                   ·          -  ·          -  ·      15513  ·           1  ·       0.00  │
 ··························|····························|·············|·············|·············|··············|··············
@@ -222,15 +224,15 @@
 ··························|····························|·············|·············|·············|··············|··············
 |  PrimeFactory           ·  addMinter                 ·          -  ·          -  ·      45593  ·           1  ·       0.01  │
 ··························|····························|·············|·············|·············|··············|··············
-|  PrimeFactory           ·  mintPrime                 ·     342049  ·     459109  ·     424886  ·          11  ·       0.07  │
+|  PrimeFactory           ·  mintPrime                 ·     342049  ·     459109  ·     424886  ·          11  ·       0.08  │
 ··························|····························|·············|·············|·············|··············|··············
 |  ReplicantFactory       ·  mintPrime                 ·          -  ·          -  ·     342065  ·           1  ·       0.06  │
 ··························|····························|·············|·············|·············|··············|··············
-|  ReplicantFactory       ·  mintReplicant             ·     371973  ·     395433  ·     375915  ·          12  ·       0.06  │
+|  ReplicantFactory       ·  mintReplicant             ·     371973  ·     395433  ·     375915  ·          12  ·       0.07  │
 ··························|····························|·············|·············|·············|··············|··············
-|  TraitFactoryWrapper    ·  createTrait               ·    1708378  ·    6051404  ·    2585542  ·           7  ·       0.45  │
+|  TraitFactoryWrapper    ·  createTrait               ·    1708378  ·    6051404  ·    2585542  ·           7  ·       0.47  │
 ··························|····························|·············|·············|·············|··············|··············
-|  TraitFactoryWrapper    ·  extendTraitArt            ·    1407739  ·    2627943  ·    2075178  ·           9  ·       0.36  │
+|  TraitFactoryWrapper    ·  extendTraitArt            ·    1407739  ·    2627943  ·    2075178  ·           9  ·       0.37  │
 ··························|····························|·············|·············|·············|··············|··············
 |  TraitFactoryWrapper    ·  pause                     ·          -  ·          -  ·      44751  ·           1  ·       0.01  │
 ··························|····························|·············|·············|·············|··············|··············
@@ -242,11 +244,11 @@
 ·······················································|·············|·············|·············|··············|··············
 |  AvastarBaseWrapper                                  ·          -  ·          -  ·     264098  ·       3.3 %  ·       0.05  │
 ·······················································|·············|·············|·············|··············|··············
-|  AvastarMetadata                                     ·          -  ·          -  ·    2453443  ·      30.7 %  ·       0.42  │
+|  AvastarMetadata                                     ·          -  ·          -  ·    2453443  ·      30.7 %  ·       0.44  │
 ·······················································|·············|·············|·············|··············|··············
-|  AvastarPrimeMinter                                  ·          -  ·          -  ·    1060383  ·      13.3 %  ·       0.18  │
+|  AvastarPrimeMinter                                  ·          -  ·          -  ·    1060383  ·      13.3 %  ·       0.19  │
 ·······················································|·············|·············|·············|··············|··············
-|  AvastarTeleporter                                   ·          -  ·          -  ·    5466146  ·      68.3 %  ·       0.94  │
+|  AvastarTeleporter                                   ·          -  ·          -  ·    5492465  ·      68.7 %  ·       0.99  │
 ·------------------------------------------------------|-------------|-------------|-------------|--------------|-------------·
 ```
 <!-- tabs:end -->

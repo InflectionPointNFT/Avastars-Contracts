@@ -91,6 +91,9 @@ contract AvastarTeleporter is ReplicantFactory {
     /**
      * @notice Approve a handler to manage Trait replication for a set of Avastar Primes.
      * Accepts up to 256 primes for approval per call.
+     * Reverts if caller is not owner of all Primes specified.
+     * Reverts if no Primes are specified.
+     * Reverts if given handler already has approval for all Primes specified.
      * If successful, emits a `TraitAccessApproved` event.
      * @param _handler the address approved for Trait access
      * @param _primeIds the token ids for which to approve the handler
@@ -100,12 +103,17 @@ contract AvastarTeleporter is ReplicantFactory {
     {
         require(_primeIds.length > 0 && _primeIds.length <= 256);
         uint256 primeId;
+        bool approvedAtLeast1 = false;
         for (uint8 i = 0; i < _primeIds.length; i++) {
             primeId = _primeIds[i];
             require(primeId < avastars.length);
             require(msg.sender == super.ownerOf(primeId), "Must be token owner");
-            traitHandlerByPrimeTokenId[primeId] = _handler;
+            if (traitHandlerByPrimeTokenId[primeId] != _handler) {
+                traitHandlerByPrimeTokenId[primeId] = _handler;
+                approvedAtLeast1 = true;
+            }
         }
+        require(approvedAtLeast1, "No unhandled primes specified");
 
         // Emit the event
         emit TraitAccessApproved(_handler, _primeIds);

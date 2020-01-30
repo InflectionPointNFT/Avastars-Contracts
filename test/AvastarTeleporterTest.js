@@ -241,6 +241,15 @@ contract('AvastarTeleporter', function(accounts) {
 
     });
 
+    it("should revert if empty array is sent to approve trait access", async function() {
+
+        // Try to approve trait access
+        await truffleAssert.reverts(
+            teleporter.approveTraitAccess(handler, [], {from: tokenOwner})
+        );
+
+    });
+
     it("should not allow an unapproved stranger to use traits on a prime", async function() {
 
         const requestFlags = [false, true, false, false, false, false, false, false, false, false, false, false];
@@ -287,6 +296,17 @@ contract('AvastarTeleporter', function(accounts) {
         }, 'TraitAccessApproved event should be emitted with correct info');
 
     });
+
+    it("should not allow owner to approve trait handler for primes they are already approved for", async function() {
+
+        // Try to approve trait access
+        await truffleAssert.reverts(
+            teleporter.approveTraitAccess(handler, [id2, id3], {from: tokenOwner}),
+            "No unhandled primes specified"
+        );
+
+    });
+
 
     it("should allow a handler to use traits for primes they are approved for", async function() {
 
