@@ -45,7 +45,7 @@ contract AvastarTeleporter is ReplicantFactory {
     /**
      * @notice Set the address of the `AvastarMetadata` contract.
      * Only invokable by system admin role, when contract is paused and not upgraded.
-     * If successful, emits an `TeleporterContractSet` event.
+     * If successful, emits an `MetadataContractAddressSet` event.
      * @param _address address of AvastarTeleporter contract
      */
     function setMetadataContractAddress(address _address)
