@@ -34,7 +34,7 @@ contract AvastarFactory is TraitFactory {
     returns (uint256 tokenId)
     {
         // Mapped Token Id for given generation and serial should always be 0 (uninitialized)
-        require(tokenIdByGenerationWaveAndSerial[uint8(_generation)][uint8(_wave)][uint256(_serial)] == 0);
+        require(tokenIdByGenerationWaveAndSerial[uint8(_generation)][uint8(_wave)][_serial] == 0);
 
         // Serial should always be the current length of the primes or replicants array for the given generation
         if (_wave == Wave.PRIME){
@@ -59,7 +59,7 @@ contract AvastarFactory is TraitFactory {
         tokenIdByGenerationAndHash[uint8(avastar.generation)][avastar.traits] = avastar.id;
 
         // Create generation/wave/serial to tokenId mapping
-        tokenIdByGenerationWaveAndSerial[uint8(avastar.generation)][uint8(avastar.wave)][uint256(avastar.serial)] = avastar.id;
+        tokenIdByGenerationWaveAndSerial[uint8(avastar.generation)][uint8(avastar.wave)][avastar.serial] = avastar.id;
 
         // Mint the token
         super._mint(_owner, tokenId);
@@ -90,8 +90,8 @@ contract AvastarFactory is TraitFactory {
         require(_tokenId < avastars.length);
         Avastar memory avastar = avastars[_tokenId];
         uint256 traits = (avastar.wave == Wave.PRIME)
-        ? primesByGeneration[uint8(avastar.generation)][uint256(avastar.serial)].traits
-        : replicantsByGeneration[uint8(avastar.generation)][uint256(avastar.serial)].traits;
+        ? primesByGeneration[uint8(avastar.generation)][avastar.serial].traits
+        : replicantsByGeneration[uint8(avastar.generation)][avastar.serial].traits;
         svg = assembleArtwork(avastar.generation, traits);
     }
 }

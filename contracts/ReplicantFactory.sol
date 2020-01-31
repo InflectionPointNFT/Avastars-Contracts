@@ -40,7 +40,7 @@ contract ReplicantFactory is PrimeFactory {
         uint8 ranking
     ) {
         require(_serial < replicantsByGeneration[uint8(_generation)].length);
-        Replicant memory replicant = replicantsByGeneration[uint8(_generation)][uint256(_serial)];
+        Replicant memory replicant = replicantsByGeneration[uint8(_generation)][_serial];
         return (
             replicant.id,
             replicant.serial,
@@ -74,7 +74,7 @@ contract ReplicantFactory is PrimeFactory {
         require(_tokenId < avastars.length);
         Avastar memory avastar = avastars[_tokenId];
         require(avastar.wave ==  Wave.REPLICANT);
-        Replicant memory replicant = replicantsByGeneration[uint8(avastar.generation)][uint256(avastar.serial)];
+        Replicant memory replicant = replicantsByGeneration[uint8(avastar.generation)][avastar.serial];
         return (
             replicant.id,
             replicant.serial,

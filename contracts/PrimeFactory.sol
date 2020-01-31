@@ -52,7 +52,7 @@ contract PrimeFactory is AvastarFactory {
         uint8 ranking
     ) {
         require(_serial < primesByGeneration[uint8(_generation)].length);
-        Prime memory prime = primesByGeneration[uint8(_generation)][uint256(_serial)];
+        Prime memory prime = primesByGeneration[uint8(_generation)][_serial];
         return (
             prime.id,
             prime.serial,
@@ -90,7 +90,7 @@ contract PrimeFactory is AvastarFactory {
         require(_tokenId < avastars.length);
         Avastar memory avastar = avastars[_tokenId];
         require(avastar.wave ==  Wave.PRIME);
-        Prime memory prime = primesByGeneration[uint8(avastar.generation)][uint256(avastar.serial)];
+        Prime memory prime = primesByGeneration[uint8(avastar.generation)][avastar.serial];
         return (
             prime.id,
             prime.serial,
@@ -117,7 +117,7 @@ contract PrimeFactory is AvastarFactory {
         require(_tokenId < avastars.length);
         Avastar memory avastar = avastars[_tokenId];
         require(avastar.wave ==  Wave.PRIME);
-        Prime memory prime = primesByGeneration[uint8(avastar.generation)][uint256(avastar.serial)];
+        Prime memory prime = primesByGeneration[uint8(avastar.generation)][avastar.serial];
         return (
             prime.id,
             prime.replicated
