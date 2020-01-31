@@ -166,7 +166,7 @@ contract AccessControl {
     /**
      * @notice Called by a system administrator to pause, triggers stopped state
      */
-    function pause() public onlySysAdmin whenNotPaused {
+    function pause() external onlySysAdmin whenNotPaused {
         paused = true;
         emit ContractPaused();
     }
@@ -174,7 +174,7 @@ contract AccessControl {
     /**
      * @notice Called by a system administrator to un-pause, returns to normal state
      */
-    function unpause() public onlySysAdmin whenPaused whenNotUpgraded {
+    function unpause() external onlySysAdmin whenPaused whenNotUpgraded {
         paused = false;
         emit ContractUnpaused();
     }

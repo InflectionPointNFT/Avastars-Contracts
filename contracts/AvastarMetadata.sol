@@ -173,7 +173,7 @@ contract AvastarMetadata is AvastarBase, AvastarTypes, AccessControl {
      * @return uri the Avastar's off-chain JSON metadata URI
      */
     function tokenURI(uint _tokenId)
-    public view
+    external view
     returns (string memory uri)
     {
         require(_tokenId < teleporterContract.totalSupply(), INVALID_TOKEN_ID);

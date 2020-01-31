@@ -62,7 +62,7 @@ contract ReplicantFactory is PrimeFactory {
      * @return ranking the Replicant's ranking
      */
     function getReplicantByTokenId(uint256 _tokenId)
-    public view
+    external view
     returns (
         uint256 tokenId,
         uint256 serial,

@@ -77,7 +77,7 @@ contract PrimeFactory is AvastarFactory {
      * @return ranking the Prime's ranking
      */
     function getPrimeByTokenId(uint256 _tokenId)
-    public view
+    external view
     returns (
         uint256 tokenId,
         uint256 serial,
@@ -109,7 +109,7 @@ contract PrimeFactory is AvastarFactory {
      * @return replicated the Prime's trait replication flags
      */
     function getPrimeReplicationByTokenId(uint256 _tokenId)
-    public view
+    external view
     returns (
         uint256 tokenId,
         bool[12] memory replicated
