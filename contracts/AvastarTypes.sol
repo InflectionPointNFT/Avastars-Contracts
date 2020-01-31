@@ -68,7 +68,7 @@ contract AvastarTypes {
         string name;
         string svg;
 
-a    }
+    }
 
     struct Prime {
         uint256 id;
