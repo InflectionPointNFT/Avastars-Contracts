@@ -156,6 +156,7 @@ contract TraitFactory is AvastarState {
     )
     external onlySysAdmin onlyBeforeProd(_generation)
     {
+        require(bytes(_artist).length > 0 && bytes(_infoURI).length > 0);
         attributionByGeneration[uint8(_generation)] = Attribution(_generation, _artist, _infoURI);
         emit AttributionSet(_generation, _artist, _infoURI);
     }

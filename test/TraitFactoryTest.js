@@ -386,6 +386,28 @@ contract('TraitFactory', function(accounts) {
 
     });
 
+    it("should not allow sysadmin to set the artist name for a generation to an empty string", async function() {
+        const {generation, infoURI} = attribution;
+        let artist = "";
+
+        // Set the attribution
+        await exceptions.catchRevert(
+            contract.setAttribution(generation, artist, infoURI, {from: sysAdmin})
+        );
+
+    });
+
+    it("should not allow sysadmin to set the artist infoURI for a generation to an empty string", async function() {
+        const {generation, artist} = attribution;
+        let infoURI = "";
+
+        // Set the attribution
+        await exceptions.catchRevert(
+            contract.setAttribution(generation, artist, infoURI, {from: sysAdmin})
+        );
+
+    });
+
     it("should allow the sysadmin to set the artist attribution for a generation", async function() {
         const {generation, artist, infoURI} = attribution;
 
