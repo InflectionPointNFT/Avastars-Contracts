@@ -97,7 +97,7 @@ Does not include the trait replication flags.
 
 ```solidity
 function getPrimeByTokenId(uint256 _tokenId)
-public view
+external view
 returns (
 	uint256 tokenId,
 	uint256 serial,
@@ -133,7 +133,7 @@ Get an Avastar Prime's replication flags by token ID.
 
 ```solidity
 function getPrimeReplicationByTokenId(uint256 _tokenId)
-public view
+external view
 returns (uint256 tokenId, bool[12] replicated)
 ```
 

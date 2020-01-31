@@ -224,7 +224,7 @@ Called by a system administrator to pause, triggers stopped state
 
 ```solidity
 function pause()
-public nonpayable onlySysAdmin whenNotPaused 
+external nonpayable onlySysAdmin whenNotPaused 
 ```
 
 ### unpause
@@ -233,6 +233,6 @@ Called by a system administrator to un-pause, returns to normal state
 
 ```solidity
 function unpause()
-public nonpayable onlySysAdmin whenPaused whenNotUpgraded 
+external nonpayable onlySysAdmin whenPaused whenNotUpgraded 
 ```
 

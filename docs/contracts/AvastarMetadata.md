@@ -212,7 +212,7 @@ Get token URI for a given Avastar Token ID.
 
 ```solidity
 function tokenURI(uint256 _tokenId)
-public view
+external view
 returns (string uri)
 ```
 

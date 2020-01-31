@@ -152,10 +152,12 @@
     ✓ should not allow sysadmin to create traits when contract is paused (123006 gas)
     ✓ should allow anyone to retrieve a trait id by generation, gene, and variation
     ✓ should allow descendent contracts to assemble artwork by generation and trait hash
-    ✓ should allow the sysadmin to set the artist attribution for a generation (114110 gas)
+    ✓ should not allow sysadmin to set the artist name for a generation to an empty string (25952 gas)
+    ✓ should not allow sysadmin to set the artist infoURI for a generation to an empty string (25607 gas)
+    ✓ should allow the sysadmin to set the artist attribution for a generation (114164 gas)
     ✓ should allow anyone to retrieve the combined artist attribution for a generation
 
-  134 passing (2m)
+  136 passing (2m)
 
 ```
 
