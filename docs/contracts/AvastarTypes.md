@@ -88,11 +88,11 @@ enum Rarity {
 struct Trait {
  uint256 id,
  enum AvastarTypes.Generation generation,
- enum AvastarTypes.Series[] series,
  enum AvastarTypes.Gender gender,
  enum AvastarTypes.Gene gene,
  enum AvastarTypes.Rarity rarity,
  uint8 variation,
+ enum AvastarTypes.Series[] series,
  string name,
  string svg
 }

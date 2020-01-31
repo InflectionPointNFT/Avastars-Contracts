@@ -60,15 +60,15 @@ contract AvastarTypes {
     struct Trait {
         uint256 id;
         Generation generation;
-        Series[] series;
         Gender gender;
         Gene gene;
         Rarity rarity;
         uint8 variation;
+        Series[] series;
         string name;
         string svg;
 
-    }
+a    }
 
     struct Prime {
         uint256 id;

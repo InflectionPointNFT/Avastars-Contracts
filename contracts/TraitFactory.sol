@@ -195,7 +195,7 @@ contract TraitFactory is AvastarState {
 
         // Create and store trait
         traits.push(
-            Trait(traitId, _generation, _series, _gender, _gene, _rarity, _variation, _name, _svg)
+            Trait(traitId, _generation, _gender, _gene, _rarity, _variation,  _series, _name, _svg)
         );
 
         // Create generation/gene/variation to traitId mapping required by assembleArtwork
