@@ -99,7 +99,7 @@ returns (bool)
 
 Set the address of the `AvastarMetadata` contract.
 Only invokable by system admin role, when contract is paused and not upgraded.
-If successful, emits an `TeleporterContractSet` event.
+If successful, emits an `MetadataContractAddressSet` event.
 
 ```solidity
 function setMetadataContractAddress(address _address)
