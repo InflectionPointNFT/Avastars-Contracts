@@ -69,9 +69,15 @@ contract AvastarState is AvastarBase, AvastarTypes, AccessControl, ERC721Full {
 
     /**
      * @notice Retrieve count of Primes and Promos by Generation and Series
-     * uint16 count = countByGenerationAndSeries[uint8(_generation)][uint8(_series)]
+     * uint16 count = primeCountByGenAndSeries[uint8(_generation)][uint8(_series)]
      */
-    mapping(uint8 =>  mapping(uint8 => uint16)) public countByGenerationAndSeries;
+    mapping(uint8 =>  mapping(uint8 => uint16)) public primeCountByGenAndSeries;
+
+    /**
+     * @notice Retrieve count of Replicants by Generation
+     * uint16 count = replicantCountByGeneration[uint8(_generation)]
+     */
+    mapping(uint8 => uint16) public replicantCountByGeneration;
 
     /**
      * @notice Retrieve the Token ID for an Avastar by a given Generation, Wave, and Serial

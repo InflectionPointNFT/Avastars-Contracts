@@ -152,7 +152,7 @@ contract PrimeFactory is AvastarFactory {
         require(_traits != 0);
         require(isHashUsedByGeneration[uint8(_generation)][_traits] == false);
         require(_ranking > 0 && _ranking <= 100);
-        uint256 count = countByGenerationAndSeries[uint8(_generation)][uint8(_series)];
+        uint16 count = primeCountByGenAndSeries[uint8(_generation)][uint8(_series)];
         if (_series != Series.PROMO) {
             require(count < MAX_PRIMES_PER_SERIES);
         } else {
@@ -170,7 +170,7 @@ contract PrimeFactory is AvastarFactory {
         );
 
         // Increment count for given Generation/Series
-        countByGenerationAndSeries[uint8(_generation)][uint8(_series)]++;
+        primeCountByGenAndSeries[uint8(_generation)][uint8(_series)]++;
 
         // Send the NewPrime event
         emit NewPrime(tokenId, serial, _generation, _series, _gender, _traits);

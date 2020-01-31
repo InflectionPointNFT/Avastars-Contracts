@@ -32,7 +32,8 @@ string public constant TOKEN_SYMBOL;
 mapping(uint8 => struct AvastarTypes.Attribution) public attributionByGeneration;
 mapping(uint8 => mapping(uint256 => bool)) public isHashUsedByGeneration;
 mapping(uint8 => mapping(uint256 => uint256)) public tokenIdByGenerationAndHash;
-mapping(uint8 => mapping(uint8 => uint16)) public countByGenerationAndSeries;
+mapping(uint8 => mapping(uint8 => uint16)) public primeCountByGenAndSeries;
+mapping(uint8 => uint16) public replicantCountByGeneration;
 mapping(uint8 => mapping(uint8 => mapping(uint256 => uint256))) public tokenIdByGenerationWaveAndSerial;
 mapping(uint8 => mapping(uint8 => mapping(uint8 => uint256))) public traitIdByGenerationGeneAndVariation;
 

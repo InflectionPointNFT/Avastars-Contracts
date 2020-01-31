@@ -20,6 +20,7 @@
 	* [Migrations](contracts/Migrations.md)
 	* [PrimeFactory](contracts/PrimeFactory.md)
 	* [ReplicantFactory](contracts/ReplicantFactory.md)
+	* [ReplicantFactoryWrapper](contracts/ReplicantFactoryWrapper.md)
 	* [TraitFactory](contracts/TraitFactory.md)
 	* [TraitFactoryWrapper](contracts/TraitFactoryWrapper.md)
 

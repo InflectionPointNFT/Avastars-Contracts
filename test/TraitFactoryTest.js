@@ -426,7 +426,7 @@ contract('TraitFactory', function(accounts) {
 
     it("should allow anyone to retrieve the combined artist attribution for a generation", async function() {
         const {generation, artist, infoURI} = attribution;
-        const expected = `Original art by: ${artist} (${infoURI})`;
+        const expected = `${artist} (${infoURI})`;
 
         // Get the attribution
         let result = await contract.getAttributionByGeneration(generation, {from: nonSysAdmin});

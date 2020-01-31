@@ -213,6 +213,7 @@ contract AvastarMetadata is AvastarBase, AvastarTypes, AccessControl {
 
         // Get artist attribution
         attribution = teleporterContract.getAttributionByGeneration(generation);
+        attribution = strConcat('Original art by: ', attribution);
 
         // Name
         metadata = strConcat('{\n  "name": "Avastar #', uintToStr(uint8(id)));

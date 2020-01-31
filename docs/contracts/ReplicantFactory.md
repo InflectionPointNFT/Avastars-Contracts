@@ -3,7 +3,16 @@
 View Source: [contracts/ReplicantFactory.sol](https://github.com/Dapp-Wizards/Avastars-Contracts/blob/master/contracts/ReplicantFactory.sol)
 
 **ReplicantFactory** **↗ Extends: [PrimeFactory](contracts/PrimeFactory.md)**
-**↘ Derived Contracts: [AvastarTeleporter](contracts/AvastarTeleporter.md)**
+**↘ Derived Contracts: [AvastarTeleporter](contracts/AvastarTeleporter.md), [ReplicantFactoryWrapper](contracts/ReplicantFactoryWrapper.md)**
+
+## Contract Members
+**Constants & Variables**
+
+```solidity
+// public members
+uint16 public constant MAX_REPLICANTS_PER_GENERATION;
+
+```
 
 ## **Events**
 

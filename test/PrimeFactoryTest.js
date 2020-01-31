@@ -111,13 +111,13 @@ contract('PrimeFactory', function(accounts) {
 
     });
 
-    it("should increase countByGenerationAndSeries after minting a prime", async function() {
+    it("should increase primeCountByGenAndSeries after minting a prime", async function() {
 
-        const {generation, gender, series, traits, ranking} = prime1;
+        const {generation, series} = prime1;
         let expected = new BN(1,10);
 
         // Check the count
-        let result = await contract.countByGenerationAndSeries(generation, series, {from: minter});
+        let result = await contract.primeCountByGenAndSeries(generation, series, {from: minter});
         assert.ok(result.eq(expected));
 
     });

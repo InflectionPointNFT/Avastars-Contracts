@@ -9,6 +9,12 @@ import "./PrimeFactory.sol";
 contract ReplicantFactory is PrimeFactory {
 
     /**
+     * @notice Maximum number of Replicants that can be minted
+     * in any given generation.
+     */
+    uint16 public constant MAX_REPLICANTS_PER_GENERATION = 25200;
+
+    /**
      * @notice Event emitted upon the creation of an Avastar Replicant
      * @param id the token ID of the newly minted Replicant
      * @param serial the serial of the Replicant
@@ -107,10 +113,10 @@ contract ReplicantFactory is PrimeFactory {
     external onlyMinter whenNotPaused
     returns (uint256 tokenId, uint256 serial)
     {
-        require(_owner != address(0));
         require(_traits != 0);
         require(isHashUsedByGeneration[uint8(_generation)][_traits] == false);
         require(_ranking > 0 && _ranking <= 100);
+        require(replicantCountByGeneration[uint8(_generation)] < MAX_REPLICANTS_PER_GENERATION);
 
         // Get Replicant Serial and mint Avastar, getting tokenId
         serial = replicantsByGeneration[uint8(_generation)].length;
@@ -120,6 +126,9 @@ contract ReplicantFactory is PrimeFactory {
         replicantsByGeneration[uint8(_generation)].push(
             Replicant(tokenId, serial, _traits, _generation, _gender, _ranking)
         );
+
+        // Increment count for given Generation
+        replicantCountByGeneration[uint8(_generation)]++;
 
         // Send the NewReplicant event
         emit NewReplicant(tokenId, serial, _generation, _gender, _traits);

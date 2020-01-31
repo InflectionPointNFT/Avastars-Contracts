@@ -111,7 +111,7 @@ contract('ReplicantFactory', function(accounts) {
     it("should allow minter to create a replicant", async function() {
 
         const {generation, gender, traits, ranking} = replicant1;
-        let id = new BN(1,10);
+        let id = new BN(1,10); // there's already a prime, so this is the second token
         let serial = new BN(0,10);
 
         // Mint the prime
@@ -127,6 +127,17 @@ contract('ReplicantFactory', function(accounts) {
                 ev.traits.eq(traits)
             );
         }, 'NewReplicant event should be emitted with correct info');
+
+    });
+
+    it("should increase replicantCountByGeneration after minting a replicant", async function() {
+
+        const {generation} = replicant1;
+        let expected = new BN(1,10);
+
+        // Check the count
+        let result = await contract.replicantCountByGeneration(generation, {from: anyone});
+        assert.ok(result.eq(expected));
 
     });
 
