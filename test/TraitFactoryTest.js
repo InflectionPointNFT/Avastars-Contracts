@@ -436,4 +436,14 @@ contract('TraitFactory', function(accounts) {
 
     });
 
+    it("should revert when trying to retrieve the combined artist attribution for a generation", async function() {
+        const generation = constants.GENERATION.FIVE;
+
+        // Try to fetch an unpopulated attribution
+        await exceptions.catchRevert(
+            contract.getAttributionByGeneration(generation, {from: nonSysAdmin})
+        );
+
+    });
+
 });

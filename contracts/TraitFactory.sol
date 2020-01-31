@@ -136,6 +136,7 @@ contract TraitFactory is AvastarState {
         string memory attribution
     ){
         Attribution memory attrib = attributionByGeneration[uint8(_generation)];
+        require(bytes(attrib.artist).length > 0);
         attribution = strConcat(attribution, 'Original art by: ');
         attribution = strConcat(attribution, attrib.artist);
         attribution = strConcat(attribution, ' (');
