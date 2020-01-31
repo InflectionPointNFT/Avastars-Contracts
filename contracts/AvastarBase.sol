@@ -9,6 +9,8 @@ contract AvastarBase {
 
     /**
      * @notice Convert a `uint` value to a `string`
+     * via OraclizeAPI - MIT licence
+     * https://github.com/provable-things/ethereum-api/blob/b42146b063c7d6ee1358846c198246239e9360e8/oraclizeAPI_0.4.25.sol#L896
      * @param _i the `uint` value to be converted
      * @return result the `string` representation of the given `uint` value
      */
