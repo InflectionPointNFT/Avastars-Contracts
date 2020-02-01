@@ -65,7 +65,6 @@ contract('AvastarPrimeMinter', function(accounts) {
 
         // Create the minter contract and set the factory contract
         minterContract = await AvastarPrimeMinter.new(teleporterContract.address);
-        //await minterContract.setTeleporterContract(teleporterContract.address);
         minterContract.setCurrentGeneration(constants.GENERATION.ONE);
         minterContract.setCurrentSeries(constants.SERIES.ONE);
         minterContract.addMinter(minter);

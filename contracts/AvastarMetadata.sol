@@ -17,6 +17,12 @@ contract AvastarMetadata is AvastarBase, AvastarTypes, AccessControl {
     string public constant INVALID_TOKEN_ID = "Invalid Token ID";
 
     /**
+     * @notice Event emitted when AvastarTeleporter contract is set
+     * @param contractAddress the address of the AvastarTeleporter contract
+     */
+    event TeleporterContractSet(address contractAddress);
+
+    /**
      * @notice Event emitted when TokenURI base changes
      * @param tokenUriBase the base URI for tokenURI calls
      */
@@ -85,6 +91,28 @@ contract AvastarMetadata is AvastarBase, AvastarTypes, AccessControl {
 
         // Token URI
         tokenUriBase = _tokenUriBase;
+    }
+
+    /**
+     * @notice Set the address of the `AvastarTeleporter` contract.
+     * Only invokable by system admin role, when contract is paused and not upgraded.
+     * To be used if the Teleporter contract has to be upgraded and a new instance deployed.
+     * If successful, emits an `TeleporterContractSet` event.
+     * @param _address address of `AvastarTeleporter` contract
+     */
+    function setTeleporterContract(address _address) external onlySysAdmin whenPaused whenNotUpgraded {
+
+        // Cast the candidate contract to the IAvastarTeleporter interface
+        IAvastarTeleporter candidateContract = IAvastarTeleporter(_address);
+
+        // Verify that we have the appropriate address
+        require(candidateContract.isAvastarTeleporter());
+
+        // Set the contract address
+        teleporterContract = IAvastarTeleporter(_address);
+
+        // Emit the event
+        emit TeleporterContractSet(_address);
     }
 
     /**

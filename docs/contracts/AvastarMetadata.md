@@ -35,9 +35,24 @@ string internal tokenUriBase;
 
 ## **Events**
 
+- [TeleporterContractSet](#teleportercontractset)
 - [TokenUriBaseSet](#tokenuribaseset)
 - [MediaUriBaseSet](#mediauribaseset)
 - [ViewUriBaseSet](#viewuribaseset)
+
+### TeleporterContractSet
+
+Event emitted when AvastarTeleporter contract is set
+
+```solidity
+event TeleporterContractSet(address contractAddress)
+```
+
+**Arguments**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| contractAddress | address | the address of the AvastarTeleporter contract | 
 
 ### TokenUriBaseSet
 
@@ -85,6 +100,7 @@ event ViewUriBaseSet(string viewUriBase)
 
 ## **Functions**
 
+- [setTeleporterContract](#setteleportercontract)
 - [isAvastarMetadata](#isavastarmetadata)
 - [setTokenUriBase](#settokenuribase)
 - [setMediaUriBase](#setmediauribase)
@@ -94,6 +110,24 @@ event ViewUriBaseSet(string viewUriBase)
 - [tokenURI](#tokenuri)
 - [getAvastarMetadata](#getavastarmetadata)
 - [assembleTraitMetadata](#assembletraitmetadata)
+
+### setTeleporterContract
+
+Set the address of the `AvastarTeleporter` contract.
+Only invokable by system admin role, when contract is paused and not upgraded.
+To be used if the Teleporter contract has to be upgraded and a new instance deployed.
+If successful, emits an `TeleporterContractSet` event.
+
+```solidity
+function setTeleporterContract(address _address)
+external nonpayable onlySysAdmin whenPaused whenNotUpgraded 
+```
+
+**Arguments**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| _address | address | address of `AvastarTeleporter` contract | 
 
 ### isAvastarMetadata
 
