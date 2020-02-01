@@ -8,6 +8,14 @@ Mints Avastar Primes using the `AvastarTeleporter` contract on behalf of deposit
 Allows system admin to set current generation and series.
 Manages accounting of depositor and franchise balances.
 
+## Constructor
+
+Construct AvastarPrimeMinter contract.
+
+```solidity
+constructor() public
+```
+
 ## Contract Members
 **Constants & Variables**
 
@@ -117,6 +125,7 @@ event TeleporterContractSet(address contractAddress)
 
 Set the address of the `AvastarTeleporter` contract.
 Only invokable by system admin role, when contract is paused and not upgraded.
+To be used if the Teleporter contract has to be upgraded and a new instance deployed.
 If successful, emits an `TeleporterContractSet` event.
 
 ```solidity

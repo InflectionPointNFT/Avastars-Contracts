@@ -71,8 +71,25 @@ contract AvastarPrimeMinter is AvastarTypes, AccessControl {
     uint256 private unspentDeposits;
 
     /**
+     * @notice Construct AvastarPrimeMinter contract.
+     * @param _teleporter initial address of the `AvastarTeleporter` contract
+     */
+    constructor (address _teleporter) public
+    {
+        // Cast the candidate contract to the IAvastarTeleporter interface
+        IAvastarTeleporter candidateContract = IAvastarTeleporter(_teleporter);
+
+        // Verify that we have the appropriate address
+        require(candidateContract.isAvastarTeleporter());
+
+        // Set the contract address
+        teleporterContract = IAvastarTeleporter(_teleporter);
+    }
+
+    /**
      * @notice Set the address of the `AvastarTeleporter` contract.
      * Only invokable by system admin role, when contract is paused and not upgraded.
+     * To be used if the Teleporter contract has to be upgraded and a new instance deployed.
      * If successful, emits an `TeleporterContractSet` event.
      * @param _address address of `AvastarTeleporter` contract
      */

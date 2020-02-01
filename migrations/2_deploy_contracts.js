@@ -19,7 +19,10 @@ module.exports = (deployer, network, liveAccounts) => {
         // Deploy the Avastar Teleporter, Prime Minter, and Metadata contracts
         console.log("Deploying contracts...");
         const avastarTeleporter = await deployer.deploy(AvastarTeleporter);
-        const avastarPrimeMinter = await deployer.deploy(AvastarPrimeMinter);
+        const avastarPrimeMinter = await deployer.deploy(
+            AvastarPrimeMinter,
+            avastarTeleporter.address
+        );
         const avastarMetadata = await deployer.deploy(
             AvastarMetadata,
             avastarTeleporter.address,
