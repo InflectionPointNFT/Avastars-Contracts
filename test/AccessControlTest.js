@@ -256,4 +256,13 @@ contract('AccessControl', function(accounts) {
 
     });
 
+    it("should not allow owner to remove own roles", async function() {
+
+        // Try to strip all the roles from owner's own address
+        await exceptions.catchRevert(
+            contract.stripRoles(owner, {from: owner})
+        );
+
+    });
+
 });

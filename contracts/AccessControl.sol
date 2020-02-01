@@ -147,6 +147,7 @@ contract AccessControl {
      * @param _address address having its roles stripped
      */
     function stripRoles(address _address) external onlyOwner {
+        require(msg.sender != _address);
         bool stripped = false;
         if (admins.has(_address)) {
             admins.remove(_address);
