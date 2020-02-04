@@ -3,7 +3,6 @@ const fs = require("fs");
 const ENV = 'rinkeby';
 const logfile = `data/create-traits.${ENV}.txt`;
 
-
 const constants = require("../util/Constants");
 const GetWeb3Accounts = require('../util/GetWeb3Accounts');
 const GetGasCost = require('../util/GetGasCost');
@@ -98,7 +97,7 @@ module.exports = async function(done) {
     const shouldSkip = (processing, lastTrait) => (lastTrait &&
         (
             processing.trait.gene < lastTrait.trait.gene ||
-            (processing.trait.gene === lastTrait.trait.gene && processing.trait.variation < lastTrait.trait.variation)
+            (processing.trait.gene === lastTrait.trait.gene && processing.trait.variation <= lastTrait.trait.variation)
         )
     );
 
@@ -115,7 +114,7 @@ module.exports = async function(done) {
             logIt(log, `Gas/Tx: ${constants.MAX_GAS} units\tInitial Section: ${constants.MAX_ART_SIZE} bytes\tExtension Section: ${constants.MAX_EXT_SIZE} bytes`);
             logIt(log, div);
         } else {
-            logIt(log, "\n");
+            logIt(log, "");
         }
 
         try {
