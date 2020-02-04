@@ -286,7 +286,7 @@ function readLog(file) {
         // get last line data
         let lastLine = lines[lines.length-1];
         let pairs = lastLine.split("\t");
-        let obj = {};
+        let gas, obj = {};
         pairs.forEach(pair => obj[pair.split(":")[0]] = pair.split(":")[1]);
         lastSuccessfulTrait = convertObjToProcessed(obj);
 
@@ -295,10 +295,13 @@ function readLog(file) {
             obj = {};
             pairs = line.split("\t");
             pairs.forEach(pair => obj[pair.split(":")[0]] = pair.split(":")[1]);
+            gas = (obj.Gas) ? Number(obj.Gas.trim()) : 0;
+            total_gas += Number(obj.Gas.trim());
 
-            if (obj.Gas && Number(obj.Gas.trim()) > costliest_trait.totalGasSpent) {
+            if (gas > costliest_trait.totalGasSpent) {
                 costliest_trait = convertObjToProcessed(obj);
             }
+
         });
 
     } catch (e) {
