@@ -295,8 +295,8 @@ function readLog(file) {
             obj = {};
             pairs = line.split("\t");
             pairs.forEach(pair => obj[pair.split(":")[0]] = pair.split(":")[1]);
-            gas = (obj.Gas) ? Number(obj.Gas.trim()) : 0;
-            total_gas += Number(obj.Gas.trim());
+            gas = (!!obj.Gas) ? Number(obj.Gas.trim()) : 0;
+            total_gas += gas;
 
             if (gas > costliest_trait.totalGasSpent) {
                 costliest_trait = convertObjToProcessed(obj);
