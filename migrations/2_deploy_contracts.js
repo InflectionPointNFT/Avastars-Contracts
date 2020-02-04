@@ -64,8 +64,6 @@ module.exports = (deployer, network, liveAccounts) => {
         promises = admins.map(admin => avastarPrimeMinter.addSysAdmin(admin));
         promises.concat(owners.map(owner => avastarPrimeMinter.addOwner(owner)));
         promises.concat(minters.map(minter => avastarPrimeMinter.addMinter(minter)));
-        console.log("Set teleporter contract address");
-        await avastarPrimeMinter.setTeleporterContract(avastarTeleporter.address);
         console.log("Set current generation");
         await avastarPrimeMinter.setCurrentGeneration(generation); // auto resets sets series
         console.log("Unpause\n");

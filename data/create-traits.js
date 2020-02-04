@@ -1,9 +1,13 @@
 const fs = require("fs");
+
+const ENV = 'rinkeby';
+const logfile = `data/create-traits.${ENV}.txt`;
+
+
 const constants = require("../util/Constants");
 const GetWeb3Accounts = require('../util/GetWeb3Accounts');
 const GetGasCost = require('../util/GetGasCost');
 const traitsJSON = "data/create-traits.json";
-const logfile = "data/create-traits.txt";
 const AvastarTeleporter = artifacts.require("contracts/AvastarTeleporter.sol");
 const div = "-------------------------------------------------------------------------------------";
 const orderedKeys = Object.keys(constants.GENE).map(
@@ -67,8 +71,20 @@ const logIt = (log, value) => { console.log(value); log.write(`${value}\n`) };
 
 module.exports = async function(done) {
 
-    console.log('Creating log file...');
-    const log = fs.createWriteStream(logfile);
+    // Attempt to read logfile, then decide whether to write or append
+    let lastTrait = fs.existsSync(logfile) ? readLog(logfile) : null;
+    let log, options;
+    if (lastTrait && lastTrait.trait.gene && lastTrait.trait.variation) {
+        console.log('Resume current log from last successful trait.');
+        options = {flags:'a'};
+    } else {
+        console.log('Start from scratch with new log.');
+        options = {flags:'w'};
+    }
+    log = fs.createWriteStream(logfile, options);
+
+    console.log(costliest_trait);
+    console.log(lastTrait);
 
     console.log('Processing raw database dump...');
     const traits = getTraits(traitsJSON);
@@ -78,46 +94,62 @@ module.exports = async function(done) {
     console.log('Fetching accounts...');
     const accounts = await GetWeb3Accounts(web3);
 
+    // Function to determine if we should skip processing a trait
+    const shouldSkip = (processing, lastTrait) => (lastTrait &&
+        (
+            processing.trait.gene < lastTrait.trait.gene ||
+            (processing.trait.gene === lastTrait.trait.gene && processing.trait.variation < lastTrait.trait.variation)
+        )
+    );
+
     // Create teleporter contract, verify, unpause
     let teleporter = await AvastarTeleporter.deployed();
     let isTeleporter = await teleporter.isAvastarTeleporter();
     if (isTeleporter) {
         console.log('Adding traits to contract...');
-        console.log('----------------------------');
-        logIt(log, div);
-        logIt(log, `> Operational Maximums:`);
-        logIt(log, `Gas/Tx: ${constants.MAX_GAS} units\tInitial Section: ${constants.MAX_ART_SIZE} bytes\tExtension Section: ${constants.MAX_EXT_SIZE} bytes`);
-        logIt(log, div);
+
+        // Are we starting fresh or restarting?
+        if (!lastTrait) {
+            logIt(log, div);
+            logIt(log, `> Operational Maximums:`);
+            logIt(log, `Gas/Tx: ${constants.MAX_GAS} units\tInitial Section: ${constants.MAX_ART_SIZE} bytes\tExtension Section: ${constants.MAX_EXT_SIZE} bytes`);
+            logIt(log, div);
+        } else {
+            logIt(log, "\n");
+        }
+
         try {
-            // Process all the traits
+            // Process the traits
             for (const trait of traits) {
 
                 let processing = new ProcessedTrait(trait, constants.MAX_ART_SIZE, constants.MAX_EXT_SIZE);
 
-                if (processing.totalSections === 1) {
+                if (!shouldSkip(processing, lastTrait)) {
 
-                    // Create the trait in one go
-                    await createTrait(teleporter, processing, accounts, log);
+                    if (processing.totalSections === 1) {
 
-                } else if (processing.totalSections > 1){
+                        // Create the trait in one go
+                        await createTrait(teleporter, processing, accounts, log, lastTrait);
 
-                    // Create the trait with the initial section
-                    await createTrait(teleporter, processing, accounts, log);
+                    } else if (processing.totalSections > 1) {
 
-                    // Extend the artwork with all the remaining pieces
-                    for (let piece of processing.pieces) {
-                        await extendTrait(teleporter, processing, piece, accounts, log);
+                        // Create the trait with the initial section
+                        await createTrait(teleporter, processing, accounts, log, lastTrait);
+
+                        // Extend the artwork with all the remaining pieces
+                        for (let piece of processing.pieces) {
+                            await extendTrait(teleporter, processing, piece, accounts, log);
+                        }
+
                     }
 
+                    logIt(log, processing.toString());
+
+                    if (processing.totalGasSpent > 0) {
+                        total_gas += processing.totalGasSpent;
+                        if (processing.totalGasSpent > costliest_trait.totalGasSpent) costliest_trait = processing;
+                    }
                 }
-
-                logIt(log, processing.toString());
-
-                if (processing.totalGasSpent > 0) {
-                    total_gas += processing.totalGasSpent;
-                    if (processing.totalGasSpent > costliest_trait.totalGasSpent) costliest_trait = processing;
-                }
-
             }
 
             // Report the summary
@@ -140,7 +172,7 @@ module.exports = async function(done) {
     }
 };
 
-async function createTrait(teleporter, processing, accounts, log){
+async function createTrait(teleporter, processing, accounts, log, lastTrait){
     let {generation, gender, gene, name, series, variation, rarity} = processing.trait;
     let {initial} = processing;
     try {
@@ -230,4 +262,48 @@ function getTraits(file) {
         process.exit();
     }
     return retVal.flat();
+}
+
+// Read the previous log file and find the last successful trait
+function readLog(file) {
+    let lastSuccessfulTrait;
+
+    const convertObjToProcessed = obj => {
+        let processed = new ProcessedTrait();
+        processed.id = Number(obj.Id.trim());
+        processed.totalGasSpent = Number(obj.Gas.trim());
+        processed.totalSections = Number(obj.Sections.trim());
+        processed.trait = {
+            gene: Number(obj.Gene.trim()),
+            variation: Number(obj.Variation.trim())
+        };
+        return processed;
+    };
+
+    try {
+        const infile = fs.readFileSync(file, "utf8");
+        let lines = infile.split("\n");
+
+        // get last line data
+        let lastLine = lines[lines.length-1];
+        let pairs = lastLine.split("\t");
+        let obj = {};
+        pairs.forEach(pair => obj[pair.split(":")[0]] = pair.split(":")[1]);
+        lastSuccessfulTrait = convertObjToProcessed(obj);
+
+        // find costliest trait
+        lines.forEach( line => {
+            obj = {};
+            pairs = line.split("\t");
+            pairs.forEach(pair => obj[pair.split(":")[0]] = pair.split(":")[1]);
+
+            if (obj.Gas && Number(obj.Gas.trim()) > costliest_trait.totalGasSpent) {
+                costliest_trait = convertObjToProcessed(obj);
+            }
+        });
+
+    } catch (e) {
+        console.log(e.message);
+    }
+    return lastSuccessfulTrait;
 }
