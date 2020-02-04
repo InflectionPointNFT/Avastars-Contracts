@@ -31,7 +31,6 @@ module.exports = async function(done) {
     log = fs.createWriteStream(logfile, options);
     console.log(costliest_trait);
     console.log(lastTrait);
-    //await log.write('\ntest line\n');
 
     done();
 
