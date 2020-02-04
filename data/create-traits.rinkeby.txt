@@ -559,3 +559,67 @@ Id: 564	Gene: 11	Variation: 18	SVG:  2971 bytes	Sections:  1	Gas:  2160287
 Id: 565	Gene: 11	Variation: 19	SVG:    19 bytes	Sections:  1	Gas:   245918
 Id: 566	Gene: 11	Variation: 20	SVG:  2234 bytes	Sections:  1	Gas:  1686729
 Id: 567	Gene: 11	Variation: 21	SVG:  7770 bytes	Sections:  1	Gas:  5248589
+Id: 568	Gene: 11	Variation: 22	SVG: 11740 bytes	Sections:  3	Gas:  9034468
+Id: 569	Gene: 11	Variation: 23	SVG: 10006 bytes	Sections:  2	Gas:  7246303
+Id: 570	Gene: 11	Variation: 24	SVG:  7622 bytes	Sections:  1	Gas:  5166029
+Id: 571	Gene: 11	Variation: 25	SVG: 23728 bytes	Sections:  9	Gas: 23320361
+Id: 572	Gene: 11	Variation: 26	SVG: 10272 bytes	Sections:  2	Gas:  7411859
+Id: 573	Gene: 11	Variation: 27	SVG:  6378 bytes	Sections:  1	Gas:  4363131
+Id: 574	Gene: 11	Variation: 28	SVG:  4176 bytes	Sections:  1	Gas:  2942615
+Id: 575	Gene: 11	Variation: 29	SVG:  2193 bytes	Sections:  1	Gas:  1666033
+Id: 576	Gene: 11	Variation: 30	SVG: 10293 bytes	Sections:  2	Gas:  7432429
+Id: 577	Gene: 11	Variation: 31	SVG:  8339 bytes	Sections:  1	Gas:  5619394
+Id: 578	Gene: 11	Variation: 32	SVG: 12595 bytes	Sections:  3	Gas:  9592860
+Id: 579	Gene: 11	Variation: 33	SVG: 14202 bytes	Sections:  4	Gas: 11418318
+Id: 580	Gene: 11	Variation: 34	SVG:  9406 bytes	Sections:  2	Gas:  6853734
+Id: 581	Gene: 11	Variation: 35	SVG: 17974 bytes	Sections:  6	Gas: 15798427
+Id: 582	Gene: 11	Variation: 36	SVG: 10521 bytes	Sections:  2	Gas:  7577545
+Id: 583	Gene: 11	Variation: 37	SVG:  7970 bytes	Sections:  1	Gas:  5392637
+Id: 584	Gene: 11	Variation: 38	SVG:  8911 bytes	Sections:  1	Gas:  5989963
+Id: 585	Gene: 11	Variation: 39	SVG:  5941 bytes	Sections:  1	Gas:  4075172
+Id: 586	Gene: 11	Variation: 40	SVG: 13906 bytes	Sections:  4	Gas: 11232043
+Id: 587	Gene: 11	Variation: 41	SVG: 12452 bytes	Sections:  3	Gas:  9510035
+Id: 588	Gene: 11	Variation: 42	SVG: 20538 bytes	Sections:  7	Gas: 18602195
+Id: 589	Gene: 11	Variation: 43	SVG: 13684 bytes	Sections:  4	Gas: 11087155
+Id: 590	Gene: 11	Variation: 44	SVG: 10254 bytes	Sections:  2	Gas:  7411631
+Id: 591	Gene: 11	Variation: 45	SVG: 10873 bytes	Sections:  2	Gas:  7804698
+Id: 592	Gene: 11	Variation: 46	SVG: 16410 bytes	Sections:  5	Gas: 13755957
+Id: 593	Gene: 11	Variation: 47	SVG: 15527 bytes	Sections:  5	Gas: 13197297
+Id: 594	Gene: 11	Variation: 48	SVG: 11223 bytes	Sections:  3	Gas:  8703563
+Id: 595	Gene: 11	Variation: 49	SVG:  4961 bytes	Sections:  1	Gas:  3457481
+Id: 596	Gene: 11	Variation: 50	SVG: 11197 bytes	Sections:  3	Gas:  8683553
+Id: 597	Gene: 11	Variation: 51	SVG:  6784 bytes	Sections:  1	Gas:  4610864
+Id: 598	Gene: 11	Variation: 52	SVG:  8633 bytes	Sections:  1	Gas:  5804945
+Id: 599	Gene: 11	Variation: 53	SVG:  7026 bytes	Sections:  1	Gas:  4775468
+Id: 600	Gene: 11	Variation: 54	SVG:  9350 bytes	Sections:  2	Gas:  6832787
+Id: 601	Gene: 11	Variation: 55	SVG:  7348 bytes	Sections:  1	Gas:  4981073
+Id: 602	Gene: 11	Variation: 56	SVG:  5589 bytes	Sections:  1	Gas:  3848707
+Id: 603	Gene: 11	Variation: 57	SVG:  6037 bytes	Sections:  1	Gas:  4136938
+Id: 604	Gene: 11	Variation: 58	SVG:  8745 bytes	Sections:  1	Gas:  5886909
+Id: 605	Gene: 11	Variation: 59	SVG:  8368 bytes	Sections:  1	Gas:  5640031
+Id: 606	Gene: 11	Variation: 60	SVG:  9346 bytes	Sections:  2	Gas:  6832610
+Id: 607	Gene: 11	Variation: 61	SVG:  6744 bytes	Sections:  1	Gas:  4590332
+Id: 608	Gene: 11	Variation: 62	SVG:  9920 bytes	Sections:  2	Gas:  7185137
+Id: 609	Gene: 11	Variation: 63	SVG:  5877 bytes	Sections:  1	Gas:  4034504
+Id: 610	Gene: 11	Variation: 64	SVG: 13646 bytes	Sections:  4	Gas: 11066800
+Id: 611	Gene: 11	Variation: 65	SVG:  7860 bytes	Sections:  1	Gas:  5310995
+Id: 612	Gene: 11	Variation: 66	SVG:  7740 bytes	Sections:  1	Gas:  5228627
+Id: 613	Gene: 11	Variation: 67	SVG:  9460 bytes	Sections:  2	Gas:  6894804
+Id: 614	Gene: 11	Variation: 68	SVG:  6044 bytes	Sections:  1	Gas:  4136906
+Id: 615	Gene: 11	Variation: 69	SVG: 11433 bytes	Sections:  3	Gas:  8848085
+Id: 616	Gene: 11	Variation: 70	SVG: 11395 bytes	Sections:  3	Gas:  8827407
+Id: 617	Gene: 11	Variation: 71	SVG: 14726 bytes	Sections:  4	Gas: 11769220
+Id: 618	Gene: 11	Variation: 72	SVG:  4816 bytes	Sections:  1	Gas:  3354292
+Id: 619	Gene: 11	Variation: 73	SVG:  3959 bytes	Sections:  1	Gas:  2799321
+Id: 620	Gene: 11	Variation: 74	SVG:  7604 bytes	Sections:  1	Gas:  5146412
+Id: 621	Gene: 11	Variation: 75	SVG: 11871 bytes	Sections:  3	Gas:  9118281
+Id: 622	Gene: 11	Variation: 76	SVG: 11246 bytes	Sections:  3	Gas:  8724951
+Id: 623	Gene: 11	Variation: 77	SVG:  9183 bytes	Sections:  2	Gas:  6709678
+Id: 624	Gene: 11	Variation: 78	SVG: 12373 bytes	Sections:  3	Gas:  9448818
+-------------------------------------------------------------------------------------
+> Costliest Trait
+Id: 571	Gene: 11	Variation: 25	SVG: 23728 bytes	Sections:  9	Gas: 23320361
+-------------------------------------------------------------------------------------
+> Total Expenditure
+Gas Used: 1829125537 units	Gas Price: 1000000000 wei	Gas Cost: 1.829125537 ether
+-------------------------------------------------------------------------------------
