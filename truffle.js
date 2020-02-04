@@ -29,7 +29,19 @@ module.exports = {
                 "m/44'/60'/0'/0/",
             ),
             network_id: "4",
-            skipDryRun: true
+            skipDryRun: true,
+            gasPrice: 2000000000, // 2 GWei
+        },
+        ropsten: {
+            provider: () => new HDWalletProvider(
+                config[config.ENV.TEST2.NAME].mnemonic,
+                config[config.ENV.TEST2.NAME].url,
+                0, 10, true,     // 0 = start with first address, 10 = derive 10 addresses, true = sharedNonce
+                "m/44'/60'/0'/0/",
+            ),
+            network_id: "3",
+            skipDryRun: true,
+            gasPrice: 2000000000, // 2 GWei
         },
         mainnet: {
             provider: () => new HDWalletProvider(
@@ -38,7 +50,9 @@ module.exports = {
                 0, 10, true,      // 0 = start with first address, 10 = derive 10 addresses, true = sharedNonce
                 "m/44'/60'/0'/0/" // BIP44 derivation path that is used for main net
             ),
-            network_id: "1"
+            network_id: "1",
+            skipDryRun: true,
+            gasPrice: 2000000000, // 2 GWei
         }
     },
     mocha: {

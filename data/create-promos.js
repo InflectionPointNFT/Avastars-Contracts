@@ -1,10 +1,13 @@
 const fs = require("fs");
+
+const NETWORK = 'development';
+const logfile = `data/create-promos.${NETWORK}.txt`;
+
 const BN = require('bn.js');
 const constants = require("../util/Constants");
 const GetWeb3Accounts = require('../util/GetWeb3Accounts');
 const GetGasCost = require('../util/GetGasCost');
 const promosJSON = "data/create-promos.json";
-const logfile = "data/create-promos.txt";
 const AvastarTeleporter = artifacts.require("contracts/AvastarTeleporter.sol");
 const div = "---------------------";
 
@@ -13,8 +16,10 @@ function ProcessedPromo(promo){
     this.id = "-";
     this.gasSpent = 0;
 }
-ProcessedPromo.prototype.toString = function() { return `Id: ${this.getId()}\tGas: ${this.getGasSpent()}`;};
+ProcessedPromo.prototype.toString = function() { return `Id: ${this.getId()}\tSerial: ${this.getSerial()}\tScore: ${this.getScore()}\tGas: ${this.getGasSpent()}`;};
 ProcessedPromo.prototype.getId = function () { return this.id?String(this.id).padStart(3):""; };
+ProcessedPromo.prototype.getSerial = function () { return String(this.promo.serial).padStart(3); };
+ProcessedPromo.prototype.getScore = function () { return String(this.promo.score).padStart(3); };
 ProcessedPromo.prototype.getGasSpent = function () { return (this.gasSpent)?String(this.gasSpent).padStart(8):""; };
 
 let total_gas = 0;
@@ -23,8 +28,19 @@ const logIt = (log, value) => { console.log(value); log.write(`${value}\n`) };
 
 module.exports = async function(done) {
 
-    console.log('Creating log file...');
-    const log = fs.createWriteStream(logfile);
+    // Attempt to read logfile, then decide whether to write or append
+    let lastPromo = fs.existsSync(logfile) ? readLog(logfile) : null;
+    let log, options;
+    if (lastPromo && lastPromo.promo.serial) {
+        console.log('Resume current log from last successful promo.');
+        options = {flags:'a'};
+    } else {
+        console.log('Start from scratch with new log.');
+        options = {flags:'w'};
+    }
+    log = fs.createWriteStream(logfile, options);
+
+    console.log(lastPromo);
 
     console.log('Processing raw database dump...');
     const promos = getPromos(promosJSON);
@@ -34,26 +50,39 @@ module.exports = async function(done) {
     console.log('Fetching accounts...');
     const accounts = await GetWeb3Accounts(web3);
 
+    // Function to determine if we should skip processing a promo
+    const shouldSkip = (processing, lastPromo) => lastPromo && processing.promo.serial <= lastPromo.promo.serial;
+
     // Get teleporter contract instance, verify, and process
     let teleporter = await AvastarTeleporter.deployed();
     let isTeleporter = await teleporter.isAvastarTeleporter();
     if (isTeleporter) {
         console.log('Adding promos to contract...');
-        logIt(log, div);
-        logIt(log, `> Operational Maximums:`);
-        logIt(log, `Gas/Tx: ${constants.MAX_GAS} units`);
-        logIt(log, div);
+        // Are we starting fresh or restarting?
+        if (!lastPromo) {
+            logIt(log, div);
+            logIt(log, `> Operational Maximums:`);
+            logIt(log, `Gas/Tx: ${constants.MAX_GAS} units`);
+            logIt(log, div);
+        } else {
+            logIt(log, "");
+        }
+
         try {
             // Process all the promos
             for (const promo of promos) {
 
                 let processing = new ProcessedPromo(promo);
-                await createPromo(teleporter, processing, accounts, log);
 
-                logIt(log, processing.toString());
+                if (!shouldSkip(processing, lastPromo)) {
 
-                if (processing.gasSpent > 0) {
-                    total_gas += processing.gasSpent;
+                    await createPromo(teleporter, processing, accounts, log);
+
+                    logIt(log, processing.toString());
+
+                    if (processing.gasSpent > 0) {
+                        total_gas += processing.gasSpent;
+                    }
                 }
             }
 
@@ -129,4 +158,46 @@ function getPromos(file) {
         process.exit();
     }
     return retVal;
+}
+
+
+// Read the previous log file and find the last successful promo
+function readLog(file) {
+    let lastSuccessfulPromo;
+
+    const convertObjToProcessed = obj => {
+        let processed = new ProcessedPromo();
+        processed.id = Number(obj.Id.trim());
+        processed.gasSpent = Number(obj.Gas.trim());
+        processed.promo = {
+            serial: Number(obj.Serial.trim()),
+            score:  Number(obj.Score.trim()),
+        };
+        return processed;
+    };
+
+    try {
+        const infile = fs.readFileSync(file, "utf8");
+        let lines = infile.split("\n");
+
+        // get last line data
+        let lastLine = lines[lines.length-1];
+        let pairs = lastLine.split("\t");
+        let gas, obj = {};
+        pairs.forEach(pair => obj[pair.split(":")[0]] = pair.split(":")[1]);
+        lastSuccessfulPromo = convertObjToProcessed(obj);
+
+        // accumulate gas and find costliest promo
+        lines.forEach( line => {
+            obj = {};
+            pairs = line.split("\t");
+            pairs.forEach(pair => obj[pair.split(":")[0]] = pair.split(":")[1]);
+            gas = (!!obj.Gas) ? Number(obj.Gas.trim()) : 0;
+            total_gas += gas;
+        });
+
+    } catch (e) {
+        console.log(e.message);
+    }
+    return lastSuccessfulPromo;
 }

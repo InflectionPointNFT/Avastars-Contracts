@@ -1,7 +1,7 @@
 const fs = require("fs");
 
-const ENV = 'rinkeby';
-const logfile = `data/create-traits.${ENV}.txt`;
+const NETWORK = 'ropsten';
+const logfile = `data/create-traits.${NETWORK}.txt`;
 
 const constants = require("../util/Constants");
 const GetWeb3Accounts = require('../util/GetWeb3Accounts');
@@ -290,7 +290,7 @@ function readLog(file) {
         pairs.forEach(pair => obj[pair.split(":")[0]] = pair.split(":")[1]);
         lastSuccessfulTrait = convertObjToProcessed(obj);
 
-        // find costliest trait
+        // accumulate gas and find costliest trait
         lines.forEach( line => {
             obj = {};
             pairs = line.split("\t");

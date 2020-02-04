@@ -58,18 +58,21 @@ module.exports = {
     TOKEN_URI_BASE: {
         DEV: "https://dev.avastars.io/metadata/",
         TEST: "https://test.avastars.io/metadata/",
+        TEST2: "https://test2.avastars.io/metadata/",
         PROD: "https://avastars.io/metadata/",
     },
 
     VIEW_URI_BASE: {
         DEV: "https://dev.avastars.io/avastar/",
         TEST: "https://test.avastars.io/avastar/",
+        TEST2: "https://test.avastars.io/avastar/",
         PROD: "https://avastars.io/avastar/",
     },
 
     MEDIA_URI_BASE: {
         DEV: "https://dev.avastars.io/media/",
         TEST: "https://test.avastars.io/media/",
+        TEST2: "https://test2.avastars.io/media/",
         PROD: "https://avastars.io/media/",
     }
 
