@@ -99,6 +99,7 @@ Id:  93	Serial:  93	Score:  67	Gas:   444090
 Id:  94	Serial:  94	Score:  74	Gas:   444090
 Id:  95	Serial:  95	Score:  68	Gas:   444090
 Id:  96	Serial:  96	Score:  69	Gas:   444090
+Id:  97	Serial:  97	Score:  67	Gas:   444090
 Id:  98	Serial:  98	Score:  60	Gas:   444090
 Id:  99	Serial:  99	Score:  63	Gas:   444090
 Id: 100	Serial: 100	Score:  74	Gas:   444090
@@ -114,6 +115,15 @@ Id: 109	Serial: 109	Score:   1	Gas:   444090
 Id: 110	Serial: 110	Score:  58	Gas:   444090
 Id: 111	Serial: 111	Score:  60	Gas:   444090
 Id: 112	Serial: 112	Score:  72	Gas:   444090
+Id: 113	Serial: 113	Score:  63	Gas:   444090
+Id: 114	Serial: 114	Score:  62	Gas:   444090
+Id: 115	Serial: 115	Score:  53	Gas:   444090
+Id: 116	Serial: 116	Score:  67	Gas:   444090
+Id: 117	Serial: 117	Score:  64	Gas:   444090
+Id: 118	Serial: 118	Score:  64	Gas:   444090
+Id: 119	Serial: 119	Score:  62	Gas:   444090
+Id: 120	Serial: 120	Score:  63	Gas:   444090
+Id: 121	Serial: 121	Score:  63	Gas:   444090
 Id: 122	Serial: 122	Score:  84	Gas:   444090
 Id: 123	Serial: 123	Score:  64	Gas:   444090
 Id: 124	Serial: 124	Score:  65	Gas:   444090
@@ -194,5 +204,5 @@ Id: 198	Serial: 198	Score:  59	Gas:   444090
 Id: 199	Serial: 199	Score:  69	Gas:   444090
 ---------------------
 > Total Expenditure
-Gas Used: 86495550 units	Gas Price: 1000000000 wei	Gas Cost: 0.08649555 ether
+Gas Used: 88716000 units	Gas Price: 1000000000 wei	Gas Cost: 0.088716 ether
 ---------------------
