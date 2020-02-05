@@ -19,7 +19,8 @@ module.exports = {
             host: "127.0.0.1",
             port: 7545,
             network_id: "*",
-            from: "0xd9D45b75ac74962d74dc5F24Dd02E1e1E828A7d0"
+            from: "0xd9D45b75ac74962d74dc5F24Dd02E1e1E828A7d0",
+            gas: 9930000
         },
         rinkeby: {
             provider: () => new HDWalletProvider(
@@ -31,6 +32,7 @@ module.exports = {
             network_id: "4",
             skipDryRun: true,
             gasPrice: 2000000000, // 2 GWei
+            gas: 9930000
         },
         ropsten: {
             provider: () => new HDWalletProvider(
@@ -42,6 +44,7 @@ module.exports = {
             network_id: "3",
             skipDryRun: true,
             gasPrice: 2000000000, // 2 GWei
+            gas: 9930000
         },
         mainnet: {
             provider: () => new HDWalletProvider(
@@ -53,6 +56,7 @@ module.exports = {
             network_id: "1",
             skipDryRun: true,
             gasPrice: 2000000000, // 2 GWei
+            gas: 9930000
         }
     },
     mocha: {

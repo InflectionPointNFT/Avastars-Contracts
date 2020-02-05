@@ -53,7 +53,7 @@ module.exports = {
 
     MAX_ART_SIZE: 9000,
     MAX_EXT_SIZE: 2100,
-    MAX_GAS: 8000000,
+    MAX_GAS: 9930000,
 
     TOKEN_URI_BASE: {
         DEV: "https://dev.avastars.io/metadata/",

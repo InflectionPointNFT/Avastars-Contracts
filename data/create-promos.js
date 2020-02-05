@@ -1,11 +1,11 @@
 const fs = require("fs");
 
-const NETWORK = 'development';
+const NETWORK = 'ropsten';
 const logfile = `data/create-promos.${NETWORK}.txt`;
 
 const BN = require('bn.js');
 const constants = require("../util/Constants");
-const GetWeb3Accounts = require('../util/GetWeb3Accounts');
+const AccountManager = require('../util/AccountManager');
 const GetGasCost = require('../util/GetGasCost');
 const promosJSON = "data/create-promos.json";
 const AvastarTeleporter = artifacts.require("contracts/AvastarTeleporter.sol");
@@ -28,6 +28,15 @@ const logIt = (log, value) => { console.log(value); log.write(`${value}\n`) };
 
 module.exports = async function(done) {
 
+    console.log('Environment / network...');
+    const env = AccountManager.getEnvByNetwork(NETWORK);
+    console.log(env, NETWORK);
+
+    console.log('Fetching accounts...');
+    const accounts = AccountManager.getAccounts(env);
+    console.log(accounts);
+    process.exit(); // SAFETY CATCH: Comment out to run
+
     // Attempt to read logfile, then decide whether to write or append
     let lastPromo = fs.existsSync(logfile) ? readLog(logfile) : null;
     let log, options;
@@ -45,10 +54,6 @@ module.exports = async function(done) {
     console.log('Processing raw database dump...');
     const promos = getPromos(promosJSON);
     console.log(`${promos.length} promos processed.`);
-
-    // Get accounts using default web3 provided by `truffle exec`
-    console.log('Fetching accounts...');
-    const accounts = await GetWeb3Accounts(web3);
 
     // Function to determine if we should skip processing a promo
     const shouldSkip = (processing, lastPromo) => lastPromo && processing.promo.serial <= lastPromo.promo.serial;
@@ -76,7 +81,12 @@ module.exports = async function(done) {
 
                 if (!shouldSkip(processing, lastPromo)) {
 
-                    await createPromo(teleporter, processing, accounts, log);
+                    try {
+                        await createPromo(teleporter, processing, accounts, log);
+                    } catch (e) {
+                        console.log(e.message);
+                        process.exit();
+                    }
 
                     logIt(log, processing.toString());
 

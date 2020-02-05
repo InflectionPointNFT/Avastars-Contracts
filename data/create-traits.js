@@ -4,7 +4,7 @@ const NETWORK = 'ropsten';
 const logfile = `data/create-traits.${NETWORK}.txt`;
 
 const constants = require("../util/Constants");
-const GetWeb3Accounts = require('../util/GetWeb3Accounts');
+const AccountManager = require('../util/AccountManager');
 const GetGasCost = require('../util/GetGasCost');
 const traitsJSON = "data/create-traits.json";
 const AvastarTeleporter = artifacts.require("contracts/AvastarTeleporter.sol");
@@ -70,6 +70,16 @@ const logIt = (log, value) => { console.log(value); log.write(`${value}\n`) };
 
 module.exports = async function(done) {
 
+    console.log('Environment / network...');
+    const env = AccountManager.getEnvByNetwork(NETWORK);
+    console.log(env, NETWORK);
+
+    console.log('Fetching accounts...');
+    const accounts = AccountManager.getAccounts(env);
+    console.log(accounts);
+    process.exit(); // SAFETY CATCH: Comment out to run
+
+
     // Attempt to read logfile, then decide whether to write or append
     let lastTrait = fs.existsSync(logfile) ? readLog(logfile) : null;
     let log, options;
@@ -88,10 +98,6 @@ module.exports = async function(done) {
     console.log('Processing raw database dump...');
     const traits = getTraits(traitsJSON);
     console.log(`${traits.length} traits processed.`);
-
-    // Get accounts using default web3 provided by `truffle exec`
-    console.log('Fetching accounts...');
-    const accounts = await GetWeb3Accounts(web3);
 
     // Function to determine if we should skip processing a trait
     const shouldSkip = (processing, lastTrait) => (lastTrait &&
