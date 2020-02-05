@@ -330,12 +330,36 @@ contract AvastarMetadata is AvastarBase, AvastarTypes, AccessControl {
         metadata = strConcat(metadata, uintToStr(ranking));
         metadata = strConcat(metadata, '\n    },\n');
 
+        // Level
+        metadata = strConcat(metadata, '    {\n');
+        metadata = strConcat(metadata, '      "trait_type": "level",\n');
+        metadata = strConcat(metadata, '      "value": "');
+        metadata = strConcat(metadata, getRankingLevel(ranking));
+        metadata = strConcat(metadata, '"\n    },\n');
+
         // Traits
         metadata = strConcat(metadata, assembleTraitMetadata(generation, traits));
 
         // Finish JSON object
         metadata = strConcat(metadata, '  ]\n}');
 
+    }
+
+    /**
+     * @notice Get the rarity level for a given Avastar Rank
+     * @param ranking the ranking level (1-100)
+     * @return level the rarity level (Common, Uncommon, Rare, Epic, Legendary)
+     */
+    function getRankingLevel(uint8 ranking)
+    internal view
+    returns (string memory level) {
+        require(ranking >0 && ranking <=100);
+        uint8[4] memory breaks = [33, 41, 50, 60];
+        if (ranking < breaks[0]) {level = "Common";}
+        else if (ranking < breaks[1]) {level = "Uncommon";}
+        else if (ranking < breaks[2]) {level = "Rare";}
+        else if (ranking < breaks[3]) {level = "Epic";}
+        else {level = "Legendary";}
     }
 
     /**

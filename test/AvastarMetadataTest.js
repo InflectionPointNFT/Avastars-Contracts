@@ -40,7 +40,7 @@ contract('AvastarMetadata', function(accounts) {
         "generation" : constants.GENERATION.TWO,
         "gender"     : constants.GENDER.MALE,
         "traits"     : traits3,
-        "ranking"    : 76
+        "ranking"    : 42
     };
 
     const prime1 = {
@@ -100,6 +100,10 @@ contract('AvastarMetadata', function(accounts) {
                 "display_type": "number",
                 "trait_type": "ranking",
                 "value": 68
+            },
+            {
+                "trait_type": "level",
+                "value": "Legendary"
             },
             {
                 "trait_type": "skin_tone",
@@ -179,7 +183,11 @@ contract('AvastarMetadata', function(accounts) {
             {
                 "display_type": "number",
                 "trait_type": "ranking",
-                "value": 76
+                "value": 42
+            },
+            {
+                "trait_type": "level",
+                "value": "Rare"
             },
             {
                 "trait_type": "skin_tone",

@@ -17,8 +17,8 @@ contract AvastarState is AvastarBase, AvastarTypes, AccessControl, ERC721Full {
      */
     constructor() public ERC721Full(TOKEN_NAME, TOKEN_SYMBOL) {}
 
-    string public constant TOKEN_NAME = "Avastars";
-    string public constant TOKEN_SYMBOL = "AVAST";
+    string public constant TOKEN_NAME = "Avastar";
+    string public constant TOKEN_SYMBOL = "AVASTAR";
 
     /**
      * @notice All Avastars across all Waves and Generations
