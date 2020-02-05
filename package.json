@@ -8,7 +8,8 @@
     "truffle:start": "npx truffle console",
     "uml:generate": "sol2uml ./contracts -f png -o docs/media/AvastarsUML.png",
     "doc:generate": "node solidoc/cli.js",
-    "doc:serve": "docsify serve docs"
+    "doc:serve": "docsify serve docs",
+    "sol:flatten": "./flatten-contracts.sh"
   },
   "repository": {
     "type": "git",
@@ -33,7 +34,8 @@
     "solhint": "^2.3.0",
     "truffle": "^5.1.11",
     "truffle-assertions": "^0.9.2",
-    "truffle-contract": "^4.0.31"
+    "truffle-contract": "^4.0.31",
+    "truffle-flattener": "^1.4.2"
   },
   "dependencies": {
     "@openzeppelin/contracts": "^2.4.0",
