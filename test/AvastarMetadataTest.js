@@ -246,12 +246,11 @@ contract('AvastarMetadata', function(accounts) {
         teleporter = await AvastarTeleporter.new();
 
         // Deploy the metadata contract
-        metadataContract = await AvastarMetadata.new(
-            teleporter.address,
-            constants.MEDIA_URI_BASE.DEV,
-            constants.VIEW_URI_BASE.DEV,
-            constants.TOKEN_URI_BASE.DEV
-        );
+        metadataContract = await AvastarMetadata.new();
+        await metadataContract.setTeleporterContract(teleporter.address);
+        await metadataContract.setTokenUriBase(constants.TOKEN_URI_BASE.DEV);
+        await metadataContract.setViewUriBase(constants.VIEW_URI_BASE.DEV);
+        await metadataContract.setMediaUriBase(constants.MEDIA_URI_BASE.DEV);
 
         // Set the teleporter's reference to the metadata contract
         await teleporter.setMetadataContractAddress(metadataContract.address);

@@ -8,14 +8,6 @@ Mints Avastar Primes using the `AvastarTeleporter` contract on behalf of deposit
 Allows system admin to set current generation and series.
 Manages accounting of depositor and franchise balances.
 
-## Constructor
-
-Construct AvastarPrimeMinter contract.
-
-```solidity
-constructor() public
-```
-
 ## Contract Members
 **Constants & Variables**
 

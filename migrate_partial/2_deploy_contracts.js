@@ -18,7 +18,7 @@ module.exports = (deployer, network, liveAccounts) => {
 
         // Deploy the Avastar Teleporter, Prime Minter, and Metadata contracts
         console.log("Deploying contracts...");
-        const avastarTeleporter = await deployer.deploy(AvastarTeleporter);
+        const avastarTeleporter = await deployer.deploy(AvastarTeleporter, {overwrite: false});
         const avastarPrimeMinter = await deployer.deploy(AvastarPrimeMinter);
         const avastarMetadata = await deployer.deploy(AvastarMetadata);
 
@@ -45,21 +45,26 @@ module.exports = (deployer, network, liveAccounts) => {
         console.log("Unpause\n");
         await avastarMetadata.unpause();
 
+/*
         // Prepare the Avastar Teleporter contract for use
         console.log("------------------------------------");
         console.log("Preparing AvastarTeleporter contract");
         console.log("------------------------------------");
+
         console.log("Add admins, owners, minters");
         promises = admins.map(admin => avastarTeleporter.addSysAdmin(admin));
         promises.concat(owners.map(owner => avastarTeleporter.addOwner(owner)));
         promises.concat(minters.map(minter => avastarTeleporter.addMinter(minter)));
         await Promise.all(promises);
 
+ */
+        await avastarTeleporter.pause(); // remove me
+
         console.log("Set metadata contract address");
         await avastarTeleporter.setMetadataContractAddress(avastarMetadata.address);
-
         console.log("Unpause\n");
         await avastarTeleporter.unpause();
+
 
         // Prepare the Avastar Prime Minter contract for use
         console.log("-------------------------------------");

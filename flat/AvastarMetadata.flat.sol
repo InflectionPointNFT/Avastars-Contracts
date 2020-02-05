@@ -814,37 +814,6 @@ contract AvastarMetadata is AvastarBase, AvastarTypes, AccessControl {
     string private viewUriBase;
 
     /**
-     * @notice Construct AvastarMetadata contract.
-     * @param _teleporter address of the `AvastarTeleporter` contract
-     * @param _mediaUriBase base uri for an Avastar image
-     * @param _viewUriBase base uri to view an Avastar on the Avastars website
-     */
-    constructor (
-        address _teleporter,
-        string memory _mediaUriBase,
-        string memory _viewUriBase,
-        string memory _tokenUriBase) public
-    {
-        // Cast the candidate contract to the IAvastarTeleporter interface
-        IAvastarTeleporter candidateContract = IAvastarTeleporter(_teleporter);
-
-        // Verify that we have the appropriate address
-        require(candidateContract.isAvastarTeleporter());
-
-        // Set the contract address
-        teleporterContract = IAvastarTeleporter(_teleporter);
-
-        // Media URI
-        mediaUriBase = _mediaUriBase;
-
-        // View URI
-        viewUriBase = _viewUriBase;
-
-        // Token URI
-        tokenUriBase = _tokenUriBase;
-    }
-
-    /**
      * @notice Set the address of the `AvastarTeleporter` contract.
      * Only invokable by system admin role, when contract is paused and not upgraded.
      * To be used if the Teleporter contract has to be upgraded and a new instance deployed.
@@ -1102,7 +1071,7 @@ contract AvastarMetadata is AvastarBase, AvastarTypes, AccessControl {
      * @return level the rarity level (Common, Uncommon, Rare, Epic, Legendary)
      */
     function getRankingLevel(uint8 ranking)
-    internal view
+    internal pure
     returns (string memory level) {
         require(ranking >0 && ranking <=100);
         uint8[4] memory breaks = [33, 41, 50, 60];

@@ -8,14 +8,6 @@ Generate Avastar metadata from on-chain data.
 Refers to the `AvastarTeleporter` for raw data to generate
 the human and machine readable metadata for a given Avastar token Id.
 
-## Constructor
-
-Construct AvastarMetadata contract.
-
-```solidity
-constructor() public
-```
-
 ## Contract Members
 **Constants & Variables**
 
@@ -109,6 +101,7 @@ event ViewUriBaseSet(string viewUriBase)
 - [mediaURI](#mediauri)
 - [tokenURI](#tokenuri)
 - [getAvastarMetadata](#getavastarmetadata)
+- [getRankingLevel](#getrankinglevel)
 - [assembleTraitMetadata](#assembletraitmetadata)
 
 ### setTeleporterContract
@@ -283,6 +276,28 @@ returns (string metadata)
 | Name        | Type           | Description  |
 | ------------- |------------- | -----|
 | metadata | string | the Avastar's human-readable metadata | 
+
+### getRankingLevel
+
+Get the rarity level for a given Avastar Rank
+
+```solidity
+function getRankingLevel(uint8 ranking)
+internal pure
+returns (string level)
+```
+
+**Arguments**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| ranking | uint8 | the ranking level (1-100) | 
+
+**Returns**
+
+| Name        | Type           | Description  |
+| ------------- |------------- | -----|
+| level | string | the rarity level (Common, Uncommon, Rare, Epic, Legendary) | 
 
 ### assembleTraitMetadata
 
