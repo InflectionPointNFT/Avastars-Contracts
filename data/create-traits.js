@@ -77,7 +77,7 @@ module.exports = async function(done) {
     console.log('Fetching accounts...');
     const accounts = AccountManager.getAccounts(env);
     console.log(accounts);
-    process.exit(); // SAFETY CATCH: Comment out to run
+    //process.exit(); // SAFETY CATCH: Comment out to run
 
 
     // Attempt to read logfile, then decide whether to write or append
