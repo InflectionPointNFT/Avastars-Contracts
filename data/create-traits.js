@@ -1,6 +1,6 @@
 const fs = require("fs");
 
-const NETWORK = 'ropsten';
+const NETWORK = 'rinkeby';
 const logfile = `data/create-traits.${NETWORK}.txt`;
 
 const constants = require("../util/Constants");
@@ -92,8 +92,8 @@ module.exports = async function(done) {
     }
     log = fs.createWriteStream(logfile, options);
 
-    console.log(costliest_trait);
-    console.log(lastTrait);
+    //console.log(costliest_trait);
+    //console.log(lastTrait);
 
     console.log('Processing raw database dump...');
     const traits = getTraits(traitsJSON);
