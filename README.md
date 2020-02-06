@@ -167,8 +167,20 @@ Adding traits to contract...
 ### Must edit data/create-promos.js, set NETWORK constant, and comment out safety catch first!
 ```
 truffle(rinkeby)> exec data/create-promos.js
-Using network 'rinkeby'.
 
-
+Environment / network...
+TEST rinkeby
+Fetching accounts...
+{ admins: [ '0x603158d642682E0D59b0Ab9d7e0c305EeA9C947a' ],
+  owners: [ '0x0C3b27Fd4195E4C3849b96fDb8D1fB4846f7c198' ],
+  minters: [ '0xC9063de7a2Db43EF77cf6C60DA2459426D89e78F' ] }
+Cannot read property 'trim' of undefined
+Start from scratch with new log.
+Processing raw database dump...
+200 promos processed.
+Adding promos to contract...
+.
+.
+.
 
 ```
