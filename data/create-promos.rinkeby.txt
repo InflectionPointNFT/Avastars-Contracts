@@ -1,6 +1,6 @@
 ---------------------
 > Operational Maximums:
-Gas/Tx: 9930000 units
+Gas/Tx: 8000000 units
 ---------------------
 Id:   0	Serial:   0	Score: 100	Gas:   342090
 Id:   1	Serial:   1	Score:  99	Gas:   444090
