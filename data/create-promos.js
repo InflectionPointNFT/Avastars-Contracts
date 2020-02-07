@@ -1,6 +1,6 @@
 const fs = require("fs");
 
-const NETWORK = 'rinkeby';
+const NETWORK = 'mainnet';
 const logfile = `data/create-promos.${NETWORK}.txt`;
 
 const BN = require('bn.js');
@@ -35,7 +35,7 @@ module.exports = async function(done) {
     console.log('Fetching accounts...');
     const accounts = AccountManager.getAccounts(env);
     console.log(accounts);
-    //process.exit(); // SAFETY CATCH: Comment out to run
+    process.exit(); // SAFETY CATCH: Comment out to run
 
     // Attempt to read logfile, then decide whether to write or append
     let lastPromo = fs.existsSync(logfile) ? readLog(logfile) : null;
@@ -104,6 +104,7 @@ module.exports = async function(done) {
 
         } catch (e) {
             logIt(log, e.message);
+            process.exit();
         }
 
         done();
@@ -143,6 +144,7 @@ async function createPromo(teleporter, processing, accounts, log){
     } catch (e) {
         let err = e.toString() + '\n';
         logIt(log, err);
+        process.exit();
     }
 }
 

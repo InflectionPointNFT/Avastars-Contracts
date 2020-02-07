@@ -56,7 +56,7 @@ module.exports = {
             network_id: "1",
             skipDryRun: true,
             gasPrice: 2000000000, // 2 GWei
-            gas: 800000
+            gas: 9900000
         }
     },
     mocha: {

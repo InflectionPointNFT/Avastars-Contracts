@@ -1,6 +1,6 @@
 const fs = require("fs");
 
-const NETWORK = 'rinkeby';
+const NETWORK = 'mainnet';
 const logfile = `data/create-traits.${NETWORK}.txt`;
 
 const constants = require("../util/Constants");
@@ -65,7 +65,7 @@ ProcessedTrait.prototype.getGasSpent = function () { return (this.totalGasSpent)
 
 let total_gas = 0;
 let costliest_trait = new ProcessedTrait();
-const bumpGas = gas => gas + Math.round((gas * .01));
+const bumpGas = gas => gas + Math.round((gas * .02));
 const logIt = (log, value) => { console.log(value); log.write(`${value}\n`) };
 
 module.exports = async function(done) {
@@ -77,7 +77,7 @@ module.exports = async function(done) {
     console.log('Fetching accounts...');
     const accounts = AccountManager.getAccounts(env);
     console.log(accounts);
-    //process.exit(); // SAFETY CATCH: Comment out to run
+    process.exit(); // SAFETY CATCH: Comment out to run
 
 
     // Attempt to read logfile, then decide whether to write or append
@@ -167,6 +167,7 @@ module.exports = async function(done) {
 
         } catch (e) {
             logIt(log, e.message);
+            process.exit();
         }
 
         done();
@@ -205,6 +206,7 @@ async function createTrait(teleporter, processing, accounts, log, lastTrait){
     } catch (e) {
         let err = e.toString() + '\n';
         logIt(log, err);
+        process.exit();
     }
 }
 
@@ -229,6 +231,7 @@ async function extendTrait(teleporter, processing, piece, accounts, log){
     } catch (e) {
         let err = e.toString() + '\n';
         logIt(log, `${err} ${processing.toString()}`);
+        process.exit();
     }
 }
 

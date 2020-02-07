@@ -13,7 +13,7 @@ module.exports = (deployer, network, liveAccounts) => {
         const currentAdmin = liveAccounts[0];
         const accounts = AccountManager.getAccounts(environment);
         const {owners, minters} = accounts;
-        const admins = accounts.admins.filter( acct => acct !== currentAdmin);
+        const admins = accounts.admins.filter(acct => acct !== currentAdmin);
         let promises;
 
         // Deploy the Avastar Teleporter, Prime Minter, and Metadata contracts
@@ -49,11 +49,14 @@ module.exports = (deployer, network, liveAccounts) => {
         console.log("------------------------------------");
         console.log("Preparing AvastarTeleporter contract");
         console.log("------------------------------------");
-        console.log("Add admins, owners, minters");
+        console.log("Add admins, owners");
         promises = admins.map(admin => avastarTeleporter.addSysAdmin(admin));
         promises.concat(owners.map(owner => avastarTeleporter.addOwner(owner)));
-        promises.concat(minters.map(minter => avastarTeleporter.addMinter(minter)));
         await Promise.all(promises);
+
+        console.log("Add minters");
+        await avastarTeleporter.addMinter(minters[0]);
+        await avastarTeleporter.addMinter(avastarPrimeMinter.address);
 
         console.log("Set metadata contract address");
         await avastarTeleporter.setMetadataContractAddress(avastarMetadata.address);
