@@ -1,13 +1,13 @@
 const fs = require("fs");
 
-const NETWORK = 'ropsten';
+const NETWORK = 'mainnet';
 const logfile = `data/verify-traits.${NETWORK}.txt`;
 
 const constants = require("../util/Constants");
 const AccountManager = require('../util/AccountManager');
 const traitsJSON = "data/create-traits.json";
 const AvastarTeleporter = artifacts.require("contracts/AvastarTeleporter.sol");
-const div = "--------------------------------------------------------";
+const div = "-------------------------------------------------";
 const orderedKeys = Object.keys(constants.GENE).map(
     key => key
         .toLowerCase()
@@ -103,7 +103,7 @@ module.exports = async function(done) {
 
             // Report the summary
             logIt(log, div);
-            logIt(log, `> Verified Traits\n${verified_traits}`);
+            logIt(log, `> Verified Traits\n${verified_traits} of ${traits.length} were correct`);
             logIt(log, div);
 
         } catch (e) {
@@ -133,6 +133,8 @@ async function verifyTrait(teleporter, processing, accounts, log){
 
         processing.verified = (art === svg);
         processing.id = traitId;
+        verified_traits += processing.verified ? 1 : 0;
+
 
     } catch (e) {
         let err = e.toString() + '\n';
@@ -209,8 +211,7 @@ function readLog(file) {
             obj = {};
             pairs = line.split("\t");
             pairs.forEach(pair => obj[pair.split(":")[0]] = pair.split(":")[1]);
-            verified_traits += (obj.Verified) ? 1 : 0;
-
+            verified_traits += (!!obj.Verified && obj.Verified.trim() === "[+]") ? 1 : 0;
         });
 
     } catch (e) {
