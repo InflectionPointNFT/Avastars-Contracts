@@ -252,16 +252,18 @@ function getTraits(file) {
 
         retVal = orderedKeys.map( key => {
             let traits = [];
-            traits.push(genes[key]
-                .filter(trait => !!trait)
-                .map(trait => {
-                    addGeneration(trait);
-                    adjustSeries(trait);
-                    adjustGender(trait);
-                    adjustRarity(trait);
-                    adjustGene(trait);
-                    return trait;
-                }));
+            if (!!genes[key]) {
+                traits.push(genes[key]
+                    .filter(trait => !!trait)
+                    .map(trait => {
+                        addGeneration(trait);
+                        adjustSeries(trait);
+                        adjustGender(trait);
+                        adjustRarity(trait);
+                        adjustGene(trait);
+                        return trait;
+                    }));
+            }
             return traits.flat();
         } );
     } catch (e) {

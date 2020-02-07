@@ -619,3 +619,22 @@ Id: 621	Gene: 11	Variation: 78	Verified: [+]
 > Verified Traits
 604 of 614 were correct
 -------------------------------------------------
+
+
+-------------------------------------------------
+> Verifying Redeployed Trait Art
+-------------------------------------------------
+Id: 622	Gene:  4	Variation: 45	Verified: [+]
+Id: 623	Gene:  4	Variation: 46	Verified: [+]
+Id: 624	Gene:  9	Variation: 19	Verified: [+]
+Id: 625	Gene:  9	Variation: 20	Verified: [+]
+Id: 626	Gene: 10	Variation: 61	Verified: [+]
+Id: 627	Gene: 10	Variation: 62	Verified: [+]
+Id: 628	Gene: 11	Variation: 49	Verified: [+]
+Id: 629	Gene: 11	Variation: 50	Verified: [+]
+Id: 630	Gene: 11	Variation: 53	Verified: [+]
+Id: 631	Gene: 11	Variation: 54	Verified: [+]
+-------------------------------------------------
+> Verified Traits
+10 of 10 were correct
+-------------------------------------------------

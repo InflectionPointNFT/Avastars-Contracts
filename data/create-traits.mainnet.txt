@@ -623,3 +623,25 @@ Id: 566	Gene: 11	Variation: 25	SVG: 23728 bytes	Sections:  9	Gas: 23305361
 > Total Expenditure
 Gas Used: 1826790281 units	Gas Price: 5000000000 wei	Gas Cost: 9.1339514 ether
 -------------------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------------------
+> Redeploying traits that did not verify
+-------------------------------------------------------------------------------------
+Id: 622	Gene:  4	Variation: 45	SVG:  4628 bytes	Sections:  1	Gas:  3215856
+Id: 623	Gene:  4	Variation: 46	SVG: 16222 bytes	Sections:  5	Gas: 13616931
+Id: 624	Gene:  9	Variation: 19	SVG:   891 bytes	Sections:  1	Gas:   807329
+Id: 625	Gene:  9	Variation: 20	SVG: 10992 bytes	Sections:  2	Gas:  7872588
+Id: 626	Gene: 10	Variation: 61	SVG:  6012 bytes	Sections:  1	Gas:  4101919
+Id: 627	Gene: 10	Variation: 62	SVG: 11626 bytes	Sections:  3	Gas:  8957942
+Id: 628	Gene: 11	Variation: 49	SVG:  4961 bytes	Sections:  1	Gas:  3442481
+Id: 629	Gene: 11	Variation: 50	SVG: 11197 bytes	Sections:  3	Gas:  8668553
+Id: 630	Gene: 11	Variation: 53	SVG:  7026 bytes	Sections:  1	Gas:  4760468
+Id: 631	Gene: 11	Variation: 54	SVG:  9350 bytes	Sections:  2	Gas:  6817787
+-------------------------------------------------------------------------------------
+> Costliest Trait
+Id: 623	Gene:  4	Variation: 46	SVG: 16222 bytes	Sections:  5	Gas: 13616931
+-------------------------------------------------------------------------------------
+> Total Expenditure
+Gas Used: 62261854 units	Gas Price: 3000000000 wei	Gas Cost: 0.186785562 ether
+-------------------------------------------------------------------------------------
