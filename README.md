@@ -29,7 +29,7 @@ The scripts for deploying the contracts. The `AvastarMetadata` and `AvastarPrime
 so the `migrate_partial` folder contains copies of the `migrations` scripts edited so as not to overwrite the 
 `AvastarTeleporter` contract once deployed.
 
-### poc
+### /poc
 Our initial proof of concept, built in a single day.which gave us the confidence that we could do layered SVG on the
 blockchain. Also contains our further thoughts about how we would handle traits that depended upon other traits,
 such as a randomly chosen hair style using a randomly chosen hair color.
