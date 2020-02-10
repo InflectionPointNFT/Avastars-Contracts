@@ -1,5 +1,5 @@
 # Avastars Contracts
-Ethereum-based collectible avatars with on-chain artwork
+Ethereum-based collectible avatars with on-chain artwork and metadata
  
 ## Documentation
 Developer setup, contract architecture, UML, and docs, trait hash bitmasking info, unit test output, 
