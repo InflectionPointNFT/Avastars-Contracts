@@ -3,8 +3,8 @@ const fs = require("fs");
 const NETWORK = 'mainnet';
 const logfile = `data/verify-traits.${NETWORK}.txt`;
 
-const constants = require("../util/Constants");
-const AccountManager = require('../util/AccountManager');
+const constants = require("../../util/Constants");
+const AccountManager = require('../../util/AccountManager');
 const traitsJSON = "data/create-traits.json";
 const AvastarTeleporter = artifacts.require("contracts/AvastarTeleporter.sol");
 const div = "-------------------------------------------------";

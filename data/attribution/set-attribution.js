@@ -1,5 +1,5 @@
 const fs = require("fs");
-const constants = require("../util/Constants");
+const constants = require("../../util/Constants");
 const AvastarTeleporter = artifacts.require("contracts/AvastarTeleporter.sol");
 const attribution = {
     "generation": constants.GENERATION.ONE,

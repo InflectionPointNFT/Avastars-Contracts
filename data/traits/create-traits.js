@@ -1,11 +1,15 @@
-const fs = require("fs");
+//--------------------------{SET ME FIRST}---------------------
+const NETWORK = 'development';
+//const NETWORK = 'ropsten';
+//const NETWORK = 'rinkeby';
+//const NETWORK = 'mainnet';
+//--------------------------{SET ME FIRST}---------------------
 
-const NETWORK = 'mainnet';
 const logfile = `data/create-traits.${NETWORK}.txt`;
-
-const constants = require("../util/Constants");
-const AccountManager = require('../util/AccountManager');
-const GetGasCost = require('../util/GetGasCost');
+const fs = require("fs");
+const constants = require("../../util/Constants");
+const AccountManager = require('../../util/AccountManager');
+const GetGasCost = require('../../util/GetGasCost');
 const traitsJSON = "data/create-traits.json";
 const AvastarTeleporter = artifacts.require("contracts/AvastarTeleporter.sol");
 const div = "-------------------------------------------------------------------------------------";
@@ -77,7 +81,10 @@ module.exports = async function(done) {
     console.log('Fetching accounts...');
     const accounts = AccountManager.getAccounts(env);
     console.log(accounts);
-    process.exit(); // SAFETY CATCH: Comment out to run
+
+    // ------------------------{SAFETY CATCH: Comment out to run}------------------
+    process.exit();
+    // ------------------------{SAFETY CATCH: Comment out to run}------------------
 
 
     // Attempt to read logfile, then decide whether to write or append
@@ -91,9 +98,6 @@ module.exports = async function(done) {
         options = {flags:'w'};
     }
     log = fs.createWriteStream(logfile, options);
-
-    //console.log(costliest_trait);
-    //console.log(lastTrait);
 
     console.log('Processing raw database dump...');
     const traits = getTraits(traitsJSON);

@@ -1,13 +1,17 @@
+//--------------------------{SET ME FIRST}---------------------
+const NETWORK = 'development';
+//const NETWORK = 'ropsten';
+//const NETWORK = 'rinkeby';
+//const NETWORK = 'mainnet';
+//--------------------------{SET ME FIRST}---------------------
+
 const fs = require("fs");
-
-const NETWORK = 'mainnet';
-const logfile = `data/create-promos.${NETWORK}.txt`;
-
+const logfile = `data/promos/create-promos.${NETWORK}.txt`;
 const BN = require('bn.js');
-const constants = require("../util/Constants");
-const AccountManager = require('../util/AccountManager');
-const GetGasCost = require('../util/GetGasCost');
-const promosJSON = "data/create-promos.json";
+const constants = require("../../util/Constants");
+const AccountManager = require('../../util/AccountManager');
+const GetGasCost = require('../../util/GetGasCost');
+const promosJSON = "data/promos/create-promos.json";
 const AvastarTeleporter = artifacts.require("contracts/AvastarTeleporter.sol");
 const div = "---------------------";
 
@@ -35,7 +39,10 @@ module.exports = async function(done) {
     console.log('Fetching accounts...');
     const accounts = AccountManager.getAccounts(env);
     console.log(accounts);
-    process.exit(); // SAFETY CATCH: Comment out to run
+
+    // ------------------------{SAFETY CATCH: Comment out to run}------------------
+    process.exit();
+    // ------------------------{SAFETY CATCH: Comment out to run}------------------
 
     // Attempt to read logfile, then decide whether to write or append
     let lastPromo = fs.existsSync(logfile) ? readLog(logfile) : null;
@@ -48,8 +55,6 @@ module.exports = async function(done) {
         options = {flags:'w'};
     }
     log = fs.createWriteStream(logfile, options);
-
-    //console.log(lastPromo);
 
     console.log('Processing raw database dump...');
     const promos = getPromos(promosJSON);
