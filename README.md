@@ -14,7 +14,7 @@ Ethereum smart contracts for the Avastar project
 ### [/data](data)
 Scripts, data, and logs for preparing deployed contracts for use
 
-### /docs
+### [/docs](docs)
 The [project documentation](https://dapp-wizards.github.io/Avastars-Contracts), processed and redeployed upon each 
 commit to Github.
 
