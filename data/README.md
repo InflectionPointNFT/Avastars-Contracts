@@ -33,7 +33,7 @@ const attribution = {
 The output will indicate success and you can move on.
 
 ## Create Traits
-We start with a [JSON dump](data/create-traits.json) of traits for a given generation from the 
+We start with a [JSON dump](data/traits/create-traits.json) of traits for a given generation from the 
 dashboard database.
 
 Then we use a restartable script to create the corresponding trait data on the contract. It will 
