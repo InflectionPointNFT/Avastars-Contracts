@@ -6,7 +6,52 @@ Developer setup, contract architecture, UML, and docs, trait hash bitmasking inf
 and more are available at:
 * https://dapp-wizards.github.io/Avastars-Contracts
 
-## Migration (Rinkeby example)
+## Repository Contents
+
+### /contracts
+Ethereum smart contracts for the Avastar project
+
+### /data
+Scripts, data, and logs for preparing deployed contracts for use
+
+### /docs
+The [project documentation](https://dapp-wizards.github.io/Avastars-Contracts), processed and redeployed upon each 
+commit to Github.
+
+### /flat
+The source code for the deployed contracts and their dependencies, flattened into long files, for uploading to
+etherscan.io for verification. Once Etherscan verifies the flattened file compiles to the exact bytecode of the
+deployed contract, the world can view the source code and interact with the contract methods via their web interface.
+These files were created with the shell script `flatten-contracts.sh`.
+
+### /migrate_partial, /migrations
+The scripts for deploying the contracts. The `AvastarMetadata` and `AvastarPrimeMinter` contracts may be upgraded, and 
+so the `migrate_partial` folder contains copies of the `migrations` scripts edited so as not to overwrite the 
+`AvastarTeleporter` contract once deployed.
+
+### poc
+Our initial proof of concept, built in a single day.which gave us the confidence that we could do layered SVG on the
+blockchain. Also contains our further thoughts about how we would handle traits that depended upon other traits,
+such as a randomly chosen hair style using a randomly chosen hair color.
+
+### /solidoc
+Our own customized version of the [solidoc](https://github.com/CYBRToken/solidoc) Solidity documentation generator.
+It is a great project, except it was abandoned in late 2018 and only included support for `^0.4.x` versions of
+Solidity. After quite a bit of research, and no working projects satisfied our needs. So, upgrading this project seemed 
+like the best approach. We put in a ton of effort to make it work but we're happy with the results. Of course now, 
+there is Solidity `^0.6.x`, and this code might or might not work with it. It would be a good starting point for if 
+nothing else emerges. We may publish this one in a separate repo if we have time and/or someone would like to help
+push it forward to work with the latest Solidity versions.
+
+### /test
+Our truffle unit tests for the project's smart contracts.
+
+### /util
+Constants and various helper code used by tests and data processing scripts.
+ 
+## Deployment Overview
+
+### Migration (Rinkeby example)
 ```
 truffle console --network rinkeby
 truffle(rinkeby)> migrate --reset
@@ -133,7 +178,8 @@ Summary
 > Final cost:          0.018533242 ETH
 ```
 
-## Setup - Artist Attribution (Rinkeby example)
+### Setup - [Artist Attribution](https://github.com/Dapp-Wizards/Avastars-Contracts/tree/master/data#set-artist-attribution) (Rinkeby example)
+#### Must edit data/attribution/set-attribution.js, set artist info first!
 ```
 truffle(rinkeby)> exec data/set-attribution.js
 Using network 'rinkeby'.
@@ -142,8 +188,8 @@ Adding artist attribution for Generation 1...
 Gas used: 114231
 ```
 
-## Setup - Create Traits (Rinkeby example)
-### Must edit data/create-traits.js, set NETWORK constant, and comment out safety catch first!
+### Setup - [Create Traits](https://github.com/Dapp-Wizards/Avastars-Contracts/tree/master/data#create-traits) (Rinkeby example)
+#### Must edit data/traits/create-traits.js, set NETWORK constant, and comment out safety catch first!
 ```
 truffle(rinkeby)> exec data/create-traits.js
 Using network 'rinkeby'.
@@ -160,8 +206,8 @@ Adding traits to contract...
 .
 ```
 
-## Setup - Create Promos (Rinkeby example)
-### Must edit data/create-promos.js, set NETWORK constant, and comment out safety catch first!
+### Setup - [Create Promos](https://github.com/Dapp-Wizards/Avastars-Contracts/tree/master/data#create-promos) (Rinkeby example)
+#### Must edit data/promos/create-promos.js, set NETWORK constant, and comment out safety catch first!
 ```
 truffle(rinkeby)> exec data/create-promos.js
 
