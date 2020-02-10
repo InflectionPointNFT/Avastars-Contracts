@@ -8,33 +8,33 @@ and more are available at:
 
 ## Repository Contents
 
-### /contracts
+### [/contracts](contracts)
 Ethereum smart contracts for the Avastar project
 
-### /data
+### [/data](data)
 Scripts, data, and logs for preparing deployed contracts for use
 
 ### /docs
 The [project documentation](https://dapp-wizards.github.io/Avastars-Contracts), processed and redeployed upon each 
 commit to Github.
 
-### /flat
+### [/flat](flat)
 The source code for the deployed contracts and their dependencies, flattened into long files, for uploading to
 etherscan.io for verification. Once Etherscan verifies the flattened file compiles to the exact bytecode of the
 deployed contract, the world can view the source code and interact with the contract methods via their web interface.
 These files were created with the shell script `flatten-contracts.sh`.
 
-### /migrate_partial, /migrations
+### [/migrate_partial](migrate_partial), [/migrations](migrations)
 The scripts for deploying the contracts. The `AvastarMetadata` and `AvastarPrimeMinter` contracts may be upgraded, and 
 so the `migrate_partial` folder contains copies of the `migrations` scripts edited so as not to overwrite the 
 `AvastarTeleporter` contract once deployed.
 
-### /poc
+### [/poc](poc)
 Our initial proof of concept, built in a single day, which gave us the confidence that we could do layered SVG on the
 blockchain. Also contains our further thoughts about how we would handle traits that depended upon other traits,
 such as a randomly chosen hair style using a randomly chosen hair color.
 
-### /solidoc
+### [/solidoc](solidoc)
 Our own customized version of the [solidoc](https://github.com/CYBRToken/solidoc) Solidity documentation generator.
 It is a great project, except it was abandoned in late 2018 and only included support for `^0.4.x` versions of
 Solidity. After quite a bit of research, and no working projects satisfied our needs. So, upgrading this project seemed 
@@ -43,10 +43,10 @@ there is Solidity `^0.6.x`, and this code might or might not work with it. It wo
 nothing else emerges. We may publish this one in a separate repo if we have time and/or someone would like to help
 push it forward to work with the latest Solidity versions.
 
-### /test
+### [/test](test)
 Our truffle unit tests for the project's smart contracts.
 
-### /util
+### [/util](util)
 Constants and various helper code used by tests and data processing scripts.
  
 ## Deployment Overview
