@@ -24,7 +24,6 @@ const attribution = {
     "generation": constants.GENERATION.ONE,
     "artist": "Marmota vs Milky",
     "infoURI": "https://www.twine.fm/marmotavsmilky"
-
 };
 ```
 
