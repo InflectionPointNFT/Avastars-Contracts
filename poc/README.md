@@ -1,8 +1,20 @@
-# Avastars SVG Layering
+# Avastars SVG Layering POC
+
+## Proof of Concept
+This was our initial foray into the world of on-chain layered SVG. We just wanted to know if it would be possible, and 
+if so, how we would go about it. The contracts were simple, and the unit tests simpler. In fact for the unit tests, we 
+only combined a star and a circle into an SVG 'sandwich'. 
+
+Beyond the POC expressed in the contracts and unit tests, we expanded our thinking about layering below. We had no
+artists on-board yet, so the art you see below is the best that I could come up with in 5 minutes to flesh out how 
+an actual layered Avastar would actually be composed. We keep this POC folder in the project for posterity. What
+we actually developed is a bit different, but the basic concept is the same.
+
+-=Cliff>
 
 ## Baseline size
-The native size of an Avastar is ~~500x500~~ (1000x1000 now, but xamples below are built to a 500x500 size). This is an arbitrary size obviously,
-since SVG scales, but we have to have a baseline so all the layers line up. 
+The native size of an Avastar is ~~500x500~~ (1000x1000 now, but examples below are built to a 500x500 size). This is 
+an arbitrary size obviously, since SVG scales, but we have to have a baseline so all the layers line up. 
 
 ## Trait layers
 Each trait, such as hair, facial expression, hat, etc., will be chosen
@@ -39,7 +51,7 @@ and skin color, or for every combination of hairstyle and hair color.
 
 ### EYE COLOR
 * In all cases, `id` must be `eye_color`
-* Should not be wrapped in `<svg>` element, this is a fragment to be layered into the final avastar
+* Should not be wrapped in `<svg>` element, this is a fragment to be layered into the final Avastar
 
 ```
     <!-- BLUE IRIS GRADIENT -->
