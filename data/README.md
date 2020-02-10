@@ -33,7 +33,7 @@ const attribution = {
 The output will indicate success and you can move on.
 
 ## Create Traits
-We start with a [JSON dump](data/traits/create-traits.json) of traits for a given generation from the 
+We start with a [JSON dump](traits/create-traits.json) of traits for a given generation from the 
 dashboard database.
 
 Then we use a restartable script to create the corresponding trait data on the contract. It will 
@@ -109,7 +109,7 @@ that, run `verify-traits.js` again, and it will only attempt to verify the trait
 input file, and will add their status to the end of the verification log file.
 
 ## Create Promos
-This process also begins with a [JSON dump](data/promos/create-promos.json) from the dashboard
+This process also begins with a [JSON dump](promos/create-promos.json) from the dashboard
 database of the Series 0 hand-crafted promo avastars for the given generation. 
 
 Unfortunately, due to the fact that truffle executed scripts can't be sent arguments, we have
