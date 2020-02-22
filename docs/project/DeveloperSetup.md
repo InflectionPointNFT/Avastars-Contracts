@@ -6,6 +6,17 @@
    - Do not use version 12 because [Truffle has a conflict](https://github.com/trufflesuite/truffle/issues/2070)
    - Version 11 works fine
    
+   
+## Get the Avastars-Contracts project
+You can either download a [zip file](https://github.com/Dapp-Wizards/Avastars-Contracts/archive/master.zip) of the project
+
+OR 
+
+Clone it with the following steps:
+```
+cd /path/to/your/projects/folder
+git clone https://github.com/Dapp-Wizards/Avastars-Contracts.git
+```   
 ## Install required Node modules for project
 All NPM resources are project-local. No global installs required. We use `npx` to run any npm
 executables that needs to be started (e.g., Ganache, etc.)
