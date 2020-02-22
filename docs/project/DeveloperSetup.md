@@ -7,7 +7,7 @@
    - Version 11 works fine
    
    
-## Get the Avastars-Contracts project
+### Get the Avastars-Contracts project
 You can either download a [zip file](https://github.com/Dapp-Wizards/Avastars-Contracts/archive/master.zip) of the project
 
 OR 
@@ -17,7 +17,7 @@ Clone it with the following steps:
 cd /path/to/your/projects/folder
 git clone https://github.com/Dapp-Wizards/Avastars-Contracts.git
 ```   
-## Install required Node modules for project
+### Install required Node modules for project
 All NPM resources are project-local. No global installs required. We use `npx` to run any npm
 executables that needs to be started (e.g., Ganache, etc.)
 
@@ -26,7 +26,7 @@ cd path/to/avastars
 npm install
 ```
 
-# Development Tasks
+## Development Tasks
 ### Generate Contract UML
 Generates a [UML diagram](https://dapp-wizards.github.io/Avastars-Contracts/#/project/ContractArchitecture?id=full-system-uml-diagram) of the Avastars contracts. Only local files, doesn't include inherited Open Zeppelin stuff unfortunately.
 
