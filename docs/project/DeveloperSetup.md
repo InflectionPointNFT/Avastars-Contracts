@@ -17,7 +17,7 @@ npm install
 
 # Development Tasks
 ### Generate Contract UML
-Generates a [UML diagram](../_media/AvastarsUML.png) of the Avastars contracts. Only local files, doesn't include inherited Open Zeppelin stuff unfortunately.
+Generates a [UML diagram](https://dapp-wizards.github.io/Avastars-Contracts/#/project/ContractArchitecture?id=full-system-uml-diagram) of the Avastars contracts. Only local files, doesn't include inherited Open Zeppelin stuff unfortunately.
 
 ```npm run uml:generate```
 
