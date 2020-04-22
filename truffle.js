@@ -31,7 +31,7 @@ module.exports = {
             ),
             network_id: "4",
             skipDryRun: true,
-            gasPrice: 2000000000, // 2 GWei
+            gasPrice: 12000000000, // 12 GWei
             gas: 8000000
         },
         ropsten: {
@@ -43,7 +43,7 @@ module.exports = {
             ),
             network_id: "3",
             skipDryRun: true,
-            gasPrice: 2000000000, // 2 GWei
+            gasPrice: 12000000000, // 12 GWei
             gas: 8000000
         },
         mainnet: {
@@ -55,7 +55,7 @@ module.exports = {
             ),
             network_id: "1",
             skipDryRun: true,
-            gasPrice: 2000000000, // 2 GWei
+            gasPrice: 12000000000, // 12 GWei
             gas: 9900000
         }
     },

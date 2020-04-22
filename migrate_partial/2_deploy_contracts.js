@@ -8,18 +8,18 @@ const BN = require('bn.js');
 module.exports = (deployer, network, liveAccounts) => {
     deployer.then(async () => {
 
-        const generation = new BN(constants.GENERATION.ONE, 10);
+        //const generation = new BN(constants.GENERATION.ONE, 10);
         const environment = AccountManager.getEnvByNetwork(network);
         const currentAdmin = liveAccounts[0];
         const accounts = AccountManager.getAccounts(environment);
-        const {owners, minters} = accounts;
-        const admins = accounts.admins.filter( acct => acct !== currentAdmin);
+        //const {owners, minters} = accounts;
+        const admins = accounts.admins.filter(acct => acct !== currentAdmin);
         let promises;
 
         // Deploy the Avastar Teleporter, Prime Minter, and Metadata contracts
         console.log("Deploying contracts...");
         const avastarTeleporter = await deployer.deploy(AvastarTeleporter, {overwrite: false});
-        const avastarPrimeMinter = await deployer.deploy(AvastarPrimeMinter);
+        //const avastarPrimeMinter = await deployer.deploy(AvastarPrimeMinter, {overwrite: false});
         const avastarMetadata = await deployer.deploy(AvastarMetadata);
 
         // Prepare the Avastar Metadata contract for use
@@ -65,7 +65,7 @@ module.exports = (deployer, network, liveAccounts) => {
         console.log("Unpause\n");
         await avastarTeleporter.unpause();
 
-
+/*
         // Prepare the Avastar Prime Minter contract for use
         console.log("-------------------------------------");
         console.log("Preparing AvastarPrimeMinter contract");
@@ -84,5 +84,7 @@ module.exports = (deployer, network, liveAccounts) => {
 
         console.log("Unpause\n");
         await avastarPrimeMinter.unpause();
+
+ */
     });
 };

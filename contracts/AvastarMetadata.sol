@@ -213,7 +213,7 @@ contract AvastarMetadata is AvastarBase, AvastarTypes, AccessControl {
         attribution = strConcat('Original art by: ', attribution);
 
         // Name
-        metadata = strConcat('{\n  "name": "Avastar #', uintToStr(uint8(id)));
+        metadata = strConcat('{\n  "name": "Avastar #', uintToStr(uint256(id)));
         metadata = strConcat(metadata, '",\n');
 
         // Description: Generation
