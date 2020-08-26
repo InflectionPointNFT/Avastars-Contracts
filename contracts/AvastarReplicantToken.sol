@@ -426,6 +426,8 @@ contract AvastarRepicantToken is ERC20, ReentrancyGuard, Ownable {
     uint8 constant public decimals = 4;
     string constant public name = "Avastar Replicant Token";
     string constant public symbol = "ART";
+
+    // TODO: The teleporter contract supports 5 generations.  126,000 is the total number of Primes possible. (25,200 x 5)
     uint256 constant public artHardCap = 25200;
 
     /**
