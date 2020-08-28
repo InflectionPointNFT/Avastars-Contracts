@@ -4,6 +4,7 @@ import "@openzeppelin/contracts/math/SafeMath.sol";
 import "@openzeppelin/contracts/ownership/Ownable.sol";
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import "./IERC721Enumerable.sol";
+import "./AvastarTypes.sol";
 import "./IAvastarTeleporterThin.sol";
 import "./ReentrancyGuard.sol";
 
@@ -11,7 +12,9 @@ import "./ReentrancyGuard.sol";
  * @title Avastar Replicant Token
  * @author Nate Hart & Cliff Hall
  */
-contract AvastarRepicantToken is ERC20, ReentrancyGuard, Ownable {
+contract AvastarRepicantToken is ERC20, ReentrancyGuard, Ownable, AvastarTypes {
+
+    using SafeMath for uint256;
 
     /**
      * @notice Event emitted when AvastarTeleporter contract is set
@@ -20,26 +23,51 @@ contract AvastarRepicantToken is ERC20, ReentrancyGuard, Ownable {
     event TeleporterContractSet(address contractAddress);
 
     /**
+     * @notice Event emitted when an amount of AvastarReplicantTokens are minted for a holder
+     * @param holder the address of the holder of the new ART
+     */
+    event ARTMinted(address indexed holder, uint256 amount);
+
+    /**
+     * @notice Event emitted when an amount of a holder's AvastarReplicantTokens are burned
+     * @param holder the address of the holder of the new ART
+     */
+    event ARTBurned(address indexed holder, uint256 amount);
+
+    /**
      * @notice Address of the AvastarTeleporter contract
      */
     IAvastarTeleporterThin private teleporterContract ;
 
-    using SafeMath for uint256;
-
-    event MintART(address mintingAddress, uint256 amount);
-    event BurnART(uint256 amount);
-
-
-    mapping (uint256 => bool) private artClaimed;
-
+    /**
+     * @notice ERC20 decimals
+     */
     uint8 constant public decimals = 18;
+
+    /**
+     * @notice ERC20 name value
+     */
     string constant public name = "Avastar Replicant Token";
+
+    /**
+     * @notice ERC20 symbol
+     */
     string constant public symbol = "ART";
 
+    /**
+     * @notice Mapping of Prime ID to boolean indicating if an ART has been claimed for it yet
+     */
+    mapping (uint256 => bool) private artClaimed;
 
+    /**
+     * @notice Scale factor for computing single tokens from a fraction
+     */
     uint256 constant scaleFactor = 10 ** decimals;
 
-    // One ART per Avastar Prime. (25,200 Primes per Series x 5 Generations)
+    /**
+     * @notice Hard cap for number of tokens that can be minted.
+     * One ART per Avastar Prime. (25,200 Primes per Series x 5 Generations)
+     */
     uint256 constant public ART_HARD_CAP = 126000;
 
     /**
@@ -55,7 +83,7 @@ contract AvastarRepicantToken is ERC20, ReentrancyGuard, Ownable {
         IAvastarTeleporter candidateContract = IAvastarTeleporter(_address);
 
         // Verify that we have the appropriate address
-        require(candidateContract.isAvastarReplicantToken());
+        require(candidateContract.isAvastarTeleporter());
 
         // Set the contract address
         teleporterContract = IAvastarTeleporter(_address);
@@ -71,57 +99,50 @@ contract AvastarRepicantToken is ERC20, ReentrancyGuard, Ownable {
     function isAvastarReplicantToken() external pure returns (bool) {return true;}
 
     /**
-     * TODO: Ensure that each token id refers to a Prime and not Replicant.
-     * This method assumes the id is a Prime. As it stands, a user can get
-     * an ART for every replicant they own in addition to the primes they own
+     * @notice Claim ART tokens for an array of Prime IDs
      */
     function claimArt(uint256[] memory primeId) public nonReentrant {
         require(getCirculatingArt() <= ART_HARD_CAP);
         uint256 amountToMint;
 
-        for(uint256 i = 0; i < primeId.length; i++){
+        for(uint256 i = 0; i < primeId.length; i++) {
             if (teleporterContract.ownerOf(primeId[i]) == msg.sender) {
+
+                // Avastar tokens must be Primes
+                require (teleporterContract.getAvastarWaveByTokenId(primeId[i]) == Wave.PRIME);
+
+                // If unclaimed, claim and increase tally to mint
                 if (artClaimed[primeId[i]] == false) {
                     artClaimed[primeId[i]] = true;
                     amountToMint = amountToMint + 1;
                 }
             }
-
-            artClaimed[primeId[i]] = true;
         }
 
-        _mint(msg.sender, amountToMint.mul(10**4));
+        // Mint the tokens
+        _mint(msg.sender, amountToMint.mul(scaleFactor));
         emit MintART(msg.sender, amountToMint);
     }
 
     /**
-     * TODO: Ensure that only Prime token ids are counted
-     * Two passes:
-     * 1) get the owner's tokens with teleporterContract.tokenOfOwnerByIndex
-     * 2) filter out the owners replicants from that list with teleporterContract.
+     * @notice Burn a given amount of the holder's ART tokens
+     * The caller must have an allowance of the holder's tokens equal to or greater than amount to burn
      */
-    function avastarsOwned(address userAddress) public view returns (uint256[] memory primeIds) {
-        uint256 x = 0;
+    function burnArt(address holder, uint256 amount) external nonReentrant {
 
-        for(uint256 i = 0; i < 25000; i++){
-            if (teleporterContract.ownerOf(i) == userAddress) {
-                primeIds[x] = i;
-                x = x + 1;
-            }
-        }
+        // Caller must have an allowance of amount tokens of holder
+        _burnFrom(holder, artToBurn.mul(scaleFactor));
+
+        // Send event identifying the amount burned
+        emit ARTBurned(holder, amount);
     }
 
+    /**
+     * @notice Check the current circulation of ART tokens
+     * @return Number of tokens currently minted
+     */
     function getCirculatingArt() public view returns (uint256 circulatingArt) {
         circulatingArt = totalSupply().div(scaleFactor);
     }
 
-    /**
-     * Burn a certain amount of the given holder's ART tokens
-     * The caller must have an allowance of the holder's tokens equal to or greater than amount requested
-     *
-     */
-    function burnArt(address holder, uint256 artToBurn) external nonReentrant {
-        _burnFrom(holder, artToBurn.mul(scaleFactor));
-        emit BurnART(artToBurn);
-    }
 }

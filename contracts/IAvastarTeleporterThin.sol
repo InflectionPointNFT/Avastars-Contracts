@@ -14,10 +14,13 @@ contract IAvastarTeleporterThin is AvastarTypes {
      * @notice Acknowledge contract is `AvastarTeleporter`
      * @return always true if the contract is in fact `AvastarTeleporter`
      */
-    function isAvastarTeleporter() external pure returns (bool);
+    function isAvastarTeleporter()
+    external
+    pure
+    returns (bool);
 
     /**
-     * Gets the owner of the specified token ID.
+     * @notice IERC721Enumerable - Gets the owner of the specified token ID.
      * @param tokenId the token ID to search for the owner of
      * @return owner the owner of the given token ID
      */
@@ -36,7 +39,7 @@ contract IAvastarTeleporterThin is AvastarTypes {
     returns (Wave wave);
 
     /**
-     * Gets the owner of the specified token ID.
+     * @notice Gets the owner of the specified token ID.
      * @param tokenId the token ID to search for the owner of
      * @return owner the owner of the given token ID
      */
@@ -46,7 +49,7 @@ contract IAvastarTeleporterThin is AvastarTypes {
     returns (address owner);
 
     /**
-     * @notice Gets the total amount of tokens stored by the contract.
+     * @notice IERC721 - Gets the total amount of tokens stored by the contract.
      * @return count total number of tokens
      */
     function totalSupply()

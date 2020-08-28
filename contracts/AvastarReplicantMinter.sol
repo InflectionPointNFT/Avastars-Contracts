@@ -5,7 +5,6 @@ import "./AccessControl.sol";
 import "./IAvastarTeleporter.sol";
 import "./IAvastarReplicantToken.sol";
 
-
 /**
  * @title Avastar Replicant Minter Proxy
  * @author Cliff Hall
@@ -14,24 +13,24 @@ import "./IAvastarReplicantToken.sol";
 contract AvastarReplicantMinter is AvastarTypes, AccessControl {
 
     /**
-     * @notice Event emitted when AvastarTeleporter contract is set
-     * @param contractAddress the address of the AvastarTeleporter contract
+     * @notice Event emitted when `AvastarTeleporter` contract is set
+     * @param contractAddress the address of the `AvastarTeleporter` contract
      */
     event TeleporterContractSet(address contractAddress);
 
     /**
-     * @notice Event emitted when AvastarReplicantToken contract is set
-     * @param contractAddress the address of the AvastarReplicantToken contract
+     * @notice Event emitted when `AvastarReplicantToken` contract is set
+     * @param contractAddress the address of the `AvastarReplicantToken` contract
      */
     event ARTContractSet(address contractAddress);
 
     /**
-     * @notice Address of the AvastarTeleporter contract
+     * @notice Address of the `AvastarTeleporter` contract
      */
     IAvastarTeleporter private teleporterContract ;
 
     /**
-     * @notice Address of the AvastarReplicantToken contract
+     * @notice Address of the `AvastarReplicantToken` contract
      */
     IAvastarReplicantToken private artContract ;
 
@@ -48,7 +47,7 @@ contract AvastarReplicantMinter is AvastarTypes, AccessControl {
         IAvastarTeleporter candidateContract = IAvastarTeleporter(_address);
 
         // Verify that we have the appropriate address
-        require(candidateContract.isAvastarReplicantToken());
+        require(candidateContract.isAvastarTeleporter());
 
         // Set the contract address
         teleporterContract = IAvastarTeleporter(_address);
@@ -61,7 +60,7 @@ contract AvastarReplicantMinter is AvastarTypes, AccessControl {
      * @notice Set the address of the `AvastarReplicantToken` contract.
      * Only invokable by system admin role, when contract is paused and not upgraded.
      * To be used if the ART contract has to be upgraded and a new instance deployed.
-     * If successful, emits an `TeleporterContractSet` event.
+     * If successful, emits an `ARTContractSet` event.
      * @param _address address of `AvastarReplicantToken` contract
      */
     function setArtContract(address _address) external onlySysAdmin whenPaused whenNotUpgraded {
@@ -70,23 +69,22 @@ contract AvastarReplicantMinter is AvastarTypes, AccessControl {
         IAvastarReplicantToken candidateContract = IAvastarTeleporter(_address);
 
         // Verify that we have the appropriate address
-        require(candidateContract.isAvastarTeleporter());
+        require(candidateContract.isAvastarReplicantToken());
 
         // Set the contract address
-        teleporterContract = IAvastarTeleporter(_address);
+        artContract = IAvastarReplicantToken(_address);
 
         // Emit the event
-        emit TeleporterContractSet(_address);
+        emit ArtContractSet(_address);
     }
 
     /**
      * @notice Mint an Avastar Replicant for a purchaser who has previously deposited funds.
      * Invokable only by minter role, when contract is not paused.
      * Minted token will be owned by `_purchaser` address.
-     * If successful, emits a `ARTBalance` event with the purchaser's remaining ART token balance,
+     * If successful, the `AvastarRepicantToken` contract will emit a `ARTBurned` event,
      * and the `AvastarTeleporter` contract will emit a `NewReplicant` event.
      * @param _purchaser address that will own the token
-     * @param _price price in ETH of token, removed from purchaser's deposit balance
      * @param _traits the Avastar's Trait hash
      * @param _generation the Avastar's Generation
      * @param _gender the Avastar's Gender
@@ -107,10 +105,20 @@ contract AvastarReplicantMinter is AvastarTypes, AccessControl {
     returns (uint256 tokenId, uint256 serial)
     {
         require(_purchaser != address(0));
-        //TODO: Require purchaser has authorized at least one token
-        require(_gender > Gender.ANY);
-        //TODO: Burn a token
 
+        // Require purchaser has at least one full ART token
+        require(artContract.balanceOf(_purchaser).div(scaleFactor) >= 1);
+
+        // Require this contract to have an allowance of at least one of the purchaser's tokens
+        require(artContract.allowance(_purchaser, address(this)).div(scaleFactor) >= 1);
+
+        // Require gender to be Gender.MALE or Gender.FEMALE
+        require(_gender > Gender.ANY);
+
+        // Burn one of purchaser's ART tokens
+        artContract.burnArt(_purchaser, 1);
+
+        // Mint Replicant and return tokenId / serial
         (tokenId, serial) = teleporterContract.mintReplicant(_purchaser, _traits, _generation, _gender, _ranking);
         return (tokenId, serial);
     }
