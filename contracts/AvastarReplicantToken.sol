@@ -103,25 +103,31 @@ contract AvastarReplicantToken is ERC20, ReentrancyGuard, Ownable, AvastarTypes 
      * @notice Claim ART tokens for an array of Prime IDs
      */
     function claimArt(uint256[] memory _primeIds) public nonReentrant {
-        require(getCirculatingArt() <= ART_HARD_CAP);
+
+        // Cannot mint more tokens than the hard cap
+        require(getCirculatingArt() <= ART_HARD_CAP, "Hard cap reached, no more tokens can be minted.");
+
         uint256 amountToMint;
-
-        for(uint256 i = 0; i < _primeIds.length; i++) {
-            // Caller must own the Avastar
-            require(teleporterContract.ownerOf(_primeIds[i]) == msg.sender);
-
-            // Avastar tokens must be Primes
-            require (teleporterContract.getAvastarWaveByTokenId(_primeIds[i]) == Wave.PRIME);
+        for (uint256 i = 0; i < _primeIds.length; i++) {
 
             // If unclaimed, claim and increase tally to mint
-            if (artClaimed[_primeIds[i]] == false) {
-                artClaimed[_primeIds[i]] = true;
-                amountToMint = amountToMint + 1;
-            }
+            require(artClaimed[_primeIds[i]] == false, "Token previously claimed for Prime");
+
+            // Caller must own the Avastar
+            require(teleporterContract.ownerOf(_primeIds[i]) == msg.sender, "You must own the specified Primes");
+
+            // Avastar tokens must be Primes
+            require(teleporterContract.getAvastarWaveByTokenId(_primeIds[i]) == Wave.PRIME, "Specified Avastars must be Primes");
+
+            // Claim and bump amount to mint by one
+            artClaimed[_primeIds[i]] = true;
+            amountToMint = amountToMint.add(1);
         }
 
         // Mint the tokens
         _mint(msg.sender, amountToMint.mul(scaleFactor));
+
+        // Send the event identifying the amount minted for the caller
         emit ARTMinted(msg.sender, amountToMint);
     }
 
