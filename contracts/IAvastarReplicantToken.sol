@@ -17,6 +17,11 @@ contract IAvastarReplicantToken {
     pure
     returns (bool);
 
+    /**
+     * @notice Burn a given amount of the holder's ART tokens
+     * The caller must have an allowance of the holder's tokens equal to or greater than amount to burn
+     */
+    function burnArt(address _holder, uint256 _amount) external;
 
     /**
      * @dev See {IERC20-balanceOf}.

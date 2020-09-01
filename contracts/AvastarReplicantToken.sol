@@ -3,7 +3,8 @@ pragma solidity ^0.5.14;
 import "@openzeppelin/contracts/math/SafeMath.sol";
 import "@openzeppelin/contracts/ownership/Ownable.sol";
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
-import "./IERC721Enumerable.sol";
+import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
+import "@openzeppelin/contracts/token/ERC721/IERC721Enumerable.sol";
 import "./AvastarTypes.sol";
 import "./IAvastarTeleporterThin.sol";
 import "./ReentrancyGuard.sol";
@@ -12,7 +13,7 @@ import "./ReentrancyGuard.sol";
  * @title Avastar Replicant Token
  * @author Nate Hart & Cliff Hall
  */
-contract AvastarRepicantToken is ERC20, ReentrancyGuard, Ownable, AvastarTypes {
+contract AvastarReplicantToken is ERC20, ReentrancyGuard, Ownable, AvastarTypes {
 
     using SafeMath for uint256;
 
@@ -57,18 +58,18 @@ contract AvastarRepicantToken is ERC20, ReentrancyGuard, Ownable, AvastarTypes {
     /**
      * @notice Mapping of Prime ID to boolean indicating if an ART has been claimed for it yet
      */
-    mapping (uint256 => bool) private artClaimed;
+    mapping(uint256 => bool) private artClaimed;
 
     /**
      * @notice Scale factor for computing single tokens from a fraction
      */
-    uint256 constant scaleFactor = 10 ** decimals;
+    uint256 private constant scaleFactor = uint256(10) ** uint256(decimals);
 
     /**
      * @notice Hard cap for number of tokens that can be minted.
      * One ART per Avastar Prime. (25,200 Primes per Series x 5 Generations)
      */
-    uint256 constant public ART_HARD_CAP = 126000;
+    uint256 public constant ART_HARD_CAP = 126000;
 
     /**
      * @notice Set the address of the `AvastarTeleporter` contract.
@@ -77,16 +78,16 @@ contract AvastarRepicantToken is ERC20, ReentrancyGuard, Ownable, AvastarTypes {
      * If successful, emits an `TeleporterContractSet` event.
      * @param _address address of `AvastarTeleporter` contract
      */
-    function setTeleporterContract(address _address) external onlySysAdmin whenPaused whenNotUpgraded {
+    function setTeleporterContract(address _address) external onlyOwner {
 
-        // Cast the candidate contract to the IAvastarTeleporter interface
-        IAvastarTeleporter candidateContract = IAvastarTeleporter(_address);
+        // Cast the candidate contract to the IAvastarTeleporterThin interface
+        IAvastarTeleporterThin candidateContract = IAvastarTeleporterThin(_address);
 
         // Verify that we have the appropriate address
         require(candidateContract.isAvastarTeleporter());
 
         // Set the contract address
-        teleporterContract = IAvastarTeleporter(_address);
+        teleporterContract = IAvastarTeleporterThin(_address);
 
         // Emit the event
         emit TeleporterContractSet(_address);
@@ -101,40 +102,41 @@ contract AvastarRepicantToken is ERC20, ReentrancyGuard, Ownable, AvastarTypes {
     /**
      * @notice Claim ART tokens for an array of Prime IDs
      */
-    function claimArt(uint256[] memory primeId) public nonReentrant {
+    function claimArt(uint256[] memory _primeIds) public nonReentrant {
         require(getCirculatingArt() <= ART_HARD_CAP);
         uint256 amountToMint;
 
-        for(uint256 i = 0; i < primeId.length; i++) {
-            if (teleporterContract.ownerOf(primeId[i]) == msg.sender) {
+        for(uint256 i = 0; i < _primeIds.length; i++) {
+            // Caller must own the Avastar
+            require(teleporterContract.ownerOf(_primeIds[i]) == msg.sender);
 
-                // Avastar tokens must be Primes
-                require (teleporterContract.getAvastarWaveByTokenId(primeId[i]) == Wave.PRIME);
+            // Avastar tokens must be Primes
+            require (teleporterContract.getAvastarWaveByTokenId(_primeIds[i]) == Wave.PRIME);
 
-                // If unclaimed, claim and increase tally to mint
-                if (artClaimed[primeId[i]] == false) {
-                    artClaimed[primeId[i]] = true;
-                    amountToMint = amountToMint + 1;
-                }
+            // If unclaimed, claim and increase tally to mint
+            if (artClaimed[_primeIds[i]] == false) {
+                artClaimed[_primeIds[i]] = true;
+                amountToMint = amountToMint + 1;
             }
         }
 
         // Mint the tokens
         _mint(msg.sender, amountToMint.mul(scaleFactor));
-        emit MintART(msg.sender, amountToMint);
+        emit ARTMinted(msg.sender, amountToMint);
     }
 
     /**
      * @notice Burn a given amount of the holder's ART tokens
      * The caller must have an allowance of the holder's tokens equal to or greater than amount to burn
      */
-    function burnArt(address holder, uint256 amount) external nonReentrant {
+    function burnArt(address _holder, uint256 _amount) external nonReentrant {
 
+        // Holder must have tokens equal to or greater than burn amount
         // Caller must have an allowance of amount tokens of holder
-        _burnFrom(holder, artToBurn.mul(scaleFactor));
+        _burnFrom(_holder, _amount.mul(scaleFactor));
 
         // Send event identifying the amount burned
-        emit ARTBurned(holder, amount);
+        emit ARTBurned(_holder, _amount);
     }
 
     /**

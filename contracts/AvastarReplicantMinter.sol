@@ -66,7 +66,7 @@ contract AvastarReplicantMinter is AvastarTypes, AccessControl {
     function setArtContract(address _address) external onlySysAdmin whenPaused whenNotUpgraded {
 
         // Cast the candidate contract to the IAvastarTeleporter interface
-        IAvastarReplicantToken candidateContract = IAvastarTeleporter(_address);
+        IAvastarReplicantToken candidateContract = IAvastarReplicantToken(_address);
 
         // Verify that we have the appropriate address
         require(candidateContract.isAvastarReplicantToken());
@@ -75,7 +75,7 @@ contract AvastarReplicantMinter is AvastarTypes, AccessControl {
         artContract = IAvastarReplicantToken(_address);
 
         // Emit the event
-        emit ArtContractSet(_address);
+        emit ARTContractSet(_address);
     }
 
     /**
@@ -104,13 +104,8 @@ contract AvastarReplicantMinter is AvastarTypes, AccessControl {
     whenNotPaused
     returns (uint256 tokenId, uint256 serial)
     {
+        // Burn address can't mint
         require(_purchaser != address(0));
-
-        // Require purchaser has at least one full ART token
-        require(artContract.balanceOf(_purchaser).div(scaleFactor) >= 1);
-
-        // Require this contract to have an allowance of at least one of the purchaser's tokens
-        require(artContract.allowance(_purchaser, address(this)).div(scaleFactor) >= 1);
 
         // Require gender to be Gender.MALE or Gender.FEMALE
         require(_gender > Gender.ANY);
