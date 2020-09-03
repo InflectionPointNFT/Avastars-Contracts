@@ -1,19 +1,18 @@
 pragma solidity ^0.5.14;
 
 import "@openzeppelin/contracts/math/SafeMath.sol";
-import "@openzeppelin/contracts/ownership/Ownable.sol";
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import "@openzeppelin/contracts/token/ERC721/IERC721Enumerable.sol";
 import "./AvastarTypes.sol";
 import "./IAvastarTeleporterThin.sol";
-import "./ReentrancyGuard.sol";
+import "./AccessControl.sol";
 
 /**
  * @title Avastar Replicant Token
  * @author Nate Hart & Cliff Hall
  */
-contract AvastarReplicantToken is ERC20, ReentrancyGuard, Ownable, AvastarTypes {
+contract AvastarReplicantToken is ERC20, AccessControl, AvastarTypes {
 
     using SafeMath for uint256;
 
@@ -26,12 +25,14 @@ contract AvastarReplicantToken is ERC20, ReentrancyGuard, Ownable, AvastarTypes 
     /**
      * @notice Event emitted when an amount of AvastarReplicantTokens are minted for a holder
      * @param holder the address of the holder of the new ART
+     * @param amount the number of ART tokens minted for the holder
      */
     event ARTMinted(address indexed holder, uint256 amount);
 
     /**
      * @notice Event emitted when an amount of a holder's AvastarReplicantTokens are burned
      * @param holder the address of the holder of the new ART
+     * @param amount the number of the holder's ART tokens burned
      */
     event ARTBurned(address indexed holder, uint256 amount);
 
@@ -78,7 +79,7 @@ contract AvastarReplicantToken is ERC20, ReentrancyGuard, Ownable, AvastarTypes 
      * If successful, emits an `TeleporterContractSet` event.
      * @param _address address of `AvastarTeleporter` contract
      */
-    function setTeleporterContract(address _address) external onlyOwner {
+    function setTeleporterContract(address _address) external onlySysAdmin {
 
         // Cast the candidate contract to the IAvastarTeleporterThin interface
         IAvastarTeleporterThin candidateContract = IAvastarTeleporterThin(_address);
@@ -100,9 +101,12 @@ contract AvastarReplicantToken is ERC20, ReentrancyGuard, Ownable, AvastarTypes 
     function isAvastarReplicantToken() external pure returns (bool) {return true;}
 
     /**
-     * @notice Claim ART tokens for an array of Prime IDs
+     * @notice Claim and mint ART tokens for an array of Prime IDs
+     * If successful, emits an ARTMinted event
+     * @param _holder address of holder to claim ART for
+     * @param _primeIds an array of Avastar Prime IDs owned by the holder
      */
-    function claimArt(uint256[] memory _primeIds) public nonReentrant {
+    function claimArtBulk(address _holder, uint256[] memory _primeIds) public onlySysAdmin {
 
         // Cannot mint more tokens than the hard cap
         require(getCirculatingArt() <= ART_HARD_CAP, "Hard cap reached, no more tokens can be minted.");
@@ -114,10 +118,10 @@ contract AvastarReplicantToken is ERC20, ReentrancyGuard, Ownable, AvastarTypes 
             require(artClaimed[_primeIds[i]] == false, "Token previously claimed for Prime");
 
             // Caller must own the Avastar
-            require(teleporterContract.ownerOf(_primeIds[i]) == msg.sender, "You must own the specified Primes");
+            require(teleporterContract.ownerOf(_primeIds[i]) == _holder, "Specified holder must own the specified Primes");
 
             // Avastar tokens must be Primes
-            require(teleporterContract.getAvastarWaveByTokenId(_primeIds[i]) == Wave.PRIME, "Specified Avastars must be Primes");
+            require(teleporterContract.getAvastarWaveByTokenId(_primeIds[i]) == Wave.PRIME, "Specified Avastars must all be Primes");
 
             // Claim and bump amount to mint by one
             artClaimed[_primeIds[i]] = true;
@@ -125,17 +129,51 @@ contract AvastarReplicantToken is ERC20, ReentrancyGuard, Ownable, AvastarTypes 
         }
 
         // Mint the tokens
-        _mint(msg.sender, amountToMint.mul(scaleFactor));
+        _mint(_holder, amountToMint.mul(scaleFactor));
 
-        // Send the event identifying the amount minted for the caller
-        emit ARTMinted(msg.sender, amountToMint);
+        // Send the event identifying the amount minted for the holder
+        emit ARTMinted(_holder, amountToMint);
+    }
+
+    /**
+     * @notice Claim and mint a single ART token
+     * If successful, emits an ARTMinted event
+     * @param _holder address of holder to claim ART for
+     * @param _primeId ID of an Avastar Prime owned by the holder
+     */
+    function claimArt(address _holder, uint256 _primeId) public onlyMinter {
+
+        // Revert when hard cap is reached
+        require(getCirculatingArt() <= ART_HARD_CAP, "Hard cap reached, no more tokens can be minted.");
+
+        // Revert if already claimed
+        require(artClaimed[_primeId] == false, "Token previously claimed for Prime");
+
+        // Revert if holder does not own prime
+        require(teleporterContract.ownerOf(_primeId) == _holder, "Specified holder must own the specified Prime");
+
+        // Avastar tokens must be Primes
+        require(teleporterContract.getAvastarWaveByTokenId(_primeId) == Wave.PRIME, "Specified Avastar must be a Prime");
+
+        // Claim token
+        uint256 amountToMint = 1;
+        artClaimed[_primeId] = true;
+
+        // Mint the tokens
+        _mint(_holder, amountToMint.mul(scaleFactor));
+
+        // Send the event identifying the amount minted for the holder
+        emit ARTMinted(_holder, amountToMint);
     }
 
     /**
      * @notice Burn a given amount of the holder's ART tokens
      * The caller must have an allowance of the holder's tokens equal to or greater than amount to burn
+     * If successful, emits an ARTBurned event
+     * @param _holder address of holder to burn ART for
+     * @param _amount amount of holder's ART to burn
      */
-    function burnArt(address _holder, uint256 _amount) external nonReentrant {
+    function burnArt(address _holder, uint256 _amount) external {
 
         // Holder must have tokens equal to or greater than burn amount
         // Caller must have an allowance of amount tokens of holder

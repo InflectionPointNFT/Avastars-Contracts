@@ -25,8 +25,10 @@ contract('AvastarReplicantToken', function(accounts) {
     const traits3 = new BN('6044669605981521127212033', 10);
     const traits4 = new BN('16442623851008461074068800773', 10);
 
-    const primeIds = [0,1,2];
+    const bulkPrimeIds = [0,1];
     const mixedIds = [0,1,2,3];
+    const lonePrimeId = 2;
+    const replicantId = 3;
 
     const primes = [
         // Prime 1 - id 0
@@ -74,6 +76,7 @@ contract('AvastarReplicantToken', function(accounts) {
         // Add the teleporter to the ART contract
         artContract = await AvastarReplicantToken.new();
         artContract.setTeleporterContract(teleporterContract.address);
+        await artContract.addMinter(minter);
 
         // Mint the primes for testing
         for (let i = 0; i < primes.length; i++)
@@ -87,30 +90,48 @@ contract('AvastarReplicantToken', function(accounts) {
         await teleporterContract.mintReplicant(purchaser, traits, generation, gender, ranking, {from: minter})
     });
 
-    it("should not allow anyone other than prime's owner to claim their ART tokens", async function() {
+    it("should not allow anyone other than sysadmin to claim a Prime holder's ART tokens in bulk", async function() {
 
         // Attempt invalid claim from someone other than owner
         await exceptions.catchRevert(
-            artContract.claimArt(primeIds, {from: anyone})
+            artContract.claimArtBulk(purchaser, bulkPrimeIds, {from: anyone})
         );
 
     });
 
-    it("should not allow a replicant id to be specified when claiming ART tokens", async function() {
+    it("should not allow anyone other than a minter to claim a Prime holder's lone ART token", async function() {
+
+        // Attempt invalid claim from someone other than owner
+        await exceptions.catchRevert(
+            artContract.claimArt(purchaser, lonePrimeId, {from: anyone})
+        );
+
+    });
+
+    it("should not allow a replicant id to be specified when claiming ART tokens in bulk", async function() {
 
         // Attempt invalid claim with a replicant id included
         await exceptions.catchRevert(
-            artContract.claimArt(mixedIds, {from: purchaser})
+            artContract.claimArtBulk(purchaser, mixedIds, {from: sysAdmin})
         );
 
     });
 
-    it("should allow a Prime owner to claim their ART tokens", async function() {
+    it("should not allow a replicant id to be specified when claiming lone ART tokens", async function() {
 
-        const expected = new BN('3',10);
+        // Attempt invalid claim with a replicant id included
+        await exceptions.catchRevert(
+            artContract.claimArt(purchaser, replicantId, {from: minter})
+        );
+
+    });
+
+    it("should allow the system admin to claim ART tokens for a Prime owner in bulk", async function() {
+
+        const expected = new BN('2',10);
 
         // Claim ART for the owned primes
-        const result = await artContract.claimArt(primeIds, {from: purchaser});
+        const result = await artContract.claimArtBulk(purchaser, bulkPrimeIds, {from: sysAdmin});
 
         // Test that a ARTMinted event was emitted
         truffleAssert.eventEmitted(result, 'ARTMinted', (ev) => {
@@ -122,11 +143,37 @@ contract('AvastarReplicantToken', function(accounts) {
 
     });
 
-    it("should only allow one ART token to be claimed for each Prime", async function() {
+    it("should allow a minter to claim lone ART tokens for a Prime owner", async function() {
+
+        const expected = new BN('1',10);
+
+        // Claim ART for the owned primes
+        const result = await artContract.claimArt(purchaser, lonePrimeId, {from: minter});
+
+        // Test that a ARTMinted event was emitted
+        truffleAssert.eventEmitted(result, 'ARTMinted', (ev) => {
+            return (
+                ev.holder === purchaser &&
+                ev.amount.eq(expected)
+            );
+        }, 'ARTMinted event should be emitted with correct info');
+
+    });
+
+    it("should only allow one ART token to be claimed for each Prime in bulk", async function() {
 
         // Attempt claiming primes again
         await exceptions.catchRevert(
-            artContract.claimArt(primeIds, {from: purchaser})
+            artContract.claimArtBulk(purchaser, bulkPrimeIds, {from: sysAdmin})
+        );
+
+    });
+
+    it("should only allow one ART token to be claimed for lone Primes", async function() {
+
+        // Attempt claiming prime again
+        await exceptions.catchRevert(
+            artContract.claimArt(purchaser, lonePrimeId, {from: minter})
         );
 
     });
@@ -209,6 +256,5 @@ contract('AvastarReplicantToken', function(accounts) {
         }, 'ARTBurned event should be emitted with correct info');
 
     });
-
 
 });
