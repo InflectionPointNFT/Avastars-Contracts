@@ -10,13 +10,14 @@ const BN = require('bn.js');
 
 contract('AvastarReplicantToken', function(accounts) {
 
-    let teleporterContract, artContract;
+    let teleporterContract, replicantMinterContract, artContract;
     const sysAdmin = accounts[0];  // ART contract owner
     const purchaser = accounts[1]; // token owner
     const minter = accounts[2];    // minter role
     const spender = accounts[3];   // approved address
     const anyone = accounts[4];    // anyone else
 
+    const none = new BN('0', 10);
     const decimals = new BN('18', 10);
     const scaleFactor = new BN('10', 10).pow(decimals);
 
@@ -64,19 +65,27 @@ contract('AvastarReplicantToken', function(accounts) {
         "ranking"    : 25,
     };
 
-
     before(async () => {
-        // Create the factory contract and unpause
-        teleporterContract = await AvastarTeleporter.new();
 
-        // Add the minters to the factory contract
+        // Create the contracts
+        teleporterContract = await AvastarTeleporter.new();
+        artContract = await AvastarReplicantToken.new();
+        replicantMinterContract = await AvastarReplicantMinter.new();
+
+        // Setup and unpause teleporter contract
         await teleporterContract.addMinter(minter);
         await teleporterContract.unpause();
 
-        // Add the teleporter to the ART contract
-        artContract = await AvastarReplicantToken.new();
+        // Setup and unpause ART contract
         artContract.setTeleporterContract(teleporterContract.address);
+        artContract.setReplicantMinterContract(replicantMinterContract.address);
         await artContract.addMinter(minter);
+        await artContract.unpause();
+
+        // Setup and unpause Replicant minter contract
+        replicantMinterContract.setArtContract(artContract.address);
+        replicantMinterContract.setTeleporterContract(teleporterContract.address);
+        await replicantMinterContract.unpause();
 
         // Mint the primes for testing
         for (let i = 0; i < primes.length; i++)
@@ -94,7 +103,7 @@ contract('AvastarReplicantToken', function(accounts) {
 
         // Attempt invalid claim from someone other than owner
         await exceptions.catchRevert(
-            artContract.claimArtBulk(purchaser, bulkPrimeIds, {from: anyone})
+            artContract.claimArtBulk(purchaser, bulkPrimeIds, none, {from: anyone})
         );
 
     });
@@ -103,7 +112,7 @@ contract('AvastarReplicantToken', function(accounts) {
 
         // Attempt invalid claim from someone other than owner
         await exceptions.catchRevert(
-            artContract.claimArt(purchaser, lonePrimeId, {from: anyone})
+            artContract.claimArt(purchaser, lonePrimeId, none, {from: anyone})
         );
 
     });
@@ -112,7 +121,7 @@ contract('AvastarReplicantToken', function(accounts) {
 
         // Attempt invalid claim with a replicant id included
         await exceptions.catchRevert(
-            artContract.claimArtBulk(purchaser, mixedIds, {from: sysAdmin})
+            artContract.claimArtBulk(purchaser, mixedIds, none, {from: sysAdmin})
         );
 
     });
@@ -121,17 +130,18 @@ contract('AvastarReplicantToken', function(accounts) {
 
         // Attempt invalid claim with a replicant id included
         await exceptions.catchRevert(
-            artContract.claimArt(purchaser, replicantId, {from: minter})
+            artContract.claimArt(purchaser, replicantId, none, {from: minter})
         );
 
     });
 
     it("should allow the system admin to claim ART tokens for a Prime owner in bulk", async function() {
 
+        const allowance = await artContract.allowance(purchaser, replicantMinterContract.address);
         const expected = new BN('2',10);
 
         // Claim ART for the owned primes
-        const result = await artContract.claimArtBulk(purchaser, bulkPrimeIds, {from: sysAdmin});
+        const result = await artContract.claimArtBulk(purchaser, bulkPrimeIds, allowance, {from: sysAdmin});
 
         // Test that a ARTMinted event was emitted
         truffleAssert.eventEmitted(result, 'ARTMinted', (ev) => {
@@ -145,10 +155,11 @@ contract('AvastarReplicantToken', function(accounts) {
 
     it("should allow a minter to claim lone ART tokens for a Prime owner", async function() {
 
+        const allowance = await artContract.allowance(purchaser, replicantMinterContract.address);
         const expected = new BN('1',10);
 
         // Claim ART for the owned primes
-        const result = await artContract.claimArt(purchaser, lonePrimeId, {from: minter});
+        const result = await artContract.claimArt(purchaser, lonePrimeId, allowance, {from: minter});
 
         // Test that a ARTMinted event was emitted
         truffleAssert.eventEmitted(result, 'ARTMinted', (ev) => {
@@ -160,20 +171,35 @@ contract('AvastarReplicantToken', function(accounts) {
 
     });
 
+    it("should have auto-approved replicant minter's allowance of the the purchaser's ART tokens", async function() {
+        // Expected allowance
+        const expectedAllowance = new BN('3', 10).mul(scaleFactor);
+
+        // Check the replicant minter's allowance for the purchaser
+        const result = await artContract.allowance(purchaser, replicantMinterContract.address);
+        assert.ok(result.eq(expectedAllowance), "Replicant minter contract's allowance was not correct for purchaser");
+
+    });
+
     it("should only allow one ART token to be claimed for each Prime in bulk", async function() {
+        // Accrued allowance for replicant minter contract
+        const allowance = new BN('1',10);
 
         // Attempt claiming primes again
         await exceptions.catchRevert(
-            artContract.claimArtBulk(purchaser, bulkPrimeIds, {from: sysAdmin})
+            artContract.claimArtBulk(purchaser, bulkPrimeIds, allowance, {from: sysAdmin})
         );
 
     });
 
-    it("should only allow one ART token to be claimed for lone Primes", async function() {
+    it("should not allow one ART tokens to be claimed for previously claimed lone Primes", async function() {
+
+        // Accrued allowance for replicant minter contract
+        const allowance = new BN('1',10);
 
         // Attempt claiming prime again
         await exceptions.catchRevert(
-            artContract.claimArt(purchaser, lonePrimeId, {from: minter})
+            artContract.claimArt(purchaser, lonePrimeId, allowance, {from: minter})
         );
 
     });
@@ -201,7 +227,7 @@ contract('AvastarReplicantToken', function(accounts) {
 
         // Attempt claiming primes again
         await exceptions.catchRevert(
-            artContract.burnArt(purchaser, 3, {from: anyone})
+            artContract.burnArt(purchaser, {from: anyone})
         );
 
     });
@@ -227,34 +253,41 @@ contract('AvastarReplicantToken', function(accounts) {
 
     });
 
-    it("should not allow a spender to burn more ART tokens than their allowance", async function() {
+    it("should allow a spender to burn ART tokens within their allowance", async function() {
 
-        // Amount to try and spend
-        const amount = new BN('3',10);
-
-        // Attempt to burn more than allowance
-        await exceptions.catchRevert(
-            artContract.burnArt(purchaser, amount, {from: spender})
-        );
-
-    });
-
-    it("should allow a spender to burn as many ART tokens as their allowance", async function() {
-
-        // Amount to try and burn
-        const amount = new BN('1',10);
+        const allowance = await artContract.allowance(purchaser, spender);
+        const tokens = allowance.div(scaleFactor).toNumber();
+        const one = new BN('1',10);
 
         // Claim the primes for ART
-        const result = await artContract.burnArt(purchaser, amount, {from: spender});
+        // Burn allowance
+        for (let i=0; i < tokens; i++) {
 
-        // Test that a ARTBurned event was emitted
-        truffleAssert.eventEmitted(result, 'ARTBurned', (ev) => {
-            return (
-                ev.holder === purchaser &&
-                ev.amount.eq(amount)
-            );
-        }, 'ARTBurned event should be emitted with correct info');
+            // Burn a token
+            const result = await artContract.burnArt(purchaser, {from: spender});
 
+            // Test that a ARTBurned event was emitted
+            truffleAssert.eventEmitted(result, 'ARTBurned', (ev) => {
+                return (
+                    ev.holder === purchaser &&
+                    ev.amount.eq(one)
+                );
+            }, 'ARTBurned event should be emitted with correct info');
+        }
+    });
+
+    it("should not allow a spender to burn more ART tokens than their allowance", async function() {
+
+        const allowance = await artContract.allowance(purchaser, spender);
+        const tokens = allowance.div(scaleFactor).toNumber();
+
+        // Should have no allowance
+        assert.equal(tokens, 0);
+
+        // Attempt to burn more tha
+        await exceptions.catchRevert(
+            artContract.burnArt(purchaser, {from: spender})
+        )
     });
 
 });

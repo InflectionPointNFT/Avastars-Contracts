@@ -35,6 +35,12 @@ contract AvastarReplicantMinter is AvastarTypes, AccessControl {
     IAvastarReplicantToken private artContract ;
 
     /**
+     * @notice Acknowledge contract is `AvastarReplicantMinter`
+     * @return always true
+     */
+    function isAvastarReplicantMinter() external pure returns (bool){return true;}
+
+    /**
      * @notice Set the address of the `AvastarTeleporter` contract.
      * Only invokable by system admin role, when contract is paused and not upgraded.
      * To be used if the Teleporter contract has to be upgraded and a new instance deployed.
@@ -79,6 +85,12 @@ contract AvastarReplicantMinter is AvastarTypes, AccessControl {
     }
 
     /**
+     * @notice Acknowledge contract is `AvastarReplicantMinter`
+     * @return always true
+     */
+    function isReplicantMinter() external pure returns (bool) {return true;}
+
+    /**
      * @notice Mint an Avastar Replicant for a purchaser who has previously deposited funds.
      * Invokable only by minter role, when contract is not paused.
      * Minted token will be owned by `_purchaser` address.
@@ -111,7 +123,7 @@ contract AvastarReplicantMinter is AvastarTypes, AccessControl {
         require(_gender > Gender.ANY);
 
         // Burn one of purchaser's ART tokens
-        artContract.burnArt(_purchaser, 1);
+        artContract.burnArt(_purchaser);
 
         // Mint Replicant and return tokenId / serial
         (tokenId, serial) = teleporterContract.mintReplicant(_purchaser, _traits, _generation, _gender, _ranking);

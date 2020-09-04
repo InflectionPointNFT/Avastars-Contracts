@@ -6,7 +6,9 @@ import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import "@openzeppelin/contracts/token/ERC721/IERC721Enumerable.sol";
 import "./AvastarTypes.sol";
 import "./IAvastarTeleporterThin.sol";
+import "./IAvastarReplicantMinter.sol";
 import "./AccessControl.sol";
+import "./AvastarReplicantMinter.sol";
 
 /**
  * @title Avastar Replicant Token
@@ -23,6 +25,12 @@ contract AvastarReplicantToken is ERC20, AccessControl, AvastarTypes {
     event TeleporterContractSet(address contractAddress);
 
     /**
+     * @notice Event emitted when AvastarReplicantMinter contract is set
+     * @param contractAddress the address of the AvastarReplicantMinter contract
+     */
+    event ReplicantMinterContractSet(address contractAddress);
+
+    /**
      * @notice Event emitted when an amount of AvastarReplicantTokens are minted for a holder
      * @param holder the address of the holder of the new ART
      * @param amount the number of ART tokens minted for the holder
@@ -30,16 +38,21 @@ contract AvastarReplicantToken is ERC20, AccessControl, AvastarTypes {
     event ARTMinted(address indexed holder, uint256 amount);
 
     /**
-     * @notice Event emitted when an amount of a holder's AvastarReplicantTokens are burned
+     * @notice Event emitted when an amount of a holder's ART tokens are burned
      * @param holder the address of the holder of the new ART
      * @param amount the number of the holder's ART tokens burned
      */
     event ARTBurned(address indexed holder, uint256 amount);
 
     /**
-     * @notice Address of the AvastarTeleporter contract
+     * @notice Address of the `AvastarTeleporter` contract
      */
     IAvastarTeleporterThin private teleporterContract ;
+
+    /**
+     * @notice Address of the `AvastarReplicantMinter` contract
+     */
+    address private replicantMinterContract ;
 
     /**
      * @notice ERC20 decimals
@@ -73,13 +86,35 @@ contract AvastarReplicantToken is ERC20, AccessControl, AvastarTypes {
     uint256 public constant ART_HARD_CAP = 126000;
 
     /**
+     * @notice Set the address of the `AvastarReplicantMinter` contract.
+     * Only invokable by system admin role, when contract is paused and not upgraded.
+     * To be used if the Teleporter contract has to be upgraded and a new instance deployed.
+     * If successful, emits an `ReplicantMinterContractSet` event.
+     * @param _address address of `AvastarReplicantMinter` contract
+     */
+    function setReplicantMinterContract(address _address) external whenPaused onlySysAdmin {
+
+        // Cast the candidate contract to the IAvastarReplicantMinter interface
+        IAvastarReplicantMinter candidateContract = IAvastarReplicantMinter(_address);
+
+        // Verify that we have the appropriate address
+        require(candidateContract.isAvastarReplicantMinter());
+
+        // Set the contract address
+        replicantMinterContract = _address;
+
+        // Emit the event
+        emit ReplicantMinterContractSet(_address);
+    }
+
+    /**
      * @notice Set the address of the `AvastarTeleporter` contract.
      * Only invokable by system admin role, when contract is paused and not upgraded.
      * To be used if the Teleporter contract has to be upgraded and a new instance deployed.
      * If successful, emits an `TeleporterContractSet` event.
      * @param _address address of `AvastarTeleporter` contract
      */
-    function setTeleporterContract(address _address) external onlySysAdmin {
+    function setTeleporterContract(address _address) external whenPaused onlySysAdmin {
 
         // Cast the candidate contract to the IAvastarTeleporterThin interface
         IAvastarTeleporterThin candidateContract = IAvastarTeleporterThin(_address);
@@ -106,12 +141,12 @@ contract AvastarReplicantToken is ERC20, AccessControl, AvastarTypes {
      * @param _holder address of holder to claim ART for
      * @param _primeIds an array of Avastar Prime IDs owned by the holder
      */
-    function claimArtBulk(address _holder, uint256[] memory _primeIds) public onlySysAdmin {
+    function claimArtBulk(address _holder, uint256[] memory _primeIds, uint256 _allowance) public onlySysAdmin {
 
         // Cannot mint more tokens than the hard cap
         require(getCirculatingArt() <= ART_HARD_CAP, "Hard cap reached, no more tokens can be minted.");
 
-        uint256 amountToMint;
+        uint256 tokensToMint;
         for (uint256 i = 0; i < _primeIds.length; i++) {
 
             // If unclaimed, claim and increase tally to mint
@@ -125,23 +160,31 @@ contract AvastarReplicantToken is ERC20, AccessControl, AvastarTypes {
 
             // Claim and bump amount to mint by one
             artClaimed[_primeIds[i]] = true;
-            amountToMint = amountToMint.add(1);
+            tokensToMint = tokensToMint.add(1);
         }
 
+        // The scaled amount of ART to mint
+        uint256 scaledAmount = tokensToMint.mul(scaleFactor);
+
         // Mint the tokens
-        _mint(_holder, amountToMint.mul(scaleFactor));
+        _mint(_holder, scaledAmount);
+
+        // Approve AvastarReplicantMinter contract to burn the tokens when it mints a Replicant for the holder
+        // Auto-approval use case doesn't really run afoul of the known `approve` issue
+        _approve(_holder, replicantMinterContract, _allowance.add(scaledAmount));
 
         // Send the event identifying the amount minted for the holder
-        emit ARTMinted(_holder, amountToMint);
+        emit ARTMinted(_holder, tokensToMint);
     }
 
     /**
      * @notice Claim and mint a single ART token
-     * If successful, emits an ARTMinted event
+     * If successful, emits an `ARTMinted` event
      * @param _holder address of holder to claim ART for
      * @param _primeId ID of an Avastar Prime owned by the holder
+     * @param _allowance the current allowance of the `AvastarReplicantMinter` for the holder
      */
-    function claimArt(address _holder, uint256 _primeId) public onlyMinter {
+    function claimArt(address _holder, uint256 _primeId, uint256 _allowance) public onlyMinter {
 
         // Revert when hard cap is reached
         require(getCirculatingArt() <= ART_HARD_CAP, "Hard cap reached, no more tokens can be minted.");
@@ -156,31 +199,40 @@ contract AvastarReplicantToken is ERC20, AccessControl, AvastarTypes {
         require(teleporterContract.getAvastarWaveByTokenId(_primeId) == Wave.PRIME, "Specified Avastar must be a Prime");
 
         // Claim token
-        uint256 amountToMint = 1;
+        uint256 tokensToMint = 1;
         artClaimed[_primeId] = true;
 
-        // Mint the tokens
-        _mint(_holder, amountToMint.mul(scaleFactor));
+        // The scaled amount of ART to mint
+        uint256 scaledAmount = tokensToMint.mul(scaleFactor);
+
+        // Mint the token
+        _mint(_holder, scaledAmount);
+
+        // Approve AvastarReplicantMinter contract to burn the tokens when it mints a Replicant for the holder
+        // Auto-approval use case doesn't really run afoul of the known `approve` issue
+        _approve(_holder, replicantMinterContract, _allowance.add(scaledAmount));
 
         // Send the event identifying the amount minted for the holder
-        emit ARTMinted(_holder, amountToMint);
+        emit ARTMinted(_holder, tokensToMint);
     }
 
     /**
-     * @notice Burn a given amount of the holder's ART tokens
-     * The caller must have an allowance of the holder's tokens equal to or greater than amount to burn
+     * @notice Burn one of the holder's ART tokens
      * If successful, emits an ARTBurned event
+     * The caller must have an allowance equal to one of the holder's tokens
      * @param _holder address of holder to burn ART for
-     * @param _amount amount of holder's ART to burn
      */
-    function burnArt(address _holder, uint256 _amount) external {
+    function burnArt(address _holder) external {
+
+        // Single token
+        uint256 token = 1;
 
         // Holder must have tokens equal to or greater than burn amount
         // Caller must have an allowance of amount tokens of holder
-        _burnFrom(_holder, _amount.mul(scaleFactor));
+        _burnFrom(_holder, token.mul(scaleFactor));
 
         // Send event identifying the amount burned
-        emit ARTBurned(_holder, _amount);
+        emit ARTBurned(_holder, token);
     }
 
     /**

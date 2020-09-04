@@ -8,24 +8,26 @@ const exceptions = require ("../util/Exceptions");
 const constants = require("../util/Constants");
 const BN = require('bn.js');
 
-contract('AvastarReplicantMinter', function(accounts) {
+contract('AvastarReplicantToken', function(accounts) {
 
-    let teleporterContract, minterContract, artContract;
-    const sysAdmin = accounts[0];  // minter contract admin, ART contract owner
-    const purchaser = accounts[1];
-    const minter = accounts[2]; // account invoking minter contract must also have minter role
-    const owner = accounts[3];  // minter contract owner
-    const anyone = accounts[4];
+    let teleporterContract, replicantMinterContract, artContract;
+    const sysAdmin = accounts[0];  // ART contract owner
+    const purchaser = accounts[1]; // token owner
+    const minter = accounts[2];    // minter role
+    const spender = accounts[3];   // approved address
+    const anyone = accounts[4];    // anyone else
+
+    const none = new BN('0', 10);
+    const decimals = new BN('18', 10);
+    const scaleFactor = new BN('10', 10).pow(decimals);
 
     const traits1 = new BN('4835703422573704792572931', 10);
     const traits2 = new BN('59374701396491835636974613', 10);
     const traits3 = new BN('6044669605981521127212033', 10);
-
     const traits4 = new BN('16442623851008461074068800773', 10);
-    const traits5 = new BN('2826487603661154200022484230', 10);
-    const traits6 = new BN('3444253402627275361639272707', 10);
 
-    const primeIds = [0,1,2];
+    const bulkPrimeIds = [0,1,2];
+
     const primes = [
         // Prime 1 - id 0
         {
@@ -53,49 +55,35 @@ contract('AvastarReplicantMinter', function(accounts) {
         }
     ];
 
-    const replicants = [
-        // Replicant 1 - id 4
-        {
-            "generation" : constants.GENERATION.ONE,
-            "gender"     : constants.GENDER.MALE,
-            "traits"     : traits4,
-            "ranking"    : 25,
-        },
-        // Replicant 2 - id 5
-        {
-            "generation" : constants.GENERATION.ONE,
-            "gender"     : constants.GENDER.FEMALE,
-            "traits"     : traits5,
-            "ranking"    : 36,
-        },
-        // Replicant 3 - id 6
-        {
-            "generation" : constants.GENERATION.ONE,
-            "gender"     : constants.GENDER.MALE,
-            "traits"     : traits6,
-            "ranking"    : 75,
-        }
-    ];
+    const replicant = {
+        "generation" : constants.GENERATION.ONE,
+        "gender"     : constants.GENDER.MALE,
+        "traits"     : traits4,
+        "ranking"    : 25,
+    };
 
     before(async () => {
-        // Create the factory contract and unpause
+
+        // Create the contracts
         teleporterContract = await AvastarTeleporter.new();
+        artContract = await AvastarReplicantToken.new();
+        replicantMinterContract = await AvastarReplicantMinter.new();
 
-        // Create the minter contract and set the factory contract
-        minterContract = await AvastarReplicantMinter.new(teleporterContract.address);
-        await minterContract.setTeleporterContract(teleporterContract.address);
-        await minterContract.addMinter(minter);
-        await minterContract.addOwner(owner);
-        await minterContract.unpause();
-
-        // Add the minters to the factory contract
-        await teleporterContract.addMinter(minterContract.address);
+        // Setup and unpause teleporter contract
         await teleporterContract.addMinter(minter);
+        await teleporterContract.addMinter(replicantMinterContract.address);
         await teleporterContract.unpause();
 
-        // Add the teleporter to the ART contract
-        artContract = await AvastarReplicantToken.new();
+        // Setup and unpause ART contract
         artContract.setTeleporterContract(teleporterContract.address);
+        artContract.setReplicantMinterContract(replicantMinterContract.address);
+        await artContract.addMinter(minter);
+        await artContract.unpause();
+
+        // Setup and unpause Replicant minter contract
+        replicantMinterContract.setArtContract(artContract.address);
+        replicantMinterContract.setTeleporterContract(teleporterContract.address);
+        await replicantMinterContract.unpause();
 
         // Mint the primes for testing
         for (let i = 0; i < primes.length; i++)
@@ -104,69 +92,44 @@ contract('AvastarReplicantMinter', function(accounts) {
             await teleporterContract.mintPrime(purchaser, traits, generation, series, gender, ranking, {from: minter});
         }
 
-        // Claim the primes for ART
-        await artContract.claimArt(primeIds, {from: purchaser});
-
     });
 
-    xit("should not allow minter to purchase a replicant if AvastarTeleporter.mintReplicant reverts", async function() {
+    it("should not mint a replicant for the purchaser if their ART tokens have not been claimed", async function() {
+        const {generation, gender, traits, ranking} = replicant;
 
-        const {generation, gender, traits} = replicants[0];
-        const ranking = 0;
-
-        // Called function on teleporter reverts because ranking must be between 1 and 100
-        // Try to purchase the prime
+        // Attempt unfunded purchase
         await exceptions.catchRevert(
-            minterContract.purchaseReplicant(owner, traits, generation, gender, ranking, {from: minter})
-        )
+            replicantMinterContract.purchaseReplicant(purchaser, traits, generation, gender, ranking, {from: minter})
+        );
 
     });
 
-    xit("should allow minter to purchase a replicant if purchaser has set allowance to for minter contract ", async function() {
+    it("should mint a replicant for the purchaser once their ART tokens have been claimed", async function() {
 
-        const {generation, gender, traits} = replicants[0];
-        let id = new BN(0,10);
-        let serial = new BN(0,10);
+        // Current allowance for replicant minter contract of the purchaser's tokens should be none
+        let allowance = await artContract.allowance(purchaser, replicantMinterContract.address);
+        assert.ok(allowance.eq(none));
 
-        // 1 ETH was previously deposited in contract
-        // Purchase the prime
-        let result = await minterContract.purchasePrime(purchaser, price, traits, gender, ranking, {from: minter});
+        // Claim the art for the already minted primes
+        await artContract.claimArtBulk(purchaser, bulkPrimeIds, allowance, {from: sysAdmin});
 
-        // Test that a DepositorBalance event was emitted
-        truffleAssert.eventEmitted(result, 'DepositorBalance', (ev) => {
-            return (
-                ev.depositor === purchaser &&
-                ev.balance.eq(depositAfterOne)
-            );
-        }, 'DepositorBalance event should be emitted with correct info');
+        // Allowance should now be 3
+        allowance = await artContract.allowance(purchaser, replicantMinterContract.address);
+        const tokens = allowance.div(scaleFactor).toNumber();
+        assert.equal(tokens, 3);
 
-        // Get events emitted from the factory
-        let factoryScope = truffleEvent.formTxObject('AvastarTeleporter', 1, result);
+        // Mint one replicant for testing
+        const {generation, gender, traits, ranking} = replicant;
+        const result = await replicantMinterContract.purchaseReplicant(purchaser, traits, generation, gender, ranking, {from: minter});
 
         // Test that appropriate event was emitted
-        // NOTE:
-        // unlike an event emitted directly from a called contract, this came from
-        // a contract called by the one we called. therefore, everything is a string
-        // in the resulting event because it was translated from raw logs by truffle-event
-        truffleAssert.eventEmitted(factoryScope, 'NewPrime', (ev) => {
+        truffleAssert.eventEmitted(result, 'NewReplicant', (ev) => {
             return (
-                ev.id === String(id) &&
-                ev.serial === String(serial) &&
-                ev.generation === String(generation) &&
-                ev.series === String(series) &&
-                ev.gender === String(gender) &&
-                ev.traits === String(traits)
+                ev.generation.toNumber() === generation &&
+                ev.gender.toNumber() === gender &&
+                ev.traits.eq(traits)
             );
-        }, 'NewPrime event should be emitted with correct info');
-
-    });
-
-    xit("should show appropriately decreased allowance for minter contract after purchasing replicant", async function() {
-
-        // Check balance
-        // Two deposits of 1 ETH each, minus two purchases at .5 ETH each leaves 1 ETH remaining
-        let result = await minterContract.checkDepositorBalance({from: purchaser});
-        assert.ok(result.eq(depositAmount), "Deposit balance wasn't correct");
+        }, 'NewReplicant event should be emitted with correct info');
 
     });
 
