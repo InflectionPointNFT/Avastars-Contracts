@@ -2,7 +2,6 @@ const AvastarTeleporter = artifacts.require("./AvastarTeleporter.sol");
 const AvastarMetadata = artifacts.require("./AvastarMetadata.sol");
 const AvastarPrimeMinter = artifacts.require("./AvastarPrimeMinter.sol");
 const AvastarReplicantMinter = artifacts.require("./AvastarReplicantMinter.sol");
-const AvastarReplicantToken = artifacts.require("./AvastarReplicantToken.sol");
 const constants = require("../util/Constants");
 const AccountManager = require("../util/AccountManager");
 const BN = require('bn.js');
@@ -22,9 +21,8 @@ module.exports = (deployer, network, liveAccounts) => {
         console.log("Deploying contracts...");
         const avastarTeleporter = await deployer.deploy(AvastarTeleporter);
         const avastarPrimeMinter = await deployer.deploy(AvastarPrimeMinter);
-        const avastarReplicantMinter = await deployer.deploy(AvastarReplicantMinter);
-        const avastarReplicantToken = await deployer.deploy(AvastarReplicantToken);
         const avastarMetadata = await deployer.deploy(AvastarMetadata);
+        const avastarReplicantMinter = await deployer.deploy(AvastarReplicantMinter);
 
         // Prepare the Avastar Metadata contract for use
         console.log("----------------------------------");
@@ -87,15 +85,6 @@ module.exports = (deployer, network, liveAccounts) => {
         console.log("Unpause\n");
         await avastarPrimeMinter.unpause();
 
-        // Prepare the Avastar Replicant Token contract for use
-        console.log("-----------------------------------------");
-        console.log("Preparing AvastarReplicantToken contract");
-        console.log("-----------------------------------------");
-
-        console.log("Set teleporter contract address");
-        await avastarReplicantToken.setTeleporterContract(avastarTeleporter.address);
-
-
         // Prepare the Avastar Replicant Minter contract for use
         console.log("-----------------------------------------");
         console.log("Preparing AvastarReplicantMinter contract");
@@ -103,9 +92,6 @@ module.exports = (deployer, network, liveAccounts) => {
 
         console.log("Set teleporter contract address");
         await avastarReplicantMinter.setTeleporterContract(avastarTeleporter.address);
-
-        console.log("Set ART contract address");
-        await avastarReplicantMinter.setArtContract(avastarReplicantToken.address);
 
         console.log("Add admins, owners, minters");
         promises = admins.map(admin => avastarReplicantMinter.addSysAdmin(admin));

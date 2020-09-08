@@ -6,7 +6,7 @@ import "./AvastarTypes.sol";
  * @title Limited AvastarTeleporter Interface
  * @author Cliff Hall
  * @notice Declared as abstract contract rather than interface as it must inherit for enum types.
- * Used by `AvastarReplicantToken` contract to interact with limited subset of `AvastarTeleporter` contract functions.
+ * Used by `AvastarReplicantMinter` contract to interact with limited subset of `AvastarTeleporter` contract functions.
  */
 contract IAvastarTeleporterThin is AvastarTypes {
 
@@ -56,4 +56,27 @@ contract IAvastarTeleporterThin is AvastarTypes {
     public
     view
     returns (uint256 count);
+
+    /**
+     * @notice Mint an Avastar Replicant.
+     * Only invokable by minter role, when contract is not paused.
+     * If successful, emits a `NewReplicant` event.
+     * @param _owner the address of the new Avastar's owner
+     * @param _traits the new Replicant's trait hash
+     * @param _generation the new Replicant's generation
+     * @param _gender the new Replicant's gender
+     * @param _ranking the new Replicant's rarity ranking
+     * @return tokenId the newly minted Replicant's token ID
+     * @return serial the newly minted Replicant's serial
+     */
+    function mintReplicant(
+        address _owner,
+        uint256 _traits,
+        Generation _generation,
+        Gender _gender,
+        uint8 _ranking
+    )
+    external
+    returns (uint256 tokenId, uint256 serial);
+
 }
