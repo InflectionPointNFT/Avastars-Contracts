@@ -14,7 +14,7 @@ module.exports = (deployer, network, liveAccounts) => {
         const currentAdmin = liveAccounts[0];
         const accounts = AccountManager.getAccounts(environment);
         const {owners, minters} = accounts;
-        const admins = accounts.admins.filter(acct => acct !== currentAdmin);
+        const admins = accounts.admins.filter(acct => acct.toUpperCase() !== currentAdmin.toUpperCase());
         let promises;
 
         // Deploy the Avastar Teleporter, Prime Minter, and Metadata contracts
