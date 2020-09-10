@@ -78,6 +78,7 @@ module.exports = (deployer, network, liveAccounts) => {
         promises = admins.map(admin => avastarPrimeMinter.addSysAdmin(admin));
         promises.concat(owners.map(owner => avastarPrimeMinter.addOwner(owner)));
         promises.concat(minters.map(minter => avastarPrimeMinter.addMinter(minter)));
+        await Promise.all(promises);
 
         console.log("Set current generation");
         await avastarPrimeMinter.setCurrentGeneration(generation); // auto resets sets series
@@ -97,6 +98,7 @@ module.exports = (deployer, network, liveAccounts) => {
         promises = admins.map(admin => avastarReplicantMinter.addSysAdmin(admin));
         promises.concat(owners.map(owner => avastarReplicantMinter.addOwner(owner)));
         promises.concat(minters.map(minter => avastarReplicantMinter.addMinter(minter)));
+        await Promise.all(promises);
 
         console.log("Unpause\n");
         await avastarReplicantMinter.unpause();
