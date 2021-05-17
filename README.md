@@ -4,7 +4,7 @@ Ethereum-based collectible avatars with on-chain artwork and metadata
 ## Documentation
 Developer setup, contract architecture, UML, and docs, trait hash bitmasking info, unit test output, 
 and more are available at:
-* https://dapp-wizards.github.io/Avastars-Contracts
+* https://nft42.github.io/Avastars-Contracts
 
 ## Repository Contents
 
@@ -15,7 +15,7 @@ Ethereum smart contracts for the Avastar project
 Scripts, data, and logs for preparing deployed contracts for use
 
 ### [/docs](docs)
-The [project documentation](https://dapp-wizards.github.io/Avastars-Contracts), processed and redeployed upon each 
+The [project documentation](https://nft42.github.io/Avastars-Contracts), processed and redeployed upon each 
 commit to Github.
 
 ### [/flat](flat)
@@ -178,7 +178,7 @@ Summary
 > Final cost:          0.018533242 ETH
 ```
 
-### Setup - [Artist Attribution](https://github.com/Dapp-Wizards/Avastars-Contracts/tree/master/data#set-artist-attribution) (Rinkeby example)
+### Setup - [Artist Attribution](https://github.com/nft42/Avastars-Contracts/tree/master/data#set-artist-attribution) (Rinkeby example)
 #### Must edit data/attribution/set-attribution.js, set artist info first!
 ```
 truffle(rinkeby)> exec data/set-attribution.js
@@ -188,7 +188,7 @@ Adding artist attribution for Generation 1...
 Gas used: 114231
 ```
 
-### Setup - [Create Traits](https://github.com/Dapp-Wizards/Avastars-Contracts/tree/master/data#create-traits) (Rinkeby example)
+### Setup - [Create Traits](https://github.com/nft42/Avastars-Contracts/tree/master/data#create-traits) (Rinkeby example)
 #### Must edit data/traits/create-traits.js, set NETWORK constant, and comment out safety catch first!
 ```
 truffle(rinkeby)> exec data/create-traits.js
@@ -206,7 +206,7 @@ Adding traits to contract...
 .
 ```
 
-### Setup - [Create Promos](https://github.com/Dapp-Wizards/Avastars-Contracts/tree/master/data#create-promos) (Rinkeby example)
+### Setup - [Create Promos](https://github.com/nft42/Avastars-Contracts/tree/master/data#create-promos) (Rinkeby example)
 #### Must edit data/promos/create-promos.js, set NETWORK constant, and comment out safety catch first!
 ```
 truffle(rinkeby)> exec data/create-promos.js
