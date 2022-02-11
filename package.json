@@ -38,7 +38,7 @@
     "truffle-flattener": "^1.4.2"
   },
   "dependencies": {
-    "@openzeppelin/contracts": "^2.4.0",
+    "@openzeppelin/contracts": "^4.4.2",
     "@truffle/hdwallet-provider": "^1.0.30",
     "web3": "^1.2.5"
   }
