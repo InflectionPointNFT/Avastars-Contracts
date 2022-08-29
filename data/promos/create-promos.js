@@ -1,7 +1,7 @@
 //--------------------------{SET ME FIRST}---------------------
 const NETWORK = 'development';
 //const NETWORK = 'ropsten';
-//const NETWORK = 'rinkeby';
+//const NETWORK = 'goerli';
 //const NETWORK = 'mainnet';
 //--------------------------{SET ME FIRST}---------------------
 
