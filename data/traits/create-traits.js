@@ -5,12 +5,12 @@ const NETWORK = 'development';
 //const NETWORK = 'mainnet';
 //--------------------------{SET ME FIRST}---------------------
 
-const logfile = `data/create-traits.${NETWORK}.txt`;
+const logfile = `data/traits/create-traits.${NETWORK}.txt`;
 const fs = require("fs");
 const constants = require("../../util/Constants");
 const AccountManager = require('../../util/AccountManager');
 const GetGasCost = require('../../util/GetGasCost');
-const traitsJSON = "data/create-traits.json";
+const traitsJSON = "data/traits/create-traits.json";
 const AvastarTeleporter = artifacts.require("contracts/AvastarTeleporter.sol");
 const div = "-------------------------------------------------------------------------------------";
 const orderedKeys = Object.keys(constants.GENE).map(
