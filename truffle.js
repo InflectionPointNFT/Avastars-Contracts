@@ -31,7 +31,7 @@ module.exports = {
             ),
             network_id: "5",
             skipDryRun: true,
-            gasPrice: 12000000000, // 12 GWei
+            gasPrice: 60000000, // 0.06 GWei
             gas: 8000000
         },
         ropsten: {
