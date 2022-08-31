@@ -1,16 +1,16 @@
 //--------------------------{SET ME FIRST}---------------------
 const NETWORK = 'development';
 //const NETWORK = 'ropsten';
-//const NETWORK = 'rinkeby';
+//const NETWORK = 'goerli';
 //const NETWORK = 'mainnet';
 //--------------------------{SET ME FIRST}---------------------
 
-const logfile = `data/create-traits.${NETWORK}.txt`;
+const logfile = `data/traits/create-traits.${NETWORK}.txt`;
 const fs = require("fs");
 const constants = require("../../util/Constants");
 const AccountManager = require('../../util/AccountManager');
 const GetGasCost = require('../../util/GetGasCost');
-const traitsJSON = "data/create-traits.json";
+const traitsJSON = "data/traits/create-traits.json";
 const AvastarTeleporter = artifacts.require("contracts/AvastarTeleporter.sol");
 const div = "-------------------------------------------------------------------------------------";
 const orderedKeys = Object.keys(constants.GENE).map(
@@ -69,7 +69,7 @@ ProcessedTrait.prototype.getGasSpent = function () { return (this.totalGasSpent)
 
 let total_gas = 0;
 let costliest_trait = new ProcessedTrait();
-const bumpGas = gas => gas + Math.round((gas * .02));
+const bumpGas = gas => gas + Math.round((gas * .2));
 const logIt = (log, value) => { console.log(value); log.write(`${value}\n`) };
 
 module.exports = async function(done) {
@@ -98,7 +98,6 @@ module.exports = async function(done) {
         options = {flags:'w'};
     }
     log = fs.createWriteStream(logfile, options);
-
     console.log('Processing raw database dump...');
     const traits = getTraits(traitsJSON);
     console.log(`${traits.length} traits processed.`);
@@ -234,7 +233,7 @@ async function extendTrait(teleporter, processing, piece, accounts, log){
 
     } catch (e) {
         let err = e.toString() + '\n';
-        logIt(log, `${err} ${processing.toString()}`);
+	logIt(log, `${err} ${processing.toString()}`);
         process.exit();
     }
 }
@@ -299,8 +298,13 @@ function readLog(file) {
         let lines = infile.split("\n");
 
         // get last line data
-        let lastLine = lines[lines.length-1];
-        let pairs = lastLine.split("\t");
+	let lastLineIndex = lines.length-1;
+	while(lastLineIndex > 0 && lines[lastLineIndex].trim().length === 0) {
+	    lastLineIndex--;
+	}
+
+	let lastLine = lines[lastLineIndex];
+	let pairs = lastLine.split("\t"); console.dir(pairs);
         let gas, obj = {};
         pairs.forEach(pair => obj[pair.split(":")[0]] = pair.split(":")[1]);
         lastSuccessfulTrait = convertObjToProcessed(obj);

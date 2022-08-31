@@ -46,7 +46,7 @@ to manually set the network at the top of the file before executing the script:
 //--------------------------{SET ME FIRST}---------------------
 const NETWORK = 'development';
 //const NETWORK = 'ropsten';
-//const NETWORK = 'rinkeby';
+//const NETWORK = 'goerli';
 //const NETWORK = 'mainnet';
 //--------------------------{SET ME FIRST}---------------------
 ```
@@ -118,7 +118,7 @@ to manually set the network at the top of the file before executing the script:
 //--------------------------{SET ME FIRST}---------------------
 const NETWORK = 'development';
 //const NETWORK = 'ropsten';
-//const NETWORK = 'rinkeby';
+//const NETWORK = 'goerli';
 //const NETWORK = 'mainnet';
 //--------------------------{SET ME FIRST}---------------------
 ```

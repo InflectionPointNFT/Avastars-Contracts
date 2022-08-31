@@ -227,7 +227,15 @@ contract AvastarMetadata is AvastarBase, AvastarTypes, AccessControl {
         }
 
         // Description: Gender
-        metadata = strConcat(metadata, (gender == Gender.MALE) ? ' Male ' : ' Female ');
+        if (gender == Gender.MALE) {
+            metadata = strConcat(metadata, ' Male ');
+        }
+        else if (gender == Gender.FEMALE) {
+            metadata = strConcat(metadata, ' Female ');
+        }
+        else {
+            metadata = strConcat(metadata, ' Non-Binary ');
+        }
 
         // Description: Founder, Exclusive, Prime, or Replicant
         if (wave == Wave.PRIME && series == Series.PROMO) {
@@ -255,7 +263,17 @@ contract AvastarMetadata is AvastarBase, AvastarTypes, AccessControl {
         metadata = strConcat(metadata, '    {\n');
         metadata = strConcat(metadata, '      "trait_type": "gender",\n');
         metadata = strConcat(metadata, '      "value": "');
-        metadata = strConcat(metadata, (gender == Gender.MALE) ? 'male"' : 'female"');
+
+        if (gender == Gender.MALE) {
+            metadata = strConcat(metadata, 'male"');
+        }
+        else if (gender == Gender.FEMALE) {
+            metadata = strConcat(metadata, 'female"');
+        }
+        else {
+            metadata = strConcat(metadata, 'non-binary"');
+        }
+
         metadata = strConcat(metadata, '\n    },\n');
 
         // Wave

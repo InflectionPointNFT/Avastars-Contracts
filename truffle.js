@@ -22,16 +22,16 @@ module.exports = {
             from: "0xd9D45b75ac74962d74dc5F24Dd02E1e1E828A7d0",
             gas: 8000000
         },
-        rinkeby: {
+        goerli: {
             provider: () => new HDWalletProvider(
                 config[config.ENV.TEST.NAME].mnemonic,
                 config[config.ENV.TEST.NAME].url,
                 0, 10, true,     // 0 = start with first address, 10 = derive 10 addresses, true = sharedNonce
                 "m/44'/60'/0'/0/",
             ),
-            network_id: "4",
+            network_id: "5",
             skipDryRun: true,
-            gasPrice: 12000000000, // 12 GWei
+            gasPrice: 60000000, // 0.06 GWei
             gas: 8000000
         },
         ropsten: {

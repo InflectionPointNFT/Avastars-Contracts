@@ -7,7 +7,7 @@ const ENV = {
 
     TEST: {
         NAME: "TEST",
-        NETWORK: "rinkeby"
+        NETWORK: "goerli"
     },
 
     PROD: {

@@ -51,10 +51,10 @@ Constants and various helper code used by tests and data processing scripts.
  
 ## Deployment Overview
 
-### Migration (Rinkeby example)
+### Migration (Goerli example)
 ```
-truffle console --network rinkeby
-truffle(rinkeby)> migrate --reset
+truffle console --network goerli
+truffle(goerli)> migrate --reset
 
 Compiling your contracts...
 ===========================
@@ -63,8 +63,8 @@ Compiling your contracts...
 
 Starting migrations...
 ======================
-> Network name:    'rinkeby'
-> Network id:      4
+> Network name:    'goerli'
+> Network id:      5
 > Block gas limit: 0x98705c
 
 
@@ -178,24 +178,24 @@ Summary
 > Final cost:          0.018533242 ETH
 ```
 
-### Setup - [Artist Attribution](https://github.com/nft42/Avastars-Contracts/tree/master/data#set-artist-attribution) (Rinkeby example)
+### Setup - [Artist Attribution](https://github.com/nft42/Avastars-Contracts/tree/master/data#set-artist-attribution) (Goerli example)
 #### Must edit data/attribution/set-attribution.js, set artist info first!
 ```
-truffle(rinkeby)> exec data/set-attribution.js
-Using network 'rinkeby'.
+truffle(goerli)> exec data/set-attribution.js
+Using network 'goerli'.
 
 Adding artist attribution for Generation 1...
 Gas used: 114231
 ```
 
-### Setup - [Create Traits](https://github.com/nft42/Avastars-Contracts/tree/master/data#create-traits) (Rinkeby example)
+### Setup - [Create Traits](https://github.com/nft42/Avastars-Contracts/tree/master/data#create-traits) (Goerli example)
 #### Must edit data/traits/create-traits.js, set NETWORK constant, and comment out safety catch first!
 ```
-truffle(rinkeby)> exec data/create-traits.js
-Using network 'rinkeby'.
+truffle(goerli)> exec data/create-traits.js
+Using network 'goerli'.
 
 Environment / network...
-TEST rinkeby
+TEST goerli
 Fetching accounts...
 Start from scratch with new log.
 Processing raw database dump...
@@ -206,13 +206,13 @@ Adding traits to contract...
 .
 ```
 
-### Setup - [Create Promos](https://github.com/nft42/Avastars-Contracts/tree/master/data#create-promos) (Rinkeby example)
+### Setup - [Create Promos](https://github.com/nft42/Avastars-Contracts/tree/master/data#create-promos) (Goerli example)
 #### Must edit data/promos/create-promos.js, set NETWORK constant, and comment out safety catch first!
 ```
-truffle(rinkeby)> exec data/create-promos.js
+truffle(goerli)> exec data/create-promos.js
 
 Environment / network...
-TEST rinkeby
+TEST goerli
 Fetching accounts...
 { admins: [ '0x603158d642682E0D59b0Ab9d7e0c305EeA9C947a' ],
   owners: [ '0x0C3b27Fd4195E4C3849b96fDb8D1fB4846f7c198' ],
