@@ -1,4 +1,3 @@
-
 // File: contracts/AvastarTypes.sol
 
 pragma solidity 0.5.14;
@@ -365,7 +364,6 @@ library SafeMath {
 pragma solidity 0.5.14;
 
 
-
 /**
  * @title Access Control
  * @author Cliff Hall
@@ -604,7 +602,6 @@ interface IERC165 {
 
 pragma solidity ^0.5.0;
 
-
 /**
  * @dev Required interface of an ERC721 compliant contract.
  */
@@ -694,19 +691,21 @@ library Address {
     /**
      * @dev Returns true if `account` is a contract.
      *
-     * This test is non-exhaustive, and there may be false-negatives: during the
-     * execution of a contract's constructor, its address will be reported as
-     * not containing a contract.
+     * [IMPORTANT]
+     * ====
+     * It is unsafe to assume that an address for which this function returns
+     * false is an externally-owned account (EOA) and not a contract.
      *
-     * IMPORTANT: It is unsafe to assume that an address for which this
-     * function returns false is an externally-owned account (EOA) and not a
-     * contract.
+     * Among others, `isContract` will return false for the following 
+     * types of addresses:
+     *
+     *  - an externally-owned account
+     *  - a contract in construction
+     *  - an address where a contract will be created
+     *  - an address where a contract lived, but was destroyed
+     * ====
      */
     function isContract(address account) internal view returns (bool) {
-        // This method relies in extcodesize, which returns 0 for contracts in
-        // construction, since the code is only stored at the end of the
-        // constructor execution.
-
         // According to EIP-1052, 0x0 is the value returned for not-yet created accounts
         // and 0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470 is returned
         // for accounts without code, i.e. `keccak256('')`
@@ -714,7 +713,7 @@ library Address {
         bytes32 accountHash = 0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470;
         // solhint-disable-next-line no-inline-assembly
         assembly { codehash := extcodehash(account) }
-        return (codehash != 0x0 && codehash != accountHash);
+        return (codehash != accountHash && codehash != 0x0);
     }
 
     /**
@@ -758,7 +757,6 @@ library Address {
 
 pragma solidity ^0.5.0;
 
-
 /**
  * @title Counters
  * @author Matt Condon (@shrugs)
@@ -785,6 +783,7 @@ library Counters {
     }
 
     function increment(Counter storage counter) internal {
+        // The {SafeMath} overflow check can be skipped here, see the comment at the top
         counter._value += 1;
     }
 
@@ -796,7 +795,6 @@ library Counters {
 // File: @openzeppelin/contracts/introspection/ERC165.sol
 
 pragma solidity ^0.5.0;
-
 
 /**
  * @dev Implementation of the {IERC165} interface.
@@ -850,7 +848,6 @@ contract ERC165 is IERC165 {
 // File: @openzeppelin/contracts/token/ERC721/ERC721.sol
 
 pragma solidity ^0.5.0;
-
 
 
 
@@ -1167,7 +1164,7 @@ contract ERC721 is Context, ERC165, IERC721 {
      * @dev Internal function to invoke {IERC721Receiver-onERC721Received} on a target address.
      * The call is not executed if the target address is not a contract.
      *
-     * This function is deprecated.
+     * This is an internal detail of the `ERC721` contract and its use is deprecated.
      * @param from address representing the previous owner of the given token ID
      * @param to target address that will receive the tokens
      * @param tokenId uint256 ID of the token to be transferred
@@ -1180,9 +1177,28 @@ contract ERC721 is Context, ERC165, IERC721 {
         if (!to.isContract()) {
             return true;
         }
-
-        bytes4 retval = IERC721Receiver(to).onERC721Received(_msgSender(), from, tokenId, _data);
-        return (retval == _ERC721_RECEIVED);
+        // solhint-disable-next-line avoid-low-level-calls
+        (bool success, bytes memory returndata) = to.call(abi.encodeWithSelector(
+            IERC721Receiver(to).onERC721Received.selector,
+            _msgSender(),
+            from,
+            tokenId,
+            _data
+        ));
+        if (!success) {
+            if (returndata.length > 0) {
+                // solhint-disable-next-line no-inline-assembly
+                assembly {
+                    let returndata_size := mload(returndata)
+                    revert(add(32, returndata), returndata_size)
+                }
+            } else {
+                revert("ERC721: transfer to non ERC721Receiver implementer");
+            }
+        } else {
+            bytes4 retval = abi.decode(returndata, (bytes4));
+            return (retval == _ERC721_RECEIVED);
+        }
     }
 
     /**
@@ -1200,7 +1216,6 @@ contract ERC721 is Context, ERC165, IERC721 {
 
 pragma solidity ^0.5.0;
 
-
 /**
  * @title ERC-721 Non-Fungible Token Standard, optional enumeration extension
  * @dev See https://eips.ethereum.org/EIPS/eip-721
@@ -1215,7 +1230,6 @@ contract IERC721Enumerable is IERC721 {
 // File: @openzeppelin/contracts/token/ERC721/ERC721Enumerable.sol
 
 pragma solidity ^0.5.0;
-
 
 
 
@@ -1418,7 +1432,6 @@ contract ERC721Enumerable is Context, ERC165, ERC721, IERC721Enumerable {
 
 pragma solidity ^0.5.0;
 
-
 /**
  * @title ERC-721 Non-Fungible Token Standard, optional metadata extension
  * @dev See https://eips.ethereum.org/EIPS/eip-721
@@ -1436,13 +1449,15 @@ pragma solidity ^0.5.0;
 
 
 
-
 contract ERC721Metadata is Context, ERC165, ERC721, IERC721Metadata {
     // Token name
     string private _name;
 
     // Token symbol
     string private _symbol;
+
+    // Base URI
+    string private _baseURI;
 
     // Optional mapping for token URIs
     mapping(uint256 => string) private _tokenURIs;
@@ -1484,24 +1499,60 @@ contract ERC721Metadata is Context, ERC165, ERC721, IERC721Metadata {
     }
 
     /**
-     * @dev Returns an URI for a given token ID.
-     * Throws if the token ID does not exist. May return an empty string.
-     * @param tokenId uint256 ID of the token to query
+     * @dev Returns the URI for a given token ID. May return an empty string.
+     *
+     * If the token's URI is non-empty and a base URI was set (via
+     * {_setBaseURI}), it will be added to the token ID's URI as a prefix.
+     *
+     * Reverts if the token ID does not exist.
      */
     function tokenURI(uint256 tokenId) external view returns (string memory) {
         require(_exists(tokenId), "ERC721Metadata: URI query for nonexistent token");
-        return _tokenURIs[tokenId];
+
+        string memory _tokenURI = _tokenURIs[tokenId];
+
+        // Even if there is a base URI, it is only appended to non-empty token-specific URIs
+        if (bytes(_tokenURI).length == 0) {
+            return "";
+        } else {
+            // abi.encodePacked is being used to concatenate strings
+            return string(abi.encodePacked(_baseURI, _tokenURI));
+        }
     }
 
     /**
      * @dev Internal function to set the token URI for a given token.
+     *
      * Reverts if the token ID does not exist.
-     * @param tokenId uint256 ID of the token to set its URI
-     * @param uri string URI to assign
+     *
+     * TIP: if all token IDs share a prefix (e.g. if your URIs look like
+     * `http://api.myproject.com/token/<id>`), use {_setBaseURI} to store
+     * it and save gas.
      */
-    function _setTokenURI(uint256 tokenId, string memory uri) internal {
+    function _setTokenURI(uint256 tokenId, string memory _tokenURI) internal {
         require(_exists(tokenId), "ERC721Metadata: URI set of nonexistent token");
-        _tokenURIs[tokenId] = uri;
+        _tokenURIs[tokenId] = _tokenURI;
+    }
+
+    /**
+     * @dev Internal function to set the base URI for all token IDs. It is
+     * automatically added as a prefix to the value returned in {tokenURI}.
+     *
+     * _Available since v2.5.0._
+     */
+    function _setBaseURI(string memory baseURI) internal {
+        _baseURI = baseURI;
+    }
+
+    /**
+    * @dev Returns the base URI set via {_setBaseURI}. This will be
+    * automatically added as a preffix in {tokenURI} to each token's URI, when
+    * they are non-empty.
+    *
+    * _Available since v2.5.0._
+    */
+    function baseURI() external view returns (string memory) {
+        return _baseURI;
     }
 
     /**
@@ -1527,7 +1578,6 @@ pragma solidity ^0.5.0;
 
 
 
-
 /**
  * @title Full ERC721 Token
  * @dev This implementation includes all the required and some optional functionality of the ERC721 standard
@@ -1544,7 +1594,6 @@ contract ERC721Full is ERC721, ERC721Enumerable, ERC721Metadata {
 // File: contracts/AvastarState.sol
 
 pragma solidity 0.5.14;
-
 
 
 
@@ -1640,7 +1689,6 @@ contract AvastarState is AvastarBase, AvastarTypes, AccessControl, ERC721Full {
 // File: contracts/TraitFactory.sol
 
 pragma solidity 0.5.14;
-
 
 /**
  * @title Avastar Trait Factory
@@ -1911,7 +1959,6 @@ contract TraitFactory is AvastarState {
 
 pragma solidity 0.5.14;
 
-
 /**
  * @title Avastar Token Factory
  * @author Cliff Hall
@@ -2009,7 +2056,6 @@ contract AvastarFactory is TraitFactory {
 // File: contracts/PrimeFactory.sol
 
 pragma solidity 0.5.14;
-
 
 /**
  * @title Avastar Prime Factory
@@ -2194,7 +2240,6 @@ contract PrimeFactory is AvastarFactory {
 
 pragma solidity 0.5.14;
 
-
 /**
  * @title Avastar Replicant Factory
  * @author Cliff Hall
@@ -2362,7 +2407,6 @@ interface IAvastarMetadata {
 // File: contracts/AvastarTeleporter.sol
 
 pragma solidity 0.5.14;
-
 
 
 /**

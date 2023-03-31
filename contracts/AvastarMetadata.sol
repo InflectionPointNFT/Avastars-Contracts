@@ -43,6 +43,21 @@ contract AvastarMetadata is AvastarBase, AvastarTypes, AccessControl {
     event ViewUriBaseSet(string viewUriBase);
 
     /**
+     * @notice Event emitted when the `vrmUriBase` is set.
+     * Only emitted when the `vrmUriBase` is set after contract deployment.
+     * @param which the traunch for this base (founders, exclusive, prime, replicant)
+     * @param vrmUriBase the new URI
+     */
+    event VrmUriBaseSet(uint8 which, string vrmUriBase);
+
+    /**
+     * @notice Event emitted when the `vrmUriOverride` is set for a token.
+     * Only emitted when the `vrmUriOverride` is set after contract deployment.
+     * @param vrmUri the new URI
+     */
+    event VrmUriOverrideSet(uint256 tokenId, string vrmUri);
+
+    /**
      * @notice Address of the AvastarTeleporter contract
      */
     IAvastarTeleporter private teleporterContract ;
@@ -61,6 +76,20 @@ contract AvastarMetadata is AvastarBase, AvastarTypes, AccessControl {
      * @notice Base URI to view an Avastar on the Avastars website
      */
     string private viewUriBase;
+
+    /**
+     * @notice Base URI to an Avastar's off-chain 3d avatar indexed by 
+     * 0: Founder
+     * 1: Exclusive
+     * 4: Prime
+     * 3: Replicant
+     */
+    string[4] private vrmUriBase;
+
+    /**
+     * @notice a full override URI to a specific Avastar's custom off-chain 3d avatar
+     */
+    mapping(uint256 => string) private vrmUriOverride;
 
     /**
      * @notice Set the address of the `AvastarTeleporter` contract.
@@ -139,6 +168,56 @@ contract AvastarMetadata is AvastarBase, AvastarTypes, AccessControl {
     }
 
     /**
+     * @notice Set the base URI for the default 3d avatar of each avastar.
+     * Only invokable by system admin role, when contract is paused and not upgraded.
+     * If successful, emits an `VrmUriBaseSet` event.
+     * @param _which the traunch for this base (founders, exclusive, prime, replicant)
+     * @param _vrmUriBase base URI for the default 3d avatar of each avastar.
+     */
+    function setVrmUriBase(uint8 _which, string calldata _vrmUriBase)
+    external onlySysAdmin whenPaused whenNotUpgraded
+    {
+        // Set the base for token vrms
+        vrmUriBase[_which] = _vrmUriBase;
+
+        // Emit the event
+        emit VrmUriBaseSet(_which, _vrmUriBase);
+    }
+
+    /**
+     * @notice Set the override full URI for the 3d avatar of a specific avastar.
+     * Only invokable by system admin role, when contract is not upgraded.
+     * If successful, emits an `VrmUriOverrideSet` event.
+     * @param _tokenId the tokenID to set an override for.
+     * @param _vrmUriOverride the override full URI for the 3d avatar of a specific avastar.
+     */
+    function setVrmUriOverride(uint256 _tokenId, string calldata _vrmUriOverride)
+    external onlySysAdmin whenNotUpgraded
+    {
+        // Set the override for token's vrm
+        vrmUriOverride[_tokenId] = _vrmUriOverride;
+
+        // Emit the event
+        emit VrmUriOverrideSet(_tokenId, _vrmUriOverride);
+    }
+    
+    /**
+     * @notice clear the override full URI for the 3d avatar of a specific avastar.
+     * Only invokable by system admin role, when contract not upgraded.
+     * If successful, emits an `VrmUriOverrideSet` event.
+     * @param _tokenId the tokenID to clear an override for.
+     */
+    function setVrmUriOverride(uint256 _tokenId)
+    external onlySysAdmin whenNotUpgraded
+    {
+        // Set the override for token's vrm
+        delete(vrmUriOverride[_tokenId]);
+
+        // Emit the event
+        emit VrmUriOverrideSet(_tokenId, '');
+    }
+    
+    /**
      * @notice Get view URI for a given Avastar Token ID.
      * @param _tokenId the Token ID of a previously minted Avastar Prime or Replicant
      * @return uri the off-chain URI to view the Avastar on the Avastars website
@@ -162,6 +241,30 @@ contract AvastarMetadata is AvastarBase, AvastarTypes, AccessControl {
     {
         require(_tokenId < teleporterContract.totalSupply(), INVALID_TOKEN_ID);
         uri = strConcat(mediaUriBase, uintToStr(_tokenId));
+    }
+
+    /**
+     * @notice Get determine if the token has a VRM
+     * @param _wave the Token ID of a previously minted Avastar Prime or Replicant
+     * @param _series the Token ID of a previously minted Avastar Prime or Replicant
+     * @param _serial the Token ID of a previously minted Avastar Prime or Replicant
+     * @param _tokenId the Token ID of a previously minted Avastar Prime or Replicant
+     * @return bool true if the avastar has a vrm
+     */
+    function hasVrm(Wave _wave, Series _series, uint256 _serial, uint _tokenId)
+    public view
+    returns (bool)
+    {
+        require(_tokenId < teleporterContract.totalSupply(), INVALID_TOKEN_ID);
+        if (bytes(vrmUriOverride[_tokenId]).length > 0) {
+            return true;
+        } else {
+            if (_wave == Wave.PRIME && _series == Series.PROMO) {
+                return (_serial <100) ? bytes(vrmUriBase[0]).length > 0 : bytes(vrmUriBase[1]).length > 0;
+            } else {
+                return (_wave == Wave.PRIME) ? bytes(vrmUriBase[2]).length > 0 : bytes(vrmUriBase[3]).length > 0;
+            }
+        }
     }
 
     /**
@@ -246,6 +349,22 @@ contract AvastarMetadata is AvastarBase, AvastarTypes, AccessControl {
         metadata = strConcat(metadata, attribution);
         metadata = strConcat(metadata, '",\n');
 
+        if (hasVrm(wave, series, serial, _tokenId)) {
+            // VRM URI
+            metadata = strConcat(metadata, '  "metaverse_avatar": "');
+            if (bytes(vrmUriOverride[_tokenId]).length > 0) {
+                metadata = strConcat(metadata, vrmUriOverride[_tokenId]);
+            } else {
+                if (wave == Wave.PRIME && series == Series.PROMO) {
+                    metadata = strConcat(metadata, (serial <100) ? vrmUriBase[0] : vrmUriBase[1]);
+                } else {
+                    metadata = strConcat(metadata, (wave == Wave.PRIME) ? vrmUriBase[2] : vrmUriBase[3]);
+                }
+                metadata = strConcat(metadata, uintToStr(_tokenId));
+            }
+            metadata = strConcat(metadata, '",\n');
+        }
+        
         // View URI
         metadata = strConcat(metadata, '  "external_url": "');
         metadata = strConcat(metadata, viewURI(_tokenId));
@@ -323,6 +442,10 @@ contract AvastarMetadata is AvastarBase, AvastarTypes, AccessControl {
         metadata = strConcat(metadata, '      "value": "');
         metadata = strConcat(metadata, getRankingLevel(ranking));
         metadata = strConcat(metadata, '"\n    },\n');
+
+        if (hasVrm(wave, series, serial, _tokenId)) {
+            metadata = strConcat(metadata, '    {\n      "trait_type": "3D Avatar",\n      "value": "true"\n    },\n');
+        }
 
         // Traits
         metadata = strConcat(metadata, assembleTraitMetadata(generation, traits));

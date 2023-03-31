@@ -1,4 +1,3 @@
-
 // File: contracts/AvastarTypes.sol
 
 pragma solidity 0.5.14;
@@ -112,7 +111,6 @@ contract AvastarTypes {
 // File: contracts/IAvastarTeleporter.sol
 
 pragma solidity 0.5.14;
-
 
 /**
  * @title AvastarTeleporter Interface
@@ -515,7 +513,6 @@ library SafeMath {
 pragma solidity 0.5.14;
 
 
-
 /**
  * @title Access Control
  * @author Cliff Hall
@@ -698,7 +695,6 @@ contract AccessControl {
 // File: contracts/AvastarPrimeMinter.sol
 
 pragma solidity 0.5.14;
-
 
 
 
