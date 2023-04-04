@@ -806,6 +806,12 @@ contract AvastarMetadata is AvastarBase, AvastarTypes, AccessControl {
     event VrmUriOverrideSet(uint256 tokenId, string vrmUri);
 
     /**
+     * @notice Event emitted when the `licenseUri` is set for the collection.
+     * @param licenseUri the new URI
+     */
+    event LicenseUriSet(string licenseUri);
+
+    /**
      * @notice Address of the AvastarTeleporter contract
      */
     IAvastarTeleporter private teleporterContract ;
@@ -838,6 +844,11 @@ contract AvastarMetadata is AvastarBase, AvastarTypes, AccessControl {
      * @notice a full override URI to a specific Avastar's custom off-chain 3d avatar
      */
     mapping(uint256 => string) private vrmUriOverride;
+
+    /**
+     * @notice the URI of the license associated with the collection
+     */
+    string private licenseUri;
 
     /**
      * @notice Set the address of the `AvastarTeleporter` contract.
@@ -963,6 +974,15 @@ contract AvastarMetadata is AvastarBase, AvastarTypes, AccessControl {
 
         // Emit the event
         emit VrmUriOverrideSet(_tokenId, '');
+    }
+
+    function setLicenseUri(string calldata _licenseURI)
+    external onlySysAdmin whenNotUpgraded
+    {
+        licenseUri = _licenseURI;
+
+        // Emit the event
+        emit LicenseUriSet(_licenseURI);
     }
     
     /**
@@ -1197,6 +1217,12 @@ contract AvastarMetadata is AvastarBase, AvastarTypes, AccessControl {
             metadata = strConcat(metadata, '    {\n      "trait_type": "3D Avatar",\n      "value": "pending"\n    },\n');
         } else {
             metadata = strConcat(metadata, '    {\n      "trait_type": "3D Avatar",\n      "value": "false"\n    },\n');
+        }
+
+        if (bytes(licenseUri).length != 0) {
+            metadata = strConcat(metadata, '    {\n      "trait_type": "License",\n      "value": "');
+            metadata = strConcat(metadata, licenseUri);
+            metadata = strConcat(metadata, '"\n    },\n');
         }
 
         // Traits
