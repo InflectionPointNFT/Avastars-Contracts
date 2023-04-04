@@ -15,6 +15,7 @@ import "./AccessControl.sol";
 contract AvastarMetadata is AvastarBase, AvastarTypes, AccessControl {
 
     string public constant INVALID_TOKEN_ID = "Invalid Token ID";
+    uint256 public constant HIGHEST_FREE_VRM_ID = 26700;
 
     /**
      * @notice Event emitted when AvastarTeleporter contract is set
@@ -445,6 +446,10 @@ contract AvastarMetadata is AvastarBase, AvastarTypes, AccessControl {
 
         if (hasVrm(wave, series, serial, _tokenId)) {
             metadata = strConcat(metadata, '    {\n      "trait_type": "3D Avatar",\n      "value": "true"\n    },\n');
+        } else if (_tokenId <= HIGHEST_FREE_VRM_ID) {
+            metadata = strConcat(metadata, '    {\n      "trait_type": "3D Avatar",\n      "value": "pending"\n    },\n');
+        } else {
+            metadata = strConcat(metadata, '    {\n      "trait_type": "3D Avatar",\n      "value": "false"\n    },\n');
         }
 
         // Traits
