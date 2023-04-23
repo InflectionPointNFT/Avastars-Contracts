@@ -465,11 +465,11 @@ contract AvastarMetadata is AvastarBase, AvastarTypes, AccessControl {
         metadata = strConcat(metadata, '"\n    },\n');
 
         if (hasVrm(wave, series, serial, _tokenId)) {
-            metadata = strConcat(metadata, '    {\n      "trait_type": "3D Avatar",\n      "value": "true"\n    },\n');
+            metadata = strConcat(metadata, '    {\n      "trait_type": "3D Avastar",\n      "value": "true"\n    },\n');
         } else if (_tokenId <= HIGHEST_FREE_VRM_ID) {
-            metadata = strConcat(metadata, '    {\n      "trait_type": "3D Avatar",\n      "value": "pending"\n    },\n');
+            metadata = strConcat(metadata, '    {\n      "trait_type": "3D Avastar",\n      "value": "pending"\n    },\n');
         } else {
-            metadata = strConcat(metadata, '    {\n      "trait_type": "3D Avatar",\n      "value": "false"\n    },\n');
+            metadata = strConcat(metadata, '    {\n      "trait_type": "3D Avastar",\n      "value": "false"\n    },\n');
         }
 
         if (bytes(licenseUri).length != 0) {
